@@ -1,0 +1,4160 @@
+[
+    {
+        "name": "Aasimar Redeemer",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=333",
+        "family": "Planar Scion",
+        "level": 5,
+        "alignment": "Neutral Good",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Adamantine Golem",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=243",
+        "family": "Golem",
+        "level": 18,
+        "alignment": "Neutral",
+        "type": "Construct",
+        "size": "Large"
+    },
+    {
+        "name": "Adult Black Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=128",
+        "family": "Dragon, Chromatic",
+        "level": 11,
+        "alignment": "Chaotic Evil",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Adult Blue Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=131",
+        "family": "Dragon, Chromatic",
+        "level": 13,
+        "alignment": "Lawful Evil",
+        "type": "Dragon",
+        "size": "Huge"
+    },
+    {
+        "name": "Adult Brass Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=143",
+        "family": "Dragon, Metallic",
+        "level": 11,
+        "alignment": "Chaotic Good",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Adult Bronze Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=146",
+        "family": "Dragon, Metallic",
+        "level": 13,
+        "alignment": "Lawful Good",
+        "type": "Dragon",
+        "size": "Huge"
+    },
+    {
+        "name": "Adult Copper Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=149",
+        "family": "Dragon, Metallic",
+        "level": 12,
+        "alignment": "Chaotic Good",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Adult Gold Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=152",
+        "family": "Dragon, Metallic",
+        "level": 15,
+        "alignment": "Lawful Good",
+        "type": "Dragon",
+        "size": "Huge"
+    },
+    {
+        "name": "Adult Green Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=134",
+        "family": "Dragon, Chromatic",
+        "level": 12,
+        "alignment": "Lawful Evil",
+        "type": "Dragon",
+        "size": "Huge"
+    },
+    {
+        "name": "Adult Magma Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=470",
+        "family": "Dragon, Magma",
+        "level": 13,
+        "alignment": "Chaotic Neutral",
+        "type": "Dragon",
+        "size": "Huge"
+    },
+    {
+        "name": "Adult Red Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=137",
+        "family": "Dragon, Chromatic",
+        "level": 14,
+        "alignment": "Chaotic Evil",
+        "type": "Dragon",
+        "size": "Huge"
+    },
+    {
+        "name": "Adult Silver Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=155",
+        "family": "Dragon, Metallic",
+        "level": 14,
+        "alignment": "Lawful Good",
+        "type": "Dragon",
+        "size": "Huge"
+    },
+    {
+        "name": "Adult White Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=140",
+        "family": "Dragon, Chromatic",
+        "level": 10,
+        "alignment": "Chaotic Evil",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Air Mephit",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=192",
+        "family": "Elemental, Mephit",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Small"
+    },
+    {
+        "name": "Alchemical Golem",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=239",
+        "family": "Golem",
+        "level": 9,
+        "alignment": "Neutral",
+        "type": "Construct",
+        "size": "Large"
+    },
+    {
+        "name": "Alghollthu Master (Aboleth)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=2",
+        "family": "Alghollthu",
+        "level": 7,
+        "alignment": "Lawful Evil",
+        "type": "Aberration",
+        "size": "Huge"
+    },
+    {
+        "name": "Anadi Elder",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=432",
+        "family": "Anadi",
+        "level": 6,
+        "alignment": "Chaotic Good",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Anadi Hunter",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=430",
+        "family": "Anadi",
+        "level": 2,
+        "alignment": "Chaotic Good",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Anadi Sage",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=431",
+        "family": "Anadi",
+        "level": 4,
+        "alignment": "Chaotic Good",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Ancient Black Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=129",
+        "family": "Dragon, Chromatic",
+        "level": 16,
+        "alignment": "Chaotic Evil",
+        "type": "Dragon",
+        "size": "Huge"
+    },
+    {
+        "name": "Ancient Blue Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=132",
+        "family": "Dragon, Chromatic",
+        "level": 18,
+        "alignment": "Lawful Evil",
+        "type": "Dragon",
+        "size": "Huge"
+    },
+    {
+        "name": "Ancient Brass Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=144",
+        "family": "Dragon, Metallic",
+        "level": 16,
+        "alignment": "Chaotic Good",
+        "type": "Dragon",
+        "size": "Huge"
+    },
+    {
+        "name": "Ancient Bronze Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=147",
+        "family": "Dragon, Metallic",
+        "level": 18,
+        "alignment": "Lawful Good",
+        "type": "Dragon",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Ancient Copper Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=150",
+        "family": "Dragon, Metallic",
+        "level": 17,
+        "alignment": "Chaotic Good",
+        "type": "Dragon",
+        "size": "Huge"
+    },
+    {
+        "name": "Ancient Gold Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=153",
+        "family": "Dragon, Metallic",
+        "level": 20,
+        "alignment": "Lawful Good",
+        "type": "Dragon",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Ancient Green Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=135",
+        "family": "Dragon, Chromatic",
+        "level": 17,
+        "alignment": "Lawful Evil",
+        "type": "Dragon",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Ancient Magma Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=471",
+        "family": "Dragon, Magma",
+        "level": 18,
+        "alignment": "Chaotic Neutral",
+        "type": "Dragon",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Ancient Red Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=138",
+        "family": "Dragon, Chromatic",
+        "level": 19,
+        "alignment": "Chaotic Evil",
+        "type": "Dragon",
+        "size": "Huge"
+    },
+    {
+        "name": "Ancient Silver Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=156",
+        "family": "Dragon, Metallic",
+        "level": 19,
+        "alignment": "Lawful Good",
+        "type": "Dragon",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Ancient White Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=141",
+        "family": "Dragon, Chromatic",
+        "level": 15,
+        "alignment": "Chaotic Evil",
+        "type": "Dragon",
+        "size": "Huge"
+    },
+    {
+        "name": "Animated Armor",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=19",
+        "family": "Animated Object",
+        "level": 2,
+        "alignment": "Neutral",
+        "type": "Construct",
+        "size": "Medium"
+    },
+    {
+        "name": "Animated Broom",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=18",
+        "family": "Animated Object",
+        "level": -1,
+        "alignment": "Neutral",
+        "type": "Construct",
+        "size": "Small"
+    },
+    {
+        "name": "Animated Statue",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=20",
+        "family": "Animated Object",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Construct",
+        "size": "Medium"
+    },
+    {
+        "name": "Ankhrav",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=23",
+        "family": "Ankhrav",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Ankylosaurus",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=119",
+        "family": "Dinosaur",
+        "level": 6,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Huge"
+    },
+    {
+        "name": "Annis Hag",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=256",
+        "family": "Hag",
+        "level": 6,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Large"
+    },
+    {
+        "name": "Arbiter",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=6",
+        "family": "Aeon",
+        "level": 1,
+        "alignment": "Lawful Neutral",
+        "type": "Monitor",
+        "size": "Tiny"
+    },
+    {
+        "name": "Arboreal Regent",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=29",
+        "family": "Arboreal",
+        "level": 8,
+        "alignment": "Neutral Good",
+        "type": "Plant",
+        "size": "Huge"
+    },
+    {
+        "name": "Arboreal Warden",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=27",
+        "family": "Arboreal",
+        "level": 4,
+        "alignment": "Neutral Good",
+        "type": "Plant",
+        "size": "Large"
+    },
+    {
+        "name": "Asanbosam",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=439",
+        "family": "\u2014",
+        "level": 6,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Large"
+    },
+    {
+        "name": "Astradaemon (Void Daemon)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=91",
+        "family": "Daemon",
+        "level": 16,
+        "alignment": "Neutral Evil",
+        "type": "Fiend",
+        "size": "Large"
+    },
+    {
+        "name": "Astral Deva (Emissary Angel)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=16",
+        "family": "Angel",
+        "level": 14,
+        "alignment": "Neutral Good",
+        "type": "Celestial",
+        "size": "Medium"
+    },
+    {
+        "name": "Augur",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=460",
+        "family": "Velstrac",
+        "level": 1,
+        "alignment": "Lawful Evil",
+        "type": "Fiend",
+        "size": "Tiny"
+    },
+    {
+        "name": "Awakened Tree",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=28",
+        "family": "Arboreal",
+        "level": 6,
+        "alignment": "Neutral",
+        "type": "Plant",
+        "size": "Huge"
+    },
+    {
+        "name": "Axiomite",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=7",
+        "family": "Aeon",
+        "level": 8,
+        "alignment": "Lawful Neutral",
+        "type": "Monitor",
+        "size": "Medium"
+    },
+    {
+        "name": "Azure Worm",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=74",
+        "family": "Cave Worm",
+        "level": 15,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Balisse (Confessor Angel)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=15",
+        "family": "Angel",
+        "level": 8,
+        "alignment": "Neutral Good",
+        "type": "Celestial",
+        "size": "Medium"
+    },
+    {
+        "name": "Ball Python",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=380",
+        "family": "Snake",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "Balor (Fire Demon)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=104",
+        "family": "Demon",
+        "level": 20,
+        "alignment": "Chaotic Evil",
+        "type": "Fiend",
+        "size": "Large"
+    },
+    {
+        "name": "Banshee",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=39",
+        "family": "\u2014",
+        "level": 17,
+        "alignment": "Chaotic Evil",
+        "type": "Spirit",
+        "size": "Medium"
+    },
+    {
+        "name": "Baomel",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=40",
+        "family": "\u2014",
+        "level": 20,
+        "alignment": "Chaotic Neutral",
+        "type": "Aberration",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Barbazu (Bearded Devil)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=110",
+        "family": "Devil",
+        "level": 5,
+        "alignment": "Lawful Evil",
+        "type": "Fiend",
+        "size": "Medium"
+    },
+    {
+        "name": "Barghest",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=41",
+        "family": "Barghest",
+        "level": 4,
+        "alignment": "Chaotic Evil",
+        "type": "Fiend",
+        "size": "Medium"
+    },
+    {
+        "name": "Basilisk",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=44",
+        "family": "\u2014",
+        "level": 5,
+        "alignment": "Neutral",
+        "type": "Beast",
+        "size": "Medium"
+    },
+    {
+        "name": "Bida",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=440",
+        "family": "\u2014",
+        "level": 8,
+        "alignment": "Lawful Evil",
+        "type": "Dragon",
+        "size": "Huge"
+    },
+    {
+        "name": "Biloko Veteran",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=442",
+        "family": "Biloko",
+        "level": 4,
+        "alignment": "Neutral Evil",
+        "type": "Fey",
+        "size": "Small"
+    },
+    {
+        "name": "Biloko Warrior",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=441",
+        "family": "Biloko",
+        "level": 1,
+        "alignment": "Neutral Evil",
+        "type": "Fey",
+        "size": "Small"
+    },
+    {
+        "name": "Black Pudding",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=323",
+        "family": "Ooze",
+        "level": 7,
+        "alignment": "Neutral",
+        "type": "Ooze",
+        "size": "Huge"
+    },
+    {
+        "name": "Blood Boar",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=454",
+        "family": "\u2014",
+        "level": 6,
+        "alignment": "Neutral Evil",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "Blood Ooze",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=429",
+        "family": "Ooze",
+        "level": 4,
+        "alignment": "Neutral",
+        "type": "Ooze",
+        "size": "Large"
+    },
+    {
+        "name": "Bloodlash Bush",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=427",
+        "family": "Deadly Flora",
+        "level": 2,
+        "alignment": "Neutral",
+        "type": "Plant",
+        "size": "Small"
+    },
+    {
+        "name": "Bloodseeker",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=51",
+        "family": "\u2014",
+        "level": -1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Tiny"
+    },
+    {
+        "name": "Boar",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=52",
+        "family": "Boar",
+        "level": 2,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "Boggard Scout",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=54",
+        "family": "Boggard",
+        "level": 1,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Boggard Swampseer",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=56",
+        "family": "Boggard",
+        "level": 3,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Boggard Warrior",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=55",
+        "family": "Boggard",
+        "level": 2,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Brain Collector",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=57",
+        "family": "\u2014",
+        "level": 8,
+        "alignment": "Chaotic Evil",
+        "type": "Aberration",
+        "size": "Large"
+    },
+    {
+        "name": "Brine Shark",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=196",
+        "family": "Elemental, Water",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Medium"
+    },
+    {
+        "name": "Brontosaurus",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=122",
+        "family": "Dinosaur",
+        "level": 10,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Bugbear Thug",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=58",
+        "family": "Bugbear",
+        "level": 2,
+        "alignment": "Neutral Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Bugbear Tormentor",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=59",
+        "family": "Bugbear",
+        "level": 3,
+        "alignment": "Neutral Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Bulette",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=61",
+        "family": "\u2014",
+        "level": 8,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Huge"
+    },
+    {
+        "name": "Bunyip",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=62",
+        "family": "\u2014",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "Cacodaemon (Harvester Daemon)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=88",
+        "family": "Daemon",
+        "level": 1,
+        "alignment": "Neutral Evil",
+        "type": "Fiend",
+        "size": "Tiny"
+    },
+    {
+        "name": "Caligni Creeper",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=65",
+        "family": "Caligni",
+        "level": 2,
+        "alignment": "Chaotic Neutral",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Caligni Dancer",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=64",
+        "family": "Caligni",
+        "level": 1,
+        "alignment": "Chaotic Neutral",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Caligni Stalker",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=66",
+        "family": "Caligni",
+        "level": 4,
+        "alignment": "Chaotic Neutral",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Carnivorous Crystal",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=464",
+        "family": "\u2014",
+        "level": 11,
+        "alignment": "Neutral",
+        "type": "Ooze",
+        "size": "Medium"
+    },
+    {
+        "name": "Cassisian (Archive Angel)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=13",
+        "family": "Angel",
+        "level": 1,
+        "alignment": "Neutral Good",
+        "type": "Celestial",
+        "size": "Tiny"
+    },
+    {
+        "name": "Catfolk Pouncer",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=71",
+        "family": "Catfolk",
+        "level": 1,
+        "alignment": "Chaotic Good",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Cauthooj",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=72",
+        "family": "\u2014",
+        "level": 12,
+        "alignment": "Neutral",
+        "type": "Beast",
+        "size": "Medium"
+    },
+    {
+        "name": "Cave Bear",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=48",
+        "family": "Bear",
+        "level": 6,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Centaur",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=76",
+        "family": "\u2014",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Beast",
+        "size": "Large"
+    },
+    {
+        "name": "Centipede Swarm",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=78",
+        "family": "Centipede",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Ceustodaemon (Guardian Daemon)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=89",
+        "family": "Daemon",
+        "level": 6,
+        "alignment": "Neutral Evil",
+        "type": "Fiend",
+        "size": "Large"
+    },
+    {
+        "name": "Changeling Exile",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=79",
+        "family": "Changeling",
+        "level": 3,
+        "alignment": "Chaotic Neutral",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Charau-ka Acolyte of Angazhan",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=445",
+        "family": "Charau-ka",
+        "level": 3,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Charau-ka Butcher",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=446",
+        "family": "Charau-ka",
+        "level": 6,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Charau-ka Warrior",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=444",
+        "family": "Charau-ka",
+        "level": 1,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Chimera",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=80",
+        "family": "\u2014",
+        "level": 8,
+        "alignment": "Chaotic Evil",
+        "type": "Beast",
+        "size": "Large"
+    },
+    {
+        "name": "Choral (Choir Angel)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=14",
+        "family": "Angel",
+        "level": 6,
+        "alignment": "Neutral Good",
+        "type": "Celestial",
+        "size": "Small"
+    },
+    {
+        "name": "Chuul",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=81",
+        "family": "\u2014",
+        "level": 7,
+        "alignment": "Chaotic Evil",
+        "type": "Aberration",
+        "size": "Large"
+    },
+    {
+        "name": "Cinder Rat",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=187",
+        "family": "Elemental, Fire",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Small"
+    },
+    {
+        "name": "Clay Golem",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=240",
+        "family": "Golem",
+        "level": 10,
+        "alignment": "Neutral",
+        "type": "Construct",
+        "size": "Large"
+    },
+    {
+        "name": "Cloaker",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=82",
+        "family": "\u2014",
+        "level": 5,
+        "alignment": "Chaotic Neutral",
+        "type": "Aberration",
+        "size": "Large"
+    },
+    {
+        "name": "Cloud Giant",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=224",
+        "family": "Giant",
+        "level": 11,
+        "alignment": "Neutral",
+        "type": "Giant",
+        "size": "Huge"
+    },
+    {
+        "name": "Cockatrice",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=83",
+        "family": "\u2014",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Beast",
+        "size": "Small"
+    },
+    {
+        "name": "Crag Linnorm",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=284",
+        "family": "Linnorm",
+        "level": 14,
+        "alignment": "Chaotic Evil",
+        "type": "Dragon",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Crimson Worm",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=75",
+        "family": "Cave Worm",
+        "level": 18,
+        "alignment": "Neutral",
+        "type": "Beast",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Crocodile",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=84",
+        "family": "Crocodile",
+        "level": 2,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Cyclops",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=86",
+        "family": "Cyclops",
+        "level": 5,
+        "alignment": "Lawful Evil",
+        "type": "Giant",
+        "size": "Large"
+    },
+    {
+        "name": "Daeodon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=53",
+        "family": "Boar",
+        "level": 4,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Dalos",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=465",
+        "family": "\u2014",
+        "level": 13,
+        "alignment": "Chaotic Evil",
+        "type": "Fey",
+        "size": "Huge"
+    },
+    {
+        "name": "Dandasuka",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=344",
+        "family": "Rakshasa",
+        "level": 5,
+        "alignment": "Lawful Evil",
+        "type": "Fiend",
+        "size": "Small"
+    },
+    {
+        "name": "Dark Naga",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=306",
+        "family": "Naga",
+        "level": 7,
+        "alignment": "Lawful Evil",
+        "type": "Aberration",
+        "size": "Large"
+    },
+    {
+        "name": "Deadly Mantis",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=296",
+        "family": "Mantis, Giant",
+        "level": 11,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Deculi",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=466",
+        "family": "\u2014",
+        "level": 12,
+        "alignment": "Neutral Evil",
+        "type": "Beast",
+        "size": "Large"
+    },
+    {
+        "name": "Deep Gnome Rockwarden",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=96",
+        "family": "Deep Gnome",
+        "level": 5,
+        "alignment": "Neutral",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Deep Gnome Scout",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=93",
+        "family": "Deep Gnome",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Deep Gnome Warrior",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=94",
+        "family": "Deep Gnome",
+        "level": 2,
+        "alignment": "Neutral",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Deinonychus",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=118",
+        "family": "Dinosaur",
+        "level": 2,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "Deinosuchus",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=85",
+        "family": "Crocodile",
+        "level": 9,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Huge"
+    },
+    {
+        "name": "Demilich",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=283",
+        "family": "Lich",
+        "level": 15,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Tiny"
+    },
+    {
+        "name": "Dero Magister",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=107",
+        "family": "Dero",
+        "level": 5,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Dero Stalker",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=105",
+        "family": "Dero",
+        "level": 2,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Dero Strangler",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=106",
+        "family": "Dero",
+        "level": 3,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Desert Drake",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=164",
+        "family": "Drake",
+        "level": 8,
+        "alignment": "Neutral Evil",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Devourer",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=467",
+        "family": "\u2014",
+        "level": 11,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Large"
+    },
+    {
+        "name": "Dezullon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=115",
+        "family": "\u2014",
+        "level": 10,
+        "alignment": "Neutral",
+        "type": "Plant",
+        "size": "Medium"
+    },
+    {
+        "name": "Dhampir Wizard",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=116",
+        "family": "Dhampir",
+        "level": 2,
+        "alignment": "Neutral Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Dire Wolf",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=416",
+        "family": "Wolf",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Djinni",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=212",
+        "family": "Genie",
+        "level": 5,
+        "alignment": "Chaotic Good",
+        "type": "Elemental",
+        "size": "Large"
+    },
+    {
+        "name": "Doorwarden",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=433",
+        "family": "\u2014",
+        "level": 5,
+        "alignment": "Lawful Neutral",
+        "type": "Construct",
+        "size": "Large"
+    },
+    {
+        "name": "Doppelganger",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=126",
+        "family": "\u2014",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Dragon Turtle",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=157",
+        "family": "\u2014",
+        "level": 9,
+        "alignment": "Neutral",
+        "type": "Dragon",
+        "size": "Huge"
+    },
+    {
+        "name": "Dragonscarred Dead",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=472",
+        "family": "\u2014",
+        "level": 13,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Drakauthix",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=158",
+        "family": "\u2014",
+        "level": 9,
+        "alignment": "Neutral",
+        "type": "Fungus",
+        "size": "Huge"
+    },
+    {
+        "name": "Drider",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=207",
+        "family": "Fleshwarp",
+        "level": 6,
+        "alignment": "Chaotic Evil",
+        "type": "Aberration",
+        "size": "Large"
+    },
+    {
+        "name": "Drow Fighter",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=165",
+        "family": "Drow",
+        "level": 1,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Drow Priestess",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=167",
+        "family": "Drow",
+        "level": 3,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Drow Rogue",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=166",
+        "family": "Drow",
+        "level": 2,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Dryad Queen (Hamadryad)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=314",
+        "family": "Nymph",
+        "level": 13,
+        "alignment": "Chaotic Good",
+        "type": "Fey",
+        "size": "Medium"
+    },
+    {
+        "name": "Dryad",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=312",
+        "family": "Nymph",
+        "level": 3,
+        "alignment": "Chaotic Good",
+        "type": "Fey",
+        "size": "Medium"
+    },
+    {
+        "name": "Duergar Bombardier",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=169",
+        "family": "Duergar",
+        "level": 1,
+        "alignment": "Lawful Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Duergar Sharpshooter",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=168",
+        "family": "Duergar",
+        "level": 0,
+        "alignment": "Lawful Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Duergar Taskmaster",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=170",
+        "family": "Duergar",
+        "level": 2,
+        "alignment": "Lawful Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Dullahan",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=171",
+        "family": "\u2014",
+        "level": 7,
+        "alignment": "Lawful Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Duskwalker Ghost Hunter",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=332",
+        "family": "Planar Scion",
+        "level": 4,
+        "alignment": "Neutral",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Eagle",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=172",
+        "family": "Eagle",
+        "level": -1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Small"
+    },
+    {
+        "name": "Earth Mephit",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=193",
+        "family": "Elemental, Mephit",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Small"
+    },
+    {
+        "name": "Efreeti",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=214",
+        "family": "Genie",
+        "level": 9,
+        "alignment": "Lawful Evil",
+        "type": "Elemental",
+        "size": "Large"
+    },
+    {
+        "name": "Elananx",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=176",
+        "family": "\u2014",
+        "level": 6,
+        "alignment": "Neutral Evil",
+        "type": "Fey",
+        "size": "Medium"
+    },
+    {
+        "name": "Electric Eel",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=174",
+        "family": "Eel",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Small"
+    },
+    {
+        "name": "Elemental Avalanche",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=186",
+        "family": "Elemental, Earth",
+        "level": 11,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Huge"
+    },
+    {
+        "name": "Elemental Hurricane",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=181",
+        "family": "Elemental, Air",
+        "level": 11,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Huge"
+    },
+    {
+        "name": "Elemental Inferno",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=191",
+        "family": "Elemental, Fire",
+        "level": 11,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Huge"
+    },
+    {
+        "name": "Elemental Tsunami",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=200",
+        "family": "Elemental, Water",
+        "level": 11,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Huge"
+    },
+    {
+        "name": "Elephant",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=201",
+        "family": "Elephant",
+        "level": 7,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Huge"
+    },
+    {
+        "name": "Eloko",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=443",
+        "family": "Biloko",
+        "level": 7,
+        "alignment": "Neutral Evil",
+        "type": "Fey",
+        "size": "Small"
+    },
+    {
+        "name": "Emperor Bird",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=434",
+        "family": "\u2014",
+        "level": 2,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "Erinys (Fury Devil)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=111",
+        "family": "Devil",
+        "level": 8,
+        "alignment": "Lawful Evil",
+        "type": "Fiend",
+        "size": "Medium"
+    },
+    {
+        "name": "Ether Spider",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=203",
+        "family": "\u2014",
+        "level": 5,
+        "alignment": "Neutral",
+        "type": "Beast",
+        "size": "Large"
+    },
+    {
+        "name": "Ettin",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=204",
+        "family": "\u2014",
+        "level": 6,
+        "alignment": "Chaotic Evil",
+        "type": "Giant",
+        "size": "Large"
+    },
+    {
+        "name": "Evangelist",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=461",
+        "family": "Velstrac",
+        "level": 6,
+        "alignment": "Lawful Evil",
+        "type": "Fiend",
+        "size": "Medium"
+    },
+    {
+        "name": "Faceless Stalker (Ugothol)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=4",
+        "family": "Alghollthu",
+        "level": 4,
+        "alignment": "Chaotic Evil",
+        "type": "Aberration",
+        "size": "Medium"
+    },
+    {
+        "name": "Faerie Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=205",
+        "family": "\u2014",
+        "level": 2,
+        "alignment": "Chaotic Good",
+        "type": "Dragon",
+        "size": "Tiny"
+    },
+    {
+        "name": "Fire Giant",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=223",
+        "family": "Giant",
+        "level": 10,
+        "alignment": "Lawful Evil",
+        "type": "Giant",
+        "size": "Large"
+    },
+    {
+        "name": "Fire Mephit",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=194",
+        "family": "Elemental, Mephit",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Small"
+    },
+    {
+        "name": "Firewyrm",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=190",
+        "family": "Elemental, Fire",
+        "level": 9,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Huge"
+    },
+    {
+        "name": "Flame Drake",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=160",
+        "family": "Drake",
+        "level": 5,
+        "alignment": "Chaotic Evil",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Flash Beetle",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=49",
+        "family": "Beetle",
+        "level": -1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Small"
+    },
+    {
+        "name": "Flesh Golem",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=238",
+        "family": "Golem",
+        "level": 8,
+        "alignment": "Neutral",
+        "type": "Construct",
+        "size": "Large"
+    },
+    {
+        "name": "Forge-Spurned",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=473",
+        "family": "\u2014",
+        "level": 5,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Frost Drake",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=163",
+        "family": "Drake",
+        "level": 7,
+        "alignment": "Chaotic Evil",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Frost Giant",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=222",
+        "family": "Giant",
+        "level": 9,
+        "alignment": "Chaotic Evil",
+        "type": "Giant",
+        "size": "Large"
+    },
+    {
+        "name": "Fungus Leshy",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=281",
+        "family": "Leshy",
+        "level": 2,
+        "alignment": "Neutral",
+        "type": "Fungus",
+        "size": "Small"
+    },
+    {
+        "name": "Gancanagh (Passion Azata)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=35",
+        "family": "Azata",
+        "level": 4,
+        "alignment": "Chaotic Good",
+        "type": "Celestial",
+        "size": "Medium"
+    },
+    {
+        "name": "Gargoyle",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=210",
+        "family": "\u2014",
+        "level": 4,
+        "alignment": "Chaotic Evil",
+        "type": "Beast",
+        "size": "Medium"
+    },
+    {
+        "name": "Gashadokuro",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=474",
+        "family": "\u2014",
+        "level": 13,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Huge"
+    },
+    {
+        "name": "Gelatinous Cube",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=321",
+        "family": "Ooze",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Ooze",
+        "size": "Medium"
+    },
+    {
+        "name": "Gelugon (Ice Devil)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=113",
+        "family": "Devil",
+        "level": 13,
+        "alignment": "Lawful Evil",
+        "type": "Fiend",
+        "size": "Large"
+    },
+    {
+        "name": "Ghaele (Crusader Azata)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=37",
+        "family": "Azata",
+        "level": 13,
+        "alignment": "Chaotic Good",
+        "type": "Celestial",
+        "size": "Medium"
+    },
+    {
+        "name": "Ghast",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=219",
+        "family": "Ghoul",
+        "level": 2,
+        "alignment": "Chaotic Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Ghost Commoner",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=216",
+        "family": "Ghost",
+        "level": 4,
+        "alignment": "Chaotic Evil",
+        "type": "Spirit",
+        "size": "Medium"
+    },
+    {
+        "name": "Ghost Mage",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=217",
+        "family": "Ghost",
+        "level": 10,
+        "alignment": "Chaotic Evil",
+        "type": "Spirit",
+        "size": "Medium"
+    },
+    {
+        "name": "Ghoul",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=218",
+        "family": "Ghoul",
+        "level": 1,
+        "alignment": "Chaotic Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Giant Anaconda",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=382",
+        "family": "Snake",
+        "level": 8,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Huge"
+    },
+    {
+        "name": "Giant Animated Statue",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=22",
+        "family": "Animated Object",
+        "level": 7,
+        "alignment": "Neutral",
+        "type": "Construct",
+        "size": "Huge"
+    },
+    {
+        "name": "Giant Bat",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=46",
+        "family": "Bat",
+        "level": 2,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Giant Centipede",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=77",
+        "family": "Centipede",
+        "level": -1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "Giant Eagle",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=173",
+        "family": "Eagle",
+        "level": 3,
+        "alignment": "Neutral Good",
+        "type": "Beast",
+        "size": "Large"
+    },
+    {
+        "name": "Giant Flytrap",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=209",
+        "family": "Flytrap",
+        "level": 10,
+        "alignment": "Neutral",
+        "type": "Plant",
+        "size": "Huge"
+    },
+    {
+        "name": "Giant Frilled Lizard",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=290",
+        "family": "Lizard",
+        "level": 5,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Giant Gecko",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=288",
+        "family": "Lizard",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "Giant Mantis",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=295",
+        "family": "Mantis, Giant",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Giant Monitor Lizard",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=289",
+        "family": "Lizard",
+        "level": 2,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "Giant Moray Eel",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=175",
+        "family": "Eel",
+        "level": 5,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Giant Octopus",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=315",
+        "family": "\u2014",
+        "level": 8,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Huge"
+    },
+    {
+        "name": "Giant Rat",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=346",
+        "family": "Rat",
+        "level": -1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Small"
+    },
+    {
+        "name": "Giant Scorpion",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=356",
+        "family": "Scorpion",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Giant Stag Beetle",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=50",
+        "family": "Beetle",
+        "level": 4,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Giant Tarantula",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=387",
+        "family": "Spider",
+        "level": 6,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Giant Viper",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=381",
+        "family": "Snake",
+        "level": 2,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "Giant Wasp",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=405",
+        "family": "Wasp",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Gibbering Mouther",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=227",
+        "family": "\u2014",
+        "level": 5,
+        "alignment": "Neutral",
+        "type": "Aberration",
+        "size": "Medium"
+    },
+    {
+        "name": "Gimmerling",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=228",
+        "family": "\u2014",
+        "level": 12,
+        "alignment": "Lawful Evil",
+        "type": "Fey",
+        "size": "Small"
+    },
+    {
+        "name": "Glabrezu (Treachery Demon)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=101",
+        "family": "Demon",
+        "level": 13,
+        "alignment": "Chaotic Evil",
+        "type": "Fiend",
+        "size": "Huge"
+    },
+    {
+        "name": "Gnoll Cultist",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=230",
+        "family": "Gnoll",
+        "level": 3,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Gnoll Hunter",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=229",
+        "family": "Gnoll",
+        "level": 2,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Large"
+    },
+    {
+        "name": "Gnoll Sergeant",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=231",
+        "family": "Gnoll",
+        "level": 4,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Goblin Commando",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=233",
+        "family": "Goblin",
+        "level": 1,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Goblin Dog",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=236",
+        "family": "\u2014",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "Goblin Pyro",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=234",
+        "family": "Goblin",
+        "level": 1,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Goblin War Chanter",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=235",
+        "family": "Goblin",
+        "level": 1,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Goblin Warrior",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=232",
+        "family": "Goblin",
+        "level": -1,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Gogiteth",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=237",
+        "family": "\u2014",
+        "level": 12,
+        "alignment": "Chaotic Evil",
+        "type": "Aberration",
+        "size": "Huge"
+    },
+    {
+        "name": "Goliath Spider",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=388",
+        "family": "Spider",
+        "level": 11,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Gorilla",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=25",
+        "family": "Ape",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Gourd Leshy",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=280",
+        "family": "Leshy",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Plant",
+        "size": "Small"
+    },
+    {
+        "name": "Grauladon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=435",
+        "family": "\u2014",
+        "level": 2,
+        "alignment": "Neutral",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Graveknight",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=244",
+        "family": "\u2014",
+        "level": 10,
+        "alignment": "Lawful Evil",
+        "type": "Undead",
+        "size": "Large"
+    },
+    {
+        "name": "Graveshell",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=436",
+        "family": "\u2014",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Beast",
+        "size": "Large"
+    },
+    {
+        "name": "Great Cyclops",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=87",
+        "family": "Cyclops",
+        "level": 12,
+        "alignment": "Chaotic Evil",
+        "type": "Giant",
+        "size": "Huge"
+    },
+    {
+        "name": "Great White Shark",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=365",
+        "family": "Shark",
+        "level": 4,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Huge"
+    },
+    {
+        "name": "Greater Barghest",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=43",
+        "family": "Barghest",
+        "level": 7,
+        "alignment": "Chaotic Evil",
+        "type": "Fiend",
+        "size": "Large"
+    },
+    {
+        "name": "Greater Nightmare",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=309",
+        "family": "Nightmare",
+        "level": 11,
+        "alignment": "Neutral Evil",
+        "type": "Beast",
+        "size": "Huge"
+    },
+    {
+        "name": "Greater Shadow",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=363",
+        "family": "Shadow",
+        "level": 7,
+        "alignment": "Chaotic Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Green Hag",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=255",
+        "family": "Hag",
+        "level": 4,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Griffon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=248",
+        "family": "\u2014",
+        "level": 4,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Grig",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=390",
+        "family": "Sprite",
+        "level": 1,
+        "alignment": "Chaotic Neutral",
+        "type": "Fey",
+        "size": "Tiny"
+    },
+    {
+        "name": "Grikkitog",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=249",
+        "family": "\u2014",
+        "level": 14,
+        "alignment": "Neutral Evil",
+        "type": "Aberration",
+        "size": "Huge"
+    },
+    {
+        "name": "Grim Reaper",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=250",
+        "family": "Grim Reaper",
+        "level": 21,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Grippli Archer",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=448",
+        "family": "Grippli",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Grippli Greenspeaker",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=449",
+        "family": "Grippli",
+        "level": 5,
+        "alignment": "Neutral",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Grippli Scout",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=447",
+        "family": "Grippli",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Grizzly Bear",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=47",
+        "family": "Bear",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Grothlut",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=206",
+        "family": "Fleshwarp",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Aberration",
+        "size": "Medium"
+    },
+    {
+        "name": "Guard Dog",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=124",
+        "family": "Dog",
+        "level": -1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Small"
+    },
+    {
+        "name": "Guardian Naga",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=307",
+        "family": "Naga",
+        "level": 10,
+        "alignment": "Lawful Good",
+        "type": "Aberration",
+        "size": "Large"
+    },
+    {
+        "name": "Gug",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=252",
+        "family": "\u2014",
+        "level": 10,
+        "alignment": "Chaotic Evil",
+        "type": "Aberration",
+        "size": "Large"
+    },
+    {
+        "name": "Guthallath",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=253",
+        "family": "\u2014",
+        "level": 19,
+        "alignment": "Neutral",
+        "type": "Construct",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Harpy",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=258",
+        "family": "\u2014",
+        "level": 5,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Hell Hound",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=259",
+        "family": "Hell Hound",
+        "level": 3,
+        "alignment": "Lawful Evil",
+        "type": "Beast",
+        "size": "Medium"
+    },
+    {
+        "name": "Hellcrown",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=437",
+        "family": "\u2014",
+        "level": 1,
+        "alignment": "Lawful Evil",
+        "type": "Undead",
+        "size": "Tiny"
+    },
+    {
+        "name": "Hill Giant",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=220",
+        "family": "Giant",
+        "level": 7,
+        "alignment": "Chaotic Evil",
+        "type": "Giant",
+        "size": "Large"
+    },
+    {
+        "name": "Hive Mother",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=24",
+        "family": "Ankhrav",
+        "level": 8,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Huge"
+    },
+    {
+        "name": "Hobgoblin Archer",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=262",
+        "family": "Hobgoblin",
+        "level": 4,
+        "alignment": "Lawful Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Hobgoblin General",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=263",
+        "family": "Hobgoblin",
+        "level": 6,
+        "alignment": "Lawful Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Hobgoblin Soldier",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=261",
+        "family": "Hobgoblin",
+        "level": 1,
+        "alignment": "Lawful Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Homunculus",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=264",
+        "family": "\u2014",
+        "level": 0,
+        "alignment": "Neutral",
+        "type": "Construct",
+        "size": "Tiny"
+    },
+    {
+        "name": "Horned Archon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=31",
+        "family": "Archon",
+        "level": 4,
+        "alignment": "Lawful Good",
+        "type": "Celestial",
+        "size": "Medium"
+    },
+    {
+        "name": "Hunting Spider",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=386",
+        "family": "Spider",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "Hyaenodon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=271",
+        "family": "Hyena",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Hydra",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=269",
+        "family": "\u2014",
+        "level": 6,
+        "alignment": "Neutral",
+        "type": "Beast",
+        "size": "Huge"
+    },
+    {
+        "name": "Hyena",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=270",
+        "family": "Hyena",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "Ice Linnorm",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=285",
+        "family": "Linnorm",
+        "level": 17,
+        "alignment": "Chaotic Evil",
+        "type": "Dragon",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Imp",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=109",
+        "family": "Devil",
+        "level": 1,
+        "alignment": "Lawful Evil",
+        "type": "Fiend",
+        "size": "Tiny"
+    },
+    {
+        "name": "Interlocutor",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=462",
+        "family": "Velstrac",
+        "level": 12,
+        "alignment": "Lawful Evil",
+        "type": "Fiend",
+        "size": "Large"
+    },
+    {
+        "name": "Invisible Stalker",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=179",
+        "family": "Elemental, Air",
+        "level": 7,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Medium"
+    },
+    {
+        "name": "Iron Golem",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=242",
+        "family": "Golem",
+        "level": 13,
+        "alignment": "Neutral",
+        "type": "Construct",
+        "size": "Large"
+    },
+    {
+        "name": "Janni",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=211",
+        "family": "Genie",
+        "level": 4,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Medium"
+    },
+    {
+        "name": "Jinkin",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=247",
+        "family": "Gremlin",
+        "level": 1,
+        "alignment": "Chaotic Evil",
+        "type": "Fey",
+        "size": "Tiny"
+    },
+    {
+        "name": "Jungle Drake",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=161",
+        "family": "Drake",
+        "level": 6,
+        "alignment": "Neutral Evil",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Kalavakus (Slaver Demon)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=455",
+        "family": "Demon",
+        "level": 10,
+        "alignment": "Chaotic Evil",
+        "type": "Fiend",
+        "size": "Medium"
+    },
+    {
+        "name": "Keketar",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=338",
+        "family": "Protean",
+        "level": 17,
+        "alignment": "Chaotic Neutral",
+        "type": "Monitor",
+        "size": "Large"
+    },
+    {
+        "name": "Kishi",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=450",
+        "family": "\u2014",
+        "level": 8,
+        "alignment": "Neutral Evil",
+        "type": "Fey",
+        "size": "Medium"
+    },
+    {
+        "name": "Kobold Dragon Mage",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=274",
+        "family": "Kobold",
+        "level": 2,
+        "alignment": "Lawful Evil",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Kobold Scout",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=273",
+        "family": "Kobold",
+        "level": 1,
+        "alignment": "Lawful Evil",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Kobold Warrior",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=272",
+        "family": "Kobold",
+        "level": -1,
+        "alignment": "Lawful Evil",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Kolyarut",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=10",
+        "family": "Aeon",
+        "level": 12,
+        "alignment": "Lawful Neutral",
+        "type": "Monitor",
+        "size": "Medium"
+    },
+    {
+        "name": "Kraken",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=275",
+        "family": "\u2014",
+        "level": 18,
+        "alignment": "Neutral Evil",
+        "type": "Beast",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Krooth",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=276",
+        "family": "\u2014",
+        "level": 8,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Lamia Matriarch",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=278",
+        "family": "Lamia",
+        "level": 8,
+        "alignment": "Chaotic Evil",
+        "type": "Beast",
+        "size": "Large"
+    },
+    {
+        "name": "Lamia",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=277",
+        "family": "Lamia",
+        "level": 6,
+        "alignment": "Chaotic Evil",
+        "type": "Beast",
+        "size": "Large"
+    },
+    {
+        "name": "Lantern Archon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=30",
+        "family": "Archon",
+        "level": 1,
+        "alignment": "Lawful Good",
+        "type": "Celestial",
+        "size": "Small"
+    },
+    {
+        "name": "Leaf Leshy",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=279",
+        "family": "Leshy",
+        "level": 0,
+        "alignment": "Neutral",
+        "type": "Plant",
+        "size": "Small"
+    },
+    {
+        "name": "Legion Archon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=32",
+        "family": "Archon",
+        "level": 7,
+        "alignment": "Lawful Good",
+        "type": "Celestial",
+        "size": "Medium"
+    },
+    {
+        "name": "Lemure",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=108",
+        "family": "Devil",
+        "level": 0,
+        "alignment": "Lawful Evil",
+        "type": "Fiend",
+        "size": "Medium"
+    },
+    {
+        "name": "Leopard",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=67",
+        "family": "Cat",
+        "level": 2,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "Lesser Death",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=251",
+        "family": "Grim Reaper",
+        "level": 16,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Leukodaemon (Pestilence Daemon)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=90",
+        "family": "Daemon",
+        "level": 9,
+        "alignment": "Neutral Evil",
+        "type": "Fiend",
+        "size": "Large"
+    },
+    {
+        "name": "Lich",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=282",
+        "family": "Lich",
+        "level": 12,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Lillend (Muse Azata)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=36",
+        "family": "Azata",
+        "level": 7,
+        "alignment": "Chaotic Good",
+        "type": "Celestial",
+        "size": "Large"
+    },
+    {
+        "name": "Lion",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=68",
+        "family": "Cat",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Living Landslide",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=183",
+        "family": "Elemental, Earth",
+        "level": 5,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Medium"
+    },
+    {
+        "name": "Living Sap",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=451",
+        "family": "\u2014",
+        "level": 6,
+        "alignment": "Neutral",
+        "type": "Ooze",
+        "size": "Medium"
+    },
+    {
+        "name": "Living Waterfall",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=197",
+        "family": "Elemental, Water",
+        "level": 5,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Large"
+    },
+    {
+        "name": "Living Whirlwind",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=178",
+        "family": "Elemental, Air",
+        "level": 5,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Medium"
+    },
+    {
+        "name": "Living Wildfire",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=188",
+        "family": "Elemental, Fire",
+        "level": 5,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Medium"
+    },
+    {
+        "name": "Lizardfolk Defender",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=291",
+        "family": "Lizardfolk",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Lizardfolk Scout",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=292",
+        "family": "Lizardfolk",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Lizardfolk Stargazer",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=293",
+        "family": "Lizardfolk",
+        "level": 2,
+        "alignment": "Neutral",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Lyrakien (Wanderer Azata)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=34",
+        "family": "Azata",
+        "level": 1,
+        "alignment": "Chaotic Good",
+        "type": "Celestial",
+        "size": "Tiny"
+    },
+    {
+        "name": "Mammoth",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=202",
+        "family": "Elephant",
+        "level": 10,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Huge"
+    },
+    {
+        "name": "Manticore",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=294",
+        "family": "\u2014",
+        "level": 6,
+        "alignment": "Lawful Evil",
+        "type": "Beast",
+        "size": "Large"
+    },
+    {
+        "name": "Marid",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=215",
+        "family": "Genie",
+        "level": 9,
+        "alignment": "Chaotic Neutral",
+        "type": "Elemental",
+        "size": "Large"
+    },
+    {
+        "name": "Marilith (Pride Demon)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=103",
+        "family": "Demon",
+        "level": 17,
+        "alignment": "Chaotic Evil",
+        "type": "Fiend",
+        "size": "Large"
+    },
+    {
+        "name": "Medusa",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=297",
+        "family": "\u2014",
+        "level": 7,
+        "alignment": "Lawful Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Megalodon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=366",
+        "family": "Shark",
+        "level": 9,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Megaprimatus",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=26",
+        "family": "Ape",
+        "level": 8,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Merfolk Warrior",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=298",
+        "family": "Merfolk",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Merfolk Wavecaller",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=299",
+        "family": "Merfolk",
+        "level": 2,
+        "alignment": "Neutral",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Mimic",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=300",
+        "family": "\u2014",
+        "level": 4,
+        "alignment": "Neutral",
+        "type": "Aberration",
+        "size": "Medium"
+    },
+    {
+        "name": "Minotaur",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=301",
+        "family": "\u2014",
+        "level": 4,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Large"
+    },
+    {
+        "name": "Mitflit",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=245",
+        "family": "Gremlin",
+        "level": -1,
+        "alignment": "Lawful Evil",
+        "type": "Fey",
+        "size": "Small"
+    },
+    {
+        "name": "Mokele-Mbembe",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=452",
+        "family": "\u2014",
+        "level": 9,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Huge"
+    },
+    {
+        "name": "Morrigna",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=340",
+        "family": "Psychopomp",
+        "level": 15,
+        "alignment": "Neutral",
+        "type": "Monitor",
+        "size": "Medium"
+    },
+    {
+        "name": "Mu Spore",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=302",
+        "family": "\u2014",
+        "level": 21,
+        "alignment": "Chaotic Evil",
+        "type": "Fungus",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Mukradi",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=303",
+        "family": "\u2014",
+        "level": 15,
+        "alignment": "Neutral",
+        "type": "Beast",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Mummy Guardian",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=304",
+        "family": "Mummy",
+        "level": 6,
+        "alignment": "Lawful Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Mummy Pharaoh",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=305",
+        "family": "Mummy",
+        "level": 9,
+        "alignment": "Lawful Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Naiad Queen",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=313",
+        "family": "Nymph",
+        "level": 7,
+        "alignment": "Chaotic Good",
+        "type": "Fey",
+        "size": "Medium"
+    },
+    {
+        "name": "Naiad",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=311",
+        "family": "Nymph",
+        "level": 1,
+        "alignment": "Chaotic Good",
+        "type": "Fey",
+        "size": "Medium"
+    },
+    {
+        "name": "Naunet",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=337",
+        "family": "Protean",
+        "level": 7,
+        "alignment": "Chaotic Neutral",
+        "type": "Monitor",
+        "size": "Large"
+    },
+    {
+        "name": "Nessian Warhound",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=260",
+        "family": "Hell Hound",
+        "level": 9,
+        "alignment": "Lawful Evil",
+        "type": "Beast",
+        "size": "Large"
+    },
+    {
+        "name": "Night Hag",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=257",
+        "family": "Hag",
+        "level": 9,
+        "alignment": "Neutral Evil",
+        "type": "Fiend",
+        "size": "Medium"
+    },
+    {
+        "name": "Nightmare",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=308",
+        "family": "Nightmare",
+        "level": 6,
+        "alignment": "Neutral Evil",
+        "type": "Beast",
+        "size": "Large"
+    },
+    {
+        "name": "Nilith",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=310",
+        "family": "\u2014",
+        "level": 10,
+        "alignment": "Neutral Evil",
+        "type": "Aberration",
+        "size": "Medium"
+    },
+    {
+        "name": "Nosoi",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=339",
+        "family": "Psychopomp",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Monitor",
+        "size": "Tiny"
+    },
+    {
+        "name": "Ochre Jelly",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=322",
+        "family": "Ooze",
+        "level": 5,
+        "alignment": "Neutral",
+        "type": "Ooze",
+        "size": "Large"
+    },
+    {
+        "name": "Ofalth",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=316",
+        "family": "\u2014",
+        "level": 10,
+        "alignment": "Chaotic Evil",
+        "type": "Aberration",
+        "size": "Large"
+    },
+    {
+        "name": "Ogre Boss",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=319",
+        "family": "Ogre",
+        "level": 7,
+        "alignment": "Chaotic Evil",
+        "type": "Giant",
+        "size": "Large"
+    },
+    {
+        "name": "Ogre Glutton",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=318",
+        "family": "Ogre",
+        "level": 4,
+        "alignment": "Chaotic Evil",
+        "type": "Giant",
+        "size": "Large"
+    },
+    {
+        "name": "Ogre Warrior",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=317",
+        "family": "Ogre",
+        "level": 3,
+        "alignment": "Chaotic Evil",
+        "type": "Giant",
+        "size": "Large"
+    },
+    {
+        "name": "Orc Brute",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=324",
+        "family": "Orc",
+        "level": 0,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Orc Warchief",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=326",
+        "family": "Orc",
+        "level": 2,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Orc Warrior",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=325",
+        "family": "Orc",
+        "level": 1,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Osyluth (Bone Devil)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=456",
+        "family": "Devil",
+        "level": 9,
+        "alignment": "Lawful Evil",
+        "type": "Fiend",
+        "size": "Large"
+    },
+    {
+        "name": "Otyugh",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=327",
+        "family": "\u2014",
+        "level": 4,
+        "alignment": "Neutral",
+        "type": "Aberration",
+        "size": "Large"
+    },
+    {
+        "name": "Owlbear",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=328",
+        "family": "\u2014",
+        "level": 4,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Pegasus",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=329",
+        "family": "\u2014",
+        "level": 3,
+        "alignment": "Neutral Good",
+        "type": "Beast",
+        "size": "Large"
+    },
+    {
+        "name": "Phistophilus (Contract Devil)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=112",
+        "family": "Devil",
+        "level": 10,
+        "alignment": "Lawful Evil",
+        "type": "Fiend",
+        "size": "Medium"
+    },
+    {
+        "name": "Phoenix",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=330",
+        "family": "\u2014",
+        "level": 15,
+        "alignment": "Neutral Good",
+        "type": "Beast",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Pit Fiend (Tyrant Devil)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=114",
+        "family": "Devil",
+        "level": 20,
+        "alignment": "Lawful Evil",
+        "type": "Fiend",
+        "size": "Large"
+    },
+    {
+        "name": "Pixie",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=391",
+        "family": "Sprite",
+        "level": 4,
+        "alignment": "Chaotic Neutral",
+        "type": "Fey",
+        "size": "Small"
+    },
+    {
+        "name": "Plague Zombie",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=424",
+        "family": "Zombie",
+        "level": 1,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Pleroma",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=11",
+        "family": "Aeon",
+        "level": 20,
+        "alignment": "Lawful Neutral",
+        "type": "Monitor",
+        "size": "Large"
+    },
+    {
+        "name": "Poltergeist",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=334",
+        "family": "\u2014",
+        "level": 5,
+        "alignment": "Lawful Evil",
+        "type": "Spirit",
+        "size": "Medium"
+    },
+    {
+        "name": "Poracha",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=335",
+        "family": "\u2014",
+        "level": 4,
+        "alignment": "Neutral",
+        "type": "Beast",
+        "size": "Medium"
+    },
+    {
+        "name": "Precentor",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=463",
+        "family": "Velstrac",
+        "level": 16,
+        "alignment": "Lawful Evil",
+        "type": "Fiend",
+        "size": "Medium"
+    },
+    {
+        "name": "Pteranodon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=341",
+        "family": "Pterosaur",
+        "level": 2,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Pugwampi",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=246",
+        "family": "Gremlin",
+        "level": 0,
+        "alignment": "Neutral Evil",
+        "type": "Fey",
+        "size": "Tiny"
+    },
+    {
+        "name": "Purple Worm",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=73",
+        "family": "Cave Worm",
+        "level": 13,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Quasit",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=97",
+        "family": "Demon",
+        "level": 1,
+        "alignment": "Chaotic Evil",
+        "type": "Fiend",
+        "size": "Tiny"
+    },
+    {
+        "name": "Quatoid",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=198",
+        "family": "Elemental, Water",
+        "level": 7,
+        "alignment": "Lawful Neutral",
+        "type": "Elemental",
+        "size": "Small"
+    },
+    {
+        "name": "Quelaunt",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=343",
+        "family": "\u2014",
+        "level": 15,
+        "alignment": "Chaotic Evil",
+        "type": "Aberration",
+        "size": "Large"
+    },
+    {
+        "name": "Quetzalcoatlus",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=342",
+        "family": "Pterosaur",
+        "level": 7,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Huge"
+    },
+    {
+        "name": "Raja Rakshasa",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=345",
+        "family": "Rakshasa",
+        "level": 10,
+        "alignment": "Lawful Evil",
+        "type": "Fiend",
+        "size": "Medium"
+    },
+    {
+        "name": "Rat Swarm",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=347",
+        "family": "Rat",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Ratfolk Grenadier",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=348",
+        "family": "Ratfolk",
+        "level": 4,
+        "alignment": "Lawful Neutral",
+        "type": "Humanoid",
+        "size": "Small"
+    },
+    {
+        "name": "Redcap",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=349",
+        "family": "\u2014",
+        "level": 5,
+        "alignment": "Chaotic Evil",
+        "type": "Fey",
+        "size": "Small"
+    },
+    {
+        "name": "Reefclaw",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=350",
+        "family": "\u2014",
+        "level": 1,
+        "alignment": "Chaotic Neutral",
+        "type": "Aberration",
+        "size": "Small"
+    },
+    {
+        "name": "Remnant of Barzillai",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=458",
+        "family": "\u2014",
+        "level": 10,
+        "alignment": "Lawful Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Remorhaz",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=351",
+        "family": "\u2014",
+        "level": 7,
+        "alignment": "Neutral",
+        "type": "Beast",
+        "size": "Huge"
+    },
+    {
+        "name": "Riding Dog",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=125",
+        "family": "Dog",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "Riding Horse",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=266",
+        "family": "Horse",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Riding Pony",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=265",
+        "family": "Horse",
+        "level": 0,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "River Drake",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=159",
+        "family": "Drake",
+        "level": 3,
+        "alignment": "Neutral Evil",
+        "type": "Dragon",
+        "size": "Medium"
+    },
+    {
+        "name": "Roc",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=352",
+        "family": "\u2014",
+        "level": 9,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Roper",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=353",
+        "family": "\u2014",
+        "level": 10,
+        "alignment": "Chaotic Evil",
+        "type": "Aberration",
+        "size": "Large"
+    },
+    {
+        "name": "Rune Giant",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=226",
+        "family": "Giant",
+        "level": 16,
+        "alignment": "Lawful Evil",
+        "type": "Giant",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Rusalka",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=459",
+        "family": "\u2014",
+        "level": 12,
+        "alignment": "Neutral Evil",
+        "type": "Fey",
+        "size": "Medium"
+    },
+    {
+        "name": "Rust Monster",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=354",
+        "family": "\u2014",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Aberration",
+        "size": "Medium"
+    },
+    {
+        "name": "Sabosan",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=453",
+        "family": "\u2014",
+        "level": 5,
+        "alignment": "Neutral Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Salamander",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=189",
+        "family": "Elemental, Fire",
+        "level": 7,
+        "alignment": "Chaotic Evil",
+        "type": "Elemental",
+        "size": "Medium"
+    },
+    {
+        "name": "Satyr",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=355",
+        "family": "\u2014",
+        "level": 4,
+        "alignment": "Chaotic Neutral",
+        "type": "Fey",
+        "size": "Medium"
+    },
+    {
+        "name": "Scorpion Swarm",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=357",
+        "family": "Scorpion",
+        "level": 4,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Sea Devil Baron",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=360",
+        "family": "Sea Devil",
+        "level": 6,
+        "alignment": "Lawful Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Sea Devil Brute",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=359",
+        "family": "Sea Devil",
+        "level": 4,
+        "alignment": "Lawful Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Sea Devil Scout",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=358",
+        "family": "Sea Devil",
+        "level": 2,
+        "alignment": "Lawful Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Sea Hag",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=254",
+        "family": "Hag",
+        "level": 3,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Sea Serpent",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=361",
+        "family": "\u2014",
+        "level": 12,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Sewer Ooze",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=320",
+        "family": "Ooze",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Ooze",
+        "size": "Medium"
+    },
+    {
+        "name": "Shadow Giant",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=457",
+        "family": "Giant",
+        "level": 13,
+        "alignment": "Lawful Evil",
+        "type": "Giant",
+        "size": "Large"
+    },
+    {
+        "name": "Shadow",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=362",
+        "family": "Shadow",
+        "level": 4,
+        "alignment": "Chaotic Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Shaitan",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=213",
+        "family": "Genie",
+        "level": 7,
+        "alignment": "Lawful Neutral",
+        "type": "Elemental",
+        "size": "Large"
+    },
+    {
+        "name": "Shambler",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=364",
+        "family": "\u2014",
+        "level": 6,
+        "alignment": "Neutral",
+        "type": "Plant",
+        "size": "Large"
+    },
+    {
+        "name": "Shemhazian (Mutilation Demon)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=102",
+        "family": "Demon",
+        "level": 16,
+        "alignment": "Chaotic Evil",
+        "type": "Fiend",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Shield Archon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=33",
+        "family": "Archon",
+        "level": 10,
+        "alignment": "Lawful Good",
+        "type": "Celestial",
+        "size": "Large"
+    },
+    {
+        "name": "Shining Child",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=367",
+        "family": "\u2014",
+        "level": 12,
+        "alignment": "Chaotic Evil",
+        "type": "Astral",
+        "size": "Medium"
+    },
+    {
+        "name": "Shoggoth",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=368",
+        "family": "\u2014",
+        "level": 18,
+        "alignment": "Chaotic Evil",
+        "type": "Aberration",
+        "size": "Huge"
+    },
+    {
+        "name": "Shuln",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=369",
+        "family": "\u2014",
+        "level": 12,
+        "alignment": "Neutral",
+        "type": "Beast",
+        "size": "Huge"
+    },
+    {
+        "name": "Simurgh",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=370",
+        "family": "\u2014",
+        "level": 18,
+        "alignment": "Neutral Good",
+        "type": "Beast",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Sinspawn",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=371",
+        "family": "\u2014",
+        "level": 2,
+        "alignment": "Neutral Evil",
+        "type": "Aberration",
+        "size": "Medium"
+    },
+    {
+        "name": "Skeletal Champion",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=373",
+        "family": "Skeleton",
+        "level": 2,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Skeletal Giant",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=375",
+        "family": "Skeleton",
+        "level": 3,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Large"
+    },
+    {
+        "name": "Skeletal Horse",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=374",
+        "family": "Skeleton",
+        "level": 2,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Large"
+    },
+    {
+        "name": "Skeletal Hulk",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=376",
+        "family": "Skeleton",
+        "level": 7,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Huge"
+    },
+    {
+        "name": "Skeleton Guard",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=372",
+        "family": "Skeleton",
+        "level": -1,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Skulltaker",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=377",
+        "family": "\u2014",
+        "level": 18,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Huge"
+    },
+    {
+        "name": "Skum (Ulat-Kini)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=3",
+        "family": "Alghollthu",
+        "level": 2,
+        "alignment": "Lawful Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Slurk",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=378",
+        "family": "\u2014",
+        "level": 2,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "Smilodon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=70",
+        "family": "Cat",
+        "level": 6,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Snapping Flytrap",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=208",
+        "family": "Flytrap",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Plant",
+        "size": "Large"
+    },
+    {
+        "name": "Sod Hound",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=182",
+        "family": "Elemental, Earth",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Small"
+    },
+    {
+        "name": "Soulbound Doll",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=383",
+        "family": "\u2014",
+        "level": 2,
+        "alignment": "Any",
+        "type": "Construct",
+        "size": "Tiny"
+    },
+    {
+        "name": "Soulbound Ruin",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=475",
+        "family": "\u2014",
+        "level": 15,
+        "alignment": "Neutral Evil",
+        "type": "Construct",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Sphinx",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=384",
+        "family": "\u2014",
+        "level": 8,
+        "alignment": "Neutral",
+        "type": "Beast",
+        "size": "Large"
+    },
+    {
+        "name": "Spider Swarm",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=385",
+        "family": "Spider",
+        "level": 0,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Sprite",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=389",
+        "family": "Sprite",
+        "level": -1,
+        "alignment": "Chaotic Neutral",
+        "type": "Fey",
+        "size": "Tiny"
+    },
+    {
+        "name": "Stegosaurus",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=120",
+        "family": "Dinosaur",
+        "level": 7,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Huge"
+    },
+    {
+        "name": "Stone Giant",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=221",
+        "family": "Giant",
+        "level": 8,
+        "alignment": "Neutral",
+        "type": "Giant",
+        "size": "Large"
+    },
+    {
+        "name": "Stone Golem",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=241",
+        "family": "Golem",
+        "level": 11,
+        "alignment": "Neutral",
+        "type": "Construct",
+        "size": "Large"
+    },
+    {
+        "name": "Stone Mauler",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=185",
+        "family": "Elemental, Earth",
+        "level": 9,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Large"
+    },
+    {
+        "name": "Storm Giant",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=225",
+        "family": "Giant",
+        "level": 13,
+        "alignment": "Chaotic Good",
+        "type": "Giant",
+        "size": "Huge"
+    },
+    {
+        "name": "Storm Lord",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=180",
+        "family": "Elemental, Air",
+        "level": 9,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Large"
+    },
+    {
+        "name": "Succubus (Lust Demon)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=98",
+        "family": "Demon",
+        "level": 7,
+        "alignment": "Chaotic Evil",
+        "type": "Fiend",
+        "size": "Medium"
+    },
+    {
+        "name": "Tarn Linnorm",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=286",
+        "family": "Linnorm",
+        "level": 20,
+        "alignment": "Chaotic Evil",
+        "type": "Dragon",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Tengu Sneak",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=392",
+        "family": "\u2014",
+        "level": 2,
+        "alignment": "Chaotic Neutral",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Terotricus",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=393",
+        "family": "\u2014",
+        "level": 19,
+        "alignment": "Chaotic Evil",
+        "type": "Fungus",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Tidal Master",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=199",
+        "family": "Elemental, Water",
+        "level": 9,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Large"
+    },
+    {
+        "name": "Tiefling Adept",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=331",
+        "family": "Planar Scion",
+        "level": 3,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Tiger",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=69",
+        "family": "Cat",
+        "level": 4,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Tixitog",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=438",
+        "family": "\u2014",
+        "level": 3,
+        "alignment": "Neutral Evil",
+        "type": "Aberration",
+        "size": "Medium"
+    },
+    {
+        "name": "Tor Linnorm",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=287",
+        "family": "Linnorm",
+        "level": 21,
+        "alignment": "Chaotic Evil",
+        "type": "Dragon",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Treerazer",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=394",
+        "family": "\u2014",
+        "level": 25,
+        "alignment": "Chaotic Evil",
+        "type": "Fiend",
+        "size": "Huge"
+    },
+    {
+        "name": "Triceratops",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=121",
+        "family": "Dinosaur",
+        "level": 8,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Huge"
+    },
+    {
+        "name": "Troll King",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=396",
+        "family": "Troll",
+        "level": 10,
+        "alignment": "Chaotic Evil",
+        "type": "Giant",
+        "size": "Large"
+    },
+    {
+        "name": "Troll",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=395",
+        "family": "Troll",
+        "level": 5,
+        "alignment": "Chaotic Evil",
+        "type": "Giant",
+        "size": "Large"
+    },
+    {
+        "name": "Tyrannosaurus",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=123",
+        "family": "Dinosaur",
+        "level": 10,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Unicorn",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=397",
+        "family": "\u2014",
+        "level": 3,
+        "alignment": "Chaotic Good",
+        "type": "Beast",
+        "size": "Large"
+    },
+    {
+        "name": "Unseen Servant",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=1",
+        "family": "\u2014",
+        "level": -1,
+        "alignment": "No Alignment",
+        "type": "\u2014",
+        "size": "Medium"
+    },
+    {
+        "name": "Uthul",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=398",
+        "family": "\u2014",
+        "level": 14,
+        "alignment": "Chaotic Evil",
+        "type": "Elemental",
+        "size": "Huge"
+    },
+    {
+        "name": "Vampire Bat Swarm",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=45",
+        "family": "Bat",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Vampire Count",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=400",
+        "family": "Vampire",
+        "level": 6,
+        "alignment": "Chaotic Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Vampire Mastermind",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=401",
+        "family": "Vampire",
+        "level": 9,
+        "alignment": "Chaotic Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Vampire Spawn Rogue",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=399",
+        "family": "Vampire",
+        "level": 4,
+        "alignment": "Chaotic Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Veiled Master (Vidileth)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=5",
+        "family": "Alghollthu",
+        "level": 14,
+        "alignment": "Lawful Evil",
+        "type": "Aberration",
+        "size": "Large"
+    },
+    {
+        "name": "Velociraptor",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=117",
+        "family": "Dinosaur",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Small"
+    },
+    {
+        "name": "Vine Lasher",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=428",
+        "family": "Deadly Flora",
+        "level": 0,
+        "alignment": "Neutral",
+        "type": "Plant",
+        "size": "Small"
+    },
+    {
+        "name": "Viper",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=379",
+        "family": "Snake",
+        "level": -1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Tiny"
+    },
+    {
+        "name": "Voidworm",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=336",
+        "family": "Protean",
+        "level": 1,
+        "alignment": "Chaotic Neutral",
+        "type": "Monitor",
+        "size": "Tiny"
+    },
+    {
+        "name": "Vrock (Wrath Demon)",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=100",
+        "family": "Demon",
+        "level": 9,
+        "alignment": "Chaotic Evil",
+        "type": "Fiend",
+        "size": "Large"
+    },
+    {
+        "name": "War Horse",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=268",
+        "family": "Horse",
+        "level": 2,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "War Pony",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=267",
+        "family": "Horse",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "Warg",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=402",
+        "family": "Warg",
+        "level": 2,
+        "alignment": "Neutral Evil",
+        "type": "Beast",
+        "size": "Medium"
+    },
+    {
+        "name": "Warsworn",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=404",
+        "family": "\u2014",
+        "level": 16,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Gargantuan"
+    },
+    {
+        "name": "Wasp Swarm",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=406",
+        "family": "Wasp",
+        "level": 4,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Large"
+    },
+    {
+        "name": "Water Mephit",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=195",
+        "family": "Elemental, Mephit",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Small"
+    },
+    {
+        "name": "Web Lurker",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=407",
+        "family": "\u2014",
+        "level": 3,
+        "alignment": "Neutral Evil",
+        "type": "Aberration",
+        "size": "Medium"
+    },
+    {
+        "name": "Wemmuth",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=408",
+        "family": "\u2014",
+        "level": 15,
+        "alignment": "Neutral Evil",
+        "type": "Plant",
+        "size": "Huge"
+    },
+    {
+        "name": "Wendigo",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=409",
+        "family": "\u2014",
+        "level": 17,
+        "alignment": "Chaotic Evil",
+        "type": "Beast",
+        "size": "Large"
+    },
+    {
+        "name": "Werebear",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=412",
+        "family": "Werecreature",
+        "level": 4,
+        "alignment": "Lawful Good",
+        "type": "Beast",
+        "size": "Large"
+    },
+    {
+        "name": "Wererat",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=410",
+        "family": "Werecreature",
+        "level": 2,
+        "alignment": "Lawful Evil",
+        "type": "Beast",
+        "size": "Medium"
+    },
+    {
+        "name": "Werewolf",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=411",
+        "family": "Werecreature",
+        "level": 3,
+        "alignment": "Chaotic Evil",
+        "type": "Beast",
+        "size": "Medium"
+    },
+    {
+        "name": "Wight",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=413",
+        "family": "\u2014",
+        "level": 3,
+        "alignment": "Lawful Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Will-o\u2019-Wisp",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=414",
+        "family": "\u2014",
+        "level": 6,
+        "alignment": "Chaotic Evil",
+        "type": "Aberration",
+        "size": "Small"
+    },
+    {
+        "name": "Winter Wolf",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=403",
+        "family": "Warg",
+        "level": 5,
+        "alignment": "Neutral Evil",
+        "type": "Beast",
+        "size": "Large"
+    },
+    {
+        "name": "Wolf",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=415",
+        "family": "Wolf",
+        "level": 1,
+        "alignment": "Neutral",
+        "type": "Animal",
+        "size": "Medium"
+    },
+    {
+        "name": "Wraith",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=417",
+        "family": "\u2014",
+        "level": 6,
+        "alignment": "Lawful Evil",
+        "type": "Undead",
+        "size": "Medium"
+    },
+    {
+        "name": "Wyvern",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=162",
+        "family": "Drake",
+        "level": 6,
+        "alignment": "Neutral Evil",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Xorn",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=184",
+        "family": "Elemental, Earth",
+        "level": 7,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Medium"
+    },
+    {
+        "name": "Xulgath Leader",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=420",
+        "family": "Xulgath",
+        "level": 3,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Xulgath Skulker",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=419",
+        "family": "Xulgath",
+        "level": 2,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Xulgath Warrior",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=418",
+        "family": "Xulgath",
+        "level": 1,
+        "alignment": "Chaotic Evil",
+        "type": "Humanoid",
+        "size": "Medium"
+    },
+    {
+        "name": "Yeti",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=421",
+        "family": "\u2014",
+        "level": 5,
+        "alignment": "Neutral",
+        "type": "Humanoid",
+        "size": "Large"
+    },
+    {
+        "name": "Young Black Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=127",
+        "family": "Dragon, Chromatic",
+        "level": 7,
+        "alignment": "Chaotic Evil",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Young Blue Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=130",
+        "family": "Dragon, Chromatic",
+        "level": 9,
+        "alignment": "Lawful Evil",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Young Brass Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=142",
+        "family": "Dragon, Metallic",
+        "level": 7,
+        "alignment": "Chaotic Good",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Young Bronze Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=145",
+        "family": "Dragon, Metallic",
+        "level": 9,
+        "alignment": "Lawful Good",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Young Copper Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=148",
+        "family": "Dragon, Metallic",
+        "level": 8,
+        "alignment": "Chaotic Good",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Young Gold Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=151",
+        "family": "Dragon, Metallic",
+        "level": 11,
+        "alignment": "Lawful Good",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Young Green Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=133",
+        "family": "Dragon, Chromatic",
+        "level": 8,
+        "alignment": "Lawful Evil",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Young Magma Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=469",
+        "family": "Dragon, Magma",
+        "level": 9,
+        "alignment": "Chaotic Neutral",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Young Red Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=136",
+        "family": "Dragon, Chromatic",
+        "level": 10,
+        "alignment": "Chaotic Evil",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Young Silver Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=154",
+        "family": "Dragon, Metallic",
+        "level": 10,
+        "alignment": "Lawful Good",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Young White Dragon",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=139",
+        "family": "Dragon, Chromatic",
+        "level": 6,
+        "alignment": "Chaotic Evil",
+        "type": "Dragon",
+        "size": "Large"
+    },
+    {
+        "name": "Zaramuun",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=422",
+        "family": "\u2014",
+        "level": 16,
+        "alignment": "Chaotic Evil",
+        "type": "Elemental",
+        "size": "Large"
+    },
+    {
+        "name": "Zephyr Hawk",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=177",
+        "family": "Elemental, Air",
+        "level": 3,
+        "alignment": "Neutral",
+        "type": "Elemental",
+        "size": "Small"
+    },
+    {
+        "name": "Zombie Brute",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=425",
+        "family": "Zombie",
+        "level": 2,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Large"
+    },
+    {
+        "name": "Zombie Hulk",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=426",
+        "family": "Zombie",
+        "level": 6,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Huge"
+    },
+    {
+        "name": "Zombie Shambler",
+        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=423",
+        "family": "Zombie",
+        "level": -1,
+        "alignment": "Neutral Evil",
+        "type": "Undead",
+        "size": "Medium"
+    }
+]
