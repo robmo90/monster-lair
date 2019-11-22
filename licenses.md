@@ -1,0 +1,1 @@
+* Icons by Lorc (http://lorcblog.blogspot.com/) & Delapouite (http://delapouite.com/) under CC BY 3.0 from game-icons.net

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Monster Lair</string>
+
+    <string name="monster_item_caption">%s \u2014 Level: %d</string>
+    <string name="monster_search">Search</string>
+    <string name="monster_level_range">Level Range</string>
+    <string name="monster_level_range_values">Level Range: %d - %d</string>
+
 </resources>

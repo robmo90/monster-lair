@@ -6,6 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+
 android {
 
     compileSdkVersion 29
@@ -30,6 +31,11 @@ android {
 
     }
 
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+
     viewBinding {
         enabled = true
     }
@@ -42,11 +48,12 @@ dependencies {
     implementation "io.coil-kt:coil:0.8.0"
     implementation 'com.squareup.retrofit2:retrofit:2.6.0'
     implementation "com.squareup.moshi:moshi-kotlin:1.9.1"
-    implementation "com.squareup.moshi:moshi-kotlin-codegen:1.9.1"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:1.9.1"
     implementation "com.squareup.moshi:moshi:1.9.1"
 
     implementation 'com.google.android.material:material:1.2.0-alpha01'
     implementation 'androidx.navigation:navigation-fragment:2.1.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0-rc02'
 
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.2'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.2'
@@ -54,7 +61,8 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.1.0'
     implementation 'androidx.fragment:fragment-ktx:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-
+    implementation 'io.apptik.widget:multislider:1.3'
+    implementation "com.mikepenz:aboutlibraries:7.0.4"
 
     // Koin for Android
     implementation 'org.koin:koin-android:2.0.1'
