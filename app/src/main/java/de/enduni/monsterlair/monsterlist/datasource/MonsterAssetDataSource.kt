@@ -5,6 +5,7 @@ import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import de.enduni.monsterlair.R
+import de.enduni.monsterlair.monsterlist.domain.MonsterTypeAdapter
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 
@@ -14,7 +15,9 @@ class MonsterAssetDataSource(private val context: Context) : MonsterDataSource {
 
     init {
         val type = Types.newParameterizedType(List::class.java, MonsterDto::class.java)
-        jsonAdapter = Moshi.Builder().build().adapter<List<MonsterDto>>(type)
+        jsonAdapter = Moshi.Builder()
+            .add(MonsterTypeAdapter())
+            .build().adapter<List<MonsterDto>>(type)
     }
 
     override suspend fun getMonsters(): Flow<List<MonsterDto>> {

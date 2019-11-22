@@ -1,11 +1,11 @@
 [
     {
-        "name": "Aasimar Redeemer",
+      "name": "Aasimar",
         "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=333",
         "family": "Planar Scion",
         "level": 5,
         "alignment": "Neutral Good",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -14,8 +14,8 @@
         "family": "Golem",
         "level": 18,
         "alignment": "Neutral",
-        "type": "Construct",
-        "size": "Large"
+      "type": "CONSTRUCT",
+      "size": "Huge"
     },
     {
         "name": "Adult Black Dragon",
@@ -23,7 +23,7 @@
         "family": "Dragon, Chromatic",
         "level": 11,
         "alignment": "Chaotic Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -32,7 +32,7 @@
         "family": "Dragon, Chromatic",
         "level": 13,
         "alignment": "Lawful Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Huge"
     },
     {
@@ -41,7 +41,7 @@
         "family": "Dragon, Metallic",
         "level": 11,
         "alignment": "Chaotic Good",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -50,7 +50,7 @@
         "family": "Dragon, Metallic",
         "level": 13,
         "alignment": "Lawful Good",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Huge"
     },
     {
@@ -59,7 +59,7 @@
         "family": "Dragon, Metallic",
         "level": 12,
         "alignment": "Chaotic Good",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -68,7 +68,7 @@
         "family": "Dragon, Metallic",
         "level": 15,
         "alignment": "Lawful Good",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Huge"
     },
     {
@@ -77,7 +77,7 @@
         "family": "Dragon, Chromatic",
         "level": 12,
         "alignment": "Lawful Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Huge"
     },
     {
@@ -86,7 +86,7 @@
         "family": "Dragon, Magma",
         "level": 13,
         "alignment": "Chaotic Neutral",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Huge"
     },
     {
@@ -95,7 +95,7 @@
         "family": "Dragon, Chromatic",
         "level": 14,
         "alignment": "Chaotic Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Huge"
     },
     {
@@ -104,7 +104,7 @@
         "family": "Dragon, Metallic",
         "level": 14,
         "alignment": "Lawful Good",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Huge"
     },
     {
@@ -113,7 +113,7 @@
         "family": "Dragon, Chromatic",
         "level": 10,
         "alignment": "Chaotic Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -122,7 +122,7 @@
         "family": "Elemental, Mephit",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Small"
     },
     {
@@ -131,7 +131,7 @@
         "family": "Golem",
         "level": 9,
         "alignment": "Neutral",
-        "type": "Construct",
+      "type": "CONSTRUCT",
         "size": "Large"
     },
     {
@@ -140,16 +140,25 @@
         "family": "Alghollthu",
         "level": 7,
         "alignment": "Lawful Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Huge"
     },
     {
+      "name": "Aluum Enforcer",
+      "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=476",
+      "family": "Aluum",
+      "level": 10,
+      "alignment": "Neutral",
+      "type": "CONSTRUCT",
+      "size": "Large"
+    },
+  {
         "name": "Anadi Elder",
         "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=432",
         "family": "Anadi",
         "level": 6,
         "alignment": "Chaotic Good",
-        "type": "Humanoid",
+    "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -158,7 +167,7 @@
         "family": "Anadi",
         "level": 2,
         "alignment": "Chaotic Good",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -167,7 +176,7 @@
         "family": "Anadi",
         "level": 4,
         "alignment": "Chaotic Good",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -176,7 +185,7 @@
         "family": "Dragon, Chromatic",
         "level": 16,
         "alignment": "Chaotic Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Huge"
     },
     {
@@ -185,7 +194,7 @@
         "family": "Dragon, Chromatic",
         "level": 18,
         "alignment": "Lawful Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Huge"
     },
     {
@@ -194,7 +203,7 @@
         "family": "Dragon, Metallic",
         "level": 16,
         "alignment": "Chaotic Good",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Huge"
     },
     {
@@ -203,7 +212,7 @@
         "family": "Dragon, Metallic",
         "level": 18,
         "alignment": "Lawful Good",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Gargantuan"
     },
     {
@@ -212,7 +221,7 @@
         "family": "Dragon, Metallic",
         "level": 17,
         "alignment": "Chaotic Good",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Huge"
     },
     {
@@ -221,7 +230,7 @@
         "family": "Dragon, Metallic",
         "level": 20,
         "alignment": "Lawful Good",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Gargantuan"
     },
     {
@@ -230,7 +239,7 @@
         "family": "Dragon, Chromatic",
         "level": 17,
         "alignment": "Lawful Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Gargantuan"
     },
     {
@@ -239,7 +248,7 @@
         "family": "Dragon, Magma",
         "level": 18,
         "alignment": "Chaotic Neutral",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Gargantuan"
     },
     {
@@ -248,7 +257,7 @@
         "family": "Dragon, Chromatic",
         "level": 19,
         "alignment": "Chaotic Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Huge"
     },
     {
@@ -257,7 +266,7 @@
         "family": "Dragon, Metallic",
         "level": 19,
         "alignment": "Lawful Good",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Gargantuan"
     },
     {
@@ -266,7 +275,7 @@
         "family": "Dragon, Chromatic",
         "level": 15,
         "alignment": "Chaotic Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Huge"
     },
     {
@@ -275,7 +284,7 @@
         "family": "Animated Object",
         "level": 2,
         "alignment": "Neutral",
-        "type": "Construct",
+      "type": "CONSTRUCT",
         "size": "Medium"
     },
     {
@@ -284,7 +293,7 @@
         "family": "Animated Object",
         "level": -1,
         "alignment": "Neutral",
-        "type": "Construct",
+      "type": "CONSTRUCT",
         "size": "Small"
     },
     {
@@ -293,7 +302,7 @@
         "family": "Animated Object",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Construct",
+      "type": "CONSTRUCT",
         "size": "Medium"
     },
     {
@@ -302,7 +311,7 @@
         "family": "Ankhrav",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -311,7 +320,7 @@
         "family": "Dinosaur",
         "level": 6,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Huge"
     },
     {
@@ -320,7 +329,7 @@
         "family": "Hag",
         "level": 6,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Large"
     },
     {
@@ -329,7 +338,7 @@
         "family": "Aeon",
         "level": 1,
         "alignment": "Lawful Neutral",
-        "type": "Monitor",
+      "type": "MONITOR",
         "size": "Tiny"
     },
     {
@@ -338,7 +347,7 @@
         "family": "Arboreal",
         "level": 8,
         "alignment": "Neutral Good",
-        "type": "Plant",
+      "type": "PLANT",
         "size": "Huge"
     },
     {
@@ -347,7 +356,7 @@
         "family": "Arboreal",
         "level": 4,
         "alignment": "Neutral Good",
-        "type": "Plant",
+      "type": "PLANT",
         "size": "Large"
     },
     {
@@ -356,7 +365,7 @@
         "family": "\u2014",
         "level": 6,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Large"
     },
     {
@@ -365,7 +374,7 @@
         "family": "Daemon",
         "level": 16,
         "alignment": "Neutral Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Large"
     },
     {
@@ -374,7 +383,7 @@
         "family": "Angel",
         "level": 14,
         "alignment": "Neutral Good",
-        "type": "Celestial",
+      "type": "CELESTIAL",
         "size": "Medium"
     },
     {
@@ -383,7 +392,7 @@
         "family": "Velstrac",
         "level": 1,
         "alignment": "Lawful Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Tiny"
     },
     {
@@ -392,7 +401,7 @@
         "family": "Arboreal",
         "level": 6,
         "alignment": "Neutral",
-        "type": "Plant",
+      "type": "PLANT",
         "size": "Huge"
     },
     {
@@ -401,7 +410,7 @@
         "family": "Aeon",
         "level": 8,
         "alignment": "Lawful Neutral",
-        "type": "Monitor",
+      "type": "MONITOR",
         "size": "Medium"
     },
     {
@@ -410,7 +419,7 @@
         "family": "Cave Worm",
         "level": 15,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Gargantuan"
     },
     {
@@ -419,7 +428,7 @@
         "family": "Angel",
         "level": 8,
         "alignment": "Neutral Good",
-        "type": "Celestial",
+      "type": "CELESTIAL",
         "size": "Medium"
     },
     {
@@ -428,7 +437,7 @@
         "family": "Snake",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -437,17 +446,8 @@
         "family": "Demon",
         "level": 20,
         "alignment": "Chaotic Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Large"
-    },
-    {
-        "name": "Banshee",
-        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=39",
-        "family": "\u2014",
-        "level": 17,
-        "alignment": "Chaotic Evil",
-        "type": "Spirit",
-        "size": "Medium"
     },
     {
         "name": "Baomel",
@@ -455,7 +455,7 @@
         "family": "\u2014",
         "level": 20,
         "alignment": "Chaotic Neutral",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Gargantuan"
     },
     {
@@ -464,7 +464,7 @@
         "family": "Devil",
         "level": 5,
         "alignment": "Lawful Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Medium"
     },
     {
@@ -473,7 +473,7 @@
         "family": "Barghest",
         "level": 4,
         "alignment": "Chaotic Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Medium"
     },
     {
@@ -482,7 +482,7 @@
         "family": "\u2014",
         "level": 5,
         "alignment": "Neutral",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Medium"
     },
     {
@@ -491,7 +491,7 @@
         "family": "\u2014",
         "level": 8,
         "alignment": "Lawful Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Huge"
     },
     {
@@ -500,7 +500,7 @@
         "family": "Biloko",
         "level": 4,
         "alignment": "Neutral Evil",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Small"
     },
     {
@@ -509,7 +509,7 @@
         "family": "Biloko",
         "level": 1,
         "alignment": "Neutral Evil",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Small"
     },
     {
@@ -518,7 +518,7 @@
         "family": "Ooze",
         "level": 7,
         "alignment": "Neutral",
-        "type": "Ooze",
+      "type": "OOZE",
         "size": "Huge"
     },
     {
@@ -527,7 +527,7 @@
         "family": "\u2014",
         "level": 6,
         "alignment": "Neutral Evil",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -536,7 +536,7 @@
         "family": "Ooze",
         "level": 4,
         "alignment": "Neutral",
-        "type": "Ooze",
+      "type": "OOZE",
         "size": "Large"
     },
     {
@@ -545,7 +545,7 @@
         "family": "Deadly Flora",
         "level": 2,
         "alignment": "Neutral",
-        "type": "Plant",
+      "type": "PLANT",
         "size": "Small"
     },
     {
@@ -554,7 +554,7 @@
         "family": "\u2014",
         "level": -1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Tiny"
     },
     {
@@ -563,7 +563,7 @@
         "family": "Boar",
         "level": 2,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -572,7 +572,7 @@
         "family": "Boggard",
         "level": 1,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -581,7 +581,7 @@
         "family": "Boggard",
         "level": 3,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -590,7 +590,7 @@
         "family": "Boggard",
         "level": 2,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -599,7 +599,7 @@
         "family": "\u2014",
         "level": 8,
         "alignment": "Chaotic Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Large"
     },
     {
@@ -608,7 +608,7 @@
         "family": "Elemental, Water",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Medium"
     },
     {
@@ -617,7 +617,7 @@
         "family": "Dinosaur",
         "level": 10,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Gargantuan"
     },
     {
@@ -626,7 +626,7 @@
         "family": "Bugbear",
         "level": 2,
         "alignment": "Neutral Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -635,7 +635,7 @@
         "family": "Bugbear",
         "level": 3,
         "alignment": "Neutral Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -644,7 +644,7 @@
         "family": "\u2014",
         "level": 8,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Huge"
     },
     {
@@ -653,7 +653,7 @@
         "family": "\u2014",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -662,7 +662,7 @@
         "family": "Daemon",
         "level": 1,
         "alignment": "Neutral Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Tiny"
     },
     {
@@ -671,7 +671,7 @@
         "family": "Caligni",
         "level": 2,
         "alignment": "Chaotic Neutral",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -680,7 +680,7 @@
         "family": "Caligni",
         "level": 1,
         "alignment": "Chaotic Neutral",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -689,8 +689,17 @@
         "family": "Caligni",
         "level": 4,
         "alignment": "Chaotic Neutral",
-        "type": "Humanoid",
-        "size": "Small"
+      "type": "HUMANOID",
+      "size": "Medium"
+    },
+  {
+    "name": "Calikang",
+    "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=478",
+    "family": "\u2014",
+    "level": 12,
+    "alignment": "Lawful Neutral",
+    "type": "HUMANOID",
+    "size": "Large"
     },
     {
         "name": "Carnivorous Crystal",
@@ -698,7 +707,7 @@
         "family": "\u2014",
         "level": 11,
         "alignment": "Neutral",
-        "type": "Ooze",
+      "type": "OOZE",
         "size": "Medium"
     },
     {
@@ -707,7 +716,7 @@
         "family": "Angel",
         "level": 1,
         "alignment": "Neutral Good",
-        "type": "Celestial",
+      "type": "CELESTIAL",
         "size": "Tiny"
     },
     {
@@ -716,7 +725,7 @@
         "family": "Catfolk",
         "level": 1,
         "alignment": "Chaotic Good",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -725,7 +734,7 @@
         "family": "\u2014",
         "level": 12,
         "alignment": "Neutral",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Medium"
     },
     {
@@ -734,7 +743,7 @@
         "family": "Bear",
         "level": 6,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -743,7 +752,7 @@
         "family": "\u2014",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Large"
     },
     {
@@ -752,7 +761,7 @@
         "family": "Centipede",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -761,7 +770,7 @@
         "family": "Daemon",
         "level": 6,
         "alignment": "Neutral Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Large"
     },
     {
@@ -770,7 +779,7 @@
         "family": "Changeling",
         "level": 3,
         "alignment": "Chaotic Neutral",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -779,7 +788,7 @@
         "family": "Charau-ka",
         "level": 3,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -788,7 +797,7 @@
         "family": "Charau-ka",
         "level": 6,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -797,7 +806,7 @@
         "family": "Charau-ka",
         "level": 1,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -806,7 +815,7 @@
         "family": "\u2014",
         "level": 8,
         "alignment": "Chaotic Evil",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Large"
     },
     {
@@ -815,7 +824,7 @@
         "family": "Angel",
         "level": 6,
         "alignment": "Neutral Good",
-        "type": "Celestial",
+      "type": "CELESTIAL",
         "size": "Small"
     },
     {
@@ -824,7 +833,7 @@
         "family": "\u2014",
         "level": 7,
         "alignment": "Chaotic Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Large"
     },
     {
@@ -833,7 +842,7 @@
         "family": "Elemental, Fire",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Small"
     },
     {
@@ -842,7 +851,7 @@
         "family": "Golem",
         "level": 10,
         "alignment": "Neutral",
-        "type": "Construct",
+      "type": "CONSTRUCT",
         "size": "Large"
     },
     {
@@ -851,7 +860,7 @@
         "family": "\u2014",
         "level": 5,
         "alignment": "Chaotic Neutral",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Large"
     },
     {
@@ -860,7 +869,7 @@
         "family": "Giant",
         "level": 11,
         "alignment": "Neutral",
-        "type": "Giant",
+      "type": "GIANT",
         "size": "Huge"
     },
     {
@@ -869,16 +878,25 @@
         "family": "\u2014",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Small"
     },
     {
+      "name": "Cornugon (Horned Devil)",
+      "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=482",
+      "family": "Devil",
+      "level": 16,
+      "alignment": "Lawful Evil",
+      "type": "FIEND",
+      "size": "Large"
+    },
+  {
         "name": "Crag Linnorm",
         "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=284",
         "family": "Linnorm",
         "level": 14,
         "alignment": "Chaotic Evil",
-        "type": "Dragon",
+    "type": "DRAGON",
         "size": "Gargantuan"
     },
     {
@@ -887,7 +905,7 @@
         "family": "Cave Worm",
         "level": 18,
         "alignment": "Neutral",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Gargantuan"
     },
     {
@@ -896,16 +914,25 @@
         "family": "Crocodile",
         "level": 2,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
+      "name": "Crucidaemon (Torture Daemon)",
+      "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=479",
+      "family": "Daemon",
+      "level": 15,
+      "alignment": "Neutral Evil",
+      "type": "FIEND",
+      "size": "Medium"
+    },
+  {
         "name": "Cyclops",
         "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=86",
         "family": "Cyclops",
         "level": 5,
         "alignment": "Lawful Evil",
-        "type": "Giant",
+    "type": "GIANT",
         "size": "Large"
     },
     {
@@ -914,7 +941,7 @@
         "family": "Boar",
         "level": 4,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -923,7 +950,7 @@
         "family": "\u2014",
         "level": 13,
         "alignment": "Chaotic Evil",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Huge"
     },
     {
@@ -932,7 +959,7 @@
         "family": "Rakshasa",
         "level": 5,
         "alignment": "Lawful Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Small"
     },
     {
@@ -941,7 +968,7 @@
         "family": "Naga",
         "level": 7,
         "alignment": "Lawful Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Large"
     },
     {
@@ -950,7 +977,7 @@
         "family": "Mantis, Giant",
         "level": 11,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Gargantuan"
     },
     {
@@ -959,7 +986,7 @@
         "family": "\u2014",
         "level": 12,
         "alignment": "Neutral Evil",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Large"
     },
     {
@@ -968,7 +995,7 @@
         "family": "Deep Gnome",
         "level": 5,
         "alignment": "Neutral",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -977,7 +1004,7 @@
         "family": "Deep Gnome",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -986,7 +1013,7 @@
         "family": "Deep Gnome",
         "level": 2,
         "alignment": "Neutral",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -995,7 +1022,7 @@
         "family": "Dinosaur",
         "level": 2,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -1004,7 +1031,7 @@
         "family": "Crocodile",
         "level": 9,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Huge"
     },
     {
@@ -1013,7 +1040,7 @@
         "family": "Lich",
         "level": 15,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Tiny"
     },
     {
@@ -1022,7 +1049,7 @@
         "family": "Dero",
         "level": 5,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -1031,7 +1058,7 @@
         "family": "Dero",
         "level": 2,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -1040,7 +1067,7 @@
         "family": "Dero",
         "level": 3,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -1049,7 +1076,7 @@
         "family": "Drake",
         "level": 8,
         "alignment": "Neutral Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -1058,7 +1085,7 @@
         "family": "\u2014",
         "level": 11,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Large"
     },
     {
@@ -1067,7 +1094,7 @@
         "family": "\u2014",
         "level": 10,
         "alignment": "Neutral",
-        "type": "Plant",
+      "type": "PLANT",
         "size": "Medium"
     },
     {
@@ -1076,7 +1103,7 @@
         "family": "Dhampir",
         "level": 2,
         "alignment": "Neutral Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -1085,7 +1112,7 @@
         "family": "Wolf",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -1094,7 +1121,7 @@
         "family": "Genie",
         "level": 5,
         "alignment": "Chaotic Good",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Large"
     },
     {
@@ -1103,7 +1130,7 @@
         "family": "\u2014",
         "level": 5,
         "alignment": "Lawful Neutral",
-        "type": "Construct",
+      "type": "CONSTRUCT",
         "size": "Large"
     },
     {
@@ -1112,7 +1139,7 @@
         "family": "\u2014",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -1121,7 +1148,7 @@
         "family": "\u2014",
         "level": 9,
         "alignment": "Neutral",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Huge"
     },
     {
@@ -1130,7 +1157,7 @@
         "family": "\u2014",
         "level": 13,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -1139,7 +1166,7 @@
         "family": "\u2014",
         "level": 9,
         "alignment": "Neutral",
-        "type": "Fungus",
+      "type": "FUNGUS",
         "size": "Huge"
     },
     {
@@ -1148,7 +1175,7 @@
         "family": "Fleshwarp",
         "level": 6,
         "alignment": "Chaotic Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Large"
     },
     {
@@ -1157,7 +1184,7 @@
         "family": "Drow",
         "level": 1,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -1166,7 +1193,7 @@
         "family": "Drow",
         "level": 3,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -1175,7 +1202,7 @@
         "family": "Drow",
         "level": 2,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -1184,7 +1211,7 @@
         "family": "Nymph",
         "level": 13,
         "alignment": "Chaotic Good",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Medium"
     },
     {
@@ -1193,7 +1220,7 @@
         "family": "Nymph",
         "level": 3,
         "alignment": "Chaotic Good",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Medium"
     },
     {
@@ -1202,7 +1229,7 @@
         "family": "Duergar",
         "level": 1,
         "alignment": "Lawful Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -1211,7 +1238,7 @@
         "family": "Duergar",
         "level": 0,
         "alignment": "Lawful Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -1220,7 +1247,7 @@
         "family": "Duergar",
         "level": 2,
         "alignment": "Lawful Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -1229,16 +1256,25 @@
         "family": "\u2014",
         "level": 7,
         "alignment": "Lawful Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
-        "name": "Duskwalker Ghost Hunter",
+      "name": "Duneshaker Solifugid",
+      "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=485",
+      "family": "Solifugid",
+      "level": 18,
+      "alignment": "Neutral",
+      "type": "ANIMAL",
+      "size": "Gargantuan"
+    },
+  {
+    "name": "Duskwalker",
         "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=332",
         "family": "Planar Scion",
         "level": 4,
         "alignment": "Neutral",
-        "type": "Humanoid",
+    "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -1247,7 +1283,7 @@
         "family": "Eagle",
         "level": -1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Small"
     },
     {
@@ -1256,7 +1292,7 @@
         "family": "Elemental, Mephit",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Small"
     },
     {
@@ -1265,7 +1301,7 @@
         "family": "Genie",
         "level": 9,
         "alignment": "Lawful Evil",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Large"
     },
     {
@@ -1274,7 +1310,7 @@
         "family": "\u2014",
         "level": 6,
         "alignment": "Neutral Evil",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Medium"
     },
     {
@@ -1283,7 +1319,7 @@
         "family": "Eel",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Small"
     },
     {
@@ -1292,7 +1328,7 @@
         "family": "Elemental, Earth",
         "level": 11,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Huge"
     },
     {
@@ -1301,7 +1337,7 @@
         "family": "Elemental, Air",
         "level": 11,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Huge"
     },
     {
@@ -1310,7 +1346,7 @@
         "family": "Elemental, Fire",
         "level": 11,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Huge"
     },
     {
@@ -1319,7 +1355,7 @@
         "family": "Elemental, Water",
         "level": 11,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Huge"
     },
     {
@@ -1328,7 +1364,7 @@
         "family": "Elephant",
         "level": 7,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Huge"
     },
     {
@@ -1337,7 +1373,7 @@
         "family": "Biloko",
         "level": 7,
         "alignment": "Neutral Evil",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Small"
     },
     {
@@ -1346,7 +1382,7 @@
         "family": "\u2014",
         "level": 2,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -1355,7 +1391,7 @@
         "family": "Devil",
         "level": 8,
         "alignment": "Lawful Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Medium"
     },
     {
@@ -1364,7 +1400,7 @@
         "family": "\u2014",
         "level": 5,
         "alignment": "Neutral",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Large"
     },
     {
@@ -1373,7 +1409,7 @@
         "family": "\u2014",
         "level": 6,
         "alignment": "Chaotic Evil",
-        "type": "Giant",
+      "type": "GIANT",
         "size": "Large"
     },
     {
@@ -1382,7 +1418,7 @@
         "family": "Velstrac",
         "level": 6,
         "alignment": "Lawful Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Medium"
     },
     {
@@ -1391,7 +1427,7 @@
         "family": "Alghollthu",
         "level": 4,
         "alignment": "Chaotic Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Medium"
     },
     {
@@ -1400,7 +1436,7 @@
         "family": "\u2014",
         "level": 2,
         "alignment": "Chaotic Good",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Tiny"
     },
     {
@@ -1409,7 +1445,7 @@
         "family": "Giant",
         "level": 10,
         "alignment": "Lawful Evil",
-        "type": "Giant",
+      "type": "GIANT",
         "size": "Large"
     },
     {
@@ -1418,7 +1454,7 @@
         "family": "Elemental, Mephit",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Small"
     },
     {
@@ -1427,7 +1463,7 @@
         "family": "Elemental, Fire",
         "level": 9,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Huge"
     },
     {
@@ -1436,7 +1472,7 @@
         "family": "Drake",
         "level": 5,
         "alignment": "Chaotic Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -1445,7 +1481,7 @@
         "family": "Beetle",
         "level": -1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Small"
     },
     {
@@ -1454,7 +1490,7 @@
         "family": "Golem",
         "level": 8,
         "alignment": "Neutral",
-        "type": "Construct",
+      "type": "CONSTRUCT",
         "size": "Large"
     },
     {
@@ -1463,7 +1499,7 @@
         "family": "\u2014",
         "level": 5,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -1472,7 +1508,7 @@
         "family": "Drake",
         "level": 7,
         "alignment": "Chaotic Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -1481,7 +1517,7 @@
         "family": "Giant",
         "level": 9,
         "alignment": "Chaotic Evil",
-        "type": "Giant",
+      "type": "GIANT",
         "size": "Large"
     },
     {
@@ -1490,7 +1526,7 @@
         "family": "Leshy",
         "level": 2,
         "alignment": "Neutral",
-        "type": "Fungus",
+      "type": "FUNGUS",
         "size": "Small"
     },
     {
@@ -1499,7 +1535,7 @@
         "family": "Azata",
         "level": 4,
         "alignment": "Chaotic Good",
-        "type": "Celestial",
+      "type": "CELESTIAL",
         "size": "Medium"
     },
     {
@@ -1508,7 +1544,7 @@
         "family": "\u2014",
         "level": 4,
         "alignment": "Chaotic Evil",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Medium"
     },
     {
@@ -1517,7 +1553,7 @@
         "family": "\u2014",
         "level": 13,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Huge"
     },
     {
@@ -1526,8 +1562,8 @@
         "family": "Ooze",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Ooze",
-        "size": "Medium"
+      "type": "OOZE",
+      "size": "Large"
     },
     {
         "name": "Gelugon (Ice Devil)",
@@ -1535,7 +1571,7 @@
         "family": "Devil",
         "level": 13,
         "alignment": "Lawful Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Large"
     },
     {
@@ -1544,7 +1580,7 @@
         "family": "Azata",
         "level": 13,
         "alignment": "Chaotic Good",
-        "type": "Celestial",
+      "type": "CELESTIAL",
         "size": "Medium"
     },
     {
@@ -1553,25 +1589,7 @@
         "family": "Ghoul",
         "level": 2,
         "alignment": "Chaotic Evil",
-        "type": "Undead",
-        "size": "Medium"
-    },
-    {
-        "name": "Ghost Commoner",
-        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=216",
-        "family": "Ghost",
-        "level": 4,
-        "alignment": "Chaotic Evil",
-        "type": "Spirit",
-        "size": "Medium"
-    },
-    {
-        "name": "Ghost Mage",
-        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=217",
-        "family": "Ghost",
-        "level": 10,
-        "alignment": "Chaotic Evil",
-        "type": "Spirit",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -1580,7 +1598,7 @@
         "family": "Ghoul",
         "level": 1,
         "alignment": "Chaotic Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -1589,7 +1607,7 @@
         "family": "Snake",
         "level": 8,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Huge"
     },
     {
@@ -1598,7 +1616,7 @@
         "family": "Animated Object",
         "level": 7,
         "alignment": "Neutral",
-        "type": "Construct",
+      "type": "CONSTRUCT",
         "size": "Huge"
     },
     {
@@ -1607,7 +1625,7 @@
         "family": "Bat",
         "level": 2,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -1616,7 +1634,7 @@
         "family": "Centipede",
         "level": -1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -1625,7 +1643,7 @@
         "family": "Eagle",
         "level": 3,
         "alignment": "Neutral Good",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Large"
     },
     {
@@ -1634,7 +1652,7 @@
         "family": "Flytrap",
         "level": 10,
         "alignment": "Neutral",
-        "type": "Plant",
+      "type": "PLANT",
         "size": "Huge"
     },
     {
@@ -1643,7 +1661,7 @@
         "family": "Lizard",
         "level": 5,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -1652,7 +1670,7 @@
         "family": "Lizard",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -1661,7 +1679,7 @@
         "family": "Mantis, Giant",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -1670,7 +1688,7 @@
         "family": "Lizard",
         "level": 2,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -1679,7 +1697,7 @@
         "family": "Eel",
         "level": 5,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -1688,7 +1706,7 @@
         "family": "\u2014",
         "level": 8,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Huge"
     },
     {
@@ -1697,7 +1715,7 @@
         "family": "Rat",
         "level": -1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Small"
     },
     {
@@ -1706,16 +1724,25 @@
         "family": "Scorpion",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
+      "name": "Giant Solifugid",
+      "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=484",
+      "family": "Solifugid",
+      "level": 1,
+      "alignment": "Neutral",
+      "type": "ANIMAL",
+      "size": "Medium"
+    },
+  {
         "name": "Giant Stag Beetle",
         "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=50",
         "family": "Beetle",
         "level": 4,
         "alignment": "Neutral",
-        "type": "Animal",
+    "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -1724,7 +1751,7 @@
         "family": "Spider",
         "level": 6,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -1733,7 +1760,7 @@
         "family": "Snake",
         "level": 2,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -1742,7 +1769,7 @@
         "family": "Wasp",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -1751,7 +1778,7 @@
         "family": "\u2014",
         "level": 5,
         "alignment": "Neutral",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Medium"
     },
     {
@@ -1760,7 +1787,7 @@
         "family": "\u2014",
         "level": 12,
         "alignment": "Lawful Evil",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Small"
     },
     {
@@ -1769,7 +1796,7 @@
         "family": "Demon",
         "level": 13,
         "alignment": "Chaotic Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Huge"
     },
     {
@@ -1778,7 +1805,7 @@
         "family": "Gnoll",
         "level": 3,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -1787,8 +1814,8 @@
         "family": "Gnoll",
         "level": 2,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
-        "size": "Large"
+      "type": "HUMANOID",
+      "size": "Medium"
     },
     {
         "name": "Gnoll Sergeant",
@@ -1796,7 +1823,7 @@
         "family": "Gnoll",
         "level": 4,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -1805,7 +1832,7 @@
         "family": "Goblin",
         "level": 1,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -1814,7 +1841,7 @@
         "family": "\u2014",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -1823,7 +1850,7 @@
         "family": "Goblin",
         "level": 1,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -1832,7 +1859,7 @@
         "family": "Goblin",
         "level": 1,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -1841,7 +1868,7 @@
         "family": "Goblin",
         "level": -1,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -1850,7 +1877,7 @@
         "family": "\u2014",
         "level": 12,
         "alignment": "Chaotic Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Huge"
     },
     {
@@ -1859,7 +1886,7 @@
         "family": "Spider",
         "level": 11,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Gargantuan"
     },
     {
@@ -1868,7 +1895,7 @@
         "family": "Ape",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -1877,7 +1904,7 @@
         "family": "Leshy",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Plant",
+      "type": "PLANT",
         "size": "Small"
     },
     {
@@ -1886,7 +1913,7 @@
         "family": "\u2014",
         "level": 2,
         "alignment": "Neutral",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -1895,7 +1922,7 @@
         "family": "\u2014",
         "level": 10,
         "alignment": "Lawful Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Large"
     },
     {
@@ -1904,7 +1931,7 @@
         "family": "\u2014",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Large"
     },
     {
@@ -1913,7 +1940,7 @@
         "family": "Cyclops",
         "level": 12,
         "alignment": "Chaotic Evil",
-        "type": "Giant",
+      "type": "GIANT",
         "size": "Huge"
     },
     {
@@ -1922,7 +1949,7 @@
         "family": "Shark",
         "level": 4,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Huge"
     },
     {
@@ -1931,7 +1958,7 @@
         "family": "Barghest",
         "level": 7,
         "alignment": "Chaotic Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Large"
     },
     {
@@ -1940,7 +1967,7 @@
         "family": "Nightmare",
         "level": 11,
         "alignment": "Neutral Evil",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Huge"
     },
     {
@@ -1949,7 +1976,7 @@
         "family": "Shadow",
         "level": 7,
         "alignment": "Chaotic Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -1958,7 +1985,7 @@
         "family": "Hag",
         "level": 4,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -1967,7 +1994,7 @@
         "family": "\u2014",
         "level": 4,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -1976,7 +2003,7 @@
         "family": "Sprite",
         "level": 1,
         "alignment": "Chaotic Neutral",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Tiny"
     },
     {
@@ -1985,7 +2012,7 @@
         "family": "\u2014",
         "level": 14,
         "alignment": "Neutral Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Huge"
     },
     {
@@ -1994,7 +2021,7 @@
         "family": "Grim Reaper",
         "level": 21,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -2003,7 +2030,7 @@
         "family": "Grippli",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -2012,7 +2039,7 @@
         "family": "Grippli",
         "level": 5,
         "alignment": "Neutral",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -2021,7 +2048,7 @@
         "family": "Grippli",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -2030,7 +2057,7 @@
         "family": "Bear",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -2039,7 +2066,7 @@
         "family": "Fleshwarp",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Medium"
     },
     {
@@ -2048,7 +2075,7 @@
         "family": "Dog",
         "level": -1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Small"
     },
     {
@@ -2057,7 +2084,7 @@
         "family": "Naga",
         "level": 10,
         "alignment": "Lawful Good",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Large"
     },
     {
@@ -2066,7 +2093,7 @@
         "family": "\u2014",
         "level": 10,
         "alignment": "Chaotic Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Large"
     },
     {
@@ -2075,7 +2102,7 @@
         "family": "\u2014",
         "level": 19,
         "alignment": "Neutral",
-        "type": "Construct",
+      "type": "CONSTRUCT",
         "size": "Gargantuan"
     },
     {
@@ -2084,7 +2111,7 @@
         "family": "\u2014",
         "level": 5,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -2093,7 +2120,7 @@
         "family": "Hell Hound",
         "level": 3,
         "alignment": "Lawful Evil",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Medium"
     },
     {
@@ -2102,7 +2129,7 @@
         "family": "\u2014",
         "level": 1,
         "alignment": "Lawful Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Tiny"
     },
     {
@@ -2111,7 +2138,7 @@
         "family": "Giant",
         "level": 7,
         "alignment": "Chaotic Evil",
-        "type": "Giant",
+      "type": "GIANT",
         "size": "Large"
     },
     {
@@ -2120,7 +2147,7 @@
         "family": "Ankhrav",
         "level": 8,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Huge"
     },
     {
@@ -2129,7 +2156,7 @@
         "family": "Hobgoblin",
         "level": 4,
         "alignment": "Lawful Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -2138,7 +2165,7 @@
         "family": "Hobgoblin",
         "level": 6,
         "alignment": "Lawful Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -2147,7 +2174,7 @@
         "family": "Hobgoblin",
         "level": 1,
         "alignment": "Lawful Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -2156,7 +2183,7 @@
         "family": "\u2014",
         "level": 0,
         "alignment": "Neutral",
-        "type": "Construct",
+      "type": "CONSTRUCT",
         "size": "Tiny"
     },
     {
@@ -2165,7 +2192,7 @@
         "family": "Archon",
         "level": 4,
         "alignment": "Lawful Good",
-        "type": "Celestial",
+      "type": "CELESTIAL",
         "size": "Medium"
     },
     {
@@ -2174,7 +2201,7 @@
         "family": "Spider",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -2183,7 +2210,7 @@
         "family": "Hyena",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -2192,7 +2219,7 @@
         "family": "\u2014",
         "level": 6,
         "alignment": "Neutral",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Huge"
     },
     {
@@ -2201,7 +2228,7 @@
         "family": "Hyena",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -2210,16 +2237,25 @@
         "family": "Linnorm",
         "level": 17,
         "alignment": "Chaotic Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Gargantuan"
     },
     {
+      "name": "Immortal Ichor",
+      "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=483",
+      "family": "\u2014",
+      "level": 15,
+      "alignment": "Neutral Evil",
+      "type": "OOZE",
+      "size": "Medium"
+    },
+  {
         "name": "Imp",
         "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=109",
         "family": "Devil",
         "level": 1,
         "alignment": "Lawful Evil",
-        "type": "Fiend",
+    "type": "FIEND",
         "size": "Tiny"
     },
     {
@@ -2228,7 +2264,7 @@
         "family": "Velstrac",
         "level": 12,
         "alignment": "Lawful Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Large"
     },
     {
@@ -2237,7 +2273,7 @@
         "family": "Elemental, Air",
         "level": 7,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Medium"
     },
     {
@@ -2246,7 +2282,7 @@
         "family": "Golem",
         "level": 13,
         "alignment": "Neutral",
-        "type": "Construct",
+      "type": "CONSTRUCT",
         "size": "Large"
     },
     {
@@ -2255,7 +2291,7 @@
         "family": "Genie",
         "level": 4,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Medium"
     },
     {
@@ -2264,7 +2300,7 @@
         "family": "Gremlin",
         "level": 1,
         "alignment": "Chaotic Evil",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Tiny"
     },
     {
@@ -2273,7 +2309,7 @@
         "family": "Drake",
         "level": 6,
         "alignment": "Neutral Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -2282,7 +2318,7 @@
         "family": "Demon",
         "level": 10,
         "alignment": "Chaotic Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Medium"
     },
     {
@@ -2291,7 +2327,7 @@
         "family": "Protean",
         "level": 17,
         "alignment": "Chaotic Neutral",
-        "type": "Monitor",
+      "type": "MONITOR",
         "size": "Large"
     },
     {
@@ -2300,7 +2336,7 @@
         "family": "\u2014",
         "level": 8,
         "alignment": "Neutral Evil",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Medium"
     },
     {
@@ -2309,7 +2345,7 @@
         "family": "Kobold",
         "level": 2,
         "alignment": "Lawful Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -2318,7 +2354,7 @@
         "family": "Kobold",
         "level": 1,
         "alignment": "Lawful Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -2327,7 +2363,7 @@
         "family": "Kobold",
         "level": -1,
         "alignment": "Lawful Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -2336,7 +2372,7 @@
         "family": "Aeon",
         "level": 12,
         "alignment": "Lawful Neutral",
-        "type": "Monitor",
+      "type": "MONITOR",
         "size": "Medium"
     },
     {
@@ -2345,7 +2381,7 @@
         "family": "\u2014",
         "level": 18,
         "alignment": "Neutral Evil",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Gargantuan"
     },
     {
@@ -2354,7 +2390,7 @@
         "family": "\u2014",
         "level": 8,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -2363,7 +2399,7 @@
         "family": "Lamia",
         "level": 8,
         "alignment": "Chaotic Evil",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Large"
     },
     {
@@ -2372,7 +2408,7 @@
         "family": "Lamia",
         "level": 6,
         "alignment": "Chaotic Evil",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Large"
     },
     {
@@ -2381,7 +2417,7 @@
         "family": "Archon",
         "level": 1,
         "alignment": "Lawful Good",
-        "type": "Celestial",
+      "type": "CELESTIAL",
         "size": "Small"
     },
     {
@@ -2390,7 +2426,7 @@
         "family": "Leshy",
         "level": 0,
         "alignment": "Neutral",
-        "type": "Plant",
+      "type": "PLANT",
         "size": "Small"
     },
     {
@@ -2399,7 +2435,7 @@
         "family": "Archon",
         "level": 7,
         "alignment": "Lawful Good",
-        "type": "Celestial",
+      "type": "CELESTIAL",
         "size": "Medium"
     },
     {
@@ -2408,7 +2444,7 @@
         "family": "Devil",
         "level": 0,
         "alignment": "Lawful Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Medium"
     },
     {
@@ -2417,7 +2453,7 @@
         "family": "Cat",
         "level": 2,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -2426,7 +2462,7 @@
         "family": "Grim Reaper",
         "level": 16,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -2435,7 +2471,7 @@
         "family": "Daemon",
         "level": 9,
         "alignment": "Neutral Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Large"
     },
     {
@@ -2444,7 +2480,7 @@
         "family": "Lich",
         "level": 12,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -2453,7 +2489,7 @@
         "family": "Azata",
         "level": 7,
         "alignment": "Chaotic Good",
-        "type": "Celestial",
+      "type": "CELESTIAL",
         "size": "Large"
     },
     {
@@ -2462,7 +2498,7 @@
         "family": "Cat",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -2471,7 +2507,7 @@
         "family": "Elemental, Earth",
         "level": 5,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Medium"
     },
     {
@@ -2480,7 +2516,7 @@
         "family": "\u2014",
         "level": 6,
         "alignment": "Neutral",
-        "type": "Ooze",
+      "type": "OOZE",
         "size": "Medium"
     },
     {
@@ -2489,7 +2525,7 @@
         "family": "Elemental, Water",
         "level": 5,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Large"
     },
     {
@@ -2498,7 +2534,7 @@
         "family": "Elemental, Air",
         "level": 5,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Medium"
     },
     {
@@ -2507,7 +2543,7 @@
         "family": "Elemental, Fire",
         "level": 5,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Medium"
     },
     {
@@ -2516,7 +2552,7 @@
         "family": "Lizardfolk",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -2525,7 +2561,7 @@
         "family": "Lizardfolk",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -2534,7 +2570,7 @@
         "family": "Lizardfolk",
         "level": 2,
         "alignment": "Neutral",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -2543,7 +2579,7 @@
         "family": "Azata",
         "level": 1,
         "alignment": "Chaotic Good",
-        "type": "Celestial",
+      "type": "CELESTIAL",
         "size": "Tiny"
     },
     {
@@ -2552,7 +2588,7 @@
         "family": "Elephant",
         "level": 10,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Huge"
     },
     {
@@ -2561,7 +2597,7 @@
         "family": "\u2014",
         "level": 6,
         "alignment": "Lawful Evil",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Large"
     },
     {
@@ -2570,7 +2606,7 @@
         "family": "Genie",
         "level": 9,
         "alignment": "Chaotic Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Large"
     },
     {
@@ -2579,7 +2615,7 @@
         "family": "Demon",
         "level": 17,
         "alignment": "Chaotic Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Large"
     },
     {
@@ -2588,7 +2624,7 @@
         "family": "\u2014",
         "level": 7,
         "alignment": "Lawful Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -2597,7 +2633,7 @@
         "family": "Shark",
         "level": 9,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Gargantuan"
     },
     {
@@ -2606,7 +2642,7 @@
         "family": "Ape",
         "level": 8,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Gargantuan"
     },
     {
@@ -2615,7 +2651,7 @@
         "family": "Merfolk",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -2624,7 +2660,7 @@
         "family": "Merfolk",
         "level": 2,
         "alignment": "Neutral",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -2633,7 +2669,7 @@
         "family": "\u2014",
         "level": 4,
         "alignment": "Neutral",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Medium"
     },
     {
@@ -2642,7 +2678,7 @@
         "family": "\u2014",
         "level": 4,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Large"
     },
     {
@@ -2651,7 +2687,7 @@
         "family": "Gremlin",
         "level": -1,
         "alignment": "Lawful Evil",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Small"
     },
     {
@@ -2660,7 +2696,7 @@
         "family": "\u2014",
         "level": 9,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Huge"
     },
     {
@@ -2669,7 +2705,7 @@
         "family": "Psychopomp",
         "level": 15,
         "alignment": "Neutral",
-        "type": "Monitor",
+      "type": "MONITOR",
         "size": "Medium"
     },
     {
@@ -2678,7 +2714,7 @@
         "family": "\u2014",
         "level": 21,
         "alignment": "Chaotic Evil",
-        "type": "Fungus",
+      "type": "FUNGUS",
         "size": "Gargantuan"
     },
     {
@@ -2687,7 +2723,7 @@
         "family": "\u2014",
         "level": 15,
         "alignment": "Neutral",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Gargantuan"
     },
     {
@@ -2696,7 +2732,7 @@
         "family": "Mummy",
         "level": 6,
         "alignment": "Lawful Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -2705,7 +2741,7 @@
         "family": "Mummy",
         "level": 9,
         "alignment": "Lawful Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -2714,7 +2750,7 @@
         "family": "Nymph",
         "level": 7,
         "alignment": "Chaotic Good",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Medium"
     },
     {
@@ -2723,16 +2759,25 @@
         "family": "Nymph",
         "level": 1,
         "alignment": "Chaotic Good",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Medium"
     },
     {
+      "name": "Nalfeshnee (Boar Demon)",
+      "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=481",
+      "family": "Demon",
+      "level": 14,
+      "alignment": "Chaotic Evil",
+      "type": "FIEND",
+      "size": "Huge"
+    },
+  {
         "name": "Naunet",
         "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=337",
         "family": "Protean",
         "level": 7,
         "alignment": "Chaotic Neutral",
-        "type": "Monitor",
+    "type": "MONITOR",
         "size": "Large"
     },
     {
@@ -2741,7 +2786,7 @@
         "family": "Hell Hound",
         "level": 9,
         "alignment": "Lawful Evil",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Large"
     },
     {
@@ -2750,7 +2795,7 @@
         "family": "Hag",
         "level": 9,
         "alignment": "Neutral Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Medium"
     },
     {
@@ -2759,7 +2804,7 @@
         "family": "Nightmare",
         "level": 6,
         "alignment": "Neutral Evil",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Large"
     },
     {
@@ -2768,7 +2813,7 @@
         "family": "\u2014",
         "level": 10,
         "alignment": "Neutral Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Medium"
     },
     {
@@ -2777,7 +2822,7 @@
         "family": "Psychopomp",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Monitor",
+      "type": "MONITOR",
         "size": "Tiny"
     },
     {
@@ -2786,7 +2831,7 @@
         "family": "Ooze",
         "level": 5,
         "alignment": "Neutral",
-        "type": "Ooze",
+      "type": "OOZE",
         "size": "Large"
     },
     {
@@ -2795,7 +2840,7 @@
         "family": "\u2014",
         "level": 10,
         "alignment": "Chaotic Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Large"
     },
     {
@@ -2804,7 +2849,7 @@
         "family": "Ogre",
         "level": 7,
         "alignment": "Chaotic Evil",
-        "type": "Giant",
+      "type": "GIANT",
         "size": "Large"
     },
     {
@@ -2813,7 +2858,7 @@
         "family": "Ogre",
         "level": 4,
         "alignment": "Chaotic Evil",
-        "type": "Giant",
+      "type": "GIANT",
         "size": "Large"
     },
     {
@@ -2822,7 +2867,7 @@
         "family": "Ogre",
         "level": 3,
         "alignment": "Chaotic Evil",
-        "type": "Giant",
+      "type": "GIANT",
         "size": "Large"
     },
     {
@@ -2831,7 +2876,7 @@
         "family": "Orc",
         "level": 0,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -2840,7 +2885,7 @@
         "family": "Orc",
         "level": 2,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -2849,7 +2894,7 @@
         "family": "Orc",
         "level": 1,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -2858,7 +2903,7 @@
         "family": "Devil",
         "level": 9,
         "alignment": "Lawful Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Large"
     },
     {
@@ -2867,7 +2912,7 @@
         "family": "\u2014",
         "level": 4,
         "alignment": "Neutral",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Large"
     },
     {
@@ -2876,7 +2921,7 @@
         "family": "\u2014",
         "level": 4,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -2885,7 +2930,7 @@
         "family": "\u2014",
         "level": 3,
         "alignment": "Neutral Good",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Large"
     },
     {
@@ -2894,7 +2939,7 @@
         "family": "Devil",
         "level": 10,
         "alignment": "Lawful Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Medium"
     },
     {
@@ -2903,7 +2948,7 @@
         "family": "\u2014",
         "level": 15,
         "alignment": "Neutral Good",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Gargantuan"
     },
     {
@@ -2912,7 +2957,7 @@
         "family": "Devil",
         "level": 20,
         "alignment": "Lawful Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Large"
     },
     {
@@ -2921,7 +2966,7 @@
         "family": "Sprite",
         "level": 4,
         "alignment": "Chaotic Neutral",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Small"
     },
     {
@@ -2930,7 +2975,7 @@
         "family": "Zombie",
         "level": 1,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -2939,17 +2984,8 @@
         "family": "Aeon",
         "level": 20,
         "alignment": "Lawful Neutral",
-        "type": "Monitor",
+      "type": "MONITOR",
         "size": "Large"
-    },
-    {
-        "name": "Poltergeist",
-        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=334",
-        "family": "\u2014",
-        "level": 5,
-        "alignment": "Lawful Evil",
-        "type": "Spirit",
-        "size": "Medium"
     },
     {
         "name": "Poracha",
@@ -2957,7 +2993,7 @@
         "family": "\u2014",
         "level": 4,
         "alignment": "Neutral",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Medium"
     },
     {
@@ -2966,7 +3002,7 @@
         "family": "Velstrac",
         "level": 16,
         "alignment": "Lawful Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Medium"
     },
     {
@@ -2975,7 +3011,7 @@
         "family": "Pterosaur",
         "level": 2,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -2984,7 +3020,7 @@
         "family": "Gremlin",
         "level": 0,
         "alignment": "Neutral Evil",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Tiny"
     },
     {
@@ -2993,7 +3029,7 @@
         "family": "Cave Worm",
         "level": 13,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Gargantuan"
     },
     {
@@ -3002,7 +3038,7 @@
         "family": "Demon",
         "level": 1,
         "alignment": "Chaotic Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Tiny"
     },
     {
@@ -3011,7 +3047,7 @@
         "family": "Elemental, Water",
         "level": 7,
         "alignment": "Lawful Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Small"
     },
     {
@@ -3020,7 +3056,7 @@
         "family": "\u2014",
         "level": 15,
         "alignment": "Chaotic Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Large"
     },
     {
@@ -3029,7 +3065,7 @@
         "family": "Pterosaur",
         "level": 7,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Huge"
     },
     {
@@ -3038,7 +3074,7 @@
         "family": "Rakshasa",
         "level": 10,
         "alignment": "Lawful Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Medium"
     },
     {
@@ -3047,7 +3083,7 @@
         "family": "Rat",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -3056,7 +3092,7 @@
         "family": "Ratfolk",
         "level": 4,
         "alignment": "Lawful Neutral",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Small"
     },
     {
@@ -3065,7 +3101,7 @@
         "family": "\u2014",
         "level": 5,
         "alignment": "Chaotic Evil",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Small"
     },
     {
@@ -3074,7 +3110,7 @@
         "family": "\u2014",
         "level": 1,
         "alignment": "Chaotic Neutral",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Small"
     },
     {
@@ -3083,7 +3119,7 @@
         "family": "\u2014",
         "level": 10,
         "alignment": "Lawful Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -3092,7 +3128,7 @@
         "family": "\u2014",
         "level": 7,
         "alignment": "Neutral",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Huge"
     },
     {
@@ -3101,7 +3137,7 @@
         "family": "Dog",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -3110,7 +3146,7 @@
         "family": "Horse",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -3119,7 +3155,7 @@
         "family": "Horse",
         "level": 0,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -3128,7 +3164,7 @@
         "family": "Drake",
         "level": 3,
         "alignment": "Neutral Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Medium"
     },
     {
@@ -3137,7 +3173,7 @@
         "family": "\u2014",
         "level": 9,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Gargantuan"
     },
     {
@@ -3146,7 +3182,7 @@
         "family": "\u2014",
         "level": 10,
         "alignment": "Chaotic Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Large"
     },
     {
@@ -3155,7 +3191,7 @@
         "family": "Giant",
         "level": 16,
         "alignment": "Lawful Evil",
-        "type": "Giant",
+      "type": "GIANT",
         "size": "Gargantuan"
     },
     {
@@ -3164,7 +3200,7 @@
         "family": "\u2014",
         "level": 12,
         "alignment": "Neutral Evil",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Medium"
     },
     {
@@ -3173,7 +3209,7 @@
         "family": "\u2014",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Medium"
     },
     {
@@ -3182,7 +3218,7 @@
         "family": "\u2014",
         "level": 5,
         "alignment": "Neutral Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -3191,7 +3227,7 @@
         "family": "Elemental, Fire",
         "level": 7,
         "alignment": "Chaotic Evil",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Medium"
     },
     {
@@ -3200,7 +3236,7 @@
         "family": "\u2014",
         "level": 4,
         "alignment": "Chaotic Neutral",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Medium"
     },
     {
@@ -3209,7 +3245,7 @@
         "family": "Scorpion",
         "level": 4,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -3218,7 +3254,7 @@
         "family": "Sea Devil",
         "level": 6,
         "alignment": "Lawful Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -3227,7 +3263,7 @@
         "family": "Sea Devil",
         "level": 4,
         "alignment": "Lawful Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -3236,7 +3272,7 @@
         "family": "Sea Devil",
         "level": 2,
         "alignment": "Lawful Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -3245,7 +3281,7 @@
         "family": "Hag",
         "level": 3,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -3254,7 +3290,7 @@
         "family": "\u2014",
         "level": 12,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Gargantuan"
     },
     {
@@ -3263,7 +3299,7 @@
         "family": "Ooze",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Ooze",
+      "type": "OOZE",
         "size": "Medium"
     },
     {
@@ -3272,7 +3308,7 @@
         "family": "Giant",
         "level": 13,
         "alignment": "Lawful Evil",
-        "type": "Giant",
+      "type": "GIANT",
         "size": "Large"
     },
     {
@@ -3281,7 +3317,7 @@
         "family": "Shadow",
         "level": 4,
         "alignment": "Chaotic Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -3290,7 +3326,7 @@
         "family": "Genie",
         "level": 7,
         "alignment": "Lawful Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Large"
     },
     {
@@ -3299,7 +3335,7 @@
         "family": "\u2014",
         "level": 6,
         "alignment": "Neutral",
-        "type": "Plant",
+      "type": "PLANT",
         "size": "Large"
     },
     {
@@ -3308,7 +3344,7 @@
         "family": "Demon",
         "level": 16,
         "alignment": "Chaotic Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Gargantuan"
     },
     {
@@ -3317,7 +3353,7 @@
         "family": "Archon",
         "level": 10,
         "alignment": "Lawful Good",
-        "type": "Celestial",
+      "type": "CELESTIAL",
         "size": "Large"
     },
     {
@@ -3326,7 +3362,7 @@
         "family": "\u2014",
         "level": 12,
         "alignment": "Chaotic Evil",
-        "type": "Astral",
+      "type": "ASTRAL",
         "size": "Medium"
     },
     {
@@ -3335,7 +3371,7 @@
         "family": "\u2014",
         "level": 18,
         "alignment": "Chaotic Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Huge"
     },
     {
@@ -3344,7 +3380,7 @@
         "family": "\u2014",
         "level": 12,
         "alignment": "Neutral",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Huge"
     },
     {
@@ -3353,7 +3389,7 @@
         "family": "\u2014",
         "level": 18,
         "alignment": "Neutral Good",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Gargantuan"
     },
     {
@@ -3362,7 +3398,7 @@
         "family": "\u2014",
         "level": 2,
         "alignment": "Neutral Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Medium"
     },
     {
@@ -3371,7 +3407,7 @@
         "family": "Skeleton",
         "level": 2,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -3380,7 +3416,7 @@
         "family": "Skeleton",
         "level": 3,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Large"
     },
     {
@@ -3389,7 +3425,7 @@
         "family": "Skeleton",
         "level": 2,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Large"
     },
     {
@@ -3398,7 +3434,7 @@
         "family": "Skeleton",
         "level": 7,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Huge"
     },
     {
@@ -3407,7 +3443,7 @@
         "family": "Skeleton",
         "level": -1,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -3416,7 +3452,7 @@
         "family": "\u2014",
         "level": 18,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Huge"
     },
     {
@@ -3425,7 +3461,7 @@
         "family": "Alghollthu",
         "level": 2,
         "alignment": "Lawful Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -3434,7 +3470,7 @@
         "family": "\u2014",
         "level": 2,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -3443,7 +3479,7 @@
         "family": "Cat",
         "level": 6,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -3452,7 +3488,7 @@
         "family": "Flytrap",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Plant",
+      "type": "PLANT",
         "size": "Large"
     },
     {
@@ -3461,7 +3497,7 @@
         "family": "Elemental, Earth",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Small"
     },
     {
@@ -3470,7 +3506,7 @@
         "family": "\u2014",
         "level": 2,
         "alignment": "Any",
-        "type": "Construct",
+      "type": "CONSTRUCT",
         "size": "Tiny"
     },
     {
@@ -3479,7 +3515,7 @@
         "family": "\u2014",
         "level": 15,
         "alignment": "Neutral Evil",
-        "type": "Construct",
+      "type": "CONSTRUCT",
         "size": "Gargantuan"
     },
     {
@@ -3488,7 +3524,7 @@
         "family": "\u2014",
         "level": 8,
         "alignment": "Neutral",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Large"
     },
     {
@@ -3497,7 +3533,16 @@
         "family": "Spider",
         "level": 0,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
+      "size": "Large"
+    },
+  {
+    "name": "Spiritbound Aluum",
+    "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=477",
+    "family": "Aluum",
+    "level": 16,
+    "alignment": "Neutral",
+    "type": "CONSTRUCT",
         "size": "Large"
     },
     {
@@ -3506,7 +3551,7 @@
         "family": "Sprite",
         "level": -1,
         "alignment": "Chaotic Neutral",
-        "type": "Fey",
+      "type": "FEY",
         "size": "Tiny"
     },
     {
@@ -3515,7 +3560,7 @@
         "family": "Dinosaur",
         "level": 7,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Huge"
     },
     {
@@ -3524,7 +3569,7 @@
         "family": "Giant",
         "level": 8,
         "alignment": "Neutral",
-        "type": "Giant",
+      "type": "GIANT",
         "size": "Large"
     },
     {
@@ -3533,7 +3578,7 @@
         "family": "Golem",
         "level": 11,
         "alignment": "Neutral",
-        "type": "Construct",
+      "type": "CONSTRUCT",
         "size": "Large"
     },
     {
@@ -3542,7 +3587,7 @@
         "family": "Elemental, Earth",
         "level": 9,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Large"
     },
     {
@@ -3551,7 +3596,7 @@
         "family": "Giant",
         "level": 13,
         "alignment": "Chaotic Good",
-        "type": "Giant",
+      "type": "GIANT",
         "size": "Huge"
     },
     {
@@ -3560,7 +3605,7 @@
         "family": "Elemental, Air",
         "level": 9,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Large"
     },
     {
@@ -3569,7 +3614,7 @@
         "family": "Demon",
         "level": 7,
         "alignment": "Chaotic Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Medium"
     },
     {
@@ -3578,16 +3623,16 @@
         "family": "Linnorm",
         "level": 20,
         "alignment": "Chaotic Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Gargantuan"
     },
     {
-        "name": "Tengu Sneak",
+      "name": "Tengu",
         "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=392",
         "family": "\u2014",
         "level": 2,
         "alignment": "Chaotic Neutral",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -3596,7 +3641,7 @@
         "family": "\u2014",
         "level": 19,
         "alignment": "Chaotic Evil",
-        "type": "Fungus",
+      "type": "FUNGUS",
         "size": "Gargantuan"
     },
     {
@@ -3605,16 +3650,16 @@
         "family": "Elemental, Water",
         "level": 9,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Large"
     },
     {
-        "name": "Tiefling Adept",
+      "name": "Tiefling",
         "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=331",
         "family": "Planar Scion",
         "level": 3,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -3623,7 +3668,7 @@
         "family": "Cat",
         "level": 4,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -3632,7 +3677,7 @@
         "family": "\u2014",
         "level": 3,
         "alignment": "Neutral Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Medium"
     },
     {
@@ -3641,7 +3686,7 @@
         "family": "Linnorm",
         "level": 21,
         "alignment": "Chaotic Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Gargantuan"
     },
     {
@@ -3650,7 +3695,7 @@
         "family": "\u2014",
         "level": 25,
         "alignment": "Chaotic Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Huge"
     },
     {
@@ -3659,7 +3704,7 @@
         "family": "Dinosaur",
         "level": 8,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Huge"
     },
     {
@@ -3668,7 +3713,7 @@
         "family": "Troll",
         "level": 10,
         "alignment": "Chaotic Evil",
-        "type": "Giant",
+      "type": "GIANT",
         "size": "Large"
     },
     {
@@ -3677,7 +3722,7 @@
         "family": "Troll",
         "level": 5,
         "alignment": "Chaotic Evil",
-        "type": "Giant",
+      "type": "GIANT",
         "size": "Large"
     },
     {
@@ -3686,7 +3731,7 @@
         "family": "Dinosaur",
         "level": 10,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Gargantuan"
     },
     {
@@ -3695,17 +3740,8 @@
         "family": "\u2014",
         "level": 3,
         "alignment": "Chaotic Good",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Large"
-    },
-    {
-        "name": "Unseen Servant",
-        "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=1",
-        "family": "\u2014",
-        "level": -1,
-        "alignment": "No Alignment",
-        "type": "\u2014",
-        "size": "Medium"
     },
     {
         "name": "Uthul",
@@ -3713,7 +3749,7 @@
         "family": "\u2014",
         "level": 14,
         "alignment": "Chaotic Evil",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Huge"
     },
     {
@@ -3722,7 +3758,7 @@
         "family": "Bat",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -3731,7 +3767,7 @@
         "family": "Vampire",
         "level": 6,
         "alignment": "Chaotic Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -3740,7 +3776,7 @@
         "family": "Vampire",
         "level": 9,
         "alignment": "Chaotic Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -3749,7 +3785,7 @@
         "family": "Vampire",
         "level": 4,
         "alignment": "Chaotic Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -3758,7 +3794,7 @@
         "family": "Alghollthu",
         "level": 14,
         "alignment": "Lawful Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Large"
     },
     {
@@ -3767,7 +3803,7 @@
         "family": "Dinosaur",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Small"
     },
     {
@@ -3776,7 +3812,7 @@
         "family": "Deadly Flora",
         "level": 0,
         "alignment": "Neutral",
-        "type": "Plant",
+      "type": "PLANT",
         "size": "Small"
     },
     {
@@ -3785,7 +3821,7 @@
         "family": "Snake",
         "level": -1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Tiny"
     },
     {
@@ -3794,7 +3830,7 @@
         "family": "Protean",
         "level": 1,
         "alignment": "Chaotic Neutral",
-        "type": "Monitor",
+      "type": "MONITOR",
         "size": "Tiny"
     },
     {
@@ -3803,7 +3839,7 @@
         "family": "Demon",
         "level": 9,
         "alignment": "Chaotic Evil",
-        "type": "Fiend",
+      "type": "FIEND",
         "size": "Large"
     },
     {
@@ -3812,7 +3848,7 @@
         "family": "Horse",
         "level": 2,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -3821,7 +3857,7 @@
         "family": "Horse",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -3830,7 +3866,7 @@
         "family": "Warg",
         "level": 2,
         "alignment": "Neutral Evil",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Medium"
     },
     {
@@ -3839,7 +3875,7 @@
         "family": "\u2014",
         "level": 16,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Gargantuan"
     },
     {
@@ -3848,7 +3884,7 @@
         "family": "Wasp",
         "level": 4,
         "alignment": "Neutral",
-        "type": "Animal",
+      "type": "ANIMAL",
         "size": "Large"
     },
     {
@@ -3857,7 +3893,7 @@
         "family": "Elemental, Mephit",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Small"
     },
     {
@@ -3866,7 +3902,7 @@
         "family": "\u2014",
         "level": 3,
         "alignment": "Neutral Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Medium"
     },
     {
@@ -3875,7 +3911,7 @@
         "family": "\u2014",
         "level": 15,
         "alignment": "Neutral Evil",
-        "type": "Plant",
+      "type": "PLANT",
         "size": "Huge"
     },
     {
@@ -3884,7 +3920,7 @@
         "family": "\u2014",
         "level": 17,
         "alignment": "Chaotic Evil",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Large"
     },
     {
@@ -3893,7 +3929,7 @@
         "family": "Werecreature",
         "level": 4,
         "alignment": "Lawful Good",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Large"
     },
     {
@@ -3902,7 +3938,7 @@
         "family": "Werecreature",
         "level": 2,
         "alignment": "Lawful Evil",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Medium"
     },
     {
@@ -3911,7 +3947,7 @@
         "family": "Werecreature",
         "level": 3,
         "alignment": "Chaotic Evil",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Medium"
     },
     {
@@ -3920,7 +3956,7 @@
         "family": "\u2014",
         "level": 3,
         "alignment": "Lawful Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -3929,7 +3965,7 @@
         "family": "\u2014",
         "level": 6,
         "alignment": "Chaotic Evil",
-        "type": "Aberration",
+      "type": "ABERRATION",
         "size": "Small"
     },
     {
@@ -3938,16 +3974,25 @@
         "family": "Warg",
         "level": 5,
         "alignment": "Neutral Evil",
-        "type": "Beast",
+      "type": "BEAST",
         "size": "Large"
     },
     {
+      "name": "Witchwyrd",
+      "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=486",
+      "family": "\u2014",
+      "level": 6,
+      "alignment": "Lawful Neutral",
+      "type": "HUMANOID",
+      "size": "Medium"
+    },
+  {
         "name": "Wolf",
         "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=415",
         "family": "Wolf",
         "level": 1,
         "alignment": "Neutral",
-        "type": "Animal",
+    "type": "ANIMAL",
         "size": "Medium"
     },
     {
@@ -3956,7 +4001,7 @@
         "family": "\u2014",
         "level": 6,
         "alignment": "Lawful Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     },
     {
@@ -3965,7 +4010,7 @@
         "family": "Drake",
         "level": 6,
         "alignment": "Neutral Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -3974,16 +4019,25 @@
         "family": "Elemental, Earth",
         "level": 7,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Medium"
     },
     {
+      "name": "Xotanispawn",
+      "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=487",
+      "family": "\u2014",
+      "level": 17,
+      "alignment": "Chaotic Evil",
+      "type": "ANIMAL",
+      "size": "Large"
+    },
+  {
         "name": "Xulgath Leader",
         "aonUrl": "https://2e.aonprd.com/Monsters.aspx?ID=420",
         "family": "Xulgath",
         "level": 3,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+    "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -3992,7 +4046,7 @@
         "family": "Xulgath",
         "level": 2,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -4001,7 +4055,7 @@
         "family": "Xulgath",
         "level": 1,
         "alignment": "Chaotic Evil",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Medium"
     },
     {
@@ -4010,7 +4064,7 @@
         "family": "\u2014",
         "level": 5,
         "alignment": "Neutral",
-        "type": "Humanoid",
+      "type": "HUMANOID",
         "size": "Large"
     },
     {
@@ -4019,7 +4073,7 @@
         "family": "Dragon, Chromatic",
         "level": 7,
         "alignment": "Chaotic Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -4028,7 +4082,7 @@
         "family": "Dragon, Chromatic",
         "level": 9,
         "alignment": "Lawful Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -4037,7 +4091,7 @@
         "family": "Dragon, Metallic",
         "level": 7,
         "alignment": "Chaotic Good",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -4046,7 +4100,7 @@
         "family": "Dragon, Metallic",
         "level": 9,
         "alignment": "Lawful Good",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -4055,7 +4109,7 @@
         "family": "Dragon, Metallic",
         "level": 8,
         "alignment": "Chaotic Good",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -4064,7 +4118,7 @@
         "family": "Dragon, Metallic",
         "level": 11,
         "alignment": "Lawful Good",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -4073,7 +4127,7 @@
         "family": "Dragon, Chromatic",
         "level": 8,
         "alignment": "Lawful Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -4082,7 +4136,7 @@
         "family": "Dragon, Magma",
         "level": 9,
         "alignment": "Chaotic Neutral",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -4091,7 +4145,7 @@
         "family": "Dragon, Chromatic",
         "level": 10,
         "alignment": "Chaotic Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -4100,7 +4154,7 @@
         "family": "Dragon, Metallic",
         "level": 10,
         "alignment": "Lawful Good",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -4109,7 +4163,7 @@
         "family": "Dragon, Chromatic",
         "level": 6,
         "alignment": "Chaotic Evil",
-        "type": "Dragon",
+      "type": "DRAGON",
         "size": "Large"
     },
     {
@@ -4118,7 +4172,7 @@
         "family": "\u2014",
         "level": 16,
         "alignment": "Chaotic Evil",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Large"
     },
     {
@@ -4127,7 +4181,7 @@
         "family": "Elemental, Air",
         "level": 3,
         "alignment": "Neutral",
-        "type": "Elemental",
+      "type": "ELEMENTAL",
         "size": "Small"
     },
     {
@@ -4136,7 +4190,7 @@
         "family": "Zombie",
         "level": 2,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Large"
     },
     {
@@ -4145,7 +4199,7 @@
         "family": "Zombie",
         "level": 6,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Huge"
     },
     {
@@ -4154,7 +4208,7 @@
         "family": "Zombie",
         "level": -1,
         "alignment": "Neutral Evil",
-        "type": "Undead",
+      "type": "UNDEAD",
         "size": "Medium"
     }
 ]

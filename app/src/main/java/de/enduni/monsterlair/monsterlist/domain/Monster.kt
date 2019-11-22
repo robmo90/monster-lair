@@ -6,6 +6,7 @@ data class Monster(
     val family: String,
     val level: Int,
     val alignment: String,
-    val type: String,
+    val type: MonsterType,
     val size: String
 )
+

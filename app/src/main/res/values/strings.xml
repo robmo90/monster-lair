@@ -6,4 +6,8 @@
     <string name="monster_level_range">Level Range</string>
     <string name="monster_level_range_values">Level Range: %d - %d</string>
 
+    <string name="monster_sort_by_type">Type</string>
+    <string name="monster_sort_by_level">Level</string>
+    <string name="monster_sort_by_name">Name</string>
+
 </resources>

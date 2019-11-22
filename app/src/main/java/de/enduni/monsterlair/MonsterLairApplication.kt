@@ -1,7 +1,7 @@
 package de.enduni.monsterlair
 
 import android.app.Application
-import de.enduni.monsterlair.monsterlist.persistence.MonsterDatabaseInitializer
+import de.enduni.monsterlair.monsterlist.persistence.database.MonsterDatabaseInitializer
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch

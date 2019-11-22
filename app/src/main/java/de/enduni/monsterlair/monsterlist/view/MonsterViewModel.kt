@@ -56,6 +56,19 @@ class MonsterViewModel(
         filterMonsters(filter)
     }
 
+    fun adjustSortBy(sortBy: SortBy) = viewModelScope.launch {
+        if (_viewState.value?.filter?.sortBy == sortBy) {
+            return@launch
+        }
+        val filter = _viewState.value?.filter?.copy(
+            sortBy = sortBy
+        ) ?: MonsterFilter(
+            sortBy = sortBy
+        )
+        filterMonsters(filter)
+    }
+
+
     private suspend fun filterMonsters(filter: MonsterFilter) {
         retrieveMonstersUseCase.execute(filter).collect {
             _viewState.postValue(
@@ -66,7 +79,6 @@ class MonsterViewModel(
             )
         }
     }
-
 
     private fun List<Monster>.toListDisplayModel(): List<MonsterListDisplayModel> {
         return this.map { mapper.fromDomain(it) }

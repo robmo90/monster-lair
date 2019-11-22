@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="monster_list_sort_choices">
+        <item>@string/monster_sort_by_name</item>
+        <item>@string/monster_sort_by_level</item>
+        <item>@string/monster_sort_by_type</item>
+    </string-array>
+</resources>

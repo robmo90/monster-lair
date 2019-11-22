@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.monsterlist.persistence
+package de.enduni.monsterlair.monsterlist.persistence.database
 
 import de.enduni.monsterlair.monsterlist.datasource.MonsterDataSource
 import de.enduni.monsterlair.monsterlist.datasource.MonsterEntityMapper

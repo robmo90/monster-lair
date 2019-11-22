@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.databinding.ViewholderMonsterBinding
+import de.enduni.monsterlair.monsterlist.domain.MonsterType
 import de.enduni.monsterlair.monsterlist.view.MonsterListDisplayModel
 
 
@@ -38,27 +39,27 @@ class MonsterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     }
 
     private fun MonsterListDisplayModel.getIcon(): Int {
-        return when (this.type.toLowerCase()) {
-            "aberration" -> R.drawable.ic_monster_aberration
-            "animal" -> R.drawable.ic_monster_animal
-            "beast" -> R.drawable.ic_monster_beast
-            "dragon" -> R.drawable.ic_monster_dragon
-            "elemental" -> R.drawable.ic_monster_elemental
-            "fiend" -> R.drawable.ic_monster_fiend
-            "giant" -> R.drawable.ic_monster_giant
-            "humanoid" -> R.drawable.ic_monster_humanoid
-            "monitor" -> R.drawable.ic_monster_monitor
-            "ooze" -> R.drawable.ic_monster_ooze
-            "spirit" -> R.drawable.ic_monster_spirit
-            "undead" -> R.drawable.ic_monster_undead
-            "astral" -> R.drawable.ic_monster_astral
-            "celestial" -> R.drawable.ic_monster_celestial
-            "construct" -> R.drawable.ic_monster_construct
-            "ethereal" -> R.drawable.ic_monster_ethereal
-            "fey" -> R.drawable.ic_monster_fey
-            "fungus" -> R.drawable.ic_monster_fungus
-            "plant" -> R.drawable.ic_monster_plant
-            else -> android.R.drawable.ic_lock_idle_lock
+        return when (this.type) {
+            MonsterType.ABERRATION -> R.drawable.ic_monster_aberration
+            MonsterType.ANIMAL -> R.drawable.ic_monster_animal
+            MonsterType.BEAST -> R.drawable.ic_monster_beast
+            MonsterType.DRAGON -> R.drawable.ic_monster_dragon
+            MonsterType.ELEMENTAL -> R.drawable.ic_monster_elemental
+            MonsterType.FIEND -> R.drawable.ic_monster_fiend
+            MonsterType.GIANT -> R.drawable.ic_monster_giant
+            MonsterType.HUMANOID -> R.drawable.ic_monster_humanoid
+            MonsterType.MONITOR -> R.drawable.ic_monster_monitor
+            MonsterType.OOZE -> R.drawable.ic_monster_ooze
+            MonsterType.SPIRIT -> R.drawable.ic_monster_spirit
+            MonsterType.UNDEAD -> R.drawable.ic_monster_undead
+            MonsterType.ASTRAL -> R.drawable.ic_monster_astral
+            MonsterType.CELESTIAL -> R.drawable.ic_monster_celestial
+            MonsterType.CONSTRUCT -> R.drawable.ic_monster_construct
+            MonsterType.ETHEREAL -> R.drawable.ic_monster_ethereal
+            MonsterType.FEY -> R.drawable.ic_monster_fey
+            MonsterType.FUNGUS -> R.drawable.ic_monster_fungus
+            MonsterType.PLANT -> R.drawable.ic_monster_plant
+            MonsterType.NONE -> R.drawable.ic_monster_ooze
         }
     }
 }

@@ -8,7 +8,8 @@ data class MonsterOverviewViewState(
 data class MonsterFilter(
     val string: String? = null,
     val lowerLevel: Int = DEFAULT_LEVEL_LOWER,
-    val upperLevel: Int = DEFAULT_LEVEL_UPPER
+    val upperLevel: Int = DEFAULT_LEVEL_UPPER,
+    val sortBy: SortBy = SortBy.NAME
 ) {
 
     companion object {
@@ -17,4 +18,10 @@ data class MonsterFilter(
         const val DEFAULT_LEVEL_UPPER = 25
 
     }
+}
+
+enum class SortBy(val value: String) {
+    NAME("name"),
+    LEVEL("level"),
+    TYPE("type")
 }
