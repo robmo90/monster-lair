@@ -50,8 +50,6 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 app:thumbNumber="2"
-                app:thumbValue1="-1"
-                app:thumbValue2="25"
                 app:scaleMin="-1"
                 app:scaleMax="25"
                 app:scaleStep="1"

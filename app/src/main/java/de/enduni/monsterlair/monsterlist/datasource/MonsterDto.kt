@@ -1,10 +1,10 @@
-package de.enduni.monsterlair.common
+package de.enduni.monsterlair.monsterlist.datasource
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class Monster(
+data class MonsterDto(
     @Json(name = "name") val name: String,
     @Json(name = "aonUrl") val url: String,
     @Json(name = "family") val family: String,

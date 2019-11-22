@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.overview
+package de.enduni.monsterlair.monsterlist.view.adapter
 
 import android.content.Intent
 import android.net.Uri
@@ -6,15 +6,15 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.common.Monster
 import de.enduni.monsterlair.databinding.ViewholderMonsterBinding
+import de.enduni.monsterlair.monsterlist.view.MonsterListDisplayModel
 
 
 class MonsterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     private lateinit var binding: ViewholderMonsterBinding
 
-    fun bind(monster: Monster) {
+    fun bind(monster: MonsterListDisplayModel) {
         binding = ViewholderMonsterBinding.bind(itemView)
         binding.listItemIcon.load(
             itemView.resources.getDrawable(
@@ -37,7 +37,7 @@ class MonsterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         }
     }
 
-    private fun Monster.getIcon(): Int {
+    private fun MonsterListDisplayModel.getIcon(): Int {
         return when (this.type.toLowerCase()) {
             "aberration" -> R.drawable.ic_monster_aberration
             "animal" -> R.drawable.ic_monster_animal
