@@ -1,7 +1,7 @@
 package de.enduni.monsterlair
 
 import android.app.Application
-import de.enduni.monsterlair.monsterlist.persistence.database.MonsterDatabaseInitializer
+import de.enduni.monsterlair.monsters.persistence.database.MonsterDatabaseInitializer
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
@@ -15,7 +15,7 @@ class MonsterLairApplication : Application() {
 
     private val databaseInitializer: MonsterDatabaseInitializer by inject()
 
-    override fun onCreate(){
+    override fun onCreate() {
         super.onCreate()
 
         if (BuildConfig.DEBUG) {
@@ -24,7 +24,7 @@ class MonsterLairApplication : Application() {
 
         startKoin {
             androidContext(this@MonsterLairApplication)
-            modules(monsterModule)
+            modules(listOf(monsterModule, encounterModule))
         }
         Timber.d("Initialized Koin")
 

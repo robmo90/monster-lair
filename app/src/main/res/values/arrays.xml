@@ -5,4 +5,12 @@
         <item>@string/monster_sort_by_level</item>
         <item>@string/monster_sort_by_type</item>
     </string-array>
+
+    <string-array name="difficulty_choices">
+        <item>@string/difficulty_trivial</item>
+        <item>@string/difficulty_low</item>
+        <item>@string/difficulty_moderate</item>
+        <item>@string/difficulty_severe</item>
+        <item>@string/difficulty_extreme</item>
+    </string-array>
 </resources>

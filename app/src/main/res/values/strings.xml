@@ -10,4 +10,16 @@
     <string name="monster_sort_by_level">Level</string>
     <string name="monster_sort_by_name">Name</string>
 
+    <string name="character_level">Level</string>
+    <string name="number_of_characters">Number</string>
+
+    <string name="difficulty_trivial">Trivial</string>
+    <string name="difficulty_low">Low</string>
+    <string name="difficulty_moderate">Moderate</string>
+    <string name="difficulty_severe">Severe</string>
+    <string name="difficulty_extreme">Extreme</string>
+
+    <string name="enter_valid_level"> Please enter a valid level between 1 and 20 </string>
+    <string name="enter_valid_number">Please enter a valid player number</string>
+
 </resources>

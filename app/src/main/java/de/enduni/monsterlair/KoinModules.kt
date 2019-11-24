@@ -1,14 +1,15 @@
 package de.enduni.monsterlair
 
-import de.enduni.monsterlair.monsterlist.datasource.MonsterAssetDataSource
-import de.enduni.monsterlair.monsterlist.datasource.MonsterDataSource
-import de.enduni.monsterlair.monsterlist.datasource.MonsterEntityMapper
-import de.enduni.monsterlair.monsterlist.domain.RetrieveMonstersUseCase
-import de.enduni.monsterlair.monsterlist.persistence.MonsterRepository
-import de.enduni.monsterlair.monsterlist.persistence.database.MonsterDatabase
-import de.enduni.monsterlair.monsterlist.persistence.database.MonsterDatabaseInitializer
-import de.enduni.monsterlair.monsterlist.view.MonsterListDisplayModelMapper
-import de.enduni.monsterlair.monsterlist.view.MonsterViewModel
+import de.enduni.monsterlair.encounters.view.EncounterViewModel
+import de.enduni.monsterlair.monsters.datasource.MonsterAssetDataSource
+import de.enduni.monsterlair.monsters.datasource.MonsterDataSource
+import de.enduni.monsterlair.monsters.datasource.MonsterEntityMapper
+import de.enduni.monsterlair.monsters.domain.RetrieveMonstersUseCase
+import de.enduni.monsterlair.monsters.persistence.MonsterRepository
+import de.enduni.monsterlair.monsters.persistence.database.MonsterDatabase
+import de.enduni.monsterlair.monsters.persistence.database.MonsterDatabaseInitializer
+import de.enduni.monsterlair.monsters.view.MonsterListDisplayModelMapper
+import de.enduni.monsterlair.monsters.view.MonsterViewModel
 import kotlinx.coroutines.InternalCoroutinesApi
 import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -39,6 +40,10 @@ val monsterModule = module {
     // view
     single { MonsterListDisplayModelMapper() }
     viewModel { MonsterViewModel(get(), get()) }
+}
 
+val encounterModule = module {
 
+    // view
+    viewModel { EncounterViewModel() }
 }

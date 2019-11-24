@@ -3,11 +3,70 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/monsterOverviewFragment">
+    app:startDestination="@id/monster_overview_fragment">
 
     <fragment
-        android:id="@+id/monsterOverviewFragment"
-        android:name="de.enduni.monsterlair.monsterlist.MonsterOverviewFragment"
+        android:id="@+id/monster_overview_fragment"
+        android:name="de.enduni.monsterlair.monsters.MonsterOverviewFragment"
         android:label="MonsterOverviewFragment"
-        tools:layout="@layout/fragment_monster_overview" />
+        tools:layout="@layout/fragment_monster_overview">
+
+        <argument
+            android:name="encounter_mode"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="encounter_level"
+            android:defaultValue="1"
+            app:argType="integer" />
+        <argument
+            android:name="number_of_players"
+            android:defaultValue="1"
+            app:argType="integer" />
+        <argument
+            android:name="encounter_difficulty"
+            android:defaultValue="TRIVIAL"
+            app:argType="de.enduni.monsterlair.common.EncounterDifficulty" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/encounters_fragment"
+        android:name="de.enduni.monsterlair.encounters.EncounterFragment"
+        android:label="EncounterFragment"
+        tools:layout="@layout/fragment_encounters">
+        <action
+            android:id="@+id/create_encounters_action"
+            app:destination="@id/monster_overview_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/hazard_fragment"
+        android:name="de.enduni.monsterlair.hazards.HazardFragment"
+        android:label="HazardFragment"
+        tools:layout="@layout/fragment_hazards" />
+
+    <action
+        android:id="@+id/monster_overview_fragment_action"
+        app:destination="@id/monster_overview_fragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <action
+        android:id="@+id/encounters_fragment_action"
+        app:destination="@id/encounters_fragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <action
+        android:id="@+id/hazard_fragment_action"
+        app:destination="@id/hazard_fragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
 </navigation>
