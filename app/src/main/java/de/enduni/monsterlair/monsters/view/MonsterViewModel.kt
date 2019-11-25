@@ -6,71 +6,67 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import de.enduni.monsterlair.monsters.domain.Monster
 import de.enduni.monsterlair.monsters.domain.RetrieveMonstersUseCase
-import kotlinx.coroutines.InternalCoroutinesApi
-import kotlinx.coroutines.flow.collect
+import de.enduni.monsterlair.monsters.view.adapter.MonsterViewHolder
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
-@UseExperimental(InternalCoroutinesApi::class)
 class MonsterViewModel(
     private val retrieveMonstersUseCase: RetrieveMonstersUseCase,
     private val mapper: MonsterListDisplayModelMapper
-) : ViewModel() {
+) : ViewModel(), MonsterViewHolder.MonsterViewHolderListener {
 
     private val _viewState = MutableLiveData<MonsterOverviewViewState>()
     val viewState: LiveData<MonsterOverviewViewState> get() = _viewState
 
+    private var filter = MonsterFilter()
+
     init {
-        viewModelScope.launch {
-            filterMonsters(MonsterFilter())
-        }
+        viewModelScope.launch { filterMonsters() }
     }
 
+
     fun filterByString(string: String) = viewModelScope.launch {
-        val filter = _viewState.value?.filter?.copy(
-            string = string
-        ) ?: MonsterFilter(string = string)
-        filterMonsters(filter)
+        filterMonsters(filter.copy(string = string))
     }
 
     fun adjustFilterLevelLower(lowerLevel: Int) = viewModelScope.launch {
-        val filter = _viewState.value?.filter?.copy(
-            lowerLevel = lowerLevel
-        ) ?: MonsterFilter(lowerLevel = lowerLevel)
-        filterMonsters(filter)
+        filterMonsters(filter.copy(lowerLevel = lowerLevel))
     }
 
     fun adjustFilterLevelUpper(upperLevel: Int) = viewModelScope.launch {
-        val filter = _viewState.value?.filter?.copy(
-            upperLevel = upperLevel
-        ) ?: MonsterFilter(upperLevel = upperLevel)
-        filterMonsters(filter)
+        filterMonsters(filter.copy(upperLevel = upperLevel))
     }
 
     fun adjustSortBy(sortBy: SortBy) = viewModelScope.launch {
-        val filter = _viewState.value?.filter?.copy(
-            sortBy = sortBy
-        ) ?: MonsterFilter(sortBy = sortBy)
-        filterMonsters(filter)
+        filterMonsters(filter.copy(sortBy = sortBy))
     }
 
 
-    private suspend fun filterMonsters(filter: MonsterFilter) {
-        if (filter == _viewState.value?.filter) {
-            return
-        }
-        retrieveMonstersUseCase.execute(filter).collect {
-            _viewState.postValue(
-                MonsterOverviewViewState(
-                    it.toListDisplayModel(),
-                    filter
-                )
-            )
+    private suspend fun filterMonsters(newFilter: MonsterFilter) {
+        if (newFilter != filter) {
+            filter = newFilter
+            filterMonsters()
         }
     }
 
-    private fun List<Monster>.toListDisplayModel(): List<MonsterListDisplayModel> {
-        return this.map { mapper.fromDomain(it) }
+    private suspend fun filterMonsters() {
+        Timber.d("Starting monster filter with $filter")
+        val monsters = retrieveMonstersUseCase.execute(filter).toDisplayModel()
+        val state = MonsterOverviewViewState(
+            monsters = monsters,
+            filter = filter
+        )
+        _viewState.postValue(state)
     }
 
+
+    override fun onSelect(monsterName: String) {
+        Timber.d("Selected $monsterName")
+    }
+
+
+    private fun List<Monster>.toDisplayModel(): List<MonsterListDisplayModel> {
+        return this.map { mapper.toMonsterDisplayModel(it) }
+    }
 
 }

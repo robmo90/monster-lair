@@ -22,4 +22,20 @@
     <string name="enter_valid_level"> Please enter a valid level between 1 and 20 </string>
     <string name="enter_valid_number">Please enter a valid player number</string>
 
+
+    <string name="role_low_lackey">Low-threat lackey</string>
+    <string name="role_moderate_lackey">Low- or moderate-threat lackey</string>
+    <string name="role_standard_lackey">Any lackey or standard creature</string>
+    <string name="role_standard_creature">Any standard creature</string>
+    <string name="role_low_boss">Any standard creature or low-threat boss</string>
+    <string name="role_moderate_boss">Low- or moderate-threat boss</string>
+    <string name="role_severe_boss">Moderate- or severe-threat boss</string>
+    <string name="role_extreme_boss">Severe- or extreme-threat boss</string>
+    <string name="role_solo_boss">Extreme-threat solo boss</string>
+    <string name="role_too_low">Too low for creation rules</string>
+    <string name="role_too_high">Too high for creation rules</string>
+
+    <string name="monster_with_xp_item_caption">%s \u2014 Level: %d \u2014 XP: %d</string>
+    <string name="encounter_monster_item_caption">Level: %d \u2014 XP: %d</string>
+
 </resources>

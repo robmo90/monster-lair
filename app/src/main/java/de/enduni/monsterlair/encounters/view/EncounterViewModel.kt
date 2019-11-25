@@ -7,11 +7,11 @@ import de.enduni.monsterlair.common.EncounterDifficulty
 
 class EncounterViewModel : ViewModel() {
 
-    private val _viewState = MutableLiveData<EncounterCreatorState>()
-    val viewState: LiveData<EncounterCreatorState> get() = _viewState
+    private val _viewState = MutableLiveData<EncounterState>()
+    val viewState: LiveData<EncounterState> get() = _viewState
 
     init {
-        _viewState.postValue(EncounterCreatorState())
+        _viewState.postValue(EncounterState())
     }
 
 

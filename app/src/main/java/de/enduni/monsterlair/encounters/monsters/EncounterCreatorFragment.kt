@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.monsters
+package de.enduni.monsterlair.encounters.monsters
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,39 +9,55 @@ import android.widget.ArrayAdapter
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.SimpleItemAnimator
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.setTextIfNotFocused
-import de.enduni.monsterlair.databinding.FragmentMonsterOverviewBinding
-import de.enduni.monsterlair.monsters.view.MonsterOverviewViewState
-import de.enduni.monsterlair.monsters.view.MonsterViewModel
+import de.enduni.monsterlair.databinding.FragmentEncounterCreatorBinding
+import de.enduni.monsterlair.encounters.monsters.view.EncounterCreatorDisplayState
+import de.enduni.monsterlair.encounters.monsters.view.EncounterCreatorViewModel
+import de.enduni.monsterlair.encounters.monsters.view.adapter.EncounterCreatorListAdapter
 import de.enduni.monsterlair.monsters.view.SortBy
-import de.enduni.monsterlair.monsters.view.adapter.MonsterListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import timber.log.Timber
 
 
-class MonsterOverviewFragment : Fragment() {
+class EncounterCreatorFragment : Fragment() {
 
-    private lateinit var binding: FragmentMonsterOverviewBinding
+    private lateinit var binding: FragmentEncounterCreatorBinding
 
-    private lateinit var listAdapter: MonsterListAdapter
+    private lateinit var listAdapter: EncounterCreatorListAdapter
 
-    private val viewModel: MonsterViewModel by viewModel()
+    private val viewModel: EncounterCreatorViewModel by viewModel()
+
+    private val args: EncounterCreatorFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return layoutInflater.inflate(R.layout.fragment_monster_overview, container, false)
+        return layoutInflater.inflate(R.layout.fragment_encounter_creator, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding = FragmentMonsterOverviewBinding.bind(view)
-        listAdapter = MonsterListAdapter(activity!!.layoutInflater, viewModel)
+        binding = FragmentEncounterCreatorBinding.bind(view)
+        listAdapter = EncounterCreatorListAdapter(activity!!.layoutInflater, viewModel, viewModel)
 
-        binding.monsterRecyclerView.adapter = listAdapter
+        binding.encounterRecyclerView.adapter = listAdapter
+        val animator = binding.encounterRecyclerView.itemAnimator
+        if (animator is SimpleItemAnimator) {
+            Timber.d("Disabling")
+            animator.supportsChangeAnimations = false
+        }
         viewModel.viewState.observe(this, Observer { state -> bindViewToState(state) })
         bindUi()
+
+        viewModel.start(
+            numberOfPlayers = args.numberOfPlayers,
+            levelOfEncounter = args.encounterLevel,
+            targetDifficulty = args.encounterDifficulty
+        )
     }
 
     private fun bindUi() {
@@ -86,8 +102,8 @@ class MonsterOverviewFragment : Fragment() {
         }
     }
 
-    private fun bindViewToState(state: MonsterOverviewViewState) {
-        listAdapter.submitList(state.monsters)
+    private fun bindViewToState(state: EncounterCreatorDisplayState) {
+        listAdapter.submitList(state.list)
         binding.searchEditText.setTextIfNotFocused(state.filter?.string)
         state.filter?.let { filter ->
             binding.levelSliderLabel.text = context!!.getString(
@@ -99,6 +115,5 @@ class MonsterOverviewFragment : Fragment() {
             binding.levelSlider.getThumb(1).value = filter.upperLevel
         }
     }
-
 
 }

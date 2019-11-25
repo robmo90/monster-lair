@@ -8,18 +8,18 @@ import de.enduni.monsterlair.R
 import de.enduni.monsterlair.monsters.view.MonsterListDisplayModel
 
 class MonsterListAdapter(
-    private val layoutInflater: LayoutInflater
+    private val layoutInflater: LayoutInflater,
+    private val monsterViewHolderListener: MonsterViewHolder.MonsterViewHolderListener
 ) : ListAdapter<MonsterListDisplayModel, MonsterViewHolder>(MonsterDiffItemCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MonsterViewHolder {
         val view = layoutInflater.inflate(R.layout.viewholder_monster, parent, false)
-        return MonsterViewHolder(view)
+        return MonsterViewHolder(view, monsterViewHolderListener)
     }
 
     override fun onBindViewHolder(holder: MonsterViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
-
 
 }
 

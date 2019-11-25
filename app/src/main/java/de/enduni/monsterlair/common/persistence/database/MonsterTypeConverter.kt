@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.monsters.persistence.database
+package de.enduni.monsterlair.common.persistence.database
 
 import androidx.room.TypeConverter
 import de.enduni.monsterlair.monsters.domain.MonsterType

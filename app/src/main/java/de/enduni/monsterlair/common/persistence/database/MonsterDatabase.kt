@@ -1,11 +1,12 @@
-package de.enduni.monsterlair.monsters.persistence.database
+package de.enduni.monsterlair.common.persistence.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import de.enduni.monsterlair.BuildConfig
-import de.enduni.monsterlair.monsters.persistence.MonsterEntity
+import de.enduni.monsterlair.common.persistence.MonsterDao
+import de.enduni.monsterlair.common.persistence.MonsterEntity
 
 @Database(
     entities = [MonsterEntity::class],

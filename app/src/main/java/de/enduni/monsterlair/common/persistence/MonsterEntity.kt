@@ -1,15 +1,16 @@
-package de.enduni.monsterlair.monsters.persistence
+package de.enduni.monsterlair.common.persistence
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
+import de.enduni.monsterlair.common.persistence.database.MonsterTypeConverter
 import de.enduni.monsterlair.monsters.domain.MonsterType
-import de.enduni.monsterlair.monsters.persistence.database.MonsterTypeConverter
 
 @Entity(tableName = "monsters")
 @TypeConverters(MonsterTypeConverter::class)
 data class MonsterEntity(
-    @PrimaryKey val name: String,
+    @PrimaryKey(autoGenerate = true) val id: Int? = null,
+    val name: String,
     val url: String,
     val family: String,
     val level: Int,

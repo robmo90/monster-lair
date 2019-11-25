@@ -3,30 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="?attr/selectableItemBackground"
+    android:elevation="4dp"
     android:focusable="true"
     android:clickable="true"
+    android:background="?attr/colorSurface"
     android:layout_height="@dimen/two_line_list_item_height">
-
-    <ImageView
-        android:id="@+id/list_item_icon"
-        android:layout_width="@dimen/list_item_icon_size"
-        android:layout_height="@dimen/list_item_icon_size"
-        android:layout_marginStart="@dimen/list_item_margin"
-        android:layout_marginTop="@dimen/list_item_margin"
-        android:src="@drawable/ic_monster_celestial"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/list_item_title"
         style="@style/TextAppearance.MaterialComponents.Subtitle1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/list_item_margin"
         android:layout_marginTop="@dimen/list_item_margin"
-        app:layout_constraintStart_toEndOf="@id/list_item_icon"
+        android:layout_marginStart="@dimen/list_item_margin"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:text="Aasimar" />
 
     <TextView

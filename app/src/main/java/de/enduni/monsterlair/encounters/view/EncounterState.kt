@@ -2,7 +2,7 @@ package de.enduni.monsterlair.encounters.view
 
 import de.enduni.monsterlair.common.EncounterDifficulty
 
-data class EncounterCreatorState(
+data class EncounterState(
     val numberOfPlayers: Int? = null,
     val levelOfPlayers: Int? = null,
     val levelValid: Boolean = true,

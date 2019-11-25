@@ -1,8 +1,7 @@
-package de.enduni.monsterlair.monsters.persistence.database
+package de.enduni.monsterlair.common.persistence
 
 import androidx.room.*
 import androidx.sqlite.db.SupportSQLiteQuery
-import de.enduni.monsterlair.monsters.persistence.MonsterEntity
 
 @Dao
 interface MonsterDao {
@@ -18,5 +17,9 @@ interface MonsterDao {
     suspend fun getFilteredMonsters(
         sqLiteQuery: SupportSQLiteQuery
     ): List<MonsterEntity>
+
+
+    @Query("SELECT * FROM monsters WHERE name is :name LIMIT 1")
+    suspend fun getMonster(name: String): MonsterEntity
 
 }

@@ -10,24 +10,6 @@
         android:name="de.enduni.monsterlair.monsters.MonsterOverviewFragment"
         android:label="MonsterOverviewFragment"
         tools:layout="@layout/fragment_monster_overview">
-
-        <argument
-            android:name="encounter_mode"
-            android:defaultValue="false"
-            app:argType="boolean" />
-        <argument
-            android:name="encounter_level"
-            android:defaultValue="1"
-            app:argType="integer" />
-        <argument
-            android:name="number_of_players"
-            android:defaultValue="1"
-            app:argType="integer" />
-        <argument
-            android:name="encounter_difficulty"
-            android:defaultValue="TRIVIAL"
-            app:argType="de.enduni.monsterlair.common.EncounterDifficulty" />
-
     </fragment>
 
     <fragment
@@ -35,9 +17,17 @@
         android:name="de.enduni.monsterlair.encounters.EncounterFragment"
         android:label="EncounterFragment"
         tools:layout="@layout/fragment_encounters">
+
         <action
-            android:id="@+id/create_encounters_action"
-            app:destination="@id/monster_overview_fragment" />
+            android:id="@+id/action_encounters_fragment_to_encounterCreatorFragment"
+            app:destination="@id/encounterCreatorFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right">
+
+        </action>
+
     </fragment>
 
     <fragment
@@ -69,4 +59,28 @@
         app:exitAnim="@anim/slide_out_left"
         app:popEnterAnim="@anim/slide_in_left"
         app:popExitAnim="@anim/slide_out_right" />
+
+
+    <fragment
+        android:id="@+id/encounterCreatorFragment"
+        android:name="de.enduni.monsterlair.encounters.monsters.EncounterCreatorFragment"
+        android:label="EncounterCreatorFragment"
+        tools:layout="@layout/fragment_encounter_creator">
+
+        <argument
+            android:name="encounter_level"
+            android:defaultValue="1"
+            app:argType="integer" />
+        <argument
+            android:name="number_of_players"
+            android:defaultValue="1"
+            app:argType="integer" />
+        <argument
+            android:name="encounter_difficulty"
+            android:defaultValue="TRIVIAL"
+            app:argType="de.enduni.monsterlair.common.EncounterDifficulty" />
+
+    </fragment>
+
+
 </navigation>

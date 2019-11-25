@@ -14,9 +14,8 @@ import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.EncounterDifficulty
 import de.enduni.monsterlair.common.setTextIfNotFocused
 import de.enduni.monsterlair.databinding.FragmentEncountersBinding
-import de.enduni.monsterlair.encounters.view.EncounterCreatorState
+import de.enduni.monsterlair.encounters.view.EncounterState
 import de.enduni.monsterlair.encounters.view.EncounterViewModel
-import de.enduni.monsterlair.monsters.MonsterOverviewFragmentDirections
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
 
@@ -43,7 +42,7 @@ class EncounterFragment : Fragment() {
         setupSpinner()
     }
 
-    private fun handleViewState(state: EncounterCreatorState) {
+    private fun handleViewState(state: EncounterState) {
         Timber.d("Rendering state $state")
         binding.characterLevelEditText.setTextIfNotFocused(state.levelOfPlayers)
         if (state.levelValid.not()) {
@@ -55,10 +54,10 @@ class EncounterFragment : Fragment() {
         }
         binding.startButton.isEnabled = state.isStartAllowed()
         binding.startButton.setOnClickListener {
-            val directions = MonsterOverviewFragmentDirections.monsterOverviewFragmentAction(
-                encounterMode = true,
-                numberOfPlayers = state.numberOfPlayers!!,
+            val directions =
+                EncounterFragmentDirections.actionEncountersFragmentToEncounterCreatorFragment(
                 encounterLevel = state.levelOfPlayers!!,
+                    numberOfPlayers = state.numberOfPlayers!!,
                 encounterDifficulty = state.difficulty
             )
             findNavController().navigate(directions)

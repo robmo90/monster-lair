@@ -1,23 +1,23 @@
-package de.enduni.monsterlair.monsters.view.adapter
+package de.enduni.monsterlair.encounters.monsters.view.adapter
 
 import android.view.View
-import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.getIcon
 import de.enduni.monsterlair.databinding.ViewholderMonsterBinding
-import de.enduni.monsterlair.monsters.view.MonsterListDisplayModel
+import de.enduni.monsterlair.encounters.monsters.view.EncounterCreatorDisplayModel
 
 
 class MonsterViewHolder(
     itemView: View,
     private val monsterSelectedListener: MonsterViewHolderListener
-) : RecyclerView.ViewHolder(itemView) {
+) : EncounterCreatorViewHolder(itemView) {
 
     private lateinit var binding: ViewholderMonsterBinding
 
-    fun bind(monster: MonsterListDisplayModel) {
+    override fun bind(displayModel: EncounterCreatorDisplayModel) {
         binding = ViewholderMonsterBinding.bind(itemView)
+        val monster = displayModel as EncounterCreatorDisplayModel.Monster
         binding.listItemIcon.load(
             itemView.resources.getDrawable(
                 monster.type.getIcon(),
@@ -26,19 +26,20 @@ class MonsterViewHolder(
         )
         binding.listItemTitle.text = monster.name
         val caption = itemView.resources.getString(
-            R.string.monster_item_caption,
+            R.string.monster_with_xp_item_caption,
             monster.family,
-            monster.level
+            monster.level,
+            monster.role.xp
         )
         binding.listItemCaption.text = caption
 
         binding.root.setOnClickListener {
-            monsterSelectedListener.onSelect(monsterName = monster.name)
+            monsterSelectedListener.onSelect(monster.id)
         }
     }
 
     interface MonsterViewHolderListener {
-        fun onSelect(monsterName: String)
+        fun onSelect(id: Int)
     }
 
 }

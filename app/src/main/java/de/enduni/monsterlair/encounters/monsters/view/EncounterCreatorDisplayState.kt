@@ -1,0 +1,17 @@
+package de.enduni.monsterlair.encounters.monsters.view
+
+import de.enduni.monsterlair.monsters.view.MonsterFilter
+import de.enduni.monsterlair.monsters.view.SortBy
+
+
+data class EncounterCreatorDisplayState(
+    val list: List<EncounterCreatorDisplayModel> = listOf(),
+    val filter: EncounterCreatorFilter? = null
+)
+
+data class EncounterCreatorFilter(
+    val string: String? = null,
+    val lowerLevel: Int = MonsterFilter.DEFAULT_LEVEL_LOWER,
+    val upperLevel: Int = MonsterFilter.DEFAULT_LEVEL_UPPER,
+    val sortBy: SortBy = SortBy.NAME
+)

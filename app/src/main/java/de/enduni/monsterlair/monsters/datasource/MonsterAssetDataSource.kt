@@ -6,8 +6,6 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.monsters.domain.MonsterTypeAdapter
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
 
 class MonsterAssetDataSource(private val context: Context) : MonsterDataSource {
 
@@ -20,10 +18,10 @@ class MonsterAssetDataSource(private val context: Context) : MonsterDataSource {
             .build().adapter<List<MonsterDto>>(type)
     }
 
-    override suspend fun getMonsters(): Flow<List<MonsterDto>> {
+    override suspend fun getMonsters(): List<MonsterDto> {
         val raw = context.resources.openRawResource(R.raw.monsters)
         val json = String(raw.readBytes())
         val monsters = jsonAdapter.fromJson(json)
-        return monsters?.let { flowOf(it) } ?: throw RuntimeException("Error loading monsters")
+        return monsters?.let { it } ?: throw RuntimeException("Error loading monsters")
     }
 }

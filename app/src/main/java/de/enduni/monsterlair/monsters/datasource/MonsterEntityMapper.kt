@@ -1,7 +1,7 @@
 package de.enduni.monsterlair.monsters.datasource
 
+import de.enduni.monsterlair.common.persistence.MonsterEntity
 import de.enduni.monsterlair.monsters.domain.Monster
-import de.enduni.monsterlair.monsters.persistence.MonsterEntity
 
 class MonsterEntityMapper {
 
@@ -16,6 +16,7 @@ class MonsterEntityMapper {
     )
 
     fun toModel(entity: MonsterEntity) = Monster(
+        id = entity.id!!,
         name = entity.name,
         url = entity.url,
         level = entity.level,
