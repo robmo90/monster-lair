@@ -1,6 +1,6 @@
 package de.enduni.monsterlair.monsters.domain
 
-import de.enduni.monsterlair.common.persistence.MonsterRepository
+import de.enduni.monsterlair.monsters.persistence.MonsterRepository
 import de.enduni.monsterlair.monsters.view.MonsterFilter
 import timber.log.Timber
 

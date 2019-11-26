@@ -6,9 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import de.enduni.monsterlair.common.view.ActionLiveData
 import de.enduni.monsterlair.encounters.domain.CalculateEncounterBudgetUseCase
-import de.enduni.monsterlair.encounters.domain.Encounter
-import de.enduni.monsterlair.encounters.domain.EncounterDifficulty
 import de.enduni.monsterlair.encounters.domain.RetrieveEncountersUseCase
+import de.enduni.monsterlair.encounters.domain.model.Encounter
+import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 import de.enduni.monsterlair.encounters.view.adapter.EncounterViewHolder
 import kotlinx.coroutines.launch
 

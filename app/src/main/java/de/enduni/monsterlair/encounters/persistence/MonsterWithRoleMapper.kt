@@ -1,10 +1,12 @@
-package de.enduni.monsterlair.encounters.domain
+package de.enduni.monsterlair.encounters.persistence
 
-import de.enduni.monsterlair.monsters.domain.Monster
+import de.enduni.monsterlair.common.persistence.MonsterEntity
+import de.enduni.monsterlair.encounters.domain.model.CreatureRole
+import de.enduni.monsterlair.encounters.domain.model.MonsterWithRole
 
 class MonsterWithRoleMapper {
 
-    fun mapToMonsterWithRole(monster: Monster, encounterLevel: Int): MonsterWithRole {
+    fun mapToMonsterWithRole(monster: MonsterEntity, encounterLevel: Int): MonsterWithRole {
         return monster.let {
             MonsterWithRole(
                 id = it.id,
@@ -15,12 +17,13 @@ class MonsterWithRoleMapper {
                 alignment = it.alignment,
                 type = it.type,
                 size = it.size,
+                source = it.source,
                 role = it.determineRole(encounterLevel)
             )
         }
     }
 
-    private fun Monster.determineRole(encounterLevel: Int): CreatureRole {
+    private fun MonsterEntity.determineRole(encounterLevel: Int): CreatureRole {
         val normalizedLevel = this.level - encounterLevel
         return if (normalizedLevel <= -5) {
             CreatureRole.TOO_LOW

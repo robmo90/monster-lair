@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.encounters.domain
+package de.enduni.monsterlair.encounters.domain.model
 
 data class EncounterBudget(
     val currentBudget: Int,

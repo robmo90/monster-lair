@@ -2,7 +2,7 @@ package de.enduni.monsterlair.common.persistence
 
 import androidx.room.*
 import de.enduni.monsterlair.common.persistence.database.EnumTypeConverters
-import de.enduni.monsterlair.encounters.domain.EncounterDifficulty
+import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 
 @Entity(tableName = "encounters")
 @TypeConverters(EnumTypeConverters::class)

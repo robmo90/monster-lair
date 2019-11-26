@@ -13,7 +13,7 @@ import androidx.navigation.fragment.findNavController
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.setTextIfNotFocused
 import de.enduni.monsterlair.databinding.FragmentEncountersBinding
-import de.enduni.monsterlair.encounters.domain.EncounterDifficulty
+import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 import de.enduni.monsterlair.encounters.view.EncounterSelectedAction
 import de.enduni.monsterlair.encounters.view.EncounterState
 import de.enduni.monsterlair.encounters.view.EncounterViewModel

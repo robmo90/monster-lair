@@ -1,7 +1,7 @@
 package de.enduni.monsterlair.common.persistence.database
 
 import androidx.room.TypeConverter
-import de.enduni.monsterlair.encounters.domain.EncounterDifficulty
+import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 import de.enduni.monsterlair.monsters.domain.MonsterType
 
 class EnumTypeConverters {

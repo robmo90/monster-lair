@@ -4,14 +4,15 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import de.enduni.monsterlair.common.persistence.EncounterRepository
 import de.enduni.monsterlair.common.view.ActionLiveData
 import de.enduni.monsterlair.encounters.creator.domain.RetrieveEncounterUseCase
 import de.enduni.monsterlair.encounters.creator.domain.RetrieveMonstersWithRoleUseCase
 import de.enduni.monsterlair.encounters.creator.view.adapter.EncounterBudgetViewHolder
 import de.enduni.monsterlair.encounters.creator.view.adapter.MonsterForEncounterViewHolder
 import de.enduni.monsterlair.encounters.creator.view.adapter.MonsterViewHolder
-import de.enduni.monsterlair.encounters.domain.*
+import de.enduni.monsterlair.encounters.domain.CalculateEncounterBudgetUseCase
+import de.enduni.monsterlair.encounters.domain.model.*
+import de.enduni.monsterlair.encounters.persistence.EncounterRepository
 import de.enduni.monsterlair.monsters.view.SortBy
 import kotlinx.coroutines.launch
 import timber.log.Timber

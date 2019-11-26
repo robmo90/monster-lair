@@ -1,7 +1,8 @@
-package de.enduni.monsterlair.common.persistence
+package de.enduni.monsterlair.monsters.persistence
 
 import androidx.sqlite.db.SimpleSQLiteQuery
-import de.enduni.monsterlair.monsters.datasource.MonsterEntityMapper
+import de.enduni.monsterlair.common.persistence.MonsterDao
+import de.enduni.monsterlair.common.persistence.MonsterEntity
 import de.enduni.monsterlair.monsters.domain.Monster
 import timber.log.Timber
 

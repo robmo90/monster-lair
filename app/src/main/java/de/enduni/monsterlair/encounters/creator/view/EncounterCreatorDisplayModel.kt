@@ -1,7 +1,7 @@
 package de.enduni.monsterlair.encounters.creator.view
 
-import de.enduni.monsterlair.encounters.domain.CreatureRole
-import de.enduni.monsterlair.encounters.domain.EncounterDifficulty
+import de.enduni.monsterlair.encounters.domain.model.CreatureRole
+import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 import de.enduni.monsterlair.monsters.domain.MonsterType
 
 sealed class EncounterCreatorDisplayModel {

@@ -1,6 +1,6 @@
 package de.enduni.monsterlair.encounters.view
 
-import de.enduni.monsterlair.encounters.domain.EncounterDifficulty
+import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 
 data class EncounterState(
     val numberOfPlayers: Int? = null,

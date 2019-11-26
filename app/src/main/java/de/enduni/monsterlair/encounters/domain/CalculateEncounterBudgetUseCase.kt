@@ -1,5 +1,8 @@
 package de.enduni.monsterlair.encounters.domain
 
+import de.enduni.monsterlair.encounters.domain.model.Encounter
+import de.enduni.monsterlair.encounters.domain.model.EncounterBudget
+import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlin.math.abs

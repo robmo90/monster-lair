@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.encounters.domain
+package de.enduni.monsterlair.encounters.domain.model
 
 import de.enduni.monsterlair.monsters.domain.MonsterType
 
@@ -11,5 +11,6 @@ data class MonsterWithRole(
     val alignment: String,
     val type: MonsterType,
     val size: String,
-    val role: CreatureRole
+    val role: CreatureRole,
+    val source: String
 )

@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.encounters.domain
+package de.enduni.monsterlair.encounters.domain.model
 
 class Encounter(
     val id: Long? = null,
