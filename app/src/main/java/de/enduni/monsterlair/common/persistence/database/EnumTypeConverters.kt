@@ -2,6 +2,7 @@ package de.enduni.monsterlair.common.persistence.database
 
 import androidx.room.TypeConverter
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
+import de.enduni.monsterlair.hazards.domain.Complexity
 import de.enduni.monsterlair.monsters.domain.MonsterType
 
 class EnumTypeConverters {
@@ -23,6 +24,16 @@ class EnumTypeConverters {
     @TypeConverter
     fun toDifficulty(value: String): EncounterDifficulty {
         return EncounterDifficulty.valueOf(value)
+    }
+
+    @TypeConverter
+    fun fromComplexity(value: Complexity): String {
+        return value.toString()
+    }
+
+    @TypeConverter
+    fun toComplexity(value: String): Complexity {
+        return Complexity.valueOf(value)
     }
 
 }

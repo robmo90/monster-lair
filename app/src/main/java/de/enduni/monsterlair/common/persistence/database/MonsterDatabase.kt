@@ -18,6 +18,8 @@ abstract class MonsterDatabase : RoomDatabase() {
 
     abstract fun encounterDao(): EncounterDao
 
+    abstract fun hazardDao(): HazardDao
+
 
     companion object {
         fun buildDatabase(context: Context): MonsterDatabase {

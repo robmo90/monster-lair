@@ -12,6 +12,8 @@ import de.enduni.monsterlair.encounters.persistence.EncounterEntityMapper
 import de.enduni.monsterlair.encounters.persistence.EncounterRepository
 import de.enduni.monsterlair.encounters.persistence.MonsterWithRoleMapper
 import de.enduni.monsterlair.encounters.view.EncounterViewModel
+import de.enduni.monsterlair.hazards.datasource.HazardAssetDataSource
+import de.enduni.monsterlair.hazards.datasource.HazardDataSource
 import de.enduni.monsterlair.monsters.datasource.MonsterAssetDataSource
 import de.enduni.monsterlair.monsters.datasource.MonsterDataSource
 import de.enduni.monsterlair.monsters.domain.RetrieveMonstersUseCase
@@ -25,11 +27,15 @@ import org.koin.dsl.module
 
 val databaseModule = module(createdAtStart = true) {
 
+    single<MonsterDataSource> { MonsterAssetDataSource(androidApplication()) }
+    single<HazardDataSource> { HazardAssetDataSource(androidApplication()) }
     single(createdAtStart = true) { MonsterDatabase.buildDatabase(androidApplication()) }
     single { get<MonsterDatabase>().monsterDao() }
     single { get<MonsterDatabase>().encounterDao() }
+    single { get<MonsterDatabase>().hazardDao() }
     single {
         MonsterDatabaseInitializer(
+            get(),
             get(),
             get(),
             get()
