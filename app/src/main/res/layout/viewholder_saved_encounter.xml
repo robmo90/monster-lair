@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/two_line_list_item_height"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="?attr/colorSurface"
     android:clickable="true"
     android:elevation="4dp"
     android:focusable="true">
+
 
     <TextView
         android:id="@+id/list_item_title"
@@ -18,7 +19,7 @@
         android:layout_marginTop="@dimen/list_item_margin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Aasimar" />
+        tools:text="Some Encounter" />
 
     <TextView
         android:id="@+id/list_item_caption"
@@ -28,15 +29,7 @@
         android:layout_marginTop="@dimen/list_item_caption_gap"
         app:layout_constraintStart_toStartOf="@id/list_item_title"
         app:layout_constraintTop_toBottomOf="@id/list_item_title"
-        tools:text="Aasimar" />
+        tools:text="With these monsters" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/save_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Save"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

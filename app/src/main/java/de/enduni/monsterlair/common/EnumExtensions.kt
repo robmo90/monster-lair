@@ -2,7 +2,8 @@ package de.enduni.monsterlair.common
 
 import androidx.annotation.StringRes
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.encounters.monsters.domain.CreatureRole
+import de.enduni.monsterlair.encounters.domain.CreatureRole
+import de.enduni.monsterlair.encounters.domain.EncounterDifficulty
 import de.enduni.monsterlair.monsters.domain.MonsterType
 
 fun MonsterType.getIcon(): Int {

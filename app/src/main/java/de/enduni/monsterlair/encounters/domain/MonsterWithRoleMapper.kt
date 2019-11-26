@@ -1,29 +1,11 @@
-package de.enduni.monsterlair.encounters.monsters.domain
+package de.enduni.monsterlair.encounters.domain
 
-import de.enduni.monsterlair.common.persistence.MonsterRepository
-import de.enduni.monsterlair.encounters.monsters.view.EncounterCreatorFilter
 import de.enduni.monsterlair.monsters.domain.Monster
-import de.enduni.monsterlair.monsters.domain.MonsterType
 
-class RetrieveMonstersWithRoleUseCase(
-    private val repository: MonsterRepository
-) {
+class MonsterWithRoleMapper {
 
-    suspend fun execute(
-        filter: EncounterCreatorFilter,
-        encounterLevel: Int
-    ): List<MonsterWithRole> {
-        val filterString = if (filter.string.isNullOrEmpty()) "\"%\"" else "\"%${filter.string}%\""
-        return repository.getMonsters(
-            filterString,
-            filter.lowerLevel,
-            filter.upperLevel,
-            filter.sortBy.value
-        ).mapToMonstersWithRole(encounterLevel)
-    }
-
-    private fun List<Monster>.mapToMonstersWithRole(encounterLevel: Int): List<MonsterWithRole> {
-        return this.map {
+    fun mapToMonsterWithRole(monster: Monster, encounterLevel: Int): MonsterWithRole {
+        return monster.let {
             MonsterWithRole(
                 id = it.id,
                 name = it.name,
@@ -59,15 +41,3 @@ class RetrieveMonstersWithRoleUseCase(
     }
 
 }
-
-data class MonsterWithRole(
-    val id: Int,
-    val name: String,
-    val url: String,
-    val family: String,
-    val level: Int,
-    val alignment: String,
-    val type: MonsterType,
-    val size: String,
-    val role: CreatureRole
-)

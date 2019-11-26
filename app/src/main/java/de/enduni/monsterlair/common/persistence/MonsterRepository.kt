@@ -11,8 +11,8 @@ class MonsterRepository(
     private val monsterEntityMapper: MonsterEntityMapper
 ) {
 
-    suspend fun getMonster(name: String) =
-        monsterDao.getMonster(name).let { monsterEntityMapper.toModel(it) }
+    suspend fun getMonster(id: Long) =
+        monsterDao.getMonster(id).let { monsterEntityMapper.toModel(it) }
 
     suspend fun getMonsters(
         filterString: String,

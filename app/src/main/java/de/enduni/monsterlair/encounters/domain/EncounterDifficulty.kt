@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.common
+package de.enduni.monsterlair.encounters.domain
 
 enum class EncounterDifficulty(
     val budget: Int,

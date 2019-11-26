@@ -1,12 +1,17 @@
 package de.enduni.monsterlair
 
+import de.enduni.monsterlair.common.persistence.EncounterEntityMapper
+import de.enduni.monsterlair.common.persistence.EncounterRepository
 import de.enduni.monsterlair.common.persistence.MonsterRepository
 import de.enduni.monsterlair.common.persistence.database.MonsterDatabase
 import de.enduni.monsterlair.common.persistence.database.MonsterDatabaseInitializer
-import de.enduni.monsterlair.encounters.monsters.domain.CalculateEncounterBudgetUseCase
-import de.enduni.monsterlair.encounters.monsters.domain.RetrieveMonstersWithRoleUseCase
-import de.enduni.monsterlair.encounters.monsters.view.EncounterCreatorDisplayModelMapper
-import de.enduni.monsterlair.encounters.monsters.view.EncounterCreatorViewModel
+import de.enduni.monsterlair.encounters.creator.domain.RetrieveEncounterUseCase
+import de.enduni.monsterlair.encounters.creator.domain.RetrieveMonstersWithRoleUseCase
+import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayModelMapper
+import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorViewModel
+import de.enduni.monsterlair.encounters.domain.CalculateEncounterBudgetUseCase
+import de.enduni.monsterlair.encounters.domain.MonsterWithRoleMapper
+import de.enduni.monsterlair.encounters.domain.RetrieveEncountersUseCase
 import de.enduni.monsterlair.encounters.view.EncounterViewModel
 import de.enduni.monsterlair.monsters.datasource.MonsterAssetDataSource
 import de.enduni.monsterlair.monsters.datasource.MonsterDataSource
@@ -47,12 +52,20 @@ val monsterModule = module {
 
 val encounterModule = module {
 
+    // persistence
+    single { get<MonsterDatabase>().encounterDao() }
+    single { EncounterEntityMapper() }
+    single { EncounterRepository(get(), get()) }
+
     // domain
+    single { MonsterWithRoleMapper() }
     single { CalculateEncounterBudgetUseCase() }
-    single { RetrieveMonstersWithRoleUseCase(get()) }
+    single { RetrieveMonstersWithRoleUseCase(get(), get()) }
     single { EncounterCreatorDisplayModelMapper() }
+    single { RetrieveEncountersUseCase(get(), get(), get()) }
+    single { RetrieveEncounterUseCase(get(), get(), get()) }
 
     // view
-    viewModel { EncounterCreatorViewModel(get(), get(), get()) }
-    viewModel { EncounterViewModel() }
+    viewModel { EncounterCreatorViewModel(get(), get(), get(), get(), get()) }
+    viewModel { EncounterViewModel(get(), get()) }
 }

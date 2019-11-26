@@ -1,7 +1,7 @@
 package de.enduni.monsterlair.monsters.domain
 
 data class Monster(
-    val id: Int,
+    val id: Long,
     val name: String,
     val url: String,
     val family: String,

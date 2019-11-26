@@ -1,11 +1,11 @@
-package de.enduni.monsterlair.encounters.monsters.view.adapter
+package de.enduni.monsterlair.encounters.creator.view.adapter
 
 import android.view.View
 import coil.api.load
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.getIcon
 import de.enduni.monsterlair.databinding.ViewholderMonsterBinding
-import de.enduni.monsterlair.encounters.monsters.view.EncounterCreatorDisplayModel
+import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayModel
 
 
 class MonsterViewHolder(
@@ -39,7 +39,7 @@ class MonsterViewHolder(
     }
 
     interface MonsterViewHolderListener {
-        fun onSelect(id: Int)
+        fun onSelect(id: Long)
     }
 
 }

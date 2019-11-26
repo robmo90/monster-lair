@@ -1,13 +1,13 @@
-package de.enduni.monsterlair.encounters.monsters.view
+package de.enduni.monsterlair.encounters.creator.view
 
-import de.enduni.monsterlair.common.EncounterDifficulty
-import de.enduni.monsterlair.encounters.monsters.domain.CreatureRole
+import de.enduni.monsterlair.encounters.domain.CreatureRole
+import de.enduni.monsterlair.encounters.domain.EncounterDifficulty
 import de.enduni.monsterlair.monsters.domain.MonsterType
 
 sealed class EncounterCreatorDisplayModel {
 
     data class Monster(
-        val id: Int,
+        val id: Long,
         val name: String,
         val type: MonsterType,
         val level: Int,
@@ -23,7 +23,7 @@ sealed class EncounterCreatorDisplayModel {
     ) : EncounterCreatorDisplayModel()
 
     data class MonsterForEncounter(
-        val id: Int,
+        val id: Long,
         val name: String,
         val type: MonsterType,
         val count: Int,

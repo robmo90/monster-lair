@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.encounters.monsters
+package de.enduni.monsterlair.encounters.creator
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,9 +14,11 @@ import androidx.recyclerview.widget.SimpleItemAnimator
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.setTextIfNotFocused
 import de.enduni.monsterlair.databinding.FragmentEncounterCreatorBinding
-import de.enduni.monsterlair.encounters.monsters.view.EncounterCreatorDisplayState
-import de.enduni.monsterlair.encounters.monsters.view.EncounterCreatorViewModel
-import de.enduni.monsterlair.encounters.monsters.view.adapter.EncounterCreatorListAdapter
+import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorAction
+import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayState
+import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorViewModel
+import de.enduni.monsterlair.encounters.creator.view.SaveDialog
+import de.enduni.monsterlair.encounters.creator.view.adapter.EncounterCreatorListAdapter
 import de.enduni.monsterlair.monsters.view.SortBy
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
@@ -42,7 +44,10 @@ class EncounterCreatorFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentEncounterCreatorBinding.bind(view)
-        listAdapter = EncounterCreatorListAdapter(activity!!.layoutInflater, viewModel, viewModel)
+        listAdapter = EncounterCreatorListAdapter(
+            activity!!.layoutInflater, viewModel,
+            viewModel, viewModel
+        )
 
         binding.encounterRecyclerView.adapter = listAdapter
         val animator = binding.encounterRecyclerView.itemAnimator
@@ -51,12 +56,14 @@ class EncounterCreatorFragment : Fragment() {
             animator.supportsChangeAnimations = false
         }
         viewModel.viewState.observe(this, Observer { state -> bindViewToState(state) })
+        viewModel.actions.observe(this, Observer { action -> handleAction(action) })
         bindUi()
 
         viewModel.start(
             numberOfPlayers = args.numberOfPlayers,
             levelOfEncounter = args.encounterLevel,
-            targetDifficulty = args.encounterDifficulty
+            targetDifficulty = args.encounterDifficulty,
+            encounterId = args.encounterId
         )
     }
 
@@ -113,6 +120,18 @@ class EncounterCreatorFragment : Fragment() {
             )
             binding.levelSlider.getThumb(0).value = filter.lowerLevel
             binding.levelSlider.getThumb(1).value = filter.upperLevel
+        }
+    }
+
+    private fun handleAction(action: EncounterCreatorAction?) {
+        when (action) {
+            is EncounterCreatorAction.SaveClicked -> {
+                SaveDialog.show(activity!!) { name ->
+                    viewModel.saveEncounter(name)
+                }
+
+            }
+            else -> return
         }
     }
 

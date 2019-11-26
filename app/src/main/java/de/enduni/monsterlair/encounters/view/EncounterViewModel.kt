@@ -3,41 +3,100 @@ package de.enduni.monsterlair.encounters.view
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import de.enduni.monsterlair.common.EncounterDifficulty
+import androidx.lifecycle.viewModelScope
+import de.enduni.monsterlair.common.view.ActionLiveData
+import de.enduni.monsterlair.encounters.domain.CalculateEncounterBudgetUseCase
+import de.enduni.monsterlair.encounters.domain.Encounter
+import de.enduni.monsterlair.encounters.domain.EncounterDifficulty
+import de.enduni.monsterlair.encounters.domain.RetrieveEncountersUseCase
+import de.enduni.monsterlair.encounters.view.adapter.EncounterViewHolder
+import kotlinx.coroutines.launch
 
-class EncounterViewModel : ViewModel() {
-
+class EncounterViewModel(
+    private val retrieveEncountersUseCase: RetrieveEncountersUseCase,
+    private val calculateEncounterBudgetUseCase: CalculateEncounterBudgetUseCase
+) : ViewModel(), EncounterViewHolder.OnClickListener {
     private val _viewState = MutableLiveData<EncounterState>()
+
     val viewState: LiveData<EncounterState> get() = _viewState
+    private var encounterState = EncounterState()
+
+    private val _actions = ActionLiveData<EncounterSelectedAction>()
+    val actions: LiveData<EncounterSelectedAction> get() = _actions
+
+    private var encounters = listOf<Encounter>()
 
     init {
-        _viewState.postValue(EncounterState())
+        _viewState.postValue(encounterState)
     }
 
+    fun start() {
+        viewModelScope.launch {
+            encounters = retrieveEncountersUseCase.execute()
+            val encounterDisplayModels = encounters.map {
+                Pair(it, calculateEncounterBudgetUseCase.execute(it))
+            }.map { (encounter, budget) ->
+                EncounterDisplayModel(
+                    encounter.id!!,
+                    encounter.name,
+                    budget.currentBudget,
+                    encounter.monsters.joinToString { encounterMonster ->
+                        "${encounterMonster.count} ${encounterMonster.monster.name}"
+                    }
+                )
+            }
+            _viewState.postValue(
+                encounterState.copy(
+                    encounters = encounterDisplayModels
+                )
+            )
+        }
+    }
 
     fun setLevel(levelString: String) {
         val level = levelString.toIntOrNull()
-        val viewState = _viewState.value?.copy(
+        val viewState = encounterState.copy(
             levelOfPlayers = level,
             levelValid = IntRange(0, 20).contains(level)
         )
-        _viewState.postValue(viewState)
+        postNewStateIfDifferent(viewState)
     }
+
 
     fun setNumber(numberString: String) {
         val number = numberString.toIntOrNull()
-        val viewState = _viewState.value?.copy(
+        val viewState = encounterState.copy(
             numberOfPlayers = number,
             numberValid = IntRange(0, 20).contains(number)
         )
-        _viewState.postValue(viewState)
+        postNewStateIfDifferent(viewState)
     }
 
     fun setDifficulty(difficulty: EncounterDifficulty) {
-        val viewState = _viewState.value?.copy(
+        val viewState = encounterState.copy(
             difficulty = difficulty
         )
-        _viewState.postValue(viewState)
+        postNewStateIfDifferent(viewState)
+    }
+
+    private fun postNewStateIfDifferent(newState: EncounterState) {
+        if (encounterState != newState) {
+            encounterState = newState
+            _viewState.postValue(newState)
+        }
+    }
+
+    override fun onEncounterSelected(id: Long) {
+        encounters.find { it.id == id }?.let {
+            _actions.postValue(
+                EncounterSelectedAction(
+                    encounterId = it.id!!,
+                    encounterLevel = it.level,
+                    numberOfPlayers = it.numberOfPlayers,
+                    difficulty = it.targetDifficulty
+                )
+            )
+        }
     }
 
 

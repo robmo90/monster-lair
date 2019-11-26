@@ -1,9 +1,9 @@
-package de.enduni.monsterlair.encounters.monsters.view
+package de.enduni.monsterlair.encounters.creator.view
 
-import de.enduni.monsterlair.common.EncounterDifficulty
-import de.enduni.monsterlair.encounters.monsters.domain.EncounterBudget
-import de.enduni.monsterlair.encounters.monsters.domain.EncounterMonster
-import de.enduni.monsterlair.encounters.monsters.domain.MonsterWithRole
+import de.enduni.monsterlair.encounters.domain.EncounterBudget
+import de.enduni.monsterlair.encounters.domain.EncounterDifficulty
+import de.enduni.monsterlair.encounters.domain.EncounterMonster
+import de.enduni.monsterlair.encounters.domain.MonsterWithRole
 
 class EncounterCreatorDisplayModelMapper {
 

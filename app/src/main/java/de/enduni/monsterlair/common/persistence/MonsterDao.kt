@@ -19,7 +19,7 @@ interface MonsterDao {
     ): List<MonsterEntity>
 
 
-    @Query("SELECT * FROM monsters WHERE name is :name LIMIT 1")
-    suspend fun getMonster(name: String): MonsterEntity
+    @Query("SELECT * FROM monsters WHERE id is :id LIMIT 1")
+    suspend fun getMonster(id: Long): MonsterEntity
 
 }

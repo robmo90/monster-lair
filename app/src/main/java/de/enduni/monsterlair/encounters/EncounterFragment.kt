@@ -11,11 +11,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.common.EncounterDifficulty
 import de.enduni.monsterlair.common.setTextIfNotFocused
 import de.enduni.monsterlair.databinding.FragmentEncountersBinding
+import de.enduni.monsterlair.encounters.domain.EncounterDifficulty
+import de.enduni.monsterlair.encounters.view.EncounterSelectedAction
 import de.enduni.monsterlair.encounters.view.EncounterState
 import de.enduni.monsterlair.encounters.view.EncounterViewModel
+import de.enduni.monsterlair.encounters.view.adapter.EncounterListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
 
@@ -24,6 +26,8 @@ class EncounterFragment : Fragment() {
     private val viewModel: EncounterViewModel by viewModel()
 
     private lateinit var binding: FragmentEncountersBinding
+
+    private lateinit var adapter: EncounterListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,8 +42,25 @@ class EncounterFragment : Fragment() {
         binding = FragmentEncountersBinding.bind(view)
 
         viewModel.viewState.observe(this, Observer { handleViewState(it) })
+        viewModel.actions.observe(this, Observer { handleAction(it) })
+        adapter = EncounterListAdapter(activity!!.layoutInflater, viewModel)
+        binding.encounterRecyclerView.adapter = adapter
         setupTextListeners()
         setupSpinner()
+        viewModel.start()
+    }
+
+    private fun handleAction(action: EncounterSelectedAction?) {
+        action?.let {
+            val directions =
+                EncounterFragmentDirections.actionEncountersFragmentToEncounterCreatorFragment(
+                    encounterLevel = it.encounterLevel,
+                    numberOfPlayers = it.numberOfPlayers,
+                    encounterDifficulty = it.difficulty,
+                    encounterId = it.encounterId
+                )
+            findNavController().navigate(directions)
+        }
     }
 
     private fun handleViewState(state: EncounterState) {
@@ -56,12 +77,13 @@ class EncounterFragment : Fragment() {
         binding.startButton.setOnClickListener {
             val directions =
                 EncounterFragmentDirections.actionEncountersFragmentToEncounterCreatorFragment(
-                encounterLevel = state.levelOfPlayers!!,
+                    encounterLevel = state.levelOfPlayers!!,
                     numberOfPlayers = state.numberOfPlayers!!,
-                encounterDifficulty = state.difficulty
-            )
+                    encounterDifficulty = state.difficulty
+                )
             findNavController().navigate(directions)
         }
+        adapter.submitList(state.encounters)
     }
 
     private fun setupTextListeners() {
@@ -106,5 +128,10 @@ class EncounterFragment : Fragment() {
                 }
 
             }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        viewModel.actions.removeObservers(this)
     }
 }

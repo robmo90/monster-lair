@@ -5,17 +5,18 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import de.enduni.monsterlair.BuildConfig
-import de.enduni.monsterlair.common.persistence.MonsterDao
-import de.enduni.monsterlair.common.persistence.MonsterEntity
+import de.enduni.monsterlair.common.persistence.*
 
 @Database(
-    entities = [MonsterEntity::class],
+    entities = [MonsterEntity::class, EncounterEntity::class, MonsterForEncounterEntity::class],
     version = 1,
     exportSchema = false
 )
 abstract class MonsterDatabase : RoomDatabase() {
 
     abstract fun monsterDao(): MonsterDao
+
+    abstract fun encounterDao(): EncounterDao
 
 
     companion object {

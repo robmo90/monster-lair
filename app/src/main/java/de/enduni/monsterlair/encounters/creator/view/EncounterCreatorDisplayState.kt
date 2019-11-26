@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.encounters.monsters.view
+package de.enduni.monsterlair.encounters.creator.view
 
 import de.enduni.monsterlair.monsters.view.MonsterFilter
 import de.enduni.monsterlair.monsters.view.SortBy
@@ -15,3 +15,9 @@ data class EncounterCreatorFilter(
     val upperLevel: Int = MonsterFilter.DEFAULT_LEVEL_UPPER,
     val sortBy: SortBy = SortBy.NAME
 )
+
+sealed class EncounterCreatorAction {
+
+    object SaveClicked : EncounterCreatorAction()
+
+}

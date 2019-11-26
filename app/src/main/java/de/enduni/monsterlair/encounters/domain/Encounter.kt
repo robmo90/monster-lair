@@ -1,8 +1,8 @@
-package de.enduni.monsterlair.encounters.monsters.domain
-
-import de.enduni.monsterlair.common.EncounterDifficulty
+package de.enduni.monsterlair.encounters.domain
 
 class Encounter(
+    val id: Long? = null,
+    var name: String = "Encounter",
     val monsters: MutableList<EncounterMonster> = mutableListOf(),
     val level: Int,
     val numberOfPlayers: Int,
@@ -24,16 +24,16 @@ class Encounter(
         }
     }
 
-    fun removeMonster(monsterId: Int) {
+    fun removeMonster(monsterId: Long) {
         monsters.removeIf { it.id == monsterId }
     }
 
-    fun incrementCount(monsterId: Int) {
+    fun incrementCount(monsterId: Long) {
         monsters.find { it.id == monsterId }
             ?.let { it.count++ }
     }
 
-    fun decrementCount(monsterId: Int) {
+    fun decrementCount(monsterId: Long) {
         monsters.find { it.id == monsterId }
             ?.let { monster ->
                 monster.count--
@@ -45,8 +45,3 @@ class Encounter(
 
 }
 
-data class EncounterMonster(
-    val id: Int,
-    val monster: MonsterWithRole,
-    var count: Int
-)

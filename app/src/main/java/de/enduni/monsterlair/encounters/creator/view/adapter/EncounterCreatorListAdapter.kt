@@ -1,17 +1,19 @@
-package de.enduni.monsterlair.encounters.monsters.view.adapter
+package de.enduni.monsterlair.encounters.creator.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.encounters.monsters.view.EncounterCreatorDisplayModel
+import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayModel
 import timber.log.Timber
 
 class EncounterCreatorListAdapter(
     private val layoutInflater: LayoutInflater,
     private val monsterForEncounterListener: MonsterForEncounterViewHolder.MonsterForEncounterListener,
-    private val monsterViewHolderListener: MonsterViewHolder.MonsterViewHolderListener
+    private val monsterViewHolderListener: MonsterViewHolder.MonsterViewHolderListener,
+    private val onSaveClickedListener: EncounterBudgetViewHolder.OnSaveClickedListener
+
 ) : ListAdapter<EncounterCreatorDisplayModel, EncounterCreatorViewHolder>(
     EncounterCreatorDiffCallback()
 ) {
@@ -25,7 +27,7 @@ class EncounterCreatorListAdapter(
             TYPE_ENCOUNTER -> {
                 Timber.d("I have an encounter")
                 val view = layoutInflater.inflate(R.layout.viewholder_encounter_data, parent, false)
-                EncounterBudgetViewHolder(view)
+                EncounterBudgetViewHolder(view, onSaveClickedListener)
             }
             TYPE_ENCOUNTER_MONSTER -> {
                 Timber.d("I have an encounter monster")
