@@ -3,38 +3,38 @@ package de.enduni.monsterlair.encounters.creator.view.adapter
 import android.view.View
 import coil.api.load
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.common.getIcon
 import de.enduni.monsterlair.databinding.ViewholderMonsterBinding
+import de.enduni.monsterlair.encounters.creator.view.DangerType
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayModel
 
 
-class MonsterViewHolder(
+class DangerViewHolder(
     itemView: View,
-    private val monsterSelectedListener: MonsterViewHolderListener
+    private val monsterSelectedListener: DangerSelectedListener
 ) : EncounterCreatorViewHolder(itemView) {
 
     private lateinit var binding: ViewholderMonsterBinding
 
     override fun bind(displayModel: EncounterCreatorDisplayModel) {
         binding = ViewholderMonsterBinding.bind(itemView)
-        val monster = displayModel as EncounterCreatorDisplayModel.Monster
-        binding.listItemIcon.load(monster.type.getIcon())
-        binding.listItemTitle.text = monster.name
+        val danger = displayModel as EncounterCreatorDisplayModel.Danger
+        binding.listItemIcon.load(danger.icon)
+        binding.listItemTitle.text = danger.name
         val caption = itemView.resources.getString(
             R.string.monster_with_xp_item_caption,
-            monster.family,
-            monster.level,
-            monster.role.xp
+            danger.labelRes?.let { itemView.resources.getString(it) } ?: danger.label,
+            danger.level,
+            danger.xp
         )
         binding.listItemCaption.text = caption
 
         binding.root.setOnClickListener {
-            monsterSelectedListener.onSelectMonster(monster.id)
+            monsterSelectedListener.onSelected(danger.type, danger.id)
         }
     }
 
-    interface MonsterViewHolderListener {
-        fun onSelectMonster(id: Long)
+    interface DangerSelectedListener {
+        fun onSelected(type: DangerType, id: Long)
     }
 
 }

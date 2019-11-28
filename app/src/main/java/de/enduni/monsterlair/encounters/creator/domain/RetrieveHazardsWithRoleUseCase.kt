@@ -4,6 +4,7 @@ import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorFilter
 import de.enduni.monsterlair.encounters.domain.model.HazardWithRole
 import de.enduni.monsterlair.encounters.persistence.HazardWithRoleMapper
 import de.enduni.monsterlair.hazards.persistence.HazardRepository
+import de.enduni.monsterlair.hazards.view.HazardType
 
 class RetrieveHazardsWithRoleUseCase(
     private val repository: HazardRepository,
@@ -14,10 +15,21 @@ class RetrieveHazardsWithRoleUseCase(
         filter: EncounterCreatorFilter,
         encounterLevel: Int
     ): List<HazardWithRole> {
-        return repository.getHazards()
-            .map { hazardWithRoleMapper.mapToHazardWithRole(it, encounterLevel) }
+        return repository.getFilteredHazards(
+            filter.string,
+            filter.lowerLevel,
+            filter.upperLevel,
+            HazardType.ALL
+        ).map { hazardWithRoleMapper.mapToHazardWithRole(it, encounterLevel) }
     }
 
+    suspend fun findSingleHazard(
+        id: Long,
+        encounterLevel: Int
+    ): HazardWithRole {
+        return repository.getHazard(id)
+            .let { hazardWithRoleMapper.mapToHazardWithRole(it, encounterLevel) }
+    }
 
 }
 

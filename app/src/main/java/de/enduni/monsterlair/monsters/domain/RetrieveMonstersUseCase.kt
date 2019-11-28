@@ -8,10 +8,9 @@ class RetrieveMonstersUseCase(private val monsterRepository: MonsterRepository) 
 
     suspend fun execute(filter: MonsterFilter): List<Monster> {
         val currentTimeMillis = System.currentTimeMillis()
-        val filterString = if (filter.string.isNullOrEmpty()) "\"%\"" else "\"%${filter.string}%\""
         val monsters =
             monsterRepository.getMonsters(
-                filterString,
+                filter.string,
                 filter.lowerLevel,
                 filter.upperLevel,
                 filter.sortBy.value

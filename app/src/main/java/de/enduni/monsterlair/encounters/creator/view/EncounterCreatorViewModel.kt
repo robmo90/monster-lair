@@ -9,10 +9,13 @@ import de.enduni.monsterlair.encounters.creator.domain.RetrieveEncounterUseCase
 import de.enduni.monsterlair.encounters.creator.domain.RetrieveHazardsWithRoleUseCase
 import de.enduni.monsterlair.encounters.creator.domain.RetrieveMonstersWithRoleUseCase
 import de.enduni.monsterlair.encounters.creator.domain.StoreEncounterUseCase
-import de.enduni.monsterlair.encounters.creator.view.adapter.*
+import de.enduni.monsterlair.encounters.creator.view.adapter.DangerForEncounterViewHolder
+import de.enduni.monsterlair.encounters.creator.view.adapter.DangerViewHolder
+import de.enduni.monsterlair.encounters.creator.view.adapter.EncounterBudgetViewHolder
 import de.enduni.monsterlair.encounters.domain.CalculateEncounterBudgetUseCase
 import de.enduni.monsterlair.encounters.domain.model.*
 import de.enduni.monsterlair.monsters.view.SortBy
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
@@ -23,11 +26,10 @@ class EncounterCreatorViewModel(
     private val retrieveEncounterUseCase: RetrieveEncounterUseCase,
     private val mapper: EncounterCreatorDisplayModelMapper,
     private val storeEncounterUseCase: StoreEncounterUseCase
-) : ViewModel(), MonsterViewHolder.MonsterViewHolderListener,
-    MonsterForEncounterViewHolder.MonsterForEncounterListener,
+) : ViewModel(),
     EncounterBudgetViewHolder.OnSaveClickedListener,
-    HazardForEncounterViewHolder.HazardForEncounterListener,
-    HazardViewHolder.HazardSelectedListener {
+    DangerViewHolder.DangerSelectedListener,
+    DangerForEncounterViewHolder.DangerForEncounterListener {
 
     private val _viewState = MutableLiveData<EncounterCreatorDisplayState>()
     val viewState: LiveData<EncounterCreatorDisplayState> get() = _viewState
@@ -104,71 +106,72 @@ class EncounterCreatorViewModel(
     }
 
     private fun postCurrentState() = viewModelScope.launch {
-        val budget = calculateEncounterBudgetUseCase.execute(encounter)
+        launch(Dispatchers.Default) {
+            val budget = calculateEncounterBudgetUseCase.execute(encounter)
+            val dangers = (monsters.toMonsterDisplayModel() +
+                    hazards.toHazardDisplayModel()).sortedBy { it.name }
+            val dangersForEncounter = (encounter.monsters.toEncounterMonsterDisplayModel() +
+                    encounter.hazards.toEncounterHazardDisplayModel())
+                .sortedBy { it.name }
 
-        val list: List<EncounterCreatorDisplayModel> =
-            encounter.monsters.toEncounterMonsterDisplayModel() +
-                    encounter.hazards.toEncounterHazardDisplayModel() +
+            val list: List<EncounterCreatorDisplayModel> = dangersForEncounter +
                     budget.toBudgetDisplayModel(encounter) +
-                    monsters.toMonsterDisplayModel() +
-                    hazards.toHazardDisplayModel()
-        val state = EncounterCreatorDisplayState(
-            list = list,
-            filter = filter
-        )
-        _viewState.postValue(state)
+                    dangers
+
+            val state = EncounterCreatorDisplayState(
+                list = list,
+                filter = filter
+            )
+            _viewState.postValue(state)
+        }
     }
 
 
-    private fun List<EncounterMonster>.toEncounterMonsterDisplayModel(): List<EncounterCreatorDisplayModel> {
-        return this.map { mapper.toMonsterForEncounter(it) }
+    private fun List<EncounterMonster>.toEncounterMonsterDisplayModel(): List<EncounterCreatorDisplayModel.DangerForEncounter> {
+        return this.map { mapper.toDanger(it) }
     }
 
-    private fun List<EncounterHazard>.toEncounterHazardDisplayModel(): List<EncounterCreatorDisplayModel> {
-        return this.map { mapper.toHazardForEncounter(it) }
+    private fun List<EncounterHazard>.toEncounterHazardDisplayModel(): List<EncounterCreatorDisplayModel.DangerForEncounter> {
+        return this.map { mapper.toDanger(it) }
     }
 
     private fun EncounterBudget.toBudgetDisplayModel(encounter: Encounter): List<EncounterCreatorDisplayModel> {
         return listOf(mapper.toBudget(this, encounter.targetDifficulty))
     }
 
-    private fun List<MonsterWithRole>.toMonsterDisplayModel(): List<EncounterCreatorDisplayModel> {
-        return this.map { mapper.toMonster(it) }
+    private fun List<MonsterWithRole>.toMonsterDisplayModel(): List<EncounterCreatorDisplayModel.Danger> {
+        return this.map { mapper.toDanger(it) }
     }
 
-    private fun List<HazardWithRole>.toHazardDisplayModel(): List<EncounterCreatorDisplayModel> {
-        return this.map { mapper.toHazard(it) }
+    private fun List<HazardWithRole>.toHazardDisplayModel(): List<EncounterCreatorDisplayModel.Danger> {
+        return this.map { mapper.toDanger(it) }
     }
 
-    override fun onSelectMonster(id: Long) {
-        monsters.find { it.id == id }
-            ?.let { encounter.addMonster(it) }
+    override fun onDecrement(type: DangerType, id: Long) {
+        when (type) {
+            DangerType.MONSTER -> encounter.decrementCount(monsterId = id)
+            DangerType.HAZARD -> encounter.decrementCount(hazardId = id)
+        }
         postCurrentState()
     }
 
-    override fun onIncrementMonster(monsterId: Long) {
-        encounter.incrementCount(monsterId = monsterId)
+    override fun onIncrement(type: DangerType, id: Long) {
+        when (type) {
+            DangerType.MONSTER -> encounter.incrementCount(monsterId = id)
+            DangerType.HAZARD -> encounter.incrementCount(hazardId = id)
+        }
         postCurrentState()
     }
 
-    override fun onDecrementMonster(monsterId: Long) {
-        encounter.decrementCount(monsterId = monsterId)
-        postCurrentState()
-    }
-
-    override fun onIncrementHazard(hazardId: Long) {
-        encounter.incrementCount(hazardId = hazardId)
-        postCurrentState()
-    }
-
-    override fun onDecrementHazard(hazardId: Long) {
-        encounter.decrementCount(hazardId = hazardId)
-        postCurrentState()
-    }
-
-    override fun onSelectHazard(id: Long) {
-        hazards.find { it.id == id }
-            ?.let { encounter.addHazard(it) }
+    override fun onSelected(type: DangerType, id: Long) {
+        when (type) {
+            DangerType.MONSTER -> {
+                monsters.find { it.id == id }?.let { encounter.addMonster(it) }
+            }
+            DangerType.HAZARD -> {
+                hazards.find { it.id == id }?.let { encounter.addHazard(it) }
+            }
+        }
         postCurrentState()
     }
 

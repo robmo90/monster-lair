@@ -6,6 +6,12 @@
         <item>@string/monster_sort_by_type</item>
     </string-array>
 
+    <string-array name="hazard_list_filter_choices">
+        <item>@string/hazard_filter_all</item>
+        <item>@string/hazard_filter_simple</item>
+        <item>@string/hazard_filter_complex</item>
+    </string-array>
+
     <string-array name="difficulty_choices">
         <item>@string/difficulty_trivial</item>
         <item>@string/difficulty_low</item>

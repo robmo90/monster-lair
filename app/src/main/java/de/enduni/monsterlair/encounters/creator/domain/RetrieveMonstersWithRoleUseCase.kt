@@ -14,13 +14,20 @@ class RetrieveMonstersWithRoleUseCase(
         filter: EncounterCreatorFilter,
         encounterLevel: Int
     ): List<MonsterWithRole> {
-        val filterString = if (filter.string.isNullOrEmpty()) "\"%\"" else "\"%${filter.string}%\""
         return repository.getMonsters(
-            filterString,
+            filter.string,
             filter.lowerLevel,
             filter.upperLevel,
             filter.sortBy.value
         ).map { monsterWithRoleMapper.mapToMonsterWithRole(it, encounterLevel) }
+    }
+
+    suspend fun findSingleMonster(
+        id: Long,
+        encounterLevel: Int
+    ): MonsterWithRole {
+        return repository.getMonster(id)
+            .let { monsterWithRoleMapper.mapToMonsterWithRole(it, encounterLevel) }
     }
 
 

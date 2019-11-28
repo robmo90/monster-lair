@@ -10,3 +10,9 @@ data class HazardDisplayModel(
     val complexity: Complexity,
     val source: String
 )
+
+sealed class HazardOverviewAction {
+
+    class HazardSelected(val url: String) : HazardOverviewAction()
+
+}

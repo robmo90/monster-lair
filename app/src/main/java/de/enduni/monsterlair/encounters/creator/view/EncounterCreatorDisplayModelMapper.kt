@@ -1,25 +1,33 @@
 package de.enduni.monsterlair.encounters.creator.view
 
+import de.enduni.monsterlair.common.getIcon
+import de.enduni.monsterlair.common.getStringRes
+import de.enduni.monsterlair.common.getXp
 import de.enduni.monsterlair.encounters.domain.model.*
 
 class EncounterCreatorDisplayModelMapper {
 
-    fun toMonster(monsterWithRole: MonsterWithRole) = EncounterCreatorDisplayModel.Monster(
+    fun toDanger(monsterWithRole: MonsterWithRole) = EncounterCreatorDisplayModel.Danger(
+        type = DangerType.MONSTER,
         id = monsterWithRole.id,
         name = monsterWithRole.name,
         level = monsterWithRole.level,
-        type = monsterWithRole.type,
-        family = monsterWithRole.family,
-        role = monsterWithRole.role
+        icon = monsterWithRole.type.getIcon(),
+        label = monsterWithRole.family,
+        xp = monsterWithRole.role.xp
     )
 
-    fun toHazard(hazardWithRole: HazardWithRole) = EncounterCreatorDisplayModel.Hazard(
+    fun toDanger(hazardWithRole: HazardWithRole) = EncounterCreatorDisplayModel.Danger(
+        type = DangerType.HAZARD,
         id = hazardWithRole.id,
         name = hazardWithRole.name,
         level = hazardWithRole.level,
-        complexity = hazardWithRole.complexity,
-        role = hazardWithRole.role
+        icon = hazardWithRole.complexity.getIcon(),
+        label = "",
+        labelRes = hazardWithRole.complexity.getStringRes(),
+        xp = hazardWithRole.role.getXp(hazardWithRole.complexity)
     )
+
 
 
     fun toBudget(
@@ -32,25 +40,31 @@ class EncounterCreatorDisplayModelMapper {
         targetBudget = encounterData.targetBudget
     )
 
-    fun toMonsterForEncounter(monster: EncounterMonster) =
-        EncounterCreatorDisplayModel.MonsterForEncounter(
-            id = monster.id,
-            name = monster.monster.name,
-            level = monster.monster.level,
-            type = monster.monster.type,
-            family = monster.monster.family,
-            count = monster.count,
-            role = monster.monster.role
+    fun toDanger(encounterMonster: EncounterMonster) =
+        EncounterCreatorDisplayModel.DangerForEncounter(
+            type = DangerType.MONSTER,
+            id = encounterMonster.id,
+            name = encounterMonster.monster.name,
+            level = encounterMonster.monster.level,
+            icon = encounterMonster.monster.type.getIcon(),
+            label = encounterMonster.monster.family,
+            xp = encounterMonster.monster.role.xp,
+            role = encounterMonster.monster.role.getStringRes(),
+            count = encounterMonster.count
         )
 
-
-    fun toHazardForEncounter(hazardWithRole: EncounterHazard) =
-        EncounterCreatorDisplayModel.HazardForEncounter(
-            id = hazardWithRole.id,
-            name = hazardWithRole.hazard.name,
-            level = hazardWithRole.hazard.level,
-            complexity = hazardWithRole.hazard.complexity,
-            role = hazardWithRole.hazard.role,
-            count = hazardWithRole.count
+    fun toDanger(encounterHazard: EncounterHazard) =
+        EncounterCreatorDisplayModel.DangerForEncounter(
+            type = DangerType.HAZARD,
+            id = encounterHazard.id,
+            name = encounterHazard.hazard.name,
+            level = encounterHazard.hazard.level,
+            icon = encounterHazard.hazard.complexity.getIcon(),
+            label = "",
+            labelRes = encounterHazard.hazard.complexity.getStringRes(),
+            xp = encounterHazard.hazard.role.getXp(encounterHazard.hazard.complexity),
+            count = encounterHazard.count,
+            role = encounterHazard.hazard.complexity.getStringRes()
         )
+
 }

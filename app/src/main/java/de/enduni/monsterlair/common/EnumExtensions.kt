@@ -81,15 +81,15 @@ fun Complexity.getStringRes(): Int {
 @StringRes
 fun HazardRole.getStringRes(): Int {
     return when (this) {
-        HazardRole.LOW_LACKEY -> R.string.role_low_lackey
-        HazardRole.MODERATE_LACKEY -> R.string.role_moderate_lackey
-        HazardRole.STANDARD_LACKEY -> R.string.role_standard_lackey
-        HazardRole.STANDARD_CREATURE -> R.string.role_standard_creature
-        HazardRole.LOW_BOSS -> R.string.role_low_boss
-        HazardRole.MODERATE_BOSS -> R.string.role_moderate_boss
-        HazardRole.SEVERE_BOSS -> R.string.role_severe_boss
-        HazardRole.EXTREME_BOSS -> R.string.role_extreme_boss
-        HazardRole.SOLO_BOSS -> R.string.role_solo_boss
+        HazardRole.LOW_LACKEY -> R.string.role_low_lackey_hazard
+        HazardRole.MODERATE_LACKEY -> R.string.role_moderate_lackey_hazard
+        HazardRole.STANDARD_LACKEY -> R.string.role_standard_lackey_hazard
+        HazardRole.STANDARD_CREATURE -> R.string.role_standard_hazard
+        HazardRole.LOW_BOSS -> R.string.role_low_boss_hazard
+        HazardRole.MODERATE_BOSS -> R.string.role_moderate_boss_hazard
+        HazardRole.SEVERE_BOSS -> R.string.role_severe_boss_hazard
+        HazardRole.EXTREME_BOSS -> R.string.role_extreme_boss_hazard
+        HazardRole.SOLO_BOSS -> R.string.role_solo_boss_hazard
         HazardRole.TOO_HIGH -> R.string.role_too_high
         HazardRole.TOO_LOW -> R.string.role_too_low
     }

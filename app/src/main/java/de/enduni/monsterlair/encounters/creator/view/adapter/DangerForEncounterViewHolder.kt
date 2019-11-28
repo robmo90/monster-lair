@@ -3,50 +3,44 @@ package de.enduni.monsterlair.encounters.creator.view.adapter
 import android.view.View
 import coil.api.load
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.common.getIcon
-import de.enduni.monsterlair.common.getStringRes
 import de.enduni.monsterlair.databinding.ViewholderEncounterMonsterBinding
+import de.enduni.monsterlair.encounters.creator.view.DangerType
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayModel
 
 
-class MonsterForEncounterViewHolder(
+class DangerForEncounterViewHolder(
     itemView: View,
-    private val listener: MonsterForEncounterListener
+    private val listener: DangerForEncounterListener
 ) : EncounterCreatorViewHolder(itemView) {
 
     private lateinit var binding: ViewholderEncounterMonsterBinding
 
     override fun bind(displayModel: EncounterCreatorDisplayModel) {
         binding = ViewholderEncounterMonsterBinding.bind(itemView)
-        val monster = displayModel as EncounterCreatorDisplayModel.MonsterForEncounter
-        binding.listItemIcon.load(
-            itemView.resources.getDrawable(
-                monster.type.getIcon(),
-                itemView.context.theme
-            )
-        )
+        val monster = displayModel as EncounterCreatorDisplayModel.DangerForEncounter
+        binding.listItemIcon.load(monster.icon)
         binding.listItemTitle.text = monster.name
         val caption = itemView.resources.getString(
             R.string.encounter_monster_item_caption,
             monster.level,
-            monster.role.xp
+            monster.xp
         )
         binding.listItemCaption.text = caption
         binding.monsterCountTextView.text = monster.count.toString()
-        binding.listItemRole.text = itemView.resources.getString(monster.role.getStringRes())
+        binding.listItemRole.text = itemView.resources.getString(monster.role)
 
         binding.monsterCountIncrement.setOnClickListener {
-            listener.onIncrementMonster(monster.id)
+            listener.onIncrement(monster.type, monster.id)
         }
 
         binding.monsterCountDecrement.setOnClickListener {
-            listener.onDecrementMonster(monster.id)
+            listener.onDecrement(monster.type, monster.id)
         }
     }
 
-    interface MonsterForEncounterListener {
-        fun onIncrementMonster(monsterId: Long)
-        fun onDecrementMonster(monsterId: Long)
+    interface DangerForEncounterListener {
+        fun onIncrement(type: DangerType, id: Long)
+        fun onDecrement(type: DangerType, id: Long)
     }
 
 }

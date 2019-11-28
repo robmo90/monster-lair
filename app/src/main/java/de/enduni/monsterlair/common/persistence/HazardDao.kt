@@ -1,9 +1,7 @@
 package de.enduni.monsterlair.common.persistence
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
+import androidx.sqlite.db.SupportSQLiteQuery
 
 @Dao
 interface HazardDao {
@@ -13,6 +11,11 @@ interface HazardDao {
 
     @Query("SELECT * FROM hazards ORDER BY name")
     suspend fun getAllHazards(): List<HazardEntity>
+
+    @RawQuery
+    suspend fun getFilteredHazards(
+        sqLiteQuery: SupportSQLiteQuery
+    ): List<HazardEntity>
 
     @Query("SELECT * FROM hazards WHERE id is :id LIMIT 1")
     suspend fun getHazard(id: Long): HazardEntity

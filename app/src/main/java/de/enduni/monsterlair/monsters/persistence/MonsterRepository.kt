@@ -16,11 +16,12 @@ class MonsterRepository(
         monsterDao.getMonster(id).let { monsterEntityMapper.toModel(it) }
 
     suspend fun getMonsters(
-        filterString: String,
+        filter: String?,
         lowerLevel: Int,
         higherLevel: Int,
         sortBy: String
     ): List<Monster> {
+        val filterString = if (filter.isNullOrEmpty()) "\"%\"" else "\"%${filter}%\""
         val query =
             "SELECT * FROM monsters WHERE (name LIKE $filterString OR family LIKE $filterString) AND level BETWEEN $lowerLevel AND $higherLevel ORDER BY $sortBy ASC"
         Timber.v("Using $query")

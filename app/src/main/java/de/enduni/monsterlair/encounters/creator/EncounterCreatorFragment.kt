@@ -47,7 +47,7 @@ class EncounterCreatorFragment : Fragment() {
         binding = FragmentEncounterCreatorBinding.bind(view)
         listAdapter = EncounterCreatorListAdapter(
             activity!!.layoutInflater, viewModel,
-            viewModel, viewModel, viewModel, viewModel
+            viewModel, viewModel
         )
 
         binding.encounterRecyclerView.adapter = listAdapter

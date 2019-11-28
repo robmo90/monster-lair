@@ -117,4 +117,9 @@ class MonsterOverviewFragment : Fragment() {
         Uri.parse(url).openCustomTab(context!!)
     }
 
+    override fun onPause() {
+        super.onPause()
+        viewModel.actions.removeObservers(this)
+    }
+
 }

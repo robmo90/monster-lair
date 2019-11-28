@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Monster Lair</string>
 
-    <string name="hazard_item_caption">%s hazard \u2014 Level: %d</string>
+    <string name="hazard_item_caption">%s \u2014 Level: %d</string>
     <string name="monster_item_caption">%s \u2014 Level: %d</string>
     <string name="monster_search">Search</string>
     <string name="monster_level_range">Level Range</string>
@@ -23,8 +23,12 @@
     <string name="enter_valid_level"> Please enter a valid level between 1 and 20 </string>
     <string name="enter_valid_number">Please enter a valid player number</string>
 
-    <string name="hazard_complexity_simple">Simple</string>
-    <string name="hazard_complexity_complex">Complex</string>
+    <string name="hazard_complexity_simple">Simple Hazard</string>
+    <string name="hazard_complexity_complex">Complex Hazard</string>
+
+    <string name="hazard_filter_all">All</string>
+    <string name="hazard_filter_simple">Simple</string>
+    <string name="hazard_filter_complex">Complex</string>
 
 
     <string name="role_low_lackey">Low-threat lackey</string>
@@ -38,6 +42,17 @@
     <string name="role_solo_boss">Extreme-threat solo boss</string>
     <string name="role_too_low">Too low for creation rules</string>
     <string name="role_too_high">Too high for creation rules</string>
+
+
+    <string name="role_low_lackey_hazard">Low-threat lackey hazard</string>
+    <string name="role_moderate_lackey_hazard">Low- or moderate-threat lackey hazard </string>
+    <string name="role_standard_lackey_hazard">Any lackey or standard hazar </string>
+    <string name="role_standard_hazard">Any standard hazard</string>
+    <string name="role_low_boss_hazard">Any standard or low-threat boss hazard</string>
+    <string name="role_moderate_boss_hazard">Low- or moderate-threat boss hazard</string>
+    <string name="role_severe_boss_hazard">Moderate- or severe-threat boss hazard</string>
+    <string name="role_extreme_boss_hazard">Severe- or extreme-threat boss hazard</string>
+    <string name="role_solo_boss_hazard">Extreme-threat solo boss hazard</string>
 
     <string name="monster_with_xp_item_caption">%s \u2014 Level: %d \u2014 XP: %d</string>
     <string name="hazard_with_xp_item_caption">%s hazard \u2014 Level: %d \u2014 XP: %d</string>
