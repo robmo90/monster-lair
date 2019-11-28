@@ -1,19 +1,27 @@
 package de.enduni.monsterlair
 
+import de.enduni.monsterlair.common.persistence.database.HazardEntityMapper
 import de.enduni.monsterlair.common.persistence.database.MonsterDatabase
 import de.enduni.monsterlair.common.persistence.database.MonsterDatabaseInitializer
 import de.enduni.monsterlair.encounters.creator.domain.RetrieveEncounterUseCase
+import de.enduni.monsterlair.encounters.creator.domain.RetrieveHazardsWithRoleUseCase
 import de.enduni.monsterlair.encounters.creator.domain.RetrieveMonstersWithRoleUseCase
+import de.enduni.monsterlair.encounters.creator.domain.StoreEncounterUseCase
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayModelMapper
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorViewModel
 import de.enduni.monsterlair.encounters.domain.CalculateEncounterBudgetUseCase
 import de.enduni.monsterlair.encounters.domain.RetrieveEncountersUseCase
 import de.enduni.monsterlair.encounters.persistence.EncounterEntityMapper
 import de.enduni.monsterlair.encounters.persistence.EncounterRepository
+import de.enduni.monsterlair.encounters.persistence.HazardWithRoleMapper
 import de.enduni.monsterlair.encounters.persistence.MonsterWithRoleMapper
 import de.enduni.monsterlair.encounters.view.EncounterViewModel
 import de.enduni.monsterlair.hazards.datasource.HazardAssetDataSource
 import de.enduni.monsterlair.hazards.datasource.HazardDataSource
+import de.enduni.monsterlair.hazards.domain.RetrieveHazardsUseCase
+import de.enduni.monsterlair.hazards.persistence.HazardRepository
+import de.enduni.monsterlair.hazards.view.HazardDisplayModelMapper
+import de.enduni.monsterlair.hazards.view.HazardViewModel
 import de.enduni.monsterlair.monsters.datasource.MonsterAssetDataSource
 import de.enduni.monsterlair.monsters.datasource.MonsterDataSource
 import de.enduni.monsterlair.monsters.domain.RetrieveMonstersUseCase
@@ -38,15 +46,30 @@ val databaseModule = module(createdAtStart = true) {
             get(),
             get(),
             get(),
+            get(),
+            get(),
             get()
         )
     }
 }
 
+val hazardsModule = module {
+
+    single { HazardEntityMapper() }
+
+    single { RetrieveHazardsUseCase(get()) }
+
+    single { HazardRepository(get(), get()) }
+
+    single { HazardDisplayModelMapper() }
+
+    viewModel { HazardViewModel(get(), get()) }
+
+}
+
 val monsterModule = module {
 
     // data source
-    single<MonsterDataSource> { MonsterAssetDataSource(androidApplication()) }
     single { MonsterEntityMapper() }
 
     // domain
@@ -67,16 +90,19 @@ val encounterModule = module {
     // persistence
     single { EncounterEntityMapper() }
     single { MonsterWithRoleMapper() }
-    single { EncounterRepository(get(), get(), get(), get()) }
+    single { HazardWithRoleMapper() }
+    single { EncounterRepository(get(), get(), get(), get(), get(), get()) }
 
     // domain
     single { CalculateEncounterBudgetUseCase() }
     single { RetrieveMonstersWithRoleUseCase(get(), get()) }
+    single { RetrieveHazardsWithRoleUseCase(get(), get()) }
     single { EncounterCreatorDisplayModelMapper() }
     single { RetrieveEncountersUseCase(get()) }
     single { RetrieveEncounterUseCase(get()) }
+    single { StoreEncounterUseCase(get()) }
 
     // view
-    viewModel { EncounterCreatorViewModel(get(), get(), get(), get(), get()) }
+    viewModel { EncounterCreatorViewModel(get(), get(), get(), get(), get(), get()) }
     viewModel { EncounterViewModel(get(), get()) }
 }

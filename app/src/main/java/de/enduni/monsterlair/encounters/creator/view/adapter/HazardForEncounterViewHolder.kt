@@ -5,48 +5,45 @@ import coil.api.load
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.getIcon
 import de.enduni.monsterlair.common.getStringRes
+import de.enduni.monsterlair.common.getXp
 import de.enduni.monsterlair.databinding.ViewholderEncounterMonsterBinding
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayModel
 
 
-class MonsterForEncounterViewHolder(
+class HazardForEncounterViewHolder(
     itemView: View,
-    private val listener: MonsterForEncounterListener
+    private val listener: HazardForEncounterListener
 ) : EncounterCreatorViewHolder(itemView) {
 
     private lateinit var binding: ViewholderEncounterMonsterBinding
 
     override fun bind(displayModel: EncounterCreatorDisplayModel) {
         binding = ViewholderEncounterMonsterBinding.bind(itemView)
-        val monster = displayModel as EncounterCreatorDisplayModel.MonsterForEncounter
-        binding.listItemIcon.load(
-            itemView.resources.getDrawable(
-                monster.type.getIcon(),
-                itemView.context.theme
-            )
-        )
-        binding.listItemTitle.text = monster.name
+        val hazard = displayModel as EncounterCreatorDisplayModel.HazardForEncounter
+        binding.listItemIcon.load(hazard.complexity.getIcon())
+        binding.listItemTitle.text = hazard.name
         val caption = itemView.resources.getString(
-            R.string.encounter_monster_item_caption,
-            monster.level,
-            monster.role.xp
+            R.string.hazard_with_xp_item_caption,
+            itemView.resources.getString(hazard.complexity.getStringRes()),
+            hazard.level,
+            hazard.role.getXp(hazard.complexity)
         )
         binding.listItemCaption.text = caption
-        binding.monsterCountTextView.text = monster.count.toString()
-        binding.listItemRole.text = itemView.resources.getString(monster.role.getStringRes())
+        binding.monsterCountTextView.text = hazard.count.toString()
+        binding.listItemRole.text = itemView.resources.getString(hazard.role.getStringRes())
 
         binding.monsterCountIncrement.setOnClickListener {
-            listener.onIncrementMonster(monster.id)
+            listener.onIncrementHazard(hazard.id)
         }
 
         binding.monsterCountDecrement.setOnClickListener {
-            listener.onDecrementMonster(monster.id)
+            listener.onDecrementHazard(hazard.id)
         }
     }
 
-    interface MonsterForEncounterListener {
-        fun onIncrementMonster(monsterId: Long)
-        fun onDecrementMonster(monsterId: Long)
+    interface HazardForEncounterListener {
+        fun onIncrementHazard(hazardId: Long)
+        fun onDecrementHazard(hazardId: Long)
     }
 
 }

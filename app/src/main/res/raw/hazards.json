@@ -4,216 +4,247 @@
     "name": "Hidden Pit",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=1",
     "level": "0",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 522"
   },
   {
     "id": "2",
     "name": "Poisoned Lock",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=2",
     "level": "1",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 523"
   },
   {
     "id": "3",
     "name": "Slamming Door",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=3",
     "level": "1",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 523"
   },
   {
     "id": "4",
     "name": "Spear Launcher",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=4",
     "level": "2",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 523"
   },
   {
     "id": "31",
     "name": "Web Lurker Noose",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=31",
     "level": "2",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Bestiary pg. 325"
   },
   {
     "id": "5",
     "name": "Electric Latch Rune",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=5",
     "level": "3",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 523"
   },
   {
     "id": "30",
     "name": "Web Lurker Deadfall",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=30",
     "level": "3",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Bestiary pg. 325"
   },
   {
     "id": "6",
     "name": "Scythe Blades",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=6",
     "level": "4",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 523"
   },
   {
     "id": "7",
     "name": "Fireball Rune",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=7",
     "level": "5",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 524"
   },
   {
     "id": "8",
     "name": "Hallucination Powder Trap",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=8",
     "level": "6",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 524"
   },
   {
     "id": "9",
     "name": "Pharaoh's Ward",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=9",
     "level": "7",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 524"
   },
   {
     "id": "10",
     "name": "Yellow Mold",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=10",
     "level": "8",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 524"
   },
   {
     "id": "11",
     "name": "Bottomless Pit",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=11",
     "level": "9",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 524"
   },
   {
     "id": "12",
     "name": "Bloodthirsty Urge",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=12",
     "level": "10",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 524"
   },
   {
     "id": "13",
     "name": "Hammer of Forbiddance",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=13",
     "level": "11",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 525"
   },
   {
     "id": "14",
     "name": "Polymorph Trap",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=14",
     "level": "12",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 525"
   },
   {
     "id": "15",
     "name": "Planar Rift",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=15",
     "level": "13",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 525"
   },
   {
     "id": "16",
     "name": "Frozen Moment",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=16",
     "level": "17",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 525"
   },
   {
     "id": "17",
     "name": "Vorpal Executioner",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=17",
     "level": "19",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 525"
   },
   {
     "id": "18",
     "name": "Second Chance",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=18",
     "level": "21",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 525"
   },
   {
     "id": "19",
     "name": "Armageddon Orb",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=19",
     "level": "23",
-    "type": "SIMPLE"
+    "complexity": "SIMPLE",
+    "source": "Core Rulebook pg. 526"
   },
   {
     "id": "20",
     "name": "Summoning Rune",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=20",
     "level": "1",
-    "type": "COMPLEX"
+    "complexity": "COMPLEX",
+    "source": "Core Rulebook pg. 526"
   },
   {
     "id": "21",
     "name": "Drowning Pit",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=21",
     "level": "3",
-    "type": "COMPLEX"
+    "complexity": "COMPLEX",
+    "source": "Core Rulebook pg. 526"
   },
   {
     "id": "22",
     "name": "Quicksand",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=22",
     "level": "3",
-    "type": "COMPLEX"
+    "complexity": "COMPLEX",
+    "source": "Core Rulebook pg. 526"
   },
   {
     "id": "23",
     "name": "Spinning Blade Pillar",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=23",
     "level": "4",
-    "type": "COMPLEX"
+    "complexity": "COMPLEX",
+    "source": "Core Rulebook pg. 527"
   },
   {
     "id": "24",
     "name": "Wheel of Misery",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=24",
     "level": "6",
-    "type": "COMPLEX"
+    "complexity": "COMPLEX",
+    "source": "Core Rulebook pg. 527"
   },
   {
     "id": "25",
     "name": "Poisoned Dart Gallery",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=25",
     "level": "8",
-    "type": "COMPLEX"
+    "complexity": "COMPLEX",
+    "source": "Core Rulebook pg. 528"
   },
   {
     "id": "26",
     "name": "Lava Flume Tubes",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=26",
     "level": "10",
-    "type": "COMPLEX"
+    "complexity": "COMPLEX",
+    "source": "Core Rulebook pg. 528"
   },
   {
     "id": "27",
     "name": "Telekinetic Swarm Trap",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=27",
     "level": "12",
-    "type": "COMPLEX"
+    "complexity": "COMPLEX",
+    "source": "Core Rulebook pg. 528"
   },
   {
     "id": "28",
     "name": "Darkside Mirror",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=28",
     "level": "14",
-    "type": "COMPLEX"
+    "complexity": "COMPLEX",
+    "source": "Core Rulebook pg. 528"
   },
   {
     "id": "29",
     "name": "Banshee's Symphony",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=29",
     "level": "18",
-    "type": "COMPLEX"
+    "complexity": "COMPLEX",
+    "source": "Core Rulebook pg. 529"
   }
 ]

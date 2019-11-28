@@ -18,12 +18,7 @@ class MonsterViewHolder(
     override fun bind(displayModel: EncounterCreatorDisplayModel) {
         binding = ViewholderMonsterBinding.bind(itemView)
         val monster = displayModel as EncounterCreatorDisplayModel.Monster
-        binding.listItemIcon.load(
-            itemView.resources.getDrawable(
-                monster.type.getIcon(),
-                itemView.context.theme
-            )
-        )
+        binding.listItemIcon.load(monster.type.getIcon())
         binding.listItemTitle.text = monster.name
         val caption = itemView.resources.getString(
             R.string.monster_with_xp_item_caption,
@@ -34,12 +29,12 @@ class MonsterViewHolder(
         binding.listItemCaption.text = caption
 
         binding.root.setOnClickListener {
-            monsterSelectedListener.onSelect(monster.id)
+            monsterSelectedListener.onSelectMonster(monster.id)
         }
     }
 
     interface MonsterViewHolderListener {
-        fun onSelect(id: Long)
+        fun onSelectMonster(id: Long)
     }
 
 }

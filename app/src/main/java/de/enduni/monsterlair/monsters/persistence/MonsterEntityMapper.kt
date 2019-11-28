@@ -26,7 +26,8 @@ class MonsterEntityMapper {
         type = entity.type,
         family = entity.family,
         alignment = entity.alignment,
-        size = entity.size
+        size = entity.size,
+        source = entity.source
     )
 
 }

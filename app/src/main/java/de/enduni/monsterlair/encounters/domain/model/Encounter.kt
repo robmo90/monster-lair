@@ -4,6 +4,7 @@ class Encounter(
     val id: Long? = null,
     var name: String = "Encounter",
     val monsters: MutableList<EncounterMonster> = mutableListOf(),
+    val hazards: MutableList<EncounterHazard> = mutableListOf(),
     val level: Int,
     val numberOfPlayers: Int,
     val targetDifficulty: EncounterDifficulty
@@ -24,23 +25,59 @@ class Encounter(
         }
     }
 
-    fun removeMonster(monsterId: Long) {
+    fun addHazard(hazard: HazardWithRole) {
+        val hazardAlreadyInList = hazards.any { it.id == hazard.id }
+        if (hazardAlreadyInList) {
+            incrementCount(hazardId = hazard.id)
+        } else {
+            hazards.add(
+                EncounterHazard(
+                    id = hazard.id,
+                    hazard = hazard,
+                    count = 1
+                )
+            )
+        }
+    }
+
+    private fun removeMonster(monsterId: Long) {
         monsters.removeIf { it.id == monsterId }
     }
 
-    fun incrementCount(monsterId: Long) {
-        monsters.find { it.id == monsterId }
-            ?.let { it.count++ }
+    private fun removeHazard(hazardId: Long) {
+        hazards.removeIf { it.id == hazardId }
     }
 
-    fun decrementCount(monsterId: Long) {
-        monsters.find { it.id == monsterId }
-            ?.let { monster ->
-                monster.count--
-                if (monster.count == 0) {
-                    removeMonster(monsterId)
+    fun incrementCount(monsterId: Long? = null, hazardId: Long? = null) {
+        monsterId?.let { id ->
+            monsters.find { it.id == id }
+                ?.let { it.count++ }
+        }
+        hazardId?.let { id ->
+            hazards.find { it.id == id }
+                ?.let { it.count++ }
+        }
+    }
+
+    fun decrementCount(monsterId: Long? = null, hazardId: Long? = null) {
+        monsterId?.let { id ->
+            monsters.find { it.id == id }
+                ?.let { monster ->
+                    monster.count--
+                    if (monster.count == 0) {
+                        removeMonster(id)
+                    }
                 }
-            }
+        }
+        hazardId?.let { id ->
+            hazards.find { it.id == id }
+                ?.let { hazard ->
+                    hazard.count--
+                    if (hazard.count == 0) {
+                        removeHazard(id)
+                    }
+                }
+        }
     }
 
 }

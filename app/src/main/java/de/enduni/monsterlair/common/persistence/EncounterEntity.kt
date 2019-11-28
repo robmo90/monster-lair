@@ -18,7 +18,7 @@ data class EncounterEntity(
     tableName = "monsters_for_encounters",
     indices = [Index(
         value = ["encounter_id"],
-        name = "encounter_index"
+        name = "monster_for_encounter_index"
     )],
     foreignKeys = [ForeignKey(
         entity = EncounterEntity::class,
@@ -30,6 +30,26 @@ data class EncounterEntity(
 data class MonsterForEncounterEntity(
     @PrimaryKey val id: Long? = null,
     val monsterId: Long,
+    val count: Int,
+    @ColumnInfo(name = "encounter_id") val encounterId: Long
+)
+
+@Entity(
+    tableName = "hazards_for_encounters",
+    indices = [Index(
+        value = ["encounter_id"],
+        name = "hazard_for_encounter_index"
+    )],
+    foreignKeys = [ForeignKey(
+        entity = EncounterEntity::class,
+        parentColumns = ["id"],
+        childColumns = ["encounter_id"],
+        onDelete = ForeignKey.CASCADE
+    )]
+)
+data class HazardForEncounterEntity(
+    @PrimaryKey val id: Long? = null,
+    val hazardId: Long,
     val count: Int,
     @ColumnInfo(name = "encounter_id") val encounterId: Long
 )

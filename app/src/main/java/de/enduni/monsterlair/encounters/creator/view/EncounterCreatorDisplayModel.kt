@@ -1,7 +1,9 @@
 package de.enduni.monsterlair.encounters.creator.view
 
-import de.enduni.monsterlair.encounters.domain.model.CreatureRole
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
+import de.enduni.monsterlair.encounters.domain.model.HazardRole
+import de.enduni.monsterlair.encounters.domain.model.MonsterRole
+import de.enduni.monsterlair.hazards.domain.Complexity
 import de.enduni.monsterlair.monsters.domain.MonsterType
 
 sealed class EncounterCreatorDisplayModel {
@@ -12,8 +14,24 @@ sealed class EncounterCreatorDisplayModel {
         val type: MonsterType,
         val level: Int,
         val family: String,
-        val role: CreatureRole
-    ) : EncounterCreatorDisplayModel()
+        val role: MonsterRole
+    ) : EncounterCreatorDisplayModel(), Sortable {
+        override fun name() = this.name
+
+        override fun level() = this.level
+    }
+
+    data class Hazard(
+        val id: Long,
+        val name: String,
+        val complexity: Complexity,
+        val level: Int,
+        val role: HazardRole
+    ) : EncounterCreatorDisplayModel(), Sortable {
+        override fun name() = this.name
+
+        override fun level() = this.level
+    }
 
     data class EncounterInformation(
         val currentBudget: Int,
@@ -29,8 +47,30 @@ sealed class EncounterCreatorDisplayModel {
         val count: Int,
         val level: Int,
         val family: String,
-        val role: CreatureRole
-    ) : EncounterCreatorDisplayModel()
+        val role: MonsterRole
+    ) : EncounterCreatorDisplayModel(), Sortable {
+        override fun name() = this.name
+
+        override fun level() = this.level
+    }
+
+    data class HazardForEncounter(
+        val id: Long,
+        val name: String,
+        val complexity: Complexity,
+        val count: Int,
+        val level: Int,
+        val role: HazardRole
+    ) : EncounterCreatorDisplayModel(), Sortable {
+        override fun name() = this.name
+
+        override fun level() = this.level
+    }
 
 
+}
+
+interface Sortable {
+    fun name(): String
+    fun level(): Int
 }

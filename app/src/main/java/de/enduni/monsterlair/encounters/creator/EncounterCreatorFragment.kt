@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.SimpleItemAnimator
 import de.enduni.monsterlair.R
@@ -46,7 +47,7 @@ class EncounterCreatorFragment : Fragment() {
         binding = FragmentEncounterCreatorBinding.bind(view)
         listAdapter = EncounterCreatorListAdapter(
             activity!!.layoutInflater, viewModel,
-            viewModel, viewModel
+            viewModel, viewModel, viewModel, viewModel
         )
 
         binding.encounterRecyclerView.adapter = listAdapter
@@ -126,10 +127,12 @@ class EncounterCreatorFragment : Fragment() {
     private fun handleAction(action: EncounterCreatorAction?) {
         when (action) {
             is EncounterCreatorAction.SaveClicked -> {
-                SaveDialog.show(activity!!) { name ->
+                SaveDialog.show(activity!!, action.name) { name ->
                     viewModel.saveEncounter(name)
                 }
-
+            }
+            is EncounterCreatorAction.EncounterSaved -> {
+                findNavController().navigateUp()
             }
             else -> return
         }

@@ -15,7 +15,7 @@ class EncounterViewHolder(
     fun bind(encounter: EncounterDisplayModel) {
         binding = ViewholderSavedEncounterBinding.bind(itemView)
         binding.listItemTitle.text = encounter.name
-        binding.listItemCaption.text = "${encounter.budget} XP - ${encounter.monsters}"
+        binding.listItemCaption.text = "${encounter.budget} XP - ${encounter.dangers}"
         binding.root.setOnClickListener {
             onClickListener.onEncounterSelected(encounter.id)
         }

@@ -11,6 +11,6 @@ data class MonsterWithRole(
     val alignment: String,
     val type: MonsterType,
     val size: String,
-    val role: CreatureRole,
+    val role: MonsterRole,
     val source: String
 )

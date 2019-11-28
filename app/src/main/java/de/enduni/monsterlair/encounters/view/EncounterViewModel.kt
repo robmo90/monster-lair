@@ -42,6 +42,8 @@ class EncounterViewModel(
                     budget.currentBudget,
                     encounter.monsters.joinToString { encounterMonster ->
                         "${encounterMonster.count} ${encounterMonster.monster.name}"
+                    } + ", " + encounter.hazards.joinToString { encounterHazard ->
+                        "${encounterHazard.count} ${encounterHazard.hazard.name}"
                     }
                 )
             }

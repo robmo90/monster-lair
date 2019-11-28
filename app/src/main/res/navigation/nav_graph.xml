@@ -82,7 +82,7 @@
         <argument
             android:name="encounter_difficulty"
             android:defaultValue="TRIVIAL"
-            app:argType="de.enduni.monsterlair.encounters.domain.EncounterDifficulty" />
+            app:argType="de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty" />
 
     </fragment>
 

@@ -1,11 +1,15 @@
 package de.enduni.monsterlair.common
 
+import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.encounters.domain.model.CreatureRole
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
+import de.enduni.monsterlair.encounters.domain.model.HazardRole
+import de.enduni.monsterlair.encounters.domain.model.MonsterRole
+import de.enduni.monsterlair.hazards.domain.Complexity
 import de.enduni.monsterlair.monsters.domain.MonsterType
 
+@DrawableRes
 fun MonsterType.getIcon(): Int {
     return when (this) {
         MonsterType.ABERRATION -> R.drawable.ic_monster_aberration
@@ -31,6 +35,13 @@ fun MonsterType.getIcon(): Int {
     }
 }
 
+fun Complexity.getIcon(): Int {
+    return when (this) {
+        Complexity.SIMPLE -> R.drawable.ic_hazard_simple
+        Complexity.COMPLEX -> R.drawable.ic_hazard_complex
+    }
+}
+
 @StringRes
 fun EncounterDifficulty.getStringRes(): Int {
     return when (this) {
@@ -43,18 +54,51 @@ fun EncounterDifficulty.getStringRes(): Int {
 }
 
 @StringRes
-fun CreatureRole.getStringRes(): Int {
+fun MonsterRole.getStringRes(): Int {
     return when (this) {
-        CreatureRole.LOW_LACKEY -> R.string.role_low_lackey
-        CreatureRole.MODERATE_LACKEY -> R.string.role_moderate_lackey
-        CreatureRole.STANDARD_LACKEY -> R.string.role_standard_lackey
-        CreatureRole.STANDARD_CREATURE -> R.string.role_standard_creature
-        CreatureRole.LOW_BOSS -> R.string.role_low_boss
-        CreatureRole.MODERATE_BOSS -> R.string.role_moderate_boss
-        CreatureRole.SEVERE_BOSS -> R.string.role_severe_boss
-        CreatureRole.EXTREME_BOSS -> R.string.role_extreme_boss
-        CreatureRole.SOLO_BOSS -> R.string.role_solo_boss
-        CreatureRole.TOO_HIGH -> R.string.role_too_high
-        CreatureRole.TOO_LOW -> R.string.role_too_low
+        MonsterRole.LOW_LACKEY -> R.string.role_low_lackey
+        MonsterRole.MODERATE_LACKEY -> R.string.role_moderate_lackey
+        MonsterRole.STANDARD_LACKEY -> R.string.role_standard_lackey
+        MonsterRole.STANDARD_CREATURE -> R.string.role_standard_creature
+        MonsterRole.LOW_BOSS -> R.string.role_low_boss
+        MonsterRole.MODERATE_BOSS -> R.string.role_moderate_boss
+        MonsterRole.SEVERE_BOSS -> R.string.role_severe_boss
+        MonsterRole.EXTREME_BOSS -> R.string.role_extreme_boss
+        MonsterRole.SOLO_BOSS -> R.string.role_solo_boss
+        MonsterRole.TOO_HIGH -> R.string.role_too_high
+        MonsterRole.TOO_LOW -> R.string.role_too_low
+    }
+}
+
+@StringRes
+fun Complexity.getStringRes(): Int {
+    return when (this) {
+        Complexity.SIMPLE -> R.string.hazard_complexity_simple
+        Complexity.COMPLEX -> R.string.hazard_complexity_complex
+    }
+}
+
+@StringRes
+fun HazardRole.getStringRes(): Int {
+    return when (this) {
+        HazardRole.LOW_LACKEY -> R.string.role_low_lackey
+        HazardRole.MODERATE_LACKEY -> R.string.role_moderate_lackey
+        HazardRole.STANDARD_LACKEY -> R.string.role_standard_lackey
+        HazardRole.STANDARD_CREATURE -> R.string.role_standard_creature
+        HazardRole.LOW_BOSS -> R.string.role_low_boss
+        HazardRole.MODERATE_BOSS -> R.string.role_moderate_boss
+        HazardRole.SEVERE_BOSS -> R.string.role_severe_boss
+        HazardRole.EXTREME_BOSS -> R.string.role_extreme_boss
+        HazardRole.SOLO_BOSS -> R.string.role_solo_boss
+        HazardRole.TOO_HIGH -> R.string.role_too_high
+        HazardRole.TOO_LOW -> R.string.role_too_low
+    }
+}
+
+
+fun HazardRole.getXp(complexity: Complexity): Int {
+    return when (complexity) {
+        Complexity.SIMPLE -> xpSimple
+        Complexity.COMPLEX -> xpComplex
     }
 }

@@ -1,5 +1,6 @@
 package de.enduni.monsterlair.encounters.domain
 
+import de.enduni.monsterlair.common.getXp
 import de.enduni.monsterlair.encounters.domain.model.Encounter
 import de.enduni.monsterlair.encounters.domain.model.EncounterBudget
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
@@ -12,7 +13,10 @@ class CalculateEncounterBudgetUseCase {
 
     suspend fun execute(encounter: Encounter): EncounterBudget =
         withContext(Dispatchers.Default) {
-            val currentBudget = encounter.monsters.map { it.monster.role.xp * it.count }.sum()
+            val currentBudget = encounter.monsters
+                .map { it.monster.role.xp * it.count }.sum()
+                .plus(encounter.hazards.map { it.hazard.role.getXp(it.hazard.complexity) * it.count }.sum())
+
             val characterAdjustment = encounter.numberOfPlayers - 4
             val targetBudget = encounter.targetDifficulty.calculateBudget(characterAdjustment)
 

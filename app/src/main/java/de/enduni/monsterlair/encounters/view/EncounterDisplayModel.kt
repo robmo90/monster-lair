@@ -4,5 +4,5 @@ data class EncounterDisplayModel(
     val id: Long,
     val name: String,
     val budget: Int,
-    val monsters: String
+    val dangers: String
 )

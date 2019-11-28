@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Monster Lair</string>
 
+    <string name="hazard_item_caption">%s hazard \u2014 Level: %d</string>
     <string name="monster_item_caption">%s \u2014 Level: %d</string>
     <string name="monster_search">Search</string>
     <string name="monster_level_range">Level Range</string>
@@ -22,6 +23,9 @@
     <string name="enter_valid_level"> Please enter a valid level between 1 and 20 </string>
     <string name="enter_valid_number">Please enter a valid player number</string>
 
+    <string name="hazard_complexity_simple">Simple</string>
+    <string name="hazard_complexity_complex">Complex</string>
+
 
     <string name="role_low_lackey">Low-threat lackey</string>
     <string name="role_moderate_lackey">Low- or moderate-threat lackey</string>
@@ -36,6 +40,7 @@
     <string name="role_too_high">Too high for creation rules</string>
 
     <string name="monster_with_xp_item_caption">%s \u2014 Level: %d \u2014 XP: %d</string>
+    <string name="hazard_with_xp_item_caption">%s hazard \u2014 Level: %d \u2014 XP: %d</string>
     <string name="encounter_monster_item_caption">Level: %d \u2014 XP: %d</string>
 
 </resources>

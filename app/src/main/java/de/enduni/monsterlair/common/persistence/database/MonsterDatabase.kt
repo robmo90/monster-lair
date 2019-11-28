@@ -4,12 +4,16 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import de.enduni.monsterlair.BuildConfig
 import de.enduni.monsterlair.common.persistence.*
 
 @Database(
-    entities = [MonsterEntity::class, EncounterEntity::class, MonsterForEncounterEntity::class],
-    version = 1,
+    entities = [
+        HazardEntity::class,
+        MonsterEntity::class,
+        EncounterEntity::class,
+        MonsterForEncounterEntity::class,
+        HazardForEncounterEntity::class],
+    version = 2,
     exportSchema = false
 )
 abstract class MonsterDatabase : RoomDatabase() {
@@ -23,7 +27,7 @@ abstract class MonsterDatabase : RoomDatabase() {
 
     companion object {
         fun buildDatabase(context: Context): MonsterDatabase {
-            return if (BuildConfig.DEBUG) {
+            return if (false) {
                 Room.inMemoryDatabaseBuilder(context, MonsterDatabase::class.java)
                     .fallbackToDestructiveMigration()
                     .build()

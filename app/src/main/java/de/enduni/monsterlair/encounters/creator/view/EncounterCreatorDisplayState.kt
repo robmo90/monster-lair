@@ -18,6 +18,7 @@ data class EncounterCreatorFilter(
 
 sealed class EncounterCreatorAction {
 
-    object SaveClicked : EncounterCreatorAction()
+    class SaveClicked(val name: String) : EncounterCreatorAction()
+    object EncounterSaved : EncounterCreatorAction()
 
 }
