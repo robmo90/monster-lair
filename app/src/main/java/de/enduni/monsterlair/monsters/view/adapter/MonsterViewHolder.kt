@@ -33,12 +33,12 @@ class MonsterViewHolder(
         binding.listItemCaption.text = caption
 
         binding.root.setOnClickListener {
-            monsterSelectedListener.onSelect(monsterName = monster.name)
+            monsterSelectedListener.onSelect(monsterId = monster.id)
         }
     }
 
     interface MonsterViewHolderListener {
-        fun onSelect(monsterName: String)
+        fun onSelect(monsterId: Long)
     }
 
 }

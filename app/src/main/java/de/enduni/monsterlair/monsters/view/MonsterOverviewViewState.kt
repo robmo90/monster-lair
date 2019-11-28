@@ -25,3 +25,4 @@ enum class SortBy(val value: String) {
     LEVEL("level"),
     TYPE("type")
 }
+

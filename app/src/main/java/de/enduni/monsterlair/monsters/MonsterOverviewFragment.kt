@@ -1,5 +1,6 @@
 package de.enduni.monsterlair.monsters
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,13 +11,16 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import de.enduni.monsterlair.R
+import de.enduni.monsterlair.common.openCustomTab
 import de.enduni.monsterlair.common.setTextIfNotFocused
 import de.enduni.monsterlair.databinding.FragmentMonsterOverviewBinding
+import de.enduni.monsterlair.monsters.view.MonsterOverviewAction
 import de.enduni.monsterlair.monsters.view.MonsterOverviewViewState
 import de.enduni.monsterlair.monsters.view.MonsterViewModel
 import de.enduni.monsterlair.monsters.view.SortBy
 import de.enduni.monsterlair.monsters.view.adapter.MonsterListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import timber.log.Timber
 
 
 class MonsterOverviewFragment : Fragment() {
@@ -41,6 +45,7 @@ class MonsterOverviewFragment : Fragment() {
 
         binding.monsterRecyclerView.adapter = listAdapter
         viewModel.viewState.observe(this, Observer { state -> bindViewToState(state) })
+        viewModel.actions.observe(this, Observer { action -> handleAction(action) })
         bindUi()
     }
 
@@ -100,5 +105,16 @@ class MonsterOverviewFragment : Fragment() {
         }
     }
 
+    private fun handleAction(action: MonsterOverviewAction?) {
+        when (action) {
+            is MonsterOverviewAction.MonsterSelected -> navigateToUrl(action.url)
+            else -> Timber.d("Processed $action")
+        }
+    }
+
+
+    private fun navigateToUrl(url: String) {
+        Uri.parse(url).openCustomTab(context!!)
+    }
 
 }

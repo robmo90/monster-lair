@@ -4,19 +4,25 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import de.enduni.monsterlair.common.view.ActionLiveData
 import de.enduni.monsterlair.monsters.domain.Monster
+import de.enduni.monsterlair.monsters.domain.RetrieveMonsterUseCase
 import de.enduni.monsterlair.monsters.domain.RetrieveMonstersUseCase
 import de.enduni.monsterlair.monsters.view.adapter.MonsterViewHolder
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
 class MonsterViewModel(
+    private val retrieveMonsterUseCase: RetrieveMonsterUseCase,
     private val retrieveMonstersUseCase: RetrieveMonstersUseCase,
     private val mapper: MonsterListDisplayModelMapper
 ) : ViewModel(), MonsterViewHolder.MonsterViewHolderListener {
 
     private val _viewState = MutableLiveData<MonsterOverviewViewState>()
     val viewState: LiveData<MonsterOverviewViewState> get() = _viewState
+
+    private val _actions = ActionLiveData<MonsterOverviewAction>()
+    val actions: LiveData<MonsterOverviewAction> get() = _actions
 
     private var filter = MonsterFilter()
 
@@ -60,8 +66,11 @@ class MonsterViewModel(
     }
 
 
-    override fun onSelect(monsterName: String) {
-        Timber.d("Selected $monsterName")
+    override fun onSelect(monsterId: Long) {
+        viewModelScope.launch {
+            val monster = retrieveMonsterUseCase.execute(monsterId)
+            _actions.sendAction(MonsterOverviewAction.MonsterSelected(monster.url))
+        }
     }
 
 
