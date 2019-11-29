@@ -30,7 +30,7 @@ class EncounterRepository(
         }
     }
 
-    suspend fun getEncounter(id: Long) = encounterDao.getEncounter(id).let { toDomainModel(it) }
+    suspend fun getEncounter(id: Long) = toDomainModel(encounterDao.getEncounter(id))
 
     private suspend fun toDomainModel(entity: EncounterEntity): Encounter {
         val monsterForEncounterEntities = encounterDao.getAllMonstersForEncounter(entity.id!!)
@@ -38,7 +38,7 @@ class EncounterRepository(
             monsterForEncounterEntities,
             entity.level
         )
-        val hazardsForEncounterEntities = encounterDao.getAllHazardsForEncounter(entity.id!!)
+        val hazardsForEncounterEntities = encounterDao.getAllHazardsForEncounter(entity.id)
         val hazardsForEncounter = getHazardsForEncounter(
             hazardsForEncounterEntities,
             entity.level

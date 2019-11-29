@@ -14,7 +14,7 @@ import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.setTextIfNotFocused
 import de.enduni.monsterlair.databinding.FragmentEncountersBinding
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
-import de.enduni.monsterlair.encounters.view.EncounterSelectedAction
+import de.enduni.monsterlair.encounters.view.EncounterAction
 import de.enduni.monsterlair.encounters.view.EncounterState
 import de.enduni.monsterlair.encounters.view.EncounterViewModel
 import de.enduni.monsterlair.encounters.view.adapter.EncounterListAdapter
@@ -50,16 +50,23 @@ class EncounterFragment : Fragment() {
         viewModel.start()
     }
 
-    private fun handleAction(action: EncounterSelectedAction?) {
-        action?.let {
-            val directions =
-                EncounterFragmentDirections.actionEncountersFragmentToEncounterCreatorFragment(
-                    encounterLevel = it.encounterLevel,
-                    numberOfPlayers = it.numberOfPlayers,
-                    encounterDifficulty = it.difficulty,
-                    encounterId = it.encounterId
-                )
-            findNavController().navigate(directions)
+    private fun handleAction(action: EncounterAction) {
+        when (action) {
+            is EncounterAction.EncounterSelectedAction -> {
+                val directions =
+                    EncounterFragmentDirections.openEncounterCreatorAction(
+                        encounterLevel = action.encounterLevel,
+                        numberOfPlayers = action.numberOfPlayers,
+                        encounterDifficulty = action.difficulty,
+                        encounterId = action.encounterId
+                    )
+                findNavController().navigate(directions)
+            }
+            is EncounterAction.ExportEncounterToPdfAction -> {
+                val directions =
+                    EncounterFragmentDirections.exportEncounterAction(action.name, action.template)
+                findNavController().navigate(directions)
+            }
         }
     }
 
@@ -76,7 +83,7 @@ class EncounterFragment : Fragment() {
         binding.startButton.isEnabled = state.isStartAllowed()
         binding.startButton.setOnClickListener {
             val directions =
-                EncounterFragmentDirections.actionEncountersFragmentToEncounterCreatorFragment(
+                EncounterFragmentDirections.openEncounterCreatorAction(
                     encounterLevel = state.levelOfPlayers!!,
                     numberOfPlayers = state.numberOfPlayers!!,
                     encounterDifficulty = state.difficulty

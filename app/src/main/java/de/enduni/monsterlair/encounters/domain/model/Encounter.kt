@@ -1,6 +1,6 @@
 package de.enduni.monsterlair.encounters.domain.model
 
-class Encounter(
+data class Encounter(
     val id: Long? = null,
     var name: String = "Encounter",
     val monsters: MutableList<EncounterMonster> = mutableListOf(),

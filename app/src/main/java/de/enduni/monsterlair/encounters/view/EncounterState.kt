@@ -16,9 +16,18 @@ data class EncounterState(
 
 }
 
-data class EncounterSelectedAction(
-    val numberOfPlayers: Int,
-    val encounterLevel: Int,
-    val encounterId: Long,
-    val difficulty: EncounterDifficulty
-)
+sealed class EncounterAction {
+
+    data class EncounterSelectedAction(
+        val numberOfPlayers: Int,
+        val encounterLevel: Int,
+        val encounterId: Long,
+        val difficulty: EncounterDifficulty
+    ) : EncounterAction()
+
+    data class ExportEncounterToPdfAction(
+        val name: String,
+        val template: String
+    ) : EncounterAction()
+
+}

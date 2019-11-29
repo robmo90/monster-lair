@@ -10,6 +10,7 @@ import de.enduni.monsterlair.encounters.creator.domain.StoreEncounterUseCase
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayModelMapper
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorViewModel
 import de.enduni.monsterlair.encounters.domain.CalculateEncounterBudgetUseCase
+import de.enduni.monsterlair.encounters.domain.CreateEncounterTemplateUseCase
 import de.enduni.monsterlair.encounters.domain.RetrieveEncountersUseCase
 import de.enduni.monsterlair.encounters.persistence.EncounterEntityMapper
 import de.enduni.monsterlair.encounters.persistence.EncounterRepository
@@ -102,9 +103,10 @@ val encounterModule = module {
     single { EncounterCreatorDisplayModelMapper() }
     single { RetrieveEncountersUseCase(get()) }
     single { RetrieveEncounterUseCase(get()) }
+    single { CreateEncounterTemplateUseCase(androidApplication(), get()) }
     single { StoreEncounterUseCase(get()) }
 
     // view
     viewModel { EncounterCreatorViewModel(get(), get(), get(), get(), get(), get()) }
-    viewModel { EncounterViewModel(get(), get()) }
+    viewModel { EncounterViewModel(get(), get(), get(), get()) }
 }

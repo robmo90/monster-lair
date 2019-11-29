@@ -13,6 +13,9 @@ class MonsterLairApplication : Application() {
 
     private val databaseInitializer: MonsterDatabaseInitializer by inject()
 
+    private var _databaseInitialized = false
+    val databaseInitialized get() = _databaseInitialized
+
     override fun onCreate() {
         super.onCreate()
 
@@ -28,7 +31,8 @@ class MonsterLairApplication : Application() {
 
         MainScope().launch {
             databaseInitializer.feedMonsters()
-            Timber.d("Fed monsters")
+            Timber.d("Fed monsters, setup traps")
+            _databaseInitialized = true
         }
 
 

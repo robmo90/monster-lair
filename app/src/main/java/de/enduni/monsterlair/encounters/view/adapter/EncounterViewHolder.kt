@@ -19,10 +19,14 @@ class EncounterViewHolder(
         binding.root.setOnClickListener {
             onClickListener.onEncounterSelected(encounter.id)
         }
+        binding.exportButton.setOnClickListener {
+            onClickListener.onEncounterExport(encounter.id)
+        }
     }
 
 
     interface OnClickListener {
         fun onEncounterSelected(id: Long)
+        fun onEncounterExport(id: Long)
     }
 }

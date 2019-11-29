@@ -17,24 +17,29 @@ class DangerForEncounterViewHolder(
 
     override fun bind(displayModel: EncounterCreatorDisplayModel) {
         binding = ViewholderEncounterMonsterBinding.bind(itemView)
-        val monster = displayModel as EncounterCreatorDisplayModel.DangerForEncounter
-        binding.listItemIcon.load(monster.icon)
-        binding.listItemTitle.text = monster.name
+        val dangerForEncounter = displayModel as EncounterCreatorDisplayModel.DangerForEncounter
+        binding.listItemIcon.load(
+            itemView.resources.getDrawable(
+                dangerForEncounter.icon,
+                itemView.context.theme
+            )
+        )
+        binding.listItemTitle.text = dangerForEncounter.name
         val caption = itemView.resources.getString(
             R.string.encounter_monster_item_caption,
-            monster.level,
-            monster.xp
+            dangerForEncounter.level,
+            dangerForEncounter.xp
         )
         binding.listItemCaption.text = caption
-        binding.monsterCountTextView.text = monster.count.toString()
-        binding.listItemRole.text = itemView.resources.getString(monster.role)
+        binding.monsterCountTextView.text = dangerForEncounter.count.toString()
+        binding.listItemRole.text = itemView.resources.getString(dangerForEncounter.role)
 
         binding.monsterCountIncrement.setOnClickListener {
-            listener.onIncrement(monster.type, monster.id)
+            listener.onIncrement(dangerForEncounter.type, dangerForEncounter.id)
         }
 
         binding.monsterCountDecrement.setOnClickListener {
-            listener.onDecrement(monster.type, monster.id)
+            listener.onDecrement(dangerForEncounter.type, dangerForEncounter.id)
         }
     }
 

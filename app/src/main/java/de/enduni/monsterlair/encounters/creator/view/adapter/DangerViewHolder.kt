@@ -18,7 +18,12 @@ class DangerViewHolder(
     override fun bind(displayModel: EncounterCreatorDisplayModel) {
         binding = ViewholderMonsterBinding.bind(itemView)
         val danger = displayModel as EncounterCreatorDisplayModel.Danger
-        binding.listItemIcon.load(danger.icon)
+        binding.listItemIcon.load(
+            itemView.resources.getDrawable(
+                danger.icon,
+                itemView.context.theme
+            )
+        )
         binding.listItemTitle.text = danger.name
         val caption = itemView.resources.getString(
             R.string.monster_with_xp_item_caption,

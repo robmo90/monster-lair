@@ -1,14 +1,17 @@
 package de.enduni.monsterlair.monsters.view
 
+import android.os.SystemClock
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import de.enduni.monsterlair.MonsterLairApplication
 import de.enduni.monsterlair.common.view.ActionLiveData
 import de.enduni.monsterlair.monsters.domain.Monster
 import de.enduni.monsterlair.monsters.domain.RetrieveMonsterUseCase
 import de.enduni.monsterlair.monsters.domain.RetrieveMonstersUseCase
 import de.enduni.monsterlair.monsters.view.adapter.MonsterViewHolder
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
@@ -26,8 +29,14 @@ class MonsterViewModel(
 
     private var filter = MonsterFilter()
 
-    init {
-        viewModelScope.launch { filterMonsters() }
+    fun start(monsterLairApplication: MonsterLairApplication) {
+        viewModelScope.launch(Dispatchers.Default) {
+            while (monsterLairApplication.databaseInitialized.not()) {
+                Timber.d("Waiting to database to be setup")
+                SystemClock.sleep(50)
+            }
+            filterMonsters()
+        }
     }
 
 

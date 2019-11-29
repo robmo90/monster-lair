@@ -7,6 +7,7 @@ import de.enduni.monsterlair.monsters.datasource.MonsterDataSource
 import de.enduni.monsterlair.monsters.persistence.MonsterEntityMapper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import timber.log.Timber
 
 class MonsterDatabaseInitializer(
     private val monsterEntityMapper: MonsterEntityMapper,
@@ -18,10 +19,16 @@ class MonsterDatabaseInitializer(
 ) {
 
     suspend fun feedMonsters() = withContext(Dispatchers.IO) {
-        val monsters = monsterDataSource.getMonsters().map { monsterEntityMapper.toEntity(it) }
-        monsterDao.insertMonsters(monsters)
-        val hazards = hazardDataSource.getHazards().map { hazardEntityMapper.toEntity(it) }
-        hazardDao.insertHazards(hazards)
+        if (monsterDao.getAllMonsters().isEmpty()) {
+            Timber.d("Feeding monsters")
+            val monsters = monsterDataSource.getMonsters().map { monsterEntityMapper.toEntity(it) }
+            monsterDao.insertMonsters(monsters)
+        }
+        if (hazardDao.getAllHazards().isEmpty()) {
+            Timber.d("Setting up traps")
+            val hazards = hazardDataSource.getHazards().map { hazardEntityMapper.toEntity(it) }
+            hazardDao.insertHazards(hazards)
+        }
     }
 
 

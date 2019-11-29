@@ -19,7 +19,12 @@ class HazardViewHolder(
 
     fun bind(hazard: HazardDisplayModel) {
         binding = ViewholderHazardBinding.bind(itemView)
-        binding.listItemIcon.load(hazard.complexity.getIcon())
+        binding.listItemIcon.load(
+            itemView.resources.getDrawable(
+                hazard.complexity.getIcon(),
+                itemView.context.theme
+            )
+        )
         binding.listItemTitle.text = hazard.name
         val caption = itemView.resources.getString(
             R.string.hazard_item_caption,

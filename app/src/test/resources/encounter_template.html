@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta
+            name="description"
+            content="">
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1">
+
+    <meta
+            name="theme-color"
+            content="#fafafa">
+</head>
+
+<body>
+
+<h1>{{name}}</h1>
+
+<ul>
+    <li>Level: {{level}}</li>
+    <li>Number of Characters: {{numberOfPlayers}}</li>
+    <li>Difficulty: {{difficulty}}</li>
+    <li>XP for Characters: {{xp}}</li>
+    <li>Budget Adjusted for Characters: {{xpAdjusted}}</li>
+</ul>
+
+{{#printMonsters}}
+<h2>Monsters</h2>
+
+<ul>
+    {{#monsters}}
+    <li>{{count}} {{name}} &ndash; Family: {{family}} &ndash; Level {{level}} &ndash; XP: {{xp}}
+        &ndash; Source: {{source}}
+    </li>
+    {{/monsters}}
+</ul>
+{{/printMonsters}}
+
+{{#printHazards}}
+<h2>Hazards</h2>
+
+<ul>
+    {{#hazards}}
+    <li>{{count}} {{name}} &ndash; Level {{level}} &ndash; XP: {{xp}} &ndash; Source: {{source}}
+    </li>
+    {{/hazards}}
+</ul>
+
+
+{{/printHazards}}
+
+</body>
+
+</html>

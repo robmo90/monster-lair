@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import de.enduni.monsterlair.MonsterLairApplication
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.openCustomTab
 import de.enduni.monsterlair.common.setTextIfNotFocused
@@ -47,6 +48,7 @@ class MonsterOverviewFragment : Fragment() {
         viewModel.viewState.observe(this, Observer { state -> bindViewToState(state) })
         viewModel.actions.observe(this, Observer { action -> handleAction(action) })
         bindUi()
+        viewModel.start(activity!!.application as MonsterLairApplication)
     }
 
     private fun bindUi() {
