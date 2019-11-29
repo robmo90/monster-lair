@@ -68,4 +68,16 @@
     <string name="hazard_with_xp_item_caption">%s hazard \u2014 Level: %d \u2014 XP: %d</string>
     <string name="encounter_monster_item_caption">Level: %d \u2014 XP: %d</string>
 
+    <string name="no_dangers_encounter">Currently no monsters or hazards</string>
+    <string name="export">Print</string>
+    <string name="save_encounter">Save</string>
+
+    <string name="encounter_budget_xp">XP: %d / %d</string>
+    <string name="encounter_budget_difficulty">Difficulty (Target): %s \u2014 %s</string>
+    <string name="create_encounter">Create</string>
+    <string name="encounter_target_difficulty_label">Target Difficulty</string>
+    <string name="label_character_information">Character Information</string>
+    <string name="label_encounters">Saved Encounters</string>
+
+
 </resources>

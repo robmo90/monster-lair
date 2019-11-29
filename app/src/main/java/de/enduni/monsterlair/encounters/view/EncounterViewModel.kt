@@ -1,27 +1,23 @@
 package de.enduni.monsterlair.encounters.view
 
-import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import de.enduni.monsterlair.common.view.ActionLiveData
-import de.enduni.monsterlair.encounters.creator.domain.RetrieveEncounterUseCase
 import de.enduni.monsterlair.encounters.domain.CalculateEncounterBudgetUseCase
 import de.enduni.monsterlair.encounters.domain.CreateEncounterTemplateUseCase
 import de.enduni.monsterlair.encounters.domain.RetrieveEncountersUseCase
 import de.enduni.monsterlair.encounters.domain.model.Encounter
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 import de.enduni.monsterlair.encounters.view.adapter.EncounterViewHolder
-import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 class EncounterViewModel(
     private val retrieveEncountersUseCase: RetrieveEncountersUseCase,
-    private val retrieveEncounterUseCase: RetrieveEncounterUseCase,
     private val calculateEncounterBudgetUseCase: CalculateEncounterBudgetUseCase,
-    private val createEncounterTemplateUseCase: CreateEncounterTemplateUseCase
+    private val createEncounterTemplateUseCase: CreateEncounterTemplateUseCase,
+    private val mapper: EncounterDisplayModelMapper
 ) : ViewModel(), EncounterViewHolder.OnClickListener {
     private val _viewState = MutableLiveData<EncounterState>()
 
@@ -33,8 +29,6 @@ class EncounterViewModel(
 
     private var encounters = listOf<Encounter>()
 
-    private var exportedEncounterId: Long? = null
-
     init {
         _viewState.postValue(encounterState)
     }
@@ -45,18 +39,9 @@ class EncounterViewModel(
             val encounterDisplayModels = encounters.map {
                 Pair(it, calculateEncounterBudgetUseCase.execute(it))
             }.map { (encounter, budget) ->
-                EncounterDisplayModel(
-                    encounter.id!!,
-                    encounter.name,
-                    budget.currentBudget,
-                    encounter.monsters.joinToString { encounterMonster ->
-                        "${encounterMonster.count} ${encounterMonster.monster.name}"
-                    } + ", " + encounter.hazards.joinToString { encounterHazard ->
-                        "${encounterHazard.count} ${encounterHazard.hazard.name}"
-                    }
-                )
+                mapper.mapToDisplayModel(encounter, budget)
             }
-            _viewState.postValue(
+            postNewStateIfDifferent(
                 encounterState.copy(
                     encounters = encounterDisplayModels
                 )
@@ -119,13 +104,4 @@ class EncounterViewModel(
         }
     }
 
-    fun exportEncounter(uri: Uri) {
-        exportedEncounterId?.let { id ->
-            val exceptionHandler = CoroutineExceptionHandler { _, throwable -> Timber.e(throwable) }
-            viewModelScope.launch(exceptionHandler) {
-                val encounter = retrieveEncounterUseCase.execute(id)
-
-            }
-        }
-    }
 }

@@ -16,6 +16,7 @@ import de.enduni.monsterlair.encounters.persistence.EncounterEntityMapper
 import de.enduni.monsterlair.encounters.persistence.EncounterRepository
 import de.enduni.monsterlair.encounters.persistence.HazardWithRoleMapper
 import de.enduni.monsterlair.encounters.persistence.MonsterWithRoleMapper
+import de.enduni.monsterlair.encounters.view.EncounterDisplayModelMapper
 import de.enduni.monsterlair.encounters.view.EncounterViewModel
 import de.enduni.monsterlair.hazards.datasource.HazardAssetDataSource
 import de.enduni.monsterlair.hazards.datasource.HazardDataSource
@@ -107,6 +108,7 @@ val encounterModule = module {
     single { StoreEncounterUseCase(get()) }
 
     // view
+    single { EncounterDisplayModelMapper(androidApplication()) }
     viewModel { EncounterCreatorViewModel(get(), get(), get(), get(), get(), get()) }
     viewModel { EncounterViewModel(get(), get(), get(), get()) }
 }

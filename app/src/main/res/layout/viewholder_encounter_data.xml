@@ -28,14 +28,15 @@
         android:layout_marginTop="@dimen/list_item_caption_gap"
         app:layout_constraintStart_toStartOf="@id/list_item_title"
         app:layout_constraintTop_toBottomOf="@id/list_item_title"
-        tools:text="Aasimar" />
+        tools:text="Difficulty" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/save_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Save"
+        android:text="@string/save_encounter"
+        app:icon="@drawable/ic_save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
