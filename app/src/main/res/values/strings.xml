@@ -1,11 +1,15 @@
 <resources>
     <string name="app_name">Monster Lair</string>
 
+    <string name="main_menu_licenses">Content Licenses</string>
+    <string name="main_menu_libraries">Libraries</string>
+
     <string name="fragment_monsters">Monsters</string>
     <string name="fragment_hazards">Hazards</string>
     <string name="fragment_encounters">Encounters</string>
     <string name="fragment_encounter_creator">Create Encounter</string>
     <string name="fragment_encounter_export">Export Encounter</string>
+    <string name="fragment_licenses">Licenses</string>
 
     <string name="hazard_item_caption">%s \u2014 Level: %d</string>
     <string name="monster_item_caption">%s \u2014 Level: %d</string>

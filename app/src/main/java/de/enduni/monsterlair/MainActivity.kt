@@ -6,6 +6,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import de.enduni.monsterlair.databinding.ActivityMainBinding
+import timber.log.Timber
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,6 +29,24 @@ class MainActivity : AppCompatActivity() {
                 )
             )
         )
+        binding.toolbar.inflateMenu(R.menu.main_menu)
+        binding.toolbar.setOnMenuItemClickListener { item ->
+            when (item.itemId) {
+                R.id.main_menu_libraries -> {
+                    val page = String(applicationContext.assets.open("licenses.html").readBytes())
+                    navController.navigate(LicenseFragmentDirections.openLicensesAction(page))
+                    return@setOnMenuItemClickListener true
+                }
+                R.id.main_menu_content_licenses -> {
+                    val page =
+                        String(applicationContext.assets.open("other-licenses.html").readBytes())
+                    navController.navigate(LicenseFragmentDirections.openLicensesAction(page))
+                    return@setOnMenuItemClickListener true
+                }
+                else -> Timber.d("Menu item clicked but not handled $item")
+            }
+            false
+        }
     }
 
 }

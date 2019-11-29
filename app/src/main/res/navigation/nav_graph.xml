@@ -82,5 +82,24 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/licenseFragment"
+        android:name="de.enduni.monsterlair.LicenseFragment"
+        android:label="@string/fragment_licenses">
+
+        <argument
+            android:name="page"
+            android:defaultValue=" "
+            app:argType="string" />
+
+    </fragment>
+
+    <action
+        android:id="@+id/open_licenses_action"
+        app:destination="@id/licenseFragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
 
 </navigation>
