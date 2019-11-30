@@ -7,7 +7,9 @@ import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 import de.enduni.monsterlair.encounters.domain.model.HazardRole
 import de.enduni.monsterlair.encounters.domain.model.MonsterRole
 import de.enduni.monsterlair.hazards.domain.Complexity
+import de.enduni.monsterlair.hazards.view.HazardType
 import de.enduni.monsterlair.monsters.domain.MonsterType
+import de.enduni.monsterlair.monsters.view.SortBy
 
 @DrawableRes
 fun MonsterType.getIcon(): Int {
@@ -77,6 +79,26 @@ fun Complexity.getStringRes(): Int {
         Complexity.COMPLEX -> R.string.hazard_complexity_complex
     }
 }
+
+@StringRes
+fun HazardType.getStringRes(): Int {
+    return when (this) {
+        HazardType.COMPLEX -> R.string.hazard_filter_complex
+        HazardType.SIMPLE -> R.string.hazard_filter_simple
+        HazardType.ALL -> R.string.hazard_filter_all
+    }
+}
+
+
+@StringRes
+fun SortBy.getStringRes(): Int {
+    return when (this) {
+        SortBy.LEVEL -> R.string.monster_sort_by_level
+        SortBy.NAME -> R.string.monster_sort_by_name
+        SortBy.TYPE -> R.string.monster_sort_by_type
+    }
+}
+
 
 @StringRes
 fun HazardRole.getStringRes(): Int {

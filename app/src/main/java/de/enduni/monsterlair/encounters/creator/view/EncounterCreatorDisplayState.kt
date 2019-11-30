@@ -18,6 +18,8 @@ data class EncounterCreatorFilter(
 
 sealed class EncounterCreatorAction {
 
+    class DangerLinkClicked(val url: String) : EncounterCreatorAction()
+    class DangerAdded(val name: String) : EncounterCreatorAction()
     class SaveClicked(val name: String) : EncounterCreatorAction()
     object EncounterSaved : EncounterCreatorAction()
 

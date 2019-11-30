@@ -3,12 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/three_line_list_item_height"
-    android:background="?attr/colorSurface"
-    android:clickable="true"
+    android:background="?attr/selectableItemBackground"
     android:focusable="true"
-    android:foreground="?selectableItemBackground">
+    android:clickable="true"
+    android:layout_height="@dimen/two_line_list_item_height">
 
+    <ImageView
+        android:id="@+id/list_item_icon"
+        android:layout_width="@dimen/list_item_icon_size"
+        android:layout_height="@dimen/list_item_icon_size"
+        android:layout_marginStart="@dimen/list_item_margin"
+        android:layout_marginTop="@dimen/list_item_margin"
+        android:src="@drawable/ic_monster_celestial"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/list_item_title"
@@ -18,13 +26,10 @@
         android:layout_marginStart="@dimen/list_item_margin"
         android:layout_marginTop="@dimen/list_item_margin"
         android:layout_marginEnd="8dp"
-        android:ellipsize="end"
-        android:fontFamily="@font/amaranth"
-        android:lines="1"
-        app:layout_constraintEnd_toStartOf="@id/more_button"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/web_button"
+        app:layout_constraintStart_toEndOf="@id/list_item_icon"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Some Encounter" />
+        tools:text="Aasimar" />
 
     <TextView
         android:id="@+id/list_item_caption"
@@ -33,38 +38,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/list_item_caption_gap"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/amaranth"
-        android:ellipsize="end"
-        android:lines="1"
-        app:layout_constraintEnd_toStartOf="@id/more_button"
+        app:layout_constraintEnd_toStartOf="@id/web_button"
         app:layout_constraintStart_toStartOf="@id/list_item_title"
         app:layout_constraintTop_toBottomOf="@id/list_item_title"
-        tools:text="Some text aboud the encounter" />
-
-    <TextView
-        android:id="@+id/list_item_monsters"
-        style="@style/Caption"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/list_item_caption_gap"
-        android:layout_marginEnd="8dp"
-        android:ellipsize="end"
-        android:fontFamily="@font/amaranth"
-        android:lines="1"
-        app:layout_constraintEnd_toStartOf="@id/more_button"
-        app:layout_constraintStart_toStartOf="@id/list_item_title"
-        app:layout_constraintTop_toBottomOf="@id/list_item_caption"
-        tools:text="With these monsters" />
+        tools:text="Aasimar" />
 
     <ImageView
-        android:id="@+id/more_button"
+        android:id="@+id/web_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         android:background="?selectableItemBackgroundBorderless"
         android:padding="16dp"
-        android:src="@drawable/ic_more_vert"
+        android:src="@drawable/ic_link"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

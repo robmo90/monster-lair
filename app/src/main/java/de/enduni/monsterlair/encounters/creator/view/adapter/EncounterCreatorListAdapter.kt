@@ -11,7 +11,8 @@ class EncounterCreatorListAdapter(
     private val layoutInflater: LayoutInflater,
     private val dangerSelectedListener: DangerViewHolder.DangerSelectedListener,
     private val dangerForEncounterListener: DangerForEncounterViewHolder.DangerForEncounterListener,
-    private val onSaveClickedListener: EncounterBudgetViewHolder.OnSaveClickedListener
+    private val onSaveClickedListener: EncounterBudgetViewHolder.OnSaveClickedListener,
+    private val onNameChangedListener: EncounterDetailViewHolder.OnNameChangedListener
 
 ) : ListAdapter<EncounterCreatorDisplayModel, EncounterCreatorViewHolder>(
     EncounterCreatorDiffCallback()
@@ -20,7 +21,7 @@ class EncounterCreatorListAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EncounterCreatorViewHolder {
         return when (viewType) {
             TYPE_DANGER -> {
-                val view = layoutInflater.inflate(R.layout.viewholder_monster, parent, false)
+                val view = layoutInflater.inflate(R.layout.viewholder_danger, parent, false)
                 DangerViewHolder(view, dangerSelectedListener)
             }
             TYPE_DANGER_FOR_ENCOUNTER -> {
@@ -28,9 +29,15 @@ class EncounterCreatorListAdapter(
                     layoutInflater.inflate(R.layout.viewholder_encounter_monster, parent, false)
                 DangerForEncounterViewHolder(view, dangerForEncounterListener)
             }
-            TYPE_ENCOUNTER -> {
-                val view = layoutInflater.inflate(R.layout.viewholder_encounter_data, parent, false)
+            TYPE_ENCOUNTER_BUDGET -> {
+                val view =
+                    layoutInflater.inflate(R.layout.viewholder_encounter_budget, parent, false)
                 EncounterBudgetViewHolder(view, onSaveClickedListener)
+            }
+            TYPE_ENCOUNTER_DETAILS -> {
+                val view =
+                    layoutInflater.inflate(R.layout.viewholder_encounter_detail, parent, false)
+                EncounterDetailViewHolder(view, onNameChangedListener)
             }
             else -> throw RuntimeException("Something went wrong")
         }
@@ -45,7 +52,8 @@ class EncounterCreatorListAdapter(
         return when (getItem(position)) {
             is EncounterCreatorDisplayModel.Danger -> TYPE_DANGER
             is EncounterCreatorDisplayModel.DangerForEncounter -> TYPE_DANGER_FOR_ENCOUNTER
-            is EncounterCreatorDisplayModel.EncounterInformation -> TYPE_ENCOUNTER
+            is EncounterCreatorDisplayModel.EncounterBudget -> TYPE_ENCOUNTER_BUDGET
+            is EncounterCreatorDisplayModel.EncounterDetail -> TYPE_ENCOUNTER_DETAILS
         }
     }
 
@@ -53,7 +61,8 @@ class EncounterCreatorListAdapter(
     companion object {
         const val TYPE_DANGER = -2
         const val TYPE_DANGER_FOR_ENCOUNTER = -1
-        const val TYPE_ENCOUNTER = 2
+        const val TYPE_ENCOUNTER_BUDGET = 2
+        const val TYPE_ENCOUNTER_DETAILS = 0
     }
 }
 
@@ -63,13 +72,16 @@ class EncounterCreatorDiffCallback : DiffUtil.ItemCallback<EncounterCreatorDispl
         oldItem: EncounterCreatorDisplayModel,
         newItem: EncounterCreatorDisplayModel
     ): Boolean {
+        if (oldItem is EncounterCreatorDisplayModel.EncounterDetail && newItem is EncounterCreatorDisplayModel.EncounterDetail) {
+            return true
+        }
         if (oldItem is EncounterCreatorDisplayModel.Danger && newItem is EncounterCreatorDisplayModel.Danger) {
             return oldItem.id == newItem.id
         }
         if (oldItem is EncounterCreatorDisplayModel.DangerForEncounter && newItem is EncounterCreatorDisplayModel.DangerForEncounter) {
             return oldItem.id == newItem.id
         }
-        if (oldItem is EncounterCreatorDisplayModel.EncounterInformation && newItem is EncounterCreatorDisplayModel.EncounterInformation) {
+        if (oldItem is EncounterCreatorDisplayModel.EncounterBudget && newItem is EncounterCreatorDisplayModel.EncounterBudget) {
             return true
         }
         return false
@@ -79,8 +91,11 @@ class EncounterCreatorDiffCallback : DiffUtil.ItemCallback<EncounterCreatorDispl
         oldItem: EncounterCreatorDisplayModel,
         newItem: EncounterCreatorDisplayModel
     ): Boolean {
-        if (oldItem is EncounterCreatorDisplayModel.EncounterInformation && newItem is EncounterCreatorDisplayModel.EncounterInformation) {
+        if (oldItem is EncounterCreatorDisplayModel.EncounterBudget && newItem is EncounterCreatorDisplayModel.EncounterBudget) {
             return oldItem.currentBudget == newItem.currentBudget
+        }
+        if (oldItem is EncounterCreatorDisplayModel.EncounterDetail && newItem is EncounterCreatorDisplayModel.EncounterDetail) {
+            return oldItem.name == newItem.name
         }
         if (oldItem is EncounterCreatorDisplayModel.Danger && newItem is EncounterCreatorDisplayModel.Danger) {
             return true

@@ -23,7 +23,7 @@
     <string name="monster_sort_by_name">Name</string>
 
     <string name="character_level">Level</string>
-    <string name="number_of_characters">Number</string>
+    <string name="number_of_characters"># of Characters</string>
 
     <string name="difficulty_trivial">Trivial</string>
     <string name="difficulty_low">Low</string>
@@ -74,13 +74,14 @@
     <string name="save_encounter">Save</string>
 
     <string name="encounter_budget_xp">XP: %d / %d</string>
-    <string name="encounter_budget_difficulty">Difficulty: %s \u2014 Target: %s</string>
+    <string name="encounter_budget_difficulty">Current Difficulty: %s</string>
     <string name="create_encounter">Create</string>
 
+    <string name="encounter_details_creator">Level: %d \u2014 Characters: %d \u2014 %s</string>
     <string name="encounter_details">Level: %d \u2014 Characters: %d \u2014 %s \u2014 %d XP</string>
 
-    <string name="encounter_target_difficulty_label">Target Difficulty</string>
-    <string name="label_character_information">Character Information</string>
+    <string name="encounter_target_difficulty_label">Difficulty</string>
+    <string name="label_encounter_data">Encounter Data</string>
     <string name="label_encounters">Saved Encounters</string>
 
     <string name="monster_count_decrement_description">Decrease count or remove monster</string>
@@ -90,5 +91,9 @@
     <string name="scroll_up_description">Scroll up</string>
     <string name="encounter_print">Print</string>
     <string name="encounter_delete">Delete</string>
+    <string name="hazard_complexity">Complexity</string>
+
+    <string name="encounter_danger_added">%s added</string>
+    <string name="encounter_name_hint">Encounter Name</string>
 
 </resources>

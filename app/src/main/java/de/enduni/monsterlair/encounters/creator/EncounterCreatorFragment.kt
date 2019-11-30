@@ -1,9 +1,11 @@
 package de.enduni.monsterlair.encounters.creator
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -12,13 +14,12 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.SimpleItemAnimator
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import de.enduni.monsterlair.R
+import de.enduni.monsterlair.common.openCustomTab
 import de.enduni.monsterlair.common.setTextIfNotFocused
-import de.enduni.monsterlair.common.toDp
 import de.enduni.monsterlair.databinding.FragmentEncounterCreatorBinding
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorAction
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayState
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorViewModel
-import de.enduni.monsterlair.encounters.creator.view.SaveDialog
 import de.enduni.monsterlair.encounters.creator.view.adapter.EncounterCreatorListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
@@ -46,7 +47,7 @@ class EncounterCreatorFragment : Fragment() {
         binding = FragmentEncounterCreatorBinding.bind(view)
         listAdapter = EncounterCreatorListAdapter(
             activity!!.layoutInflater, viewModel,
-            viewModel, viewModel
+            viewModel, viewModel, viewModel
         )
 
         binding.encounterRecyclerView.adapter = listAdapter
@@ -90,7 +91,8 @@ class EncounterCreatorFragment : Fragment() {
     private fun setupBottomSheet() {
         val bottomSheetBehavior = BottomSheetBehavior.from(binding.filterBottomSheet)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-        bottomSheetBehavior.peekHeight = 56.toDp(context!!.resources.displayMetrics)
+        bottomSheetBehavior.peekHeight =
+            context!!.resources.getDimensionPixelSize(R.dimen.bottom_sheet_peek)
     }
 
     private fun bindViewToState(state: EncounterCreatorDisplayState) {
@@ -110,12 +112,18 @@ class EncounterCreatorFragment : Fragment() {
     private fun handleAction(action: EncounterCreatorAction?) {
         when (action) {
             is EncounterCreatorAction.SaveClicked -> {
-                SaveDialog.show(activity!!, action.name) { name ->
-                    viewModel.saveEncounter(name)
-                }
+                viewModel.saveEncounter()
             }
             is EncounterCreatorAction.EncounterSaved -> {
                 findNavController().navigateUp()
+            }
+            is EncounterCreatorAction.DangerLinkClicked -> {
+                Uri.parse(action.url).openCustomTab(context!!)
+            }
+            is EncounterCreatorAction.DangerAdded -> {
+                val toast = context!!.getString(R.string.encounter_danger_added, action.name)
+                Toast.makeText(context!!, toast, Toast.LENGTH_SHORT)
+                    .show()
             }
             else -> return
         }

@@ -3,7 +3,7 @@ package de.enduni.monsterlair.encounters.creator.view.adapter
 import android.view.View
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.getStringRes
-import de.enduni.monsterlair.databinding.ViewholderEncounterDataBinding
+import de.enduni.monsterlair.databinding.ViewholderEncounterBudgetBinding
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayModel
 
 
@@ -12,15 +12,13 @@ class EncounterBudgetViewHolder(
     private val onSaveClickedListener: OnSaveClickedListener
 ) : EncounterCreatorViewHolder(itemView) {
 
-    private lateinit var binding: ViewholderEncounterDataBinding
+    private lateinit var binding: ViewholderEncounterBudgetBinding
 
     override fun bind(displayModel: EncounterCreatorDisplayModel) {
-        binding = ViewholderEncounterDataBinding.bind(itemView)
-        val encounter = displayModel as EncounterCreatorDisplayModel.EncounterInformation
+        binding = ViewholderEncounterBudgetBinding.bind(itemView)
+        val encounter = displayModel as EncounterCreatorDisplayModel.EncounterBudget
         val currentDifficulty =
             itemView.context.resources.getString(encounter.currentDifficulty.getStringRes())
-        val targetDifficulty =
-            itemView.context.resources.getString(encounter.targetDifficulty.getStringRes())
 
         binding.listItemTitle.text = itemView.context.getString(
             R.string.encounter_budget_xp,
@@ -30,8 +28,7 @@ class EncounterBudgetViewHolder(
 
         binding.listItemCaption.text = itemView.context.getString(
             R.string.encounter_budget_difficulty,
-            currentDifficulty,
-            targetDifficulty
+            currentDifficulty
         )
         binding.saveButton.setOnClickListener {
             onSaveClickedListener.onSaveClicked()

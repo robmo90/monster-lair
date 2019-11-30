@@ -7,7 +7,7 @@ data class EncounterState(
     val levelOfPlayers: Int? = null,
     val levelValid: Boolean = true,
     val numberValid: Boolean = true,
-    val difficulty: EncounterDifficulty = EncounterDifficulty.TRIVIAL,
+    val difficulty: EncounterDifficulty = EncounterDifficulty.MODERATE,
     val encounters: List<EncounterDisplayModel> = listOf()
 ) {
 
@@ -25,10 +25,11 @@ sealed class EncounterAction {
         val difficulty: EncounterDifficulty
     ) : EncounterAction()
 
-    data class EncounterDetailsOpenedAction(val id: Long) : EncounterAction()
+    data class EncounterDetailsOpenedAction(val encounterName: String, val id: Long) :
+        EncounterAction()
 
     data class ExportEncounterToPdfAction(
-        val name: String,
+        val encounterName: String,
         val template: String
     ) : EncounterAction()
 

@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
@@ -21,7 +20,6 @@ import de.enduni.monsterlair.encounters.view.EncounterState
 import de.enduni.monsterlair.encounters.view.EncounterViewModel
 import de.enduni.monsterlair.encounters.view.adapter.EncounterListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import timber.log.Timber
 
 class EncounterFragment : Fragment() {
 
@@ -48,7 +46,7 @@ class EncounterFragment : Fragment() {
         adapter = EncounterListAdapter(activity!!.layoutInflater, viewModel)
         binding.encounterRecyclerView.adapter = adapter
         setupTextListeners()
-        setupSpinner()
+        setupDifficultySelect()
         viewModel.fetchEncounters()
     }
 
@@ -66,15 +64,20 @@ class EncounterFragment : Fragment() {
             }
             is EncounterAction.ExportEncounterToPdfAction -> {
                 val directions =
-                    EncounterFragmentDirections.exportEncounterAction(action.name, action.template)
+                    EncounterFragmentDirections.exportEncounterAction(
+                        action.encounterName,
+                        action.template
+                    )
                 findNavController().navigate(directions)
             }
-            is EncounterAction.EncounterDetailsOpenedAction -> showBottomSheet(action.id)
+            is EncounterAction.EncounterDetailsOpenedAction -> showBottomSheet(
+                action.encounterName,
+                action.id
+            )
         }
     }
 
     private fun handleViewState(state: EncounterState) {
-        Timber.d("Rendering state $state")
         binding.characterLevelEditText.setTextIfNotFocused(state.levelOfPlayers)
         if (state.levelValid.not()) {
             binding.characterLevelEditText.error = getString(R.string.enter_valid_level)
@@ -93,12 +96,20 @@ class EncounterFragment : Fragment() {
                 )
             findNavController().navigate(directions)
         }
-        adapter.submitList(state.encounters)
+        if (state.encounters.isEmpty()) {
+            binding.encounterRecyclerView.visibility = View.GONE
+            binding.encounterLabel.visibility = View.GONE
+        } else {
+            binding.encounterRecyclerView.visibility = View.VISIBLE
+            binding.encounterLabel.visibility = View.VISIBLE
+            adapter.submitList(state.encounters)
+        }
     }
 
-    private fun showBottomSheet(id: Long) {
+    private fun showBottomSheet(name: String, id: Long) {
         val binding = BottomsheetEncounterBinding.inflate(activity!!.layoutInflater, null, false)
         val bottomSheetDialog = BottomSheetDialog(context!!)
+        binding.encounterName.text = name
         binding.printEncounter.setOnClickListener {
             viewModel.onEncounterExport(id)
             bottomSheetDialog.dismiss()
@@ -120,39 +131,27 @@ class EncounterFragment : Fragment() {
         }
     }
 
-    private fun setupSpinner() {
+    private fun setupDifficultySelect() {
         ArrayAdapter.createFromResource(
             context!!,
             R.array.difficulty_choices,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
-            binding.difficultySpinner.adapter = adapter
+            binding.difficultySelect.setAdapter(adapter)
         }
-        binding.difficultySpinner.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
-                override fun onNothingSelected(parent: AdapterView<*>?) {
-                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                }
 
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-                ) {
-                    when (position) {
-                        0 -> viewModel.setDifficulty(EncounterDifficulty.TRIVIAL)
-                        1 -> viewModel.setDifficulty(EncounterDifficulty.LOW)
-                        2 -> viewModel.setDifficulty(EncounterDifficulty.MODERATE)
-                        3 -> viewModel.setDifficulty(EncounterDifficulty.SEVERE)
-                        4 -> viewModel.setDifficulty(EncounterDifficulty.EXTREME)
-                    }
+        binding.difficultySelect.doAfterTextChanged { choice ->
+            context?.resources?.getStringArray(R.array.difficulty_choices)?.let { choices ->
+                when (choices.indexOf(choice.toString())) {
+                    0 -> viewModel.setDifficulty(EncounterDifficulty.TRIVIAL)
+                    1 -> viewModel.setDifficulty(EncounterDifficulty.LOW)
+                    2 -> viewModel.setDifficulty(EncounterDifficulty.MODERATE)
+                    3 -> viewModel.setDifficulty(EncounterDifficulty.SEVERE)
+                    4 -> viewModel.setDifficulty(EncounterDifficulty.EXTREME)
+                    else -> return@doAfterTextChanged
                 }
-
             }
+        }
     }
 
     override fun onPause() {

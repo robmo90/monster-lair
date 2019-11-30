@@ -52,6 +52,8 @@ class EncounterViewModel(
     }
 
     fun setLevel(levelString: String) {
+        if (levelString.isBlank())
+            return
         val level = levelString.toIntOrNull()
         val viewState = encounterState.copy(
             levelOfPlayers = level,
@@ -62,6 +64,8 @@ class EncounterViewModel(
 
 
     fun setNumber(numberString: String) {
+        if (numberString.isBlank())
+            return
         val number = numberString.toIntOrNull()
         val viewState = encounterState.copy(
             numberOfPlayers = number,
@@ -98,7 +102,10 @@ class EncounterViewModel(
     }
 
     override fun onEncounterOptionsSelected(id: Long) {
-        _actions.postValue(EncounterAction.EncounterDetailsOpenedAction(id))
+        encounters.find { it.id == id }?.let {
+            _actions.postValue(EncounterAction.EncounterDetailsOpenedAction(it.name, id))
+        }
+
     }
 
     fun onEncounterDeleted(id: Long) {

@@ -10,6 +10,41 @@
         <item name="colorOnPrimary">@color/primaryTextColor</item>
         <item name="colorOnSecondary">@color/secondaryTextColor</item>
         <item name="android:statusBarColor">@color/primaryDarkColor</item>
+        <item name="android:textColorSecondary">?colorOnSecondary</item>
+        <item name="android:fontFamily">@font/amaranth</item>
     </style>
+
+    <style name="Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">?colorOnSurface</item>
+        <item name="fontFamily">@font/amaranth</item>
+        <item name="android:lines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="ListItem" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/amaranth_bold</item>
+        <item name="android:lines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="Button.Icon" parent="Widget.MaterialComponents.Button.Icon">
+        <item name="fontFamily">@font/amaranth_bold</item>
+    </style>
+
+    <style name="Headline" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/amaranth_bold</item>
+    </style>
+
+    <style name="BottomSheet">
+        <item name="android:background">@drawable/ic_rounded_bottomsheet</item>
+        <item name="android:elevation">16dp</item>
+        <item name="android:focusable">true</item>
+        <item name="android:paddingBottom">24dp</item>
+        <item name="android:outlineProvider">paddedBounds</item>
+    </style>
+
+    <style name="EditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"></style>
+
+    <style name="DropDown" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"></style>
 
 </resources>

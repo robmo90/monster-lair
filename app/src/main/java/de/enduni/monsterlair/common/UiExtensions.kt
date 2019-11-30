@@ -5,10 +5,19 @@ import android.net.Uri
 import android.text.Editable
 import android.util.DisplayMetrics
 import android.util.TypedValue
+import android.widget.AutoCompleteTextView
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.content.ContextCompat
 import com.google.android.material.textfield.TextInputEditText
 import de.enduni.monsterlair.R
+
+fun AutoCompleteTextView.setTextIfNotFocused(string: String?) {
+    if (!this.isFocused) {
+        if (!string.isNullOrEmpty()) {
+            this.text = Editable.Factory.getInstance().newEditable(string)
+        }
+    }
+}
 
 fun TextInputEditText.setTextIfNotFocused(string: String?) {
     if (!this.isFocused) {

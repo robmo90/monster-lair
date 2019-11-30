@@ -28,14 +28,16 @@ class EncounterCreatorDisplayModelMapper {
         xp = hazardWithRole.role.getXp(hazardWithRole.complexity)
     )
 
+    fun toDetails(encounter: Encounter) = EncounterCreatorDisplayModel.EncounterDetail(
+        name = encounter.name,
+        numberOfPlayers = encounter.numberOfPlayers,
+        level = encounter.level,
+        targetDifficulty = encounter.targetDifficulty
+    )
 
 
-    fun toBudget(
-        encounterData: EncounterBudget,
-        targetDifficulty: EncounterDifficulty
-    ) = EncounterCreatorDisplayModel.EncounterInformation(
+    fun toBudget(encounterData: EncounterBudget) = EncounterCreatorDisplayModel.EncounterBudget(
         currentDifficulty = encounterData.currentDifficulty,
-        targetDifficulty = targetDifficulty,
         currentBudget = encounterData.currentBudget,
         targetBudget = encounterData.targetBudget
     )

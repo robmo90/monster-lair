@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
@@ -13,8 +12,6 @@ import androidx.lifecycle.Observer
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.openCustomTab
-import de.enduni.monsterlair.common.setTextIfNotFocused
-import de.enduni.monsterlair.common.toDp
 import de.enduni.monsterlair.databinding.FragmentHazardsBinding
 import de.enduni.monsterlair.hazards.view.HazardOverviewAction
 import de.enduni.monsterlair.hazards.view.HazardOverviewViewState
@@ -75,41 +72,30 @@ class HazardFragment : Fragment() {
             R.array.hazard_list_filter_choices,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
-            binding.categorySpinner.adapter = adapter
+            binding.categorySelect.setAdapter(adapter)
         }
-        binding.categorySpinner.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
-                override fun onNothingSelected(parent: AdapterView<*>?) {
+        binding.categorySelect.doAfterTextChanged { choice ->
+            context?.resources?.getStringArray(R.array.hazard_list_filter_choices)?.let { choices ->
+                when (choices.indexOf(choice.toString())) {
+                    0 -> viewModel.adjustType(HazardType.ALL)
+                    1 -> viewModel.adjustType(HazardType.SIMPLE)
+                    2 -> viewModel.adjustType(HazardType.COMPLEX)
+                    else -> return@doAfterTextChanged
                 }
-
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-                ) {
-                    when (position) {
-                        0 -> viewModel.adjustType(HazardType.ALL)
-                        1 -> viewModel.adjustType(HazardType.SIMPLE)
-                        2 -> viewModel.adjustType(HazardType.COMPLEX)
-                    }
-                }
-
             }
+        }
     }
 
     private fun setupBottomSheet() {
         val bottomSheetBehavior = BottomSheetBehavior.from(binding.filterBottomSheet)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-        bottomSheetBehavior.peekHeight = 56.toDp(context!!.resources.displayMetrics)
+        bottomSheetBehavior.peekHeight =
+            context!!.resources.getDimensionPixelSize(R.dimen.bottom_sheet_peek)
     }
 
     private fun bindViewToState(state: HazardOverviewViewState) {
         listAdapter.submitList(state.hazards)
-        binding.searchEditText.setTextIfNotFocused(state.hazardFilter?.string)
         state.hazardFilter?.let { filter ->
             binding.levelSliderLabel.text = context!!.getString(
                 R.string.monster_level_range_values,

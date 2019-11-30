@@ -12,7 +12,6 @@
         android:clipToPadding="false"
         android:orientation="vertical"
         android:layout_marginBottom="@dimen/bottom_sheet_peek"
-        android:paddingTop="8dp"
         android:paddingBottom="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:itemCount="5"
@@ -22,10 +21,7 @@
         android:id="@+id/filter_bottom_sheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?colorSurface"
-        android:elevation="4dp"
-        android:focusable="true"
-        android:paddingBottom="24dp"
+        style="@style/BottomSheet"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
         <View
@@ -37,17 +33,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/search_edit_text"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/search_edit_text_layout"
+            style="@style/EditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="14dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:hint="@string/monster_search"
             app:layout_constraintEnd_toStartOf="@+id/navigate_up"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/monster_search" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <ImageView
             android:id="@+id/navigate_up"
@@ -57,12 +60,12 @@
             android:clickable="true"
             android:contentDescription="@string/scroll_up_description"
             android:focusable="true"
-            android:foreground="?selectableItemBackground"
+            android:background="?selectableItemBackgroundBorderless"
             android:padding="8dp"
             android:src="@drawable/ic_arrow_up"
-            app:layout_constraintBottom_toBottomOf="@id/search_edit_text"
+            app:layout_constraintBottom_toBottomOf="@id/search_edit_text_layout"
             app:layout_constraintEnd_toStartOf="@id/navigate_down"
-            app:layout_constraintTop_toTopOf="@id/search_edit_text" />
+            app:layout_constraintTop_toTopOf="@id/search_edit_text_layout" />
 
         <ImageView
             android:id="@+id/navigate_down"
@@ -72,23 +75,23 @@
             android:clickable="true"
             android:contentDescription="@string/scroll_down_description"
             android:focusable="true"
-            android:foreground="?selectableItemBackground"
+            android:background="?selectableItemBackgroundBorderless"
             android:padding="8dp"
             android:src="@drawable/ic_arrow_down"
-            app:layout_constraintBottom_toBottomOf="@id/search_edit_text"
+            app:layout_constraintBottom_toBottomOf="@id/search_edit_text_layout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/search_edit_text" />
+            app:layout_constraintTop_toTopOf="@id/search_edit_text_layout" />
 
         <TextView
             android:id="@+id/level_slider_label"
-            style="@style/TextAppearance.MaterialComponents.Caption"
+            style="@style/Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="@string/monster_level_range"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/search_edit_text" />
+            app:layout_constraintTop_toBottomOf="@id/search_edit_text_layout" />
 
         <io.apptik.widget.MultiSlider
             android:id="@+id/level_slider"

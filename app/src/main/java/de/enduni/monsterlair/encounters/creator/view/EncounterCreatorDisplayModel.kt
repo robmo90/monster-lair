@@ -17,12 +17,17 @@ sealed class EncounterCreatorDisplayModel {
         val xp: Int
     ) : EncounterCreatorDisplayModel()
 
+    data class EncounterDetail(
+        val name: String,
+        val level: Int,
+        val numberOfPlayers: Int,
+        val targetDifficulty: EncounterDifficulty
+    ) : EncounterCreatorDisplayModel()
 
-    data class EncounterInformation(
+    data class EncounterBudget(
         val currentBudget: Int,
         val targetBudget: Int,
-        val currentDifficulty: EncounterDifficulty,
-        val targetDifficulty: EncounterDifficulty
+        val currentDifficulty: EncounterDifficulty
     ) : EncounterCreatorDisplayModel()
 
     data class DangerForEncounter(

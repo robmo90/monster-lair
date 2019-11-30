@@ -4,6 +4,7 @@ import android.content.Context.PRINT_SERVICE
 import android.os.Bundle
 import android.print.PrintAttributes
 import android.print.PrintManager
+import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,9 +35,11 @@ class EncounterExportFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentEncounterExportBinding.bind(view)
-        Timber.d("this is my encoutner page: ${exportArgs.encounterPage}")
+        Timber.d("this is my encounter page: ${exportArgs.encounterPage}")
 
-        binding.webView.loadData(exportArgs.encounterPage, "text/HTML", "UTF-8")
+        val encodedHtml =
+            Base64.encodeToString(exportArgs.encounterPage.toByteArray(), Base64.NO_PADDING)
+        binding.webView.loadData(encodedHtml, "text/html", "base64")
         binding.webView.webViewClient = object : WebViewClient() {
 
             override fun shouldOverrideUrlLoading(

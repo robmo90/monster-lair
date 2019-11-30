@@ -22,31 +22,37 @@
 
     <TextView
         android:id="@+id/list_item_title"
-        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        style="@style/ListItem"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/list_item_margin"
         android:layout_marginTop="@dimen/list_item_margin"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@id/monster_count_increment"
         app:layout_constraintStart_toEndOf="@id/list_item_icon"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Aasimar" />
 
     <TextView
         android:id="@+id/list_item_caption"
-        style="@style/TextAppearance.MaterialComponents.Caption"
+        style="@style/Caption"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/list_item_caption_gap"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@id/monster_count_increment"
         app:layout_constraintStart_toStartOf="@id/list_item_title"
         app:layout_constraintTop_toBottomOf="@id/list_item_title"
         tools:text="Aasimar" />
 
     <TextView
         android:id="@+id/list_item_role"
-        style="@style/TextAppearance.MaterialComponents.Caption"
+        style="@style/Caption"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/list_item_caption_gap"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@id/monster_count_increment"
         app:layout_constraintStart_toStartOf="@id/list_item_title"
         app:layout_constraintTop_toBottomOf="@id/list_item_caption"
         tools:text="Aasimar" />
@@ -55,42 +61,42 @@
         android:id="@+id/monster_count_decrement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:foreground="?selectableItemBackground"
+        android:layout_marginEnd="8dp"
+        android:background="?selectableItemBackgroundBorderless"
         android:clickable="true"
+        android:contentDescription="@string/monster_count_decrement_description"
         android:focusable="true"
         android:padding="8dp"
-        android:layout_marginEnd="8dp"
         android:src="@drawable/ic_remove_circle_outline"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/monster_count_decrement_description" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
         android:id="@+id/monster_count_textView"
+        style="@style/ListItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/monster_count_decrement"
         app:layout_constraintStart_toStartOf="@id/monster_count_increment"
         app:layout_constraintTop_toTopOf="parent"
-        android:padding="4dp"
-        style="@style/TextAppearance.MaterialComponents.Subtitle1"
         tools:text="1" />
 
     <ImageView
         android:id="@+id/monster_count_increment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:foreground="?selectableItemBackground"
+        android:background="?selectableItemBackgroundBorderless"
         android:clickable="true"
+        android:contentDescription="@string/monster_count_increment_description"
         android:focusable="true"
         android:padding="8dp"
         android:src="@drawable/ic_add_circle_outline"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/monster_count_textView"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/monster_count_increment_description" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

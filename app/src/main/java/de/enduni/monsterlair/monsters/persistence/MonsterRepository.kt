@@ -30,7 +30,6 @@ class MonsterRepository(
 
 
     private fun List<MonsterEntity>.toDomain(): List<Monster> {
-        Timber.v("These are my entities: $this")
         return this.map { monsterEntityMapper.toModel(it) }
     }
 

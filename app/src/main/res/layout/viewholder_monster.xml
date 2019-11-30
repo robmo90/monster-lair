@@ -20,23 +20,28 @@
 
     <TextView
         android:id="@+id/list_item_title"
-        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        style="@style/ListItem"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/list_item_margin"
         android:layout_marginTop="@dimen/list_item_margin"
+        android:layout_marginEnd="@dimen/list_item_margin"
         app:layout_constraintStart_toEndOf="@id/list_item_icon"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Aasimar" />
 
     <TextView
         android:id="@+id/list_item_caption"
-        style="@style/TextAppearance.MaterialComponents.Caption"
+        style="@style/Caption"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/list_item_caption_gap"
+        android:layout_marginEnd="@dimen/list_item_margin"
         app:layout_constraintStart_toStartOf="@id/list_item_title"
         app:layout_constraintTop_toBottomOf="@id/list_item_title"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:text="Aasimar" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
