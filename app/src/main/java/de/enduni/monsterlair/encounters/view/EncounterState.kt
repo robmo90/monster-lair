@@ -25,6 +25,8 @@ sealed class EncounterAction {
         val difficulty: EncounterDifficulty
     ) : EncounterAction()
 
+    data class EncounterDetailsOpenedAction(val id: Long) : EncounterAction()
+
     data class ExportEncounterToPdfAction(
         val name: String,
         val template: String

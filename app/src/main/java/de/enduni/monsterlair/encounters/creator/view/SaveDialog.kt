@@ -16,8 +16,8 @@ object SaveDialog {
             .setView(view)
             .setPositiveButton("Save") { dialog, _ ->
                 val text = editText.text.toString()
-                val name = if (text.isEmpty()) "Encounter" else text
-                saveCallback.invoke(name)
+                val givenName = if (text.isEmpty()) "Encounter" else text
+                saveCallback.invoke(givenName)
                 dialog.dismiss()
             }
             .setNegativeButton("Cancel") { dialog, _ ->

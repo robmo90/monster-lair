@@ -48,11 +48,11 @@ class EncounterExportFragment : Fragment() {
 
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
-                binding.exportButton.visibility = View.VISIBLE
+                binding.printButton.visibility = View.VISIBLE
             }
         }
 
-        binding.exportButton.setOnClickListener {
+        binding.printButton.setOnClickListener {
             createWebPrintJob(binding.webView)
         }
     }

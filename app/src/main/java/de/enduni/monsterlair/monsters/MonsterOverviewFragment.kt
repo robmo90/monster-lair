@@ -10,10 +10,12 @@ import android.widget.ArrayAdapter
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import de.enduni.monsterlair.MonsterLairApplication
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.openCustomTab
 import de.enduni.monsterlair.common.setTextIfNotFocused
+import de.enduni.monsterlair.common.toDp
 import de.enduni.monsterlair.databinding.FragmentMonsterOverviewBinding
 import de.enduni.monsterlair.monsters.view.MonsterOverviewAction
 import de.enduni.monsterlair.monsters.view.MonsterOverviewViewState
@@ -55,6 +57,12 @@ class MonsterOverviewFragment : Fragment() {
         binding.searchEditText.doAfterTextChanged {
             viewModel.filterByString(it.toString())
         }
+        binding.navigateDown.setOnClickListener {
+            binding.monsterRecyclerView.layoutManager?.scrollToPosition(listAdapter.itemCount - 1)
+        }
+        binding.navigateUp.setOnClickListener {
+            binding.monsterRecyclerView.layoutManager?.scrollToPosition(0)
+        }
 
         binding.levelSlider.setOnThumbValueChangeListener { _, _, thumbIndex, value ->
             when (thumbIndex) {
@@ -62,6 +70,7 @@ class MonsterOverviewFragment : Fragment() {
                 1 -> viewModel.adjustFilterLevelUpper(value)
             }
         }
+        setupBottomSheet()
 
         ArrayAdapter.createFromResource(
             context!!,
@@ -91,6 +100,12 @@ class MonsterOverviewFragment : Fragment() {
             }
 
         }
+    }
+
+    private fun setupBottomSheet() {
+        val bottomSheetBehavior = BottomSheetBehavior.from(binding.filterBottomSheet)
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        bottomSheetBehavior.peekHeight = 56.toDp(context!!.resources.displayMetrics)
     }
 
     private fun bindViewToState(state: MonsterOverviewViewState) {

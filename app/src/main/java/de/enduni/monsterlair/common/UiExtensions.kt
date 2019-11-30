@@ -3,6 +3,8 @@ package de.enduni.monsterlair.common
 import android.content.Context
 import android.net.Uri
 import android.text.Editable
+import android.util.DisplayMetrics
+import android.util.TypedValue
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.content.ContextCompat
 import com.google.android.material.textfield.TextInputEditText
@@ -42,3 +44,8 @@ fun Uri.openCustomTab(context: Context) {
         .build()
         .launchUrl(context, this)
 }
+
+fun Int.toDp(displayMetrics: DisplayMetrics) = toFloat().toDp(displayMetrics).toInt()
+
+fun Float.toDp(displayMetrics: DisplayMetrics) =
+    TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, this, displayMetrics)

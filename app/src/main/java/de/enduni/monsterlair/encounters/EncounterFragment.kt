@@ -10,8 +10,10 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.setTextIfNotFocused
+import de.enduni.monsterlair.databinding.BottomsheetEncounterBinding
 import de.enduni.monsterlair.databinding.FragmentEncountersBinding
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 import de.enduni.monsterlair.encounters.view.EncounterAction
@@ -47,7 +49,7 @@ class EncounterFragment : Fragment() {
         binding.encounterRecyclerView.adapter = adapter
         setupTextListeners()
         setupSpinner()
-        viewModel.start()
+        viewModel.fetchEncounters()
     }
 
     private fun handleAction(action: EncounterAction) {
@@ -67,6 +69,7 @@ class EncounterFragment : Fragment() {
                     EncounterFragmentDirections.exportEncounterAction(action.name, action.template)
                 findNavController().navigate(directions)
             }
+            is EncounterAction.EncounterDetailsOpenedAction -> showBottomSheet(action.id)
         }
     }
 
@@ -91,6 +94,21 @@ class EncounterFragment : Fragment() {
             findNavController().navigate(directions)
         }
         adapter.submitList(state.encounters)
+    }
+
+    private fun showBottomSheet(id: Long) {
+        val binding = BottomsheetEncounterBinding.inflate(activity!!.layoutInflater, null, false)
+        val bottomSheetDialog = BottomSheetDialog(context!!)
+        binding.printEncounter.setOnClickListener {
+            viewModel.onEncounterExport(id)
+            bottomSheetDialog.dismiss()
+        }
+        binding.deleteEncounter.setOnClickListener {
+            viewModel.onEncounterDeleted(id)
+            bottomSheetDialog.dismiss()
+        }
+        bottomSheetDialog.setContentView(binding.root)
+        bottomSheetDialog.show()
     }
 
     private fun setupTextListeners() {

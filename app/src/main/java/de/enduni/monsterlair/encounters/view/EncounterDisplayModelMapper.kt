@@ -24,10 +24,13 @@ class EncounterDisplayModelMapper(
             else -> context.getString(R.string.no_dangers_encounter)
         }
         return EncounterDisplayModel(
-            encounter.id!!,
-            encounter.name,
-            budget.currentBudget,
-            dangerString
+            id = encounter.id!!,
+            name = encounter.name,
+            level = encounter.level,
+            numberOfPlayers = encounter.numberOfPlayers,
+            difficulty = budget.currentDifficulty,
+            xp = budget.currentBudget,
+            dangers = dangerString
         )
     }
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="bottom_sheet_peek">56dp</dimen>
     <dimen name="two_line_list_item_height">72dp</dimen>
     <dimen name="three_line_list_item_height">88dp</dimen>
     <dimen name="list_item_icon_size">40dp</dimen>

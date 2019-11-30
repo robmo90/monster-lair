@@ -32,6 +32,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/save_button"
+        style="@style/Widget.MaterialComponents.Button.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"

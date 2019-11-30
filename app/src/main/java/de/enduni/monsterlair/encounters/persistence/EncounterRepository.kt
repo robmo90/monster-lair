@@ -76,4 +76,8 @@ class EncounterRepository(
         }
     }
 
+    suspend fun deleteEncounter(id: Long) {
+        encounterDao.deleteEncounter(id)
+    }
+
 }

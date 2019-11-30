@@ -30,5 +30,8 @@ interface EncounterDao {
     @Query("SELECT * FROM hazards_for_encounters WHERE encounter_id = :encounterId")
     suspend fun getAllHazardsForEncounter(encounterId: Long): List<HazardForEncounterEntity>
 
+    @Query("DELETE FROM encounters WHERE id = :id")
+    suspend fun deleteEncounter(id: Long)
+
 
 }

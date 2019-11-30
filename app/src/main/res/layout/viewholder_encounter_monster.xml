@@ -63,7 +63,8 @@
         android:src="@drawable/ic_remove_circle_outline"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/monster_count_decrement_description" />
 
 
     <TextView
@@ -89,6 +90,7 @@
         android:src="@drawable/ic_add_circle_outline"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/monster_count_textView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/monster_count_increment_description" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

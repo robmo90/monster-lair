@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import de.enduni.monsterlair.common.view.ActionLiveData
 import de.enduni.monsterlair.encounters.domain.CalculateEncounterBudgetUseCase
 import de.enduni.monsterlair.encounters.domain.CreateEncounterTemplateUseCase
+import de.enduni.monsterlair.encounters.domain.DeleteEncounterUseCase
 import de.enduni.monsterlair.encounters.domain.RetrieveEncountersUseCase
 import de.enduni.monsterlair.encounters.domain.model.Encounter
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
@@ -17,6 +18,7 @@ class EncounterViewModel(
     private val retrieveEncountersUseCase: RetrieveEncountersUseCase,
     private val calculateEncounterBudgetUseCase: CalculateEncounterBudgetUseCase,
     private val createEncounterTemplateUseCase: CreateEncounterTemplateUseCase,
+    private val deleteEncounterUseCase: DeleteEncounterUseCase,
     private val mapper: EncounterDisplayModelMapper
 ) : ViewModel(), EncounterViewHolder.OnClickListener {
     private val _viewState = MutableLiveData<EncounterState>()
@@ -33,7 +35,7 @@ class EncounterViewModel(
         _viewState.postValue(encounterState)
     }
 
-    fun start() {
+    fun fetchEncounters() {
         viewModelScope.launch {
             encounters = retrieveEncountersUseCase.execute()
             val encounterDisplayModels = encounters.map {
@@ -95,7 +97,18 @@ class EncounterViewModel(
         }
     }
 
-    override fun onEncounterExport(id: Long) {
+    override fun onEncounterOptionsSelected(id: Long) {
+        _actions.postValue(EncounterAction.EncounterDetailsOpenedAction(id))
+    }
+
+    fun onEncounterDeleted(id: Long) {
+        viewModelScope.launch {
+            deleteEncounterUseCase.execute(id)
+            fetchEncounters()
+        }
+    }
+
+    fun onEncounterExport(id: Long) {
         encounters.find { it.id == id }?.let {
             viewModelScope.launch {
                 val template = createEncounterTemplateUseCase.execute(it)

@@ -4,23 +4,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.SimpleItemAnimator
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.setTextIfNotFocused
+import de.enduni.monsterlair.common.toDp
 import de.enduni.monsterlair.databinding.FragmentEncounterCreatorBinding
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorAction
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayState
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorViewModel
 import de.enduni.monsterlair.encounters.creator.view.SaveDialog
 import de.enduni.monsterlair.encounters.creator.view.adapter.EncounterCreatorListAdapter
-import de.enduni.monsterlair.monsters.view.SortBy
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
 
@@ -79,35 +78,19 @@ class EncounterCreatorFragment : Fragment() {
                 1 -> viewModel.adjustFilterLevelUpper(value)
             }
         }
-
-        ArrayAdapter.createFromResource(
-            context!!,
-            R.array.monster_list_sort_choices,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
-            binding.typeSpinner.adapter = adapter
+        binding.navigateDown.setOnClickListener {
+            binding.encounterRecyclerView.layoutManager?.scrollToPosition(listAdapter.itemCount - 1)
         }
-        binding.typeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-            }
-
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                when (position) {
-                    0 -> viewModel.adjustSortBy(SortBy.NAME)
-                    1 -> viewModel.adjustSortBy(SortBy.LEVEL)
-                    2 -> viewModel.adjustSortBy(SortBy.TYPE)
-                }
-            }
-
+        binding.navigateUp.setOnClickListener {
+            binding.encounterRecyclerView.layoutManager?.scrollToPosition(0)
         }
+        setupBottomSheet()
+    }
+
+    private fun setupBottomSheet() {
+        val bottomSheetBehavior = BottomSheetBehavior.from(binding.filterBottomSheet)
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        bottomSheetBehavior.peekHeight = 56.toDp(context!!.resources.displayMetrics)
     }
 
     private fun bindViewToState(state: EncounterCreatorDisplayState) {
@@ -136,6 +119,11 @@ class EncounterCreatorFragment : Fragment() {
             }
             else -> return
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        viewModel.actions.removeObservers(this)
     }
 
 }

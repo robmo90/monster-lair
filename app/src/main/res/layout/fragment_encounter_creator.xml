@@ -5,42 +5,98 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/encounter_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/bottom_sheet_peek"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="5"
+        tools:listitem="@layout/viewholder_monster" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/filter_layout"
+        android:id="@+id/filter_bottom_sheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?colorSurface"
         android:elevation="4dp"
+        android:focusable="true"
+        android:paddingBottom="24dp"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <View
+            android:layout_width="54dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/secondaryColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/search_edit_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
             android:hint="@string/monster_search"
-            app:layout_constraintEnd_toStartOf="@+id/type_spinner"
+            app:layout_constraintEnd_toStartOf="@+id/navigate_up"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/navigate_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:clickable="true"
+            android:contentDescription="@string/scroll_up_description"
+            android:focusable="true"
+            android:foreground="?selectableItemBackground"
+            android:padding="8dp"
+            android:src="@drawable/ic_arrow_up"
+            app:layout_constraintBottom_toBottomOf="@id/search_edit_text"
+            app:layout_constraintEnd_toStartOf="@id/navigate_down"
+            app:layout_constraintTop_toTopOf="@id/search_edit_text" />
+
+        <ImageView
+            android:id="@+id/navigate_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:clickable="true"
+            android:contentDescription="@string/scroll_down_description"
+            android:focusable="true"
+            android:foreground="?selectableItemBackground"
+            android:padding="8dp"
+            android:src="@drawable/ic_arrow_down"
+            app:layout_constraintBottom_toBottomOf="@id/search_edit_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/search_edit_text" />
 
         <TextView
             android:id="@+id/level_slider_label"
             style="@style/TextAppearance.MaterialComponents.Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="@string/monster_level_range"
-            app:layout_constraintStart_toStartOf="@id/search_edit_text"
-
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_edit_text" />
 
         <io.apptik.widget.MultiSlider
             android:id="@+id/level_slider"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="24dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/level_slider_label"
@@ -49,28 +105,8 @@
             app:scaleStep="1"
             app:thumbNumber="2" />
 
-        <Spinner
-            android:id="@+id/type_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_margin="8dp"
-            app:layout_constraintBottom_toBottomOf="@id/search_edit_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/encounter_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:orientation="vertical"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:itemCount="5"
-        tools:listitem="@layout/viewholder_monster" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

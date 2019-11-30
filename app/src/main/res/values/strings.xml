@@ -15,6 +15,7 @@
     <string name="monster_item_caption">%s \u2014 Level: %d</string>
     <string name="monster_search">Search</string>
     <string name="monster_level_range">Level Range</string>
+    <string name="monster_sort_by">Sort By</string>
     <string name="monster_level_range_values">Level Range: %d - %d</string>
 
     <string name="monster_sort_by_type">Type</string>
@@ -73,11 +74,21 @@
     <string name="save_encounter">Save</string>
 
     <string name="encounter_budget_xp">XP: %d / %d</string>
-    <string name="encounter_budget_difficulty">Difficulty (Target): %s \u2014 %s</string>
+    <string name="encounter_budget_difficulty">Difficulty: %s \u2014 Target: %s</string>
     <string name="create_encounter">Create</string>
+
+    <string name="encounter_details">Level: %d \u2014 Characters: %d \u2014 %s \u2014 %d XP</string>
+
     <string name="encounter_target_difficulty_label">Target Difficulty</string>
     <string name="label_character_information">Character Information</string>
     <string name="label_encounters">Saved Encounters</string>
 
+    <string name="monster_count_decrement_description">Decrease count or remove monster</string>
+    <string name="monster_count_increment_description">Increase monster count</string>
+
+    <string name="scroll_down_description">Scroll down</string>
+    <string name="scroll_up_description">Scroll up</string>
+    <string name="encounter_print">Print</string>
+    <string name="encounter_delete">Delete</string>
 
 </resources>

@@ -22,7 +22,6 @@ class EncounterBudgetViewHolder(
         val targetDifficulty =
             itemView.context.resources.getString(encounter.targetDifficulty.getStringRes())
 
-        val caption = "Budget: ${encounter.currentBudget} / ${encounter.targetBudget} XP"
         binding.listItemTitle.text = itemView.context.getString(
             R.string.encounter_budget_xp,
             encounter.currentBudget,
