@@ -42,12 +42,16 @@ class EncounterFragment : Fragment() {
         binding = FragmentEncountersBinding.bind(view)
 
         viewModel.viewState.observe(this, Observer { handleViewState(it) })
-        viewModel.actions.observe(this, Observer { handleAction(it) })
         adapter = EncounterListAdapter(activity!!.layoutInflater, viewModel)
         binding.encounterRecyclerView.adapter = adapter
         setupTextListeners()
         setupDifficultySelect()
         viewModel.fetchEncounters()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.actions.observe(this, Observer { handleAction(it) })
     }
 
     private fun handleAction(action: EncounterAction) {

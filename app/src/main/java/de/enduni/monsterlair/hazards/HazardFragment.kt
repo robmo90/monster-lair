@@ -44,8 +44,12 @@ class HazardFragment : Fragment() {
 
         binding.hazardRecyclerView.adapter = listAdapter
         viewModel.viewState.observe(this, Observer { bindViewToState(it) })
-        viewModel.actions.observe(this, Observer { handleAction(it) })
         bindUi()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.actions.observe(this, Observer { handleAction(it) })
     }
 
     private fun bindUi() {

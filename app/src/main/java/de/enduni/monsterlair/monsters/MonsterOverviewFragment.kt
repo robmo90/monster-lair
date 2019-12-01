@@ -46,9 +46,13 @@ class MonsterOverviewFragment : Fragment() {
 
         binding.monsterRecyclerView.adapter = listAdapter
         viewModel.viewState.observe(this, Observer { state -> bindViewToState(state) })
-        viewModel.actions.observe(this, Observer { action -> handleAction(action) })
         bindUi()
         viewModel.start(activity!!.application as MonsterLairApplication)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.actions.observe(this, Observer { handleAction(it) })
     }
 
     private fun bindUi() {

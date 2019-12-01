@@ -1,7 +1,9 @@
 package de.enduni.monsterlair.monsters.domain
 
+import androidx.annotation.Keep
 import com.squareup.moshi.FromJson
 
+@Keep
 enum class MonsterType {
     ABERRATION,
     ANIMAL,

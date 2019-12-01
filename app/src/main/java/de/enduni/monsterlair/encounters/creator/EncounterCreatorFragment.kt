@@ -57,7 +57,6 @@ class EncounterCreatorFragment : Fragment() {
             animator.supportsChangeAnimations = false
         }
         viewModel.viewState.observe(this, Observer { state -> bindViewToState(state) })
-        viewModel.actions.observe(this, Observer { action -> handleAction(action) })
         bindUi()
 
         viewModel.start(
@@ -66,6 +65,11 @@ class EncounterCreatorFragment : Fragment() {
             targetDifficulty = args.encounterDifficulty,
             encounterId = args.encounterId
         )
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.actions.observe(this, Observer { handleAction(it) })
     }
 
     private fun bindUi() {
