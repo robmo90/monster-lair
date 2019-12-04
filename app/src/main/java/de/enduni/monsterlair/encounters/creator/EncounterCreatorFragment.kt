@@ -89,6 +89,9 @@ class EncounterCreatorFragment : Fragment() {
         binding.navigateUp.setOnClickListener {
             binding.encounterRecyclerView.layoutManager?.scrollToPosition(0)
         }
+        binding.withinBudgetCheckbox.setOnCheckedChangeListener { _, isChecked ->
+            viewModel.adjustFilterWithinBudget(isChecked)
+        }
         setupBottomSheet()
     }
 
@@ -111,6 +114,7 @@ class EncounterCreatorFragment : Fragment() {
             binding.levelSlider.getThumb(0).value = filter.lowerLevel
             binding.levelSlider.getThumb(1).value = filter.upperLevel
         }
+        state.filter?.withinBudget?.let { binding.withinBudgetCheckbox.isChecked = it }
     }
 
     private fun handleAction(action: EncounterCreatorAction?) {

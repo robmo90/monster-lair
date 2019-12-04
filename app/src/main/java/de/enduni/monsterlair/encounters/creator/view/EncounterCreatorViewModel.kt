@@ -95,15 +95,27 @@ class EncounterCreatorViewModel(
         filterDangers(filter.copy(upperLevel = upperLevel))
     }
 
+    fun adjustFilterWithinBudget(withinBudget: Boolean) = viewModelScope.launch(handler) {
+        filterDangers(filter.copy(withinBudget = withinBudget))
+    }
+
 
     private suspend fun filterDangers(newFilter: EncounterCreatorFilter) {
         if (newFilter != filter) {
             filter = newFilter
             Timber.d("Starting monster filter with $newFilter")
-            monsters = retrieveMonstersWithRoleUseCase.execute(newFilter, encounter.level)
-            hazards = retrieveHazardsWithRoleUseCase.execute(newFilter, encounter.level)
+            monsters = retrieveMonstersWithRoleUseCase.execute(newFilter, encounter)
+            hazards = retrieveHazardsWithRoleUseCase.execute(newFilter, encounter)
             postCurrentState()
         }
+    }
+
+    private suspend fun encounterChanged() {
+        if (filter.withinBudget) {
+            monsters = retrieveMonstersWithRoleUseCase.execute(filter, encounter)
+            hazards = retrieveHazardsWithRoleUseCase.execute(filter, encounter)
+        }
+        postCurrentState()
     }
 
     private fun postCurrentState() = viewModelScope.launch(handler) {
@@ -158,7 +170,9 @@ class EncounterCreatorViewModel(
             DangerType.MONSTER -> encounter.decrementCount(monsterId = id)
             DangerType.HAZARD -> encounter.decrementCount(hazardId = id)
         }
-        postCurrentState()
+        viewModelScope.launch(handler) {
+            encounterChanged()
+        }
     }
 
     override fun onIncrement(type: DangerType, id: Long) {
@@ -166,7 +180,10 @@ class EncounterCreatorViewModel(
             DangerType.MONSTER -> encounter.incrementCount(monsterId = id)
             DangerType.HAZARD -> encounter.incrementCount(hazardId = id)
         }
-        postCurrentState()
+        viewModelScope.launch(handler) {
+            encounterChanged()
+        }
+
     }
 
     override fun onDangerForEncounterSelected(url: String) {
@@ -203,7 +220,7 @@ class EncounterCreatorViewModel(
                     }
                 }
             }
-            postCurrentState()
+            encounterChanged()
         }
     }
 

@@ -9,9 +9,9 @@
         android:id="@+id/encounter_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/bottom_sheet_peek"
         android:clipToPadding="false"
         android:orientation="vertical"
-        android:layout_marginBottom="@dimen/bottom_sheet_peek"
         android:paddingBottom="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:itemCount="5"
@@ -19,9 +19,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/filter_bottom_sheet"
+        style="@style/BottomSheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/BottomSheet"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
         <View
@@ -57,10 +57,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
+            android:background="?selectableItemBackgroundBorderless"
             android:clickable="true"
             android:contentDescription="@string/scroll_up_description"
             android:focusable="true"
-            android:background="?selectableItemBackgroundBorderless"
             android:padding="8dp"
             android:src="@drawable/ic_arrow_up"
             app:layout_constraintBottom_toBottomOf="@id/search_edit_text_layout"
@@ -72,10 +72,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
+            android:background="?selectableItemBackgroundBorderless"
             android:clickable="true"
             android:contentDescription="@string/scroll_down_description"
             android:focusable="true"
-            android:background="?selectableItemBackgroundBorderless"
             android:padding="8dp"
             android:src="@drawable/ic_arrow_down"
             app:layout_constraintBottom_toBottomOf="@id/search_edit_text_layout"
@@ -108,6 +108,19 @@
             app:scaleStep="1"
             app:thumbNumber="2" />
 
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/within_budget_checkbox"
+            style="@style/Widget.MaterialComponents.CompoundButton.CheckBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/within_budget"
+            android:layoutDirection="rtl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/level_slider" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@
         <item name="android:statusBarColor">@color/primaryDarkColor</item>
         <item name="android:textColorSecondary">?colorOnSecondary</item>
         <item name="android:fontFamily">@font/amaranth</item>
+
     </style>
 
     <style name="Caption" parent="TextAppearance.MaterialComponents.Caption">

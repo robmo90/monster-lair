@@ -13,7 +13,8 @@ data class EncounterCreatorFilter(
     val string: String? = null,
     val lowerLevel: Int = MonsterFilter.DEFAULT_LEVEL_LOWER,
     val upperLevel: Int = MonsterFilter.DEFAULT_LEVEL_UPPER,
-    val sortBy: SortBy = SortBy.NAME
+    val sortBy: SortBy = SortBy.NAME,
+    val withinBudget: Boolean = false
 )
 
 sealed class EncounterCreatorAction {
