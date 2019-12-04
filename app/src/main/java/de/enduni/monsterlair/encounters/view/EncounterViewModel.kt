@@ -12,7 +12,9 @@ import de.enduni.monsterlair.encounters.domain.RetrieveEncountersUseCase
 import de.enduni.monsterlair.encounters.domain.model.Encounter
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 import de.enduni.monsterlair.encounters.view.adapter.EncounterViewHolder
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 class EncounterViewModel(
     private val retrieveEncountersUseCase: RetrieveEncountersUseCase,
@@ -31,12 +33,16 @@ class EncounterViewModel(
 
     private var encounters = listOf<Encounter>()
 
+    private val handler = CoroutineExceptionHandler { _, exception ->
+        Timber.e(exception, "Caught exception")
+    }
+
     init {
         _viewState.postValue(encounterState)
     }
 
     fun fetchEncounters() {
-        viewModelScope.launch {
+        viewModelScope.launch(handler) {
             encounters = retrieveEncountersUseCase.execute()
             val encounterDisplayModels = encounters.map {
                 Pair(it, calculateEncounterBudgetUseCase.execute(it))
@@ -109,7 +115,7 @@ class EncounterViewModel(
     }
 
     fun onEncounterDeleted(id: Long) {
-        viewModelScope.launch {
+        viewModelScope.launch(handler) {
             deleteEncounterUseCase.execute(id)
             fetchEncounters()
         }
@@ -117,7 +123,7 @@ class EncounterViewModel(
 
     fun onEncounterExport(id: Long) {
         encounters.find { it.id == id }?.let {
-            viewModelScope.launch {
+            viewModelScope.launch(handler) {
                 val template = createEncounterTemplateUseCase.execute(it)
                 _actions.postValue(EncounterAction.ExportEncounterToPdfAction(it.name, template))
             }

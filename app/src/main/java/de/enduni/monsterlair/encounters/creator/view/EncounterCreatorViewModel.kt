@@ -15,7 +15,7 @@ import de.enduni.monsterlair.encounters.creator.view.adapter.EncounterBudgetView
 import de.enduni.monsterlair.encounters.creator.view.adapter.EncounterDetailViewHolder
 import de.enduni.monsterlair.encounters.domain.CalculateEncounterBudgetUseCase
 import de.enduni.monsterlair.encounters.domain.model.*
-import de.enduni.monsterlair.monsters.view.SortBy
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -48,6 +48,10 @@ class EncounterCreatorViewModel(
 
     private lateinit var encounter: Encounter
 
+    private val handler = CoroutineExceptionHandler { _, exception ->
+        Timber.e(exception, "Caught exception")
+    }
+
     fun start(
         numberOfPlayers: Int,
         levelOfEncounter: Int,
@@ -67,9 +71,9 @@ class EncounterCreatorViewModel(
                 lowerLevel = levelOfEncounter - 4,
                 upperLevel = levelOfEncounter + 4
             )
-            viewModelScope.launch { filterDangers(filter) }
+            viewModelScope.launch(handler) { filterDangers(filter) }
         } else {
-            viewModelScope.launch {
+            viewModelScope.launch(handler) {
                 encounter = retrieveEncounterUseCase.execute(encounterId)
                 val filter = EncounterCreatorFilter(
                     lowerLevel = levelOfEncounter - 4,
@@ -81,20 +85,16 @@ class EncounterCreatorViewModel(
 
     }
 
-    fun filterByString(string: String) = viewModelScope.launch {
+    fun filterByString(string: String) = viewModelScope.launch(handler) {
         filterDangers(filter.copy(string = string))
     }
 
-    fun adjustFilterLevelLower(lowerLevel: Int) = viewModelScope.launch {
+    fun adjustFilterLevelLower(lowerLevel: Int) = viewModelScope.launch(handler) {
         filterDangers(filter.copy(lowerLevel = lowerLevel))
     }
 
-    fun adjustFilterLevelUpper(upperLevel: Int) = viewModelScope.launch {
+    fun adjustFilterLevelUpper(upperLevel: Int) = viewModelScope.launch(handler) {
         filterDangers(filter.copy(upperLevel = upperLevel))
-    }
-
-    fun adjustSortBy(sortBy: SortBy) = viewModelScope.launch {
-        filterDangers(filter.copy(sortBy = sortBy))
     }
 
 
@@ -108,7 +108,7 @@ class EncounterCreatorViewModel(
         }
     }
 
-    private fun postCurrentState() = viewModelScope.launch {
+    private fun postCurrentState() = viewModelScope.launch(handler) {
         launch(Dispatchers.Default) {
             val budget = calculateEncounterBudgetUseCase.execute(encounter)
             val dangers = (monsters.toMonsterDisplayModel() +
@@ -172,8 +172,34 @@ class EncounterCreatorViewModel(
         postCurrentState()
     }
 
-    override fun onSelected(type: DangerType, id: Long) {
-        viewModelScope.launch {
+    override fun onDangerForEncounterSelected(type: DangerType, id: Long) {
+        linkClicked(type, id)
+    }
+
+    override fun onDangerSelected(type: DangerType, id: Long) {
+        linkClicked(type, id)
+    }
+
+    private fun linkClicked(type: DangerType, id: Long) {
+        viewModelScope.launch(handler) {
+            val url = when (type) {
+                DangerType.MONSTER -> {
+                    findMonsterWithId(id)?.url
+                }
+                DangerType.HAZARD -> {
+                    findHazardWithId(id)?.url
+                }
+            }
+            url?.let { _actions.sendAction(EncounterCreatorAction.DangerLinkClicked(it)) }
+        }
+    }
+
+    override fun onSaveClicked() {
+        _actions.sendAction(EncounterCreatorAction.SaveClicked(encounter.name))
+    }
+
+    override fun onAddClicked(type: DangerType, id: Long) {
+        viewModelScope.launch(handler) {
             when (type) {
                 DangerType.MONSTER -> {
                     findMonsterWithId(id)?.let {
@@ -192,30 +218,12 @@ class EncounterCreatorViewModel(
         }
     }
 
-    override fun onSaveClicked() {
-        _actions.sendAction(EncounterCreatorAction.SaveClicked(encounter.name))
-    }
-
-    override fun onLinkClicked(type: DangerType, id: Long) {
-        viewModelScope.launch {
-            val url = when (type) {
-                DangerType.MONSTER -> {
-                    findMonsterWithId(id)?.url
-                }
-                DangerType.HAZARD -> {
-                    findHazardWithId(id)?.url
-                }
-            }
-            url?.let { _actions.sendAction(EncounterCreatorAction.DangerLinkClicked(it)) }
-        }
-    }
-
     override fun onNameChanged(name: String) {
         encounter.name = name
     }
 
     fun saveEncounter() {
-        viewModelScope.launch {
+        viewModelScope.launch(handler) {
             encounter.name = if (encounter.name.isBlank()) "Random Encounter" else encounter.name
             storeEncounterUseCase.store(encounter)
             _actions.sendAction(EncounterCreatorAction.EncounterSaved)

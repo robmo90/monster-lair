@@ -34,16 +34,16 @@ class DangerViewHolder(
         binding.listItemCaption.text = caption
 
         binding.root.setOnClickListener {
-            dangerSelectedListener.onSelected(danger.type, danger.id)
+            dangerSelectedListener.onDangerSelected(danger.type, danger.id)
         }
-        binding.webButton.setOnClickListener {
-            dangerSelectedListener.onLinkClicked(danger.type, danger.id)
+        binding.addButton.setOnClickListener {
+            dangerSelectedListener.onAddClicked(danger.type, danger.id)
         }
     }
 
     interface DangerSelectedListener {
-        fun onSelected(type: DangerType, id: Long)
-        fun onLinkClicked(type: DangerType, id: Long)
+        fun onDangerSelected(type: DangerType, id: Long)
+        fun onAddClicked(type: DangerType, id: Long)
     }
 
 }

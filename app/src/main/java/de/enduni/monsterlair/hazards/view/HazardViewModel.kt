@@ -8,6 +8,7 @@ import de.enduni.monsterlair.common.view.ActionLiveData
 import de.enduni.monsterlair.hazards.domain.Hazard
 import de.enduni.monsterlair.hazards.domain.RetrieveHazardsUseCase
 import de.enduni.monsterlair.hazards.view.adapter.HazardViewHolder
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
@@ -22,6 +23,10 @@ class HazardViewModel(
     private val _actions = ActionLiveData<HazardOverviewAction>()
     val actions: LiveData<HazardOverviewAction> get() = _actions
 
+    private val handler = CoroutineExceptionHandler { _, exception ->
+        Timber.e(exception, "Caught exception")
+    }
+
     private var filter = HazardFilter()
 
     init {
@@ -31,19 +36,19 @@ class HazardViewModel(
     }
 
 
-    fun filterByString(string: String) = viewModelScope.launch {
+    fun filterByString(string: String) = viewModelScope.launch(handler) {
         filterMonsters(filter.copy(string = string))
     }
 
-    fun adjustFilterLevelLower(lowerLevel: Int) = viewModelScope.launch {
+    fun adjustFilterLevelLower(lowerLevel: Int) = viewModelScope.launch(handler) {
         filterMonsters(filter.copy(lowerLevel = lowerLevel))
     }
 
-    fun adjustFilterLevelUpper(upperLevel: Int) = viewModelScope.launch {
+    fun adjustFilterLevelUpper(upperLevel: Int) = viewModelScope.launch(handler) {
         filterMonsters(filter.copy(upperLevel = upperLevel))
     }
 
-    fun adjustType(hazardType: HazardType) = viewModelScope.launch {
+    fun adjustType(hazardType: HazardType) = viewModelScope.launch(handler) {
         filterMonsters(filter.copy(type = hazardType))
     }
 
@@ -66,7 +71,7 @@ class HazardViewModel(
     }
 
     override fun onSelect(hazardId: Long) {
-        viewModelScope.launch {
+        viewModelScope.launch(handler) {
             val hazard = retrieveHazardsUseCase.getHazard(hazardId)
             _actions.postValue(HazardOverviewAction.HazardSelected(hazard.url))
         }

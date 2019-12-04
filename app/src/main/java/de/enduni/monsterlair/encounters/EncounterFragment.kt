@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -12,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.setTextIfNotFocused
+import de.enduni.monsterlair.common.view.MaterialSpinnerAdapter
 import de.enduni.monsterlair.databinding.BottomsheetEncounterBinding
 import de.enduni.monsterlair.databinding.FragmentEncountersBinding
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
@@ -136,24 +136,23 @@ class EncounterFragment : Fragment() {
     }
 
     private fun setupDifficultySelect() {
-        ArrayAdapter.createFromResource(
+        val choices = context!!.resources.getStringArray(R.array.difficulty_choices)
+        MaterialSpinnerAdapter(
             context!!,
-            R.array.difficulty_choices,
-            android.R.layout.simple_spinner_item
+            R.layout.view_spinner_item,
+            choices
         ).also { adapter ->
             binding.difficultySelect.setAdapter(adapter)
         }
 
         binding.difficultySelect.doAfterTextChanged { choice ->
-            context?.resources?.getStringArray(R.array.difficulty_choices)?.let { choices ->
-                when (choices.indexOf(choice.toString())) {
-                    0 -> viewModel.setDifficulty(EncounterDifficulty.TRIVIAL)
-                    1 -> viewModel.setDifficulty(EncounterDifficulty.LOW)
-                    2 -> viewModel.setDifficulty(EncounterDifficulty.MODERATE)
-                    3 -> viewModel.setDifficulty(EncounterDifficulty.SEVERE)
-                    4 -> viewModel.setDifficulty(EncounterDifficulty.EXTREME)
-                    else -> return@doAfterTextChanged
-                }
+            when (choices.indexOf(choice.toString())) {
+                0 -> viewModel.setDifficulty(EncounterDifficulty.TRIVIAL)
+                1 -> viewModel.setDifficulty(EncounterDifficulty.LOW)
+                2 -> viewModel.setDifficulty(EncounterDifficulty.MODERATE)
+                3 -> viewModel.setDifficulty(EncounterDifficulty.SEVERE)
+                4 -> viewModel.setDifficulty(EncounterDifficulty.EXTREME)
+                else -> return@doAfterTextChanged
             }
         }
     }

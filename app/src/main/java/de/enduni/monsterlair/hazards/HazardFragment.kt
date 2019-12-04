@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.openCustomTab
+import de.enduni.monsterlair.common.view.MaterialSpinnerAdapter
 import de.enduni.monsterlair.databinding.FragmentHazardsBinding
 import de.enduni.monsterlair.hazards.view.HazardOverviewAction
 import de.enduni.monsterlair.hazards.view.HazardOverviewViewState
@@ -71,24 +71,7 @@ class HazardFragment : Fragment() {
         }
 
         setupBottomSheet()
-        ArrayAdapter.createFromResource(
-            context!!,
-            R.array.hazard_list_filter_choices,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            binding.categorySelect.setAdapter(adapter)
-        }
-        binding.categorySelect.doAfterTextChanged { choice ->
-            context?.resources?.getStringArray(R.array.hazard_list_filter_choices)?.let { choices ->
-                when (choices.indexOf(choice.toString())) {
-                    0 -> viewModel.adjustType(HazardType.ALL)
-                    1 -> viewModel.adjustType(HazardType.SIMPLE)
-                    2 -> viewModel.adjustType(HazardType.COMPLEX)
-                    else -> return@doAfterTextChanged
-                }
-            }
-        }
+        setupCategorySpinner()
     }
 
     private fun setupBottomSheet() {
@@ -96,6 +79,25 @@ class HazardFragment : Fragment() {
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
         bottomSheetBehavior.peekHeight =
             context!!.resources.getDimensionPixelSize(R.dimen.bottom_sheet_peek)
+    }
+
+    private fun setupCategorySpinner() {
+        val choices = context!!.resources.getStringArray(R.array.hazard_list_filter_choices)
+        MaterialSpinnerAdapter(
+            context!!,
+            R.layout.view_spinner_item,
+            choices
+        ).also { adapter ->
+            binding.categorySelect.setAdapter(adapter)
+        }
+        binding.categorySelect.doAfterTextChanged { choice ->
+            when (choices.indexOf(choice.toString())) {
+                0 -> viewModel.adjustType(HazardType.ALL)
+                1 -> viewModel.adjustType(HazardType.SIMPLE)
+                2 -> viewModel.adjustType(HazardType.COMPLEX)
+                else -> return@doAfterTextChanged
+            }
+        }
     }
 
     private fun bindViewToState(state: HazardOverviewViewState) {

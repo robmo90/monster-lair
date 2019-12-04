@@ -41,11 +41,16 @@ class DangerForEncounterViewHolder(
         binding.monsterCountDecrement.setOnClickListener {
             listener.onDecrement(dangerForEncounter.type, dangerForEncounter.id)
         }
+
+        binding.root.setOnClickListener {
+            listener.onDangerForEncounterSelected(dangerForEncounter.type, dangerForEncounter.id)
+        }
     }
 
     interface DangerForEncounterListener {
         fun onIncrement(type: DangerType, id: Long)
         fun onDecrement(type: DangerType, id: Long)
+        fun onDangerForEncounterSelected(type: DangerType, id: Long)
     }
 
 }

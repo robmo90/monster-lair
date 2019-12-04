@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -73,25 +72,7 @@ class MonsterOverviewFragment : Fragment() {
             }
         }
         setupBottomSheet()
-
-        ArrayAdapter.createFromResource(
-            context!!,
-            R.array.monster_list_sort_choices,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            binding.typeSelect.setAdapter(adapter)
-        }
-        binding.typeSelect.doAfterTextChanged { choice ->
-            context?.resources?.getStringArray(R.array.monster_list_sort_choices)?.let { choices ->
-                when (choices.indexOf(choice.toString())) {
-                    0 -> viewModel.adjustSortBy(SortBy.NAME)
-                    1 -> viewModel.adjustSortBy(SortBy.LEVEL)
-                    2 -> viewModel.adjustSortBy(SortBy.TYPE)
-                    else -> return@doAfterTextChanged
-                }
-            }
-        }
+        setupSortBySpinner()
     }
 
     private fun setupBottomSheet() {
@@ -99,6 +80,26 @@ class MonsterOverviewFragment : Fragment() {
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
         bottomSheetBehavior.peekHeight =
             context!!.resources.getDimensionPixelSize(R.dimen.bottom_sheet_peek)
+    }
+
+    private fun setupSortBySpinner() {
+        val choices = context!!.resources.getStringArray(R.array.monster_list_sort_choices)
+        de.enduni.monsterlair.common.view.MaterialSpinnerAdapter(
+            context!!,
+            R.layout.view_spinner_item,
+            choices
+        ).also { adapter ->
+            binding.typeSelect.setAdapter(adapter)
+        }
+
+        binding.typeSelect.doAfterTextChanged { choice ->
+            when (choices.indexOf(choice.toString())) {
+                0 -> viewModel.adjustSortBy(SortBy.NAME)
+                1 -> viewModel.adjustSortBy(SortBy.LEVEL)
+                2 -> viewModel.adjustSortBy(SortBy.TYPE)
+                else -> return@doAfterTextChanged
+            }
+        }
     }
 
     private fun bindViewToState(state: MonsterOverviewViewState) {

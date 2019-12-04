@@ -2,6 +2,7 @@ package de.enduni.monsterlair
 
 import android.app.Application
 import de.enduni.monsterlair.common.persistence.database.MonsterDatabaseInitializer
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
@@ -16,6 +17,10 @@ class MonsterLairApplication : Application() {
     private var _databaseInitialized = false
     val databaseInitialized get() = _databaseInitialized
 
+    private val handler = CoroutineExceptionHandler { _, exception ->
+        Timber.e(exception, "Caught exception")
+    }
+
     override fun onCreate() {
         super.onCreate()
 
@@ -29,7 +34,7 @@ class MonsterLairApplication : Application() {
         }
         Timber.d("Initialized Koin")
 
-        MainScope().launch {
+        MainScope().launch(handler) {
             databaseInitializer.feedMonsters()
             Timber.d("Fed monsters, setup traps")
             _databaseInitialized = true

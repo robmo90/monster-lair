@@ -127,6 +127,9 @@
                 android:id="@+id/type_select"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
+                android:editable="false"
+                android:focusable="true"
                 android:hint="@string/monster_sort_by" />
 
         </com.google.android.material.textfield.TextInputLayout>
