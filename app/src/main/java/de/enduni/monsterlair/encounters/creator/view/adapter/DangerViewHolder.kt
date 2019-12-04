@@ -34,7 +34,7 @@ class DangerViewHolder(
         binding.listItemCaption.text = caption
 
         binding.root.setOnClickListener {
-            dangerSelectedListener.onDangerSelected(danger.type, danger.id)
+            dangerSelectedListener.onDangerSelected(danger.url)
         }
         binding.addButton.setOnClickListener {
             dangerSelectedListener.onAddClicked(danger.type, danger.id)
@@ -42,7 +42,7 @@ class DangerViewHolder(
     }
 
     interface DangerSelectedListener {
-        fun onDangerSelected(type: DangerType, id: Long)
+        fun onDangerSelected(url: String)
         fun onAddClicked(type: DangerType, id: Long)
     }
 

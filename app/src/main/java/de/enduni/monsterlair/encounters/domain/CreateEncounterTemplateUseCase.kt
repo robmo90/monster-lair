@@ -10,8 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class CreateEncounterTemplateUseCase(
-    private val context: Context,
-    private val calculateEncounterBudgetUseCase: CalculateEncounterBudgetUseCase
+    private val context: Context
 ) {
 
     suspend fun execute(encounter: Encounter): String =
@@ -21,14 +20,13 @@ class CreateEncounterTemplateUseCase(
             val template = Mustache.compiler().compile(String(templateBytes))
 
 
-            val budget = calculateEncounterBudgetUseCase.execute(encounter)
             val templateData = EncounterTemplateData(
                 name = encounter.name,
                 numberOfPlayers = encounter.numberOfPlayers,
                 level = encounter.level,
-                difficulty = context.getString(budget.currentDifficulty.getStringRes()),
-                xp = budget.currentDifficulty.budget,
-                xpAdjusted = budget.currentBudget,
+                difficulty = context.getString(encounter.currentDifficulty.getStringRes()),
+                xp = encounter.currentDifficulty.budget,
+                xpAdjusted = encounter.currentBudget,
                 printMonsters = encounter.monsters.isNotEmpty(),
                 printHazards = encounter.hazards.isNotEmpty(),
                 monsters = encounter.monsters.map {

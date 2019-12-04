@@ -43,14 +43,14 @@ class DangerForEncounterViewHolder(
         }
 
         binding.root.setOnClickListener {
-            listener.onDangerForEncounterSelected(dangerForEncounter.type, dangerForEncounter.id)
+            listener.onDangerForEncounterSelected(dangerForEncounter.url)
         }
     }
 
     interface DangerForEncounterListener {
         fun onIncrement(type: DangerType, id: Long)
         fun onDecrement(type: DangerType, id: Long)
-        fun onDangerForEncounterSelected(type: DangerType, id: Long)
+        fun onDangerForEncounterSelected(url: String)
     }
 
 }

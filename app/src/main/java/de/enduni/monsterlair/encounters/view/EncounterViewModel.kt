@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import de.enduni.monsterlair.common.view.ActionLiveData
-import de.enduni.monsterlair.encounters.domain.CalculateEncounterBudgetUseCase
 import de.enduni.monsterlair.encounters.domain.CreateEncounterTemplateUseCase
 import de.enduni.monsterlair.encounters.domain.DeleteEncounterUseCase
 import de.enduni.monsterlair.encounters.domain.RetrieveEncountersUseCase
@@ -18,7 +17,6 @@ import timber.log.Timber
 
 class EncounterViewModel(
     private val retrieveEncountersUseCase: RetrieveEncountersUseCase,
-    private val calculateEncounterBudgetUseCase: CalculateEncounterBudgetUseCase,
     private val createEncounterTemplateUseCase: CreateEncounterTemplateUseCase,
     private val deleteEncounterUseCase: DeleteEncounterUseCase,
     private val mapper: EncounterDisplayModelMapper
@@ -45,9 +43,7 @@ class EncounterViewModel(
         viewModelScope.launch(handler) {
             encounters = retrieveEncountersUseCase.execute()
             val encounterDisplayModels = encounters.map {
-                Pair(it, calculateEncounterBudgetUseCase.execute(it))
-            }.map { (encounter, budget) ->
-                mapper.mapToDisplayModel(encounter, budget)
+                mapper.mapToDisplayModel(it)
             }
             postNewStateIfDifferent(
                 encounterState.copy(

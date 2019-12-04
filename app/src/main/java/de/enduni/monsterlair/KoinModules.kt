@@ -9,7 +9,6 @@ import de.enduni.monsterlair.encounters.creator.domain.RetrieveMonstersWithRoleU
 import de.enduni.monsterlair.encounters.creator.domain.StoreEncounterUseCase
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayModelMapper
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorViewModel
-import de.enduni.monsterlair.encounters.domain.CalculateEncounterBudgetUseCase
 import de.enduni.monsterlair.encounters.domain.CreateEncounterTemplateUseCase
 import de.enduni.monsterlair.encounters.domain.DeleteEncounterUseCase
 import de.enduni.monsterlair.encounters.domain.RetrieveEncountersUseCase
@@ -99,18 +98,17 @@ val encounterModule = module {
     single { EncounterRepository(get(), get(), get(), get(), get(), get()) }
 
     // domain
-    single { CalculateEncounterBudgetUseCase() }
     single { RetrieveMonstersWithRoleUseCase(get(), get()) }
     single { RetrieveHazardsWithRoleUseCase(get(), get()) }
     single { EncounterCreatorDisplayModelMapper() }
     single { RetrieveEncountersUseCase(get()) }
     single { DeleteEncounterUseCase(get()) }
     single { RetrieveEncounterUseCase(get()) }
-    single { CreateEncounterTemplateUseCase(androidApplication(), get()) }
+    single { CreateEncounterTemplateUseCase(androidApplication()) }
     single { StoreEncounterUseCase(get()) }
 
     // view
     single { EncounterDisplayModelMapper(androidApplication()) }
-    viewModel { EncounterCreatorViewModel(get(), get(), get(), get(), get(), get()) }
-    viewModel { EncounterViewModel(get(), get(), get(), get(), get()) }
+    viewModel { EncounterCreatorViewModel(get(), get(), get(), get(), get()) }
+    viewModel { EncounterViewModel(get(), get(), get(), get()) }
 }

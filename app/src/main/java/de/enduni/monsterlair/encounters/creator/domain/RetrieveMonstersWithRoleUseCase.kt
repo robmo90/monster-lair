@@ -22,14 +22,6 @@ class RetrieveMonstersWithRoleUseCase(
         ).map { monsterWithRoleMapper.mapToMonsterWithRole(it, encounterLevel) }
     }
 
-    suspend fun findSingleMonster(
-        id: Long,
-        encounterLevel: Int
-    ): MonsterWithRole {
-        return repository.getMonster(id)
-            .let { monsterWithRoleMapper.mapToMonsterWithRole(it, encounterLevel) }
-    }
-
 
 }
 

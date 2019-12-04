@@ -3,14 +3,13 @@ package de.enduni.monsterlair.encounters.view
 import android.content.Context
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.encounters.domain.model.Encounter
-import de.enduni.monsterlair.encounters.domain.model.EncounterBudget
 
 class EncounterDisplayModelMapper(
     private val context: Context
 ) {
 
 
-    fun mapToDisplayModel(encounter: Encounter, budget: EncounterBudget): EncounterDisplayModel {
+    fun mapToDisplayModel(encounter: Encounter): EncounterDisplayModel {
         val monsterString = encounter.monsters.joinToString { encounterMonster ->
             "${encounterMonster.count} ${encounterMonster.monster.name}"
         }
@@ -28,8 +27,8 @@ class EncounterDisplayModelMapper(
             name = encounter.name,
             level = encounter.level,
             numberOfPlayers = encounter.numberOfPlayers,
-            difficulty = budget.currentDifficulty,
-            xp = budget.currentBudget,
+            difficulty = encounter.currentDifficulty,
+            xp = encounter.currentBudget,
             dangers = dangerString
         )
     }

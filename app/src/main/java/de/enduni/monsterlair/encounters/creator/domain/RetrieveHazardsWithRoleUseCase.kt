@@ -23,13 +23,5 @@ class RetrieveHazardsWithRoleUseCase(
         ).map { hazardWithRoleMapper.mapToHazardWithRole(it, encounterLevel) }
     }
 
-    suspend fun findSingleHazard(
-        id: Long,
-        encounterLevel: Int
-    ): HazardWithRole {
-        return repository.getHazard(id)
-            .let { hazardWithRoleMapper.mapToHazardWithRole(it, encounterLevel) }
-    }
-
 }
 

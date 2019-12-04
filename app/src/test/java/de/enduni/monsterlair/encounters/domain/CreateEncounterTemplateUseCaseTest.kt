@@ -15,8 +15,7 @@ class CreateEncounterTemplateUseCaseTest {
     val context = mockk<Context>()
 
     val useCase = CreateEncounterTemplateUseCase(
-        context,
-        CalculateEncounterBudgetUseCase()
+        context
     )
 
     @Test

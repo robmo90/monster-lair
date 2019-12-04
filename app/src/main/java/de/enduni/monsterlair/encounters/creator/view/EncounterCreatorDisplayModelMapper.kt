@@ -14,7 +14,8 @@ class EncounterCreatorDisplayModelMapper {
         level = monsterWithRole.level,
         icon = monsterWithRole.type.getIcon(),
         label = monsterWithRole.family,
-        xp = monsterWithRole.role.xp
+        xp = monsterWithRole.role.xp,
+        url = monsterWithRole.url
     )
 
     fun toDanger(hazardWithRole: HazardWithRole) = EncounterCreatorDisplayModel.Danger(
@@ -25,7 +26,8 @@ class EncounterCreatorDisplayModelMapper {
         icon = hazardWithRole.complexity.getIcon(),
         label = "",
         labelRes = hazardWithRole.complexity.getStringRes(),
-        xp = hazardWithRole.role.getXp(hazardWithRole.complexity)
+        xp = hazardWithRole.role.getXp(hazardWithRole.complexity),
+        url = hazardWithRole.url
     )
 
     fun toDetails(encounter: Encounter) = EncounterCreatorDisplayModel.EncounterDetail(
@@ -36,7 +38,7 @@ class EncounterCreatorDisplayModelMapper {
     )
 
 
-    fun toBudget(encounterData: EncounterBudget) = EncounterCreatorDisplayModel.EncounterBudget(
+    fun toBudget(encounterData: Encounter) = EncounterCreatorDisplayModel.EncounterBudget(
         currentDifficulty = encounterData.currentDifficulty,
         currentBudget = encounterData.currentBudget,
         targetBudget = encounterData.targetBudget
@@ -52,7 +54,8 @@ class EncounterCreatorDisplayModelMapper {
             label = encounterMonster.monster.family,
             xp = encounterMonster.monster.role.xp,
             role = encounterMonster.monster.role.getStringRes(),
-            count = encounterMonster.count
+            count = encounterMonster.count,
+            url = encounterMonster.monster.url
         )
 
     fun toDanger(encounterHazard: EncounterHazard) =
@@ -66,7 +69,8 @@ class EncounterCreatorDisplayModelMapper {
             labelRes = encounterHazard.hazard.complexity.getStringRes(),
             xp = encounterHazard.hazard.role.getXp(encounterHazard.hazard.complexity),
             count = encounterHazard.count,
-            role = encounterHazard.hazard.complexity.getStringRes()
+            role = encounterHazard.hazard.complexity.getStringRes(),
+            url = encounterHazard.hazard.url
         )
 
 }

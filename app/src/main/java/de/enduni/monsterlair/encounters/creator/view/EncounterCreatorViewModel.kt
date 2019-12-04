@@ -13,7 +13,6 @@ import de.enduni.monsterlair.encounters.creator.view.adapter.DangerForEncounterV
 import de.enduni.monsterlair.encounters.creator.view.adapter.DangerViewHolder
 import de.enduni.monsterlair.encounters.creator.view.adapter.EncounterBudgetViewHolder
 import de.enduni.monsterlair.encounters.creator.view.adapter.EncounterDetailViewHolder
-import de.enduni.monsterlair.encounters.domain.CalculateEncounterBudgetUseCase
 import de.enduni.monsterlair.encounters.domain.model.*
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
@@ -24,7 +23,6 @@ import timber.log.Timber
 class EncounterCreatorViewModel(
     private val retrieveMonstersWithRoleUseCase: RetrieveMonstersWithRoleUseCase,
     private val retrieveHazardsWithRoleUseCase: RetrieveHazardsWithRoleUseCase,
-    private val calculateEncounterBudgetUseCase: CalculateEncounterBudgetUseCase,
     private val retrieveEncounterUseCase: RetrieveEncounterUseCase,
     private val mapper: EncounterCreatorDisplayModelMapper,
     private val storeEncounterUseCase: StoreEncounterUseCase
@@ -110,7 +108,6 @@ class EncounterCreatorViewModel(
 
     private fun postCurrentState() = viewModelScope.launch(handler) {
         launch(Dispatchers.Default) {
-            val budget = calculateEncounterBudgetUseCase.execute(encounter)
             val dangers = (monsters.toMonsterDisplayModel() +
                     hazards.toHazardDisplayModel()).sortedBy { it.name }
             val dangersForEncounter = (encounter.monsters.toEncounterMonsterDisplayModel() +
@@ -120,7 +117,7 @@ class EncounterCreatorViewModel(
             val list: List<EncounterCreatorDisplayModel> =
                 encounter.toDetailDisplayModel() +
                         dangersForEncounter +
-                        budget.toBudgetDisplayModel() +
+                        encounter.toBudgetDisplayModel() +
                     dangers
 
             val state = EncounterCreatorDisplayState(
@@ -144,7 +141,7 @@ class EncounterCreatorViewModel(
         return listOf(mapper.toDetails(this))
     }
 
-    private fun EncounterBudget.toBudgetDisplayModel(): List<EncounterCreatorDisplayModel> {
+    private fun Encounter.toBudgetDisplayModel(): List<EncounterCreatorDisplayModel> {
         return listOf(mapper.toBudget(this))
     }
 
@@ -172,25 +169,17 @@ class EncounterCreatorViewModel(
         postCurrentState()
     }
 
-    override fun onDangerForEncounterSelected(type: DangerType, id: Long) {
-        linkClicked(type, id)
+    override fun onDangerForEncounterSelected(url: String) {
+        linkClicked(url)
     }
 
-    override fun onDangerSelected(type: DangerType, id: Long) {
-        linkClicked(type, id)
+    override fun onDangerSelected(url: String) {
+        linkClicked(url)
     }
 
-    private fun linkClicked(type: DangerType, id: Long) {
+    private fun linkClicked(url: String) {
         viewModelScope.launch(handler) {
-            val url = when (type) {
-                DangerType.MONSTER -> {
-                    findMonsterWithId(id)?.url
-                }
-                DangerType.HAZARD -> {
-                    findHazardWithId(id)?.url
-                }
-            }
-            url?.let { _actions.sendAction(EncounterCreatorAction.DangerLinkClicked(it)) }
+            _actions.sendAction(EncounterCreatorAction.DangerLinkClicked(url))
         }
     }
 
