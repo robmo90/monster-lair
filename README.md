@@ -4,7 +4,7 @@ Monster Lair is an Android app to build and calculate encounters for Pathfinder 
 
 The app uses Kotlin and AndroidX, and relies heavily on Koin, Coroutines, Room and Navigation Components.
 
-Since the app also uses ViewBinding by Google, you need to use Android Studio 3.6+, currently only in Beta.
+Since the app also uses ViewBinding, you need to use Android Studio 3.6+, currently only in Beta. (You can easily install it side by side to your current Android Studio.)
 
 ## Contributing
 
@@ -31,10 +31,11 @@ If you want, grab one of these todos, or add your own. They are listed in the pr
 * Treasure list with filters
 * Add treasures to an encounter
 * 'Campaign' tracker - plan out encounters with treasures for certain levels of your campaign
-* Offline statblocks
-* Printing statblocks in the Web View / PDF
+* Offline stat blocks
+* Print stat blocks in the Web View / PDF
 * Monster and Hazard creation
 
 ### Technical Stuff
 * Save encounters automatically and make the lists etc immutable
+* Enable ProGuard for the release build  to save APK size (currently not working)
 * Tests
