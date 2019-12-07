@@ -1,6 +1,6 @@
 package de.enduni.monsterlair.encounters.domain.model
 
-import de.enduni.monsterlair.hazards.domain.Complexity
+import de.enduni.monsterlair.common.domain.Complexity
 
 data class HazardWithRole(
     val id: Long,

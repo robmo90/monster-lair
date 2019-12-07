@@ -95,6 +95,7 @@
 
     <string name="encounter_danger_added">%s added</string>
     <string name="encounter_name_hint">Encounter Name</string>
+
     <string name="within_budget">Include only dangers within budget</string>
 
 </resources>

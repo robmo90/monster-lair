@@ -1,8 +1,8 @@
-package de.enduni.monsterlair.monsters.datasource
+package de.enduni.monsterlair.common.datasource.datasource
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import de.enduni.monsterlair.monsters.domain.MonsterType
+import de.enduni.monsterlair.common.domain.MonsterType
 
 @JsonClass(generateAdapter = true)
 data class MonsterDto(

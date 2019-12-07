@@ -1,7 +1,7 @@
 package de.enduni.monsterlair.common.persistence.database
 
+import de.enduni.monsterlair.common.datasource.hazard.HazardDto
 import de.enduni.monsterlair.common.persistence.HazardEntity
-import de.enduni.monsterlair.hazards.datasource.HazardDto
 import de.enduni.monsterlair.hazards.domain.Hazard
 
 class HazardEntityMapper {

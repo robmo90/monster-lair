@@ -1,11 +1,11 @@
-package de.enduni.monsterlair.hazards.datasource
+package de.enduni.monsterlair.common.datasource.hazard
 
 import android.content.Context
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.hazards.domain.ComplexityTypeAdapter
+import de.enduni.monsterlair.common.domain.ComplexityTypeAdapter
 
 class HazardAssetDataSource(
     private val context: Context

@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.hazards.domain
+package de.enduni.monsterlair.common.domain
 
 import com.squareup.moshi.FromJson
 

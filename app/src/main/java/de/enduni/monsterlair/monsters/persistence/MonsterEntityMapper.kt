@@ -1,7 +1,7 @@
 package de.enduni.monsterlair.monsters.persistence
 
+import de.enduni.monsterlair.common.datasource.datasource.MonsterDto
 import de.enduni.monsterlair.common.persistence.MonsterEntity
-import de.enduni.monsterlair.monsters.datasource.MonsterDto
 import de.enduni.monsterlair.monsters.domain.Monster
 
 class MonsterEntityMapper {

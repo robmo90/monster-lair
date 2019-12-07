@@ -1,6 +1,6 @@
 package de.enduni.monsterlair.encounters.domain.model
 
-import de.enduni.monsterlair.monsters.domain.MonsterType
+import de.enduni.monsterlair.common.domain.MonsterType
 
 data class MonsterWithRole(
     val id: Long,

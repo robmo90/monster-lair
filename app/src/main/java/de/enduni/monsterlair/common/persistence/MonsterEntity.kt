@@ -3,8 +3,8 @@ package de.enduni.monsterlair.common.persistence
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
+import de.enduni.monsterlair.common.domain.MonsterType
 import de.enduni.monsterlair.common.persistence.database.EnumTypeConverters
-import de.enduni.monsterlair.monsters.domain.MonsterType
 
 @Entity(tableName = "monsters")
 @TypeConverters(EnumTypeConverters::class)

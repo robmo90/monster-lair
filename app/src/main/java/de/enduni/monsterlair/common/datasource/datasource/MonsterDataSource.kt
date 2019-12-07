@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.monsters.datasource
+package de.enduni.monsterlair.common.datasource.datasource
 
 interface MonsterDataSource {
 

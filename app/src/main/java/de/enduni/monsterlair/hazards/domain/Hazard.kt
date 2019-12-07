@@ -1,5 +1,7 @@
 package de.enduni.monsterlair.hazards.domain
 
+import de.enduni.monsterlair.common.domain.Complexity
+
 data class Hazard(
     val id: Long,
     val name: String,

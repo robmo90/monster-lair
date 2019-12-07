@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.hazards.datasource
+package de.enduni.monsterlair.common.datasource.hazard
 
 interface HazardDataSource {
 

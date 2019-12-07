@@ -3,12 +3,12 @@ package de.enduni.monsterlair.common
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import de.enduni.monsterlair.R
+import de.enduni.monsterlair.common.domain.Complexity
+import de.enduni.monsterlair.common.domain.MonsterType
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 import de.enduni.monsterlair.encounters.domain.model.HazardRole
 import de.enduni.monsterlair.encounters.domain.model.MonsterRole
-import de.enduni.monsterlair.hazards.domain.Complexity
 import de.enduni.monsterlair.hazards.view.HazardType
-import de.enduni.monsterlair.monsters.domain.MonsterType
 import de.enduni.monsterlair.monsters.view.SortBy
 
 @DrawableRes

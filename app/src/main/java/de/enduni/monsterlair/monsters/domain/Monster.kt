@@ -1,5 +1,7 @@
 package de.enduni.monsterlair.monsters.domain
 
+import de.enduni.monsterlair.common.domain.MonsterType
+
 data class Monster(
     val id: Long,
     val name: String,

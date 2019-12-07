@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.monsters.domain
+package de.enduni.monsterlair.common.domain
 
 import androidx.annotation.Keep
 import com.squareup.moshi.FromJson

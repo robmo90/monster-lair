@@ -1,8 +1,8 @@
-package de.enduni.monsterlair.hazards.datasource
+package de.enduni.monsterlair.common.datasource.hazard
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import de.enduni.monsterlair.hazards.domain.Complexity
+import de.enduni.monsterlair.common.domain.Complexity
 
 @JsonClass(generateAdapter = true)
 data class HazardDto(

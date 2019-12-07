@@ -1,9 +1,9 @@
 package de.enduni.monsterlair.common.persistence.database
 
+import de.enduni.monsterlair.common.datasource.datasource.MonsterDataSource
+import de.enduni.monsterlair.common.datasource.hazard.HazardDataSource
 import de.enduni.monsterlair.common.persistence.HazardDao
 import de.enduni.monsterlair.common.persistence.MonsterDao
-import de.enduni.monsterlair.hazards.datasource.HazardDataSource
-import de.enduni.monsterlair.monsters.datasource.MonsterDataSource
 import de.enduni.monsterlair.monsters.persistence.MonsterEntityMapper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

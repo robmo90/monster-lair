@@ -1,5 +1,9 @@
 package de.enduni.monsterlair
 
+import de.enduni.monsterlair.common.datasource.datasource.MonsterAssetDataSource
+import de.enduni.monsterlair.common.datasource.datasource.MonsterDataSource
+import de.enduni.monsterlair.common.datasource.hazard.HazardAssetDataSource
+import de.enduni.monsterlair.common.datasource.hazard.HazardDataSource
 import de.enduni.monsterlair.common.persistence.database.HazardEntityMapper
 import de.enduni.monsterlair.common.persistence.database.MonsterDatabase
 import de.enduni.monsterlair.common.persistence.database.MonsterDatabaseInitializer
@@ -18,14 +22,10 @@ import de.enduni.monsterlair.encounters.persistence.HazardWithRoleMapper
 import de.enduni.monsterlair.encounters.persistence.MonsterWithRoleMapper
 import de.enduni.monsterlair.encounters.view.EncounterDisplayModelMapper
 import de.enduni.monsterlair.encounters.view.EncounterViewModel
-import de.enduni.monsterlair.hazards.datasource.HazardAssetDataSource
-import de.enduni.monsterlair.hazards.datasource.HazardDataSource
 import de.enduni.monsterlair.hazards.domain.RetrieveHazardsUseCase
 import de.enduni.monsterlair.hazards.persistence.HazardRepository
 import de.enduni.monsterlair.hazards.view.HazardDisplayModelMapper
 import de.enduni.monsterlair.hazards.view.HazardViewModel
-import de.enduni.monsterlair.monsters.datasource.MonsterAssetDataSource
-import de.enduni.monsterlair.monsters.datasource.MonsterDataSource
 import de.enduni.monsterlair.monsters.domain.RetrieveMonsterUseCase
 import de.enduni.monsterlair.monsters.domain.RetrieveMonstersUseCase
 import de.enduni.monsterlair.monsters.persistence.MonsterEntityMapper
@@ -38,8 +38,16 @@ import org.koin.dsl.module
 
 val databaseModule = module(createdAtStart = true) {
 
-    single<MonsterDataSource> { MonsterAssetDataSource(androidApplication()) }
-    single<HazardDataSource> { HazardAssetDataSource(androidApplication()) }
+    single<MonsterDataSource> {
+        MonsterAssetDataSource(
+            androidApplication()
+        )
+    }
+    single<HazardDataSource> {
+        HazardAssetDataSource(
+            androidApplication()
+        )
+    }
     single(createdAtStart = true) { MonsterDatabase.buildDatabase(androidApplication()) }
     single { get<MonsterDatabase>().monsterDao() }
     single { get<MonsterDatabase>().encounterDao() }

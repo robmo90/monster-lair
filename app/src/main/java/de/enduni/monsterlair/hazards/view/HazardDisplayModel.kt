@@ -1,6 +1,6 @@
 package de.enduni.monsterlair.hazards.view
 
-import de.enduni.monsterlair.hazards.domain.Complexity
+import de.enduni.monsterlair.common.domain.Complexity
 
 data class HazardDisplayModel(
     val id: Long,

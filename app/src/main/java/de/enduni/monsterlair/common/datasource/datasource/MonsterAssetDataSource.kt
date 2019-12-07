@@ -1,13 +1,14 @@
-package de.enduni.monsterlair.monsters.datasource
+package de.enduni.monsterlair.common.datasource.datasource
 
 import android.content.Context
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.monsters.domain.MonsterTypeAdapter
+import de.enduni.monsterlair.common.domain.MonsterTypeAdapter
 
-class MonsterAssetDataSource(private val context: Context) : MonsterDataSource {
+class MonsterAssetDataSource(private val context: Context) :
+    MonsterDataSource {
 
     private val jsonAdapter: JsonAdapter<List<MonsterDto>>
 

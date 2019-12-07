@@ -2,9 +2,9 @@ package de.enduni.monsterlair.encounters.domain
 
 import android.content.Context
 import de.enduni.monsterlair.R
+import de.enduni.monsterlair.common.domain.Complexity
+import de.enduni.monsterlair.common.domain.MonsterType
 import de.enduni.monsterlair.encounters.domain.model.*
-import de.enduni.monsterlair.hazards.domain.Complexity
-import de.enduni.monsterlair.monsters.domain.MonsterType
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
