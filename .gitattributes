@@ -1,3 +1,0 @@
-# Exclude HTML / JSON Files
-/app/src/main/assets/* linguist-vendored
-/app/src/main/res/raw/* linguist-vendored
