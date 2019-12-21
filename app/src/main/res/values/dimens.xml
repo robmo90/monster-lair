@@ -6,4 +6,5 @@
     <dimen name="list_item_icon_size">40dp</dimen>
     <dimen name="list_item_margin">16dp</dimen>
     <dimen name="list_item_caption_gap">4dp</dimen>
+    <dimen name="verticalChipSpacing">4dp</dimen>
 </resources>
