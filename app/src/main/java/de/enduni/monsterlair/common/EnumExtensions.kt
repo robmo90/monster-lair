@@ -5,10 +5,10 @@ import androidx.annotation.StringRes
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.domain.Complexity
 import de.enduni.monsterlair.common.domain.MonsterType
+import de.enduni.monsterlair.encounters.creator.view.DangerType
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 import de.enduni.monsterlair.encounters.domain.model.HazardRole
 import de.enduni.monsterlair.encounters.domain.model.MonsterRole
-import de.enduni.monsterlair.hazards.view.HazardType
 import de.enduni.monsterlair.monsters.view.SortBy
 
 @DrawableRes
@@ -34,6 +34,32 @@ fun MonsterType.getIcon(): Int {
         MonsterType.FUNGUS -> R.drawable.ic_monster_fungus
         MonsterType.PLANT -> R.drawable.ic_monster_plant
         MonsterType.NONE -> R.drawable.ic_monster_ooze
+    }
+}
+
+@StringRes
+fun MonsterType.getStringRes(): Int {
+    return when (this) {
+        MonsterType.ABERRATION -> R.string.monster_type_aberration
+        MonsterType.ANIMAL -> R.string.monster_type_animal
+        MonsterType.BEAST -> R.string.monster_type_beast
+        MonsterType.DRAGON -> R.string.monster_type_dragon
+        MonsterType.ELEMENTAL -> R.string.monster_type_elemental
+        MonsterType.FIEND -> R.string.monster_type_fiend
+        MonsterType.GIANT -> R.string.monster_type_giant
+        MonsterType.HUMANOID -> R.string.monster_type_humanoid
+        MonsterType.MONITOR -> R.string.monster_type_monitor
+        MonsterType.OOZE -> R.string.monster_type_ooze
+        MonsterType.SPIRIT -> R.string.monster_type_spirit
+        MonsterType.UNDEAD -> R.string.monster_type_undead
+        MonsterType.ASTRAL -> R.string.monster_type_astral
+        MonsterType.CELESTIAL -> R.string.monster_type_celestial
+        MonsterType.CONSTRUCT -> R.string.monster_type_construct
+        MonsterType.ETHEREAL -> R.string.monster_type_ethereal
+        MonsterType.FEY -> R.string.monster_type_fey
+        MonsterType.FUNGUS -> R.string.monster_type_fungus
+        MonsterType.PLANT -> R.string.monster_type_plant
+        MonsterType.NONE -> R.string.monster_type_none
     }
 }
 
@@ -81,14 +107,12 @@ fun Complexity.getStringRes(): Int {
 }
 
 @StringRes
-fun HazardType.getStringRes(): Int {
+fun Complexity.getStringResForLabel(): Int {
     return when (this) {
-        HazardType.COMPLEX -> R.string.hazard_filter_complex
-        HazardType.SIMPLE -> R.string.hazard_filter_simple
-        HazardType.ALL -> R.string.hazard_filter_all
+        Complexity.SIMPLE -> R.string.hazard_filter_simple
+        Complexity.COMPLEX -> R.string.hazard_filter_complex
     }
 }
-
 
 @StringRes
 fun SortBy.getStringRes(): Int {
@@ -122,5 +146,23 @@ fun HazardRole.getXp(complexity: Complexity): Int {
     return when (complexity) {
         Complexity.SIMPLE -> xpSimple
         Complexity.COMPLEX -> xpComplex
+    }
+}
+
+@StringRes
+fun DangerType.getStringRes(): Int {
+    return when (this) {
+        DangerType.MONSTER -> R.string.danger_type_monster
+        DangerType.HAZARD -> R.string.danger_type_hazards
+    }
+}
+
+fun EncounterDifficulty.getDefaultMaxLevel(): Int {
+    return when (this) {
+        EncounterDifficulty.TRIVIAL -> 0
+        EncounterDifficulty.LOW -> 1
+        EncounterDifficulty.MODERATE -> 2
+        EncounterDifficulty.SEVERE -> 3
+        EncounterDifficulty.EXTREME -> 4
     }
 }

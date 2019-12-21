@@ -1,6 +1,7 @@
 package de.enduni.monsterlair.monsters.persistence
 
 import androidx.sqlite.db.SimpleSQLiteQuery
+import de.enduni.monsterlair.common.domain.MonsterType
 import de.enduni.monsterlair.common.persistence.MonsterDao
 import de.enduni.monsterlair.common.persistence.MonsterEntity
 import de.enduni.monsterlair.monsters.domain.Monster
@@ -19,11 +20,24 @@ class MonsterRepository(
         filter: String?,
         lowerLevel: Int,
         higherLevel: Int,
-        sortBy: String
+        sortBy: String,
+        monsterTypes: List<MonsterType>
     ): List<Monster> {
         val filterString = if (filter.isNullOrEmpty()) "\"%\"" else "\"%${filter}%\""
-        val query =
-            "SELECT * FROM monsters WHERE (name LIKE $filterString OR family LIKE $filterString) AND level BETWEEN $lowerLevel AND $higherLevel ORDER BY $sortBy ASC"
+        val typeFilterString = if (monsterTypes.isEmpty()) {
+            ""
+        } else {
+            "AND TYPE IN ${monsterTypes.joinToString(
+                prefix = "(\"",
+                postfix = "\")",
+                separator = "\", \""
+            )}"
+        }
+        val query = "SELECT * FROM monsters WHERE " +
+                "(name LIKE $filterString OR family LIKE $filterString) " +
+                "AND level BETWEEN $lowerLevel AND $higherLevel " +
+                typeFilterString +
+                "ORDER BY $sortBy ASC"
         Timber.v("Using $query")
         return monsterDao.getFilteredMonsters(SimpleSQLiteQuery(query)).toDomain()
     }

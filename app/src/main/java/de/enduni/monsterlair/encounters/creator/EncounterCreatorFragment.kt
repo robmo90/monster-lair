@@ -16,6 +16,10 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.openCustomTab
 import de.enduni.monsterlair.common.setTextIfNotFocused
+import de.enduni.monsterlair.common.view.buildComplexityChips
+import de.enduni.monsterlair.common.view.buildDangerTypeChips
+import de.enduni.monsterlair.common.view.buildMonsterTypeFilter
+import de.enduni.monsterlair.common.view.buildSortByChips
 import de.enduni.monsterlair.databinding.FragmentEncounterCreatorBinding
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorAction
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayState
@@ -113,15 +117,30 @@ class EncounterCreatorFragment : Fragment() {
             )
             binding.levelSlider.getThumb(0).value = filter.lowerLevel
             binding.levelSlider.getThumb(1).value = filter.upperLevel
+            binding.monsterTypeChips.buildMonsterTypeFilter(
+                filter.monsterTypes,
+                { viewModel.addMonsterTypeFilter(it) },
+                { viewModel.removeMonsterTypeFilter(it) }
+            )
+            binding.complexityChips.buildComplexityChips(
+                filter.complexities,
+                { viewModel.addComplexityFilter(it) },
+                { viewModel.removeComplexityFilter(it) }
+            )
+            binding.dangerTypeChips.buildDangerTypeChips(
+                filter.dangerTypes,
+                { viewModel.addDangerFilter(it) },
+                { viewModel.removeDangerFilter(it) }
+            )
+            binding.sortByChips.buildSortByChips(
+                filter.sortBy
+            ) { viewModel.adjustSortBy(it) }
         }
         state.filter?.withinBudget?.let { binding.withinBudgetCheckbox.isChecked = it }
     }
 
     private fun handleAction(action: EncounterCreatorAction?) {
         when (action) {
-            is EncounterCreatorAction.SaveClicked -> {
-                viewModel.saveEncounter()
-            }
             is EncounterCreatorAction.EncounterSaved -> {
                 findNavController().navigateUp()
             }

@@ -72,6 +72,7 @@
     <string name="no_dangers_encounter">Currently no monsters or hazards</string>
     <string name="export">Print</string>
     <string name="save_encounter">Save</string>
+    <string name="random_encounter">Random</string>
 
     <string name="encounter_budget_xp">XP: %d / %d</string>
     <string name="encounter_budget_difficulty">Current Difficulty: %s</string>
@@ -91,11 +92,39 @@
     <string name="scroll_up_description">Scroll up</string>
     <string name="encounter_print">Print</string>
     <string name="encounter_delete">Delete</string>
-    <string name="hazard_complexity">Complexity</string>
+    <string name="hazard_complexity">Filter By Complexity</string>
+    <string name="hazard_complexity_encounter_creator">Filter By Hazard Complexity</string>
 
     <string name="encounter_danger_added">%s added</string>
     <string name="encounter_name_hint">Encounter Name</string>
 
     <string name="within_budget">Include only dangers within budget</string>
+
+    <string name="danger_filter_label">Filter By Danger Type</string>
+
+    <string name="monster_type_aberration">Aberration</string>
+    <string name="monster_type_animal">Animal</string>
+    <string name="monster_type_astral">Astral</string>
+    <string name="monster_type_beast">Beast</string>
+    <string name="monster_type_celestial">Celestial</string>
+    <string name="monster_type_construct">Construct</string>
+    <string name="monster_type_dragon">Dragon</string>
+    <string name="monster_type_elemental">Elemental</string>
+    <string name="monster_type_ethereal">Ethereal</string>
+    <string name="monster_type_fey">Fey</string>
+    <string name="monster_type_fiend">Fiend</string>
+    <string name="monster_type_fungus">Fungus</string>
+    <string name="monster_type_giant">Giant</string>
+    <string name="monster_type_humanoid">Humanoid</string>
+    <string name="monster_type_monitor">Monitor</string>
+    <string name="monster_type_ooze">Ooze</string>
+    <string name="monster_type_plant">Plant</string>
+    <string name="monster_type_spirit">Spirit</string>
+    <string name="monster_type_undead">Undead</string>
+    <string name="monster_type_none">None</string>
+    <string name="label_filter_monster_types">Filter By Monster Type</string>
+
+    <string name="danger_type_monster">Monsters</string>
+    <string name="danger_type_hazards">Hazards</string>
 
 </resources>

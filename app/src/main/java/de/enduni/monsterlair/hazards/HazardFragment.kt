@@ -11,11 +11,11 @@ import androidx.lifecycle.Observer
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.openCustomTab
-import de.enduni.monsterlair.common.view.MaterialSpinnerAdapter
+import de.enduni.monsterlair.common.view.buildComplexityChips
+import de.enduni.monsterlair.common.view.buildSortByChips
 import de.enduni.monsterlair.databinding.FragmentHazardsBinding
 import de.enduni.monsterlair.hazards.view.HazardOverviewAction
 import de.enduni.monsterlair.hazards.view.HazardOverviewViewState
-import de.enduni.monsterlair.hazards.view.HazardType
 import de.enduni.monsterlair.hazards.view.HazardViewModel
 import de.enduni.monsterlair.hazards.view.adapter.HazardListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -71,7 +71,6 @@ class HazardFragment : Fragment() {
         }
 
         setupBottomSheet()
-        setupCategorySpinner()
     }
 
     private fun setupBottomSheet() {
@@ -79,25 +78,6 @@ class HazardFragment : Fragment() {
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
         bottomSheetBehavior.peekHeight =
             context!!.resources.getDimensionPixelSize(R.dimen.bottom_sheet_peek)
-    }
-
-    private fun setupCategorySpinner() {
-        val choices = context!!.resources.getStringArray(R.array.hazard_list_filter_choices)
-        MaterialSpinnerAdapter(
-            context!!,
-            R.layout.view_spinner_item,
-            choices
-        ).also { adapter ->
-            binding.categorySelect.setAdapter(adapter)
-        }
-        binding.categorySelect.doAfterTextChanged { choice ->
-            when (choices.indexOf(choice.toString())) {
-                0 -> viewModel.adjustType(HazardType.ALL)
-                1 -> viewModel.adjustType(HazardType.SIMPLE)
-                2 -> viewModel.adjustType(HazardType.COMPLEX)
-                else -> return@doAfterTextChanged
-            }
-        }
     }
 
     private fun bindViewToState(state: HazardOverviewViewState) {
@@ -110,6 +90,14 @@ class HazardFragment : Fragment() {
             )
             binding.levelSlider.getThumb(0).value = filter.lowerLevel
             binding.levelSlider.getThumb(1).value = filter.upperLevel
+            binding.complexityChips.buildComplexityChips(
+                filter.complexities,
+                { viewModel.addComplexityFilter(it) },
+                { viewModel.removeComplexityFilter(it) }
+            )
+            binding.sortByChips.buildSortByChips(
+                filter.sortBy
+            ) { viewModel.adjustSortBy(it) }
         }
     }
 

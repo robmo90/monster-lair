@@ -11,7 +11,7 @@ class EncounterCreatorListAdapter(
     private val layoutInflater: LayoutInflater,
     private val dangerSelectedListener: DangerViewHolder.DangerSelectedListener,
     private val dangerForEncounterListener: DangerForEncounterViewHolder.DangerForEncounterListener,
-    private val onSaveClickedListener: EncounterBudgetViewHolder.OnSaveClickedListener,
+    private val onSaveClickedListener: EncounterBudgetViewHolder.ClickListener,
     private val onNameChangedListener: EncounterDetailViewHolder.OnNameChangedListener
 
 ) : ListAdapter<EncounterCreatorDisplayModel, EncounterCreatorViewHolder>(

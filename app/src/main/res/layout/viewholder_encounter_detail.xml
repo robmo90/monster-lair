@@ -6,7 +6,6 @@
     android:layout_height="@dimen/three_line_list_item_height"
     android:background="?attr/colorSurface"
     android:clickable="true"
-    android:elevation="4dp"
     android:focusable="true">
 
 

@@ -9,7 +9,7 @@ import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayMode
 
 class EncounterBudgetViewHolder(
     itemView: View,
-    private val onSaveClickedListener: OnSaveClickedListener
+    private val clickedListener: ClickListener
 ) : EncounterCreatorViewHolder(itemView) {
 
     private lateinit var binding: ViewholderEncounterBudgetBinding
@@ -26,17 +26,18 @@ class EncounterBudgetViewHolder(
             encounter.targetBudget
         )
 
-        binding.listItemCaption.text = itemView.context.getString(
-            R.string.encounter_budget_difficulty,
-            currentDifficulty
-        )
+        binding.listItemCaption.text = currentDifficulty
         binding.saveButton.setOnClickListener {
-            onSaveClickedListener.onSaveClicked()
+            clickedListener.onSaveClicked()
+        }
+        binding.randomButton.setOnClickListener {
+            clickedListener.onRandomClicked()
         }
     }
 
-    interface OnSaveClickedListener {
+    interface ClickListener {
         fun onSaveClicked()
+        fun onRandomClicked()
     }
 
 }

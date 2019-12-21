@@ -15,7 +15,8 @@ sealed class EncounterCreatorDisplayModel {
         val label: String,
         @StringRes val labelRes: Int? = null,
         val xp: Int,
-        val url: String
+        val url: String,
+        val originalType: String
     ) : EncounterCreatorDisplayModel()
 
     data class EncounterDetail(

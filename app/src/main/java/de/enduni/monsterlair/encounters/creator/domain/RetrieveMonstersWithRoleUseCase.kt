@@ -1,5 +1,6 @@
 package de.enduni.monsterlair.encounters.creator.domain
 
+import de.enduni.monsterlair.encounters.creator.view.DangerType
 import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorFilter
 import de.enduni.monsterlair.encounters.domain.model.Encounter
 import de.enduni.monsterlair.encounters.domain.model.MonsterWithRole
@@ -17,11 +18,15 @@ class RetrieveMonstersWithRoleUseCase(
         filter: EncounterCreatorFilter,
         encounter: Encounter
     ) = withContext(Dispatchers.Default) {
+        if (filter.dangerTypes.isNotEmpty() && !filter.dangerTypes.contains(DangerType.MONSTER)) {
+            return@withContext emptyList<MonsterWithRole>()
+        }
         repository.getMonsters(
             filter.string,
             filter.lowerLevel,
             filter.upperLevel,
-            filter.sortBy.value
+            filter.sortBy.value,
+            filter.monsterTypes
         )
             .map { monsterWithRoleMapper.mapToMonsterWithRole(it, encounter.level) }
             .filterMonstersWithinBudget(filter = filter.withinBudget, encounter = encounter)

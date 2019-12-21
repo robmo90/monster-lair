@@ -15,7 +15,8 @@ class EncounterCreatorDisplayModelMapper {
         icon = monsterWithRole.type.getIcon(),
         label = monsterWithRole.family,
         xp = monsterWithRole.role.xp,
-        url = monsterWithRole.url
+        url = monsterWithRole.url,
+        originalType = monsterWithRole.type.toString()
     )
 
     fun toDanger(hazardWithRole: HazardWithRole) = EncounterCreatorDisplayModel.Danger(
@@ -27,7 +28,8 @@ class EncounterCreatorDisplayModelMapper {
         label = "",
         labelRes = hazardWithRole.complexity.getStringRes(),
         xp = hazardWithRole.role.getXp(hazardWithRole.complexity),
-        url = hazardWithRole.url
+        url = hazardWithRole.url,
+        originalType = hazardWithRole.complexity.toString()
     )
 
     fun toDetails(encounter: Encounter) = EncounterCreatorDisplayModel.EncounterDetail(

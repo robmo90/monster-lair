@@ -13,7 +13,8 @@ class RetrieveMonstersUseCase(private val monsterRepository: MonsterRepository) 
                 filter.string,
                 filter.lowerLevel,
                 filter.upperLevel,
-                filter.sortBy.value
+                filter.sortBy.value,
+                filter.monsterTypes
             )
         val afterTimeMillis = System.currentTimeMillis()
         Timber.v("Taking ${afterTimeMillis - currentTimeMillis} to filter")

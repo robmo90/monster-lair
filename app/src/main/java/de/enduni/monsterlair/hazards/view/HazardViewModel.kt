@@ -4,10 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import de.enduni.monsterlair.common.domain.Complexity
 import de.enduni.monsterlair.common.view.ActionLiveData
 import de.enduni.monsterlair.hazards.domain.Hazard
 import de.enduni.monsterlair.hazards.domain.RetrieveHazardsUseCase
 import de.enduni.monsterlair.hazards.view.adapter.HazardViewHolder
+import de.enduni.monsterlair.monsters.view.SortBy
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -31,36 +33,43 @@ class HazardViewModel(
 
     init {
         viewModelScope.launch {
-            filterMonsters()
+            filterHazards()
         }
     }
 
 
     fun filterByString(string: String) = viewModelScope.launch(handler) {
-        filterMonsters(filter.copy(string = string))
+        filterHazards(filter.copy(string = string))
     }
 
     fun adjustFilterLevelLower(lowerLevel: Int) = viewModelScope.launch(handler) {
-        filterMonsters(filter.copy(lowerLevel = lowerLevel))
+        filterHazards(filter.copy(lowerLevel = lowerLevel))
     }
 
     fun adjustFilterLevelUpper(upperLevel: Int) = viewModelScope.launch(handler) {
-        filterMonsters(filter.copy(upperLevel = upperLevel))
+        filterHazards(filter.copy(upperLevel = upperLevel))
     }
 
-    fun adjustType(hazardType: HazardType) = viewModelScope.launch(handler) {
-        filterMonsters(filter.copy(type = hazardType))
+    fun addComplexityFilter(complexity: Complexity) = viewModelScope.launch(handler) {
+        filterHazards(filter.copy(complexities = filter.complexities + complexity))
     }
 
+    fun removeComplexityFilter(complexity: Complexity) = viewModelScope.launch(handler) {
+        filterHazards(filter.copy(complexities = filter.complexities - complexity))
+    }
 
-    private suspend fun filterMonsters(newFilter: HazardFilter) {
+    fun adjustSortBy(sortBy: SortBy) = viewModelScope.launch(handler) {
+        filterHazards(filter.copy(sortBy = sortBy))
+    }
+
+    private suspend fun filterHazards(newFilter: HazardFilter) {
         if (newFilter != filter) {
             filter = newFilter
-            filterMonsters()
+            filterHazards()
         }
     }
 
-    private suspend fun filterMonsters() {
+    private suspend fun filterHazards() {
         Timber.d("Starting monster filter with $filter")
         val hazards = retrieveHazardsUseCase.execute(filter).toDisplayModel()
         val state = HazardOverviewViewState(

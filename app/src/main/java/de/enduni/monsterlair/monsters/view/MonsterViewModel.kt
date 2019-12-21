@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import de.enduni.monsterlair.MonsterLairApplication
+import de.enduni.monsterlair.common.domain.MonsterType
 import de.enduni.monsterlair.common.view.ActionLiveData
 import de.enduni.monsterlair.monsters.domain.Monster
 import de.enduni.monsterlair.monsters.domain.RetrieveMonsterUseCase
@@ -90,6 +91,14 @@ class MonsterViewModel(
 
     private fun List<Monster>.toDisplayModel(): List<MonsterListDisplayModel> {
         return this.map { mapper.toMonsterDisplayModel(it) }
+    }
+
+    fun addMonsterTypeFilter(monsterType: MonsterType) = viewModelScope.launch(handler) {
+        filterMonsters(filter.copy(monsterTypes = filter.monsterTypes + monsterType))
+    }
+
+    fun removeMonsterTypeFilter(monsterType: MonsterType) = viewModelScope.launch(handler) {
+        filterMonsters(filter.copy(monsterTypes = filter.monsterTypes - monsterType))
     }
 
 }

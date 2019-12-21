@@ -6,7 +6,6 @@
     android:layout_height="@dimen/two_line_list_item_height"
     android:background="?attr/colorSurface"
     android:clickable="true"
-    android:elevation="4dp"
     android:focusable="true">
 
     <TextView
@@ -18,7 +17,7 @@
         android:layout_marginTop="@dimen/list_item_margin"
         android:layout_marginEnd="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/save_button"
+        app:layout_constraintEnd_toStartOf="@id/random_button"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Aasimar" />
 
@@ -30,9 +29,20 @@
         android:layout_marginTop="@dimen/list_item_caption_gap"
         android:layout_marginEnd="8dp"
         app:layout_constraintStart_toStartOf="@id/list_item_title"
-        app:layout_constraintEnd_toStartOf="@id/save_button"
+        app:layout_constraintEnd_toStartOf="@id/random_button"
         app:layout_constraintTop_toBottomOf="@id/list_item_title"
         tools:text="Difficulty" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/random_button"
+        style="@style/Button.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/random_encounter"
+        app:icon="@drawable/ic_random"
+        app:layout_constraintEnd_toStartOf="@id/save_button"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/save_button"
