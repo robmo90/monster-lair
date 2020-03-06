@@ -72,12 +72,13 @@
     <string name="no_dangers_encounter">Currently no monsters or hazards</string>
     <string name="export">Print</string>
     <string name="save_encounter">Save</string>
-    <string name="edit_encounter">Edit</string>
+    <string name="create_encounter_button">Create</string>
+    <string name="edit_encounter">Edit Encounter</string>
     <string name="random_encounter">Random</string>
 
     <string name="encounter_budget_xp">XP: %d / %d</string>
     <string name="encounter_budget_difficulty">Current Difficulty: %s</string>
-    <string name="create_encounter">Create</string>
+    <string name="create_encounter">Create Encounter</string>
 
     <string name="encounter_details_creator">Level: %d \u2014 Characters: %d \u2014 %s</string>
     <string name="encounter_details">Level: %d \u2014 Characters: %d \u2014 %s (%d XP) \u2014 Budget: %d XP</string>
@@ -98,6 +99,7 @@
 
     <string name="encounter_danger_added">%s added</string>
     <string name="encounter_name_hint">Encounter Name</string>
+    <string name="encounter_name_placeholder">Encounter</string>
 
     <string name="within_budget">Include only dangers within budget</string>
 
@@ -130,13 +132,16 @@
 
 
     <string name="random_encounter_title">Random Encounter Templates</string>
-    <string name="random_encounter_boss_and_lackeys">Boss and Lackeys (120 XP)</string>
-    <string name="random_encounter_boss_and_lieutenant">Boss and Lieutenant (120 XP)</string>
-    <string name="random_encounter_elite_enemies">Elite Enemies (120 XP)</string>
-    <string name="random_encounter_lieutenant_and_lackeys">Lieutenant and Lackeys (80 XP)</string>
-    <string name="random_encounter_mated_pair">Mated Pair (80 XP)</string>
-    <string name="random_encounter_troop">Troop (80 XP)</string>
-    <string name="random_encounter_mook_squad">Mook Squad (60 XP)</string>
+    <string name="random_encounter_boss_and_lackeys">Boss and Lackeys (Severe, 120 XP)</string>
+    <string name="random_encounter_boss_and_lieutenant">Boss and Lieutenant (Severe, 120 XP)</string>
+    <string name="random_encounter_elite_enemies">Elite Enemies (Severe, 120 XP)</string>
+    <string name="random_encounter_lieutenant_and_lackeys">Lieutenant and Lackeys (Moderate, 80 XP)</string>
+    <string name="random_encounter_mated_pair">Mated Pair (Moderate, 80 XP)</string>
+    <string name="random_encounter_troop">Troop (Moderate, 80 XP)</string>
+    <string name="random_encounter_mook_squad">Mook Squad (Low, 60 XP)</string>
     <string name="random_encounter_random">Completely Random</string>
+    <string name="random_encounter_message">These templates pick randomly from the filtered monsters to create an encounter fitting the \"Quick Adventure Groups\" from the Gamemastery Guide by Paizo. They try to scale with the number of players, use the same family and type of monsters and keep the number of monsters used to a minimum to make the encounter easy to prep and thematically appropriate.</string>
+    <string name="random_encounter_information">Info</string>
+    <string name="random_encounter_information_title">How it works</string>
 
 </resources>

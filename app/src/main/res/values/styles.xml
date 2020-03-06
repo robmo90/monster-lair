@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
@@ -12,6 +12,7 @@
         <item name="android:statusBarColor">@color/primaryDarkColor</item>
         <item name="android:textColorSecondary">?colorOnSecondary</item>
         <item name="android:fontFamily">@font/amaranth</item>
+        <item name="alertDialogTheme">@style/Theme.AppCompat.DayNight.Dialog.Alert</item>
 
     </style>
 
@@ -48,5 +49,14 @@
     <style name="EditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"></style>
 
     <style name="DropDown" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"></style>
+
+
+    <style name="Dialog" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="colorPrimary">?colorOnBackground</item>
+    </style>
+
+    <style name="EditText.Dialog" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"></style>
+
+    <style name="DropDown.Dialog" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"></style>
 
 </resources>

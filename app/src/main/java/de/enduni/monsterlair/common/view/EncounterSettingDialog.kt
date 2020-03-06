@@ -5,6 +5,7 @@ import android.content.Context
 import android.text.SpannableStringBuilder
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputEditText
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.getStringRes
@@ -25,7 +26,8 @@ class EncounterSettingDialog(
         activityRef.get()?.let { activity ->
             val binding = DialogCreateEncounterBinding.inflate(activity.layoutInflater)
             setupDifficultySelect(activity, binding)
-            binding.encounterNameEditText.text = SpannableStringBuilder.valueOf("Encounter")
+            binding.encounterNameEditText.text =
+                SpannableStringBuilder.valueOf(activity.getString(R.string.encounter_name_placeholder))
 
             settings?.run {
                 binding.encounterNameEditText.setTextIfNotFocused(encounterName)
@@ -34,12 +36,18 @@ class EncounterSettingDialog(
                 binding.difficultySelect.setText(encounterDifficulty.getStringRes())
             }
 
-            val dialog = AlertDialog.Builder(activity)
+            val dialog = MaterialAlertDialogBuilder(activity)
                 .setView(binding.root)
-                .setTitle(R.string.create_encounter)
-                .setPositiveButton(
+                .setTitle(
                     if (purpose == Purpose.CREATE) {
                         R.string.create_encounter
+                    } else {
+                        R.string.edit_encounter
+                    }
+                )
+                .setPositiveButton(
+                    if (purpose == Purpose.CREATE) {
+                        R.string.create_encounter_button
                     } else {
                         R.string.save_encounter
                     }, null
