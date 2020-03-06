@@ -72,6 +72,7 @@
     <string name="no_dangers_encounter">Currently no monsters or hazards</string>
     <string name="export">Print</string>
     <string name="save_encounter">Save</string>
+    <string name="edit_encounter">Edit</string>
     <string name="random_encounter">Random</string>
 
     <string name="encounter_budget_xp">XP: %d / %d</string>

@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.encounters.creator.view
+package de.enduni.monsterlair.creator.view
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,11 +8,11 @@ import de.enduni.monsterlair.common.domain.Complexity
 import de.enduni.monsterlair.common.domain.MonsterType
 import de.enduni.monsterlair.common.getDefaultMaxLevel
 import de.enduni.monsterlair.common.view.ActionLiveData
-import de.enduni.monsterlair.encounters.creator.domain.*
-import de.enduni.monsterlair.encounters.creator.view.adapter.DangerForEncounterViewHolder
-import de.enduni.monsterlair.encounters.creator.view.adapter.DangerViewHolder
-import de.enduni.monsterlair.encounters.creator.view.adapter.EncounterBudgetViewHolder
-import de.enduni.monsterlair.encounters.creator.view.adapter.EncounterDetailViewHolder
+import de.enduni.monsterlair.creator.domain.*
+import de.enduni.monsterlair.creator.view.adapter.DangerForEncounterViewHolder
+import de.enduni.monsterlair.creator.view.adapter.DangerViewHolder
+import de.enduni.monsterlair.creator.view.adapter.EncounterBudgetViewHolder
+import de.enduni.monsterlair.creator.view.adapter.EncounterDetailViewHolder
 import de.enduni.monsterlair.encounters.domain.model.*
 import de.enduni.monsterlair.monsters.view.SortBy
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -293,6 +293,25 @@ class EncounterCreatorViewModel(
         withContext(Dispatchers.Default) {
             hazards.find { it.id == id }
         }
+
+    fun adjustEncounter(
+        encounterName: String,
+        numberOfPlayers: Int,
+        encounterLevel: Int,
+        encounterDifficulty: EncounterDifficulty
+    ) {
+        encounter.name = encounterName
+        encounter.numberOfPlayers = numberOfPlayers
+        encounter.level = encounterLevel
+        encounter.targetDifficulty = encounterDifficulty
+        postCurrentState()
+    }
+
+    fun onEditClicked() {
+        viewModelScope.launch(handler) {
+            _actions.postValue(EncounterCreatorAction.EditEncounterClicked(encounter))
+        }
+    }
 
 
 }

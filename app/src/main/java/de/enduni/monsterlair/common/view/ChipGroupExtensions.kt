@@ -8,7 +8,7 @@ import de.enduni.monsterlair.common.domain.Complexity
 import de.enduni.monsterlair.common.domain.MonsterType
 import de.enduni.monsterlair.common.getStringRes
 import de.enduni.monsterlair.common.getStringResForLabel
-import de.enduni.monsterlair.encounters.creator.view.DangerType
+import de.enduni.monsterlair.creator.view.DangerType
 import de.enduni.monsterlair.monsters.view.SortBy
 
 fun ChipGroup.buildMonsterTypeFilter(

@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.encounters.creator.domain
+package de.enduni.monsterlair.creator.domain
 
 import de.enduni.monsterlair.common.getXp
 import de.enduni.monsterlair.encounters.domain.model.Encounter

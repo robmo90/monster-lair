@@ -9,9 +9,9 @@ data class Encounter(
     var name: String = "Encounter",
     val monsters: MutableList<EncounterMonster> = mutableListOf(),
     val hazards: MutableList<EncounterHazard> = mutableListOf(),
-    val level: Int,
-    val numberOfPlayers: Int,
-    val targetDifficulty: EncounterDifficulty
+    var level: Int,
+    var numberOfPlayers: Int,
+    var targetDifficulty: EncounterDifficulty
 ) {
 
     val targetBudget: Int

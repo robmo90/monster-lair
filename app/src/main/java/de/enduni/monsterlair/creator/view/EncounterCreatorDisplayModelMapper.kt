@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.encounters.creator.view
+package de.enduni.monsterlair.creator.view
 
 import de.enduni.monsterlair.common.getIcon
 import de.enduni.monsterlair.common.getStringRes

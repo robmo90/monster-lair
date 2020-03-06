@@ -5,7 +5,7 @@ import androidx.annotation.StringRes
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.domain.Complexity
 import de.enduni.monsterlair.common.domain.MonsterType
-import de.enduni.monsterlair.encounters.creator.view.DangerType
+import de.enduni.monsterlair.creator.view.DangerType
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 import de.enduni.monsterlair.encounters.domain.model.HazardRole
 import de.enduni.monsterlair.encounters.domain.model.MonsterRole

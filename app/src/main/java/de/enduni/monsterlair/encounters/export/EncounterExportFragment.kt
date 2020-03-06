@@ -13,6 +13,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.databinding.FragmentEncounterExportBinding
 import timber.log.Timber
@@ -49,19 +50,16 @@ class EncounterExportFragment : Fragment() {
                 return false
             }
 
-            override fun onPageFinished(view: WebView?, url: String?) {
-                super.onPageFinished(view, url)
-                binding.printButton.visibility = View.VISIBLE
-            }
         }
 
-        binding.printButton.setOnClickListener {
+        requireActivity().findViewById<FloatingActionButton>(R.id.floating_action_button)
+            .setOnClickListener {
             createWebPrintJob(binding.webView)
         }
     }
 
     private fun createWebPrintJob(webView: WebView) {
-        val printManager = context!!.getSystemService(PRINT_SERVICE) as PrintManager
+        val printManager = requireContext().getSystemService(PRINT_SERVICE) as PrintManager
         val jobName = exportArgs.encounterName
         val printAdapter = webView.createPrintDocumentAdapter(jobName)
         printManager.print(jobName, printAdapter, PrintAttributes.Builder().build())

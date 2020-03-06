@@ -15,7 +15,7 @@ import de.enduni.monsterlair.common.openCustomTab
 import de.enduni.monsterlair.common.setTextIfNotFocused
 import de.enduni.monsterlair.common.view.buildMonsterTypeFilter
 import de.enduni.monsterlair.common.view.buildSortByChips
-import de.enduni.monsterlair.databinding.FragmentMonsterOverviewBinding
+import de.enduni.monsterlair.databinding.FragmentMonsterBinding
 import de.enduni.monsterlair.monsters.view.MonsterOverviewAction
 import de.enduni.monsterlair.monsters.view.MonsterOverviewViewState
 import de.enduni.monsterlair.monsters.view.MonsterViewModel
@@ -24,9 +24,9 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
 
 
-class MonsterOverviewFragment : Fragment() {
+class MonsterFragment : Fragment() {
 
-    private lateinit var binding: FragmentMonsterOverviewBinding
+    private lateinit var binding: FragmentMonsterBinding
 
     private lateinit var listAdapter: MonsterListAdapter
 
@@ -37,17 +37,19 @@ class MonsterOverviewFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return layoutInflater.inflate(R.layout.fragment_monster_overview, container, false)
+        return layoutInflater.inflate(R.layout.fragment_monster, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding = FragmentMonsterOverviewBinding.bind(view)
-        listAdapter = MonsterListAdapter(activity!!.layoutInflater, viewModel)
+        binding = FragmentMonsterBinding.bind(view)
+        listAdapter = MonsterListAdapter(requireActivity().layoutInflater, viewModel)
 
         binding.monsterRecyclerView.adapter = listAdapter
-        viewModel.viewState.observe(this, Observer { state -> bindViewToState(state) })
+        viewModel.viewState.observe(
+            viewLifecycleOwner,
+            Observer { state -> bindViewToState(state) })
         bindUi()
-        viewModel.start(activity!!.application as MonsterLairApplication)
+        viewModel.start(requireActivity().application as MonsterLairApplication)
     }
 
     override fun onResume() {
@@ -79,7 +81,7 @@ class MonsterOverviewFragment : Fragment() {
         val bottomSheetBehavior = BottomSheetBehavior.from(binding.filterBottomSheet)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
         bottomSheetBehavior.peekHeight =
-            context!!.resources.getDimensionPixelSize(R.dimen.bottom_sheet_peek)
+            requireContext().resources.getDimensionPixelSize(R.dimen.bottom_sheet_peek)
     }
 
     private fun bindViewToState(state: MonsterOverviewViewState) {
@@ -87,7 +89,7 @@ class MonsterOverviewFragment : Fragment() {
         binding.searchEditText.setTextIfNotFocused(state.filter?.string)
 
         state.filter?.let { filter ->
-            binding.levelSliderLabel.text = context!!.getString(
+            binding.levelSliderLabel.text = requireContext().getString(
                 R.string.monster_level_range_values,
                 filter.lowerLevel,
                 filter.upperLevel
@@ -116,7 +118,7 @@ class MonsterOverviewFragment : Fragment() {
 
 
     private fun navigateToUrl(url: String) {
-        Uri.parse(url).openCustomTab(context!!)
+        Uri.parse(url).openCustomTab(requireContext())
     }
 
     override fun onPause() {

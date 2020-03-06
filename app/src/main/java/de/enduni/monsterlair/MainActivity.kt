@@ -2,9 +2,12 @@ package de.enduni.monsterlair
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import de.enduni.monsterlair.common.view.EncounterSettingDialog
+import de.enduni.monsterlair.creator.EncounterCreatorActivity
 import de.enduni.monsterlair.databinding.ActivityMainBinding
 import timber.log.Timber
 
@@ -29,6 +32,9 @@ class MainActivity : AppCompatActivity() {
                 )
             )
         )
+
+        setupFabForDestinations(navController)
+
         binding.toolbar.inflateMenu(R.menu.main_menu)
         binding.toolbar.setOnMenuItemClickListener { item ->
             when (item.itemId) {
@@ -46,6 +52,38 @@ class MainActivity : AppCompatActivity() {
                 else -> Timber.d("Menu item clicked but not handled $item")
             }
             false
+        }
+    }
+
+    private fun setupFabForDestinations(navController: NavController) {
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            when (destination.id) {
+                R.id.encounters_fragment -> binding.floatingActionButton.apply {
+                    setImageDrawable(getDrawable(R.drawable.ic_add))
+                    setOnClickListener {
+                        EncounterSettingDialog(
+                            EncounterSettingDialog.Purpose.CREATE,
+                            activity = this@MainActivity
+                        )
+                            .show { result ->
+                                EncounterCreatorActivity.intent(
+                                    this@MainActivity,
+                                    result.encounterName,
+                                    result.numberOfPlayers,
+                                    result.encounterLevel,
+                                    result.encounterDifficulty
+                                ).let { startActivity(it) }
+                            }
+                    }
+                    show()
+                }
+                R.id.encounterExportFragment -> binding.floatingActionButton.apply {
+                    setImageDrawable(getDrawable(R.drawable.ic_print))
+                    show()
+                }
+                else -> binding.floatingActionButton.hide()
+            }
+
         }
     }
 

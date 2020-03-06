@@ -3,19 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/bottom_nav_height">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/encounter_recycler_view"
+        android:id="@+id/monster_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="@dimen/bottom_sheet_peek"
         android:clipToPadding="false"
         android:orientation="vertical"
+        android:paddingTop="8dp"
         android:paddingBottom="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:itemCount="5"
         tools:listitem="@layout/viewholder_monster" />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/filter_bottom_sheet"
@@ -110,43 +113,6 @@
             app:scaleStep="1"
             app:thumbNumber="2" />
 
-        <com.google.android.material.checkbox.MaterialCheckBox
-            android:id="@+id/within_budget_checkbox"
-            style="@style/Widget.MaterialComponents.CompoundButton.CheckBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layoutDirection="rtl"
-            android:text="@string/within_budget"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/level_slider" />
-
-
-        <TextView
-            android:id="@+id/danger_type_filter_label"
-            style="@style/Caption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/danger_filter_label"
-            app:layout_constraintStart_toStartOf="@id/level_slider_label"
-            app:layout_constraintTop_toBottomOf="@id/within_budget_checkbox" />
-
-
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/danger_type_chips"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            app:chipSpacingVertical="@dimen/verticalChipSpacing"
-            app:layout_constraintTop_toBottomOf="@id/danger_type_filter_label">
-
-        </com.google.android.material.chip.ChipGroup>
 
         <TextView
             android:id="@+id/type_filter_label"
@@ -156,7 +122,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/label_filter_monster_types"
             app:layout_constraintStart_toStartOf="@id/level_slider_label"
-            app:layout_constraintTop_toBottomOf="@id/danger_type_chips" />
+            app:layout_constraintTop_toBottomOf="@id/level_slider" />
 
 
         <com.google.android.material.chip.ChipGroup
@@ -172,29 +138,6 @@
         </com.google.android.material.chip.ChipGroup>
 
         <TextView
-            android:id="@+id/complexity_filter_label"
-            style="@style/Caption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/hazard_complexity_encounter_creator"
-            app:layout_constraintStart_toStartOf="@id/level_slider_label"
-            app:layout_constraintTop_toBottomOf="@id/monster_type_chips" />
-
-
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/complexity_chips"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            app:chipSpacingVertical="@dimen/verticalChipSpacing"
-            app:layout_constraintTop_toBottomOf="@id/complexity_filter_label">
-
-        </com.google.android.material.chip.ChipGroup>
-
-        <TextView
             android:id="@+id/sort_by_label"
             style="@style/Caption"
             android:layout_width="wrap_content"
@@ -202,7 +145,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/monster_sort_by"
             app:layout_constraintStart_toStartOf="@id/level_slider_label"
-            app:layout_constraintTop_toBottomOf="@id/complexity_chips" />
+            app:layout_constraintTop_toBottomOf="@id/monster_type_chips" />
 
 
         <com.google.android.material.chip.ChipGroup
@@ -218,5 +161,6 @@
         </com.google.android.material.chip.ChipGroup>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -9,7 +9,6 @@ import de.enduni.monsterlair.encounters.domain.CreateEncounterTemplateUseCase
 import de.enduni.monsterlair.encounters.domain.DeleteEncounterUseCase
 import de.enduni.monsterlair.encounters.domain.RetrieveEncountersUseCase
 import de.enduni.monsterlair.encounters.domain.model.Encounter
-import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 import de.enduni.monsterlair.encounters.view.adapter.EncounterViewHolder
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
@@ -53,35 +52,6 @@ class EncounterViewModel(
         }
     }
 
-    fun setLevel(levelString: String) {
-        if (levelString.isBlank())
-            return
-        val level = levelString.toIntOrNull()
-        val viewState = encounterState.copy(
-            levelOfPlayers = level,
-            levelValid = IntRange(0, 20).contains(level)
-        )
-        postNewStateIfDifferent(viewState)
-    }
-
-
-    fun setNumber(numberString: String) {
-        if (numberString.isBlank())
-            return
-        val number = numberString.toIntOrNull()
-        val viewState = encounterState.copy(
-            numberOfPlayers = number,
-            numberValid = IntRange(0, 20).contains(number)
-        )
-        postNewStateIfDifferent(viewState)
-    }
-
-    fun setDifficulty(difficulty: EncounterDifficulty) {
-        val viewState = encounterState.copy(
-            difficulty = difficulty
-        )
-        postNewStateIfDifferent(viewState)
-    }
 
     private fun postNewStateIfDifferent(newState: EncounterState) {
         if (encounterState != newState) {
@@ -94,6 +64,7 @@ class EncounterViewModel(
         encounters.find { it.id == id }?.let {
             _actions.postValue(
                 EncounterAction.EncounterSelectedAction(
+                    encounterName = it.name,
                     encounterId = it.id!!,
                     encounterLevel = it.level,
                     numberOfPlayers = it.numberOfPlayers,

@@ -1,11 +1,11 @@
-package de.enduni.monsterlair.encounters.creator.view.adapter
+package de.enduni.monsterlair.creator.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayModel
+import de.enduni.monsterlair.creator.view.EncounterCreatorDisplayModel
 
 class EncounterCreatorListAdapter(
     private val layoutInflater: LayoutInflater,
@@ -95,7 +95,7 @@ class EncounterCreatorDiffCallback : DiffUtil.ItemCallback<EncounterCreatorDispl
             return oldItem.currentBudget == newItem.currentBudget
         }
         if (oldItem is EncounterCreatorDisplayModel.EncounterDetail && newItem is EncounterCreatorDisplayModel.EncounterDetail) {
-            return oldItem.name == newItem.name
+            return oldItem == newItem
         }
         if (oldItem is EncounterCreatorDisplayModel.Danger && newItem is EncounterCreatorDisplayModel.Danger) {
             return true

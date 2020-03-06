@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.encounters.creator.view
+package de.enduni.monsterlair.creator.view
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes

@@ -1,7 +1,7 @@
-package de.enduni.monsterlair.encounters.creator.domain
+package de.enduni.monsterlair.creator.domain
 
-import de.enduni.monsterlair.encounters.creator.view.DangerType
-import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorFilter
+import de.enduni.monsterlair.creator.view.DangerType
+import de.enduni.monsterlair.creator.view.EncounterCreatorFilter
 import de.enduni.monsterlair.encounters.domain.model.Encounter
 import de.enduni.monsterlair.encounters.domain.model.MonsterWithRole
 import de.enduni.monsterlair.encounters.persistence.MonsterWithRoleMapper

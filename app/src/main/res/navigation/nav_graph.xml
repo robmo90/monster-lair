@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/monster_overview_fragment"
-        android:name="de.enduni.monsterlair.monsters.MonsterOverviewFragment"
+        android:name="de.enduni.monsterlair.monsters.MonsterFragment"
         android:label="@string/fragment_monsters"
-        tools:layout="@layout/fragment_monster_overview" />
+        tools:layout="@layout/fragment_monster" />
 
     <fragment
         android:id="@+id/encounters_fragment"
@@ -17,15 +17,6 @@
         android:label="@string/fragment_encounters"
         tools:layout="@layout/fragment_encounters">
 
-        <action
-            android:id="@+id/open_encounter_creator_action"
-            app:destination="@id/encounterCreatorFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right">
-
-        </action>
         <action
             android:id="@+id/export_encounter_action"
             app:destination="@id/encounterExportFragment"
@@ -42,30 +33,7 @@
         android:label="@string/fragment_hazards"
         tools:layout="@layout/fragment_hazards" />
 
-    <fragment
-        android:id="@+id/encounterCreatorFragment"
-        android:name="de.enduni.monsterlair.encounters.creator.EncounterCreatorFragment"
-        android:label="@string/fragment_encounter_creator"
-        tools:layout="@layout/fragment_encounter_creator">
 
-        <argument
-            android:name="encounter_id"
-            android:defaultValue="-1L"
-            app:argType="long" />
-        <argument
-            android:name="encounter_level"
-            android:defaultValue="1"
-            app:argType="integer" />
-        <argument
-            android:name="number_of_players"
-            android:defaultValue="1"
-            app:argType="integer" />
-        <argument
-            android:name="encounter_difficulty"
-            android:defaultValue="TRIVIAL"
-            app:argType="de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty" />
-
-    </fragment>
     <fragment
         android:id="@+id/encounterExportFragment"
         android:name="de.enduni.monsterlair.encounters.export.EncounterExportFragment"

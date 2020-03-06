@@ -1,10 +1,10 @@
-package de.enduni.monsterlair.encounters.creator.view.adapter
+package de.enduni.monsterlair.creator.view.adapter
 
 import android.view.View
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.getStringRes
+import de.enduni.monsterlair.creator.view.EncounterCreatorDisplayModel
 import de.enduni.monsterlair.databinding.ViewholderEncounterBudgetBinding
-import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayModel
 
 
 class EncounterBudgetViewHolder(

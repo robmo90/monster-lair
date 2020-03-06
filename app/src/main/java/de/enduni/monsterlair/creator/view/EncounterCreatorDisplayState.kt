@@ -1,7 +1,8 @@
-package de.enduni.monsterlair.encounters.creator.view
+package de.enduni.monsterlair.creator.view
 
 import de.enduni.monsterlair.common.domain.Complexity
 import de.enduni.monsterlair.common.domain.MonsterType
+import de.enduni.monsterlair.encounters.domain.model.Encounter
 import de.enduni.monsterlair.monsters.view.MonsterFilter
 import de.enduni.monsterlair.monsters.view.SortBy
 
@@ -25,6 +26,7 @@ data class EncounterCreatorFilter(
 
 sealed class EncounterCreatorAction {
 
+    class EditEncounterClicked(val encounter: Encounter) : EncounterCreatorAction()
     class DangerLinkClicked(val url: String) : EncounterCreatorAction()
     class DangerAdded(val name: String) : EncounterCreatorAction()
     object EncounterSaved : EncounterCreatorAction()

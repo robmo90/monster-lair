@@ -1,11 +1,11 @@
-package de.enduni.monsterlair.encounters.creator.view.adapter
+package de.enduni.monsterlair.creator.view.adapter
 
 import android.view.View
 import coil.api.load
 import de.enduni.monsterlair.R
+import de.enduni.monsterlair.creator.view.DangerType
+import de.enduni.monsterlair.creator.view.EncounterCreatorDisplayModel
 import de.enduni.monsterlair.databinding.ViewholderDangerBinding
-import de.enduni.monsterlair.encounters.creator.view.DangerType
-import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayModel
 
 
 class DangerViewHolder(

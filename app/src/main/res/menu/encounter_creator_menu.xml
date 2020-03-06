@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/creator_menu_edit"
+        android:icon="@drawable/ic_create"
+        app:showAsAction="never"
+        android:title="@string/edit_encounter" />
+
+    <item
+        android:id="@+id/creator_menu_save"
+        android:icon="@drawable/ic_save_white"
+        app:showAsAction="ifRoom"
+        android:title="@string/save_encounter" />
+
+    <item
+        android:id="@+id/creator_menu_random_encounter"
+        android:icon="@drawable/ic_random"
+        android:title="@string/random_encounter"
+        app:showAsAction="never" />
+</menu>

@@ -7,9 +7,9 @@ import de.enduni.monsterlair.common.datasource.hazard.HazardDataSource
 import de.enduni.monsterlair.common.persistence.database.HazardEntityMapper
 import de.enduni.monsterlair.common.persistence.database.MonsterDatabase
 import de.enduni.monsterlair.common.persistence.database.MonsterDatabaseInitializer
-import de.enduni.monsterlair.encounters.creator.domain.*
-import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorDisplayModelMapper
-import de.enduni.monsterlair.encounters.creator.view.EncounterCreatorViewModel
+import de.enduni.monsterlair.creator.domain.*
+import de.enduni.monsterlair.creator.view.EncounterCreatorDisplayModelMapper
+import de.enduni.monsterlair.creator.view.EncounterCreatorViewModel
 import de.enduni.monsterlair.encounters.domain.CreateEncounterTemplateUseCase
 import de.enduni.monsterlair.encounters.domain.DeleteEncounterUseCase
 import de.enduni.monsterlair.encounters.domain.RetrieveEncountersUseCase

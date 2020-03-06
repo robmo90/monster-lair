@@ -40,10 +40,10 @@ class HazardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentHazardsBinding.bind(view)
-        listAdapter = HazardListAdapter(activity!!.layoutInflater, viewModel)
+        listAdapter = HazardListAdapter(requireActivity().layoutInflater, viewModel)
 
         binding.hazardRecyclerView.adapter = listAdapter
-        viewModel.viewState.observe(this, Observer { bindViewToState(it) })
+        viewModel.viewState.observe(viewLifecycleOwner, Observer { bindViewToState(it) })
         bindUi()
     }
 
@@ -77,13 +77,13 @@ class HazardFragment : Fragment() {
         val bottomSheetBehavior = BottomSheetBehavior.from(binding.filterBottomSheet)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
         bottomSheetBehavior.peekHeight =
-            context!!.resources.getDimensionPixelSize(R.dimen.bottom_sheet_peek)
+            requireContext().resources.getDimensionPixelSize(R.dimen.bottom_sheet_peek)
     }
 
     private fun bindViewToState(state: HazardOverviewViewState) {
         listAdapter.submitList(state.hazards)
         state.hazardFilter?.let { filter ->
-            binding.levelSliderLabel.text = context!!.getString(
+            binding.levelSliderLabel.text = requireContext().getString(
                 R.string.monster_level_range_values,
                 filter.lowerLevel,
                 filter.upperLevel
@@ -103,7 +103,8 @@ class HazardFragment : Fragment() {
 
     private fun handleAction(action: HazardOverviewAction?) {
         when (action) {
-            is HazardOverviewAction.HazardSelected -> Uri.parse(action.url).openCustomTab(context!!)
+            is HazardOverviewAction.HazardSelected -> Uri.parse(action.url)
+                .openCustomTab(requireContext())
             else -> Timber.d("Selected this action")
         }
     }
