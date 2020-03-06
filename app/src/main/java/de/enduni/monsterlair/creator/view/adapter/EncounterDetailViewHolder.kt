@@ -30,14 +30,13 @@ class EncounterDetailViewHolder(
             budget.numberOfPlayers,
             itemView.context.resources.getString(displayModel.targetDifficulty.getStringRes())
         )
-        binding.randomButton.setOnClickListener {
+        binding.saveButton.setOnClickListener {
             clickedListener.onSaveClicked()
         }
     }
 
     interface ClickListener {
         fun onSaveClicked()
-        fun onRandomClicked()
     }
 
 }

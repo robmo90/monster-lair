@@ -19,4 +19,15 @@
         <item>@string/difficulty_severe</item>
         <item>@string/difficulty_extreme</item>
     </string-array>
+
+    <string-array name="random_encounter_templates">
+        <item>@string/random_encounter_boss_and_lackeys</item>
+        <item>@string/random_encounter_boss_and_lieutenant</item>
+        <item>@string/random_encounter_elite_enemies</item>
+        <item>@string/random_encounter_lieutenant_and_lackeys</item>
+        <item>@string/random_encounter_mated_pair</item>
+        <item>@string/random_encounter_troop</item>
+        <item>@string/random_encounter_mook_squad</item>
+        <item>@string/random_encounter_random</item>
+    </string-array>
 </resources>

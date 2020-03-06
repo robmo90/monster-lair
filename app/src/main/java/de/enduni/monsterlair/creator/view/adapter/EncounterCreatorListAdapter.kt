@@ -81,7 +81,7 @@ class EncounterCreatorDiffCallback : DiffUtil.ItemCallback<EncounterCreatorDispl
         newItem: EncounterCreatorDisplayModel
     ): Boolean {
         if (oldItem is EncounterCreatorDisplayModel.EncounterDetails && newItem is EncounterCreatorDisplayModel.EncounterDetails) {
-            return oldItem.currentBudget == newItem.currentBudget
+            return oldItem == newItem
         }
         if (oldItem is EncounterCreatorDisplayModel.Danger && newItem is EncounterCreatorDisplayModel.Danger) {
             return true

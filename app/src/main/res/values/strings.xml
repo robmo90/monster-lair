@@ -128,4 +128,15 @@
     <string name="danger_type_monster">Monsters</string>
     <string name="danger_type_hazards">Hazards</string>
 
+
+    <string name="random_encounter_title">Random Encounter Templates</string>
+    <string name="random_encounter_boss_and_lackeys">Boss and Lackeys (120 XP)</string>
+    <string name="random_encounter_boss_and_lieutenant">Boss and Lieutenant (120 XP)</string>
+    <string name="random_encounter_elite_enemies">Elite Enemies (120 XP)</string>
+    <string name="random_encounter_lieutenant_and_lackeys">Lieutenant and Lackeys (80 XP)</string>
+    <string name="random_encounter_mated_pair">Mated Pair (80 XP)</string>
+    <string name="random_encounter_troop">Troop (80 XP)</string>
+    <string name="random_encounter_mook_squad">Mook Squad (60 XP)</string>
+    <string name="random_encounter_random">Completely Random</string>
+
 </resources>

@@ -18,7 +18,7 @@ interface HazardDao {
         sqLiteQuery: SupportSQLiteQuery
     ): List<HazardEntity>
 
-    @RawQuery
+    @RawQuery(observedEntities = [HazardEntity::class])
     fun getFilteredHazardFlow(
         sqLiteQuery: SupportSQLiteQuery
     ): Flow<List<HazardEntity>>

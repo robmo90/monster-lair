@@ -21,7 +21,7 @@ data class EncounterCreatorFilter(
     val complexities: List<Complexity> = listOf(),
     val dangerTypes: List<DangerType> = listOf(),
     val sortBy: SortBy = SortBy.NAME,
-    val withinBudget: Boolean = false
+    val withinBudget: Boolean = true
 )
 
 sealed class EncounterCreatorAction {
@@ -30,5 +30,6 @@ sealed class EncounterCreatorAction {
     class DangerLinkClicked(val url: String) : EncounterCreatorAction()
     class DangerAdded(val name: String) : EncounterCreatorAction()
     object EncounterSaved : EncounterCreatorAction()
+    object ScrollUp : EncounterCreatorAction()
 
 }

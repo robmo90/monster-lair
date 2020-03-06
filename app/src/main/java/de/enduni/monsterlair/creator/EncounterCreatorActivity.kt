@@ -20,6 +20,7 @@ import de.enduni.monsterlair.common.view.*
 import de.enduni.monsterlair.creator.view.EncounterCreatorAction
 import de.enduni.monsterlair.creator.view.EncounterCreatorDisplayState
 import de.enduni.monsterlair.creator.view.EncounterCreatorViewModel
+import de.enduni.monsterlair.creator.view.RandomEncounterDialog
 import de.enduni.monsterlair.creator.view.adapter.EncounterCreatorListAdapter
 import de.enduni.monsterlair.databinding.ActivityEncounterCreatorBinding
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
@@ -83,12 +84,10 @@ class EncounterCreatorActivity : AppCompatActivity() {
                 viewModel.onEditClicked()
                 true
             }
-            R.id.creator_menu_save -> {
-                viewModel.onSaveClicked()
-                true
-            }
             R.id.creator_menu_random_encounter -> {
-                viewModel.onRandomClicked()
+                RandomEncounterDialog().show(this) { randomEncounter ->
+                    viewModel.onRandomClicked(randomEncounter)
+                }
                 true
             }
             android.R.id.home -> {
@@ -198,6 +197,9 @@ class EncounterCreatorActivity : AppCompatActivity() {
                             result.encounterDifficulty
                         )
                     }
+            }
+            is EncounterCreatorAction.ScrollUp -> {
+                binding.encounterRecyclerView.layoutManager?.scrollToPosition(0)
             }
             else -> return
         }
