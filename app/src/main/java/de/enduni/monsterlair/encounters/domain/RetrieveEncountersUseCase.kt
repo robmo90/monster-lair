@@ -6,6 +6,6 @@ class RetrieveEncountersUseCase(
     private val encounterRepository: EncounterRepository
 ) {
 
-    suspend fun execute() = encounterRepository.getEncounters()
+    fun execute() = encounterRepository.getEncounters()
 
 }

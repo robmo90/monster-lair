@@ -2,6 +2,7 @@ package de.enduni.monsterlair.common.persistence
 
 import androidx.room.*
 import androidx.sqlite.db.SupportSQLiteQuery
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface MonsterDao {
@@ -18,6 +19,10 @@ interface MonsterDao {
         sqLiteQuery: SupportSQLiteQuery
     ): List<MonsterEntity>
 
+    @RawQuery(observedEntities = [MonsterEntity::class])
+    fun getFilteredMonsterFlow(
+        sqLiteQuery: SupportSQLiteQuery
+    ): Flow<List<MonsterEntity>>
 
     @Query("SELECT * FROM monsters WHERE id is :id LIMIT 1")
     suspend fun getMonster(id: Long): MonsterEntity

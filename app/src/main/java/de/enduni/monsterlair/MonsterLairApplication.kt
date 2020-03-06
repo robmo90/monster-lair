@@ -14,9 +14,6 @@ class MonsterLairApplication : Application() {
 
     private val databaseInitializer: MonsterDatabaseInitializer by inject()
 
-    private var _databaseInitialized = false
-    val databaseInitialized get() = _databaseInitialized
-
     private val handler = CoroutineExceptionHandler { _, exception ->
         Timber.e(exception, "Caught exception")
     }
@@ -37,7 +34,6 @@ class MonsterLairApplication : Application() {
         MainScope().launch(handler) {
             databaseInitializer.feedMonsters()
             Timber.d("Fed monsters, setup traps")
-            _databaseInitialized = true
         }
 
 

@@ -80,7 +80,7 @@
     <string name="create_encounter">Create</string>
 
     <string name="encounter_details_creator">Level: %d \u2014 Characters: %d \u2014 %s</string>
-    <string name="encounter_details">Level: %d \u2014 Characters: %d \u2014 %s \u2014 %d XP</string>
+    <string name="encounter_details">Level: %d \u2014 Characters: %d \u2014 %s (%d XP) \u2014 Budget: %d XP</string>
 
     <string name="encounter_target_difficulty_label">Difficulty</string>
     <string name="label_encounter_data">Encounter Data</string>

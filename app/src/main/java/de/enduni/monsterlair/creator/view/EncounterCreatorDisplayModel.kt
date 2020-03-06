@@ -19,17 +19,12 @@ sealed class EncounterCreatorDisplayModel {
         val originalType: String
     ) : EncounterCreatorDisplayModel()
 
-    data class EncounterDetail(
-        val name: String,
+    data class EncounterDetails(
+        val currentBudget: Int,
+        val targetBudget: Int,
         val level: Int,
         val numberOfPlayers: Int,
         val targetDifficulty: EncounterDifficulty
-    ) : EncounterCreatorDisplayModel()
-
-    data class EncounterBudget(
-        val currentBudget: Int,
-        val targetBudget: Int,
-        val currentDifficulty: EncounterDifficulty
     ) : EncounterCreatorDisplayModel()
 
     data class DangerForEncounter(

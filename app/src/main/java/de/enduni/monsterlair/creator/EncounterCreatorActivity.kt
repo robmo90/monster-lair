@@ -44,7 +44,7 @@ class EncounterCreatorActivity : AppCompatActivity() {
 
         listAdapter = EncounterCreatorListAdapter(
             layoutInflater, viewModel,
-            viewModel, viewModel, viewModel
+            viewModel, viewModel
         )
 
         binding.encounterRecyclerView.adapter = listAdapter

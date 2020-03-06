@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface EncounterDao {
@@ -18,8 +19,7 @@ interface EncounterDao {
     suspend fun insertHazardsForEncounter(hazardsForEncounter: List<HazardForEncounterEntity>)
 
     @Query("SELECT * FROM encounters ORDER BY id")
-    suspend fun getAllEncounters(): List<EncounterEntity>
-
+    fun getAllEncountersFlow(): Flow<List<EncounterEntity>>
 
     @Query("SELECT * FROM encounters WHERE id is :id LIMIT 1")
     suspend fun getEncounter(id: Long): EncounterEntity

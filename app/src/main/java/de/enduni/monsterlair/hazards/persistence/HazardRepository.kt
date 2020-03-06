@@ -6,6 +6,8 @@ import de.enduni.monsterlair.common.persistence.HazardDao
 import de.enduni.monsterlair.common.persistence.HazardEntity
 import de.enduni.monsterlair.common.persistence.database.HazardEntityMapper
 import de.enduni.monsterlair.hazards.domain.Hazard
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import timber.log.Timber
 
 
@@ -17,10 +19,6 @@ class HazardRepository(
     suspend fun getHazard(id: Long) =
         hazardDao.getHazard(id).let { hazardEntityMapper.toDomain(it) }
 
-    suspend fun getHazards(): List<Hazard> {
-        return hazardDao.getAllHazards().toDomain()
-    }
-
     suspend fun getFilteredHazards(
         filter: String?,
         lowerLevel: Int,
@@ -28,6 +26,28 @@ class HazardRepository(
         sortBy: String,
         complexities: List<Complexity>
     ): List<Hazard> {
+        val query = buildQuery(filter, complexities, lowerLevel, higherLevel, sortBy)
+        return hazardDao.getFilteredHazards(SimpleSQLiteQuery(query)).toDomain()
+    }
+
+    fun getFilteredHazardFlow(
+        filter: String?,
+        lowerLevel: Int,
+        higherLevel: Int,
+        sortBy: String,
+        complexities: List<Complexity>
+    ): Flow<List<Hazard>> {
+        val query = buildQuery(filter, complexities, lowerLevel, higherLevel, sortBy)
+        return hazardDao.getFilteredHazardFlow(SimpleSQLiteQuery(query)).map { it.toDomain() }
+    }
+
+    private fun buildQuery(
+        filter: String?,
+        complexities: List<Complexity>,
+        lowerLevel: Int,
+        higherLevel: Int,
+        sortBy: String
+    ): String {
         val filterString = if (filter.isNullOrEmpty()) "\"%\"" else "\"%${filter}%\""
         val typeFilterString = if (complexities.isEmpty()) {
             ""
@@ -41,7 +61,7 @@ class HazardRepository(
         val query =
             "SELECT * FROM hazards WHERE name LIKE $filterString AND level BETWEEN $lowerLevel AND $higherLevel $typeFilterString ORDER BY $sortBy ASC"
         Timber.v("Using $query")
-        return hazardDao.getFilteredHazards(SimpleSQLiteQuery(query)).toDomain()
+        return query
     }
 
 

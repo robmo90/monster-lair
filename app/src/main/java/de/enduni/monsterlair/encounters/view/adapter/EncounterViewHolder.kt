@@ -22,6 +22,7 @@ class EncounterViewHolder(
             encounter.level,
             encounter.numberOfPlayers,
             itemView.context.getString(encounter.difficulty.getStringRes()),
+            encounter.difficulty.budget,
             encounter.xp
         )
         binding.listItemMonsters.text = encounter.dangers

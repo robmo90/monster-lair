@@ -9,7 +9,6 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import de.enduni.monsterlair.MonsterLairApplication
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.openCustomTab
 import de.enduni.monsterlair.common.setTextIfNotFocused
@@ -49,7 +48,7 @@ class MonsterFragment : Fragment() {
             viewLifecycleOwner,
             Observer { state -> bindViewToState(state) })
         bindUi()
-        viewModel.start(requireActivity().application as MonsterLairApplication)
+        viewModel.start()
     }
 
     override fun onResume() {

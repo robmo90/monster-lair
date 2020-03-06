@@ -1,11 +1,9 @@
 package de.enduni.monsterlair.monsters.view
 
-import android.os.SystemClock
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import de.enduni.monsterlair.MonsterLairApplication
 import de.enduni.monsterlair.common.domain.MonsterType
 import de.enduni.monsterlair.common.view.ActionLiveData
 import de.enduni.monsterlair.monsters.domain.Monster
@@ -14,6 +12,8 @@ import de.enduni.monsterlair.monsters.domain.RetrieveMonstersUseCase
 import de.enduni.monsterlair.monsters.view.adapter.MonsterViewHolder
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
@@ -35,12 +35,8 @@ class MonsterViewModel(
 
     private var filter = MonsterFilter()
 
-    fun start(monsterLairApplication: MonsterLairApplication) {
+    fun start() {
         viewModelScope.launch(Dispatchers.Default) {
-            while (monsterLairApplication.databaseInitialized.not()) {
-                Timber.d("Waiting to database to be setup")
-                SystemClock.sleep(50)
-            }
             filterMonsters()
         }
     }
@@ -72,12 +68,14 @@ class MonsterViewModel(
 
     private suspend fun filterMonsters() {
         Timber.d("Starting monster filter with $filter")
-        val monsters = retrieveMonstersUseCase.execute(filter).toDisplayModel()
-        val state = MonsterOverviewViewState(
-            monsters = monsters,
-            filter = filter
-        )
-        _viewState.postValue(state)
+        retrieveMonstersUseCase.execute(filter).map { it.toDisplayModel() }
+            .collect { monsters ->
+                val state = MonsterOverviewViewState(
+                    monsters = monsters,
+                    filter = filter
+                )
+                _viewState.postValue(state)
+            }
     }
 
 

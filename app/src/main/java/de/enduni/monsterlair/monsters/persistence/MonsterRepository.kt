@@ -5,6 +5,8 @@ import de.enduni.monsterlair.common.domain.MonsterType
 import de.enduni.monsterlair.common.persistence.MonsterDao
 import de.enduni.monsterlair.common.persistence.MonsterEntity
 import de.enduni.monsterlair.monsters.domain.Monster
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import timber.log.Timber
 
 
@@ -23,6 +25,29 @@ class MonsterRepository(
         sortBy: String,
         monsterTypes: List<MonsterType>
     ): List<Monster> {
+        val query = buildQuery(filter, monsterTypes, lowerLevel, higherLevel, sortBy)
+        return monsterDao.getFilteredMonsters(SimpleSQLiteQuery(query)).toDomain()
+    }
+
+    fun getMonsterFlow(
+        filter: String?,
+        lowerLevel: Int,
+        higherLevel: Int,
+        sortBy: String,
+        monsterTypes: List<MonsterType>
+    ): Flow<List<Monster>> {
+        val query = buildQuery(filter, monsterTypes, lowerLevel, higherLevel, sortBy)
+        return monsterDao.getFilteredMonsterFlow(SimpleSQLiteQuery(query))
+            .map { it.toDomain() }
+    }
+
+    private fun buildQuery(
+        filter: String?,
+        monsterTypes: List<MonsterType>,
+        lowerLevel: Int,
+        higherLevel: Int,
+        sortBy: String
+    ): String {
         val filterString = if (filter.isNullOrEmpty()) "\"%\"" else "\"%${filter}%\""
         val typeFilterString = if (monsterTypes.isEmpty()) {
             ""
@@ -39,7 +64,7 @@ class MonsterRepository(
                 typeFilterString +
                 "ORDER BY $sortBy ASC"
         Timber.v("Using $query")
-        return monsterDao.getFilteredMonsters(SimpleSQLiteQuery(query)).toDomain()
+        return query
     }
 
 

@@ -11,6 +11,8 @@ import de.enduni.monsterlair.hazards.domain.RetrieveHazardsUseCase
 import de.enduni.monsterlair.hazards.view.adapter.HazardViewHolder
 import de.enduni.monsterlair.monsters.view.SortBy
 import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
@@ -71,12 +73,14 @@ class HazardViewModel(
 
     private suspend fun filterHazards() {
         Timber.d("Starting monster filter with $filter")
-        val hazards = retrieveHazardsUseCase.execute(filter).toDisplayModel()
-        val state = HazardOverviewViewState(
-            hazards = hazards,
-            hazardFilter = filter
-        )
-        _viewState.postValue(state)
+        retrieveHazardsUseCase.execute(filter).map { it.toDisplayModel() }.collect { hazards ->
+            val state = HazardOverviewViewState(
+                hazards = hazards,
+                hazardFilter = filter
+            )
+            _viewState.postValue(state)
+        }
+
     }
 
     override fun onSelect(hazardId: Long) {

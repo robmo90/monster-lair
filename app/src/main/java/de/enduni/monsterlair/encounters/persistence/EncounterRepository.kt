@@ -4,6 +4,8 @@ import de.enduni.monsterlair.common.persistence.*
 import de.enduni.monsterlair.encounters.domain.model.Encounter
 import de.enduni.monsterlair.encounters.domain.model.EncounterHazard
 import de.enduni.monsterlair.encounters.domain.model.EncounterMonster
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 
 
 class EncounterRepository(
@@ -24,9 +26,9 @@ class EncounterRepository(
         encounterDao.insertHazardsForEncounter(hazards)
     }
 
-    suspend fun getEncounters(): List<Encounter> {
-        return encounterDao.getAllEncounters().map {
-            toDomainModel(it)
+    fun getEncounters(): Flow<List<Encounter>> {
+        return encounterDao.getAllEncountersFlow().map { entities ->
+            entities.map { toDomainModel(it) }
         }
     }
 

@@ -11,6 +11,7 @@ import de.enduni.monsterlair.encounters.domain.RetrieveEncountersUseCase
 import de.enduni.monsterlair.encounters.domain.model.Encounter
 import de.enduni.monsterlair.encounters.view.adapter.EncounterViewHolder
 import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
@@ -20,10 +21,12 @@ class EncounterViewModel(
     private val deleteEncounterUseCase: DeleteEncounterUseCase,
     private val mapper: EncounterDisplayModelMapper
 ) : ViewModel(), EncounterViewHolder.OnClickListener {
-    private val _viewState = MutableLiveData<EncounterState>()
 
+    private val _viewState: MutableLiveData<EncounterState> by lazy {
+        fetchEncounters()
+        MutableLiveData(EncounterState())
+    }
     val viewState: LiveData<EncounterState> get() = _viewState
-    private var encounterState = EncounterState()
 
     private val _actions = ActionLiveData<EncounterAction>()
     val actions: LiveData<EncounterAction> get() = _actions
@@ -34,29 +37,13 @@ class EncounterViewModel(
         Timber.e(exception, "Caught exception")
     }
 
-    init {
-        _viewState.postValue(encounterState)
-    }
-
     fun fetchEncounters() {
         viewModelScope.launch(handler) {
-            encounters = retrieveEncountersUseCase.execute()
-            val encounterDisplayModels = encounters.map {
-                mapper.mapToDisplayModel(it)
+            retrieveEncountersUseCase.execute().collect { encounters ->
+                this@EncounterViewModel.encounters = encounters
+                encounters.map { mapper.mapToDisplayModel(it) }
+                    .apply { _viewState.postValue(EncounterState(this)) }
             }
-            postNewStateIfDifferent(
-                encounterState.copy(
-                    encounters = encounterDisplayModels
-                )
-            )
-        }
-    }
-
-
-    private fun postNewStateIfDifferent(newState: EncounterState) {
-        if (encounterState != newState) {
-            encounterState = newState
-            _viewState.postValue(newState)
         }
     }
 
@@ -82,10 +69,7 @@ class EncounterViewModel(
     }
 
     fun onEncounterDeleted(id: Long) {
-        viewModelScope.launch(handler) {
-            deleteEncounterUseCase.execute(id)
-            fetchEncounters()
-        }
+        viewModelScope.launch(handler) { deleteEncounterUseCase.execute(id) }
     }
 
     fun onEncounterExport(id: Long) {

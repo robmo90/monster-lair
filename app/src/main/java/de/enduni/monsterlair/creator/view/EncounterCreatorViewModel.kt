@@ -11,7 +11,6 @@ import de.enduni.monsterlair.common.view.ActionLiveData
 import de.enduni.monsterlair.creator.domain.*
 import de.enduni.monsterlair.creator.view.adapter.DangerForEncounterViewHolder
 import de.enduni.monsterlair.creator.view.adapter.DangerViewHolder
-import de.enduni.monsterlair.creator.view.adapter.EncounterBudgetViewHolder
 import de.enduni.monsterlair.creator.view.adapter.EncounterDetailViewHolder
 import de.enduni.monsterlair.encounters.domain.model.*
 import de.enduni.monsterlair.monsters.view.SortBy
@@ -29,10 +28,9 @@ class EncounterCreatorViewModel(
     private val mapper: EncounterCreatorDisplayModelMapper,
     private val storeEncounterUseCase: StoreEncounterUseCase
 ) : ViewModel(),
-    EncounterBudgetViewHolder.ClickListener,
+    EncounterDetailViewHolder.ClickListener,
     DangerViewHolder.DangerSelectedListener,
-    DangerForEncounterViewHolder.DangerForEncounterListener,
-    EncounterDetailViewHolder.OnNameChangedListener {
+    DangerForEncounterViewHolder.DangerForEncounterListener {
 
     private val _viewState = MutableLiveData<EncounterCreatorDisplayState>()
     val viewState: LiveData<EncounterCreatorDisplayState> get() = _viewState
@@ -158,7 +156,7 @@ class EncounterCreatorViewModel(
                 .sortedBy { it.name }
 
             val list: List<EncounterCreatorDisplayModel> =
-                encounter.toDetailDisplayModel() +
+//                encounter.toDetailDisplayModel() +
                         dangersForEncounter +
                         encounter.toBudgetDisplayModel() +
                         dangers
@@ -186,10 +184,6 @@ class EncounterCreatorViewModel(
 
     private fun List<EncounterHazard>.toEncounterHazardDisplayModel(): List<EncounterCreatorDisplayModel.DangerForEncounter> {
         return this.map { mapper.toDanger(it) }
-    }
-
-    private fun Encounter.toDetailDisplayModel(): List<EncounterCreatorDisplayModel> {
-        return listOf(mapper.toDetails(this))
     }
 
     private fun Encounter.toBudgetDisplayModel(): List<EncounterCreatorDisplayModel> {
@@ -277,11 +271,6 @@ class EncounterCreatorViewModel(
             }
             encounterChanged()
         }
-    }
-
-    override fun onNameChanged(name: String) {
-        encounter.name = name
-        postCurrentState()
     }
 
     private suspend fun findMonsterWithId(id: Long): MonsterWithRole? =

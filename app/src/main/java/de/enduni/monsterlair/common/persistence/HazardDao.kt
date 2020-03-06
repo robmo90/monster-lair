@@ -2,6 +2,7 @@ package de.enduni.monsterlair.common.persistence
 
 import androidx.room.*
 import androidx.sqlite.db.SupportSQLiteQuery
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface HazardDao {
@@ -16,6 +17,12 @@ interface HazardDao {
     suspend fun getFilteredHazards(
         sqLiteQuery: SupportSQLiteQuery
     ): List<HazardEntity>
+
+    @RawQuery
+    fun getFilteredHazardFlow(
+        sqLiteQuery: SupportSQLiteQuery
+    ): Flow<List<HazardEntity>>
+
 
     @Query("SELECT * FROM hazards WHERE id is :id LIMIT 1")
     suspend fun getHazard(id: Long): HazardEntity
