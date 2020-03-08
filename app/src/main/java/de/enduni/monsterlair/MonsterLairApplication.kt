@@ -27,7 +27,15 @@ class MonsterLairApplication : Application() {
 
         startKoin {
             androidContext(this@MonsterLairApplication)
-            modules(listOf(databaseModule, hazardsModule, monsterModule, encounterModule))
+            modules(
+                listOf(
+                    databaseModule,
+                    hazardsModule,
+                    monsterModule,
+                    encounterModule,
+                    appModule
+                )
+            )
         }
         Timber.d("Initialized Koin")
 

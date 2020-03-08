@@ -9,12 +9,16 @@ import androidx.navigation.ui.setupWithNavController
 import de.enduni.monsterlair.common.view.EncounterSettingDialog
 import de.enduni.monsterlair.creator.EncounterCreatorActivity
 import de.enduni.monsterlair.databinding.ActivityMainBinding
+import de.enduni.monsterlair.update.UpdateManager
+import org.koin.android.ext.android.inject
 import timber.log.Timber
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    private val updateManager: UpdateManager by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +57,8 @@ class MainActivity : AppCompatActivity() {
             }
             false
         }
+
+        updateManager.showUpdateInformationDialog(this)
     }
 
     private fun setupFabForDestinations(navController: NavController) {

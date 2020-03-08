@@ -143,6 +143,7 @@
     <string name="random_encounter_message">These templates pick randomly from the filtered monsters to create an encounter fitting the \"Quick Adventure Groups\" from the Gamemastery Guide by Paizo. They try to scale with the number of players, use the same family and type of monsters and keep the number of monsters used to a minimum to make the encounter easy to prep and thematically appropriate.</string>
     <string name="random_encounter_information">Info</string>
     <string name="random_encounter_information_title">How it works</string>
+    <string name="random_encounter_template_error">Sorry, I could not create a random encounter. Maybe try to widen your filter choices.</string>
 
     <string name="custom_monster_hint">This is one of your custom monsters and has no Archive of Nethys entry.</string>
     <string name="custom_monster_create_title">Add Custom Monster</string>
@@ -159,5 +160,8 @@
     <string name="custom_monster_create_empty_name">Please enter a valid name.</string>
     <string name="custom_monster_create_empty_type">Please enter a valid type.</string>
     <string name="custom_monster_save_confirmation">%s saved.</string>
+
+    <string name="whats_new">What\'s new (%s)</string>
+    <string name="whats_new_8">- Random Encounters now include templates from the GMG.\n- Custom monsters can now be added.\n- Revamp of the encounter and creator pages.</string>
 
 </resources>

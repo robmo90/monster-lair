@@ -7,8 +7,8 @@ import kotlin.math.min
 data class Encounter(
     val id: Long? = null,
     var name: String = "Encounter",
-    val monsters: MutableList<EncounterMonster> = mutableListOf(),
-    val hazards: MutableList<EncounterHazard> = mutableListOf(),
+    var monsters: MutableList<EncounterMonster> = mutableListOf(),
+    var hazards: MutableList<EncounterHazard> = mutableListOf(),
     var level: Int,
     var numberOfPlayers: Int,
     var targetDifficulty: EncounterDifficulty

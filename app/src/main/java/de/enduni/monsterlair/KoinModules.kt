@@ -31,6 +31,7 @@ import de.enduni.monsterlair.monsters.persistence.MonsterEntityMapper
 import de.enduni.monsterlair.monsters.persistence.MonsterRepository
 import de.enduni.monsterlair.monsters.view.MonsterListDisplayModelMapper
 import de.enduni.monsterlair.monsters.view.MonsterViewModel
+import de.enduni.monsterlair.update.UpdateManager
 import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -61,6 +62,12 @@ val databaseModule = module(createdAtStart = true) {
             get()
         )
     }
+}
+
+val appModule = module {
+
+    single { UpdateManager(androidApplication()) }
+
 }
 
 val hazardsModule = module {

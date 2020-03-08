@@ -60,6 +60,11 @@ class EncounterCreatorViewModel(
 
     private val handler = CoroutineExceptionHandler { _, exception ->
         Timber.e(exception, "Caught exception")
+        if (exception is RandomEncounterException) {
+            _viewState.value?.copy(error = EncounterCreatorError.RANDOM_ENCOUNTER_ERROR)?.let {
+                _viewState.postValue(it)
+            }
+        }
     }
 
     fun start(

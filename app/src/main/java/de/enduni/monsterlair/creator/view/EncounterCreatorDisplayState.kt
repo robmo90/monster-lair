@@ -11,8 +11,13 @@ import de.enduni.monsterlair.monsters.view.SortBy
 data class EncounterCreatorDisplayState(
     val encounterName: String,
     val list: List<EncounterCreatorDisplayModel> = listOf(),
-    val filter: EncounterCreatorFilter? = null
+    val filter: EncounterCreatorFilter? = null,
+    val error: EncounterCreatorError? = null
 )
+
+enum class EncounterCreatorError {
+    RANDOM_ENCOUNTER_ERROR
+}
 
 data class EncounterCreatorFilter(
     val string: String? = null,

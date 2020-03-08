@@ -17,10 +17,7 @@ import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.openCustomTab
 import de.enduni.monsterlair.common.setTextIfNotFocused
 import de.enduni.monsterlair.common.view.*
-import de.enduni.monsterlair.creator.view.EncounterCreatorAction
-import de.enduni.monsterlair.creator.view.EncounterCreatorDisplayState
-import de.enduni.monsterlair.creator.view.EncounterCreatorViewModel
-import de.enduni.monsterlair.creator.view.RandomEncounterDialog
+import de.enduni.monsterlair.creator.view.*
 import de.enduni.monsterlair.creator.view.adapter.EncounterCreatorListAdapter
 import de.enduni.monsterlair.databinding.ActivityEncounterCreatorBinding
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
@@ -162,6 +159,15 @@ class EncounterCreatorActivity : AppCompatActivity() {
             ) { viewModel.adjustSortBy(it) }
         }
         state.filter?.withinBudget?.let { binding.withinBudgetCheckbox.isChecked = it }
+        state.error?.let {
+            when (it) {
+                EncounterCreatorError.RANDOM_ENCOUNTER_ERROR -> Toast.makeText(
+                    this,
+                    R.string.random_encounter_template_error,
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
     }
 
     private fun handleAction(action: EncounterCreatorAction?) {

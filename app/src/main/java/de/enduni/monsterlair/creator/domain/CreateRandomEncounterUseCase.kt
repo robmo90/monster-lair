@@ -15,23 +15,36 @@ class CreateRandomEncounterUseCase {
         hazards: List<HazardWithRole>,
         randomEncounter: RandomEncounter
     ) {
+        val startMonsters = encounter.monsters.toMutableList()
+        val startHazards = encounter.hazards.toMutableList()
         encounter.clear()
-        when (randomEncounter) {
-            RandomEncounter.BOSS_AND_LACKEYS -> staffBossAndLackeysEncounter(encounter, monsters)
-            RandomEncounter.BOSS_AND_LIEUTENANT -> staffBossAndLieutenantEncounter(
-                encounter,
-                monsters
-            )
-            RandomEncounter.ELITE_ENEMIES -> staffEliteEnemiesEncounter(encounter, monsters)
-            RandomEncounter.LIEUTENANT_AND_LACKEYS -> staffLieutenantAndLackeysEncounter(
-                encounter,
-                monsters
-            )
-            RandomEncounter.MATED_PAIR -> staffMatedPairEncounter(encounter, monsters)
-            RandomEncounter.TROOP -> staffTroopEncounter(encounter, monsters)
-            RandomEncounter.MOOK_SQUAD -> staffMookSquadEncounter(encounter, monsters)
-            RandomEncounter.RANDOM -> staffRandomEncounter(encounter, monsters, hazards)
+        try {
+            when (randomEncounter) {
+                RandomEncounter.BOSS_AND_LACKEYS -> staffBossAndLackeysEncounter(
+                    encounter,
+                    monsters
+                )
+                RandomEncounter.BOSS_AND_LIEUTENANT -> staffBossAndLieutenantEncounter(
+                    encounter,
+                    monsters
+                )
+                RandomEncounter.ELITE_ENEMIES -> staffEliteEnemiesEncounter(encounter, monsters)
+                RandomEncounter.LIEUTENANT_AND_LACKEYS -> staffLieutenantAndLackeysEncounter(
+                    encounter,
+                    monsters
+                )
+                RandomEncounter.MATED_PAIR -> staffMatedPairEncounter(encounter, monsters)
+                RandomEncounter.TROOP -> staffTroopEncounter(encounter, monsters)
+                RandomEncounter.MOOK_SQUAD -> staffMookSquadEncounter(encounter, monsters)
+                RandomEncounter.RANDOM -> staffRandomEncounter(encounter, monsters, hazards)
+            }
+        } catch (ex: Exception) {
+            encounter.clear()
+            encounter.monsters = startMonsters
+            encounter.hazards = startHazards
+            throw RandomEncounterException()
         }
+
     }
 
     private fun staffBossAndLackeysEncounter(
@@ -172,3 +185,5 @@ class CreateRandomEncounterUseCase {
         return monsterAvailable || hazardsAvailable
     }
 }
+
+class RandomEncounterException : Throwable()
