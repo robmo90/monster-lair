@@ -21,25 +21,34 @@ class MonsterEntityMapper {
     fun toModel(entity: MonsterEntity) = Monster(
         id = entity.id,
         name = entity.name,
-        url = entity.url,
+        url = entity.url.nullIfEmpty(),
         level = entity.level,
         type = entity.type,
         family = entity.family,
-        alignment = entity.alignment,
-        size = entity.size,
+        alignment = entity.alignment.nullIfEmpty(),
+        size = entity.size.nullIfEmpty(),
         source = entity.source
     )
 
     fun toEntity(dto: Monster, id: Long) = MonsterEntity(
         id = id,
         name = dto.name,
-        url = dto.url,
+        url = dto.url ?: "",
         level = dto.level,
         type = dto.type,
         family = dto.family,
-        alignment = dto.alignment,
-        size = dto.size,
+        alignment = dto.alignment ?: "",
+        size = dto.size ?: "",
         source = dto.source
     )
+
+    private fun String.nullIfEmpty(): String? {
+        return if (this.isBlank()) {
+            null
+        } else {
+            this
+        }
+    }
+
 
 }
