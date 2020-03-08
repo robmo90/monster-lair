@@ -3,9 +3,11 @@ package de.enduni.monsterlair.encounters.domain
 import android.content.Context
 import com.samskivert.mustache.Mustache
 import de.enduni.monsterlair.R
+import de.enduni.monsterlair.common.domain.CustomMonster
 import de.enduni.monsterlair.common.getStringRes
 import de.enduni.monsterlair.common.getXp
 import de.enduni.monsterlair.encounters.domain.model.Encounter
+import de.enduni.monsterlair.encounters.domain.model.EncounterMonster
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -36,7 +38,7 @@ class CreateEncounterTemplateUseCase(
                         family = it.monster.family,
                         level = it.monster.level,
                         role = context.getString(it.monster.role.getStringRes()),
-                        source = it.monster.source,
+                        source = getSource(it),
                         xp = it.monster.role.xp
                     )
                 },
@@ -53,6 +55,9 @@ class CreateEncounterTemplateUseCase(
             )
             return@withContext template.execute(templateData)
         }
+
+    private fun getSource(it: EncounterMonster) =
+        if (it.monster.source == CustomMonster.SOURCE) "Custom Monster" else it.monster.source
 
     data class EncounterTemplateData(
         val name: String,

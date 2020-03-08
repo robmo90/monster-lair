@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.Html
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -13,6 +14,7 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.SimpleItemAnimator
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.openCustomTab
 import de.enduni.monsterlair.common.setTextIfNotFocused
@@ -55,6 +57,7 @@ class EncounterCreatorActivity : AppCompatActivity() {
         bindUi()
 
         viewModel.start(
+            encounterName = intent.getStringExtra(EXTRA_ENCOUNTER_NAME)!!,
             numberOfPlayers = intent.getIntExtra(EXTRA_NUMBER_OF_PLAYERS, 4),
             levelOfEncounter = intent.getIntExtra(EXTRA_ENCOUNTER_LEVEL, 4),
             targetDifficulty = intent.getSerializableExtra(EXTRA_DIFFICULTY) as EncounterDifficulty?
@@ -79,6 +82,10 @@ class EncounterCreatorActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.creator_menu_edit -> {
                 viewModel.onEditClicked()
+                true
+            }
+            R.id.creator_menu_treasure_recommendation -> {
+                viewModel.onTreasureRecommendationClicked()
                 true
             }
             R.id.creator_menu_random_encounter -> {
@@ -212,6 +219,13 @@ class EncounterCreatorActivity : AppCompatActivity() {
             }
             is EncounterCreatorAction.OnEditCustomMonsterClicked -> {
                 CreateMonsterDialog(this, viewModel, action.monster).show()
+            }
+            is EncounterCreatorAction.OnGiveTreasureRecommendationClicked -> {
+                MaterialAlertDialogBuilder(this)
+                    .setTitle(R.string.treasure_recommendation)
+                    .setMessage(Html.fromHtml(action.htmlTemplate, Html.FROM_HTML_MODE_COMPACT))
+                    .setPositiveButton(android.R.string.ok) { _, _ -> }
+                    .show()
             }
             else -> return
         }

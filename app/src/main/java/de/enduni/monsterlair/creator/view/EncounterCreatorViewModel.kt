@@ -36,7 +36,8 @@ class EncounterCreatorViewModel(
     private val deleteMonsterUseCase: DeleteMonsterUseCase,
     private val retrieveMonsterUseCase: RetrieveMonsterUseCase,
     private val mapper: EncounterCreatorDisplayModelMapper,
-    private val storeEncounterUseCase: StoreEncounterUseCase
+    private val storeEncounterUseCase: StoreEncounterUseCase,
+    private val createTreasureRecommendationUseCase: CreateTreasureRecommendationUseCase
 ) : ViewModel(),
     EncounterDetailViewHolder.ClickListener,
     DangerViewHolder.DangerSelectedListener,
@@ -68,6 +69,7 @@ class EncounterCreatorViewModel(
     }
 
     fun start(
+        encounterName: String,
         numberOfPlayers: Int,
         levelOfEncounter: Int,
         targetDifficulty: EncounterDifficulty,
@@ -78,6 +80,7 @@ class EncounterCreatorViewModel(
         }
         if (encounterId == -1L) {
             encounter = Encounter(
+                name = encounterName,
                 numberOfPlayers = numberOfPlayers,
                 level = levelOfEncounter,
                 targetDifficulty = targetDifficulty
@@ -331,8 +334,16 @@ class EncounterCreatorViewModel(
     ) {
         encounter.name = encounterName
         encounter.numberOfPlayers = numberOfPlayers
+        val levelChanged = encounter.level != encounterLevel
         encounter.level = encounterLevel
         encounter.targetDifficulty = encounterDifficulty
+        if (levelChanged) {
+            viewModelScope.launch(handler + Dispatchers.Default) {
+                storeEncounterUseCase.store(encounter)
+                encounter = retrieveEncounterUseCase.execute(encounter.id!!)
+                encounterChanged()
+            }
+        }
         postCurrentState()
     }
 
@@ -367,7 +378,23 @@ class EncounterCreatorViewModel(
 
     override fun onCustomMonsterLongPressed(id: Long, name: String) {
         viewModelScope.launch(handler) {
-            _actions.postValue(EncounterCreatorAction.OnCustomMonsterPressed(id, name))
+            _actions.sendAction(EncounterCreatorAction.OnCustomMonsterPressed(id, name))
+        }
+    }
+
+    fun onTreasureRecommendationClicked() {
+        viewModelScope.launch(handler + Dispatchers.IO) {
+            val string = createTreasureRecommendationUseCase.execute(
+                encounter.level,
+                encounter.numberOfPlayers
+            )
+            withContext(Dispatchers.Main) {
+                _actions.sendAction(
+                    EncounterCreatorAction.OnGiveTreasureRecommendationClicked(
+                        string
+                    )
+                )
+            }
         }
     }
 

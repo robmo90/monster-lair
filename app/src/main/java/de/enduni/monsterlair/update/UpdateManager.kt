@@ -17,7 +17,7 @@ class UpdateManager(
 
     fun showUpdateInformationDialog(activity: Activity) {
         val currentVersion = sharedPreferences.getInt(KEY_BUILD_NUMBER, -1)
-        if (currentVersion == BuildConfig.VERSION_CODE) {
+        if (currentVersion < BuildConfig.VERSION_CODE) {
             MaterialAlertDialogBuilder(activity)
                 .setTitle(activity.getString(R.string.whats_new, BuildConfig.VERSION_NAME))
                 .setMessage(R.string.whats_new_8)

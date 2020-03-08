@@ -87,7 +87,7 @@ class EncounterCreatorDiffCallback : DiffUtil.ItemCallback<EncounterCreatorDispl
             return true
         }
         if (oldItem is EncounterCreatorDisplayModel.DangerForEncounter && newItem is EncounterCreatorDisplayModel.DangerForEncounter) {
-            return oldItem.count == newItem.count
+            return oldItem == newItem
         }
         return true
     }

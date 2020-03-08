@@ -123,11 +123,13 @@ val encounterModule = module {
     single { RetrieveEncounterUseCase(get()) }
     single { CreateEncounterTemplateUseCase(androidApplication()) }
     single { StoreEncounterUseCase(get()) }
+    single { CreateTreasureRecommendationUseCase(androidApplication()) }
 
     // view
     single { EncounterDisplayModelMapper(androidApplication()) }
     viewModel {
         EncounterCreatorViewModel(
+            get(),
             get(),
             get(),
             get(),

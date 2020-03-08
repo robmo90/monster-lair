@@ -1,7 +1,7 @@
 package de.enduni.monsterlair.encounters.domain.model
 
 enum class MonsterRole(val xp: Int) {
-    TOO_LOW(0),
+    TOO_LOW(5),
     LOW_LACKEY(10),
     MODERATE_LACKEY(15),
     STANDARD_LACKEY(20),

@@ -40,5 +40,6 @@ sealed class EncounterCreatorAction {
     object ScrollUp : EncounterCreatorAction()
     class OnCustomMonsterPressed(val id: Long, val monsterName: String) : EncounterCreatorAction()
     class OnEditCustomMonsterClicked(val monster: Monster) : EncounterCreatorAction()
+    class OnGiveTreasureRecommendationClicked(val htmlTemplate: String) : EncounterCreatorAction()
 
 }

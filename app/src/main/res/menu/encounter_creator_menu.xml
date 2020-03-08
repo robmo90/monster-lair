@@ -9,6 +9,12 @@
         app:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/creator_menu_treasure_recommendation"
+        android:icon="@drawable/ic_chest"
+        android:title="@string/treasure_recommendation"
+        app:showAsAction="ifRoom" />
+
+    <item
         android:id="@+id/creator_menu_edit"
         android:icon="@drawable/ic_create"
         app:showAsAction="never"

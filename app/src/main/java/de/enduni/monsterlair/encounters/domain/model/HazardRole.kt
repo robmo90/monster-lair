@@ -1,7 +1,7 @@
 package de.enduni.monsterlair.encounters.domain.model
 
 enum class HazardRole(val xpSimple: Int, val xpComplex: Int) {
-    TOO_LOW(0, 0),
+    TOO_LOW(1, 5),
     LOW_LACKEY(2, 10),
     MODERATE_LACKEY(3, 15),
     STANDARD_LACKEY(4, 20),
