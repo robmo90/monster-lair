@@ -11,11 +11,11 @@ import de.enduni.monsterlair.common.persistence.database.EnumTypeConverters
 data class MonsterEntity(
     @PrimaryKey val id: Long,
     val name: String,
-    val url: String,
+    val url: String?,
     val family: String,
     val level: Int,
-    val alignment: String,
+    val alignment: String?,
     val type: MonsterType,
-    val size: String,
+    val size: String?,
     val source: String
 )

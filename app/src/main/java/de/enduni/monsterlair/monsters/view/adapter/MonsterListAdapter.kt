@@ -29,7 +29,7 @@ class MonsterDiffItemCallback : DiffUtil.ItemCallback<MonsterListDisplayModel>()
         oldItem: MonsterListDisplayModel,
         newItem: MonsterListDisplayModel
     ): Boolean {
-        return oldItem.name == newItem.name
+        return oldItem == newItem
     }
 
     override fun areContentsTheSame(

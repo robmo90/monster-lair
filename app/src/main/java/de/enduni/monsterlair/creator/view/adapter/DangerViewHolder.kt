@@ -39,11 +39,18 @@ class DangerViewHolder(
         binding.addButton.setOnClickListener {
             dangerSelectedListener.onAddClicked(danger.type, danger.id)
         }
+        if (danger.customMonster) {
+            binding.root.setOnLongClickListener {
+                dangerSelectedListener.onCustomMonsterLongPressed(danger.id, danger.name)
+                true
+            }
+        }
     }
 
     interface DangerSelectedListener {
-        fun onDangerSelected(url: String)
+        fun onDangerSelected(url: String?)
         fun onAddClicked(type: DangerType, id: Long)
+        fun onCustomMonsterLongPressed(id: Long, name: String)
     }
 
 }

@@ -114,11 +114,8 @@ class EncounterCreatorActivity : AppCompatActivity() {
                 1 -> viewModel.adjustFilterLevelUpper(value)
             }
         }
-        binding.navigateDown.setOnClickListener {
-            binding.encounterRecyclerView.layoutManager?.scrollToPosition(listAdapter.itemCount - 1)
-        }
-        binding.navigateUp.setOnClickListener {
-            binding.encounterRecyclerView.layoutManager?.scrollToPosition(0)
+        binding.createMonster.setOnClickListener {
+            CreateMonsterDialog(this, viewModel).show()
         }
         binding.withinBudgetCheckbox.setOnCheckedChangeListener { _, isChecked ->
             viewModel.adjustFilterWithinBudget(isChecked)
@@ -200,6 +197,15 @@ class EncounterCreatorActivity : AppCompatActivity() {
             }
             is EncounterCreatorAction.ScrollUp -> {
                 binding.encounterRecyclerView.layoutManager?.scrollToPosition(0)
+            }
+            is EncounterCreatorAction.CustomMonsterClicked -> {
+                Toast.makeText(this, R.string.custom_monster_hint, Toast.LENGTH_SHORT).show()
+            }
+            is EncounterCreatorAction.OnCustomMonsterPressed -> {
+                EditMonsterDialog(this, action.id, action.monsterName, viewModel).show()
+            }
+            is EncounterCreatorAction.OnEditCustomMonsterClicked -> {
+                CreateMonsterDialog(this, viewModel, action.monster).show()
             }
             else -> return
         }

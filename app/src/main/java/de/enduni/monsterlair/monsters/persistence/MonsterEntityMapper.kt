@@ -30,4 +30,16 @@ class MonsterEntityMapper {
         source = entity.source
     )
 
+    fun toEntity(dto: Monster, id: Long) = MonsterEntity(
+        id = id,
+        name = dto.name,
+        url = dto.url,
+        level = dto.level,
+        type = dto.type,
+        family = dto.family,
+        alignment = dto.alignment,
+        size = dto.size,
+        source = dto.source
+    )
+
 }

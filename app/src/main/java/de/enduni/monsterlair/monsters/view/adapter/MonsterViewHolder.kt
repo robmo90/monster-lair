@@ -35,10 +35,17 @@ class MonsterViewHolder(
         binding.root.setOnClickListener {
             monsterSelectedListener.onSelect(monsterId = monster.id)
         }
+        if (monster.custom) {
+            binding.root.setOnLongClickListener {
+                monsterSelectedListener.onLongPress(monster.id)
+                true
+            }
+        }
     }
 
     interface MonsterViewHolderListener {
         fun onSelect(monsterId: Long)
+        fun onLongPress(monsterId: Long)
     }
 
 }

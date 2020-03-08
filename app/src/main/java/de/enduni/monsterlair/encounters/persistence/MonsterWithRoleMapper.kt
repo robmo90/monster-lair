@@ -27,7 +27,7 @@ class MonsterWithRoleMapper {
     fun mapToMonsterWithRole(monster: Monster, encounterLevel: Int): MonsterWithRole {
         return monster.let {
             MonsterWithRole(
-                id = it.id,
+                id = it.id!!,
                 name = it.name,
                 url = it.url,
                 family = it.family,

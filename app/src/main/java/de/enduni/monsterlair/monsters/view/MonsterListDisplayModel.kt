@@ -7,5 +7,6 @@ data class MonsterListDisplayModel(
     val name: String,
     val family: String,
     val level: Int,
-    val type: MonsterType
+    val type: MonsterType,
+    val custom: Boolean
 )

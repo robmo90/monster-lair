@@ -45,12 +45,19 @@ class DangerForEncounterViewHolder(
         binding.root.setOnClickListener {
             listener.onDangerForEncounterSelected(dangerForEncounter.url)
         }
+        if (dangerForEncounter.customMonster) {
+            binding.root.setOnLongClickListener {
+                listener.onCustomMonsterLongPressed(dangerForEncounter.id, dangerForEncounter.name)
+                true
+            }
+        }
     }
 
     interface DangerForEncounterListener {
         fun onIncrement(type: DangerType, id: Long)
         fun onDecrement(type: DangerType, id: Long)
-        fun onDangerForEncounterSelected(url: String)
+        fun onDangerForEncounterSelected(url: String?)
+        fun onCustomMonsterLongPressed(id: Long, name: String)
     }
 
 }

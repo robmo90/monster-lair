@@ -23,8 +23,10 @@ import de.enduni.monsterlair.hazards.domain.RetrieveHazardsUseCase
 import de.enduni.monsterlair.hazards.persistence.HazardRepository
 import de.enduni.monsterlair.hazards.view.HazardDisplayModelMapper
 import de.enduni.monsterlair.hazards.view.HazardViewModel
+import de.enduni.monsterlair.monsters.domain.DeleteMonsterUseCase
 import de.enduni.monsterlair.monsters.domain.RetrieveMonsterUseCase
 import de.enduni.monsterlair.monsters.domain.RetrieveMonstersUseCase
+import de.enduni.monsterlair.monsters.domain.SaveMonsterUseCase
 import de.enduni.monsterlair.monsters.persistence.MonsterEntityMapper
 import de.enduni.monsterlair.monsters.persistence.MonsterRepository
 import de.enduni.monsterlair.monsters.view.MonsterListDisplayModelMapper
@@ -83,6 +85,8 @@ val monsterModule = module {
     // domain
     single { RetrieveMonstersUseCase(get()) }
     single { RetrieveMonsterUseCase(get()) }
+    single { SaveMonsterUseCase(get()) }
+    single { DeleteMonsterUseCase(get()) }
 
 
     // persistence
@@ -91,7 +95,7 @@ val monsterModule = module {
 
     // view
     single { MonsterListDisplayModelMapper() }
-    viewModel { MonsterViewModel(get(), get(), get()) }
+    viewModel { MonsterViewModel(get(), get(), get(), get(), get()) }
 }
 
 val encounterModule = module {
@@ -115,6 +119,18 @@ val encounterModule = module {
 
     // view
     single { EncounterDisplayModelMapper(androidApplication()) }
-    viewModel { EncounterCreatorViewModel(get(), get(), get(), get(), get(), get()) }
+    viewModel {
+        EncounterCreatorViewModel(
+            get(),
+            get(),
+            get(),
+            get(),
+            get(),
+            get(),
+            get(),
+            get(),
+            get()
+        )
+    }
     viewModel { EncounterViewModel(get(), get(), get(), get()) }
 }

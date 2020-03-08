@@ -20,6 +20,29 @@
         <item>@string/difficulty_extreme</item>
     </string-array>
 
+    <string-array name="type_choices">
+        <item>@string/monster_type_aberration</item>
+        <item>@string/monster_type_animal</item>
+        <item>@string/monster_type_astral</item>
+        <item>@string/monster_type_beast</item>
+        <item>@string/monster_type_celestial</item>
+        <item>@string/monster_type_construct</item>
+        <item>@string/monster_type_dragon</item>
+        <item>@string/monster_type_elemental</item>
+        <item>@string/monster_type_ethereal</item>
+        <item>@string/monster_type_fey</item>
+        <item>@string/monster_type_fiend</item>
+        <item>@string/monster_type_fungus</item>
+        <item>@string/monster_type_giant</item>
+        <item>@string/monster_type_humanoid</item>
+        <item>@string/monster_type_monitor</item>
+        <item>@string/monster_type_ooze</item>
+        <item>@string/monster_type_plant</item>
+        <item>@string/monster_type_spirit</item>
+        <item>@string/monster_type_undead</item>
+        <item>@string/monster_type_none</item>
+    </string-array>
+
     <string-array name="random_encounter_templates">
         <item>@string/random_encounter_boss_and_lackeys</item>
         <item>@string/random_encounter_boss_and_lieutenant</item>
@@ -29,5 +52,10 @@
         <item>@string/random_encounter_troop</item>
         <item>@string/random_encounter_mook_squad</item>
         <item>@string/random_encounter_random</item>
+    </string-array>
+
+    <string-array name="custom_monster_actions">
+        <item>@string/custom_monster_edit_button_option</item>
+        <item>@string/custom_monster_delete_button</item>
     </string-array>
 </resources>

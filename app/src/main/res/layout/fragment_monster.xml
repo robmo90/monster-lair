@@ -43,7 +43,7 @@
             android:layout_marginStart="14dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toStartOf="@+id/navigate_up"
+            app:layout_constraintEnd_toStartOf="@+id/create_monster"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -55,31 +55,16 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <ImageView
-            android:id="@+id/navigate_up"
+            android:id="@+id/create_monster"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:background="?selectableItemBackgroundBorderless"
             android:clickable="true"
-            android:contentDescription="@string/scroll_up_description"
+            android:contentDescription="@string/custom_monster_create_title"
             android:focusable="true"
             android:padding="8dp"
-            android:src="@drawable/ic_arrow_up"
-            app:layout_constraintBottom_toBottomOf="@id/search_edit_text_layout"
-            app:layout_constraintEnd_toStartOf="@id/navigate_down"
-            app:layout_constraintTop_toTopOf="@id/search_edit_text_layout" />
-
-        <ImageView
-            android:id="@+id/navigate_down"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:background="?selectableItemBackgroundBorderless"
-            android:clickable="true"
-            android:contentDescription="@string/scroll_down_description"
-            android:focusable="true"
-            android:padding="8dp"
-            android:src="@drawable/ic_arrow_down"
+            android:src="@drawable/ic_add"
             app:layout_constraintBottom_toBottomOf="@id/search_edit_text_layout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/search_edit_text_layout" />

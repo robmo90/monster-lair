@@ -16,7 +16,8 @@ class EncounterCreatorDisplayModelMapper {
         label = monsterWithRole.family,
         xp = monsterWithRole.role.xp,
         url = monsterWithRole.url,
-        originalType = monsterWithRole.type.toString()
+        originalType = monsterWithRole.type.toString(),
+        customMonster = monsterWithRole.url == null
     )
 
     fun toDanger(hazardWithRole: HazardWithRole) = EncounterCreatorDisplayModel.Danger(
@@ -29,7 +30,8 @@ class EncounterCreatorDisplayModelMapper {
         labelRes = hazardWithRole.complexity.getStringRes(),
         xp = hazardWithRole.role.getXp(hazardWithRole.complexity),
         url = hazardWithRole.url,
-        originalType = hazardWithRole.complexity.toString()
+        originalType = hazardWithRole.complexity.toString(),
+        customMonster = false
     )
 
     fun toBudget(encounterData: Encounter) = EncounterCreatorDisplayModel.EncounterDetails(
@@ -51,7 +53,8 @@ class EncounterCreatorDisplayModelMapper {
             xp = encounterMonster.monster.role.xp,
             role = encounterMonster.monster.role.getStringRes(),
             count = encounterMonster.count,
-            url = encounterMonster.monster.url
+            url = encounterMonster.monster.url,
+            customMonster = encounterMonster.monster.url == null
         )
 
     fun toDanger(encounterHazard: EncounterHazard) =
@@ -66,7 +69,8 @@ class EncounterCreatorDisplayModelMapper {
             xp = encounterHazard.hazard.role.getXp(encounterHazard.hazard.complexity),
             count = encounterHazard.count,
             role = encounterHazard.hazard.complexity.getStringRes(),
-            url = encounterHazard.hazard.url
+            url = encounterHazard.hazard.url,
+            customMonster = false
         )
 
 }

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -12,6 +13,8 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.openCustomTab
 import de.enduni.monsterlair.common.setTextIfNotFocused
+import de.enduni.monsterlair.common.view.CreateMonsterDialog
+import de.enduni.monsterlair.common.view.EditMonsterDialog
 import de.enduni.monsterlair.common.view.buildMonsterTypeFilter
 import de.enduni.monsterlair.common.view.buildSortByChips
 import de.enduni.monsterlair.databinding.FragmentMonsterBinding
@@ -60,11 +63,8 @@ class MonsterFragment : Fragment() {
         binding.searchEditText.doAfterTextChanged {
             viewModel.filterByString(it.toString())
         }
-        binding.navigateDown.setOnClickListener {
-            binding.monsterRecyclerView.layoutManager?.scrollToPosition(listAdapter.itemCount - 1)
-        }
-        binding.navigateUp.setOnClickListener {
-            binding.monsterRecyclerView.layoutManager?.scrollToPosition(0)
+        binding.createMonster.setOnClickListener {
+            CreateMonsterDialog(requireActivity(), viewModel).show()
         }
 
         binding.levelSlider.setOnThumbValueChangeListener { _, _, thumbIndex, value ->
@@ -110,9 +110,29 @@ class MonsterFragment : Fragment() {
 
     private fun handleAction(action: MonsterOverviewAction?) {
         when (action) {
-            is MonsterOverviewAction.MonsterSelected -> navigateToUrl(action.url)
+            is MonsterOverviewAction.OnMonsterLinkClicked -> {
+                navigateToUrl(action.url)
+            }
+            is MonsterOverviewAction.OnCustomMonsterClicked -> {
+                showCustomMonsterHint()
+            }
+            is MonsterOverviewAction.OnCustomMonsterPressed -> {
+                EditMonsterDialog(
+                    requireActivity(),
+                    action.id,
+                    action.monsterName,
+                    viewModel
+                ).show()
+            }
+            is MonsterOverviewAction.OnEditCustomMonsterClicked -> {
+                CreateMonsterDialog(requireActivity(), viewModel, action.monster).show()
+            }
             else -> Timber.d("Processed $action")
         }
+    }
+
+    private fun showCustomMonsterHint() {
+        Toast.makeText(requireContext(), R.string.custom_monster_hint, Toast.LENGTH_SHORT).show()
     }
 
 

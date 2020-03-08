@@ -9,11 +9,17 @@ import de.enduni.monsterlair.common.domain.MonsterType
 import de.enduni.monsterlair.common.domain.RandomEncounter
 import de.enduni.monsterlair.common.getDefaultMaxLevel
 import de.enduni.monsterlair.common.view.ActionLiveData
+import de.enduni.monsterlair.common.view.CreateMonsterDialog
+import de.enduni.monsterlair.common.view.EditMonsterDialog
 import de.enduni.monsterlair.creator.domain.*
 import de.enduni.monsterlair.creator.view.adapter.DangerForEncounterViewHolder
 import de.enduni.monsterlair.creator.view.adapter.DangerViewHolder
 import de.enduni.monsterlair.creator.view.adapter.EncounterDetailViewHolder
 import de.enduni.monsterlair.encounters.domain.model.*
+import de.enduni.monsterlair.monsters.domain.DeleteMonsterUseCase
+import de.enduni.monsterlair.monsters.domain.Monster
+import de.enduni.monsterlair.monsters.domain.RetrieveMonsterUseCase
+import de.enduni.monsterlair.monsters.domain.SaveMonsterUseCase
 import de.enduni.monsterlair.monsters.view.SortBy
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
@@ -26,12 +32,17 @@ class EncounterCreatorViewModel(
     private val retrieveHazardsWithRoleUseCase: RetrieveHazardsWithRoleUseCase,
     private val retrieveEncounterUseCase: RetrieveEncounterUseCase,
     private val createRandomEncounterUseCase: CreateRandomEncounterUseCase,
+    private val saveMonsterUseCase: SaveMonsterUseCase,
+    private val deleteMonsterUseCase: DeleteMonsterUseCase,
+    private val retrieveMonsterUseCase: RetrieveMonsterUseCase,
     private val mapper: EncounterCreatorDisplayModelMapper,
     private val storeEncounterUseCase: StoreEncounterUseCase
 ) : ViewModel(),
     EncounterDetailViewHolder.ClickListener,
     DangerViewHolder.DangerSelectedListener,
-    DangerForEncounterViewHolder.DangerForEncounterListener {
+    DangerForEncounterViewHolder.DangerForEncounterListener,
+    CreateMonsterDialog.OnSaveClickedListener,
+    EditMonsterDialog.OnEditMonsterClickListener {
 
     private val _viewState = MutableLiveData<EncounterCreatorDisplayState>()
     val viewState: LiveData<EncounterCreatorDisplayState> get() = _viewState
@@ -219,12 +230,18 @@ class EncounterCreatorViewModel(
 
     }
 
-    override fun onDangerForEncounterSelected(url: String) {
-        linkClicked(url)
+    override fun onDangerForEncounterSelected(url: String?) {
+        url?.let { linkClicked(it) } ?: customMonsterClicked()
     }
 
-    override fun onDangerSelected(url: String) {
-        linkClicked(url)
+    override fun onDangerSelected(url: String?) {
+        url?.let { linkClicked(it) } ?: customMonsterClicked()
+    }
+
+    private fun customMonsterClicked() {
+        viewModelScope.launch(handler) {
+            _actions.sendAction(EncounterCreatorAction.CustomMonsterClicked)
+        }
     }
 
     private fun linkClicked(url: String) {
@@ -320,6 +337,34 @@ class EncounterCreatorViewModel(
         }
     }
 
+    override fun onSaveClicked(monster: Monster) {
+        viewModelScope.launch(handler + Dispatchers.Default) {
+            saveMonsterUseCase.execute(monster)
+            monsters = retrieveMonstersWithRoleUseCase.execute(filter, encounter)
+            postCurrentState()
+        }
+    }
+
+    override fun onEditClicked(id: Long) {
+        viewModelScope.launch(handler) {
+            val monster = retrieveMonsterUseCase.execute(id)
+            _actions.sendAction(EncounterCreatorAction.OnEditCustomMonsterClicked(monster))
+        }
+    }
+
+    override fun onDeleteClicked(id: Long) {
+        viewModelScope.launch(handler + Dispatchers.Default) {
+            deleteMonsterUseCase.execute(id)
+            monsters = retrieveMonstersWithRoleUseCase.execute(filter, encounter)
+            postCurrentState()
+        }
+    }
+
+    override fun onCustomMonsterLongPressed(id: Long, name: String) {
+        viewModelScope.launch(handler) {
+            _actions.postValue(EncounterCreatorAction.OnCustomMonsterPressed(id, name))
+        }
+    }
 
 }
 

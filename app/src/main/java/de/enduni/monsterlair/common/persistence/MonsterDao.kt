@@ -10,9 +10,17 @@ interface MonsterDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertMonsters(monsters: List<MonsterEntity>)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertMonster(monster: MonsterEntity)
+
+    @Query("DELETE FROM monsters WHERE id = :id")
+    suspend fun deleteMonster(id: Long)
+
     @Query("SELECT * FROM monsters ORDER BY name")
     suspend fun getAllMonsters(): List<MonsterEntity>
 
+    @Query("SELECT MAX(id) FROM monsters")
+    suspend fun getHighestId(): Long
 
     @RawQuery
     suspend fun getFilteredMonsters(

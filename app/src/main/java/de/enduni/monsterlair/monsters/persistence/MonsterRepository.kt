@@ -29,6 +29,16 @@ class MonsterRepository(
         return monsterDao.getFilteredMonsters(SimpleSQLiteQuery(query)).toDomain()
     }
 
+    suspend fun saveMonster(monster: Monster) {
+        val id = monster.id ?: monsterDao.getHighestId() + 1
+        val entity = monsterEntityMapper.toEntity(monster, id)
+        monsterDao.insertMonster(entity)
+    }
+
+    suspend fun deleteMonster(id: Long) {
+        monsterDao.deleteMonster(id)
+    }
+
     fun getMonsterFlow(
         filter: String?,
         lowerLevel: Int,

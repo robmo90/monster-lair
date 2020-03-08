@@ -3,6 +3,7 @@ package de.enduni.monsterlair.common.view
 import android.app.Activity
 import android.content.Context
 import android.text.SpannableStringBuilder
+import android.view.inputmethod.InputMethodManager
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -95,6 +96,13 @@ class EncounterSettingDialog(
             choices
         ).also { adapter ->
             binding.difficultySelect.setAdapter(adapter)
+        }
+        binding.difficultySelect.setOnFocusChangeListener { v, hasFocus ->
+            if (hasFocus) {
+                context.getSystemService(InputMethodManager::class.java)?.apply {
+                    hideSoftInputFromWindow(v.windowToken, 0)
+                }
+            }
         }
     }
 

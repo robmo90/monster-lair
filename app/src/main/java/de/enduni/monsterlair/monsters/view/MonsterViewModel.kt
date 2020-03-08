@@ -6,22 +6,24 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import de.enduni.monsterlair.common.domain.MonsterType
 import de.enduni.monsterlair.common.view.ActionLiveData
-import de.enduni.monsterlair.monsters.domain.Monster
-import de.enduni.monsterlair.monsters.domain.RetrieveMonsterUseCase
-import de.enduni.monsterlair.monsters.domain.RetrieveMonstersUseCase
+import de.enduni.monsterlair.common.view.CreateMonsterDialog
+import de.enduni.monsterlair.common.view.EditMonsterDialog
+import de.enduni.monsterlair.monsters.domain.*
 import de.enduni.monsterlair.monsters.view.adapter.MonsterViewHolder
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
 class MonsterViewModel(
     private val retrieveMonsterUseCase: RetrieveMonsterUseCase,
     private val retrieveMonstersUseCase: RetrieveMonstersUseCase,
+    private val deleteMonsterUseCase: DeleteMonsterUseCase,
+    private val saveMonsterUseCase: SaveMonsterUseCase,
     private val mapper: MonsterListDisplayModelMapper
-) : ViewModel(), MonsterViewHolder.MonsterViewHolderListener {
+) : ViewModel(), MonsterViewHolder.MonsterViewHolderListener,
+    CreateMonsterDialog.OnSaveClickedListener,
+    EditMonsterDialog.OnEditMonsterClickListener {
 
     private val _viewState = MutableLiveData<MonsterOverviewViewState>()
     val viewState: LiveData<MonsterOverviewViewState> get() = _viewState
@@ -68,21 +70,21 @@ class MonsterViewModel(
 
     private suspend fun filterMonsters() {
         Timber.d("Starting monster filter with $filter")
-        retrieveMonstersUseCase.execute(filter).map { it.toDisplayModel() }
-            .collect { monsters ->
-                val state = MonsterOverviewViewState(
-                    monsters = monsters,
-                    filter = filter
-                )
-                _viewState.postValue(state)
-            }
+        val monsters = retrieveMonstersUseCase.execute(filter).toDisplayModel()
+        val state = MonsterOverviewViewState(
+            monsters = monsters,
+            filter = filter
+        )
+        _viewState.postValue(state)
     }
 
 
     override fun onSelect(monsterId: Long) {
         viewModelScope.launch(handler) {
             val monster = retrieveMonsterUseCase.execute(monsterId)
-            _actions.sendAction(MonsterOverviewAction.MonsterSelected(monster.url))
+            monster.url?.let { _actions.sendAction(MonsterOverviewAction.OnMonsterLinkClicked(it)) }
+                ?: _actions.sendAction(MonsterOverviewAction.OnCustomMonsterClicked)
+
         }
     }
 
@@ -99,4 +101,36 @@ class MonsterViewModel(
         filterMonsters(filter.copy(monsterTypes = filter.monsterTypes - monsterType))
     }
 
+    override fun onSaveClicked(monster: Monster) {
+        viewModelScope.launch(handler + Dispatchers.Default) {
+            saveMonsterUseCase.execute(monster)
+            filterMonsters()
+        }
+    }
+
+    override fun onEditClicked(id: Long) {
+        viewModelScope.launch(handler) {
+            val monster = retrieveMonsterUseCase.execute(id)
+            _actions.sendAction(MonsterOverviewAction.OnEditCustomMonsterClicked(monster))
+        }
+    }
+
+    override fun onDeleteClicked(id: Long) {
+        viewModelScope.launch(handler + Dispatchers.Default) {
+            deleteMonsterUseCase.execute(id)
+            filterMonsters()
+        }
+    }
+
+    override fun onLongPress(monsterId: Long) {
+        viewModelScope.launch(handler) {
+            val monster = retrieveMonsterUseCase.execute(monsterId)
+            _actions.sendAction(
+                MonsterOverviewAction.OnCustomMonsterPressed(
+                    monsterId,
+                    monster.name
+                )
+            )
+        }
+    }
 }

@@ -2,15 +2,14 @@ package de.enduni.monsterlair.monsters.domain
 
 import de.enduni.monsterlair.monsters.persistence.MonsterRepository
 import de.enduni.monsterlair.monsters.view.MonsterFilter
-import kotlinx.coroutines.flow.Flow
 import timber.log.Timber
 
 class RetrieveMonstersUseCase(private val monsterRepository: MonsterRepository) {
 
-    fun execute(filter: MonsterFilter): Flow<List<Monster>> {
+    suspend fun execute(filter: MonsterFilter): List<Monster> {
         val currentTimeMillis = System.currentTimeMillis()
         val monsters =
-            monsterRepository.getMonsterFlow(
+            monsterRepository.getMonsters(
                 filter.string,
                 filter.lowerLevel,
                 filter.upperLevel,

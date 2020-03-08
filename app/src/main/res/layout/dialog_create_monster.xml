@@ -6,7 +6,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/encounter_name_text_layout"
+        android:id="@+id/monster_name_text_layout"
         style="@style/EditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -16,77 +16,76 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/encounter_name_edit_text"
+            android:id="@+id/monster_name_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/encounter_name_hint"
+            android:hint="@string/custom_monster_create_name"
             android:importantForAutofill="no" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/character_level_edit_text_layout"
+        android:id="@+id/monster_level_edit_text_layout"
         style="@style/EditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@id/character_number_edit_text_layout"
-        app:layout_constraintStart_toStartOf="@id/encounter_name_text_layout"
-        app:layout_constraintTop_toBottomOf="@id/encounter_name_text_layout">
+        app:layout_constraintEnd_toStartOf="@id/monster_family_edit_text_layout"
+        app:layout_constraintStart_toStartOf="@id/monster_name_text_layout"
+        app:layout_constraintTop_toBottomOf="@id/monster_name_text_layout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/character_level_edit_text"
+            android:id="@+id/monster_level_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/character_level"
+            android:hint="@string/custom_monster_create_level"
             android:inputType="number" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/character_number_edit_text_layout"
+        android:id="@+id/monster_family_edit_text_layout"
         style="@style/EditText"
         android:layout_width="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:layout_marginStart="8dp"
         android:layout_height="wrap_content"
-
-        app:layout_constraintEnd_toEndOf="@id/encounter_name_text_layout"
-        app:layout_constraintStart_toEndOf="@id/character_level_edit_text_layout"
-        app:layout_constraintTop_toBottomOf="@id/encounter_name_text_layout">
+        app:layout_constraintEnd_toEndOf="@id/monster_name_text_layout"
+        app:layout_constraintStart_toEndOf="@id/monster_level_edit_text_layout"
+        app:layout_constraintTop_toBottomOf="@id/monster_name_text_layout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/character_number_edit_text"
+            android:id="@+id/monster_family_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/number_of_characters"
-            android:inputType="number" />
+            android:hint="@string/custom_monster_create_family" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/difficulty_select_layout"
+        android:id="@+id/monster_type_select_layout"
         style="@style/DropDown"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/character_number_edit_text_layout">
+        app:layout_constraintTop_toBottomOf="@id/monster_family_edit_text_layout">
 
         <AutoCompleteTextView
-            android:id="@+id/difficulty_select"
+            android:id="@+id/monster_type_select"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
             android:editable="false"
             android:focusable="true"
-            android:hint="@string/encounter_target_difficulty_label" />
+            android:dropDownHeight="200dp"
+            android:hint="@string/custom_monster_create_type" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
