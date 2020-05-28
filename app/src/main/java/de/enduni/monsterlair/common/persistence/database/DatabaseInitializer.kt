@@ -23,6 +23,7 @@ class DatabaseInitializer(
 ) {
 
     suspend fun feedMonsters() = withContext(Dispatchers.IO) {
+        val savedVersion = updateManager.savedVersion
         val allMonsters = monsterDao.getAllMonsters()
         if (allMonsters.isEmpty()) {
             Timber.d("Feeding monsters")
@@ -41,7 +42,7 @@ class DatabaseInitializer(
             monsterDataSource.getMonsterUpdate(1L)
                 .insertMonsters()
         }
-        if (updateManager.savedVersion < 10) {
+        if (savedVersion < 10) {
             Timber.d("Insert monster update 2 + 3")
             monsterDataSource.getMonsterUpdate(2L)
                 .saveMonsters()
