@@ -36,7 +36,9 @@ class MonsterAssetDataSource(private val context: Context) :
     companion object {
 
         private val VERSIONS = mapOf(
-            Pair(1L, R.raw.monsters_1)
+            Pair(1L, R.raw.monsters_1),
+            Pair(2L, R.raw.monsters_2),
+            Pair(3L, R.raw.monsters_3)
         )
 
     }

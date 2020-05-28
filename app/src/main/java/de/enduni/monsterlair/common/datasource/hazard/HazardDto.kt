@@ -6,7 +6,7 @@ import de.enduni.monsterlair.common.domain.Complexity
 
 @JsonClass(generateAdapter = true)
 data class HazardDto(
-    @Json(name = "id") val id: Int,
+    @Json(name = "id") var id: Long,
     @Json(name = "name") val name: String,
     @Json(name = "aonUrl") val url: String,
     @Json(name = "level") val level: Int,

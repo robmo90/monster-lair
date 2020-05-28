@@ -6,8 +6,8 @@ import de.enduni.monsterlair.monsters.domain.Monster
 
 class MonsterEntityMapper {
 
-    fun toEntity(dto: MonsterDto) = MonsterEntity(
-        id = dto.id.toLong(),
+    fun toEntity(dto: MonsterDto, id: Long? = null) = MonsterEntity(
+        id = id ?: dto.id,
         name = dto.name,
         url = dto.url,
         level = dto.level,

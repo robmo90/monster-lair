@@ -37,7 +37,8 @@ class EncounterCreatorViewModel(
     private val retrieveMonsterUseCase: RetrieveMonsterUseCase,
     private val mapper: EncounterCreatorDisplayModelMapper,
     private val storeEncounterUseCase: StoreEncounterUseCase,
-    private val createTreasureRecommendationUseCase: CreateTreasureRecommendationUseCase
+    private val createTreasureRecommendationUseCase: CreateTreasureRecommendationUseCase,
+    private val showUserHintUseCase: ShowUserHintUseCase
 ) : ViewModel(),
     EncounterDetailViewHolder.ClickListener,
     DangerViewHolder.DangerSelectedListener,
@@ -98,6 +99,11 @@ class EncounterCreatorViewModel(
                     upperLevel = levelOfEncounter + 4
                 )
                 filterDangers(filter)
+            }
+        }
+        viewModelScope.launch(handler) {
+            if (showUserHintUseCase.showUserHint()) {
+                _actions.sendAction(EncounterCreatorAction.ShowCreatorHint)
             }
         }
 
@@ -395,6 +401,12 @@ class EncounterCreatorViewModel(
                     )
                 )
             }
+        }
+    }
+
+    fun markUserHintAsShown() {
+        viewModelScope.launch(handler) {
+            showUserHintUseCase.markAsShown()
         }
     }
 

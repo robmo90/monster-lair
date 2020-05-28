@@ -15,24 +15,38 @@ class UpdateManager(
         Context.MODE_PRIVATE
     )
 
-    fun showUpdateInformationDialog(activity: Activity) {
-        val currentVersion = sharedPreferences.getInt(KEY_BUILD_NUMBER, -1)
-        if (currentVersion < 8) {
-            MaterialAlertDialogBuilder(activity)
-                .setTitle(activity.getString(R.string.whats_new, BuildConfig.VERSION_NAME))
-                .setMessage(R.string.whats_new_8)
-                .setPositiveButton(android.R.string.ok) { _, _ -> }
-                .create()
-                .apply {
-                    setOnShowListener {
-                        sharedPreferences.edit().putInt(KEY_BUILD_NUMBER, BuildConfig.VERSION_CODE)
-                            .apply()
-                    }
-                }
-                .show()
+    val savedVersion: Int
+        get() = sharedPreferences.getInt(KEY_BUILD_NUMBER, -1)
 
+    fun showUpdateInformationDialog(activity: Activity) {
+        val currentVersion = BuildConfig.VERSION_CODE
+
+        if (savedVersion < 8 && currentVersion < 10) {
+            showUpdateDialog(activity, currentVersion, R.string.whats_new_8)
+        }
+        if (savedVersion < 10 && currentVersion >= 10) {
+            showUpdateDialog(activity, currentVersion, R.string.whats_new_8)
         }
 
+    }
+
+    private fun showUpdateDialog(
+        activity: Activity,
+        currentVersion: Int,
+        whatsNewText: Int
+    ) {
+        MaterialAlertDialogBuilder(activity)
+            .setTitle(activity.getString(R.string.whats_new, BuildConfig.VERSION_NAME))
+            .setMessage(whatsNewText)
+            .setPositiveButton(android.R.string.ok) { _, _ -> }
+            .create()
+            .apply {
+                setOnShowListener {
+                    sharedPreferences.edit().putInt(KEY_BUILD_NUMBER, currentVersion)
+                        .apply()
+                }
+            }
+            .show()
     }
 
     companion object {

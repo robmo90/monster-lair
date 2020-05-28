@@ -1,7 +1,7 @@
 package de.enduni.monsterlair
 
 import android.app.Application
-import de.enduni.monsterlair.common.persistence.database.MonsterDatabaseInitializer
+import de.enduni.monsterlair.common.persistence.database.DatabaseInitializer
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
@@ -12,7 +12,7 @@ import timber.log.Timber
 
 class MonsterLairApplication : Application() {
 
-    private val databaseInitializer: MonsterDatabaseInitializer by inject()
+    private val databaseInitializer: DatabaseInitializer by inject()
 
     private val handler = CoroutineExceptionHandler { _, exception ->
         Timber.e(exception, "Caught exception")

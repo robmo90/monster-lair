@@ -6,8 +6,8 @@ import de.enduni.monsterlair.hazards.domain.Hazard
 
 class HazardEntityMapper {
 
-    fun toEntity(dto: HazardDto) = HazardEntity(
-        id = dto.id.toLong(),
+    fun toEntity(dto: HazardDto, id: Long? = null) = HazardEntity(
+        id = id ?: dto.id,
         name = dto.name,
         url = dto.url,
         level = dto.level,

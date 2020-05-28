@@ -1,6 +1,7 @@
 package de.enduni.monsterlair.monsters.persistence
 
 import androidx.sqlite.db.SimpleSQLiteQuery
+import de.enduni.monsterlair.common.datasource.datasource.MonsterDto
 import de.enduni.monsterlair.common.domain.MonsterType
 import de.enduni.monsterlair.common.persistence.MonsterDao
 import de.enduni.monsterlair.common.persistence.MonsterEntity
@@ -32,6 +33,12 @@ class MonsterRepository(
     suspend fun saveMonster(monster: Monster) {
         val id = monster.id ?: monsterDao.getHighestId() + 1
         val entity = monsterEntityMapper.toEntity(monster, id)
+        monsterDao.insertMonster(entity)
+    }
+
+    suspend fun saveMonster(monster: MonsterDto) {
+        monster.id = monsterDao.getHighestId() + 1
+        val entity = monsterEntityMapper.toEntity(monster)
         monsterDao.insertMonster(entity)
     }
 

@@ -4,9 +4,9 @@ import de.enduni.monsterlair.common.datasource.datasource.MonsterAssetDataSource
 import de.enduni.monsterlair.common.datasource.datasource.MonsterDataSource
 import de.enduni.monsterlair.common.datasource.hazard.HazardAssetDataSource
 import de.enduni.monsterlair.common.datasource.hazard.HazardDataSource
+import de.enduni.monsterlair.common.persistence.database.DatabaseInitializer
 import de.enduni.monsterlair.common.persistence.database.HazardEntityMapper
 import de.enduni.monsterlair.common.persistence.database.MonsterDatabase
-import de.enduni.monsterlair.common.persistence.database.MonsterDatabaseInitializer
 import de.enduni.monsterlair.creator.domain.*
 import de.enduni.monsterlair.creator.view.EncounterCreatorDisplayModelMapper
 import de.enduni.monsterlair.creator.view.EncounterCreatorViewModel
@@ -53,7 +53,8 @@ val databaseModule = module(createdAtStart = true) {
     single { get<MonsterDatabase>().encounterDao() }
     single { get<MonsterDatabase>().hazardDao() }
     single {
-        MonsterDatabaseInitializer(
+        DatabaseInitializer(
+            get(),
             get(),
             get(),
             get(),
@@ -114,6 +115,7 @@ val encounterModule = module {
     single { EncounterRepository(get(), get(), get(), get(), get(), get()) }
 
     // domain
+    single { ShowUserHintUseCase(androidApplication()) }
     single { CreateRandomEncounterUseCase() }
     single { RetrieveMonstersWithRoleUseCase(get(), get()) }
     single { RetrieveHazardsWithRoleUseCase(get(), get()) }
@@ -129,6 +131,7 @@ val encounterModule = module {
     single { EncounterDisplayModelMapper(androidApplication()) }
     viewModel {
         EncounterCreatorViewModel(
+            get(),
             get(),
             get(),
             get(),

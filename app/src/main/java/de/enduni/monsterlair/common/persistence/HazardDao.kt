@@ -10,8 +10,14 @@ interface HazardDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertHazards(hazards: List<HazardEntity>)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertHazard(hazard: HazardEntity)
+
     @Query("SELECT * FROM hazards ORDER BY name")
     suspend fun getAllHazards(): List<HazardEntity>
+
+    @Query("SELECT MAX(id) FROM hazards")
+    suspend fun getHighestId(): Long
 
     @RawQuery
     suspend fun getFilteredHazards(
