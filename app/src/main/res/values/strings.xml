@@ -165,6 +165,7 @@
     <string name="whats_new">What\'s new (%s)</string>
     <string name="whats_new_8">- Random Encounters now include templates from the GMG.\n- Custom monsters can now be added.\n- Added a dialog to display the treasure by level values from the Core Rulebook, adjusted for players.\n- Player number and level of encounters can now be adjusted\n- Revamp of the encounter and creator pages.</string>
     <string name="whats_new_10">- Added monsters from the Bestiary 2 and NPCs from the GMG (both under monsters). Hazards are updated as well. \n- Reversed encounter order, newest first.\n- Added small hint that you can pull up the search sheet, will probably rework filters in the future. Getting the new content in was more important.</string>
-    <string name="encounter_creator_introduction">Here\'s a small introduction to the encounter creator:\n\n- Pull up the Search bar to access filters\n- Add your own monsters using +\n- Create random encounters by clicking the dice\n- Get treasure recommendations for your group by clicking the chest</string>
+    <string name="encounter_creator_introduction_title">Small Intro</string>
+    <string name="encounter_creator_introduction">Here\'s a small introduction to the encounter creator since the UI is still pretty sloppy:\n\n- Pull up the Search bar to access filters for monsters & hazards (type, level, etc.)\n- Add your own monsters using +\n- Create random encounters by clicking the dice\n- Get treasure recommendations for your group by clicking the chest</string>
 
 </resources>

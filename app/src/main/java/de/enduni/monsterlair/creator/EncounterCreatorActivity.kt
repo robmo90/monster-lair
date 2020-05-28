@@ -229,7 +229,7 @@ class EncounterCreatorActivity : AppCompatActivity() {
             }
             is EncounterCreatorAction.ShowCreatorHint -> {
                 MaterialAlertDialogBuilder(this)
-                    .setTitle(R.string.treasure_recommendation)
+                    .setTitle(R.string.encounter_creator_introduction_title)
                     .setMessage(R.string.encounter_creator_introduction)
                     .setPositiveButton(android.R.string.ok) { _, _ -> viewModel.markUserHintAsShown() }
                     .show()
