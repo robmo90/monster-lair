@@ -125,7 +125,7 @@ class IdentifierMigration(private val context: Context) : Migration(1, 2) {
             val oldMonsterId = urlCursor.getLong(urlCursor.getColumnIndex("id"))
             urlCursor.close()
             val monsterUuid = if (url.isBlank()) {
-                customMonsters.find { it.first == oldMonsterId }
+                customMonsters.find { it.first == oldMonsterId }?.second
             } else {
                 aonMapping.getValue(url)
             }

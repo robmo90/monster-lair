@@ -7,7 +7,7 @@
     "complexity": "SIMPLE",
     "source": "Gamemastery Guide pg. 77",
     "sourceType": "GAMEMASTERY_GUIDE",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Environmental",
       "Fungus"
@@ -21,7 +21,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 522",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Mechanical",
       "Trap"
@@ -35,7 +35,7 @@
     "complexity": "SIMPLE",
     "source": "Gamemastery Guide pg. 77",
     "sourceType": "GAMEMASTERY_GUIDE",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Environmental"
     ]
@@ -48,7 +48,7 @@
     "complexity": "SIMPLE",
     "source": "Gamemastery Guide pg. 77",
     "sourceType": "GAMEMASTERY_GUIDE",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Environmental"
     ]
@@ -61,7 +61,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 523",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Mechanical",
       "Trap"
@@ -75,7 +75,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 523",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Mechanical",
       "Trap"
@@ -89,7 +89,7 @@
     "complexity": "SIMPLE",
     "source": "Gamemastery Guide pg. 77",
     "sourceType": "GAMEMASTERY_GUIDE",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Environmental",
       "Fungus"
@@ -103,7 +103,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 523",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Mechanical",
       "Trap"
@@ -117,7 +117,7 @@
     "complexity": "SIMPLE",
     "source": "Bestiary pg. 325",
     "sourceType": "BESTIARY_1",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Mechanical",
       "Trap"
@@ -131,7 +131,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 523",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Electricity",
       "Evocation",
@@ -147,7 +147,7 @@
     "complexity": "SIMPLE",
     "source": "Gamemastery Guide pg. 77",
     "sourceType": "GAMEMASTERY_GUIDE",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Environmental"
     ]
@@ -160,7 +160,7 @@
     "complexity": "SIMPLE",
     "source": "Bestiary pg. 325",
     "sourceType": "BESTIARY_1",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Mechanical",
       "Trap"
@@ -174,7 +174,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 523",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Mechanical",
       "Trap"
@@ -188,7 +188,7 @@
     "complexity": "SIMPLE",
     "source": "Gamemastery Guide pg. 78",
     "sourceType": "GAMEMASTERY_GUIDE",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Environmental"
     ]
@@ -201,7 +201,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 524",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Evocation",
       "Fire",
@@ -217,7 +217,7 @@
     "complexity": "SIMPLE",
     "source": "Gamemastery Guide pg. 78",
     "sourceType": "GAMEMASTERY_GUIDE",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Haunt"
     ]
@@ -230,7 +230,7 @@
     "complexity": "SIMPLE",
     "source": "Gamemastery Guide pg. 78",
     "sourceType": "GAMEMASTERY_GUIDE",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Haunt"
     ]
@@ -243,7 +243,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 524",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Mechanical",
       "Trap"
@@ -257,7 +257,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 524",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Magical",
       "Trap"
@@ -271,7 +271,7 @@
     "complexity": "SIMPLE",
     "source": "Bestiary 2 pg. 251",
     "sourceType": "BESTIARY_2",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Animal",
       "Environmental"
@@ -285,7 +285,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 524",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Environmental",
       "Fungus"
@@ -299,7 +299,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 524",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Magical",
       "Mechanical",
@@ -314,7 +314,7 @@
     "complexity": "SIMPLE",
     "source": "Gamemastery Guide pg. 78",
     "sourceType": "GAMEMASTERY_GUIDE",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Environmental"
     ]
@@ -327,7 +327,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 524",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Haunt"
     ]
@@ -340,7 +340,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 525",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Magical",
       "Mechanical",
@@ -355,7 +355,7 @@
     "complexity": "SIMPLE",
     "source": "Gamemastery Guide pg. 79",
     "sourceType": "GAMEMASTERY_GUIDE",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Haunt"
     ]
@@ -368,7 +368,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 525",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Magical",
       "Trap"
@@ -382,7 +382,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 525",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Magical",
       "Trap"
@@ -396,7 +396,7 @@
     "complexity": "SIMPLE",
     "source": "Gamemastery Guide pg. 79",
     "sourceType": "GAMEMASTERY_GUIDE",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Haunt"
     ]
@@ -409,7 +409,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 525",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Magical",
       "Trap"
@@ -423,7 +423,7 @@
     "complexity": "SIMPLE",
     "source": "Gamemastery Guide pg. 79",
     "sourceType": "GAMEMASTERY_GUIDE",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Haunt"
     ]
@@ -436,7 +436,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 525",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Mechanical",
       "Trap"
@@ -450,7 +450,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 525",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Magical",
       "Trap"
@@ -464,7 +464,7 @@
     "complexity": "SIMPLE",
     "source": "Core Rulebook pg. 526",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "rare",
+    "rarity": "RARE",
     "traits": [
       "Magical",
       "Trap"
@@ -478,7 +478,7 @@
     "complexity": "COMPLEX",
     "source": "Core Rulebook pg. 526",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Complex",
       "Magical",
@@ -493,7 +493,7 @@
     "complexity": "COMPLEX",
     "source": "Core Rulebook pg. 526",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Complex",
       "Mechanical",
@@ -508,7 +508,7 @@
     "complexity": "COMPLEX",
     "source": "Core Rulebook pg. 526",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Complex",
       "Environmental"
@@ -522,7 +522,7 @@
     "complexity": "COMPLEX",
     "source": "Core Rulebook pg. 527",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Complex",
       "Mechanical",
@@ -537,7 +537,7 @@
     "complexity": "COMPLEX",
     "source": "Core Rulebook pg. 527",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Complex",
       "Magical",
@@ -553,7 +553,7 @@
     "complexity": "COMPLEX",
     "source": "Gamemastery Guide pg. 80",
     "sourceType": "GAMEMASTERY_GUIDE",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Complex",
       "Haunt"
@@ -567,7 +567,7 @@
     "complexity": "COMPLEX",
     "source": "Gamemastery Guide pg. 80",
     "sourceType": "GAMEMASTERY_GUIDE",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Complex",
       "Haunt"
@@ -581,7 +581,7 @@
     "complexity": "COMPLEX",
     "source": "Core Rulebook pg. 528",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Complex",
       "Mechanical",
@@ -596,7 +596,7 @@
     "complexity": "COMPLEX",
     "source": "Core Rulebook pg. 528",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Complex",
       "Mechanical",
@@ -611,7 +611,7 @@
     "complexity": "COMPLEX",
     "source": "Gamemastery Guide pg. 80",
     "sourceType": "GAMEMASTERY_GUIDE",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Complex",
       "Environmental"
@@ -625,7 +625,7 @@
     "complexity": "COMPLEX",
     "source": "Gamemastery Guide pg. 81",
     "sourceType": "GAMEMASTERY_GUIDE",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Complex",
       "Haunt"
@@ -639,7 +639,7 @@
     "complexity": "COMPLEX",
     "source": "Core Rulebook pg. 528",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Complex",
       "Magical",
@@ -655,7 +655,7 @@
     "complexity": "COMPLEX",
     "source": "Core Rulebook pg. 528",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Complex",
       "Magical",
@@ -671,7 +671,7 @@
     "complexity": "COMPLEX",
     "source": "Gamemastery Guide pg. 81",
     "sourceType": "GAMEMASTERY_GUIDE",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Complex",
       "Haunt"
@@ -685,7 +685,7 @@
     "complexity": "COMPLEX",
     "source": "Core Rulebook pg. 529",
     "sourceType": "CORE_RULEBOOK",
-    "rarity": "standard",
+    "rarity": "COMMON",
     "traits": [
       "Complex",
       "Magical",
