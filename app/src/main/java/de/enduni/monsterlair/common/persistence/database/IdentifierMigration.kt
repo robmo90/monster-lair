@@ -112,7 +112,7 @@ class IdentifierMigration(private val context: Context) : Migration(1, 2) {
             val monsterId = monsterCursor.getLong(monsterCursor.getColumnIndex("monsterId"))
             val urlCursor =
                 database.query("SELECT url FROM monsters WHERE id is $monsterId LIMIT 1")
-            val url = urlCursor.getString(0)
+            val url = urlCursor.getString(urlCursor.getColumnIndex("url"))
             val monsterUuid = aonMapping.getValue(url)
             val count = monsterCursor.getInt(monsterCursor.getColumnIndex("count"))
             val encounterId = monsterCursor.getInt(monsterCursor.getColumnIndex("encounter_id"))
@@ -134,7 +134,7 @@ class IdentifierMigration(private val context: Context) : Migration(1, 2) {
             val id = hazardCursor.getInt(hazardCursor.getColumnIndex("id"))
             val hazardId = hazardCursor.getLong(hazardCursor.getColumnIndex("hazardId"))
             val urlCursor = database.query("SELECT url FROM hazards WHERE id is $hazardId LIMIT 1")
-            val url = urlCursor.getString(0)
+            val url = urlCursor.getString(urlCursor.getColumnIndex("url"))
             val monsterUuid = aonMapping.getValue(url)
             val count = hazardCursor.getInt(hazardCursor.getColumnIndex("count"))
             val encounterId = hazardCursor.getInt(hazardCursor.getColumnIndex("encounter_id"))
