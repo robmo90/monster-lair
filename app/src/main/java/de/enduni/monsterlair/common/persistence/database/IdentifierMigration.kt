@@ -14,11 +14,11 @@ class IdentifierMigration(private val context: Context) : Migration(1, 2) {
 
     override fun migrate(database: SupportSQLiteDatabase) {
         createNewMonsterTables(database)
-        migrateCustomMonster(database)
+        val customMonsters = migrateCustomMonster(database)
         createNewHazardTable(database)
         createNewEncounterMappingTables(database)
         val aonMapping = getAonMapping()
-        migrateMonsterData(database, aonMapping)
+        migrateMonsterData(database, aonMapping, customMonsters)
         migrateHazardData(database, aonMapping)
         moveNewMonsterTable(database)
         moveNewHazardTable(database)
@@ -55,8 +55,8 @@ class IdentifierMigration(private val context: Context) : Migration(1, 2) {
         Timber.d("Found ${cursor.count} monsters, let's get started")
 
         val newIds = mutableListOf<Pair<Long, String>>()
-        repeat(cursor.count - 1) { index ->
-            cursor.moveToPosition(index)
+        cursor.moveToFirst()
+        do {
             val id = cursor.getLong(cursor.getColumnIndex("id"))
             val uuid = UUID.randomUUID().toString()
             newIds.add(Pair(id, uuid))
@@ -65,10 +65,10 @@ class IdentifierMigration(private val context: Context) : Migration(1, 2) {
             val level = cursor.getInt(cursor.getColumnIndex("level"))
             val type = cursor.getString(cursor.getColumnIndex("type"))
             val statement =
-                "Insert into new_monsters (id, name, url, family, level, alignment, type, rarity, size, source, sourceType) VALUES ($uuid, $name, \"\", $family, $level, ${Alignment.NEUTRAL}, $type, ${Rarity.COMMON}, ${Size.MEDIUM}, ${CustomMonster.SOURCE}, ${Source.CUSTOM})"
+                "Insert into new_monsters (id, name, url, family, level, alignment, type, rarity, size, source, sourceType) VALUES (\"$uuid\", \"$name\", \"\", \"$family\", $level, \"${Alignment.NEUTRAL}\", \"$type\", \"${Rarity.COMMON}\", \"${Size.MEDIUM}\", \"${CustomMonster.SOURCE}\", \"${Source.CUSTOM}\")"
             Timber.d("Executing $statement")
             database.execSQL(statement)
-        }
+        } while (cursor.moveToNext())
         cursor.close()
         Timber.d("These are the new IDs: $newIds")
         return newIds
@@ -79,6 +79,7 @@ class IdentifierMigration(private val context: Context) : Migration(1, 2) {
         database.execSQL("Drop table monsters_for_encounters")
         database.execSQL("ALTER TABLE new_monsters RENAME TO monsters")
         database.execSQL("ALTER TABLE new_monsters_for_encounters RENAME TO monsters_for_encounters")
+        database.execSQL("CREATE INDEX IF NOT EXISTS monster_for_encounter_index ON monsters_for_encounters (encounter_id)")
     }
 
     private fun moveNewHazardTable(database: SupportSQLiteDatabase) {
@@ -86,6 +87,7 @@ class IdentifierMigration(private val context: Context) : Migration(1, 2) {
         database.execSQL("Drop table hazards_for_encounters")
         database.execSQL("ALTER TABLE new_hazards RENAME TO hazards")
         database.execSQL("ALTER TABLE new_hazards_for_encounters RENAME TO hazards_for_encounters")
+        database.execSQL("CREATE INDEX IF NOT EXISTS hazard_for_encounter_index ON hazards_for_encounters (encounter_id)")
     }
 
     private fun createNewHazardTable(database: SupportSQLiteDatabase) {
@@ -103,25 +105,37 @@ class IdentifierMigration(private val context: Context) : Migration(1, 2) {
 
     private fun migrateMonsterData(
         database: SupportSQLiteDatabase,
-        aonMapping: Map<String, String>
+        aonMapping: Map<String, String>,
+        customMonsters: List<Pair<Long, String>>
     ) {
         val monsterCursor = database.query("SELECT * FROM monsters_for_encounters")
-        repeat(monsterCursor.count - 1) { index ->
-            monsterCursor.moveToPosition(index)
+        if (monsterCursor.count == 0) {
+            Timber.d("Monster counter empty, nothing to do")
+            monsterCursor.close()
+            return
+        }
+        monsterCursor.moveToFirst()
+        do {
             val id = monsterCursor.getInt(monsterCursor.getColumnIndex("id"))
             val monsterId = monsterCursor.getLong(monsterCursor.getColumnIndex("monsterId"))
             val urlCursor =
-                database.query("SELECT url FROM monsters WHERE id is $monsterId LIMIT 1")
+                database.query("SELECT id, url FROM monsters WHERE id is $monsterId LIMIT 1")
+            urlCursor.moveToFirst()
             val url = urlCursor.getString(urlCursor.getColumnIndex("url"))
-            val monsterUuid = aonMapping.getValue(url)
+            val oldMonsterId = urlCursor.getLong(urlCursor.getColumnIndex("id"))
+            urlCursor.close()
+            val monsterUuid = if (url.isBlank()) {
+                customMonsters.find { it.first == oldMonsterId }
+            } else {
+                aonMapping.getValue(url)
+            }
             val count = monsterCursor.getInt(monsterCursor.getColumnIndex("count"))
             val encounterId = monsterCursor.getInt(monsterCursor.getColumnIndex("encounter_id"))
             val statement =
-                "Insert into new_monsters_for_encounters (id, monsterId, strength, count, encounter_id) VALUES ($id, $monsterUuid, ${Strength.STANDARD}, $count, $encounterId)"
+                "Insert into new_monsters_for_encounters (id, monsterId, strength, count, encounter_id) VALUES ($id, \"$monsterUuid\", \"${Strength.STANDARD}\", $count, $encounterId)"
             Timber.d("Executing $statement")
             database.execSQL(statement)
-        }
-        monsterCursor.close()
+        } while (monsterCursor.moveToNext())
     }
 
     private fun migrateHazardData(
@@ -129,20 +143,27 @@ class IdentifierMigration(private val context: Context) : Migration(1, 2) {
         aonMapping: Map<String, String>
     ) {
         val hazardCursor = database.query("SELECT * FROM hazards_for_encounters")
-        repeat(hazardCursor.count - 1) { index ->
-            hazardCursor.moveToPosition(index)
+        if (hazardCursor.count == 0) {
+            Timber.d("Hazard counter empty, nothing to do")
+            hazardCursor.close()
+            return
+        }
+        hazardCursor.moveToFirst()
+        do {
             val id = hazardCursor.getInt(hazardCursor.getColumnIndex("id"))
             val hazardId = hazardCursor.getLong(hazardCursor.getColumnIndex("hazardId"))
             val urlCursor = database.query("SELECT url FROM hazards WHERE id is $hazardId LIMIT 1")
+            urlCursor.moveToFirst()
             val url = urlCursor.getString(urlCursor.getColumnIndex("url"))
+            urlCursor.close()
             val monsterUuid = aonMapping.getValue(url)
             val count = hazardCursor.getInt(hazardCursor.getColumnIndex("count"))
             val encounterId = hazardCursor.getInt(hazardCursor.getColumnIndex("encounter_id"))
             val statement =
-                "Insert into new_hazards_for_encounters (id, monsterId, count, encounter_id) VALUES ($id, $monsterUuid, $count, $encounterId)"
+                "Insert into new_hazards_for_encounters (id, hazardId, count, encounter_id) VALUES ($id, \"$monsterUuid\", $count, $encounterId)"
             Timber.d("Executing $statement")
             database.execSQL(statement)
-        }
+        } while (hazardCursor.moveToNext())
         hazardCursor.close()
     }
 
