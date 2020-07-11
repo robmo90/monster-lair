@@ -10,7 +10,6 @@ import de.enduni.monsterlair.monsters.persistence.MonsterEntityMapper
 import de.enduni.monsterlair.update.UpdateManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import timber.log.Timber
 
 class DatabaseInitializer(
     private val monsterEntityMapper: MonsterEntityMapper,
@@ -24,60 +23,21 @@ class DatabaseInitializer(
 
     suspend fun feedMonsters() = withContext(Dispatchers.IO) {
         val savedVersion = updateManager.savedVersion
-//        val allMonsters = monsterDao.getAllMonsters()
-//        if (allMonsters.isEmpty()) {
-//            Timber.d("Feeding monsters")
-//            monsterDataSource.getMonsters()
-//                .insertMonsters()
-//        }
-//        if (hazardDao.getAllHazards().isEmpty()) {
-//            Timber.d("Setting up traps")
-//            hazardDataSource.getHazards()
-//                .map { hazardEntityMapper.toEntity(it) }
-//                .chunked(50)
-//                .forEach { hazardDao.insertHazards(it) }
-//        }
-//        if (monsterDao.getHighestId() <= 487L) {
-//            Timber.d("Insert monster update")
-//            monsterDataSource.getMonsterUpdate(1L)
-//                .insertMonsters()
-//        }
-//        if (savedVersion < 10) {
-//            Timber.d("Insert monster update 2 + 3")
-//            monsterDataSource.getMonsterUpdate(2L)
-//                .saveMonsters()
-//            monsterDataSource.getMonsterUpdate(3L)
-//                .saveMonsters()
-//            hazardDataSource.getHazardUpdate(1L)
-//                .saveHazards()
-//        }
-//        if (savedVersion < 11){
-        monsterDataSource.getMonsters().insertMonsters()
-        hazardDataSource.getHazards().saveHazards()
-//        }
-        Timber.d("Highest ID is: ${hazardDao.getHighestId()} ")
+        if (savedVersion < 11) {
+            monsterDataSource.getMonsters().insertMonsters()
+            hazardDataSource.getHazards().saveHazards()
+        }
     }
 
     private suspend fun List<MonsterDto>.insertMonsters() {
         this.map { monsterEntityMapper.toEntity(it) }
-            .chunked(50)
+            .chunked(20)
             .forEach { monsterDao.insertMonsters(it) }
     }
 
-    private suspend fun List<MonsterDto>.saveMonsters() {
-        this.forEach {
-            val entity = monsterEntityMapper.toEntity(it)
-            Timber.d("This is my Monster: $entity")
-            monsterDao.insertMonster(entity)
-        }
-    }
-
     private suspend fun List<HazardDto>.saveHazards() {
-        this.forEach {
-            val entity = hazardEntityMapper.toEntity(it)
-            Timber.d("This is my Monster: $entity")
-            hazardDao.insertHazard(entity)
-        }
+        this.map { hazardEntityMapper.toEntity(it) }
+            .chunked(20)
+            .forEach { hazardDao.insertHazards(it) }
     }
-
 }
