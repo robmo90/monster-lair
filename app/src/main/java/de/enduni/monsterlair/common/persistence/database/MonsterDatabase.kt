@@ -36,7 +36,7 @@ abstract class MonsterDatabase : RoomDatabase() {
                     .build()
             } else {
                 Room.databaseBuilder(context, MonsterDatabase::class.java, "MonsterDatabase")
-                    .addMigrations(IdentifierMigration())
+                    .addMigrations(IdentifierMigration(context))
                     .build()
             }
         }

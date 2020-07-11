@@ -24,33 +24,37 @@ class DatabaseInitializer(
 
     suspend fun feedMonsters() = withContext(Dispatchers.IO) {
         val savedVersion = updateManager.savedVersion
-        val allMonsters = monsterDao.getAllMonsters()
-        if (allMonsters.isEmpty()) {
-            Timber.d("Feeding monsters")
-            monsterDataSource.getMonsters()
-                .insertMonsters()
-        }
-        if (hazardDao.getAllHazards().isEmpty()) {
-            Timber.d("Setting up traps")
-            hazardDataSource.getHazards()
-                .map { hazardEntityMapper.toEntity(it) }
-                .chunked(50)
-                .forEach { hazardDao.insertHazards(it) }
-        }
-        if (monsterDao.getHighestId() <= 487L) {
-            Timber.d("Insert monster update")
-            monsterDataSource.getMonsterUpdate(1L)
-                .insertMonsters()
-        }
-        if (savedVersion < 10) {
-            Timber.d("Insert monster update 2 + 3")
-            monsterDataSource.getMonsterUpdate(2L)
-                .saveMonsters()
-            monsterDataSource.getMonsterUpdate(3L)
-                .saveMonsters()
-            hazardDataSource.getHazardUpdate(1L)
-                .saveHazards()
-        }
+//        val allMonsters = monsterDao.getAllMonsters()
+//        if (allMonsters.isEmpty()) {
+//            Timber.d("Feeding monsters")
+//            monsterDataSource.getMonsters()
+//                .insertMonsters()
+//        }
+//        if (hazardDao.getAllHazards().isEmpty()) {
+//            Timber.d("Setting up traps")
+//            hazardDataSource.getHazards()
+//                .map { hazardEntityMapper.toEntity(it) }
+//                .chunked(50)
+//                .forEach { hazardDao.insertHazards(it) }
+//        }
+//        if (monsterDao.getHighestId() <= 487L) {
+//            Timber.d("Insert monster update")
+//            monsterDataSource.getMonsterUpdate(1L)
+//                .insertMonsters()
+//        }
+//        if (savedVersion < 10) {
+//            Timber.d("Insert monster update 2 + 3")
+//            monsterDataSource.getMonsterUpdate(2L)
+//                .saveMonsters()
+//            monsterDataSource.getMonsterUpdate(3L)
+//                .saveMonsters()
+//            hazardDataSource.getHazardUpdate(1L)
+//                .saveHazards()
+//        }
+//        if (savedVersion < 11){
+        monsterDataSource.getMonsters().insertMonsters()
+        hazardDataSource.getHazards().saveHazards()
+//        }
         Timber.d("Highest ID is: ${hazardDao.getHighestId()} ")
     }
 

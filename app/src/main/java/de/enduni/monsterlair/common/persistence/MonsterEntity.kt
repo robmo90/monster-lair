@@ -25,7 +25,7 @@ data class MonsterTrait(
     @PrimaryKey val name: String
 )
 
-@Entity(primaryKeys = ["monsterId", "traitName"])
+@Entity(tableName = "MonsterAndTraitsCrossRef", primaryKeys = ["monsterId", "traitName"])
 data class MonsterAndTraitsCrossRef(
     val monsterId: Long,
     val traitName: String

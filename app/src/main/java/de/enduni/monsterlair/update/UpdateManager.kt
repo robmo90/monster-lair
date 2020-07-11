@@ -27,7 +27,6 @@ class UpdateManager(
         if (savedVersion < 10 && currentVersion >= 10) {
             showUpdateDialog(activity, currentVersion, R.string.whats_new_10)
         }
-
     }
 
     private fun showUpdateDialog(
