@@ -39,7 +39,7 @@ sealed class EncounterCreatorAction {
     object EncounterSaved : EncounterCreatorAction()
     object ScrollUp : EncounterCreatorAction()
     object ShowCreatorHint : EncounterCreatorAction()
-    class OnCustomMonsterPressed(val id: Long, val monsterName: String) : EncounterCreatorAction()
+    class OnCustomMonsterPressed(val id: String, val monsterName: String) : EncounterCreatorAction()
     class OnEditCustomMonsterClicked(val monster: Monster) : EncounterCreatorAction()
     class OnGiveTreasureRecommendationClicked(val htmlTemplate: String) : EncounterCreatorAction()
 

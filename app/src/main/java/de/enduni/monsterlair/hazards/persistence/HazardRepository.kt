@@ -16,7 +16,7 @@ class HazardRepository(
     private val hazardEntityMapper: HazardEntityMapper
 ) {
 
-    suspend fun getHazard(id: Long) =
+    suspend fun getHazard(id: String) =
         hazardDao.getHazard(id).let { hazardEntityMapper.toDomain(it) }
 
     suspend fun getFilteredHazards(

@@ -6,13 +6,15 @@ import de.enduni.monsterlair.hazards.domain.Hazard
 
 class HazardEntityMapper {
 
-    fun toEntity(dto: HazardDto, id: Long? = null) = HazardEntity(
-        id = id ?: dto.id,
+    fun toEntity(dto: HazardDto) = HazardEntity(
+        id = dto.id,
         name = dto.name,
         url = dto.url,
         level = dto.level,
         complexity = dto.complexity,
-        source = dto.source
+        rarity = dto.rarity,
+        source = dto.source,
+        sourceType = dto.sourceType
     )
 
     fun toDomain(entity: HazardEntity) = Hazard(
@@ -20,8 +22,11 @@ class HazardEntityMapper {
         name = entity.name,
         url = entity.url,
         level = entity.level,
+        rarity = entity.rarity,
         complexity = entity.complexity,
-        source = entity.source
+        source = entity.source,
+        sourceType = entity.sourceType,
+        traits = emptyList()
     )
 
 }

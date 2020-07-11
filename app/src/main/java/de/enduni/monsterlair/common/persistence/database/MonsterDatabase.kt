@@ -11,9 +11,13 @@ import de.enduni.monsterlair.common.persistence.*
         HazardEntity::class,
         MonsterEntity::class,
         EncounterEntity::class,
+        MonsterTrait::class,
+        HazardTrait::class,
+        MonsterAndTraitsCrossRef::class,
+        HazardsAndTraitsCrossRef::class,
         MonsterForEncounterEntity::class,
         HazardForEncounterEntity::class],
-    version = 1
+    version = 2
 )
 abstract class MonsterDatabase : RoomDatabase() {
 
@@ -32,6 +36,7 @@ abstract class MonsterDatabase : RoomDatabase() {
                     .build()
             } else {
                 Room.databaseBuilder(context, MonsterDatabase::class.java, "MonsterDatabase")
+                    .addMigrations(IdentifierMigration())
                     .build()
             }
         }

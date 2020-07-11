@@ -16,7 +16,7 @@ class MonsterRepository(
     private val monsterEntityMapper: MonsterEntityMapper
 ) {
 
-    suspend fun getMonster(id: Long) =
+    suspend fun getMonster(id: String) =
         monsterDao.getMonster(id).let { monsterEntityMapper.toModel(it) }
 
     suspend fun getMonsters(
@@ -31,8 +31,7 @@ class MonsterRepository(
     }
 
     suspend fun saveMonster(monster: Monster) {
-        val id = monster.id ?: monsterDao.getHighestId() + 1
-        val entity = monsterEntityMapper.toEntity(monster, id)
+        val entity = monsterEntityMapper.toEntity(monster)
         monsterDao.insertMonster(entity)
     }
 
@@ -42,7 +41,7 @@ class MonsterRepository(
         monsterDao.insertMonster(entity)
     }
 
-    suspend fun deleteMonster(id: Long) {
+    suspend fun deleteMonster(id: String) {
         monsterDao.deleteMonster(id)
     }
 

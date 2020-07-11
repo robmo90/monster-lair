@@ -223,7 +223,7 @@ class EncounterCreatorViewModel(
         return this.map { mapper.toDanger(it) }
     }
 
-    override fun onDecrement(type: DangerType, id: Long) {
+    override fun onDecrement(type: DangerType, id: String) {
         when (type) {
             DangerType.MONSTER -> encounter.decrementCount(monsterId = id)
             DangerType.HAZARD -> encounter.decrementCount(hazardId = id)
@@ -233,7 +233,7 @@ class EncounterCreatorViewModel(
         }
     }
 
-    override fun onIncrement(type: DangerType, id: Long) {
+    override fun onIncrement(type: DangerType, id: String) {
         when (type) {
             DangerType.MONSTER -> encounter.incrementCount(monsterId = id)
             DangerType.HAZARD -> encounter.incrementCount(hazardId = id)
@@ -302,7 +302,7 @@ class EncounterCreatorViewModel(
         }
     }
 
-    override fun onAddClicked(type: DangerType, id: Long) {
+    override fun onAddClicked(type: DangerType, id: String) {
         viewModelScope.launch(handler) {
             when (type) {
                 DangerType.MONSTER -> {
@@ -322,12 +322,12 @@ class EncounterCreatorViewModel(
         }
     }
 
-    private suspend fun findMonsterWithId(id: Long): MonsterWithRole? =
+    private suspend fun findMonsterWithId(id: String): MonsterWithRole? =
         withContext(Dispatchers.Default) {
             monsters.find { it.id == id }
         }
 
-    private suspend fun findHazardWithId(id: Long): HazardWithRole? =
+    private suspend fun findHazardWithId(id: String): HazardWithRole? =
         withContext(Dispatchers.Default) {
             hazards.find { it.id == id }
         }
@@ -367,14 +367,14 @@ class EncounterCreatorViewModel(
         }
     }
 
-    override fun onEditClicked(id: Long) {
+    override fun onEditClicked(id: String) {
         viewModelScope.launch(handler) {
             val monster = retrieveMonsterUseCase.execute(id)
             _actions.sendAction(EncounterCreatorAction.OnEditCustomMonsterClicked(monster))
         }
     }
 
-    override fun onDeleteClicked(id: Long) {
+    override fun onDeleteClicked(id: String) {
         viewModelScope.launch(handler + Dispatchers.Default) {
             deleteMonsterUseCase.execute(id)
             monsters = retrieveMonstersWithRoleUseCase.execute(filter, encounter)
@@ -382,7 +382,7 @@ class EncounterCreatorViewModel(
         }
     }
 
-    override fun onCustomMonsterLongPressed(id: Long, name: String) {
+    override fun onCustomMonsterLongPressed(id: String, name: String) {
         viewModelScope.launch(handler) {
             _actions.sendAction(EncounterCreatorAction.OnCustomMonsterPressed(id, name))
         }

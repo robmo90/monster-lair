@@ -6,49 +6,47 @@ import de.enduni.monsterlair.monsters.domain.Monster
 
 class MonsterEntityMapper {
 
-    fun toEntity(dto: MonsterDto, id: Long? = null) = MonsterEntity(
-        id = 1L,
+    fun toEntity(dto: MonsterDto) = MonsterEntity(
+        id = dto.id,
         name = dto.name,
         url = dto.url,
         level = dto.level,
         type = dto.type,
         family = dto.family,
-        alignment = dto.alignment.toString(),
-        size = dto.size.toString(),
-        source = dto.source
+        alignment = dto.alignment,
+        rarity = dto.rarity,
+        size = dto.size,
+        source = dto.source,
+        sourceType = dto.sourceType
     )
 
     fun toModel(entity: MonsterEntity) = Monster(
         id = entity.id,
         name = entity.name,
-        url = entity.url.nullIfEmpty(),
+        url = entity.url,
         level = entity.level,
         type = entity.type,
         family = entity.family,
-        alignment = entity.alignment.nullIfEmpty(),
-        size = entity.size.nullIfEmpty(),
-        source = entity.source
+        rarity = entity.rarity,
+        alignment = entity.alignment,
+        size = entity.size,
+        source = entity.source,
+        sourceType = entity.sourceType,
+        traits = emptyList()
     )
 
-    fun toEntity(dto: Monster, id: Long) = MonsterEntity(
-        id = id,
+    fun toEntity(dto: Monster) = MonsterEntity(
+        id = dto.id,
         name = dto.name,
         url = dto.url ?: "",
         level = dto.level,
         type = dto.type,
         family = dto.family,
-        alignment = dto.alignment ?: "",
-        size = dto.size ?: "",
-        source = dto.source
+        alignment = dto.alignment,
+        size = dto.size,
+        rarity = dto.rarity,
+        source = dto.source,
+        sourceType = dto.sourceType
     )
-
-    private fun String.nullIfEmpty(): String? {
-        return if (this.isBlank()) {
-            null
-        } else {
-            this
-        }
-    }
-
 
 }

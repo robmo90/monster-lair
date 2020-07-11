@@ -7,7 +7,7 @@ import java.lang.ref.WeakReference
 
 class EditMonsterDialog(
     activity: Activity,
-    private val id: Long,
+    private val id: String,
     private val name: String,
     private val onEditMonsterClickListener: OnEditMonsterClickListener
 ) {
@@ -33,8 +33,8 @@ class EditMonsterDialog(
 
 
     interface OnEditMonsterClickListener {
-        fun onEditClicked(id: Long)
-        fun onDeleteClicked(id: Long)
+        fun onEditClicked(id: String)
+        fun onDeleteClicked(id: String)
     }
 
 }

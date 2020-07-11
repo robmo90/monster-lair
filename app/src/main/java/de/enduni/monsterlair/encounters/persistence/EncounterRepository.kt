@@ -1,5 +1,6 @@
 package de.enduni.monsterlair.encounters.persistence
 
+import de.enduni.monsterlair.common.domain.Strength
 import de.enduni.monsterlair.common.persistence.*
 import de.enduni.monsterlair.encounters.domain.model.Encounter
 import de.enduni.monsterlair.encounters.domain.model.EncounterHazard
@@ -58,6 +59,7 @@ class EncounterRepository(
             EncounterMonster(
                 monster.id,
                 monsterWithRole,
+                Strength.STANDARD,
                 monsterForEncounterEntity.count
             )
         }

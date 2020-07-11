@@ -24,7 +24,7 @@ class RetrieveHazardsUseCase(private val hazardRepository: HazardRepository) {
         }
     }
 
-    suspend fun getHazard(id: Long): Hazard {
+    suspend fun getHazard(id: String): Hazard {
         return hazardRepository.getHazard(id)
     }
 

@@ -79,7 +79,7 @@ class MonsterViewModel(
     }
 
 
-    override fun onSelect(monsterId: Long) {
+    override fun onSelect(monsterId: String) {
         viewModelScope.launch(handler) {
             val monster = retrieveMonsterUseCase.execute(monsterId)
             monster.url?.let { _actions.sendAction(MonsterOverviewAction.OnMonsterLinkClicked(it)) }
@@ -108,21 +108,21 @@ class MonsterViewModel(
         }
     }
 
-    override fun onEditClicked(id: Long) {
+    override fun onEditClicked(id: String) {
         viewModelScope.launch(handler) {
             val monster = retrieveMonsterUseCase.execute(id)
             _actions.sendAction(MonsterOverviewAction.OnEditCustomMonsterClicked(monster))
         }
     }
 
-    override fun onDeleteClicked(id: Long) {
+    override fun onDeleteClicked(id: String) {
         viewModelScope.launch(handler + Dispatchers.Default) {
             deleteMonsterUseCase.execute(id)
             filterMonsters()
         }
     }
 
-    override fun onLongPress(monsterId: Long) {
+    override fun onLongPress(monsterId: String) {
         viewModelScope.launch(handler) {
             val monster = retrieveMonsterUseCase.execute(monsterId)
             _actions.sendAction(

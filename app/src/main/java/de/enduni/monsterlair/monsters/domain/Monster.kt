@@ -1,16 +1,19 @@
 package de.enduni.monsterlair.monsters.domain
 
-import de.enduni.monsterlair.common.domain.MonsterType
+import de.enduni.monsterlair.common.domain.*
 
 data class Monster(
-    val id: Long?,
+    val id: String,
     val name: String,
     val url: String?,
     val family: String,
     val level: Int,
-    val alignment: String?,
+    val alignment: Alignment,
     val type: MonsterType,
-    val size: String?,
-    val source: String
+    val rarity: Rarity,
+    val size: Size,
+    val source: String,
+    val sourceType: Source,
+    val traits: List<String>
 )
 

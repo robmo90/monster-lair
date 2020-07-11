@@ -62,7 +62,7 @@ class DatabaseInitializer(
 
     private suspend fun List<MonsterDto>.saveMonsters() {
         this.forEach {
-            val entity = monsterEntityMapper.toEntity(it, monsterDao.getHighestId() + 1)
+            val entity = monsterEntityMapper.toEntity(it)
             Timber.d("This is my Monster: $entity")
             monsterDao.insertMonster(entity)
         }
@@ -70,7 +70,7 @@ class DatabaseInitializer(
 
     private suspend fun List<HazardDto>.saveHazards() {
         this.forEach {
-            val entity = hazardEntityMapper.toEntity(it, hazardDao.getHighestId() + 1)
+            val entity = hazardEntityMapper.toEntity(it)
             Timber.d("This is my Monster: $entity")
             hazardDao.insertHazard(entity)
         }

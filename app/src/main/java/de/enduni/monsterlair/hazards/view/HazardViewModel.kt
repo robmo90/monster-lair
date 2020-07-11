@@ -83,7 +83,7 @@ class HazardViewModel(
 
     }
 
-    override fun onSelect(hazardId: Long) {
+    override fun onSelect(hazardId: String) {
         viewModelScope.launch(handler) {
             val hazard = retrieveHazardsUseCase.getHazard(hazardId)
             _actions.postValue(HazardOverviewAction.HazardSelected(hazard.url))

@@ -54,10 +54,10 @@ class DangerForEncounterViewHolder(
     }
 
     interface DangerForEncounterListener {
-        fun onIncrement(type: DangerType, id: Long)
-        fun onDecrement(type: DangerType, id: Long)
+        fun onIncrement(type: DangerType, id: String)
+        fun onDecrement(type: DangerType, id: String)
         fun onDangerForEncounterSelected(url: String?)
-        fun onCustomMonsterLongPressed(id: Long, name: String)
+        fun onCustomMonsterLongPressed(id: String, name: String)
     }
 
 }

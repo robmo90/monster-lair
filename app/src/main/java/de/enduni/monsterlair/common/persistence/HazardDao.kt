@@ -31,6 +31,6 @@ interface HazardDao {
 
 
     @Query("SELECT * FROM hazards WHERE id is :id LIMIT 1")
-    suspend fun getHazard(id: Long): HazardEntity
+    suspend fun getHazard(id: String): HazardEntity
 
 }

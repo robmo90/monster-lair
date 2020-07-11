@@ -39,7 +39,7 @@ class HazardViewHolder(
     }
 
     interface HazardSelectedListener {
-        fun onSelect(hazardId: Long)
+        fun onSelect(hazardId: String)
     }
 
 }

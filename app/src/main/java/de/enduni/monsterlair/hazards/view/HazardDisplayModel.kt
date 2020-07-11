@@ -3,7 +3,7 @@ package de.enduni.monsterlair.hazards.view
 import de.enduni.monsterlair.common.domain.Complexity
 
 data class HazardDisplayModel(
-    val id: Long,
+    val id: String,
     val name: String,
     val url: String,
     val level: Int,

@@ -6,7 +6,7 @@ class RetrieveMonsterUseCase(
     private val monsterRepository: MonsterRepository
 ) {
 
-    suspend fun execute(id: Long): Monster {
+    suspend fun execute(id: String): Monster {
         return monsterRepository.getMonster(id)
     }
 

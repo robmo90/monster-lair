@@ -15,9 +15,9 @@ class MonsterWithRoleMapper {
                 url = it.url,
                 family = it.family,
                 level = it.level,
-                alignment = it.alignment,
+                alignment = it.alignment.toString(),
                 type = it.type,
-                size = it.size,
+                size = it.size.toString(),
                 source = it.source,
                 role = it.level.determineRole(encounterLevel)
             )
@@ -32,9 +32,9 @@ class MonsterWithRoleMapper {
                 url = it.url,
                 family = it.family,
                 level = it.level,
-                alignment = it.alignment,
+                alignment = it.alignment.toString(),
                 type = it.type,
-                size = it.size,
+                size = it.size.toString(),
                 source = it.source,
                 role = it.level.determineRole(encounterLevel)
             )

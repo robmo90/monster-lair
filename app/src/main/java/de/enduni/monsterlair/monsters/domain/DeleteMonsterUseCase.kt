@@ -6,7 +6,7 @@ class DeleteMonsterUseCase(
     private val monsterRepository: MonsterRepository
 ) {
 
-    suspend fun execute(id: Long) {
+    suspend fun execute(id: String) {
         return monsterRepository.deleteMonster(id)
     }
 

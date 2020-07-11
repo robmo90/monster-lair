@@ -14,7 +14,9 @@ class EncounterEntityMapper {
         level = encounter.level,
         numberOfPlayers = encounter.numberOfPlayers,
         name = encounter.name,
-        difficulty = encounter.targetDifficulty
+        difficulty = encounter.targetDifficulty,
+        notes = "",
+        withoutProficiency = false
     )
 
     fun toMonsterEntities(
@@ -25,7 +27,8 @@ class EncounterEntityMapper {
             MonsterForEncounterEntity(
                 monsterId = it.id,
                 count = it.count,
-                encounterId = encounterId
+                encounterId = encounterId,
+                strength = it.strength
             )
         }
     }

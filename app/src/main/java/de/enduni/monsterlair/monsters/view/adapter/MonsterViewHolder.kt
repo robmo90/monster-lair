@@ -44,8 +44,8 @@ class MonsterViewHolder(
     }
 
     interface MonsterViewHolderListener {
-        fun onSelect(monsterId: Long)
-        fun onLongPress(monsterId: Long)
+        fun onSelect(monsterId: String)
+        fun onLongPress(monsterId: String)
     }
 
 }

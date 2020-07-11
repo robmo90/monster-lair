@@ -65,4 +65,24 @@ class EnumTypeConverters {
         return Size.valueOf(value)
     }
 
+    @TypeConverter
+    fun fromRarity(value: Rarity): String {
+        return value.toString()
+    }
+
+    @TypeConverter
+    fun toRarity(value: String): Rarity {
+        return Rarity.valueOf(value)
+    }
+
+    @TypeConverter
+    fun fromStrength(value: Strength): String {
+        return value.toString()
+    }
+
+    @TypeConverter
+    fun toStrength(value: String): Strength {
+        return Strength.valueOf(value)
+    }
+
 }

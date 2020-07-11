@@ -1,5 +1,6 @@
 package de.enduni.monsterlair.encounters.domain.model
 
+import de.enduni.monsterlair.common.domain.Strength
 import de.enduni.monsterlair.common.getXp
 import kotlin.math.abs
 import kotlin.math.min
@@ -59,7 +60,8 @@ data class Encounter(
                 EncounterMonster(
                     id = monster.id,
                     monster = monster,
-                    count = 1
+                    count = 1,
+                    strength = Strength.STANDARD
                 )
             )
         }
@@ -80,15 +82,15 @@ data class Encounter(
         }
     }
 
-    private fun removeMonster(monsterId: Long) {
+    private fun removeMonster(monsterId: String) {
         monsters.removeIf { it.id == monsterId }
     }
 
-    private fun removeHazard(hazardId: Long) {
+    private fun removeHazard(hazardId: String) {
         hazards.removeIf { it.id == hazardId }
     }
 
-    fun incrementCount(monsterId: Long? = null, hazardId: Long? = null) {
+    fun incrementCount(monsterId: String? = null, hazardId: String? = null) {
         monsterId?.let { id ->
             monsters.find { it.id == id }
                 ?.let { it.count++ }
@@ -99,7 +101,7 @@ data class Encounter(
         }
     }
 
-    fun decrementCount(monsterId: Long? = null, hazardId: Long? = null) {
+    fun decrementCount(monsterId: String? = null, hazardId: String? = null) {
         monsterId?.let { id ->
             monsters.find { it.id == id }
                 ?.let { monster ->

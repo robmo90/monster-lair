@@ -8,14 +8,14 @@ import androidx.appcompat.app.AlertDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputEditText
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.common.domain.CustomMonster
-import de.enduni.monsterlair.common.domain.MonsterType
+import de.enduni.monsterlair.common.domain.*
 import de.enduni.monsterlair.common.getStringRes
 import de.enduni.monsterlair.common.setTextIfNotFocused
 import de.enduni.monsterlair.databinding.DialogCreateMonsterBinding
 import de.enduni.monsterlair.monsters.domain.Monster
 import timber.log.Timber
 import java.lang.ref.WeakReference
+import java.util.*
 
 class CreateMonsterDialog(
     activity: Activity,
@@ -70,10 +70,13 @@ class CreateMonsterDialog(
                                 level = binding.monsterLevelEditText.text.toString().toInt(),
                                 type = type,
                                 source = CustomMonster.SOURCE,
-                                id = monster?.id,
-                                alignment = null,
-                                size = null,
-                                url = null
+                                id = UUID.randomUUID().toString(),
+                                alignment = Alignment.NEUTRAL,
+                                size = Size.MEDIUM,
+                                sourceType = Source.CUSTOM,
+                                url = null,
+                                traits = emptyList(),
+                                rarity = Rarity.COMMON
                             )
                         )
                         Toast.makeText(

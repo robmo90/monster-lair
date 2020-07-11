@@ -1,6 +1,7 @@
 package de.enduni.monsterlair.common.persistence
 
 import androidx.room.*
+import de.enduni.monsterlair.common.domain.Strength
 import de.enduni.monsterlair.common.persistence.database.EnumTypeConverters
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 
@@ -11,7 +12,9 @@ data class EncounterEntity(
     val level: Int,
     val numberOfPlayers: Int,
     val name: String,
-    val difficulty: EncounterDifficulty
+    val difficulty: EncounterDifficulty,
+    val notes: String,
+    val withoutProficiency: Boolean
 )
 
 @Entity(
@@ -27,9 +30,11 @@ data class EncounterEntity(
         onDelete = ForeignKey.CASCADE
     )]
 )
+@TypeConverters(EnumTypeConverters::class)
 data class MonsterForEncounterEntity(
     @PrimaryKey val id: Long? = null,
-    val monsterId: Long,
+    val monsterId: String,
+    val strength: Strength,
     val count: Int,
     @ColumnInfo(name = "encounter_id") val encounterId: Long
 )
@@ -49,7 +54,7 @@ data class MonsterForEncounterEntity(
 )
 data class HazardForEncounterEntity(
     @PrimaryKey val id: Long? = null,
-    val hazardId: Long,
+    val hazardId: String,
     val count: Int,
     @ColumnInfo(name = "encounter_id") val encounterId: Long
 )

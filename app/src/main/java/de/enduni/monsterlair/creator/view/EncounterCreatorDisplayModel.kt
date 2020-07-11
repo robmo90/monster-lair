@@ -8,7 +8,7 @@ sealed class EncounterCreatorDisplayModel {
 
     data class Danger(
         val type: DangerType,
-        val id: Long,
+        val id: String,
         val name: String,
         @DrawableRes val icon: Int,
         val level: Int,
@@ -30,7 +30,7 @@ sealed class EncounterCreatorDisplayModel {
 
     data class DangerForEncounter(
         val type: DangerType,
-        val id: Long,
+        val id: String,
         val name: String,
         @DrawableRes val icon: Int,
         val count: Int,

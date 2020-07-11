@@ -14,7 +14,7 @@ interface MonsterDao {
     suspend fun insertMonster(monster: MonsterEntity)
 
     @Query("DELETE FROM monsters WHERE id = :id")
-    suspend fun deleteMonster(id: Long)
+    suspend fun deleteMonster(id: String)
 
     @Query("SELECT * FROM monsters ORDER BY name")
     suspend fun getAllMonsters(): List<MonsterEntity>
@@ -33,6 +33,6 @@ interface MonsterDao {
     ): Flow<List<MonsterEntity>>
 
     @Query("SELECT * FROM monsters WHERE id is :id LIMIT 1")
-    suspend fun getMonster(id: Long): MonsterEntity
+    suspend fun getMonster(id: String): MonsterEntity
 
 }
