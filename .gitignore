@@ -12,3 +12,5 @@
 /captures
 .externalNativeBuild
 .cxx
+/private_key.pepk
+/release_keystore

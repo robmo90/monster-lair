@@ -13,8 +13,7 @@ import de.enduni.monsterlair.common.persistence.*
         EncounterEntity::class,
         MonsterForEncounterEntity::class,
         HazardForEncounterEntity::class],
-    version = 1,
-    exportSchema = false
+    version = 1
 )
 abstract class MonsterDatabase : RoomDatabase() {
 

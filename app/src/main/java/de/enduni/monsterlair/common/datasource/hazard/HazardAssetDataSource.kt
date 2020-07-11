@@ -5,7 +5,7 @@ import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.common.domain.ComplexityTypeAdapter
+import de.enduni.monsterlair.common.datasource.typeadapters.ComplexityTypeAdapter
 
 class HazardAssetDataSource(
     private val context: Context

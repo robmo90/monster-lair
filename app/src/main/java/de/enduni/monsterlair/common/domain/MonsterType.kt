@@ -1,7 +1,6 @@
 package de.enduni.monsterlair.common.domain
 
 import androidx.annotation.Keep
-import com.squareup.moshi.FromJson
 
 @Keep
 enum class MonsterType {
@@ -27,10 +26,3 @@ enum class MonsterType {
     NONE;
 }
 
-class MonsterTypeAdapter {
-    @FromJson
-    fun fromJson(string: String): MonsterType {
-        val type = MonsterType.values().find { it.toString() == string }
-        return type ?: MonsterType.NONE
-    }
-}

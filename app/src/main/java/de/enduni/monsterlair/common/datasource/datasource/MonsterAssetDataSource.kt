@@ -5,7 +5,7 @@ import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.common.domain.MonsterTypeAdapter
+import de.enduni.monsterlair.common.datasource.typeadapters.EnumAdapter
 
 class MonsterAssetDataSource(private val context: Context) :
     MonsterDataSource {
@@ -15,7 +15,7 @@ class MonsterAssetDataSource(private val context: Context) :
     init {
         val type = Types.newParameterizedType(List::class.java, MonsterDto::class.java)
         jsonAdapter = Moshi.Builder()
-            .add(MonsterTypeAdapter())
+            .add(EnumAdapter())
             .build().adapter<List<MonsterDto>>(type)
     }
 

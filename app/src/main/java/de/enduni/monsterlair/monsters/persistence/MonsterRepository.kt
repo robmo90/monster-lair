@@ -37,7 +37,7 @@ class MonsterRepository(
     }
 
     suspend fun saveMonster(monster: MonsterDto) {
-        monster.id = monsterDao.getHighestId() + 1
+
         val entity = monsterEntityMapper.toEntity(monster)
         monsterDao.insertMonster(entity)
     }

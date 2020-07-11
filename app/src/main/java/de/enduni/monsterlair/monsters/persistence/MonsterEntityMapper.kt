@@ -7,14 +7,14 @@ import de.enduni.monsterlair.monsters.domain.Monster
 class MonsterEntityMapper {
 
     fun toEntity(dto: MonsterDto, id: Long? = null) = MonsterEntity(
-        id = id ?: dto.id,
+        id = 1L,
         name = dto.name,
         url = dto.url,
         level = dto.level,
         type = dto.type,
         family = dto.family,
-        alignment = dto.alignment,
-        size = dto.size,
+        alignment = dto.alignment.toString(),
+        size = dto.size.toString(),
         source = dto.source
     )
 
