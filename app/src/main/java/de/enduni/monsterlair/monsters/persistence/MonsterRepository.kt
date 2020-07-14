@@ -1,7 +1,7 @@
 package de.enduni.monsterlair.monsters.persistence
 
 import androidx.sqlite.db.SimpleSQLiteQuery
-import de.enduni.monsterlair.common.datasource.datasource.MonsterDto
+import de.enduni.monsterlair.common.datasource.monsters.MonsterDto
 import de.enduni.monsterlair.common.domain.MonsterType
 import de.enduni.monsterlair.common.persistence.MonsterDao
 import de.enduni.monsterlair.common.persistence.MonsterEntity

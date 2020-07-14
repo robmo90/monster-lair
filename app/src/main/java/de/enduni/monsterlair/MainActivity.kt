@@ -1,5 +1,7 @@
 package de.enduni.monsterlair
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -91,6 +93,15 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+    }
+
+    companion object {
+
+
+        fun intent(context: Context): Intent {
+            return Intent(context, MainActivity::class.java)
+        }
+
     }
 
 }

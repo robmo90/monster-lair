@@ -49,8 +49,8 @@ android {
 
     kotlinOptions {
         jvmTarget = "1.8"
+        freeCompilerArgs += "-Xopt-in=org.mylibrary.OptInAnnotation -Xopt-in=kotlin.RequiresOptIn"
     }
-
 
     viewBinding {
         enabled = true

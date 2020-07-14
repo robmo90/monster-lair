@@ -33,6 +33,11 @@
         <item name="fontFamily">@font/amaranth_bold</item>
     </style>
 
+    <style name="Title" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/amaranth_bold</item>
+        <item name="android:textColor">?colorOnPrimarySurface</item>
+    </style>
+
     <style name="Headline" parent="TextAppearance.MaterialComponents.Headline6">
         <item name="fontFamily">@font/amaranth_bold</item>
     </style>

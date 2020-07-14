@@ -1,9 +1,9 @@
 package de.enduni.monsterlair
 
-import de.enduni.monsterlair.common.datasource.datasource.MonsterAssetDataSource
-import de.enduni.monsterlair.common.datasource.datasource.MonsterDataSource
 import de.enduni.monsterlair.common.datasource.hazard.HazardAssetDataSource
 import de.enduni.monsterlair.common.datasource.hazard.HazardDataSource
+import de.enduni.monsterlair.common.datasource.monsters.MonsterAssetDataSource
+import de.enduni.monsterlair.common.datasource.monsters.MonsterDataSource
 import de.enduni.monsterlair.common.persistence.database.DatabaseInitializer
 import de.enduni.monsterlair.common.persistence.database.HazardEntityMapper
 import de.enduni.monsterlair.common.persistence.database.MonsterDatabase

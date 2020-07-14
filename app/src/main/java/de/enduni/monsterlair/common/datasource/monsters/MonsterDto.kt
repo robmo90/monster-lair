@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.common.datasource.datasource
+package de.enduni.monsterlair.common.datasource.monsters
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

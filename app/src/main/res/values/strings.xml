@@ -167,5 +167,6 @@
     <string name="whats_new_10">- Added monsters from the Bestiary 2 and NPCs from the GMG (both under monsters). Hazards are updated as well. \n- Reversed encounter order, newest first.\n- Added small intro to the encounter creator</string>
     <string name="encounter_creator_introduction_title">Small Intro</string>
     <string name="encounter_creator_introduction">Here\'s a small introduction to the encounter creator since the UI is still pretty sloppy:\n\n- Pull up the Search bar to access filters for monsters &amp; hazards (type, level, etc.)\n- Add your own monsters using +\n- Create random encounters by clicking the dice\n- Get treasure recommendations for your group by clicking the chest</string>
+    <string name="updating_data">Updating Data ...</string>
 
 </resources>

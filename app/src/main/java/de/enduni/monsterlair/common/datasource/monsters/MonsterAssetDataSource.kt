@@ -1,4 +1,4 @@
-package de.enduni.monsterlair.common.datasource.datasource
+package de.enduni.monsterlair.common.datasource.monsters
 
 import android.content.Context
 import com.squareup.moshi.JsonAdapter
