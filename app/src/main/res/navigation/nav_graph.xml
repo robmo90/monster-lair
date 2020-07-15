@@ -33,6 +33,12 @@
         android:label="@string/fragment_hazards"
         tools:layout="@layout/fragment_hazards" />
 
+    <fragment
+        android:id="@+id/treasure_fragment"
+        android:name="de.enduni.monsterlair.treasure.TreasureFragment"
+        android:label="@string/fragment_treasures"
+        tools:layout="@layout/fragment_treasure" />
+
 
     <fragment
         android:id="@+id/encounterExportFragment"

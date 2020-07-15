@@ -27,7 +27,8 @@ class MonsterRepository(
         monsterTypes: List<MonsterType>
     ): List<Monster> {
         val query = buildQuery(filter, monsterTypes, lowerLevel, higherLevel, sortBy)
-        return monsterDao.getFilteredMonsters(SimpleSQLiteQuery(query)).toDomain()
+        return monsterDao.getFilteredMonsters(SimpleSQLiteQuery(query)).map { it.monster }
+            .toDomain()
     }
 
     suspend fun saveMonster(monster: Monster) {

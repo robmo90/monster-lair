@@ -44,4 +44,11 @@ class EnumAdapter {
 
         }
     }
+
+    @FromJson
+    fun treasureCategoryFromJson(string: String): TreasureCategory {
+        return string.toUpperCase(Locale.ROOT)
+            .replace("-", "_")
+            .let { TreasureCategory.valueOf(it) }
+    }
 }

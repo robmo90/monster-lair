@@ -3,6 +3,7 @@ package de.enduni.monsterlair
 import android.app.Application
 import de.enduni.monsterlair.common.persistence.database.DatabaseInitializer
 import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
@@ -10,6 +11,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import timber.log.Timber
 
+@ExperimentalCoroutinesApi
 class MonsterLairApplication : Application() {
 
     private val databaseInitializer: DatabaseInitializer by inject()
@@ -33,6 +35,7 @@ class MonsterLairApplication : Application() {
                     hazardsModule,
                     monsterModule,
                     encounterModule,
+                    treasureModule,
                     appModule
                 )
             )
@@ -40,8 +43,8 @@ class MonsterLairApplication : Application() {
         Timber.d("Initialized Koin")
 
         MainScope().launch(handler) {
-            databaseInitializer.feedMonsters()
-            Timber.d("Fed monsters, setup traps")
+            databaseInitializer.initialize()
+            Timber.d("Initialized Database")
         }
 
 

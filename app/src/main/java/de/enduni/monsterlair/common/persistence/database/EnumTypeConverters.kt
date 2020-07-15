@@ -85,4 +85,14 @@ class EnumTypeConverters {
         return Strength.valueOf(value)
     }
 
+    @TypeConverter
+    fun fromCategory(value: TreasureCategory): String {
+        return value.toString()
+    }
+
+    @TypeConverter
+    fun toCategory(value: String): TreasureCategory {
+        return TreasureCategory.valueOf(value)
+    }
+
 }

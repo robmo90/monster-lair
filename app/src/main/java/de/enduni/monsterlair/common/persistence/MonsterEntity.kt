@@ -25,17 +25,17 @@ data class MonsterTrait(
     @PrimaryKey val name: String
 )
 
-@Entity(tableName = "MonsterAndTraitsCrossRef", primaryKeys = ["monsterId", "traitName"])
+@Entity(tableName = "MonsterAndTraitsCrossRef", primaryKeys = ["id", "name"])
 data class MonsterAndTraitsCrossRef(
-    val monsterId: Long,
-    val traitName: String
+    val id: String,
+    val name: String
 )
 
 data class MonstersWithTraits(
     @Embedded val monster: MonsterEntity,
     @Relation(
-        parentColumn = "monsterId",
-        entityColumn = "traitName",
+        parentColumn = "id",
+        entityColumn = "name",
         associateBy = Junction(MonsterAndTraitsCrossRef::class)
     )
     val traits: List<MonsterTrait>

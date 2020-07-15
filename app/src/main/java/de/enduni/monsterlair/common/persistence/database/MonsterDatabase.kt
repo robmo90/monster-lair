@@ -10,11 +10,14 @@ import de.enduni.monsterlair.common.persistence.*
     entities = [
         HazardEntity::class,
         MonsterEntity::class,
+        TreasureEntity::class,
         EncounterEntity::class,
         MonsterTrait::class,
         HazardTrait::class,
+        TreasureTrait::class,
         MonsterAndTraitsCrossRef::class,
         HazardsAndTraitsCrossRef::class,
+        TreasureAndTraitsCrossRef::class,
         MonsterForEncounterEntity::class,
         HazardForEncounterEntity::class],
     version = 2
@@ -27,10 +30,11 @@ abstract class MonsterDatabase : RoomDatabase() {
 
     abstract fun hazardDao(): HazardDao
 
+    abstract fun treasureDao(): TreasureDao
 
     companion object {
         fun buildDatabase(context: Context): MonsterDatabase {
-            return if (false) {
+            return if (true) {
                 Room.inMemoryDatabaseBuilder(context, MonsterDatabase::class.java)
                     .fallbackToDestructiveMigration()
                     .build()

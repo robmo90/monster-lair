@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "4397639c2ae12d2f21352f028d765460",
+    "identityHash": "3709f76a4058107b67f0a9d13899bc10",
     "entities": [
       {
         "tableName": "hazards",
@@ -147,6 +147,80 @@
         "foreignKeys": []
       },
       {
+        "tableName": "treasures",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `url` TEXT NOT NULL, `level` INTEGER NOT NULL, `category` TEXT NOT NULL, `price` TEXT NOT NULL, `priceInGp` REAL NOT NULL, `source` TEXT NOT NULL, `sourceType` TEXT NOT NULL, `rarity` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "url",
+            "columnName": "url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "level",
+            "columnName": "level",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "price",
+            "columnName": "price",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "priceInGp",
+            "columnName": "priceInGp",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sourceType",
+            "columnName": "sourceType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rarity",
+            "columnName": "rarity",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
         "tableName": "encounters",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER, `level` INTEGER NOT NULL, `numberOfPlayers` INTEGER NOT NULL, `name` TEXT NOT NULL, `difficulty` TEXT NOT NULL, `notes` TEXT NOT NULL, `withoutProficiency` INTEGER NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
@@ -243,26 +317,46 @@
         "foreignKeys": []
       },
       {
-        "tableName": "MonsterAndTraitsCrossRef",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`monsterId` INTEGER NOT NULL, `traitName` TEXT NOT NULL, PRIMARY KEY(`monsterId`, `traitName`))",
+        "tableName": "treasureTraits",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, PRIMARY KEY(`name`))",
         "fields": [
           {
-            "fieldPath": "monsterId",
-            "columnName": "monsterId",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "traitName",
-            "columnName": "traitName",
+            "fieldPath": "name",
+            "columnName": "name",
             "affinity": "TEXT",
             "notNull": true
           }
         ],
         "primaryKey": {
           "columnNames": [
-            "monsterId",
-            "traitName"
+            "name"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "MonsterAndTraitsCrossRef",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, PRIMARY KEY(`id`, `name`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id",
+            "name"
           ],
           "autoGenerate": false
         },
@@ -271,25 +365,52 @@
       },
       {
         "tableName": "HazardsAndTraitsCrossRef",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`hazardId` INTEGER NOT NULL, `traitName` TEXT NOT NULL, PRIMARY KEY(`hazardId`, `traitName`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, PRIMARY KEY(`id`, `name`))",
         "fields": [
           {
-            "fieldPath": "hazardId",
-            "columnName": "hazardId",
-            "affinity": "INTEGER",
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "traitName",
-            "columnName": "traitName",
+            "fieldPath": "name",
+            "columnName": "name",
             "affinity": "TEXT",
             "notNull": true
           }
         ],
         "primaryKey": {
           "columnNames": [
-            "hazardId",
-            "traitName"
+            "id",
+            "name"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "TreasureAndTraitsCrossRef",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, PRIMARY KEY(`id`, `name`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id",
+            "name"
           ],
           "autoGenerate": false
         },
@@ -424,7 +545,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4397639c2ae12d2f21352f028d765460')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3709f76a4058107b67f0a9d13899bc10')"
     ]
   }
 }

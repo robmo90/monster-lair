@@ -25,7 +25,7 @@ interface MonsterDao {
     @RawQuery
     suspend fun getFilteredMonsters(
         sqLiteQuery: SupportSQLiteQuery
-    ): List<MonsterEntity>
+    ): List<MonstersWithTraits>
 
     @RawQuery(observedEntities = [MonsterEntity::class])
     fun getFilteredMonsterFlow(

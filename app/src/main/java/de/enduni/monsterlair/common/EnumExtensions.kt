@@ -5,6 +5,7 @@ import androidx.annotation.StringRes
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.domain.Complexity
 import de.enduni.monsterlair.common.domain.MonsterType
+import de.enduni.monsterlair.common.domain.TreasureCategory
 import de.enduni.monsterlair.creator.view.DangerType
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 import de.enduni.monsterlair.encounters.domain.model.HazardRole
@@ -164,5 +165,50 @@ fun EncounterDifficulty.getDefaultMaxLevel(): Int {
         EncounterDifficulty.MODERATE -> 2
         EncounterDifficulty.SEVERE -> 3
         EncounterDifficulty.EXTREME -> 4
+    }
+}
+
+@DrawableRes
+fun TreasureCategory.getIcon(): Int {
+    return when (this) {
+        TreasureCategory.ADVENTURING_GEAR -> R.drawable.ic_adventuring_gear
+        TreasureCategory.ALCHEMICAL_BOMBS -> R.drawable.ic_alchemical_bomb
+        TreasureCategory.ALCHEMICAL_ELIXIRS -> R.drawable.ic_alchemical_elixir
+        TreasureCategory.ALCHEMICAL_POISONS -> R.drawable.ic_alchemical_poison
+        TreasureCategory.ALCHEMICAL_TOOLS -> R.drawable.ic_alchemical_tools
+        TreasureCategory.DRUGS -> R.drawable.ic_drugs
+        TreasureCategory.ARMOR_MAGIC -> R.drawable.ic_magic_armor
+        TreasureCategory.ARMOR_PRECIOUS -> R.drawable.ic_magic_armor_precious
+        TreasureCategory.ARMOR_SPECIFIC -> R.drawable.ic_magic_armor_specific
+        TreasureCategory.ARTIFACTS -> R.drawable.ic_artifacts
+        TreasureCategory.AMMUNITION -> R.drawable.ic_ammunition
+        TreasureCategory.OILS -> R.drawable.ic_oils
+        TreasureCategory.OTHER_CONSUMABLES -> R.drawable.ic_other_consumables
+        TreasureCategory.POTIONS -> R.drawable.ic_potions
+        TreasureCategory.SCROLLS -> R.drawable.ic_scrolls
+        TreasureCategory.TALISMANS -> R.drawable.ic_talismans
+        TreasureCategory.CURSED_ITEMS -> R.drawable.ic_cursed_items
+        TreasureCategory.HELD_ITEMS -> R.drawable.ic_held_items
+        TreasureCategory.INTELLIGENT_ITEMS -> R.drawable.ic_intelligent_items
+        TreasureCategory.MATERIALS -> R.drawable.ic_materials
+        TreasureCategory.RUNES_ARMOR_PROPERTY -> R.drawable.ic_armor_runes
+        TreasureCategory.RUNES_ARMOR_FUNDAMENTAL -> R.drawable.ic_armor_runes
+        TreasureCategory.RUNES_WEAPON_PROPERTY -> R.drawable.ic_weapon_runes
+        TreasureCategory.RUNES_WEAPON_FUNDAMENTAL -> R.drawable.ic_weapon_runes
+        TreasureCategory.SERVICES -> R.drawable.ic_services
+        TreasureCategory.SHIELDS_PRECIOUS -> R.drawable.ic_shield_precious
+        TreasureCategory.SHIELDS_SPECIFIC -> R.drawable.ic_shield_specific
+        TreasureCategory.SNARES -> R.drawable.ic_snares
+        TreasureCategory.STAVES -> R.drawable.ic_staves
+        TreasureCategory.STRUCTURES -> R.drawable.ic_structures
+        TreasureCategory.TATTOOS -> R.drawable.ic_tattoos
+        TreasureCategory.WANDS_MAGIC -> R.drawable.ic_magic_wands
+        TreasureCategory.WANDS_SPECIALTY -> R.drawable.ic_specialty_wands
+        TreasureCategory.WEAPONS_MAGIC -> R.drawable.ic_magic_weapons
+        TreasureCategory.WEAPONS_PRECIOUS -> R.drawable.ic_precious_weapons
+        TreasureCategory.WEAPONS_SPECIFIC -> R.drawable.ic_specific_weapons
+        TreasureCategory.WORN_APEX -> R.drawable.ic_worn_apex
+        TreasureCategory.WORN_COMPANION -> R.drawable.ic_worn_companion
+        TreasureCategory.WORN_OTHER -> R.drawable.ic_worn_other
     }
 }

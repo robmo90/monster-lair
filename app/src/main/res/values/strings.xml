@@ -6,6 +6,7 @@
 
     <string name="fragment_monsters">Monsters</string>
     <string name="fragment_hazards">Hazards</string>
+    <string name="fragment_treasures">Treasures</string>
     <string name="fragment_encounters">Encounters</string>
     <string name="fragment_encounter_creator">Create Encounter</string>
     <string name="fragment_encounter_export">Export Encounter</string>

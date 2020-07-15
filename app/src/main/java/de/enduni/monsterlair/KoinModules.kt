@@ -4,6 +4,8 @@ import de.enduni.monsterlair.common.datasource.hazard.HazardAssetDataSource
 import de.enduni.monsterlair.common.datasource.hazard.HazardDataSource
 import de.enduni.monsterlair.common.datasource.monsters.MonsterAssetDataSource
 import de.enduni.monsterlair.common.datasource.monsters.MonsterDataSource
+import de.enduni.monsterlair.common.datasource.treasure.TreasureAssetDataSource
+import de.enduni.monsterlair.common.datasource.treasure.TreasureDataSource
 import de.enduni.monsterlair.common.persistence.database.DatabaseInitializer
 import de.enduni.monsterlair.common.persistence.database.HazardEntityMapper
 import de.enduni.monsterlair.common.persistence.database.MonsterDatabase
@@ -31,6 +33,10 @@ import de.enduni.monsterlair.monsters.persistence.MonsterEntityMapper
 import de.enduni.monsterlair.monsters.persistence.MonsterRepository
 import de.enduni.monsterlair.monsters.view.MonsterListDisplayModelMapper
 import de.enduni.monsterlair.monsters.view.MonsterViewModel
+import de.enduni.monsterlair.treasure.repository.TreasureEntityMapper
+import de.enduni.monsterlair.treasure.repository.TreasureRepository
+import de.enduni.monsterlair.treasure.view.TreasureDisplayModelMapper
+import de.enduni.monsterlair.treasure.view.TreasureViewModel
 import de.enduni.monsterlair.update.UpdateManager
 import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -48,12 +54,21 @@ val databaseModule = module(createdAtStart = true) {
             androidApplication()
         )
     }
+    single<TreasureDataSource> {
+        TreasureAssetDataSource(
+            androidApplication()
+        )
+    }
     single(createdAtStart = true) { MonsterDatabase.buildDatabase(androidApplication()) }
     single { get<MonsterDatabase>().monsterDao() }
     single { get<MonsterDatabase>().encounterDao() }
     single { get<MonsterDatabase>().hazardDao() }
+    single { get<MonsterDatabase>().treasureDao() }
     single {
         DatabaseInitializer(
+            get(),
+            get(),
+            get(),
             get(),
             get(),
             get(),
@@ -145,4 +160,15 @@ val encounterModule = module {
         )
     }
     viewModel { EncounterViewModel(get(), get(), get(), get()) }
+}
+
+val treasureModule = module {
+
+    single { TreasureEntityMapper() }
+    single { TreasureDisplayModelMapper() }
+    single { TreasureRepository(get(), get()) }
+
+    viewModel { TreasureViewModel(get(), get()) }
+
+
 }
