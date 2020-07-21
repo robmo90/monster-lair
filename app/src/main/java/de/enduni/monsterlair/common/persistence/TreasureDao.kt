@@ -1,6 +1,7 @@
 package de.enduni.monsterlair.common.persistence
 
 import androidx.room.*
+import androidx.sqlite.db.SupportSQLiteQuery
 
 @Dao
 interface TreasureDao {
@@ -24,6 +25,11 @@ interface TreasureDao {
     @Query("SELECT * FROM treasures ORDER BY name")
     suspend fun getTreasure(): List<TreasureWithTraits>
 
+    @Transaction
+    @RawQuery
+    suspend fun getTreasure(sqLiteQuery: SupportSQLiteQuery): List<TreasureWithTraits>
+
+    @Transaction
     @Query("SELECT * FROM treasures WHERE id is :id LIMIT 1")
     suspend fun getTreasure(id: String): TreasureWithTraits
 

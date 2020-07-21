@@ -13,7 +13,6 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.databinding.FragmentEncounterExportBinding
 import timber.log.Timber
@@ -52,10 +51,10 @@ class EncounterExportFragment : Fragment() {
 
         }
 
-        requireActivity().findViewById<FloatingActionButton>(R.id.floating_action_button)
-            .setOnClickListener {
-            createWebPrintJob(binding.webView)
-        }
+//        requireActivity().findViewById<FloatingActionButton>(R.id.floating_action_button)
+//            .setOnClickListener {
+//            createWebPrintJob(binding.webView)
+//        }
     }
 
     private fun createWebPrintJob(webView: WebView) {

@@ -14,10 +14,11 @@
 
     <string name="hazard_item_caption">%s \u2014 Level: %d</string>
     <string name="monster_item_caption">%s \u2014 Level: %d</string>
-    <string name="monster_search">Search</string>
-    <string name="monster_level_range">Level Range</string>
-    <string name="monster_sort_by">Sort By</string>
+    <string name="search">Search</string>
+    <string name="level_range">Level Range</string>
+    <string name="sort_by">Sort By</string>
     <string name="monster_level_range_values">Level Range: %d - %d</string>
+    <string name="level_range_values">%d - %d</string>
 
     <string name="monster_sort_by_type">Type</string>
     <string name="monster_sort_by_level">Level</string>

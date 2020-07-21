@@ -1,7 +1,9 @@
 package de.enduni.monsterlair.treasure.repository
 
+import androidx.sqlite.db.SimpleSQLiteQuery
 import de.enduni.monsterlair.common.domain.TreasureCategory
 import de.enduni.monsterlair.common.persistence.TreasureDao
+import de.enduni.monsterlair.monsters.view.SortBy
 import de.enduni.monsterlair.treasure.domain.Treasure
 import de.enduni.monsterlair.treasure.domain.TreasureFilter
 import timber.log.Timber
@@ -12,21 +14,15 @@ class TreasureRepository(
 ) {
 
     suspend fun getTreasures(treasureFilter: TreasureFilter): List<Treasure> {
-        return dao.getTreasure()
+        val query = buildQuery(
+            treasureFilter.searchString,
+            treasureFilter.categories,
+            treasureFilter.lowerLevel,
+            treasureFilter.upperLevel,
+            getSortByString(treasureFilter.sortBy)
+        )
+        return dao.getTreasure(SimpleSQLiteQuery(query))
             .asSequence()
-            .filter { treasureWithTraits ->
-                IntRange(
-                    treasureFilter.lowerLevel,
-                    treasureFilter.upperLevel
-                ).contains(treasureWithTraits.treasure.level)
-            }
-            .filter { treasureWithTraits ->
-                if (treasureFilter.categories.isEmpty()) {
-                    true
-                } else {
-                    treasureFilter.categories.contains(treasureWithTraits.treasure.category)
-                }
-            }
             .filter { treasureWithTraits ->
                 if (treasureFilter.traits.isEmpty()) {
                     true
@@ -41,24 +37,24 @@ class TreasureRepository(
                 if (treasureFilter.searchString.isBlank()) {
                     true
                 } else {
-                    treasureWithTraits.treasure.name.contains(
-                        treasureFilter.searchString,
-                        ignoreCase = true
-                    ) ||
-                            treasureWithTraits.treasure.category.toString()
-                                .contains(treasureFilter.searchString, ignoreCase = true) ||
-                            treasureWithTraits.traits.any {
-                                it.name.contains(
-                                    treasureFilter.searchString,
-                                    ignoreCase = true
-                                )
-                            }
+                    treasureWithTraits.traits.any {
+                        it.name.contains(
+                            treasureFilter.searchString,
+                            ignoreCase = true
+                        )
+                    }
                 }
             }
             .map { mapper.fromEntityToDomain(it) }
             .toList()
     }
 
+    private fun getSortByString(sortBy: SortBy): String {
+        return when (sortBy) {
+            SortBy.TYPE -> "category"
+            else -> sortBy.value
+        }
+    }
 
     private fun buildQuery(
         filter: String?,
@@ -71,14 +67,14 @@ class TreasureRepository(
         val typeFilterString = if (monsterTypes.isEmpty()) {
             ""
         } else {
-            "AND TYPE IN ${monsterTypes.joinToString(
+            "AND CATEGORY IN ${monsterTypes.joinToString(
                 prefix = "(\"",
                 postfix = "\")",
                 separator = "\", \""
             )}"
         }
-        val query = "SELECT * FROM monsters WHERE " +
-                "(name LIKE $filterString OR family LIKE $filterString) " +
+        val query = "SELECT * FROM treasures WHERE " +
+                "(name LIKE $filterString OR category LIKE $filterString) " +
                 "AND level BETWEEN $lowerLevel AND $higherLevel " +
                 typeFilterString +
                 "ORDER BY $sortBy ASC"

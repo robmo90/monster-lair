@@ -9,5 +9,5 @@ data class TreasureFilter(
     val upperLevel: Int = 25,
     val categories: List<TreasureCategory> = emptyList(),
     val traits: List<String> = emptyList(),
-    val sortBy: SortBy = SortBy.LEVEL
+    val sortBy: SortBy = SortBy.NAME
 )

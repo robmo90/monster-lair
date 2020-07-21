@@ -50,7 +50,7 @@
                 android:id="@+id/search_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/monster_search" />
+                android:hint="@string/search" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <ImageView
@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="@string/monster_level_range"
+            android:text="@string/level_range"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_edit_text_layout" />
 
@@ -140,7 +140,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/monster_sort_by"
+            android:text="@string/sort_by"
             app:layout_constraintStart_toStartOf="@id/level_slider_label"
             app:layout_constraintTop_toBottomOf="@id/complexity_chips" />
 
