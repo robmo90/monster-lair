@@ -1,7 +1,6 @@
 package de.enduni.monsterlair.monsters.domain
 
 import de.enduni.monsterlair.monsters.persistence.MonsterRepository
-import de.enduni.monsterlair.monsters.view.MonsterFilter
 import timber.log.Timber
 
 class RetrieveMonstersUseCase(private val monsterRepository: MonsterRepository) {
@@ -10,11 +9,15 @@ class RetrieveMonstersUseCase(private val monsterRepository: MonsterRepository) 
         val currentTimeMillis = System.currentTimeMillis()
         val monsters =
             monsterRepository.getMonsters(
-                filter.string,
+                filter.searchTerm,
                 filter.lowerLevel,
                 filter.upperLevel,
                 filter.sortBy.value,
-                filter.monsterTypes
+                filter.types,
+                filter.sizes,
+                filter.alignments,
+                filter.rarities,
+                filter.traits
             )
         val afterTimeMillis = System.currentTimeMillis()
         Timber.v("Taking ${afterTimeMillis - currentTimeMillis} to filter")

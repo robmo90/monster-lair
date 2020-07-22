@@ -1,10 +1,6 @@
 package de.enduni.monsterlair.monsters.view
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import de.enduni.monsterlair.common.domain.MonsterType
+import androidx.lifecycle.*
 import de.enduni.monsterlair.common.view.ActionLiveData
 import de.enduni.monsterlair.common.view.CreateMonsterDialog
 import de.enduni.monsterlair.common.view.EditMonsterDialog
@@ -12,10 +8,14 @@ import de.enduni.monsterlair.monsters.domain.*
 import de.enduni.monsterlair.monsters.view.adapter.MonsterViewHolder
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
+@ExperimentalCoroutinesApi
 class MonsterViewModel(
+    val filterStore: MonsterFilterStore,
     private val retrieveMonsterUseCase: RetrieveMonsterUseCase,
     private val retrieveMonstersUseCase: RetrieveMonstersUseCase,
     private val deleteMonsterUseCase: DeleteMonsterUseCase,
@@ -35,48 +35,16 @@ class MonsterViewModel(
         Timber.e(exception, "Caught exception")
     }
 
-    private var filter = MonsterFilter()
-
-    fun start() {
-        viewModelScope.launch(Dispatchers.Default) {
-            filterMonsters()
+    val monsters = liveData {
+        filterStore.filter.collect { monsterFilter ->
+            retrieveMonstersUseCase.execute(monsterFilter)
+                .toDisplayModel()
+                .let { emit(it) }
         }
+
     }
 
-
-    fun filterByString(string: String) = viewModelScope.launch(handler) {
-        filterMonsters(filter.copy(string = string))
-    }
-
-    fun adjustFilterLevelLower(lowerLevel: Int) = viewModelScope.launch(handler) {
-        filterMonsters(filter.copy(lowerLevel = lowerLevel))
-    }
-
-    fun adjustFilterLevelUpper(upperLevel: Int) = viewModelScope.launch(handler) {
-        filterMonsters(filter.copy(upperLevel = upperLevel))
-    }
-
-    fun adjustSortBy(sortBy: SortBy) = viewModelScope.launch(handler) {
-        filterMonsters(filter.copy(sortBy = sortBy))
-    }
-
-
-    private suspend fun filterMonsters(newFilter: MonsterFilter) {
-        if (newFilter != filter) {
-            filter = newFilter
-            filterMonsters()
-        }
-    }
-
-    private suspend fun filterMonsters() {
-        Timber.d("Starting monster filter with $filter")
-        val monsters = retrieveMonstersUseCase.execute(filter).toDisplayModel()
-        val state = MonsterOverviewViewState(
-            monsters = monsters,
-            filter = filter
-        )
-        _viewState.postValue(state)
-    }
+    val filter = filterStore.filter.asLiveData()
 
 
     override fun onSelect(monsterId: String) {
@@ -93,18 +61,10 @@ class MonsterViewModel(
         return this.map { mapper.toMonsterDisplayModel(it) }
     }
 
-    fun addMonsterTypeFilter(monsterType: MonsterType) = viewModelScope.launch(handler) {
-        filterMonsters(filter.copy(monsterTypes = filter.monsterTypes + monsterType))
-    }
-
-    fun removeMonsterTypeFilter(monsterType: MonsterType) = viewModelScope.launch(handler) {
-        filterMonsters(filter.copy(monsterTypes = filter.monsterTypes - monsterType))
-    }
-
     override fun onSaveClicked(monster: Monster) {
         viewModelScope.launch(handler + Dispatchers.Default) {
             saveMonsterUseCase.execute(monster)
-            filterMonsters()
+            filterStore.refresh()
         }
     }
 
@@ -118,7 +78,7 @@ class MonsterViewModel(
     override fun onDeleteClicked(id: String) {
         viewModelScope.launch(handler + Dispatchers.Default) {
             deleteMonsterUseCase.execute(id)
-            filterMonsters()
+            filterStore.refresh()
         }
     }
 

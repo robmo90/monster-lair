@@ -100,4 +100,26 @@
         <item>@string/custom_monster_edit_button_option</item>
         <item>@string/custom_monster_delete_button</item>
     </string-array>
+
+    <string-array name="sizes">
+        <item>@string/size_tiny</item>
+        <item>@string/size_small</item>
+        <item>@string/size_medium</item>
+        <item>@string/size_large</item>
+        <item>@string/size_huge</item>
+        <item>@string/size_gargantuan</item>
+    </string-array>
+
+    <string-array name="alignments">
+        <item>@string/alignment_lawful_good</item>
+        <item>@string/alignment_lawful_neutral</item>
+        <item>@string/alignment_lawful_evil</item>
+        <item>@string/alignment_neutral_good</item>
+        <item>@string/alignment_true_neutral</item>
+        <item>@string/alignment_neutral_evil</item>
+        <item>@string/alignment_chaotic_good</item>
+        <item>@string/alignment_chaotic_neutral</item>
+        <item>@string/alignment_chaotic_evil</item>
+    </string-array>
+
 </resources>

@@ -2,7 +2,6 @@ package de.enduni.monsterlair.treasure.view
 
 import de.enduni.monsterlair.common.domain.*
 import de.enduni.monsterlair.common.filter.*
-import de.enduni.monsterlair.monsters.view.SortBy
 import de.enduni.monsterlair.treasure.domain.TreasureFilter
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow

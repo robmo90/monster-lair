@@ -1,13 +1,11 @@
 package de.enduni.monsterlair.monsters.persistence
 
 import androidx.sqlite.db.SimpleSQLiteQuery
-import de.enduni.monsterlair.common.datasource.monsters.MonsterDto
-import de.enduni.monsterlair.common.domain.MonsterType
+import de.enduni.monsterlair.common.domain.*
 import de.enduni.monsterlair.common.persistence.MonsterDao
-import de.enduni.monsterlair.common.persistence.MonsterEntity
+import de.enduni.monsterlair.common.persistence.MonsterWithTraits
+import de.enduni.monsterlair.common.persistence.buildQuery
 import de.enduni.monsterlair.monsters.domain.Monster
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
 import timber.log.Timber
 
 
@@ -20,24 +18,38 @@ class MonsterRepository(
         monsterDao.getMonster(id).let { monsterEntityMapper.toModel(it) }
 
     suspend fun getMonsters(
-        filter: String?,
+        searchTerm: String,
         lowerLevel: Int,
         higherLevel: Int,
         sortBy: String,
-        monsterTypes: List<MonsterType>
+        monsterTypes: List<MonsterType>,
+        sizes: List<Size>,
+        alignments: List<Alignment>,
+        rarities: List<Rarity>,
+        traits: List<Trait>
     ): List<Monster> {
-        val query = buildQuery(filter, monsterTypes, lowerLevel, higherLevel, sortBy)
-        return monsterDao.getFilteredMonsters(SimpleSQLiteQuery(query)).map { it.monster }
+        val query = buildQuery(
+            searchTerm,
+            monsterTypes,
+            lowerLevel,
+            higherLevel,
+            sortBy,
+            sizes,
+            alignments,
+            rarities
+        )
+        return monsterDao.getFilteredMonsters(SimpleSQLiteQuery(query))
             .toDomain()
+            .filter { monster ->
+                if (traits.isEmpty()) {
+                    true
+                } else {
+                    traits.any { monster.traits.contains(it) }
+                }
+            }
     }
 
     suspend fun saveMonster(monster: Monster) {
-        val entity = monsterEntityMapper.toEntity(monster)
-        monsterDao.insertMonster(entity)
-    }
-
-    suspend fun saveMonster(monster: MonsterDto) {
-
         val entity = monsterEntityMapper.toEntity(monster)
         monsterDao.insertMonster(entity)
     }
@@ -46,47 +58,40 @@ class MonsterRepository(
         monsterDao.deleteMonster(id)
     }
 
-    fun getMonsterFlow(
-        filter: String?,
-        lowerLevel: Int,
-        higherLevel: Int,
-        sortBy: String,
-        monsterTypes: List<MonsterType>
-    ): Flow<List<Monster>> {
-        val query = buildQuery(filter, monsterTypes, lowerLevel, higherLevel, sortBy)
-        return monsterDao.getFilteredMonsterFlow(SimpleSQLiteQuery(query))
-            .map { it.toDomain() }
-    }
-
     private fun buildQuery(
         filter: String?,
         monsterTypes: List<MonsterType>,
         lowerLevel: Int,
         higherLevel: Int,
-        sortBy: String
+        sortBy: String,
+        sizes: List<Size>,
+        alignments: List<Alignment>,
+        rarities: List<Rarity>
     ): String {
         val filterString = if (filter.isNullOrEmpty()) "\"%\"" else "\"%${filter}%\""
-        val typeFilterString = if (monsterTypes.isEmpty()) {
-            ""
-        } else {
-            "AND TYPE IN ${monsterTypes.joinToString(
-                prefix = "(\"",
-                postfix = "\")",
-                separator = "\", \""
-            )}"
-        }
+        val typeFilterString = monsterTypes.buildQuery("type")
+        val sizeFilterString = sizes.buildQuery("size")
+        val alignmentFilterString = alignments.buildQuery("alignment")
+        val rarityFilterString = rarities.buildQuery("rarity")
         val query = "SELECT * FROM monsters WHERE " +
                 "(name LIKE $filterString OR family LIKE $filterString) " +
                 "AND level BETWEEN $lowerLevel AND $higherLevel " +
                 typeFilterString +
+                sizeFilterString +
+                alignmentFilterString +
+                rarityFilterString +
                 "ORDER BY $sortBy ASC"
         Timber.v("Using $query")
         return query
     }
 
 
-    private fun List<MonsterEntity>.toDomain(): List<Monster> {
+    private fun List<MonsterWithTraits>.toDomain(): List<Monster> {
         return this.map { monsterEntityMapper.toModel(it) }
+    }
+
+    suspend fun getTraits(): List<Trait> {
+        return monsterDao.getTraits().map { it.name }
     }
 
 }

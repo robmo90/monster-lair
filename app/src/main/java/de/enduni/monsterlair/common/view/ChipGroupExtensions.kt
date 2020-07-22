@@ -7,11 +7,10 @@ import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.domain.*
 import de.enduni.monsterlair.common.filter.*
 import de.enduni.monsterlair.common.getStringRes
-import de.enduni.monsterlair.common.getStringResForLabel
+import de.enduni.monsterlair.common.getStringResForFilter
 import de.enduni.monsterlair.common.view.filterchips.RemovableFilterChip
 import de.enduni.monsterlair.common.view.filterchips.SelectionChip
 import de.enduni.monsterlair.creator.view.DangerType
-import de.enduni.monsterlair.monsters.view.SortBy
 
 fun ChipGroup.buildMonsterTypeFilter(
     checkedTypes: List<MonsterType> = listOf(),
@@ -83,7 +82,7 @@ fun ChipGroup.buildComplexitySelection(
     Complexity.values().forEach { complexity ->
         val chip = SelectionChip(
             this.context,
-            context.getString(complexity.getStringResForLabel()),
+            context.getString(complexity.getStringResForFilter()),
             checkedComplexities.contains(complexity),
             { filterStore.addComplexity(complexity) },
             { filterStore.removeComplexity(complexity) }
@@ -172,8 +171,59 @@ fun ChipGroup.addComplexityChips(
     complexities.forEach { complexity ->
         val chip = RemovableFilterChip(
             this.context,
-            context.getString(complexity.getStringRes())
+            context.getString(complexity.getStringResForFilter())
         ) { filterStore.removeComplexity(complexity) }
+        this.addView(chip)
+    }
+}
+
+fun ChipGroup.addMonsterTypeChips(
+    monsterTypes: List<MonsterType>,
+    clear: Boolean = false,
+    filterStore: MonsterTypeFilterStore
+) {
+    if (clear) {
+        this.removeAllViews()
+    }
+    monsterTypes.forEach { monsterType ->
+        val chip = RemovableFilterChip(
+            this.context,
+            context.getString(monsterType.getStringRes())
+        ) { filterStore.removeType(monsterType) }
+        this.addView(chip)
+    }
+}
+
+fun ChipGroup.addAlignmentChips(
+    alignments: List<Alignment>,
+    clear: Boolean = false,
+    filterStore: AlignmentFilterStore
+) {
+    if (clear) {
+        this.removeAllViews()
+    }
+    alignments.forEach { alignment ->
+        val chip = RemovableFilterChip(
+            this.context,
+            context.getString(alignment.getStringRes())
+        ) { filterStore.removeAlignment(alignment) }
+        this.addView(chip)
+    }
+}
+
+fun ChipGroup.addSizeChips(
+    sizes: List<Size>,
+    clear: Boolean = false,
+    filterStore: SizeFilterStore
+) {
+    if (clear) {
+        this.removeAllViews()
+    }
+    sizes.forEach { size ->
+        val chip = RemovableFilterChip(
+            this.context,
+            context.getString(size.getStringRes())
+        ) { filterStore.removeSize(size) }
         this.addView(chip)
     }
 }

@@ -2,9 +2,9 @@ package de.enduni.monsterlair.treasure.repository
 
 import androidx.sqlite.db.SimpleSQLiteQuery
 import de.enduni.monsterlair.common.domain.Rarity
+import de.enduni.monsterlair.common.domain.SortBy
 import de.enduni.monsterlair.common.domain.TreasureCategory
 import de.enduni.monsterlair.common.persistence.TreasureDao
-import de.enduni.monsterlair.monsters.view.SortBy
 import de.enduni.monsterlair.treasure.domain.Treasure
 import de.enduni.monsterlair.treasure.domain.TreasureFilter
 import timber.log.Timber

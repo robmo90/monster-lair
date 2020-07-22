@@ -14,7 +14,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.withContext
-import timber.log.Timber
 
 class DatabaseInitializer(
     private val monsterEntityMapper: MonsterEntityMapper,
@@ -38,18 +37,22 @@ class DatabaseInitializer(
             monsterDataSource.getMonsters().insertMonsters()
             hazardDataSource.getHazards().saveHazards()
             treasureDataSource.getTreasures().saveTreasures()
-
-            Timber.d(
-                "These are my hazard ${hazardDao.getAllHazards()}"
-            )
         }
         _migrationRunning.value = false
     }
 
     private suspend fun List<MonsterDto>.insertMonsters() {
         this.map { monsterEntityMapper.toEntity(it) }
-            .chunked(20)
-            .forEach { monsterDao.insertMonsters(it) }
+            .forEach { (entity, traits) ->
+                monsterDao.insertMonster(entity)
+                monsterDao.insertTraits(traits)
+                monsterDao.insertCrossRef(traits.map {
+                    MonsterAndTraitsCrossRef(
+                        entity.id,
+                        it.name
+                    )
+                })
+            }
     }
 
     private suspend fun List<HazardDto>.saveHazards() {

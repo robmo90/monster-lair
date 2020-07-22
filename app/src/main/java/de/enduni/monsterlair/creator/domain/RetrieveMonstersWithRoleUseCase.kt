@@ -22,11 +22,15 @@ class RetrieveMonstersWithRoleUseCase(
             return@withContext emptyList<MonsterWithRole>()
         }
         repository.getMonsters(
-            filter.string,
+            filter.string ?: "",
             filter.lowerLevel,
             filter.upperLevel,
             filter.sortBy.value,
-            filter.monsterTypes
+            filter.monsterTypes,
+            emptyList(),
+            emptyList(),
+            emptyList(),
+            emptyList()
         )
             .map { monsterWithRoleMapper.mapToMonsterWithRole(it, encounter.level) }
             .filterMonstersWithinBudget(filter = filter.withinBudget, encounter = encounter)

@@ -26,7 +26,13 @@ data class TreasureTrait(
     @PrimaryKey val name: String
 )
 
-@Entity(tableName = "TreasureAndTraitsCrossRef", primaryKeys = ["id", "name"])
+@Entity(
+    tableName = "TreasureAndTraitsCrossRef", primaryKeys = ["id", "name"],
+    indices = [Index(
+        value = ["name"],
+        name = "treasure_cross_ref_index"
+    )]
+)
 data class TreasureAndTraitsCrossRef(
     val id: String,
     val name: String

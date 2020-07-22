@@ -226,5 +226,26 @@
     <string name="rarity_uncommon">Uncommon</string>
     <string name="rarity_rare">Rare</string>
     <string name="rarity_unique">Unique</string>
+    <string name="alignments_select_hint">Alignments</string>
+    <string name="sizes_select_hint">Sizes</string>
+    <string name="monster_type_select_hint">Monster Type</string>
+
+    <string name="size_tiny">Tiny</string>
+    <string name="size_small">Small</string>
+    <string name="size_medium">Medium</string>
+    <string name="size_large">Large</string>
+    <string name="size_huge">Huge</string>
+    <string name="size_gargantuan">Gargantuan</string>
+
+    <string name="alignment_lawful_good">Lawful Good</string>
+    <string name="alignment_lawful_neutral">Lawful Neutral</string>
+    <string name="alignment_lawful_evil">Lawful Evil</string>
+    <string name="alignment_neutral_good">Neutral Good</string>
+    <string name="alignment_true_neutral">Neutral</string>
+    <string name="alignment_neutral_evil">Neutral Evil</string>
+    <string name="alignment_chaotic_good">Chaotic Good</string>
+    <string name="alignment_chaotic_neutral">Chaotic Neutral</string>
+    <string name="alignment_chaotic_evil">Chaotic Evil</string>
+
 
 </resources>

@@ -36,6 +36,6 @@ interface HazardDao {
     suspend fun insertTraits(traits: List<HazardTrait>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertCrossRef(treasure: List<HazardsAndTraitsCrossRef>)
+    suspend fun insertCrossRef(crossRefs: List<HazardsAndTraitsCrossRef>)
 
 }

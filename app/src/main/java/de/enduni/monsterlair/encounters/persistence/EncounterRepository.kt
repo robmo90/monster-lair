@@ -53,7 +53,7 @@ class EncounterRepository(
         monsterForEncounterEntities: List<MonsterForEncounterEntity>, level: Int
     ): List<EncounterMonster> {
         return monsterForEncounterEntities.map { monsterForEncounterEntity ->
-            val monster = monsterDao.getMonster(monsterForEncounterEntity.monsterId)
+            val monster = monsterDao.getMonster(monsterForEncounterEntity.monsterId).monster
             val monsterWithRole =
                 monsterWithRoleMapper.mapToMonsterWithRole(monster, level)
             EncounterMonster(

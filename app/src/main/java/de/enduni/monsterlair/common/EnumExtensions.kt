@@ -3,15 +3,11 @@ package de.enduni.monsterlair.common
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.common.domain.Complexity
-import de.enduni.monsterlair.common.domain.MonsterType
-import de.enduni.monsterlair.common.domain.Rarity
-import de.enduni.monsterlair.common.domain.TreasureCategory
+import de.enduni.monsterlair.common.domain.*
 import de.enduni.monsterlair.creator.view.DangerType
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 import de.enduni.monsterlair.encounters.domain.model.HazardRole
 import de.enduni.monsterlair.encounters.domain.model.MonsterRole
-import de.enduni.monsterlair.monsters.view.SortBy
 
 @DrawableRes
 fun MonsterType.getIcon(): Int {
@@ -109,7 +105,7 @@ fun Complexity.getStringRes(): Int {
 }
 
 @StringRes
-fun Complexity.getStringResForLabel(): Int {
+fun Complexity.getStringResForFilter(): Int {
     return when (this) {
         Complexity.SIMPLE -> R.string.hazard_filter_simple
         Complexity.COMPLEX -> R.string.hazard_filter_complex
@@ -266,5 +262,32 @@ fun Rarity.getStringRes(): Int {
         Rarity.UNCOMMON -> R.string.rarity_uncommon
         Rarity.RARE -> R.string.rarity_rare
         Rarity.UNIQUE -> R.string.rarity_unique
+    }
+}
+
+@StringRes
+fun Alignment.getStringRes(): Int {
+    return when (this) {
+        Alignment.LAWFUL_GOOD -> R.string.alignment_lawful_good
+        Alignment.LAWFUL_NEUTRAL -> R.string.alignment_lawful_neutral
+        Alignment.LAWFUL_EVIL -> R.string.alignment_lawful_evil
+        Alignment.NEUTRAL_GOOD -> R.string.alignment_neutral_good
+        Alignment.NEUTRAL -> R.string.alignment_true_neutral
+        Alignment.NEUTRAL_EVIL -> R.string.alignment_neutral_evil
+        Alignment.CHAOTIC_GOOD -> R.string.alignment_chaotic_good
+        Alignment.CHAOTIC_NEUTRAL -> R.string.alignment_chaotic_neutral
+        Alignment.CHAOTIC_EVIL -> R.string.alignment_chaotic_evil
+    }
+}
+
+@StringRes
+fun Size.getStringRes(): Int {
+    return when (this) {
+        Size.TINY -> R.string.size_tiny
+        Size.SMALL -> R.string.size_small
+        Size.MEDIUM -> R.string.size_medium
+        Size.LARGE -> R.string.size_large
+        Size.HUGE -> R.string.size_huge
+        Size.GARGANTUAN -> R.string.size_gargantuan
     }
 }

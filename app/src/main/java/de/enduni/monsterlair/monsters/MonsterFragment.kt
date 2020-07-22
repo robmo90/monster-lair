@@ -2,31 +2,25 @@ package de.enduni.monsterlair.monsters
 
 import android.net.Uri
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.openCustomTab
-import de.enduni.monsterlair.common.setTextIfNotFocused
-import de.enduni.monsterlair.common.view.CreateMonsterDialog
-import de.enduni.monsterlair.common.view.EditMonsterDialog
-import de.enduni.monsterlair.common.view.buildMonsterTypeFilter
-import de.enduni.monsterlair.common.view.buildSortByChips
+import de.enduni.monsterlair.common.view.*
 import de.enduni.monsterlair.databinding.FragmentMonsterBinding
+import de.enduni.monsterlair.monsters.domain.MonsterFilter
 import de.enduni.monsterlair.monsters.view.MonsterOverviewAction
-import de.enduni.monsterlair.monsters.view.MonsterOverviewViewState
 import de.enduni.monsterlair.monsters.view.MonsterViewModel
 import de.enduni.monsterlair.monsters.view.adapter.MonsterListAdapter
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
 
 
-class MonsterFragment : Fragment() {
+@ExperimentalCoroutinesApi
+class MonsterFragment : Fragment(R.layout.fragment_monster) {
 
     private lateinit var binding: FragmentMonsterBinding
 
@@ -34,24 +28,38 @@ class MonsterFragment : Fragment() {
 
     private val viewModel: MonsterViewModel by viewModel()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return layoutInflater.inflate(R.layout.fragment_monster, container, false)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentMonsterBinding.bind(view)
         listAdapter = MonsterListAdapter(requireActivity().layoutInflater, viewModel)
-
         binding.monsterRecyclerView.adapter = listAdapter
-        viewModel.viewState.observe(
-            viewLifecycleOwner,
-            Observer { state -> bindViewToState(state) })
+
+        viewModel.monsters.observe(viewLifecycleOwner, Observer { listAdapter.submitList(it) })
+        viewModel.filter.observe(viewLifecycleOwner, Observer { update(it) })
         bindUi()
-        viewModel.start()
+    }
+
+    fun update(filter: MonsterFilter) {
+        binding.levelButton.update(filter.lowerLevel, filter.upperLevel)
+        binding.sortButton.update(filter.sortBy)
+        binding.searchButton.update(filter.searchTerm)
+        binding.additionalFilterChips.removeAllViews()
+        binding.additionalFilterChips.addMonsterTypeChips(
+            filter.types, filterStore = viewModel.filterStore
+        )
+        binding.additionalFilterChips.addTraitChips(
+            filter.traits,
+            filterStore = viewModel.filterStore
+        )
+        binding.additionalFilterChips.addAlignmentChips(
+            filter.alignments, filterStore = viewModel.filterStore
+        )
+        binding.additionalFilterChips.addSizeChips(
+            filter.sizes, filterStore = viewModel.filterStore
+        )
+        binding.additionalFilterChips.addRarityChips(
+            filter.rarities,
+            filterStore = viewModel.filterStore
+        )
     }
 
     override fun onResume() {
@@ -60,52 +68,12 @@ class MonsterFragment : Fragment() {
     }
 
     private fun bindUi() {
-        binding.searchEditText.doAfterTextChanged {
-            viewModel.filterByString(it.toString())
+        binding.searchButton.setup(requireActivity(), viewModel.filterStore)
+        binding.levelButton.setup(requireActivity(), viewModel.filterStore)
+        binding.sortButton.setup(requireActivity(), viewModel.filterStore)
+        binding.filterFab.setOnClickListener {
+            MonsterFilterBottomSheet.newInstance().show(parentFragmentManager, "tag")
         }
-        binding.createMonster.setOnClickListener {
-            CreateMonsterDialog(requireActivity(), viewModel).show()
-        }
-
-        binding.levelSlider.setOnThumbValueChangeListener { _, _, thumbIndex, value ->
-            when (thumbIndex) {
-                0 -> viewModel.adjustFilterLevelLower(value)
-                1 -> viewModel.adjustFilterLevelUpper(value)
-            }
-        }
-        setupBottomSheet()
-    }
-
-    private fun setupBottomSheet() {
-        val bottomSheetBehavior = BottomSheetBehavior.from(binding.filterBottomSheet)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-        bottomSheetBehavior.peekHeight =
-            requireContext().resources.getDimensionPixelSize(R.dimen.bottom_sheet_peek)
-    }
-
-    private fun bindViewToState(state: MonsterOverviewViewState) {
-        listAdapter.submitList(state.monsters)
-        binding.searchEditText.setTextIfNotFocused(state.filter?.string)
-
-        state.filter?.let { filter ->
-            binding.levelSliderLabel.text = requireContext().getString(
-                R.string.monster_level_range_values,
-                filter.lowerLevel,
-                filter.upperLevel
-            )
-            binding.levelSlider.getThumb(0).value = filter.lowerLevel
-            binding.levelSlider.getThumb(1).value = filter.upperLevel
-            binding.monsterTypeChips.buildMonsterTypeFilter(
-                filter.monsterTypes,
-                { viewModel.addMonsterTypeFilter(it) },
-                { viewModel.removeMonsterTypeFilter(it) }
-
-            )
-            binding.sortByChips.buildSortByChips(
-                filter.sortBy
-            ) { viewModel.adjustSortBy(it) }
-        }
-
     }
 
     private fun handleAction(action: MonsterOverviewAction?) {

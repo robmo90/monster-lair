@@ -2,10 +2,10 @@ package de.enduni.monsterlair.creator.view
 
 import de.enduni.monsterlair.common.domain.Complexity
 import de.enduni.monsterlair.common.domain.MonsterType
+import de.enduni.monsterlair.common.domain.SortBy
 import de.enduni.monsterlair.encounters.domain.model.Encounter
 import de.enduni.monsterlair.monsters.domain.Monster
-import de.enduni.monsterlair.monsters.view.MonsterFilter
-import de.enduni.monsterlair.monsters.view.SortBy
+import de.enduni.monsterlair.monsters.domain.MonsterFilter
 
 
 data class EncounterCreatorDisplayState(

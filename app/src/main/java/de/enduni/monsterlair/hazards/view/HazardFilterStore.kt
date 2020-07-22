@@ -1,12 +1,8 @@
 package de.enduni.monsterlair.hazards.view
 
-import de.enduni.monsterlair.common.domain.Complexity
-import de.enduni.monsterlair.common.domain.Level
-import de.enduni.monsterlair.common.domain.Rarity
-import de.enduni.monsterlair.common.domain.Trait
+import de.enduni.monsterlair.common.domain.*
 import de.enduni.monsterlair.common.filter.*
 import de.enduni.monsterlair.hazards.domain.HazardFilter
-import de.enduni.monsterlair.monsters.view.SortBy
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

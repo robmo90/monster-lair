@@ -32,6 +32,8 @@ import de.enduni.monsterlair.monsters.domain.RetrieveMonstersUseCase
 import de.enduni.monsterlair.monsters.domain.SaveMonsterUseCase
 import de.enduni.monsterlair.monsters.persistence.MonsterEntityMapper
 import de.enduni.monsterlair.monsters.persistence.MonsterRepository
+import de.enduni.monsterlair.monsters.view.MonsterFilterStore
+import de.enduni.monsterlair.monsters.view.MonsterFilterViewModel
 import de.enduni.monsterlair.monsters.view.MonsterListDisplayModelMapper
 import de.enduni.monsterlair.monsters.view.MonsterViewModel
 import de.enduni.monsterlair.treasure.repository.TreasureEntityMapper
@@ -108,6 +110,8 @@ val monsterModule = module {
     // data source
     single { MonsterEntityMapper() }
 
+    single { MonsterFilterStore() }
+
     // domain
     single { RetrieveMonstersUseCase(get()) }
     single { RetrieveMonsterUseCase(get()) }
@@ -121,7 +125,9 @@ val monsterModule = module {
 
     // view
     single { MonsterListDisplayModelMapper() }
-    viewModel { MonsterViewModel(get(), get(), get(), get(), get()) }
+
+    viewModel { MonsterViewModel(get(), get(), get(), get(), get(), get()) }
+    viewModel { MonsterFilterViewModel(get(), get()) }
 }
 
 val encounterModule = module {

@@ -8,10 +8,10 @@ import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipDrawable
 import com.google.android.material.chip.ChipGroup
 import de.enduni.monsterlair.R
+import de.enduni.monsterlair.common.domain.SortBy
 import de.enduni.monsterlair.common.filter.SortByFilterStore
 import de.enduni.monsterlair.common.getStringRes
 import de.enduni.monsterlair.databinding.BottomsheetSortByBinding
-import de.enduni.monsterlair.monsters.view.SortBy
 
 class SortByChip(context: Context, attributeSet: AttributeSet?) : Chip(context, attributeSet) {
 

@@ -1,7 +1,6 @@
 package de.enduni.monsterlair.treasure.domain
 
 import de.enduni.monsterlair.common.domain.*
-import de.enduni.monsterlair.monsters.view.SortBy
 
 data class TreasureFilter(
     val searchTerm: String = "",

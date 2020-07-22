@@ -25,13 +25,19 @@ data class MonsterTrait(
     @PrimaryKey val name: String
 )
 
-@Entity(tableName = "MonsterAndTraitsCrossRef", primaryKeys = ["id", "name"])
+@Entity(
+    tableName = "MonsterAndTraitsCrossRef", primaryKeys = ["id", "name"],
+    indices = [Index(
+        value = ["name"],
+        name = "monster_cross_ref_index"
+    )]
+)
 data class MonsterAndTraitsCrossRef(
     val id: String,
     val name: String
 )
 
-data class MonstersWithTraits(
+data class MonsterWithTraits(
     @Embedded val monster: MonsterEntity,
     @Relation(
         parentColumn = "id",

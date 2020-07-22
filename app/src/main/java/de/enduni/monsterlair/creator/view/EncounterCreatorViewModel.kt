@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import de.enduni.monsterlair.common.domain.Complexity
 import de.enduni.monsterlair.common.domain.MonsterType
 import de.enduni.monsterlair.common.domain.RandomEncounter
+import de.enduni.monsterlair.common.domain.SortBy
 import de.enduni.monsterlair.common.getDefaultMaxLevel
 import de.enduni.monsterlair.common.view.ActionLiveData
 import de.enduni.monsterlair.common.view.CreateMonsterDialog
@@ -20,7 +21,6 @@ import de.enduni.monsterlair.monsters.domain.DeleteMonsterUseCase
 import de.enduni.monsterlair.monsters.domain.Monster
 import de.enduni.monsterlair.monsters.domain.RetrieveMonsterUseCase
 import de.enduni.monsterlair.monsters.domain.SaveMonsterUseCase
-import de.enduni.monsterlair.monsters.view.SortBy
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
