@@ -1,22 +1,22 @@
 package de.enduni.monsterlair.encounters.persistence
 
-import de.enduni.monsterlair.common.persistence.HazardEntity
+import de.enduni.monsterlair.common.persistence.HazardWithTraits
 import de.enduni.monsterlair.encounters.domain.model.HazardRole
 import de.enduni.monsterlair.encounters.domain.model.HazardWithRole
 import de.enduni.monsterlair.hazards.domain.Hazard
 
 class HazardWithRoleMapper {
 
-    fun mapToHazardWithRole(hazard: HazardEntity, encounterLevel: Int): HazardWithRole {
+    fun mapToHazardWithRole(hazard: HazardWithTraits, encounterLevel: Int): HazardWithRole {
         return hazard.let {
             HazardWithRole(
-                id = it.id,
-                name = it.name,
-                url = it.url,
-                level = it.level,
-                complexity = it.complexity,
-                source = it.source,
-                role = it.level.determineRole(encounterLevel)
+                id = it.hazard.id,
+                name = it.hazard.name,
+                url = it.hazard.url,
+                level = it.hazard.level,
+                complexity = it.hazard.complexity,
+                source = it.hazard.source,
+                role = it.hazard.level.determineRole(encounterLevel)
             )
         }
     }

@@ -11,7 +11,7 @@ import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.setTextIfNotFocused
 import de.enduni.monsterlair.common.view.*
 import de.enduni.monsterlair.databinding.DialogTreasureFilterBinding
-import de.enduni.monsterlair.treasure.view.TreasureFilterDialogViewModel
+import de.enduni.monsterlair.treasure.view.TreasureFilterViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -21,7 +21,7 @@ class TreasureFilterBottomSheet : BottomSheetDialogFragment() {
 
     private lateinit var binding: DialogTreasureFilterBinding
 
-    private val viewModel: TreasureFilterDialogViewModel by viewModel()
+    private val viewModel: TreasureFilterViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,46 +36,43 @@ class TreasureFilterBottomSheet : BottomSheetDialogFragment() {
 
         viewModel.traits.observe(
             viewLifecycleOwner,
-            Observer {
-                binding.traitsSelect.setupTraitsSelect(it) { trait ->
-                    viewModel.addTrait(trait)
-                }
-            })
+            Observer { binding.traitsSelect.setupTraitsSelect(it, viewModel.filterStore) }
+        )
         viewModel.filter.observe(viewLifecycleOwner, Observer { filter ->
             binding.treasureCategoryChips.addTreasureCategoryChips(
                 filter.categories,
-                clear = true
-            ) { viewModel.removeTreasureCategory(it) }
+                clear = true,
+                filterStore = viewModel.filterStore
+            )
             binding.traitsChips.addTraitChips(
                 filter.traits,
-                clear = true
-            ) { viewModel.removeTrait(it) }
-            binding.rarityChips.setupRarityChips(
+                clear = true,
+                filterStore = viewModel.filterStore
+            )
+            binding.rarityChips.buildRaritySelection(
                 filter.rarities,
-                addAction = { viewModel.addRarity(it) },
-                removeAction = { viewModel.removeRarity(it) })
+                filterStore = viewModel.filterStore
+            )
             binding.lowerGoldRangeEditText.setTextIfNotFocused(filter.lowerGoldCost)
             binding.upperGoldRangeEditText.setTextIfNotFocused(filter.upperGoldCost)
         })
 
-        binding.treasureCategorySelect.setupTreasureCategorySelect {
-            viewModel.addTreasureCategory(it)
-        }
+        binding.treasureCategorySelect.setupTreasureCategorySelect(viewModel.filterStore)
         binding.treasureCategorySelect.adjustBottomSheetPadding(binding.root)
         binding.traitsSelect.adjustBottomSheetPadding(binding.root)
 
         binding.lowerGoldRangeEditText.doAfterTextChanged { text ->
             if (text.isNullOrBlank()) {
-                viewModel.setLowerGoldCost(null)
+                viewModel.filterStore.setLowerGoldCost(null)
             } else {
-                viewModel.setLowerGoldCost(text.toString().toDoubleOrNull())
+                viewModel.filterStore.setLowerGoldCost(text.toString().toDoubleOrNull())
             }
         }
         binding.upperGoldRangeEditText.doAfterTextChanged { text ->
             if (text.isNullOrBlank()) {
-                viewModel.setUpperGoldCost(null)
+                viewModel.filterStore.setUpperGoldCost(null)
             } else {
-                viewModel.setUpperGoldCost(text.toString().toDoubleOrNull())
+                viewModel.filterStore.setUpperGoldCost(text.toString().toDoubleOrNull())
             }
         }
     }

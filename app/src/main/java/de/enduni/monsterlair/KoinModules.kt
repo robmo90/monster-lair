@@ -21,9 +21,10 @@ import de.enduni.monsterlair.encounters.persistence.HazardWithRoleMapper
 import de.enduni.monsterlair.encounters.persistence.MonsterWithRoleMapper
 import de.enduni.monsterlair.encounters.view.EncounterDisplayModelMapper
 import de.enduni.monsterlair.encounters.view.EncounterViewModel
-import de.enduni.monsterlair.hazards.domain.RetrieveHazardsUseCase
 import de.enduni.monsterlair.hazards.persistence.HazardRepository
 import de.enduni.monsterlair.hazards.view.HazardDisplayModelMapper
+import de.enduni.monsterlair.hazards.view.HazardFilterStore
+import de.enduni.monsterlair.hazards.view.HazardFilterViewModel
 import de.enduni.monsterlair.hazards.view.HazardViewModel
 import de.enduni.monsterlair.monsters.domain.DeleteMonsterUseCase
 import de.enduni.monsterlair.monsters.domain.RetrieveMonsterUseCase
@@ -36,8 +37,8 @@ import de.enduni.monsterlair.monsters.view.MonsterViewModel
 import de.enduni.monsterlair.treasure.repository.TreasureEntityMapper
 import de.enduni.monsterlair.treasure.repository.TreasureRepository
 import de.enduni.monsterlair.treasure.view.TreasureDisplayModelMapper
-import de.enduni.monsterlair.treasure.view.TreasureFilterDialogViewModel
 import de.enduni.monsterlair.treasure.view.TreasureFilterStore
+import de.enduni.monsterlair.treasure.view.TreasureFilterViewModel
 import de.enduni.monsterlair.treasure.view.TreasureViewModel
 import de.enduni.monsterlair.update.UpdateManager
 import org.koin.android.ext.koin.androidApplication
@@ -91,14 +92,14 @@ val appModule = module {
 val hazardsModule = module {
 
     single { HazardEntityMapper() }
-
-    single { RetrieveHazardsUseCase(get()) }
+    single { HazardFilterStore() }
 
     single { HazardRepository(get(), get()) }
 
     single { HazardDisplayModelMapper() }
 
-    viewModel { HazardViewModel(get(), get()) }
+    viewModel { HazardViewModel(get(), get(), get()) }
+    viewModel { HazardFilterViewModel(get(), get()) }
 
 }
 
@@ -172,7 +173,7 @@ val treasureModule = module {
     single { TreasureFilterStore() }
 
     viewModel { TreasureViewModel(get(), get(), get()) }
-    viewModel { TreasureFilterDialogViewModel(get(), get()) }
+    viewModel { TreasureFilterViewModel(get(), get()) }
 
 
 }

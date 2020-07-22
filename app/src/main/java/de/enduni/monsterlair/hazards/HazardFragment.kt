@@ -5,22 +5,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.openCustomTab
-import de.enduni.monsterlair.common.view.buildComplexityChips
-import de.enduni.monsterlair.common.view.buildSortByChips
+import de.enduni.monsterlair.common.view.addComplexityChips
+import de.enduni.monsterlair.common.view.addRarityChips
+import de.enduni.monsterlair.common.view.addTraitChips
 import de.enduni.monsterlair.databinding.FragmentHazardsBinding
+import de.enduni.monsterlair.hazards.domain.HazardFilter
 import de.enduni.monsterlair.hazards.view.HazardOverviewAction
-import de.enduni.monsterlair.hazards.view.HazardOverviewViewState
 import de.enduni.monsterlair.hazards.view.HazardViewModel
 import de.enduni.monsterlair.hazards.view.adapter.HazardListAdapter
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
 
+@ExperimentalCoroutinesApi
 class HazardFragment : Fragment() {
 
     private val viewModel: HazardViewModel by viewModel()
@@ -43,7 +44,8 @@ class HazardFragment : Fragment() {
         listAdapter = HazardListAdapter(requireActivity().layoutInflater, viewModel)
 
         binding.hazardRecyclerView.adapter = listAdapter
-        viewModel.viewState.observe(viewLifecycleOwner, Observer { bindViewToState(it) })
+        viewModel.hazards.observe(viewLifecycleOwner, Observer { listAdapter.submitList(it) })
+        viewModel.filter.observe(viewLifecycleOwner, Observer { updateUi(it) })
         bindUi()
     }
 
@@ -52,54 +54,35 @@ class HazardFragment : Fragment() {
         viewModel.actions.observe(this, Observer { handleAction(it) })
     }
 
+
+    private fun updateUi(filter: HazardFilter) {
+        binding.levelButton.update(filter.lowerLevel, filter.upperLevel)
+        binding.sortButton.update(filter.sortBy)
+        binding.searchButton.update(filter.searchTerm)
+        binding.additionalFilterChips.removeAllViews()
+        binding.additionalFilterChips.addComplexityChips(
+            filter.complexities,
+            filterStore = viewModel.filterStore
+        )
+        binding.additionalFilterChips.addTraitChips(
+            filter.traits,
+            filterStore = viewModel.filterStore
+        )
+        binding.additionalFilterChips.addRarityChips(
+            filter.rarities,
+            filterStore = viewModel.filterStore
+        )
+    }
+
     private fun bindUi() {
-        binding.searchEditText.doAfterTextChanged {
-            viewModel.filterByString(it.toString())
-        }
-        binding.navigateDown.setOnClickListener {
-            binding.hazardRecyclerView.layoutManager?.scrollToPosition(listAdapter.itemCount - 1)
-        }
-        binding.navigateUp.setOnClickListener {
-            binding.hazardRecyclerView.layoutManager?.scrollToPosition(0)
-        }
-
-        binding.levelSlider.setOnThumbValueChangeListener { _, _, thumbIndex, value ->
-            when (thumbIndex) {
-                0 -> viewModel.adjustFilterLevelLower(value)
-                1 -> viewModel.adjustFilterLevelUpper(value)
-            }
-        }
-
-        setupBottomSheet()
-    }
-
-    private fun setupBottomSheet() {
-        val bottomSheetBehavior = BottomSheetBehavior.from(binding.filterBottomSheet)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-        bottomSheetBehavior.peekHeight =
-            requireContext().resources.getDimensionPixelSize(R.dimen.bottom_sheet_peek)
-    }
-
-    private fun bindViewToState(state: HazardOverviewViewState) {
-        listAdapter.submitList(state.hazards)
-        state.hazardFilter?.let { filter ->
-            binding.levelSliderLabel.text = requireContext().getString(
-                R.string.monster_level_range_values,
-                filter.lowerLevel,
-                filter.upperLevel
-            )
-            binding.levelSlider.getThumb(0).value = filter.lowerLevel
-            binding.levelSlider.getThumb(1).value = filter.upperLevel
-            binding.complexityChips.buildComplexityChips(
-                filter.complexities,
-                { viewModel.addComplexityFilter(it) },
-                { viewModel.removeComplexityFilter(it) }
-            )
-            binding.sortByChips.buildSortByChips(
-                filter.sortBy
-            ) { viewModel.adjustSortBy(it) }
+        binding.searchButton.setup(requireActivity(), viewModel.filterStore)
+        binding.levelButton.setup(requireActivity(), viewModel.filterStore)
+        binding.sortButton.setup(requireActivity(), viewModel.filterStore)
+        binding.filterFab.setOnClickListener {
+            HazardFilterBottomSheet.newInstance().show(parentFragmentManager, "tag")
         }
     }
+
 
     private fun handleAction(action: HazardOverviewAction?) {
         when (action) {

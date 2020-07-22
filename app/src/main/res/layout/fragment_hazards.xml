@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -18,145 +18,88 @@
         tools:itemCount="5"
         tools:listitem="@layout/viewholder_hazard" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/filter_fab"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_filter_alt"
+        app:layout_constraintBottom_toTopOf="@+id/filter_bottom_sheet"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/filter_bottom_sheet"
+        style="@style/FilterControl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/BottomSheet"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+        android:padding="4dp"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <View
-            android:layout_width="54dp"
-            android:layout_height="1dp"
-            android:layout_marginTop="4dp"
-            android:background="@color/secondaryColor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/search_edit_text_layout"
-            style="@style/EditText"
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/option_chips"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="14dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toStartOf="@+id/navigate_up"
+            android:layout_marginEnd="8dp"
+            app:chipSpacingVertical="@dimen/verticalChipSpacing"
+            app:layout_constraintEnd_toStartOf="@id/more_options"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/search_edit_text"
-                android:layout_width="match_parent"
+            <de.enduni.monsterlair.common.view.filterchips.SearchChip
+                android:id="@+id/search_button"
+                style="@style/Widget.MaterialComponents.Chip.Action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <de.enduni.monsterlair.common.view.filterchips.LevelRangeChip
+                android:id="@+id/level_button"
+                style="@style/Widget.MaterialComponents.Chip.Action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <de.enduni.monsterlair.common.view.filterchips.SortByChip
+                android:id="@+id/sort_button"
+                style="@style/Widget.MaterialComponents.Chip.Action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/more_options"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="?selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_more_vert"
+            app:layout_constraintBottom_toBottomOf="@id/option_chips"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/option_chips" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            app:layout_constraintTop_toBottomOf="@id/option_chips">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/additional_filter_chips"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/search" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:singleLine="true" />
 
-        <ImageView
-            android:id="@+id/navigate_up"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:clickable="true"
-            android:contentDescription="@string/scroll_up_description"
-            android:focusable="true"
-            android:background="?selectableItemBackgroundBorderless"
-            android:padding="8dp"
-            android:src="@drawable/ic_arrow_up"
-            app:layout_constraintBottom_toBottomOf="@id/search_edit_text_layout"
-            app:layout_constraintEnd_toStartOf="@id/navigate_down"
-            app:layout_constraintTop_toTopOf="@id/search_edit_text_layout" />
+        </HorizontalScrollView>
 
-        <ImageView
-            android:id="@+id/navigate_down"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:clickable="true"
-            android:contentDescription="@string/scroll_down_description"
-            android:focusable="true"
-            android:background="?selectableItemBackgroundBorderless"
-            android:padding="8dp"
-            android:src="@drawable/ic_arrow_down"
-            app:layout_constraintBottom_toBottomOf="@id/search_edit_text_layout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/search_edit_text_layout" />
-
-        <TextView
-            android:id="@+id/level_slider_label"
-            style="@style/Caption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/level_range"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/search_edit_text_layout" />
-
-        <io.apptik.widget.MultiSlider
-            android:id="@+id/level_slider"
-            android:layout_width="0dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="16dp"
-            android:clickable="true"
-            android:focusable="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/level_slider_label"
-            app:scaleMax="25"
-            app:scaleMin="-1"
-            app:scaleStep="1"
-            app:thumbNumber="2" />
-
-        <TextView
-            android:id="@+id/complexity_label"
-            style="@style/Caption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/hazard_complexity"
-            app:layout_constraintStart_toStartOf="@id/level_slider_label"
-            app:layout_constraintTop_toBottomOf="@id/level_slider" />
-
-
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/complexity_chips"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            app:chipSpacingVertical="@dimen/verticalChipSpacing"
-            app:layout_constraintTop_toBottomOf="@id/complexity_label">
-
-        </com.google.android.material.chip.ChipGroup>
-
-        <TextView
-            android:id="@+id/sort_by_label"
-            style="@style/Caption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/sort_by"
-            app:layout_constraintStart_toStartOf="@id/level_slider_label"
-            app:layout_constraintTop_toBottomOf="@id/complexity_chips" />
-
-
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/sort_by_chips"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            app:chipSpacingVertical="@dimen/verticalChipSpacing"
-            app:layout_constraintTop_toBottomOf="@id/sort_by_label">
-
-        </com.google.android.material.chip.ChipGroup>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

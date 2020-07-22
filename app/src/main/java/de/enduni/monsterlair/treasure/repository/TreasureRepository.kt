@@ -28,16 +28,6 @@ class TreasureRepository(
         return dao.getTreasure(SimpleSQLiteQuery(query))
             .asSequence()
             .filter { treasureWithTraits ->
-                if (filter.traits.isEmpty()) {
-                    true
-                } else {
-                    filter.traits.any {
-                        treasureWithTraits.traits.map { treasureTrait -> treasureTrait.name }
-                            .contains(it)
-                    }
-                }
-            }
-            .filter { treasureWithTraits ->
                 if (filter.searchTerm.isBlank()) {
                     true
                 } else {
@@ -49,16 +39,14 @@ class TreasureRepository(
                     }
                 }
             }
-//            .filter { treasureWithTraits ->
-//                when {
-//                    filter.upperGoldCost == null && filter.lowerGoldCost != null -> filter.lowerGoldCost < treasureWithTraits.treasure.priceInGp
-//                    filter.upperGoldCost != null && filter.lowerGoldCost == null -> filter.upperGoldCost > treasureWithTraits.treasure.priceInGp
-//                    filter.upperGoldCost != null && filter.lowerGoldCost != null -> filter.lowerGoldCost < treasureWithTraits.treasure.priceInGp && filter.upperGoldCost > treasureWithTraits.treasure.priceInGp
-//                    else -> true
-//                }
-//            }
             .map { mapper.fromEntityToDomain(it) }
-            .filter { treasure -> filter.traits.all { treasure.traits.contains(it) } }
+            .filter { treasure ->
+                if (filter.traits.isEmpty()) {
+                    true
+                } else {
+                    filter.traits.any { treasure.traits.contains(it) }
+                }
+            }
             .toList()
     }
 

@@ -7,7 +7,6 @@ import de.enduni.monsterlair.encounters.domain.model.Encounter
 import de.enduni.monsterlair.encounters.domain.model.HazardWithRole
 import de.enduni.monsterlair.encounters.persistence.HazardWithRoleMapper
 import de.enduni.monsterlair.hazards.persistence.HazardRepository
-import de.enduni.monsterlair.monsters.view.SortBy
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -24,21 +23,16 @@ class RetrieveHazardsWithRoleUseCase(
             return@withContext emptyList<HazardWithRole>()
         }
         repository.getFilteredHazards(
-            filter.string,
+            filter.string ?: "",
+            filter.complexities,
+            emptyList(),
             filter.lowerLevel,
             filter.upperLevel,
-            getSortByString(filter.sortBy),
-            filter.complexities
+            filter.sortBy.getStringForHazard(),
+            emptyList()
         )
             .map { hazardWithRoleMapper.mapToHazardWithRole(it, encounter.level) }
             .filterHazardWithinBudget(filter = filter.withinBudget, encounter = encounter)
-    }
-
-    private fun getSortByString(sortBy: SortBy): String {
-        return when (sortBy) {
-            SortBy.TYPE -> "complexity"
-            else -> sortBy.value
-        }
     }
 
     private fun List<HazardWithRole>.filterHazardWithinBudget(

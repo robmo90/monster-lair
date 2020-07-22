@@ -151,11 +151,6 @@ class EncounterCreatorActivity : AppCompatActivity() {
                 { viewModel.addMonsterTypeFilter(it) },
                 { viewModel.removeMonsterTypeFilter(it) }
             )
-            binding.complexityChips.buildComplexityChips(
-                filter.complexities,
-                { viewModel.addComplexityFilter(it) },
-                { viewModel.removeComplexityFilter(it) }
-            )
             binding.dangerTypeChips.buildDangerTypeChips(
                 filter.dangerTypes,
                 { viewModel.addDangerFilter(it) },

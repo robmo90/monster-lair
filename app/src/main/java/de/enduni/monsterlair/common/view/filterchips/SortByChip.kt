@@ -8,6 +8,7 @@ import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipDrawable
 import com.google.android.material.chip.ChipGroup
 import de.enduni.monsterlair.R
+import de.enduni.monsterlair.common.filter.SortByFilterStore
 import de.enduni.monsterlair.common.getStringRes
 import de.enduni.monsterlair.databinding.BottomsheetSortByBinding
 import de.enduni.monsterlair.monsters.view.SortBy
@@ -20,8 +21,8 @@ class SortByChip(context: Context, attributeSet: AttributeSet?) : Chip(context, 
 
     private lateinit var sheet: BottomSheet
 
-    fun setup(activity: Activity, listener: BottomSheet.Listener) {
-        sheet = BottomSheet(activity, listener)
+    fun setup(activity: Activity, filterStore: SortByFilterStore) {
+        sheet = BottomSheet(activity, filterStore)
         this.setOnClickListener { sheet.show() }
     }
 
@@ -31,7 +32,7 @@ class SortByChip(context: Context, attributeSet: AttributeSet?) : Chip(context, 
     }
 
 
-    class BottomSheet(activity: Activity, private val listener: Listener) :
+    class BottomSheet(activity: Activity, private val filterStore: SortByFilterStore) :
         BottomSheetDialog(activity) {
 
         val binding = BottomsheetSortByBinding.inflate(activity.layoutInflater, null, false)
@@ -43,12 +44,6 @@ class SortByChip(context: Context, attributeSet: AttributeSet?) : Chip(context, 
 
         fun updateSortBy(sortBy: SortBy) {
             binding.sortByChips.buildSortByChips(sortBy)
-        }
-
-        interface Listener {
-
-            fun setSortBy(sortBy: SortBy)
-
         }
 
 
@@ -68,7 +63,7 @@ class SortByChip(context: Context, attributeSet: AttributeSet?) : Chip(context, 
                 chip.isChecked = checkedSortBy == sortBy
                 chip.setOnCheckedChangeListener { _, isChecked ->
                     if (isChecked) {
-                        listener.setSortBy(sortBy)
+                        filterStore.setSortBy(sortBy)
                     }
                 }
 

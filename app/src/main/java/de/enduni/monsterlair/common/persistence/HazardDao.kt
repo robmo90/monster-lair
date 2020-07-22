@@ -2,7 +2,6 @@ package de.enduni.monsterlair.common.persistence
 
 import androidx.room.*
 import androidx.sqlite.db.SupportSQLiteQuery
-import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface HazardDao {
@@ -13,24 +12,30 @@ interface HazardDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertHazard(hazard: HazardEntity)
 
+    @Transaction
     @Query("SELECT * FROM hazards ORDER BY name")
-    suspend fun getAllHazards(): List<HazardEntity>
+    suspend fun getAllHazards(): List<HazardWithTraits>
 
     @Query("SELECT MAX(id) FROM hazards")
     suspend fun getHighestId(): Long
 
+    @Transaction
     @RawQuery
     suspend fun getFilteredHazards(
         sqLiteQuery: SupportSQLiteQuery
-    ): List<HazardEntity>
+    ): List<HazardWithTraits>
 
-    @RawQuery(observedEntities = [HazardEntity::class])
-    fun getFilteredHazardFlow(
-        sqLiteQuery: SupportSQLiteQuery
-    ): Flow<List<HazardEntity>>
-
-
+    @Transaction
     @Query("SELECT * FROM hazards WHERE id is :id LIMIT 1")
-    suspend fun getHazard(id: String): HazardEntity
+    suspend fun getHazard(id: String): HazardWithTraits
+
+    @Query("SELECT * FROM hazardTraits ORDER BY name")
+    suspend fun getTraits(): List<HazardTrait>
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertTraits(traits: List<HazardTrait>)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertCrossRef(treasure: List<HazardsAndTraitsCrossRef>)
 
 }

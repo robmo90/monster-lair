@@ -1,8 +1,10 @@
 package de.enduni.monsterlair.common.filter
 
+import de.enduni.monsterlair.common.domain.Cost
+
 interface GoldCostFilterStore {
 
-    fun setUpperGoldCost(cost: Double?)
-    fun setLowerGoldCost(cost: Double?)
+    fun setUpperGoldCost(cost: Cost)
+    fun setLowerGoldCost(cost: Cost)
 
 }

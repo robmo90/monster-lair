@@ -37,5 +37,5 @@ data class HazardWithTraits(
         entityColumn = "name",
         associateBy = Junction(HazardsAndTraitsCrossRef::class)
     )
-    val traits: List<MonsterTrait>
+    val traits: List<HazardTrait>
 )

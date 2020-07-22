@@ -7,6 +7,7 @@ import androidx.core.widget.doAfterTextChanged
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.chip.Chip
 import de.enduni.monsterlair.R
+import de.enduni.monsterlair.common.filter.SearchFilterStore
 import de.enduni.monsterlair.common.setTextIfNotFocused
 import de.enduni.monsterlair.databinding.BottomsheetSearchBinding
 
@@ -19,8 +20,8 @@ class SearchChip(context: Context, attributeSet: AttributeSet?) : Chip(context, 
 
     private lateinit var searchSheet: BottomSheet
 
-    fun setup(activity: Activity, listener: BottomSheet.Listener) {
-        searchSheet = BottomSheet(activity, listener)
+    fun setup(activity: Activity, filterStore: SearchFilterStore) {
+        searchSheet = BottomSheet(activity, filterStore)
         this.setOnClickListener { searchSheet.show() }
     }
 
@@ -34,24 +35,18 @@ class SearchChip(context: Context, attributeSet: AttributeSet?) : Chip(context, 
     }
 
 
-    class BottomSheet(activity: Activity, private val listener: Listener) :
+    class BottomSheet(activity: Activity, private val filterStore: SearchFilterStore) :
         BottomSheetDialog(activity) {
 
         val binding = BottomsheetSearchBinding.inflate(activity.layoutInflater, null, false)
 
         init {
             setContentView(binding.root)
-            binding.searchEditText.doAfterTextChanged { listener.setSearchTerm(it.toString()) }
+            binding.searchEditText.doAfterTextChanged { filterStore.setSearchTerm(it.toString()) }
         }
 
         fun updateSearch(searchString: String) {
             binding.searchEditText.setTextIfNotFocused(searchString)
-        }
-
-        interface Listener {
-
-            fun setSearchTerm(searchString: String)
-
         }
 
     }

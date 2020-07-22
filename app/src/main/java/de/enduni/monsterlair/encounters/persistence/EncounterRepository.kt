@@ -73,7 +73,7 @@ class EncounterRepository(
             val hazardWithRole =
                 hazardWithRoleMapper.mapToHazardWithRole(hazard, level)
             EncounterHazard(
-                hazard.id,
+                hazard.hazard.id,
                 hazardWithRole,
                 hazardForEncounterEntity.count
             )

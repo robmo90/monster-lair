@@ -7,7 +7,10 @@ import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.TextView
 import de.enduni.monsterlair.R
+import de.enduni.monsterlair.common.domain.Trait
 import de.enduni.monsterlair.common.domain.TreasureCategory
+import de.enduni.monsterlair.common.filter.TraitFilterStore
+import de.enduni.monsterlair.common.filter.TreasureCategoryFilterStore
 
 
 fun AutoCompleteTextView.adjustBottomSheetPadding(rootView: View) {
@@ -33,7 +36,7 @@ fun AutoCompleteTextView.adjustBottomSheetPadding(rootView: View) {
 
 
 fun AutoCompleteTextView.setupTreasureCategorySelect(
-    addAction: (TreasureCategory) -> Unit
+    filterStore: TreasureCategoryFilterStore
 ) {
     val categories = context.resources.getStringArray(R.array.treasure_categories)
     val adapter = object : ArrayAdapter<String>(
@@ -43,14 +46,14 @@ fun AutoCompleteTextView.setupTreasureCategorySelect(
     ) {}
     setAdapter(adapter)
     onItemClickListener = AdapterView.OnItemClickListener { _, view, position, _ ->
-        addAction.invoke(TreasureCategory.values()[categories.indexOf((view as TextView).text)])
+        filterStore.addCategory(TreasureCategory.values()[categories.indexOf((view as TextView).text)])
         text = SpannableStringBuilder("")
     }
 }
 
 fun AutoCompleteTextView.setupTraitsSelect(
     traits: List<String>,
-    addAction: (String) -> Unit
+    traitFilterStore: TraitFilterStore
 ) {
     val adapter = object : ArrayAdapter<String>(
         context,
@@ -59,7 +62,7 @@ fun AutoCompleteTextView.setupTraitsSelect(
     ) {}
     setAdapter(adapter)
     onItemClickListener = AdapterView.OnItemClickListener { _, view, position, _ ->
-        addAction.invoke((view as TextView).text as String)
+        traitFilterStore.addTrait((view as TextView).text as Trait)
         text = SpannableStringBuilder("")
     }
 }

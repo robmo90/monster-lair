@@ -6,10 +6,7 @@ import de.enduni.monsterlair.common.datasource.monsters.MonsterDataSource
 import de.enduni.monsterlair.common.datasource.monsters.MonsterDto
 import de.enduni.monsterlair.common.datasource.treasure.TreasureDataSource
 import de.enduni.monsterlair.common.datasource.treasure.TreasureDto
-import de.enduni.monsterlair.common.persistence.HazardDao
-import de.enduni.monsterlair.common.persistence.MonsterDao
-import de.enduni.monsterlair.common.persistence.TreasureAndTraitsCrossRef
-import de.enduni.monsterlair.common.persistence.TreasureDao
+import de.enduni.monsterlair.common.persistence.*
 import de.enduni.monsterlair.monsters.persistence.MonsterEntityMapper
 import de.enduni.monsterlair.treasure.repository.TreasureEntityMapper
 import de.enduni.monsterlair.update.UpdateManager
@@ -43,8 +40,7 @@ class DatabaseInitializer(
             treasureDataSource.getTreasures().saveTreasures()
 
             Timber.d(
-                "This is my highest GP Cost ${treasureDao.getTreasure()
-                    .map { it.treasure.priceInGp }.max()}"
+                "These are my hazard ${hazardDao.getAllHazards()}"
             )
         }
         _migrationRunning.value = false
@@ -57,9 +53,17 @@ class DatabaseInitializer(
     }
 
     private suspend fun List<HazardDto>.saveHazards() {
-        this.map { hazardEntityMapper.toEntity(it) }
-            .chunked(20)
-            .forEach { hazardDao.insertHazards(it) }
+        this.map { hazardEntityMapper.fromDtoToEntity(it) }
+            .forEach { (entity, traits) ->
+                hazardDao.insertHazard(entity)
+                hazardDao.insertTraits(traits)
+                hazardDao.insertCrossRef(traits.map {
+                    HazardsAndTraitsCrossRef(
+                        entity.id,
+                        it.name
+                    )
+                })
+            }
     }
 
     private suspend fun List<TreasureDto>.saveTreasures() {

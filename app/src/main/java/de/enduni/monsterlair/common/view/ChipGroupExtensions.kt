@@ -4,12 +4,12 @@ import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipDrawable
 import com.google.android.material.chip.ChipGroup
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.common.domain.Complexity
-import de.enduni.monsterlair.common.domain.MonsterType
-import de.enduni.monsterlair.common.domain.Rarity
-import de.enduni.monsterlair.common.domain.TreasureCategory
+import de.enduni.monsterlair.common.domain.*
+import de.enduni.monsterlair.common.filter.*
 import de.enduni.monsterlair.common.getStringRes
 import de.enduni.monsterlair.common.getStringResForLabel
+import de.enduni.monsterlair.common.view.filterchips.RemovableFilterChip
+import de.enduni.monsterlair.common.view.filterchips.SelectionChip
 import de.enduni.monsterlair.creator.view.DangerType
 import de.enduni.monsterlair.monsters.view.SortBy
 
@@ -72,32 +72,22 @@ fun ChipGroup.buildSortByChips(
     }
 }
 
-fun ChipGroup.buildComplexityChips(
+fun ChipGroup.buildComplexitySelection(
     checkedComplexities: List<Complexity> = listOf(),
-    onChecked: (Complexity) -> Unit,
-    onUnchecked: (Complexity) -> Unit
+    clear: Boolean = false,
+    filterStore: ComplexityFilterStore
 ) {
-    this.removeAllViews()
+    if (clear) {
+        this.removeAllViews()
+    }
     Complexity.values().forEach { complexity ->
-        val chip = Chip(this.context)
-        val chipDrawable = ChipDrawable.createFromAttributes(
+        val chip = SelectionChip(
             this.context,
-            null,
-            0,
-            R.style.Widget_MaterialComponents_Chip_Filter
+            context.getString(complexity.getStringResForLabel()),
+            checkedComplexities.contains(complexity),
+            { filterStore.addComplexity(complexity) },
+            { filterStore.removeComplexity(complexity) }
         )
-        chip.setChipDrawable(chipDrawable)
-        chip.text = this.context.getString(complexity.getStringResForLabel())
-        chip.isChecked = checkedComplexities.contains(complexity)
-        chip.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                onChecked.invoke(complexity)
-            } else {
-                onUnchecked.invoke(complexity)
-            }
-        }
-
-
         this.addView(chip)
     }
 }
@@ -108,26 +98,14 @@ fun ChipGroup.buildDangerTypeChips(
     onUnchecked: (DangerType) -> Unit
 ) {
     this.removeAllViews()
-    DangerType.values().forEach { complexity ->
-        val chip = Chip(this.context)
-        val chipDrawable = ChipDrawable.createFromAttributes(
+    DangerType.values().forEach { dangerType ->
+        val chip = SelectionChip(
             this.context,
-            null,
-            0,
-            R.style.Widget_MaterialComponents_Chip_Filter
+            this.context.getString(dangerType.getStringRes()),
+            checkedDangers.contains(dangerType),
+            { onChecked.invoke(dangerType) },
+            { onUnchecked.invoke(dangerType) }
         )
-        chip.setChipDrawable(chipDrawable)
-        chip.text = this.context.getString(complexity.getStringRes())
-        chip.isChecked = checkedDangers.contains(complexity)
-        chip.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                onChecked.invoke(complexity)
-            } else {
-                onUnchecked.invoke(complexity)
-            }
-        }
-
-
         this.addView(chip)
     }
 }
@@ -135,47 +113,33 @@ fun ChipGroup.buildDangerTypeChips(
 fun ChipGroup.addTreasureCategoryChips(
     categories: List<TreasureCategory>,
     clear: Boolean = false,
-    removeAction: (TreasureCategory) -> Unit
+    filterStore: TreasureCategoryFilterStore
 ) {
     if (clear) {
         this.removeAllViews()
     }
     categories.forEach { category ->
-        val chip = Chip(this.context)
-        val chipDrawable = ChipDrawable.createFromAttributes(
+        val chip = RemovableFilterChip(
             this.context,
-            null,
-            0,
-            R.style.Widget_MaterialComponents_Chip_Entry
-        )
-        chip.setChipDrawable(chipDrawable)
-        chip.text = this.context.getString(category.getStringRes())
-        chip.isCheckable = false
-        chip.setOnCloseIconClickListener { removeAction.invoke(category) }
+            context.getString(category.getStringRes())
+        ) { filterStore.removeCategory(category) }
         this.addView(chip)
     }
 }
 
 fun ChipGroup.addTraitChips(
-    traits: List<String>,
+    traits: List<Trait>,
     clear: Boolean = false,
-    removeAction: (String) -> Unit
+    filterStore: TraitFilterStore
 ) {
     if (clear) {
         this.removeAllViews()
     }
     traits.forEach { trait ->
-        val chip = Chip(this.context)
-        val chipDrawable = ChipDrawable.createFromAttributes(
+        val chip = RemovableFilterChip(
             this.context,
-            null,
-            0,
-            R.style.Widget_MaterialComponents_Chip_Entry
-        )
-        chip.setChipDrawable(chipDrawable)
-        chip.text = trait
-        chip.isCheckable = false
-        chip.setOnCloseIconClickListener { removeAction.invoke(trait) }
+            trait
+        ) { filterStore.removeTrait(trait) }
         this.addView(chip)
     }
 }
@@ -183,23 +147,33 @@ fun ChipGroup.addTraitChips(
 fun ChipGroup.addRarityChips(
     rarities: List<Rarity>,
     clear: Boolean = false,
-    removeAction: (Rarity) -> Unit
+    filterStore: RarityFilterStore
 ) {
     if (clear) {
         this.removeAllViews()
     }
-    rarities.forEach { trait ->
-        val chip = Chip(this.context)
-        val chipDrawable = ChipDrawable.createFromAttributes(
+    rarities.forEach { rarity ->
+        val chip = RemovableFilterChip(
             this.context,
-            null,
-            0,
-            R.style.Widget_MaterialComponents_Chip_Entry
-        )
-        chip.setChipDrawable(chipDrawable)
-        chip.text = context.getString(trait.getStringRes())
-        chip.isCheckable = false
-        chip.setOnCloseIconClickListener { removeAction.invoke(trait) }
+            context.getString(rarity.getStringRes())
+        ) { filterStore.removeRarity(rarity) }
+        this.addView(chip)
+    }
+}
+
+fun ChipGroup.addComplexityChips(
+    complexities: List<Complexity>,
+    clear: Boolean = false,
+    filterStore: ComplexityFilterStore
+) {
+    if (clear) {
+        this.removeAllViews()
+    }
+    complexities.forEach { complexity ->
+        val chip = RemovableFilterChip(
+            this.context,
+            context.getString(complexity.getStringRes())
+        ) { filterStore.removeComplexity(complexity) }
         this.addView(chip)
     }
 }
@@ -208,67 +182,41 @@ fun ChipGroup.addGoldCostChips(
     lowerGoldCost: Double?,
     upperGoldCost: Double?,
     clear: Boolean = false,
-    lowerRemoveAction: () -> Unit,
-    upperRemoveAction: () -> Unit
+    filterStore: GoldCostFilterStore
 ) {
     if (clear) {
         this.removeAllViews()
     }
     lowerGoldCost?.let {
-        val chip = Chip(this.context)
-        val chipDrawable = ChipDrawable.createFromAttributes(
+        val chip = RemovableFilterChip(
             this.context,
-            null,
-            0,
-            R.style.Widget_MaterialComponents_Chip_Entry
-        )
-        chip.setChipDrawable(chipDrawable)
-        chip.text = context.getString(R.string.lower_price_range_in_gp_chip, it)
-        chip.isCheckable = false
-        chip.setOnCloseIconClickListener { lowerRemoveAction.invoke() }
+            context.getString(R.string.lower_price_range_in_gp_chip, it)
+        ) { filterStore.setLowerGoldCost(null) }
         this.addView(chip)
     }
     upperGoldCost?.let {
-        val chip = Chip(this.context)
-        val chipDrawable = ChipDrawable.createFromAttributes(
+        val chip = RemovableFilterChip(
             this.context,
-            null,
-            0,
-            R.style.Widget_MaterialComponents_Chip_Entry
-        )
-        chip.setChipDrawable(chipDrawable)
-        chip.text = context.getString(R.string.upper_price_range_in_gp_chip, it)
-        chip.isCheckable = false
-        chip.setOnCloseIconClickListener { upperRemoveAction.invoke() }
+            context.getString(R.string.upper_price_range_in_gp_chip, it)
+        ) { filterStore.setLowerGoldCost(null) }
         this.addView(chip)
     }
 }
 
 
-fun ChipGroup.setupRarityChips(
+fun ChipGroup.buildRaritySelection(
     checkedRarities: List<Rarity>,
-    addAction: (Rarity) -> Unit,
-    removeAction: (Rarity) -> Unit
+    filterStore: RarityFilterStore
 ) {
     this.removeAllViews()
     Rarity.values().forEach { rarity ->
-        val chip = Chip(this.context)
-        val chipDrawable = ChipDrawable.createFromAttributes(
+        val chip = SelectionChip(
             this.context,
-            null,
-            0,
-            R.style.Widget_MaterialComponents_Chip_Choice
+            context.getString(rarity.getStringRes()),
+            checkedRarities.contains(rarity),
+            { filterStore.addRarity(rarity) },
+            { filterStore.removeRarity(rarity) }
         )
-        chip.setChipDrawable(chipDrawable)
-        chip.text = context.getString(rarity.getStringRes())
-        chip.isChecked = checkedRarities.contains(rarity)
-        chip.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                addAction.invoke(rarity)
-            } else {
-                removeAction.invoke(rarity)
-            }
-        }
         this.addView(chip)
     }
 }

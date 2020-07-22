@@ -42,23 +42,29 @@ class TreasureFragment : Fragment(R.layout.fragment_treasure) {
         binding.sortButton.update(filter.sortBy)
         binding.searchButton.update(filter.searchTerm)
         binding.additionalFilterChips.removeAllViews()
-        binding.additionalFilterChips.addTreasureCategoryChips(filter.categories) {
-            viewModel.removeTreasureCategory(it)
-        }
-        binding.additionalFilterChips.addTraitChips(filter.traits) { viewModel.removeTrait(it) }
-        binding.additionalFilterChips.addRarityChips(filter.rarities) { viewModel.removeRarity(it) }
+        binding.additionalFilterChips.addTreasureCategoryChips(
+            filter.categories,
+            filterStore = viewModel.filterStore
+        )
+        binding.additionalFilterChips.addTraitChips(
+            filter.traits,
+            filterStore = viewModel.filterStore
+        )
         binding.additionalFilterChips.addGoldCostChips(
             filter.lowerGoldCost,
             filter.upperGoldCost,
-            lowerRemoveAction = { viewModel.setLowerGoldCost(null) },
-            upperRemoveAction = { viewModel.setUpperGoldCost(null) }
+            filterStore = viewModel.filterStore
+        )
+        binding.additionalFilterChips.addRarityChips(
+            filter.rarities,
+            filterStore = viewModel.filterStore
         )
     }
 
     private fun bindUi() {
-        binding.searchButton.setup(requireActivity(), viewModel)
-        binding.levelButton.setup(requireActivity(), viewModel)
-        binding.sortButton.setup(requireActivity(), viewModel)
+        binding.searchButton.setup(requireActivity(), viewModel.filterStore)
+        binding.levelButton.setup(requireActivity(), viewModel.filterStore)
+        binding.sortButton.setup(requireActivity(), viewModel.filterStore)
         binding.filterFab.setOnClickListener {
             TreasureFilterBottomSheet.newInstance().show(parentFragmentManager, "tag")
         }

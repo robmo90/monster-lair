@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.chip.Chip
 import de.enduni.monsterlair.R
+import de.enduni.monsterlair.common.filter.LevelFilterStore
 import de.enduni.monsterlair.databinding.BottomsheetLevelBinding
 
 class LevelRangeChip(context: Context, attributeSet: AttributeSet?) : Chip(context, attributeSet) {
@@ -19,11 +20,11 @@ class LevelRangeChip(context: Context, attributeSet: AttributeSet?) : Chip(conte
 
     fun setup(
         activity: Activity,
-        listener: BottomSheet.Listener,
+        filterStore: LevelFilterStore,
         lowerLevel: Int = 0,
         upperLevel: Int = 25
     ) {
-        sheet = BottomSheet(activity, listener, lowerLevel, upperLevel)
+        sheet = BottomSheet(activity, filterStore, lowerLevel, upperLevel)
         this.setOnClickListener { sheet.show() }
     }
 
@@ -35,7 +36,7 @@ class LevelRangeChip(context: Context, attributeSet: AttributeSet?) : Chip(conte
 
     class BottomSheet(
         activity: Activity,
-        private val listener: Listener,
+        private val filterStore: LevelFilterStore,
         lowerLevel: Int,
         upperLevel: Int
     ) : BottomSheetDialog(activity) {
@@ -48,8 +49,8 @@ class LevelRangeChip(context: Context, attributeSet: AttributeSet?) : Chip(conte
             binding.levelSlider.max = upperLevel
             binding.levelSlider.setOnThumbValueChangeListener { _, _, thumbIndex, value ->
                 when (thumbIndex) {
-                    0 -> listener.setLowerLevel(value)
-                    1 -> listener.setUpperLevel(value)
+                    0 -> filterStore.setLowerLevel(value)
+                    1 -> filterStore.setUpperLevel(value)
                 }
             }
         }
@@ -62,13 +63,6 @@ class LevelRangeChip(context: Context, attributeSet: AttributeSet?) : Chip(conte
             )
             binding.levelSlider.getThumb(0).value = lowerLevel
             binding.levelSlider.getThumb(1).value = upperLevel
-        }
-
-        interface Listener {
-
-            fun setLowerLevel(level: Int)
-            fun setUpperLevel(level: Int)
-
         }
 
     }

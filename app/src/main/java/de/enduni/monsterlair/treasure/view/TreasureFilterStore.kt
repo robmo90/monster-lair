@@ -1,7 +1,6 @@
 package de.enduni.monsterlair.treasure.view
 
-import de.enduni.monsterlair.common.domain.Rarity
-import de.enduni.monsterlair.common.domain.TreasureCategory
+import de.enduni.monsterlair.common.domain.*
 import de.enduni.monsterlair.common.filter.*
 import de.enduni.monsterlair.monsters.view.SortBy
 import de.enduni.monsterlair.treasure.domain.TreasureFilter
@@ -31,11 +30,11 @@ class TreasureFilterStore : SearchFilterStore,
         _filter = _filter.copy(searchTerm = searchTerm)
     }
 
-    override fun setUpperLevel(level: Int) {
+    override fun setUpperLevel(level: Level) {
         _filter = _filter.copy(upperLevel = level)
     }
 
-    override fun setLowerLevel(level: Int) {
+    override fun setLowerLevel(level: Level) {
         _filter = _filter.copy(lowerLevel = level)
     }
 
@@ -51,11 +50,11 @@ class TreasureFilterStore : SearchFilterStore,
         _filter = _filter.copy(rarities = _filter.rarities - rarity)
     }
 
-    override fun addTrait(trait: String) {
+    override fun addTrait(trait: Trait) {
         _filter = _filter.copy(traits = (_filter.traits + trait).distinct())
     }
 
-    override fun removeTrait(trait: String) {
+    override fun removeTrait(trait: Trait) {
         _filter = _filter.copy(traits = _filter.traits - trait)
     }
 
@@ -67,7 +66,7 @@ class TreasureFilterStore : SearchFilterStore,
         _filter = _filter.copy(categories = _filter.categories - category)
     }
 
-    override fun setLowerGoldCost(cost: Double?) {
+    override fun setLowerGoldCost(cost: Cost) {
         _filter = if (cost == null) {
             _filter.copy(lowerGoldCost = cost)
         } else {
@@ -75,7 +74,7 @@ class TreasureFilterStore : SearchFilterStore,
         }
     }
 
-    override fun setUpperGoldCost(cost: Double?) {
+    override fun setUpperGoldCost(cost: Cost) {
         _filter = if (cost == null) {
             _filter.copy(upperGoldCost = cost)
         } else {
