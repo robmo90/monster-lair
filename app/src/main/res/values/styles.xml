@@ -72,4 +72,8 @@
 
     <style name="DropDown.Dialog" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"></style>
 
+    <style name="FullScreenDialog" parent="AppTheme">
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
 </resources>

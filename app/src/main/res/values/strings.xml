@@ -171,4 +171,60 @@
     <string name="encounter_creator_introduction">Here\'s a small introduction to the encounter creator since the UI is still pretty sloppy:\n\n- Pull up the Search bar to access filters for monsters &amp; hazards (type, level, etc.)\n- Add your own monsters using +\n- Create random encounters by clicking the dice\n- Get treasure recommendations for your group by clicking the chest</string>
     <string name="updating_data">Updating Data ...</string>
 
+
+    <string name="treasure_category_adventuring_gear">Adventuring Gear</string>
+    <string name="treasure_category_alchemical_bombs">Alchemical Bombs</string>
+    <string name="treasure_category_alchemical_elixirs">Alchemical Elixirs</string>
+    <string name="treasure_category_alchemical_poisons">Alchemical Poisons</string>
+    <string name="treasure_category_alchemical_tools">Alchemical Tools</string>
+    <string name="treasure_category_drugs">Drugs</string>
+    <string name="treasure_category_armor_magic">Magic Armor</string>
+    <string name="treasure_category_armor_precious">Precious Armor</string>
+    <string name="treasure_category_armor_specific">Specific Armor</string>
+    <string name="treasure_category_artifacts">Artifacts</string>
+    <string name="treasure_category_ammunition">Ammunition</string>
+    <string name="treasure_category_oils">Oils</string>
+    <string name="treasure_category_other_consumables">Other Consumables</string>
+    <string name="treasure_category_potions">Potions</string>
+    <string name="treasure_category_scrolls">Scrolls</string>
+    <string name="treasure_category_talismans">Talismans</string>
+    <string name="treasure_category_cursed_items">Cursed Items</string>
+    <string name="treasure_category_held_items">Held Items</string>
+    <string name="treasure_category_intelligent_items">Intelligent Items</string>
+    <string name="treasure_category_materials">Materials</string>
+    <string name="treasure_category_runes_armor_property">Armor Runes (Property)</string>
+    <string name="treasure_category_runes_armor_fundamental">Armor Runes (Fundamental)</string>
+    <string name="treasure_category_runes_weapon_property">Weapon Runes (Property)</string>
+    <string name="treasure_category_runes_weapon_fundamental">Weapon Runes (Fundamental)</string>
+    <string name="treasure_category_services">Services</string>
+    <string name="treasure_category_shields_precious">Precious Shields</string>
+    <string name="treasure_category_shields_specific">Specific Shields</string>
+    <string name="treasure_category_snares">Snares</string>
+    <string name="treasure_category_staves">Staves</string>
+    <string name="treasure_category_structures">Structures</string>
+    <string name="treasure_category_tattoos">Tattoos</string>
+    <string name="treasure_category_wands_magic">Magic Wands</string>
+    <string name="treasure_category_wands_specialty">Specialty Wands</string>
+    <string name="treasure_category_weapons_magic">Magic Weapons</string>
+    <string name="treasure_category_weapons_precious">Precious Weapons</string>
+    <string name="treasure_category_weapons_specific">Specific Weapons</string>
+    <string name="treasure_category_worn_apex">Apex Worn Items</string>
+    <string name="treasure_category_worn_companion">Companion Worn Items</string>
+    <string name="treasure_category_worn_other">Other Worn Items</string>
+
+    <string name="treasure_category_select_label">Treasure Category</string>
+    <string name="traits_select_label">Traits</string>
+    <string name="price_range_in_gp">Price Range in GP</string>
+    <string name="price_range_in_gp_values">Price Range in GP: %d - %d</string>
+    <string name="lower_price_range_in_gp">Minimum Price in GP</string>
+    <string name="upper_price_range_in_gp">Maximum Price in gp</string>
+    <string name="lower_price_range_in_gp_chip">min %.1f gp</string>
+    <string name="upper_price_range_in_gp_chip">max %.1f gp</string>
+
+    <string name="rarity_label">Rarities</string>
+    <string name="rarity_common">Common</string>
+    <string name="rarity_uncommon">Uncommon</string>
+    <string name="rarity_rare">Rare</string>
+    <string name="rarity_unique">Unique</string>
+
 </resources>

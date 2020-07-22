@@ -17,6 +17,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.withContext
+import timber.log.Timber
 
 class DatabaseInitializer(
     private val monsterEntityMapper: MonsterEntityMapper,
@@ -40,6 +41,11 @@ class DatabaseInitializer(
             monsterDataSource.getMonsters().insertMonsters()
             hazardDataSource.getHazards().saveHazards()
             treasureDataSource.getTreasures().saveTreasures()
+
+            Timber.d(
+                "This is my highest GP Cost ${treasureDao.getTreasure()
+                    .map { it.treasure.priceInGp }.max()}"
+            )
         }
         _migrationRunning.value = false
     }

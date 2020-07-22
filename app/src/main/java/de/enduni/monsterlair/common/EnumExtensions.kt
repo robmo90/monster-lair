@@ -5,6 +5,7 @@ import androidx.annotation.StringRes
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.domain.Complexity
 import de.enduni.monsterlair.common.domain.MonsterType
+import de.enduni.monsterlair.common.domain.Rarity
 import de.enduni.monsterlair.common.domain.TreasureCategory
 import de.enduni.monsterlair.creator.view.DangerType
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
@@ -210,5 +211,60 @@ fun TreasureCategory.getIcon(): Int {
         TreasureCategory.WORN_APEX -> R.drawable.ic_worn_apex
         TreasureCategory.WORN_COMPANION -> R.drawable.ic_worn_companion
         TreasureCategory.WORN_OTHER -> R.drawable.ic_worn_other
+    }
+}
+
+@StringRes
+fun TreasureCategory.getStringRes(): Int {
+    return when (this) {
+        TreasureCategory.ADVENTURING_GEAR -> R.string.treasure_category_adventuring_gear
+        TreasureCategory.ALCHEMICAL_BOMBS -> R.string.treasure_category_alchemical_bombs
+        TreasureCategory.ALCHEMICAL_ELIXIRS -> R.string.treasure_category_alchemical_elixirs
+        TreasureCategory.ALCHEMICAL_POISONS -> R.string.treasure_category_alchemical_poisons
+        TreasureCategory.ALCHEMICAL_TOOLS -> R.string.treasure_category_alchemical_tools
+        TreasureCategory.DRUGS -> R.string.treasure_category_drugs
+        TreasureCategory.ARMOR_MAGIC -> R.string.treasure_category_armor_magic
+        TreasureCategory.ARMOR_PRECIOUS -> R.string.treasure_category_armor_precious
+        TreasureCategory.ARMOR_SPECIFIC -> R.string.treasure_category_armor_specific
+        TreasureCategory.ARTIFACTS -> R.string.treasure_category_artifacts
+        TreasureCategory.AMMUNITION -> R.string.treasure_category_ammunition
+        TreasureCategory.OILS -> R.string.treasure_category_oils
+        TreasureCategory.OTHER_CONSUMABLES -> R.string.treasure_category_other_consumables
+        TreasureCategory.POTIONS -> R.string.treasure_category_potions
+        TreasureCategory.SCROLLS -> R.string.treasure_category_scrolls
+        TreasureCategory.TALISMANS -> R.string.treasure_category_talismans
+        TreasureCategory.CURSED_ITEMS -> R.string.treasure_category_cursed_items
+        TreasureCategory.HELD_ITEMS -> R.string.treasure_category_held_items
+        TreasureCategory.INTELLIGENT_ITEMS -> R.string.treasure_category_intelligent_items
+        TreasureCategory.MATERIALS -> R.string.treasure_category_materials
+        TreasureCategory.RUNES_ARMOR_PROPERTY -> R.string.treasure_category_runes_armor_property
+        TreasureCategory.RUNES_ARMOR_FUNDAMENTAL -> R.string.treasure_category_runes_armor_fundamental
+        TreasureCategory.RUNES_WEAPON_PROPERTY -> R.string.treasure_category_runes_weapon_property
+        TreasureCategory.RUNES_WEAPON_FUNDAMENTAL -> R.string.treasure_category_runes_weapon_fundamental
+        TreasureCategory.SERVICES -> R.string.treasure_category_services
+        TreasureCategory.SHIELDS_PRECIOUS -> R.string.treasure_category_shields_precious
+        TreasureCategory.SHIELDS_SPECIFIC -> R.string.treasure_category_shields_specific
+        TreasureCategory.SNARES -> R.string.treasure_category_snares
+        TreasureCategory.STAVES -> R.string.treasure_category_staves
+        TreasureCategory.STRUCTURES -> R.string.treasure_category_structures
+        TreasureCategory.TATTOOS -> R.string.treasure_category_tattoos
+        TreasureCategory.WANDS_MAGIC -> R.string.treasure_category_wands_magic
+        TreasureCategory.WANDS_SPECIALTY -> R.string.treasure_category_wands_specialty
+        TreasureCategory.WEAPONS_MAGIC -> R.string.treasure_category_weapons_magic
+        TreasureCategory.WEAPONS_PRECIOUS -> R.string.treasure_category_weapons_precious
+        TreasureCategory.WEAPONS_SPECIFIC -> R.string.treasure_category_weapons_specific
+        TreasureCategory.WORN_APEX -> R.string.treasure_category_worn_apex
+        TreasureCategory.WORN_COMPANION -> R.string.treasure_category_worn_companion
+        TreasureCategory.WORN_OTHER -> R.string.treasure_category_worn_other
+    }
+}
+
+@StringRes
+fun Rarity.getStringRes(): Int {
+    return when (this) {
+        Rarity.COMMON -> R.string.rarity_common
+        Rarity.UNCOMMON -> R.string.rarity_uncommon
+        Rarity.RARE -> R.string.rarity_rare
+        Rarity.UNIQUE -> R.string.rarity_unique
     }
 }

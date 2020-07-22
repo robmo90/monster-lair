@@ -1,6 +1,7 @@
 package de.enduni.monsterlair.treasure.repository
 
 import androidx.sqlite.db.SimpleSQLiteQuery
+import de.enduni.monsterlair.common.domain.Rarity
 import de.enduni.monsterlair.common.domain.TreasureCategory
 import de.enduni.monsterlair.common.persistence.TreasureDao
 import de.enduni.monsterlair.monsters.view.SortBy
@@ -13,39 +14,51 @@ class TreasureRepository(
     private val mapper: TreasureEntityMapper
 ) {
 
-    suspend fun getTreasures(treasureFilter: TreasureFilter): List<Treasure> {
+    suspend fun getTreasures(filter: TreasureFilter): List<Treasure> {
         val query = buildQuery(
-            treasureFilter.searchString,
-            treasureFilter.categories,
-            treasureFilter.lowerLevel,
-            treasureFilter.upperLevel,
-            getSortByString(treasureFilter.sortBy)
+            filter.searchTerm,
+            filter.categories,
+            filter.lowerLevel,
+            filter.upperLevel,
+            filter.lowerGoldCost,
+            filter.upperGoldCost,
+            filter.rarities,
+            getSortByString(filter.sortBy)
         )
         return dao.getTreasure(SimpleSQLiteQuery(query))
             .asSequence()
             .filter { treasureWithTraits ->
-                if (treasureFilter.traits.isEmpty()) {
+                if (filter.traits.isEmpty()) {
                     true
                 } else {
-                    treasureFilter.traits.any {
+                    filter.traits.any {
                         treasureWithTraits.traits.map { treasureTrait -> treasureTrait.name }
                             .contains(it)
                     }
                 }
             }
             .filter { treasureWithTraits ->
-                if (treasureFilter.searchString.isBlank()) {
+                if (filter.searchTerm.isBlank()) {
                     true
                 } else {
                     treasureWithTraits.traits.any {
                         it.name.contains(
-                            treasureFilter.searchString,
+                            filter.searchTerm,
                             ignoreCase = true
                         )
                     }
                 }
             }
+//            .filter { treasureWithTraits ->
+//                when {
+//                    filter.upperGoldCost == null && filter.lowerGoldCost != null -> filter.lowerGoldCost < treasureWithTraits.treasure.priceInGp
+//                    filter.upperGoldCost != null && filter.lowerGoldCost == null -> filter.upperGoldCost > treasureWithTraits.treasure.priceInGp
+//                    filter.upperGoldCost != null && filter.lowerGoldCost != null -> filter.lowerGoldCost < treasureWithTraits.treasure.priceInGp && filter.upperGoldCost > treasureWithTraits.treasure.priceInGp
+//                    else -> true
+//                }
+//            }
             .map { mapper.fromEntityToDomain(it) }
+            .filter { treasure -> filter.traits.all { treasure.traits.contains(it) } }
             .toList()
     }
 
@@ -58,28 +71,52 @@ class TreasureRepository(
 
     private fun buildQuery(
         filter: String?,
-        monsterTypes: List<TreasureCategory>,
+        categories: List<TreasureCategory>,
         lowerLevel: Int,
         higherLevel: Int,
+        lowerGoldCost: Double?,
+        upperGoldCost: Double?,
+        rarities: List<Rarity>,
         sortBy: String
     ): String {
         val filterString = if (filter.isNullOrEmpty()) "\"%\"" else "\"%${filter}%\""
-        val typeFilterString = if (monsterTypes.isEmpty()) {
+        val typeFilterString = if (categories.isEmpty()) {
             ""
         } else {
-            "AND CATEGORY IN ${monsterTypes.joinToString(
+            "AND CATEGORY IN ${categories.joinToString(
                 prefix = "(\"",
                 postfix = "\")",
                 separator = "\", \""
-            )}"
+            )} "
+        }
+        val rarityFilterString = if (rarities.isEmpty()) {
+            ""
+        } else {
+            "AND RARITY IN ${rarities.joinToString(
+                prefix = "(\"",
+                postfix = "\")",
+                separator = "\", \""
+            )} "
+        }
+        val goldFilterString = when {
+            upperGoldCost == null && lowerGoldCost != null -> "AND priceInGp BETWEEN $lowerGoldCost AND ${90000.0} "
+            upperGoldCost != null && lowerGoldCost == null -> "AND priceInGp BETWEEN ${0.0} AND $upperGoldCost "
+            upperGoldCost != null && lowerGoldCost != null -> "AND priceInGp BETWEEN $lowerGoldCost AND $upperGoldCost "
+            else -> ""
         }
         val query = "SELECT * FROM treasures WHERE " +
                 "(name LIKE $filterString OR category LIKE $filterString) " +
                 "AND level BETWEEN $lowerLevel AND $higherLevel " +
+                goldFilterString +
                 typeFilterString +
+                rarityFilterString +
                 "ORDER BY $sortBy ASC"
-        Timber.v("Using $query")
+        Timber.d("Using $query")
         return query
+    }
+
+    suspend fun getTraits(): List<String> {
+        return dao.getTraits().map { it.name }
     }
 
 }

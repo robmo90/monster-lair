@@ -43,6 +43,48 @@
         <item>@string/monster_type_none</item>
     </string-array>
 
+    <string-array name="treasure_categories">
+        <item>@string/treasure_category_adventuring_gear</item>
+        <item>@string/treasure_category_alchemical_bombs</item>
+        <item>@string/treasure_category_alchemical_elixirs</item>
+        <item>@string/treasure_category_alchemical_poisons</item>
+        <item>@string/treasure_category_alchemical_tools</item>
+        <item>@string/treasure_category_drugs</item>
+        <item>@string/treasure_category_armor_magic</item>
+        <item>@string/treasure_category_armor_precious</item>
+        <item>@string/treasure_category_armor_specific</item>
+        <item>@string/treasure_category_artifacts</item>
+        <item>@string/treasure_category_ammunition</item>
+        <item>@string/treasure_category_oils</item>
+        <item>@string/treasure_category_other_consumables</item>
+        <item>@string/treasure_category_potions</item>
+        <item>@string/treasure_category_scrolls</item>
+        <item>@string/treasure_category_talismans</item>
+        <item>@string/treasure_category_cursed_items</item>
+        <item>@string/treasure_category_held_items</item>
+        <item>@string/treasure_category_intelligent_items</item>
+        <item>@string/treasure_category_materials</item>
+        <item>@string/treasure_category_runes_armor_property</item>
+        <item>@string/treasure_category_runes_armor_fundamental</item>
+        <item>@string/treasure_category_runes_weapon_property</item>
+        <item>@string/treasure_category_runes_weapon_fundamental</item>
+        <item>@string/treasure_category_services</item>
+        <item>@string/treasure_category_shields_precious</item>
+        <item>@string/treasure_category_shields_specific</item>
+        <item>@string/treasure_category_snares</item>
+        <item>@string/treasure_category_staves</item>
+        <item>@string/treasure_category_structures</item>
+        <item>@string/treasure_category_tattoos</item>
+        <item>@string/treasure_category_wands_magic</item>
+        <item>@string/treasure_category_wands_specialty</item>
+        <item>@string/treasure_category_weapons_magic</item>
+        <item>@string/treasure_category_weapons_precious</item>
+        <item>@string/treasure_category_weapons_specific</item>
+        <item>@string/treasure_category_worn_apex</item>
+        <item>@string/treasure_category_worn_companion</item>
+        <item>@string/treasure_category_worn_other</item>
+    </string-array>
+
     <string-array name="random_encounter_templates">
         <item>@string/random_encounter_boss_and_lackeys</item>
         <item>@string/random_encounter_boss_and_lieutenant</item>

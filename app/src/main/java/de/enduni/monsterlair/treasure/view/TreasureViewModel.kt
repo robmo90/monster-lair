@@ -2,7 +2,9 @@ package de.enduni.monsterlair.treasure.view
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.liveData
+import de.enduni.monsterlair.common.domain.Rarity
+import de.enduni.monsterlair.common.domain.TreasureCategory
 import de.enduni.monsterlair.common.view.filterchips.LevelRangeChip
 import de.enduni.monsterlair.common.view.filterchips.SearchChip
 import de.enduni.monsterlair.common.view.filterchips.SortByChip
@@ -14,13 +16,12 @@ import de.enduni.monsterlair.treasure.view.adapter.TreasureViewHolder
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @ExperimentalCoroutinesApi
 class TreasureViewModel(
+    private val filterStore: TreasureFilterStore,
     private val treasureRepository: TreasureRepository,
     private val mapper: TreasureDisplayModelMapper
 ) : ViewModel(), TreasureViewHolder.TreasureViewHolderListener, SortByChip.BottomSheet.Listener,
@@ -30,46 +31,77 @@ class TreasureViewModel(
         Timber.e(exception, "Caught exception")
     }
 
-    private val _filter = MutableStateFlow(TreasureFilter())
+    val traits = liveData {
+        emit(treasureRepository.getTraits())
+    }
 
     val filter = MutableLiveData<TreasureFilter>()
 
-    val treasures = MutableLiveData<List<TreasureDisplayModel>>()
-
-    fun start() {
-        viewModelScope.launch(Dispatchers.IO) {
-            _filter
-                .collect { treasureFilter ->
-                    treasureRepository.getTreasures(treasureFilter)
-                        .toDisplayModel()
-                        .let { treasures.postValue(it) }
-                    filter.postValue(treasureFilter)
-                }
-        }
+    val treasures = liveData(Dispatchers.IO + handler) {
+        filterStore.filter
+            .collect { treasureFilter ->
+                treasureRepository.getTreasures(treasureFilter)
+                    .toDisplayModel()
+                    .let { emit(it) }
+                filter.postValue(treasureFilter)
+            }
     }
 
     private fun List<Treasure>.toDisplayModel(): List<TreasureDisplayModel> {
         return this.map { mapper.fromDomainToDisplayModel(it) }
     }
 
-    override fun adjustLowerLevel(level: Int) {
-        _filter.value = _filter.value.copy(lowerLevel = level)
+    override fun setLowerLevel(level: Int) {
+        filterStore.setLowerLevel(level)
     }
 
-    override fun adjustUpperLevel(level: Int) {
-        _filter.value = _filter.value.copy(upperLevel = level)
+    override fun setUpperLevel(level: Int) {
+        filterStore.setUpperLevel(level)
     }
 
     override fun onSelect(monsterId: String) {
         Timber.d("Do nothing")
     }
 
-    override fun updateSearch(searchString: String) {
-        _filter.value = _filter.value.copy(searchString = searchString)
+    override fun setSearchTerm(searchString: String) {
+        filterStore.setSearchTerm(searchString)
     }
 
-    override fun updateSortBy(sortBy: SortBy) {
-        _filter.value = _filter.value.copy(sortBy = sortBy)
+    override fun setSortBy(sortBy: SortBy) {
+        filterStore.setSortBy(sortBy)
+    }
+
+    fun removeTreasureCategory(category: TreasureCategory) {
+        filterStore.removeCategory(category)
+    }
+
+    fun removeTrait(trait: String) {
+        filterStore.removeTrait(trait)
+    }
+
+    fun removeRarity(rarity: Rarity) {
+        filterStore.removeRarity(rarity)
+    }
+
+    fun setLowerGoldCost(cost: Double?) {
+        filterStore.setLowerGoldCost(cost)
+    }
+
+    fun setUpperGoldCost(cost: Double?) {
+        filterStore.setUpperGoldCost(cost)
+    }
+
+
+    fun addTreasureCategory(category: TreasureCategory) {
+        filterStore.addCategory(category)
+    }
+
+    fun addTrait(trait: String) {
+        filterStore.addTrait(trait)
+    }
+
+    fun addRarity(rarity: Rarity) {
+        filterStore.addRarity(rarity)
     }
 
 }

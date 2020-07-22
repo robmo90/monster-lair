@@ -35,6 +35,14 @@ fun TextInputEditText.setTextIfNotFocused(int: Int?) {
     }
 }
 
+fun TextInputEditText.setTextIfNotFocused(double: Double?) {
+    if (!this.isFocused) {
+        if (double != null) {
+            this.text = Editable.Factory.getInstance().newEditable(double.toString())
+        }
+    }
+}
+
 fun Uri.openCustomTab(context: Context) {
     CustomTabsIntent.Builder()
         .setToolbarColor(ContextCompat.getColor(context, R.color.primaryColor))

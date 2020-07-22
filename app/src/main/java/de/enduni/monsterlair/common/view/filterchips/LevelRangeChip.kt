@@ -48,8 +48,8 @@ class LevelRangeChip(context: Context, attributeSet: AttributeSet?) : Chip(conte
             binding.levelSlider.max = upperLevel
             binding.levelSlider.setOnThumbValueChangeListener { _, _, thumbIndex, value ->
                 when (thumbIndex) {
-                    0 -> listener.adjustLowerLevel(value)
-                    1 -> listener.adjustUpperLevel(value)
+                    0 -> listener.setLowerLevel(value)
+                    1 -> listener.setUpperLevel(value)
                 }
             }
         }
@@ -66,8 +66,8 @@ class LevelRangeChip(context: Context, attributeSet: AttributeSet?) : Chip(conte
 
         interface Listener {
 
-            fun adjustLowerLevel(level: Int)
-            fun adjustUpperLevel(level: Int)
+            fun setLowerLevel(level: Int)
+            fun setUpperLevel(level: Int)
 
         }
 

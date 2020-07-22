@@ -41,7 +41,7 @@ class SearchChip(context: Context, attributeSet: AttributeSet?) : Chip(context, 
 
         init {
             setContentView(binding.root)
-            binding.searchEditText.doAfterTextChanged { listener.updateSearch(it.toString()) }
+            binding.searchEditText.doAfterTextChanged { listener.setSearchTerm(it.toString()) }
         }
 
         fun updateSearch(searchString: String) {
@@ -50,7 +50,7 @@ class SearchChip(context: Context, attributeSet: AttributeSet?) : Chip(context, 
 
         interface Listener {
 
-            fun updateSearch(searchString: String)
+            fun setSearchTerm(searchString: String)
 
         }
 

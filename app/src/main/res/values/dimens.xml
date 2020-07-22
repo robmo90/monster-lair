@@ -8,4 +8,6 @@
     <dimen name="list_item_caption_gap">4dp</dimen>
     <dimen name="verticalChipSpacing">4dp</dimen>
     <dimen name="bottom_nav_height">56dp</dimen>
+    <dimen name="bottom_sheet_bottom_padding">16dp</dimen>
+    <dimen name="bottom_sheet_adjustment">128dp</dimen>
 </resources>

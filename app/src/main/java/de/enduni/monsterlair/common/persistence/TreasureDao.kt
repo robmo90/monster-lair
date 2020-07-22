@@ -25,6 +25,9 @@ interface TreasureDao {
     @Query("SELECT * FROM treasures ORDER BY name")
     suspend fun getTreasure(): List<TreasureWithTraits>
 
+    @Query("SELECT * FROM treasureTraits ORDER BY name")
+    suspend fun getTraits(): List<TreasureTrait>
+
     @Transaction
     @RawQuery
     suspend fun getTreasure(sqLiteQuery: SupportSQLiteQuery): List<TreasureWithTraits>

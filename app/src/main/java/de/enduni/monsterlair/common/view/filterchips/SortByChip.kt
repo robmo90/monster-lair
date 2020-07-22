@@ -47,7 +47,7 @@ class SortByChip(context: Context, attributeSet: AttributeSet?) : Chip(context, 
 
         interface Listener {
 
-            fun updateSortBy(sortBy: SortBy)
+            fun setSortBy(sortBy: SortBy)
 
         }
 
@@ -68,7 +68,7 @@ class SortByChip(context: Context, attributeSet: AttributeSet?) : Chip(context, 
                 chip.isChecked = checkedSortBy == sortBy
                 chip.setOnCheckedChangeListener { _, isChecked ->
                     if (isChecked) {
-                        listener.updateSortBy(sortBy)
+                        listener.setSortBy(sortBy)
                     }
                 }
 

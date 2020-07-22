@@ -36,6 +36,8 @@ import de.enduni.monsterlair.monsters.view.MonsterViewModel
 import de.enduni.monsterlair.treasure.repository.TreasureEntityMapper
 import de.enduni.monsterlair.treasure.repository.TreasureRepository
 import de.enduni.monsterlair.treasure.view.TreasureDisplayModelMapper
+import de.enduni.monsterlair.treasure.view.TreasureFilterDialogViewModel
+import de.enduni.monsterlair.treasure.view.TreasureFilterStore
 import de.enduni.monsterlair.treasure.view.TreasureViewModel
 import de.enduni.monsterlair.update.UpdateManager
 import org.koin.android.ext.koin.androidApplication
@@ -167,8 +169,10 @@ val treasureModule = module {
     single { TreasureEntityMapper() }
     single { TreasureDisplayModelMapper() }
     single { TreasureRepository(get(), get()) }
+    single { TreasureFilterStore() }
 
-    viewModel { TreasureViewModel(get(), get()) }
+    viewModel { TreasureViewModel(get(), get(), get()) }
+    viewModel { TreasureFilterDialogViewModel(get(), get()) }
 
 
 }
