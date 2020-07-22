@@ -101,6 +101,5 @@ fun AutoCompleteTextView.setupDropdownSelect(
     setAdapter(adapter)
     onItemClickListener = AdapterView.OnItemClickListener { _, view, _, _ ->
         onClickListener.invoke(list.indexOf((view as TextView).text))
-        text = SpannableStringBuilder("")
     }
 }
