@@ -1,7 +1,6 @@
 package de.enduni.monsterlair.creator.domain
 
 import de.enduni.monsterlair.creator.view.DangerType
-import de.enduni.monsterlair.creator.view.EncounterCreatorFilter
 import de.enduni.monsterlair.encounters.domain.model.Encounter
 import de.enduni.monsterlair.encounters.domain.model.MonsterWithRole
 import de.enduni.monsterlair.encounters.persistence.MonsterWithRoleMapper
@@ -14,7 +13,7 @@ class RetrieveMonstersWithRoleUseCase(
     private val monsterWithRoleMapper: MonsterWithRoleMapper
 ) {
 
-    suspend fun execute(
+    suspend fun getFilteredMonsters(
         filter: EncounterCreatorFilter,
         encounter: Encounter
     ) = withContext(Dispatchers.Default) {
@@ -22,18 +21,26 @@ class RetrieveMonstersWithRoleUseCase(
             return@withContext emptyList<MonsterWithRole>()
         }
         repository.getMonsters(
-            filter.string ?: "",
+            filter.searchTerm,
             filter.lowerLevel,
             filter.upperLevel,
             filter.sortBy.value,
-            filter.monsterTypes,
-            emptyList(),
-            emptyList(),
-            emptyList(),
-            emptyList()
+            filter.types,
+            filter.sizes,
+            filter.alignments,
+            filter.rarities,
+            filter.traits
         )
             .map { monsterWithRoleMapper.mapToMonsterWithRole(it, encounter.level) }
             .filterMonstersWithinBudget(filter = filter.withinBudget, encounter = encounter)
+    }
+
+    suspend fun getMonster(
+        monsterId: String,
+        encounter: Encounter
+    ) = withContext(Dispatchers.Default) {
+        repository.getMonster(monsterId)
+            .let { monsterWithRoleMapper.mapToMonsterWithRole(it, encounter.level) }
     }
 
 

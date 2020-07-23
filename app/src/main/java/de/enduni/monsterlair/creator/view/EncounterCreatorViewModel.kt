@@ -1,12 +1,7 @@
 package de.enduni.monsterlair.creator.view
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import de.enduni.monsterlair.common.domain.Complexity
-import de.enduni.monsterlair.common.domain.MonsterType
-import de.enduni.monsterlair.common.domain.RandomEncounter
+import androidx.lifecycle.*
+import de.enduni.monsterlair.common.domain.RandomEncounterTemplate
 import de.enduni.monsterlair.common.domain.SortBy
 import de.enduni.monsterlair.common.getDefaultMaxLevel
 import de.enduni.monsterlair.common.view.ActionLiveData
@@ -23,11 +18,16 @@ import de.enduni.monsterlair.monsters.domain.RetrieveMonsterUseCase
 import de.enduni.monsterlair.monsters.domain.SaveMonsterUseCase
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import timber.log.Timber
 
 class EncounterCreatorViewModel(
+    val filterStore: EncounterCreatorFilterStore,
+    private val encounterStore: EncounterStore,
     private val retrieveMonstersWithRoleUseCase: RetrieveMonstersWithRoleUseCase,
     private val retrieveHazardsWithRoleUseCase: RetrieveHazardsWithRoleUseCase,
     private val retrieveEncounterUseCase: RetrieveEncounterUseCase,
@@ -46,27 +46,41 @@ class EncounterCreatorViewModel(
     CreateMonsterDialog.OnSaveClickedListener,
     EditMonsterDialog.OnEditMonsterClickListener {
 
-    private val _viewState = MutableLiveData<EncounterCreatorDisplayState>()
-    val viewState: LiveData<EncounterCreatorDisplayState> get() = _viewState
-
     private val _actions = ActionLiveData<EncounterCreatorAction>()
     val actions: LiveData<EncounterCreatorAction> get() = _actions
-
-    private var filter = EncounterCreatorFilter()
-
-    private var monsters: List<MonsterWithRole> = listOf()
-
-    private var hazards: List<HazardWithRole> = listOf()
-
-    private lateinit var encounter: Encounter
 
     private val handler = CoroutineExceptionHandler { _, exception ->
         Timber.e(exception, "Caught exception")
         if (exception is RandomEncounterException) {
-            _viewState.value?.copy(error = EncounterCreatorError.RANDOM_ENCOUNTER_ERROR)?.let {
-                _viewState.postValue(it)
+            viewModelScope.launch {
+                _actions.sendAction(EncounterCreatorAction.RandomEncounterError)
             }
         }
+    }
+
+    val filter = filterStore.filter.asLiveData()
+
+    val encounter = liveData(handler) {
+        filterStore.filter.combine(encounterStore.encounter) { filter, encounter ->
+            val monsters = retrieveMonstersWithRoleUseCase.getFilteredMonsters(filter, encounter)
+            val hazards = retrieveHazardsWithRoleUseCase.getFilteredHazards(filter, encounter)
+            val dangers = (monsters.toMonsterDisplayModel() +
+                    hazards.toHazardDisplayModel())
+                .sort(filter.sortBy)
+
+            val dangersForEncounter = (encounter.monsters.toEncounterMonsterDisplayModel() +
+                    encounter.hazards.toEncounterHazardDisplayModel())
+                .sortedBy { it.name }
+
+            val list: List<EncounterCreatorDisplayModel> =
+                dangersForEncounter +
+                        encounter.toBudgetDisplayModel() +
+                        dangers
+
+            EncounterCreatorDisplayState(encounterName = encounter.name, list = list)
+        }
+            .flowOn(Dispatchers.Default)
+            .collect { emit(it) }
     }
 
     fun start(
@@ -76,29 +90,21 @@ class EncounterCreatorViewModel(
         targetDifficulty: EncounterDifficulty,
         encounterId: Long
     ) {
-        if (viewState.value != null) {
-            return
-        }
         if (encounterId == -1L) {
-            encounter = Encounter(
-                name = encounterName,
-                numberOfPlayers = numberOfPlayers,
-                level = levelOfEncounter,
-                targetDifficulty = targetDifficulty
+            encounterStore.setDetails(
+                encounterName,
+                numberOfPlayers,
+                levelOfEncounter,
+                targetDifficulty,
+                withoutProficiency = false
             )
-            val filter = EncounterCreatorFilter(
-                lowerLevel = levelOfEncounter - 5,
-                upperLevel = levelOfEncounter + targetDifficulty.getDefaultMaxLevel()
-            )
-            viewModelScope.launch(handler) { filterDangers(filter) }
+            filterStore.setLowerLevel(levelOfEncounter - 5)
+            filterStore.setUpperLevel(levelOfEncounter + targetDifficulty.getDefaultMaxLevel())
         } else {
             viewModelScope.launch(handler) {
-                encounter = retrieveEncounterUseCase.execute(encounterId)
-                val filter = EncounterCreatorFilter(
-                    lowerLevel = levelOfEncounter - 5,
-                    upperLevel = levelOfEncounter + 4
-                )
-                filterDangers(filter)
+                encounterStore.setup(retrieveEncounterUseCase.execute(encounterId))
+                filterStore.setLowerLevel(levelOfEncounter - 5)
+                filterStore.setUpperLevel(levelOfEncounter + encounterStore.value.targetDifficulty.getDefaultMaxLevel())
             }
         }
         viewModelScope.launch(handler) {
@@ -109,94 +115,9 @@ class EncounterCreatorViewModel(
 
     }
 
-    fun filterByString(string: String) = viewModelScope.launch(handler) {
-        filterDangers(filter.copy(string = string))
-    }
 
-    fun adjustFilterLevelLower(lowerLevel: Int) = viewModelScope.launch(handler) {
-        filterDangers(filter.copy(lowerLevel = lowerLevel))
-    }
-
-    fun adjustFilterLevelUpper(upperLevel: Int) = viewModelScope.launch(handler) {
-        filterDangers(filter.copy(upperLevel = upperLevel))
-    }
-
-    fun adjustFilterWithinBudget(withinBudget: Boolean) = viewModelScope.launch(handler) {
-        filterDangers(filter.copy(withinBudget = withinBudget))
-    }
-
-    fun addMonsterTypeFilter(monsterType: MonsterType) = viewModelScope.launch(handler) {
-        filterDangers(filter.copy(monsterTypes = filter.monsterTypes + monsterType))
-    }
-
-    fun removeMonsterTypeFilter(monsterType: MonsterType) = viewModelScope.launch(handler) {
-        filterDangers(filter.copy(monsterTypes = filter.monsterTypes - monsterType))
-    }
-
-    fun addComplexityFilter(complexity: Complexity) = viewModelScope.launch(handler) {
-        filterDangers(filter.copy(complexities = filter.complexities + complexity))
-    }
-
-    fun removeComplexityFilter(complexity: Complexity) = viewModelScope.launch(handler) {
-        filterDangers(filter.copy(complexities = filter.complexities - complexity))
-    }
-
-    fun addDangerFilter(dangerType: DangerType) = viewModelScope.launch(handler) {
-        filterDangers(filter.copy(dangerTypes = filter.dangerTypes + dangerType))
-    }
-
-    fun removeDangerFilter(dangerType: DangerType) = viewModelScope.launch(handler) {
-        filterDangers(filter.copy(dangerTypes = filter.dangerTypes - dangerType))
-    }
-
-    fun adjustSortBy(sortBy: SortBy) = viewModelScope.launch(handler) {
-        filterDangers(filter.copy(sortBy = sortBy))
-    }
-
-
-    private suspend fun filterDangers(newFilter: EncounterCreatorFilter) {
-        if (newFilter != filter) {
-            filter = newFilter
-            Timber.d("Starting monster filter with $newFilter")
-            monsters = retrieveMonstersWithRoleUseCase.execute(newFilter, encounter)
-            hazards = retrieveHazardsWithRoleUseCase.execute(newFilter, encounter)
-            postCurrentState()
-        }
-    }
-
-    private suspend fun encounterChanged() {
-        if (filter.withinBudget) {
-            monsters = retrieveMonstersWithRoleUseCase.execute(filter, encounter)
-            hazards = retrieveHazardsWithRoleUseCase.execute(filter, encounter)
-        }
-        postCurrentState()
-    }
-
-    private fun postCurrentState() = viewModelScope.launch(handler) {
-        launch(Dispatchers.Default) {
-            val dangers = (monsters.toMonsterDisplayModel() +
-                    hazards.toHazardDisplayModel())
-                .sort()
-            val dangersForEncounter = (encounter.monsters.toEncounterMonsterDisplayModel() +
-                    encounter.hazards.toEncounterHazardDisplayModel())
-                .sortedBy { it.name }
-
-            val list: List<EncounterCreatorDisplayModel> =
-                dangersForEncounter +
-                        encounter.toBudgetDisplayModel() +
-                        dangers
-
-            val state = EncounterCreatorDisplayState(
-                encounterName = encounter.name,
-                list = list,
-                filter = filter
-            )
-            _viewState.postValue(state)
-        }
-    }
-
-    private fun List<EncounterCreatorDisplayModel.Danger>.sort(): List<EncounterCreatorDisplayModel.Danger> {
-        return when (filter.sortBy) {
+    private fun List<EncounterCreatorDisplayModel.Danger>.sort(sortBy: SortBy): List<EncounterCreatorDisplayModel.Danger> {
+        return when (sortBy) {
             SortBy.NAME -> this.sortedBy { it.name }
             SortBy.LEVEL -> this.sortedBy { it.level }
             SortBy.TYPE -> this.sortedBy { it.originalType }
@@ -224,24 +145,11 @@ class EncounterCreatorViewModel(
     }
 
     override fun onDecrement(type: DangerType, id: String) {
-        when (type) {
-            DangerType.MONSTER -> encounter.decrementCount(monsterId = id)
-            DangerType.HAZARD -> encounter.decrementCount(hazardId = id)
-        }
-        viewModelScope.launch(handler) {
-            encounterChanged()
-        }
+        encounterStore.decrement(type, id)
     }
 
     override fun onIncrement(type: DangerType, id: String) {
-        when (type) {
-            DangerType.MONSTER -> encounter.incrementCount(monsterId = id)
-            DangerType.HAZARD -> encounter.incrementCount(hazardId = id)
-        }
-        viewModelScope.launch(handler) {
-            encounterChanged()
-        }
-
+        encounterStore.increment(type, id)
     }
 
     override fun onDangerForEncounterSelected(url: String?) {
@@ -264,30 +172,34 @@ class EncounterCreatorViewModel(
         }
     }
 
-    fun onRandomClicked(randomEncounter: RandomEncounter) {
+    fun onRandomClicked(randomEncounter: RandomEncounterTemplate) {
         viewModelScope.launch(handler + Dispatchers.Default) {
-            val filter = filter.copy(withinBudget = false)
-            val monsters = retrieveMonstersWithRoleUseCase.execute(filter, encounter)
-            val hazards = retrieveHazardsWithRoleUseCase.execute(filter, encounter)
+            val filter = filter.value!!.copy(withinBudget = false)
+            val encounter = encounterStore.value
+            val monsters = retrieveMonstersWithRoleUseCase.getFilteredMonsters(filter, encounter)
+            val hazards = retrieveHazardsWithRoleUseCase.getFilteredHazards(filter, encounter)
             when (randomEncounter) {
-                RandomEncounter.BOSS_AND_LACKEYS,
-                RandomEncounter.BOSS_AND_LIEUTENANT,
-                RandomEncounter.ELITE_ENEMIES -> encounter.targetDifficulty =
+                RandomEncounterTemplate.BOSS_AND_LACKEYS,
+                RandomEncounterTemplate.BOSS_AND_LIEUTENANT,
+                RandomEncounterTemplate.ELITE_ENEMIES -> encounterStore.adjustDifficulty(
                     EncounterDifficulty.SEVERE
-                RandomEncounter.LIEUTENANT_AND_LACKEYS,
-                RandomEncounter.MATED_PAIR,
-                RandomEncounter.TROOP -> encounter.targetDifficulty = EncounterDifficulty.MODERATE
-                RandomEncounter.MOOK_SQUAD -> encounter.targetDifficulty = EncounterDifficulty.LOW
-                RandomEncounter.RANDOM -> {
+                )
+                RandomEncounterTemplate.LIEUTENANT_AND_LACKEYS,
+                RandomEncounterTemplate.MATED_PAIR,
+                RandomEncounterTemplate.TROOP -> encounterStore.adjustDifficulty(EncounterDifficulty.MODERATE)
+                RandomEncounterTemplate.MOOK_SQUAD -> encounterStore.adjustDifficulty(
+                    EncounterDifficulty.LOW
+                )
+                RandomEncounterTemplate.RANDOM -> {
                 }
             }
-            createRandomEncounterUseCase.createRandomEncounter(
+            val monstersAndHazards = createRandomEncounterUseCase.createRandomEncounter(
                 encounter,
                 monsters,
                 hazards,
                 randomEncounter
             )
-            encounterChanged()
+            encounterStore.swapDangers(monstersAndHazards.first, monstersAndHazards.second)
             withContext(Dispatchers.Main) {
                 _actions.sendAction(EncounterCreatorAction.ScrollUp)
             }
@@ -296,8 +208,7 @@ class EncounterCreatorViewModel(
 
     override fun onSaveClicked() {
         viewModelScope.launch(handler) {
-            encounter.name = if (encounter.name.isBlank()) "Random Encounter" else encounter.name
-            storeEncounterUseCase.store(encounter)
+            storeEncounterUseCase.store(encounterStore.value)
             _actions.sendAction(EncounterCreatorAction.EncounterSaved)
         }
     }
@@ -306,64 +217,47 @@ class EncounterCreatorViewModel(
         viewModelScope.launch(handler) {
             when (type) {
                 DangerType.MONSTER -> {
-                    findMonsterWithId(id)?.let {
-                        encounter.addMonster(it)
-                        _actions.postValue(EncounterCreatorAction.DangerAdded(it.name))
-                    }
+                    val monster =
+                        retrieveMonstersWithRoleUseCase.getMonster(id, encounterStore.value)
+                    encounterStore.addMonster(monster)
+                    _actions.postValue(EncounterCreatorAction.DangerAdded(monster.name))
                 }
                 DangerType.HAZARD -> {
-                    findHazardWithId(id)?.let {
-                        encounter.addHazard(it)
-                        _actions.postValue(EncounterCreatorAction.DangerAdded(it.name))
-                    }
+                    val hazard =
+                        retrieveHazardsWithRoleUseCase.getHazard(id, encounterStore.value)
+                    encounterStore.addHazard(hazard)
+                    _actions.postValue(EncounterCreatorAction.DangerAdded(hazard.name))
                 }
             }
-            encounterChanged()
         }
     }
-
-    private suspend fun findMonsterWithId(id: String): MonsterWithRole? =
-        withContext(Dispatchers.Default) {
-            monsters.find { it.id == id }
-        }
-
-    private suspend fun findHazardWithId(id: String): HazardWithRole? =
-        withContext(Dispatchers.Default) {
-            hazards.find { it.id == id }
-        }
 
     fun adjustEncounter(
         encounterName: String,
         numberOfPlayers: Int,
         encounterLevel: Int,
-        encounterDifficulty: EncounterDifficulty
+        encounterDifficulty: EncounterDifficulty,
+        withoutProficiency: Boolean = false
     ) {
-        encounter.name = encounterName
-        encounter.numberOfPlayers = numberOfPlayers
-        val levelChanged = encounter.level != encounterLevel
-        encounter.level = encounterLevel
-        encounter.targetDifficulty = encounterDifficulty
-        if (levelChanged) {
-            viewModelScope.launch(handler + Dispatchers.Default) {
-                storeEncounterUseCase.store(encounter)
-                encounter = retrieveEncounterUseCase.execute(encounter.id!!)
-                encounterChanged()
-            }
-        }
-        postCurrentState()
+        encounterStore.setDetails(
+            encounterName,
+            numberOfPlayers,
+            encounterLevel,
+            encounterDifficulty,
+            withoutProficiency
+        )
     }
 
     fun onEditClicked() {
         viewModelScope.launch(handler) {
-            _actions.postValue(EncounterCreatorAction.EditEncounterClicked(encounter))
+            _actions.postValue(EncounterCreatorAction.EditEncounterClicked(encounterStore.value))
         }
     }
 
     override fun onSaveClicked(monster: Monster) {
         viewModelScope.launch(handler + Dispatchers.Default) {
             saveMonsterUseCase.execute(monster)
-            monsters = retrieveMonstersWithRoleUseCase.execute(filter, encounter)
-            postCurrentState()
+            filterStore.refresh()
         }
     }
 
@@ -377,8 +271,7 @@ class EncounterCreatorViewModel(
     override fun onDeleteClicked(id: String) {
         viewModelScope.launch(handler + Dispatchers.Default) {
             deleteMonsterUseCase.execute(id)
-            monsters = retrieveMonstersWithRoleUseCase.execute(filter, encounter)
-            postCurrentState()
+            filterStore.refresh()
         }
     }
 
@@ -391,8 +284,8 @@ class EncounterCreatorViewModel(
     fun onTreasureRecommendationClicked() {
         viewModelScope.launch(handler + Dispatchers.IO) {
             val string = createTreasureRecommendationUseCase.execute(
-                encounter.level,
-                encounter.numberOfPlayers
+                encounterStore.value.level,
+                encounterStore.value.numberOfPlayers
             )
             withContext(Dispatchers.Main) {
                 _actions.sendAction(

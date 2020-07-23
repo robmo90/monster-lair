@@ -10,16 +10,18 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.SimpleItemAnimator
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.openCustomTab
-import de.enduni.monsterlair.common.setTextIfNotFocused
-import de.enduni.monsterlair.common.view.*
-import de.enduni.monsterlair.creator.view.*
+import de.enduni.monsterlair.common.view.CreateMonsterDialog
+import de.enduni.monsterlair.common.view.EditMonsterDialog
+import de.enduni.monsterlair.common.view.EncounterSettingDialog
+import de.enduni.monsterlair.creator.domain.EncounterCreatorFilter
+import de.enduni.monsterlair.creator.view.EncounterCreatorAction
+import de.enduni.monsterlair.creator.view.EncounterCreatorViewModel
+import de.enduni.monsterlair.creator.view.RandomEncounterDialog
 import de.enduni.monsterlair.creator.view.adapter.EncounterCreatorListAdapter
 import de.enduni.monsterlair.databinding.ActivityEncounterCreatorBinding
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
@@ -53,9 +55,6 @@ class EncounterCreatorActivity : AppCompatActivity() {
             Timber.d("Disabling")
             animator.supportsChangeAnimations = false
         }
-        viewModel.viewState.observe(this, Observer { state -> bindViewToState(state) })
-        bindUi()
-
         viewModel.start(
             encounterName = intent.getStringExtra(EXTRA_ENCOUNTER_NAME)!!,
             numberOfPlayers = intent.getIntExtra(EXTRA_NUMBER_OF_PLAYERS, 4),
@@ -64,6 +63,19 @@ class EncounterCreatorActivity : AppCompatActivity() {
                 ?: EncounterDifficulty.TRIVIAL,
             encounterId = intent.getLongExtra(EXTRA_ENCOUNTER_ID, -1L)
         )
+
+        viewModel.filter.observe(this, Observer { updateUI(it) })
+        viewModel.encounter.observe(this, Observer { state ->
+            listAdapter.submitList(state.list)
+            supportActionBar?.title = state.encounterName
+        })
+        bindUi()
+    }
+
+    private fun updateUI(filter: EncounterCreatorFilter) {
+        binding.levelButton.update(filter.lowerLevel, filter.upperLevel)
+        binding.sortButton.update(filter.sortBy)
+        binding.searchButton.update(filter.searchTerm)
     }
 
     private fun setupToolbar() {
@@ -108,67 +120,11 @@ class EncounterCreatorActivity : AppCompatActivity() {
     }
 
     private fun bindUi() {
-        binding.searchEditText.doAfterTextChanged {
-            viewModel.filterByString(it.toString())
-        }
+        binding.searchButton.setup(this, viewModel.filterStore)
+        binding.levelButton.setup(this, viewModel.filterStore)
+        binding.sortButton.setup(this, viewModel.filterStore)
+        binding.filterFab.setOnClickListener {
 
-        binding.levelSlider.setOnThumbValueChangeListener { _, _, thumbIndex, value ->
-            when (thumbIndex) {
-                0 -> viewModel.adjustFilterLevelLower(value)
-                1 -> viewModel.adjustFilterLevelUpper(value)
-            }
-        }
-        binding.createMonster.setOnClickListener {
-            CreateMonsterDialog(this, viewModel).show()
-        }
-        binding.withinBudgetCheckbox.setOnCheckedChangeListener { _, isChecked ->
-            viewModel.adjustFilterWithinBudget(isChecked)
-        }
-        setupBottomSheet()
-    }
-
-    private fun setupBottomSheet() {
-        val bottomSheetBehavior = BottomSheetBehavior.from(binding.filterBottomSheet)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-        bottomSheetBehavior.peekHeight =
-            resources.getDimensionPixelSize(R.dimen.bottom_sheet_peek)
-    }
-
-    private fun bindViewToState(state: EncounterCreatorDisplayState) {
-        listAdapter.submitList(state.list)
-        binding.searchEditText.setTextIfNotFocused(state.filter?.string)
-        supportActionBar?.title = state.encounterName
-        state.filter?.let { filter ->
-            binding.levelSliderLabel.text = getString(
-                R.string.monster_level_range_values,
-                filter.lowerLevel,
-                filter.upperLevel
-            )
-            binding.levelSlider.getThumb(0).value = filter.lowerLevel
-            binding.levelSlider.getThumb(1).value = filter.upperLevel
-            binding.monsterTypeChips.buildMonsterTypeFilter(
-                filter.monsterTypes,
-                { viewModel.addMonsterTypeFilter(it) },
-                { viewModel.removeMonsterTypeFilter(it) }
-            )
-            binding.dangerTypeChips.buildDangerTypeChips(
-                filter.dangerTypes,
-                { viewModel.addDangerFilter(it) },
-                { viewModel.removeDangerFilter(it) }
-            )
-            binding.sortByChips.buildSortByChips(
-                filter.sortBy
-            ) { viewModel.adjustSortBy(it) }
-        }
-        state.filter?.withinBudget?.let { binding.withinBudgetCheckbox.isChecked = it }
-        state.error?.let {
-            when (it) {
-                EncounterCreatorError.RANDOM_ENCOUNTER_ERROR -> Toast.makeText(
-                    this,
-                    R.string.random_encounter_template_error,
-                    Toast.LENGTH_LONG
-                ).show()
-            }
         }
     }
 
@@ -228,6 +184,13 @@ class EncounterCreatorActivity : AppCompatActivity() {
                     .setMessage(R.string.encounter_creator_introduction)
                     .setPositiveButton(android.R.string.ok) { _, _ -> viewModel.markUserHintAsShown() }
                     .show()
+            }
+            is EncounterCreatorAction.RandomEncounterError -> {
+                Toast.makeText(
+                    this,
+                    R.string.random_encounter_template_error,
+                    Toast.LENGTH_LONG
+                ).show()
             }
             else -> return
         }

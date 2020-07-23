@@ -21,7 +21,7 @@ class EncounterEntityMapper {
 
     fun toMonsterEntities(
         encounterId: Long,
-        monsters: MutableList<EncounterMonster>
+        monsters: List<EncounterMonster>
     ): List<MonsterForEncounterEntity> {
         return monsters.map {
             MonsterForEncounterEntity(
@@ -35,7 +35,7 @@ class EncounterEntityMapper {
 
     fun toHazardEntities(
         encounterId: Long,
-        hazards: MutableList<EncounterHazard>
+        hazards: List<EncounterHazard>
     ): List<HazardForEncounterEntity> {
         return hazards.map {
             HazardForEncounterEntity(

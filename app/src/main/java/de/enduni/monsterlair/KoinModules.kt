@@ -11,7 +11,9 @@ import de.enduni.monsterlair.common.persistence.database.HazardEntityMapper
 import de.enduni.monsterlair.common.persistence.database.MonsterDatabase
 import de.enduni.monsterlair.creator.domain.*
 import de.enduni.monsterlair.creator.view.EncounterCreatorDisplayModelMapper
+import de.enduni.monsterlair.creator.view.EncounterCreatorFilterStore
 import de.enduni.monsterlair.creator.view.EncounterCreatorViewModel
+import de.enduni.monsterlair.creator.view.EncounterStore
 import de.enduni.monsterlair.encounters.domain.CreateEncounterTemplateUseCase
 import de.enduni.monsterlair.encounters.domain.DeleteEncounterUseCase
 import de.enduni.monsterlair.encounters.domain.RetrieveEncountersUseCase
@@ -139,6 +141,8 @@ val encounterModule = module {
     single { EncounterRepository(get(), get(), get(), get(), get(), get()) }
 
     // domain
+    single { EncounterCreatorFilterStore() }
+    single { EncounterStore() }
     single { ShowUserHintUseCase(androidApplication()) }
     single { CreateRandomEncounterUseCase() }
     single { RetrieveMonstersWithRoleUseCase(get(), get()) }
@@ -155,6 +159,8 @@ val encounterModule = module {
     single { EncounterDisplayModelMapper(androidApplication()) }
     viewModel {
         EncounterCreatorViewModel(
+            get(),
+            get(),
             get(),
             get(),
             get(),

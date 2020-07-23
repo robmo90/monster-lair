@@ -2,7 +2,6 @@ package de.enduni.monsterlair.creator.domain
 
 import de.enduni.monsterlair.common.getXp
 import de.enduni.monsterlair.creator.view.DangerType
-import de.enduni.monsterlair.creator.view.EncounterCreatorFilter
 import de.enduni.monsterlair.encounters.domain.model.Encounter
 import de.enduni.monsterlair.encounters.domain.model.HazardWithRole
 import de.enduni.monsterlair.encounters.persistence.HazardWithRoleMapper
@@ -15,7 +14,7 @@ class RetrieveHazardsWithRoleUseCase(
     private val hazardWithRoleMapper: HazardWithRoleMapper
 ) {
 
-    suspend fun execute(
+    suspend fun getFilteredHazards(
         filter: EncounterCreatorFilter,
         encounter: Encounter
     ) = withContext(Dispatchers.Default) {
@@ -23,16 +22,24 @@ class RetrieveHazardsWithRoleUseCase(
             return@withContext emptyList<HazardWithRole>()
         }
         repository.getFilteredHazards(
-            filter.string ?: "",
+            filter.searchTerm,
             filter.complexities,
-            emptyList(),
+            filter.rarities,
             filter.lowerLevel,
             filter.upperLevel,
             filter.sortBy.getStringForHazard(),
-            emptyList()
+            filter.traits
         )
             .map { hazardWithRoleMapper.mapToHazardWithRole(it, encounter.level) }
             .filterHazardWithinBudget(filter = filter.withinBudget, encounter = encounter)
+    }
+
+    suspend fun getHazard(
+        hazardId: String,
+        encounter: Encounter
+    ) = withContext(Dispatchers.Default) {
+        repository.getHazard(hazardId)
+            .let { hazardWithRoleMapper.mapToHazardWithRole(it, encounter.level) }
     }
 
     private fun List<HazardWithRole>.filterHazardWithinBudget(

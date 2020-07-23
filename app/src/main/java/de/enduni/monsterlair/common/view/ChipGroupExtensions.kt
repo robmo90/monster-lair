@@ -10,7 +10,6 @@ import de.enduni.monsterlair.common.getStringRes
 import de.enduni.monsterlair.common.getStringResForFilter
 import de.enduni.monsterlair.common.view.filterchips.RemovableFilterChip
 import de.enduni.monsterlair.common.view.filterchips.SelectionChip
-import de.enduni.monsterlair.creator.view.DangerType
 
 fun ChipGroup.buildMonsterTypeFilter(
     checkedTypes: List<MonsterType> = listOf(),
@@ -86,24 +85,6 @@ fun ChipGroup.buildComplexitySelection(
             checkedComplexities.contains(complexity),
             { filterStore.addComplexity(complexity) },
             { filterStore.removeComplexity(complexity) }
-        )
-        this.addView(chip)
-    }
-}
-
-fun ChipGroup.buildDangerTypeChips(
-    checkedDangers: List<DangerType> = listOf(),
-    onChecked: (DangerType) -> Unit,
-    onUnchecked: (DangerType) -> Unit
-) {
-    this.removeAllViews()
-    DangerType.values().forEach { dangerType ->
-        val chip = SelectionChip(
-            this.context,
-            this.context.getString(dangerType.getStringRes()),
-            checkedDangers.contains(dangerType),
-            { onChecked.invoke(dangerType) },
-            { onUnchecked.invoke(dangerType) }
         )
         this.addView(chip)
     }

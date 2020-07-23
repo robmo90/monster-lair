@@ -1,6 +1,6 @@
 package de.enduni.monsterlair.creator.domain
 
-import de.enduni.monsterlair.common.domain.RandomEncounter
+import de.enduni.monsterlair.common.domain.RandomEncounterTemplate
 import de.enduni.monsterlair.common.getXp
 import de.enduni.monsterlair.encounters.domain.model.Encounter
 import de.enduni.monsterlair.encounters.domain.model.HazardWithRole
@@ -10,87 +10,95 @@ import kotlin.random.Random.Default.nextBoolean
 class CreateRandomEncounterUseCase {
 
     fun createRandomEncounter(
-        encounter: Encounter,
+        originalEncounter: Encounter,
         monsters: List<MonsterWithRole>,
         hazards: List<HazardWithRole>,
-        randomEncounter: RandomEncounter
-    ) {
-        val startMonsters = encounter.monsters.toMutableList()
-        val startHazards = encounter.hazards.toMutableList()
-        encounter.clear()
+        template: RandomEncounterTemplate
+    ): Pair<List<MonsterWithRole>, List<HazardWithRole>> {
+        val encounter = RandomEncounter(originalEncounter.level, originalEncounter.targetBudget)
         try {
-            when (randomEncounter) {
-                RandomEncounter.BOSS_AND_LACKEYS -> staffBossAndLackeysEncounter(
+            when (template) {
+                RandomEncounterTemplate.BOSS_AND_LACKEYS -> staffBossAndLackeysEncounter(
                     encounter,
                     monsters
                 )
-                RandomEncounter.BOSS_AND_LIEUTENANT -> staffBossAndLieutenantEncounter(
+                RandomEncounterTemplate.BOSS_AND_LIEUTENANT -> staffBossAndLieutenantEncounter(
                     encounter,
                     monsters
                 )
-                RandomEncounter.ELITE_ENEMIES -> staffEliteEnemiesEncounter(encounter, monsters)
-                RandomEncounter.LIEUTENANT_AND_LACKEYS -> staffLieutenantAndLackeysEncounter(
+                RandomEncounterTemplate.ELITE_ENEMIES -> staffEliteEnemiesEncounter(
                     encounter,
                     monsters
                 )
-                RandomEncounter.MATED_PAIR -> staffMatedPairEncounter(encounter, monsters)
-                RandomEncounter.TROOP -> staffTroopEncounter(encounter, monsters)
-                RandomEncounter.MOOK_SQUAD -> staffMookSquadEncounter(encounter, monsters)
-                RandomEncounter.RANDOM -> staffRandomEncounter(encounter, monsters, hazards)
+                RandomEncounterTemplate.LIEUTENANT_AND_LACKEYS -> staffLieutenantAndLackeysEncounter(
+                    encounter,
+                    monsters
+                )
+                RandomEncounterTemplate.MATED_PAIR -> staffMatedPairEncounter(encounter, monsters)
+                RandomEncounterTemplate.TROOP -> staffTroopEncounter(encounter, monsters)
+                RandomEncounterTemplate.MOOK_SQUAD -> staffMookSquadEncounter(encounter, monsters)
+                RandomEncounterTemplate.RANDOM -> staffRandomEncounter(encounter, monsters, hazards)
             }
+            return Pair(encounter.monsters, encounter.hazards)
         } catch (ex: Exception) {
-            encounter.clear()
-            encounter.monsters = startMonsters
-            encounter.hazards = startHazards
             throw RandomEncounterException()
         }
 
     }
 
     private fun staffBossAndLackeysEncounter(
-        encounter: Encounter,
+        encounter: RandomEncounter,
         monsters: List<MonsterWithRole>
     ) {
         val bossMonster = monsters.filter { it.level == encounter.level + 2 }.random()
-        encounter.addMonster(bossMonster)
+        encounter.monsters.add(bossMonster)
 
         val eligibleMooks = monsters.filter { it.level == encounter.level - 4 }
         encounter.tryToFillWithSameFamilyAndType(eligibleMooks, bossMonster)
     }
 
     private fun staffBossAndLieutenantEncounter(
-        encounter: Encounter,
+        encounter: RandomEncounter,
         monsters: List<MonsterWithRole>
     ) {
         val bossMonster = monsters.filter { it.level == encounter.level + 2 }.random()
-        encounter.addMonster(bossMonster)
+        encounter.monsters.add(bossMonster)
 
         val eligibleLieutenants = monsters.filter { it.level == encounter.level }
         encounter.tryToFillWithSameFamilyAndType(eligibleLieutenants, bossMonster)
     }
 
-    private fun staffEliteEnemiesEncounter(encounter: Encounter, monsters: List<MonsterWithRole>) {
+    private fun staffEliteEnemiesEncounter(
+        encounter: RandomEncounter,
+        monsters: List<MonsterWithRole>
+    ) {
         staffWithSameLevelCreatureAndFillUp(encounter, monsters)
     }
 
-    private fun staffMatedPairEncounter(encounter: Encounter, monsters: List<MonsterWithRole>) {
+    private fun staffMatedPairEncounter(
+        encounter: RandomEncounter,
+        monsters: List<MonsterWithRole>
+    ) {
         staffWithSameLevelCreatureAndFillUp(encounter, monsters, 0)
     }
 
-    private fun staffTroopEncounter(encounter: Encounter, monsters: List<MonsterWithRole>) {
+    private fun staffTroopEncounter(encounter: RandomEncounter, monsters: List<MonsterWithRole>) {
         val headMonster = monsters.filter { it.level == encounter.level }.random()
-        encounter.addMonster(headMonster)
+        encounter.monsters.add(headMonster)
 
         val eligibleMooks = monsters.filter { it.level == encounter.level - 2 }
         encounter.tryToFillWithSameFamilyAndType(eligibleMooks, headMonster)
     }
 
-    private fun staffMookSquadEncounter(encounter: Encounter, monsters: List<MonsterWithRole>) {
+    private fun staffMookSquadEncounter(
+        encounter: RandomEncounter,
+        monsters: List<MonsterWithRole>
+    ) {
         staffWithSameLevelCreatureAndFillUp(encounter, monsters, -4)
     }
 
     private fun staffWithSameLevelCreatureAndFillUp(
-        encounter: Encounter,
+        encounter: RandomEncounter,
         monsters: List<MonsterWithRole>,
         offset: Int = 0
     ) {
@@ -101,17 +109,17 @@ class CreateRandomEncounterUseCase {
     }
 
     private fun staffLieutenantAndLackeysEncounter(
-        encounter: Encounter,
+        encounter: RandomEncounter,
         monsters: List<MonsterWithRole>
     ) {
         val lieutenant = monsters.filter { it.level == encounter.level }.random()
-        encounter.addMonster(lieutenant)
+        encounter.monsters.add(lieutenant)
 
-        val eligibleMooks = monsters.filter { it.level <= encounter.level - 4 }
+        val eligibleMooks = monsters.filter { it.level == encounter.level - 4 }
         encounter.tryToFillWithSameFamilyAndType(eligibleMooks, lieutenant)
     }
 
-    private fun Encounter.tryToFillWithSameFamilyAndType(
+    private fun RandomEncounter.tryToFillWithSameFamilyAndType(
         monsters: List<MonsterWithRole>,
         reference: MonsterWithRole
     ) {
@@ -122,7 +130,7 @@ class CreateRandomEncounterUseCase {
     }
 
     private fun staffRandomEncounter(
-        encounter: Encounter,
+        encounter: RandomEncounter,
         monsters: List<MonsterWithRole>,
         hazards: List<HazardWithRole>
     ) {
@@ -135,7 +143,7 @@ class CreateRandomEncounterUseCase {
         }
     }
 
-    private fun Encounter.fillUp(
+    private fun RandomEncounter.fillUp(
         monsters: List<MonsterWithRole> = emptyList(),
         hazards: List<HazardWithRole> = emptyList(),
         addOperation: () -> Unit
@@ -149,33 +157,27 @@ class CreateRandomEncounterUseCase {
         )
     }
 
-    private fun Encounter.staffHazard(hazards: List<HazardWithRole>) {
+    private fun RandomEncounter.staffHazard(hazards: List<HazardWithRole>) {
         if (hazards.isEmpty()) return
         val randomHazard = hazards.random()
         if (randomHazard.role.getXp(randomHazard.complexity) <= getAvailableBudget()) {
-            addHazard(randomHazard)
+            this.hazards.add(randomHazard)
         }
     }
 
-    private fun Encounter.staffMonster(monsters: List<MonsterWithRole>) {
+    private fun RandomEncounter.staffMonster(monsters: List<MonsterWithRole>) {
         if (monsters.isEmpty()) return
         val randomMonster = monsters.random()
         if (randomMonster.role.xp <= getAvailableBudget()) {
-            addMonster(randomMonster)
+            this.monsters.add(randomMonster)
         }
     }
 
-    private fun Encounter.getAvailableBudget(): Int {
+    private fun RandomEncounter.getAvailableBudget(): Int {
         return targetBudget - currentBudget
     }
 
-    private fun Encounter.clear() {
-        this.monsters.clear()
-        this.hazards.clear()
-    }
-
-
-    private fun Encounter.canStillBeStaffed(
+    private fun RandomEncounter.canStillBeStaffed(
         monsters: List<MonsterWithRole> = emptyList(),
         hazards: List<HazardWithRole> = emptyList()
     ): Boolean {
@@ -184,6 +186,22 @@ class CreateRandomEncounterUseCase {
         val hazardsAvailable = hazards.any { it.role.getXp(it.complexity) <= budget }
         return monsterAvailable || hazardsAvailable
     }
+}
+
+data class RandomEncounter(
+    val level: Int,
+    val targetBudget: Int,
+    val monsters: MutableList<MonsterWithRole> = mutableListOf(),
+    val hazards: MutableList<HazardWithRole> = mutableListOf()
+) {
+
+    val currentBudget: Int
+        get() {
+            val monsterXp = this.monsters.map { it.role.xp }.sum()
+            val hazardXp = this.hazards.map { it.role.getXp(it.complexity) }.sum()
+            return monsterXp + hazardXp
+        }
+
 }
 
 class RandomEncounterException : Throwable()

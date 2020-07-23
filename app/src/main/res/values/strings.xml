@@ -106,7 +106,7 @@
 
     <string name="within_budget">Include only dangers within budget</string>
 
-    <string name="danger_filter_label">Filter By Danger Type</string>
+    <string name="danger_filter_label">Danger Types</string>
 
     <string name="monster_type_aberration">Aberration</string>
     <string name="monster_type_animal">Animal</string>
@@ -130,6 +130,7 @@
     <string name="monster_type_none">None</string>
     <string name="label_filter_monster_types">Filter By Monster Type</string>
 
+    <string name="danger_type_all">All Types</string>
     <string name="danger_type_monster">Monsters</string>
     <string name="danger_type_hazards">Hazards</string>
 

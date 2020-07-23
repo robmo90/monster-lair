@@ -4,15 +4,15 @@ import android.app.Activity
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.common.domain.RandomEncounter
+import de.enduni.monsterlair.common.domain.RandomEncounterTemplate
 
 class RandomEncounterDialog {
 
-    fun show(activity: Activity, randomEncounterCallback: (RandomEncounter) -> Unit) {
+    fun show(activity: Activity, randomEncounterCallback: (RandomEncounterTemplate) -> Unit) {
         MaterialAlertDialogBuilder(activity)
             .setTitle(R.string.random_encounter_title)
             .setItems(R.array.random_encounter_templates) { dialog, which ->
-                randomEncounterCallback.invoke(RandomEncounter.values()[which])
+                randomEncounterCallback.invoke(RandomEncounterTemplate.values()[which])
             }
             .setNegativeButton(android.R.string.cancel) { _, _ -> }
             .setNeutralButton(R.string.random_encounter_information, null)

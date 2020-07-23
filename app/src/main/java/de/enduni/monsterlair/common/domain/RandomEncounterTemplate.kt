@@ -1,6 +1,6 @@
 package de.enduni.monsterlair.common.domain
 
-enum class RandomEncounter {
+enum class RandomEncounterTemplate {
     BOSS_AND_LACKEYS,
     BOSS_AND_LIEUTENANT,
     ELITE_ENEMIES,

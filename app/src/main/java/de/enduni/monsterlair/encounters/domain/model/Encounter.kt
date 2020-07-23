@@ -1,18 +1,20 @@
 package de.enduni.monsterlair.encounters.domain.model
 
-import de.enduni.monsterlair.common.domain.Strength
+import de.enduni.monsterlair.common.domain.Level
 import de.enduni.monsterlair.common.getXp
 import kotlin.math.abs
 import kotlin.math.min
 
 data class Encounter(
     val id: Long? = null,
-    var name: String = "Encounter",
-    var monsters: MutableList<EncounterMonster> = mutableListOf(),
-    var hazards: MutableList<EncounterHazard> = mutableListOf(),
-    var level: Int,
-    var numberOfPlayers: Int,
-    var targetDifficulty: EncounterDifficulty
+    val name: String = "Encounter",
+    val monsters: List<EncounterMonster> = emptyList(),
+    val hazards: List<EncounterHazard> = emptyList(),
+    val level: Level = 0,
+    val numberOfPlayers: Int = 0,
+    val targetDifficulty: EncounterDifficulty = EncounterDifficulty.TRIVIAL,
+    val withoutProficiency: Boolean = false,
+    val notes: String = ""
 ) {
 
     val targetBudget: Int
@@ -48,78 +50,6 @@ data class Encounter(
 
     private fun EncounterDifficulty.calculateBudget(characterAdjustment: Int): Int {
         return this.budget + this.characterAdjustment * characterAdjustment
-    }
-
-
-    fun addMonster(monster: MonsterWithRole) {
-        val monsterAlreadyInList = monsters.any { it.id == monster.id }
-        if (monsterAlreadyInList) {
-            incrementCount(monsterId = monster.id)
-        } else {
-            monsters.add(
-                EncounterMonster(
-                    id = monster.id,
-                    monster = monster,
-                    count = 1,
-                    strength = Strength.STANDARD
-                )
-            )
-        }
-    }
-
-    fun addHazard(hazard: HazardWithRole) {
-        val hazardAlreadyInList = hazards.any { it.id == hazard.id }
-        if (hazardAlreadyInList) {
-            incrementCount(hazardId = hazard.id)
-        } else {
-            hazards.add(
-                EncounterHazard(
-                    id = hazard.id,
-                    hazard = hazard,
-                    count = 1
-                )
-            )
-        }
-    }
-
-    private fun removeMonster(monsterId: String) {
-        monsters.removeIf { it.id == monsterId }
-    }
-
-    private fun removeHazard(hazardId: String) {
-        hazards.removeIf { it.id == hazardId }
-    }
-
-    fun incrementCount(monsterId: String? = null, hazardId: String? = null) {
-        monsterId?.let { id ->
-            monsters.find { it.id == id }
-                ?.let { it.count++ }
-        }
-        hazardId?.let { id ->
-            hazards.find { it.id == id }
-                ?.let { it.count++ }
-        }
-    }
-
-    fun decrementCount(monsterId: String? = null, hazardId: String? = null) {
-        monsterId?.let { id ->
-            monsters.find { it.id == id }
-                ?.let { monster ->
-                    monster.count--
-                    if (monster.count == 0) {
-                        removeMonster(id)
-                    }
-                }
-        }
-        hazardId?.let { id ->
-            hazards.find { it.id == id }
-                ?.let { hazard ->
-                    hazard.count--
-                    if (hazard.count == 0) {
-                        removeHazard(id)
-                    }
-                }
-        }
     }
 
 }

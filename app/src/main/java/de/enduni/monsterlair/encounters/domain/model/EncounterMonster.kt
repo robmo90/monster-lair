@@ -6,5 +6,5 @@ data class EncounterMonster(
     val id: String,
     val monster: MonsterWithRole,
     val strength: Strength,
-    var count: Int
+    val count: Int
 )
