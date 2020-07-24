@@ -10,10 +10,7 @@ import de.enduni.monsterlair.common.persistence.database.DatabaseInitializer
 import de.enduni.monsterlair.common.persistence.database.HazardEntityMapper
 import de.enduni.monsterlair.common.persistence.database.MonsterDatabase
 import de.enduni.monsterlair.creator.domain.*
-import de.enduni.monsterlair.creator.view.EncounterCreatorDisplayModelMapper
-import de.enduni.monsterlair.creator.view.EncounterCreatorFilterStore
-import de.enduni.monsterlair.creator.view.EncounterCreatorViewModel
-import de.enduni.monsterlair.creator.view.EncounterStore
+import de.enduni.monsterlair.creator.view.*
 import de.enduni.monsterlair.encounters.domain.CreateEncounterTemplateUseCase
 import de.enduni.monsterlair.encounters.domain.DeleteEncounterUseCase
 import de.enduni.monsterlair.encounters.domain.RetrieveEncountersUseCase
@@ -174,6 +171,7 @@ val encounterModule = module {
             get()
         )
     }
+    viewModel { EncounterCreatorFilterViewModel(get(), get(), get()) }
     viewModel { EncounterViewModel(get(), get(), get(), get()) }
 }
 

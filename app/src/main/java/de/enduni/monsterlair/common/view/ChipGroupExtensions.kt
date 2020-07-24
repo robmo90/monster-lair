@@ -10,6 +10,7 @@ import de.enduni.monsterlair.common.getStringRes
 import de.enduni.monsterlair.common.getStringResForFilter
 import de.enduni.monsterlair.common.view.filterchips.RemovableFilterChip
 import de.enduni.monsterlair.common.view.filterchips.SelectionChip
+import de.enduni.monsterlair.creator.view.DangerType
 
 fun ChipGroup.buildMonsterTypeFilter(
     checkedTypes: List<MonsterType> = listOf(),
@@ -247,6 +248,23 @@ fun ChipGroup.buildRaritySelection(
             checkedRarities.contains(rarity),
             { filterStore.addRarity(rarity) },
             { filterStore.removeRarity(rarity) }
+        )
+        this.addView(chip)
+    }
+}
+
+fun ChipGroup.buildDangerTypeSelection(
+    checkedDangerTypes: List<DangerType>,
+    filterStore: DangerTypeFilterStore
+) {
+    this.removeAllViews()
+    DangerType.values().forEach { dangerType ->
+        val chip = SelectionChip(
+            this.context,
+            context.getString(dangerType.getStringRes()),
+            checkedDangerTypes.contains(dangerType),
+            { filterStore.addDangerType(dangerType) },
+            { filterStore.removeDangerType(dangerType) }
         )
         this.addView(chip)
     }

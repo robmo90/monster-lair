@@ -35,6 +35,8 @@ class EncounterSettingDialog(
                 binding.characterLevelEditText.setTextIfNotFocused(encounterLevel)
                 binding.characterNumberEditText.setTextIfNotFocused(numberOfPlayers)
                 binding.difficultySelect.setText(encounterDifficulty.getStringRes())
+                binding.withoutProficiencyCheckbox.isChecked = useProficiencyWithoutLevel
+                binding.notesEditText.setTextIfNotFocused(notes)
             }
 
             val dialog = MaterialAlertDialogBuilder(activity)
@@ -67,7 +69,9 @@ class EncounterSettingDialog(
                                     .toInt(),
                                 encounterLevel = binding.characterLevelEditText.text.toString()
                                     .toInt(),
-                                encounterDifficulty = getDifficulty(activity, binding)
+                                encounterDifficulty = getDifficulty(activity, binding),
+                                useProficiencyWithoutLevel = binding.withoutProficiencyCheckbox.isChecked,
+                                notes = binding.notesEditText.text.toString()
                             )
                         )
                         dialog.dismiss()
@@ -134,7 +138,9 @@ class EncounterSettingDialog(
         val encounterName: String,
         val numberOfPlayers: Int,
         val encounterLevel: Int,
-        val encounterDifficulty: EncounterDifficulty
+        val encounterDifficulty: EncounterDifficulty,
+        val useProficiencyWithoutLevel: Boolean,
+        val notes: String
     )
 
     enum class Purpose {

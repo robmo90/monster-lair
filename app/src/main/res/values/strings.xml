@@ -8,6 +8,7 @@
     <string name="fragment_hazards">Hazards</string>
     <string name="fragment_treasures">Treasures</string>
     <string name="fragment_encounters">Encounters</string>
+    <string name="fragment_settings">Settings</string>
     <string name="fragment_encounter_creator">Create Encounter</string>
     <string name="fragment_encounter_export">Export Encounter</string>
     <string name="fragment_licenses">Licenses</string>
@@ -26,6 +27,7 @@
 
     <string name="character_level">Level</string>
     <string name="number_of_characters"># of Characters</string>
+    <string name="notes">Notes</string>
 
     <string name="difficulty_trivial">Trivial</string>
     <string name="difficulty_low">Low</string>
@@ -248,5 +250,18 @@
     <string name="alignment_chaotic_neutral">Chaotic Neutral</string>
     <string name="alignment_chaotic_evil">Chaotic Evil</string>
 
+
+    <string name="additonal_filters">Additional Filters</string>
+    <string name="done">Done</string>
+
+    <string name="elite_name_template">Elite %s</string>
+    <string name="weak_name_template">Weak %s</string>
+
+    <string name="adjust_monster_strength">Adjust Strength</string>
+    <string name="strength_weak">Weak</string>
+    <string name="strength_standard">Standard</string>
+    <string name="strength_elite">Elite</string>
+
+    <string name="variant_rules_without_proficiency">Use \"Proficiency without Level\" variant rules</string>
 
 </resources>

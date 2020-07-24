@@ -1,9 +1,9 @@
 package de.enduni.monsterlair.common.domain
 
-enum class Strength {
+enum class Strength(val levelAdjustment: Int) {
 
-    WEAK,
-    STANDARD,
-    ELITE
+    WEAK(-1),
+    STANDARD(0),
+    ELITE(1)
 
 }

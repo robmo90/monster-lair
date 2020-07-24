@@ -1,6 +1,5 @@
 package de.enduni.monsterlair.encounters.persistence
 
-import de.enduni.monsterlair.common.domain.Strength
 import de.enduni.monsterlair.common.persistence.*
 import de.enduni.monsterlair.encounters.domain.model.Encounter
 import de.enduni.monsterlair.encounters.domain.model.EncounterHazard
@@ -39,7 +38,8 @@ class EncounterRepository(
         val monsterForEncounterEntities = encounterDao.getAllMonstersForEncounter(entity.id!!)
         val monstersForEncounter = getMonstersForEncounter(
             monsterForEncounterEntities,
-            entity.level
+            entity.level,
+            entity.useProficiencyWithoutLevel
         )
         val hazardsForEncounterEntities = encounterDao.getAllHazardsForEncounter(entity.id)
         val hazardsForEncounter = getHazardsForEncounter(
@@ -50,16 +50,23 @@ class EncounterRepository(
     }
 
     private suspend fun getMonstersForEncounter(
-        monsterForEncounterEntities: List<MonsterForEncounterEntity>, level: Int
+        monsterForEncounterEntities: List<MonsterForEncounterEntity>,
+        level: Int,
+        withoutProficiency: Boolean
     ): List<EncounterMonster> {
         return monsterForEncounterEntities.map { monsterForEncounterEntity ->
-            val monster = monsterDao.getMonster(monsterForEncounterEntity.monsterId).monster
+            val entity = monsterDao.getMonster(monsterForEncounterEntity.monsterId)
             val monsterWithRole =
-                monsterWithRoleMapper.mapToMonsterWithRole(monster, level)
+                monsterWithRoleMapper.mapToMonsterWithRole(
+                    entity.monster,
+                    level,
+                    withoutProficiency,
+                    monsterForEncounterEntity.strength
+                )
             EncounterMonster(
-                monster.id,
+                entity.monster.id,
                 monsterWithRole,
-                Strength.STANDARD,
+                monsterForEncounterEntity.strength,
                 monsterForEncounterEntity.count
             )
         }

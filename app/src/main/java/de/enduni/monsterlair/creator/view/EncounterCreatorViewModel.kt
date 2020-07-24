@@ -3,6 +3,7 @@ package de.enduni.monsterlair.creator.view
 import androidx.lifecycle.*
 import de.enduni.monsterlair.common.domain.RandomEncounterTemplate
 import de.enduni.monsterlair.common.domain.SortBy
+import de.enduni.monsterlair.common.domain.Strength
 import de.enduni.monsterlair.common.getDefaultMaxLevel
 import de.enduni.monsterlair.common.view.ActionLiveData
 import de.enduni.monsterlair.common.view.CreateMonsterDialog
@@ -20,6 +21,7 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -44,7 +46,8 @@ class EncounterCreatorViewModel(
     DangerViewHolder.DangerSelectedListener,
     DangerForEncounterViewHolder.DangerForEncounterListener,
     CreateMonsterDialog.OnSaveClickedListener,
-    EditMonsterDialog.OnEditMonsterClickListener {
+    EditMonsterDialog.OnEditMonsterClickListener,
+    AdjustMonsterStrengthDialog.Listener {
 
     private val _actions = ActionLiveData<EncounterCreatorAction>()
     val actions: LiveData<EncounterCreatorAction> get() = _actions
@@ -61,16 +64,17 @@ class EncounterCreatorViewModel(
     val filter = filterStore.filter.asLiveData()
 
     val encounter = liveData(handler) {
-        filterStore.filter.combine(encounterStore.encounter) { filter, encounter ->
+        filterStore.filter.combine(encounterStore.encounter.filter { encounter -> encounter.level != -1 && encounter.numberOfPlayers != -1 }) { filter, encounter ->
             val monsters = retrieveMonstersWithRoleUseCase.getFilteredMonsters(filter, encounter)
             val hazards = retrieveHazardsWithRoleUseCase.getFilteredHazards(filter, encounter)
             val dangers = (monsters.toMonsterDisplayModel() +
                     hazards.toHazardDisplayModel())
                 .sort(filter.sortBy)
 
-            val dangersForEncounter = (encounter.monsters.toEncounterMonsterDisplayModel() +
-                    encounter.hazards.toEncounterHazardDisplayModel())
-                .sortedBy { it.name }
+            val dangersForEncounter =
+                (encounter.monsters.toEncounterMonsterDisplayModel(encounter) +
+                        encounter.hazards.toEncounterHazardDisplayModel())
+                    .sortedWith(compareBy({ it.name }, { it.strength }))
 
             val list: List<EncounterCreatorDisplayModel> =
                 dangersForEncounter +
@@ -88,6 +92,8 @@ class EncounterCreatorViewModel(
         numberOfPlayers: Int,
         levelOfEncounter: Int,
         targetDifficulty: EncounterDifficulty,
+        useProficiencyWithoutLevel: Boolean,
+        notes: String,
         encounterId: Long
     ) {
         if (encounterId == -1L) {
@@ -96,7 +102,8 @@ class EncounterCreatorViewModel(
                 numberOfPlayers,
                 levelOfEncounter,
                 targetDifficulty,
-                withoutProficiency = false
+                useProficiencyWithoutLevel,
+                notes
             )
             filterStore.setLowerLevel(levelOfEncounter - 5)
             filterStore.setUpperLevel(levelOfEncounter + targetDifficulty.getDefaultMaxLevel())
@@ -124,8 +131,8 @@ class EncounterCreatorViewModel(
         }
     }
 
-    private fun List<EncounterMonster>.toEncounterMonsterDisplayModel(): List<EncounterCreatorDisplayModel.DangerForEncounter> {
-        return this.map { mapper.toDanger(it) }
+    private fun List<EncounterMonster>.toEncounterMonsterDisplayModel(encounter: Encounter): List<EncounterCreatorDisplayModel.DangerForEncounter> {
+        return this.map { mapper.toDanger(it, encounter) }
     }
 
     private fun List<EncounterHazard>.toEncounterHazardDisplayModel(): List<EncounterCreatorDisplayModel.DangerForEncounter> {
@@ -144,12 +151,12 @@ class EncounterCreatorViewModel(
         return this.map { mapper.toDanger(it) }
     }
 
-    override fun onDecrement(type: DangerType, id: String) {
-        encounterStore.decrement(type, id)
+    override fun onDecrement(type: DangerType, id: String, strength: Strength) {
+        encounterStore.decrement(type, id, strength)
     }
 
-    override fun onIncrement(type: DangerType, id: String) {
-        encounterStore.increment(type, id)
+    override fun onIncrement(type: DangerType, id: String, strength: Strength) {
+        encounterStore.increment(type, id, strength)
     }
 
     override fun onDangerForEncounterSelected(url: String?) {
@@ -237,14 +244,16 @@ class EncounterCreatorViewModel(
         numberOfPlayers: Int,
         encounterLevel: Int,
         encounterDifficulty: EncounterDifficulty,
-        withoutProficiency: Boolean = false
+        useProficencyWithoutLevel: Boolean,
+        notes: String
     ) {
         encounterStore.setDetails(
             encounterName,
             numberOfPlayers,
             encounterLevel,
             encounterDifficulty,
-            withoutProficiency
+            useProficencyWithoutLevel,
+            notes
         )
     }
 
@@ -303,5 +312,15 @@ class EncounterCreatorViewModel(
         }
     }
 
+    override fun onCleared() {
+        super.onCleared()
+        encounterStore.clear()
+        filterStore.clear()
+    }
+
+
+    override fun onStrengthChosen(id: String, currentStrength: Strength, targetStrength: Strength) {
+        encounterStore.adjustMonsterStrength(id, currentStrength, targetStrength)
+    }
 }
 

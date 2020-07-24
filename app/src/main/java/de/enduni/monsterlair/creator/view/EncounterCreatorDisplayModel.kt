@@ -2,6 +2,7 @@ package de.enduni.monsterlair.creator.view
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import de.enduni.monsterlair.common.domain.Strength
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 
 sealed class EncounterCreatorDisplayModel {
@@ -32,6 +33,7 @@ sealed class EncounterCreatorDisplayModel {
         val type: DangerType,
         val id: String,
         val name: String,
+        val strength: Strength,
         @DrawableRes val icon: Int,
         val count: Int,
         val level: Int,

@@ -10,10 +10,10 @@ data class Encounter(
     val name: String = "Encounter",
     val monsters: List<EncounterMonster> = emptyList(),
     val hazards: List<EncounterHazard> = emptyList(),
-    val level: Level = 0,
-    val numberOfPlayers: Int = 0,
+    val level: Level = -1,
+    val numberOfPlayers: Int = -1,
     val targetDifficulty: EncounterDifficulty = EncounterDifficulty.TRIVIAL,
-    val withoutProficiency: Boolean = false,
+    val useProficiencyWithoutLevel: Boolean = false,
     val notes: String = ""
 ) {
 
@@ -42,7 +42,14 @@ data class Encounter(
     val currentBudget: Int
         get() {
             val monsterXp = this.monsters
-                .map { it.monster.role.xp * it.count }.sum()
+                .map { monster ->
+                    MonsterRole.determineRole(
+                        monster.monster.level,
+                        level,
+                        monster.strength,
+                        useProficiencyWithoutLevel
+                    ).xp * monster.count
+                }.sum()
             val hazardXp =
                 this.hazards.map { it.hazard.role.getXp(it.hazard.complexity) * it.count }.sum()
             return monsterXp + hazardXp

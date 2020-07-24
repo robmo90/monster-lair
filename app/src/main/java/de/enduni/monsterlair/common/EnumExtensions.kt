@@ -82,14 +82,29 @@ fun EncounterDifficulty.getStringRes(): Int {
 @StringRes
 fun MonsterRole.getStringRes(): Int {
     return when (this) {
-        MonsterRole.LOW_LACKEY -> R.string.role_low_lackey
+        MonsterRole.LOW_LACKEY,
+        MonsterRole.WITHOUT_LEVEL_LOW_LACKEY -> R.string.role_low_lackey
+        MonsterRole.WITHOUT_LEVEL_WEAK_LACKEY,
+        MonsterRole.WITHOUT_LEVEL_MODERATE_LACKEY,
         MonsterRole.MODERATE_LACKEY -> R.string.role_moderate_lackey
+        MonsterRole.WITHOUT_LEVEL_STRONGER_LACKEY,
+        MonsterRole.WITHOUT_LEVEL_STANDARD_LACKEY,
         MonsterRole.STANDARD_LACKEY -> R.string.role_standard_lackey
+        MonsterRole.WITHOUT_LEVEL_WEAKER_STANDARD_CREATURE,
+        MonsterRole.WITHOUT_LEVEL_STANDARD_CREATURE,
         MonsterRole.STANDARD_CREATURE -> R.string.role_standard_creature
+        MonsterRole.WITHOUT_LEVEL_WEAK_BOSS,
+        MonsterRole.WITHOUT_LEVEL_LOW_BOSS,
         MonsterRole.LOW_BOSS -> R.string.role_low_boss
+        MonsterRole.WITHOUT_LEVEL_MODERATE_BOSS,
         MonsterRole.MODERATE_BOSS -> R.string.role_moderate_boss
+        MonsterRole.WITHOUT_LEVEL_STRONGER_BOSS,
+        MonsterRole.WITHOUT_LEVEL_SEVERE_BOSS,
         MonsterRole.SEVERE_BOSS -> R.string.role_severe_boss
+        MonsterRole.WITHOUT_LEVEL_EXTREME_BOSS,
+        MonsterRole.WITHOUT_LEVEL_MORE_EXTREME_BOSS,
         MonsterRole.EXTREME_BOSS -> R.string.role_extreme_boss
+        MonsterRole.WITHOUT_LEVEL_SOLO_BOSS,
         MonsterRole.SOLO_BOSS -> R.string.role_solo_boss
         MonsterRole.TOO_HIGH -> R.string.role_too_high
         MonsterRole.TOO_LOW -> R.string.role_too_low

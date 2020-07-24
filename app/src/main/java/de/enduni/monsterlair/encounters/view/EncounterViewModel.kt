@@ -55,6 +55,8 @@ class EncounterViewModel(
                     encounterId = it.id!!,
                     encounterLevel = it.level,
                     numberOfPlayers = it.numberOfPlayers,
+                    useProficiencyWithoutLevel = it.useProficiencyWithoutLevel,
+                    notes = it.notes,
                     difficulty = it.targetDifficulty
                 )
             )

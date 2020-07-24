@@ -5,14 +5,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import de.enduni.monsterlair.R
+import de.enduni.monsterlair.creator.view.AdjustMonsterStrengthDialog
 import de.enduni.monsterlair.creator.view.EncounterCreatorDisplayModel
 
 class EncounterCreatorListAdapter(
     private val layoutInflater: LayoutInflater,
     private val dangerSelectedListener: DangerViewHolder.DangerSelectedListener,
     private val dangerForEncounterListener: DangerForEncounterViewHolder.DangerForEncounterListener,
-    private val onSaveClickedListener: EncounterDetailViewHolder.ClickListener
-
+    private val onSaveClickedListener: EncounterDetailViewHolder.ClickListener,
+    private val adjustMonsterStrengthListener: AdjustMonsterStrengthDialog.Listener
 ) : ListAdapter<EncounterCreatorDisplayModel, EncounterCreatorViewHolder>(
     EncounterCreatorDiffCallback()
 ) {
@@ -26,7 +27,11 @@ class EncounterCreatorListAdapter(
             TYPE_DANGER_FOR_ENCOUNTER -> {
                 val view =
                     layoutInflater.inflate(R.layout.viewholder_encounter_monster, parent, false)
-                DangerForEncounterViewHolder(view, dangerForEncounterListener)
+                DangerForEncounterViewHolder(
+                    view,
+                    dangerForEncounterListener,
+                    adjustMonsterStrengthListener
+                )
             }
             TYPE_ENCOUNTER_DETAIL -> {
                 val view =
@@ -68,7 +73,7 @@ class EncounterCreatorDiffCallback : DiffUtil.ItemCallback<EncounterCreatorDispl
             return oldItem.id == newItem.id
         }
         if (oldItem is EncounterCreatorDisplayModel.DangerForEncounter && newItem is EncounterCreatorDisplayModel.DangerForEncounter) {
-            return oldItem.id == newItem.id
+            return oldItem.id == newItem.id && oldItem.strength == newItem.strength
         }
         if (oldItem is EncounterCreatorDisplayModel.EncounterDetails && newItem is EncounterCreatorDisplayModel.EncounterDetails) {
             return true

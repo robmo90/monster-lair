@@ -27,7 +27,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.pager.adapter = MainActivityAdapter(this, this.supportFragmentManager)
+        binding.pager.adapter = MainActivityAdapter(this, supportFragmentManager)
+        binding.pager.currentItem = 1
         binding.tabLayout.setupWithViewPager(binding.pager)
 
 //        val navController = findNavController(R.id.nav_host_fragment)
@@ -106,22 +107,24 @@ class MainActivity : AppCompatActivity() {
         BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
     ) {
 
-        override fun getCount() = 4
+        override fun getCount() = 5
 
         override fun getItem(position: Int): Fragment {
             return when (position) {
-                0 -> EncounterFragment()
-                1 -> MonsterFragment()
-                2 -> HazardFragment()
+                0 -> SettingsFragment()
+                1 -> EncounterFragment()
+                2 -> MonsterFragment()
+                3 -> HazardFragment()
                 else -> TreasureFragment()
             }
         }
 
         override fun getPageTitle(position: Int): CharSequence? {
             return when (position) {
-                0 -> context.getText(R.string.fragment_encounters)
-                1 -> context.getText(R.string.fragment_monsters)
-                2 -> context.getText(R.string.fragment_hazards)
+                0 -> context.getText(R.string.fragment_settings)
+                1 -> context.getText(R.string.fragment_encounters)
+                2 -> context.getText(R.string.fragment_monsters)
+                3 -> context.getText(R.string.fragment_hazards)
                 else -> context.getText(R.string.fragment_treasures)
             }
         }

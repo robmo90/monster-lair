@@ -1,5 +1,6 @@
 package de.enduni.monsterlair.creator.view
 
+import de.enduni.monsterlair.common.domain.Strength
 import de.enduni.monsterlair.common.getIcon
 import de.enduni.monsterlair.common.getStringRes
 import de.enduni.monsterlair.common.getXp
@@ -42,26 +43,38 @@ class EncounterCreatorDisplayModelMapper {
         targetBudget = encounterData.targetBudget
     )
 
-    fun toDanger(encounterMonster: EncounterMonster) =
-        EncounterCreatorDisplayModel.DangerForEncounter(
+    fun toDanger(
+        encounterMonster: EncounterMonster,
+        encounter: Encounter
+    ): EncounterCreatorDisplayModel.DangerForEncounter {
+        val role = MonsterRole.determineRole(
+            encounterMonster.monster.level,
+            encounter.level,
+            encounterMonster.strength,
+            encounter.useProficiencyWithoutLevel
+        )
+        return EncounterCreatorDisplayModel.DangerForEncounter(
             type = DangerType.MONSTER,
             id = encounterMonster.id,
             name = encounterMonster.monster.name,
-            level = encounterMonster.monster.level,
+            strength = encounterMonster.strength,
+            level = encounterMonster.monster.level + encounterMonster.strength.levelAdjustment,
             icon = encounterMonster.monster.type.getIcon(),
             label = encounterMonster.monster.family,
-            xp = encounterMonster.monster.role.xp,
-            role = encounterMonster.monster.role.getStringRes(),
+            xp = role.xp,
+            role = role.getStringRes(),
             count = encounterMonster.count,
             url = encounterMonster.monster.url,
             customMonster = encounterMonster.monster.url == null
         )
+    }
 
     fun toDanger(encounterHazard: EncounterHazard) =
         EncounterCreatorDisplayModel.DangerForEncounter(
             type = DangerType.HAZARD,
             id = encounterHazard.id,
             name = encounterHazard.hazard.name,
+            strength = Strength.STANDARD,
             level = encounterHazard.hazard.level,
             icon = encounterHazard.hazard.complexity.getIcon(),
             label = "",

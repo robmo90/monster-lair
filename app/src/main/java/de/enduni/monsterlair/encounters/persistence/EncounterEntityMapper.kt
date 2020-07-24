@@ -15,8 +15,8 @@ class EncounterEntityMapper {
         numberOfPlayers = encounter.numberOfPlayers,
         name = encounter.name,
         difficulty = encounter.targetDifficulty,
-        notes = "",
-        withoutProficiency = false
+        notes = encounter.notes,
+        useProficiencyWithoutLevel = encounter.useProficiencyWithoutLevel
     )
 
     fun toMonsterEntities(
@@ -53,11 +53,13 @@ class EncounterEntityMapper {
     ) = Encounter(
         entity.id,
         entity.name,
-        monstersForEncounter.toMutableList(),
-        hazardsForEncounter.toMutableList(),
+        monstersForEncounter,
+        hazardsForEncounter,
         entity.level,
         entity.numberOfPlayers,
-        entity.difficulty
+        entity.difficulty,
+        entity.useProficiencyWithoutLevel,
+        entity.notes
     )
 
 

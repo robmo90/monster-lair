@@ -59,7 +59,10 @@ class EncounterFragment : Fragment() {
                     action.encounterLevel,
                     action.numberOfPlayers,
                     action.difficulty,
+                    action.useProficiencyWithoutLevel,
+                    action.notes,
                     action.encounterId
+
                 )
                 requireActivity().startActivity(intent)
             }
@@ -82,27 +85,35 @@ class EncounterFragment : Fragment() {
         if (state.encounters?.isEmpty() == true) {
             binding.encounterRecyclerView.visibility = View.GONE
             binding.emptyEncounterLayout.visibility = View.VISIBLE
+            binding.addFab.visibility = View.GONE
 
-            binding.startButton.setOnClickListener {
-                EncounterSettingDialog(
-                    EncounterSettingDialog.Purpose.CREATE,
-                    activity = requireActivity()
-                )
-                    .show { result ->
-                        EncounterCreatorActivity.intent(
-                            requireActivity(),
-                            result.encounterName,
-                            result.numberOfPlayers,
-                            result.encounterLevel,
-                            result.encounterDifficulty
-                        ).let { startActivity(it) }
-                    }
-            }
+            binding.startButton.setOnClickListener { showEncounterSettingDialog() }
         } else {
             binding.encounterRecyclerView.visibility = View.VISIBLE
             binding.emptyEncounterLayout.visibility = View.GONE
+            binding.addFab.visibility = View.VISIBLE
             adapter.submitList(state.encounters)
+
+            binding.addFab.setOnClickListener { showEncounterSettingDialog() }
         }
+    }
+
+    private fun showEncounterSettingDialog() {
+        EncounterSettingDialog(
+            EncounterSettingDialog.Purpose.CREATE,
+            activity = requireActivity()
+        )
+            .show { result ->
+                EncounterCreatorActivity.intent(
+                    requireActivity(),
+                    result.encounterName,
+                    result.numberOfPlayers,
+                    result.encounterLevel,
+                    result.encounterDifficulty,
+                    result.useProficiencyWithoutLevel,
+                    result.notes
+                ).let { startActivity(it) }
+            }
     }
 
     private fun showBottomSheet(name: String, id: Long) {

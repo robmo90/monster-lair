@@ -13,6 +13,8 @@ sealed class EncounterAction {
         val numberOfPlayers: Int,
         val encounterLevel: Int,
         val encounterId: Long,
+        val useProficiencyWithoutLevel: Boolean,
+        val notes: String,
         val difficulty: EncounterDifficulty
     ) : EncounterAction()
 

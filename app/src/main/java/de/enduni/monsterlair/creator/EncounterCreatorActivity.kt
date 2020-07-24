@@ -15,9 +15,7 @@ import androidx.recyclerview.widget.SimpleItemAnimator
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.openCustomTab
-import de.enduni.monsterlair.common.view.CreateMonsterDialog
-import de.enduni.monsterlair.common.view.EditMonsterDialog
-import de.enduni.monsterlair.common.view.EncounterSettingDialog
+import de.enduni.monsterlair.common.view.*
 import de.enduni.monsterlair.creator.domain.EncounterCreatorFilter
 import de.enduni.monsterlair.creator.view.EncounterCreatorAction
 import de.enduni.monsterlair.creator.view.EncounterCreatorViewModel
@@ -46,7 +44,7 @@ class EncounterCreatorActivity : AppCompatActivity() {
 
         listAdapter = EncounterCreatorListAdapter(
             layoutInflater, viewModel,
-            viewModel, viewModel
+            viewModel, viewModel, viewModel
         )
 
         binding.encounterRecyclerView.adapter = listAdapter
@@ -61,6 +59,11 @@ class EncounterCreatorActivity : AppCompatActivity() {
             levelOfEncounter = intent.getIntExtra(EXTRA_ENCOUNTER_LEVEL, 4),
             targetDifficulty = intent.getSerializableExtra(EXTRA_DIFFICULTY) as EncounterDifficulty?
                 ?: EncounterDifficulty.TRIVIAL,
+            useProficiencyWithoutLevel = intent.getBooleanExtra(
+                EXTRA_USE_PROFICIENCY_WITHOUT_LEVEL,
+                false
+            ),
+            notes = intent.getStringExtra(EXTRA_NOTES) ?: "",
             encounterId = intent.getLongExtra(EXTRA_ENCOUNTER_ID, -1L)
         )
 
@@ -76,6 +79,28 @@ class EncounterCreatorActivity : AppCompatActivity() {
         binding.levelButton.update(filter.lowerLevel, filter.upperLevel)
         binding.sortButton.update(filter.sortBy)
         binding.searchButton.update(filter.searchTerm)
+        binding.additionalFilterChips.removeAllViews()
+        binding.additionalFilterChips.addMonsterTypeChips(
+            filter.types, filterStore = viewModel.filterStore
+        )
+        binding.additionalFilterChips.addComplexityChips(
+            filter.complexities,
+            filterStore = viewModel.filterStore
+        )
+        binding.additionalFilterChips.addTraitChips(
+            filter.traits,
+            filterStore = viewModel.filterStore
+        )
+        binding.additionalFilterChips.addAlignmentChips(
+            filter.alignments, filterStore = viewModel.filterStore
+        )
+        binding.additionalFilterChips.addSizeChips(
+            filter.sizes, filterStore = viewModel.filterStore
+        )
+        binding.additionalFilterChips.addRarityChips(
+            filter.rarities,
+            filterStore = viewModel.filterStore
+        )
     }
 
     private fun setupToolbar() {
@@ -124,7 +149,7 @@ class EncounterCreatorActivity : AppCompatActivity() {
         binding.levelButton.setup(this, viewModel.filterStore)
         binding.sortButton.setup(this, viewModel.filterStore)
         binding.filterFab.setOnClickListener {
-
+            EncounterCreatorFilterDialog.newInstance().show(supportFragmentManager, "tag")
         }
     }
 
@@ -147,7 +172,9 @@ class EncounterCreatorActivity : AppCompatActivity() {
                         action.encounter.name,
                         action.encounter.numberOfPlayers,
                         action.encounter.level,
-                        action.encounter.targetDifficulty
+                        action.encounter.targetDifficulty,
+                        action.encounter.useProficiencyWithoutLevel,
+                        action.encounter.notes
                     ), activity = this
                 )
                     .show { result ->
@@ -155,7 +182,9 @@ class EncounterCreatorActivity : AppCompatActivity() {
                             result.encounterName,
                             result.numberOfPlayers,
                             result.encounterLevel,
-                            result.encounterDifficulty
+                            result.encounterDifficulty,
+                            result.useProficiencyWithoutLevel,
+                            result.notes
                         )
                     }
             }
@@ -207,6 +236,8 @@ class EncounterCreatorActivity : AppCompatActivity() {
         private const val EXTRA_NUMBER_OF_PLAYERS = "numberOfPlayers"
         private const val EXTRA_ENCOUNTER_LEVEL = "encounterLevel"
         private const val EXTRA_DIFFICULTY = "difficulty"
+        private const val EXTRA_USE_PROFICIENCY_WITHOUT_LEVEL = "useProficiencyWithoutLevel"
+        private const val EXTRA_NOTES = "notes"
         private const val EXTRA_ENCOUNTER_ID = "encounterId"
 
         fun intent(
@@ -215,6 +246,8 @@ class EncounterCreatorActivity : AppCompatActivity() {
             numberOfPlayers: Int,
             encounterLevel: Int,
             difficulty: EncounterDifficulty,
+            useProficiencyWithoutLevel: Boolean,
+            notes: String,
             encounterId: Long = -1
         ): Intent {
             return Intent(context, EncounterCreatorActivity::class.java).apply {
@@ -222,6 +255,8 @@ class EncounterCreatorActivity : AppCompatActivity() {
                 putExtra(EXTRA_NUMBER_OF_PLAYERS, numberOfPlayers)
                 putExtra(EXTRA_ENCOUNTER_LEVEL, encounterLevel)
                 putExtra(EXTRA_DIFFICULTY, difficulty)
+                putExtra(EXTRA_USE_PROFICIENCY_WITHOUT_LEVEL, useProficiencyWithoutLevel)
+                putExtra(EXTRA_NOTES, notes)
                 putExtra(EXTRA_ENCOUNTER_ID, encounterId)
             }
 

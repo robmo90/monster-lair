@@ -109,4 +109,8 @@ class EncounterCreatorFilterStore :
     override fun setFilterWithinBudget(withinBudget: Boolean) {
         _filter = _filter.copy(withinBudget = withinBudget)
     }
+
+    fun clear() {
+        _filter = EncounterCreatorFilter()
+    }
 }

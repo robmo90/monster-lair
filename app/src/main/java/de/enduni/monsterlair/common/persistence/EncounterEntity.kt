@@ -14,7 +14,7 @@ data class EncounterEntity(
     val name: String,
     val difficulty: EncounterDifficulty,
     val notes: String,
-    val withoutProficiency: Boolean
+    val useProficiencyWithoutLevel: Boolean
 )
 
 @Entity(

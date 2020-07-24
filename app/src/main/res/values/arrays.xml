@@ -122,4 +122,10 @@
         <item>@string/alignment_chaotic_evil</item>
     </string-array>
 
+    <string-array name="strengths">
+        <item>@string/strength_weak</item>
+        <item>@string/strength_standard</item>
+        <item>@string/strength_elite</item>
+    </string-array>
+
 </resources>
