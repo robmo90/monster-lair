@@ -16,12 +16,6 @@ class UpdateManager(
     fun showUpdateInformationDialog(activity: Activity) {
         val currentVersion = BuildConfig.VERSION_CODE
 
-        if (savedVersion < 8 && currentVersion < 10) {
-            showUpdateDialog(activity, currentVersion, R.string.whats_new_8)
-        }
-        if (savedVersion < 10 && currentVersion >= 10) {
-            showUpdateDialog(activity, currentVersion, R.string.whats_new_10)
-        }
         if (savedVersion < 11 && currentVersion >= 11) {
             showUpdateDialog(activity, currentVersion, R.string.whats_new_11)
         }

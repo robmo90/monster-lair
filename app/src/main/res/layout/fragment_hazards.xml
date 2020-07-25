@@ -119,6 +119,7 @@
                 android:background="?selectableItemBackgroundBorderless"
                 android:padding="8dp"
                 android:src="@drawable/ic_more_vert"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@id/option_chips"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/option_chips" />

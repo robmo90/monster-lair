@@ -2,6 +2,12 @@
 <resources>
 
     <style name="AlertDialogStyle" parent="Theme.MaterialComponents.DayNight.Dialog.Alert">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
+        <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorSecondaryVariant">@color/secondaryDarkColor</item>
+        <item name="colorOnPrimary">@color/primaryTextColor</item>
+        <item name="colorOnSecondary">@color/secondaryTextColor</item>
         <item name="buttonBarNegativeButtonStyle">@style/ButtonStyle</item>
         <item name="buttonBarNeutralButtonStyle">@style/ButtonStyle</item>
         <item name="buttonBarPositiveButtonStyle">@style/ButtonStyle</item>
