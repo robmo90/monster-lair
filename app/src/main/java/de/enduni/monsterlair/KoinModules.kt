@@ -1,5 +1,6 @@
 package de.enduni.monsterlair
 
+import android.content.Context
 import de.enduni.monsterlair.common.datasource.hazard.HazardAssetDataSource
 import de.enduni.monsterlair.common.datasource.hazard.HazardDataSource
 import de.enduni.monsterlair.common.datasource.monsters.MonsterAssetDataSource
@@ -9,6 +10,7 @@ import de.enduni.monsterlair.common.datasource.treasure.TreasureDataSource
 import de.enduni.monsterlair.common.persistence.database.DatabaseInitializer
 import de.enduni.monsterlair.common.persistence.database.HazardEntityMapper
 import de.enduni.monsterlair.common.persistence.database.MonsterDatabase
+import de.enduni.monsterlair.common.sources.SourceManager
 import de.enduni.monsterlair.creator.domain.*
 import de.enduni.monsterlair.creator.view.*
 import de.enduni.monsterlair.encounters.domain.CreateEncounterTemplateUseCase
@@ -35,6 +37,7 @@ import de.enduni.monsterlair.monsters.view.MonsterFilterStore
 import de.enduni.monsterlair.monsters.view.MonsterFilterViewModel
 import de.enduni.monsterlair.monsters.view.MonsterListDisplayModelMapper
 import de.enduni.monsterlair.monsters.view.MonsterViewModel
+import de.enduni.monsterlair.settings.SettingsViewModel
 import de.enduni.monsterlair.treasure.repository.TreasureEntityMapper
 import de.enduni.monsterlair.treasure.repository.TreasureRepository
 import de.enduni.monsterlair.treasure.view.TreasureDisplayModelMapper
@@ -86,7 +89,17 @@ val databaseModule = module(createdAtStart = true) {
 
 val appModule = module {
 
-    single { UpdateManager(androidApplication()) }
+    single {
+        androidApplication().getSharedPreferences(
+            "MonsterLair",
+            Context.MODE_PRIVATE
+        )
+    }
+
+    single { UpdateManager(get()) }
+    single { SourceManager(get()) }
+
+    viewModel { SettingsViewModel(get()) }
 
 }
 
@@ -95,7 +108,7 @@ val hazardsModule = module {
     single { HazardEntityMapper() }
     single { HazardFilterStore() }
 
-    single { HazardRepository(get(), get()) }
+    single { HazardRepository(get(), get(), get()) }
 
     single { HazardDisplayModelMapper() }
 
@@ -119,7 +132,7 @@ val monsterModule = module {
 
 
     // persistence
-    single { MonsterRepository(get(), get()) }
+    single { MonsterRepository(get(), get(), get()) }
 
 
     // view
@@ -179,7 +192,7 @@ val treasureModule = module {
 
     single { TreasureEntityMapper() }
     single { TreasureDisplayModelMapper() }
-    single { TreasureRepository(get(), get()) }
+    single { TreasureRepository(get(), get(), get()) }
     single { TreasureFilterStore() }
 
     viewModel { TreasureViewModel(get(), get(), get()) }

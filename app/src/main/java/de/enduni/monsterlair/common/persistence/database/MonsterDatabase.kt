@@ -34,7 +34,7 @@ abstract class MonsterDatabase : RoomDatabase() {
 
     companion object {
         fun buildDatabase(context: Context): MonsterDatabase {
-            return if (true) {
+            return if (false) {
                 Room.inMemoryDatabaseBuilder(context, MonsterDatabase::class.java)
                     .fallbackToDestructiveMigration()
                     .build()

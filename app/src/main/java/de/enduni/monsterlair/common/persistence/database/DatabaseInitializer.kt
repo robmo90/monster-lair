@@ -33,7 +33,7 @@ class DatabaseInitializer(
 
     suspend fun initialize() = withContext(Dispatchers.IO) {
         val savedVersion = updateManager.savedVersion
-        if (true) {
+        if (savedVersion < 11) {
             monsterDataSource.getMonsters().insertMonsters()
             hazardDataSource.getHazards().saveHazards()
             treasureDataSource.getTreasures().saveTreasures()

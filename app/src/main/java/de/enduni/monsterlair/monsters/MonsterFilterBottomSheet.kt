@@ -27,7 +27,7 @@ class MonsterFilterBottomSheet : BottomSheetDialogFragment() {
 
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val dialog = BottomSheetDialog(requireActivity(), R.style.DialogStyle)
+        val dialog = BottomSheetDialog(requireActivity())
 
         dialog.setOnShowListener { d ->
             // of a dialog in order to change their Typeface. Good ol' days.

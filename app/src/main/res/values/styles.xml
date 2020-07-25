@@ -12,8 +12,21 @@
         <item name="android:statusBarColor">@color/primaryDarkColor</item>
         <item name="android:textColorSecondary">?colorOnSecondary</item>
         <item name="android:fontFamily">@font/amaranth</item>
-        <item name="alertDialogTheme">@style/Theme.AppCompat.DayNight.Dialog.Alert</item>
+        <item name="alertDialogTheme">@style/AlertDialogStyle</item>
+        <item name="android:windowActivityTransitions">true</item>
+    </style>
 
+    <style name="AlertDialogStyle" parent="Theme.MaterialComponents.DayNight.Dialog.Alert">
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">?colorOnSurface</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">?colorOnSurface</item>
     </style>
 
     <style name="Caption" parent="TextAppearance.MaterialComponents.Caption">
@@ -52,11 +65,10 @@
     </style>
 
     <style name="FilterControl">
-        <item name="android:background">?colorSurface</item>
-        <item name="android:elevation">16dp</item>
+        <item name="elevation">8dp</item>
         <item name="android:focusable">true</item>
         <item name="android:clickable">true</item>
-        <item name="android:outlineProvider">paddedBounds</item>
+
     </style>
 
     <style name="EditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"></style>

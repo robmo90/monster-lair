@@ -5,13 +5,16 @@ import de.enduni.monsterlair.common.domain.Rarity
 import de.enduni.monsterlair.common.domain.SortBy
 import de.enduni.monsterlair.common.domain.TreasureCategory
 import de.enduni.monsterlair.common.persistence.TreasureDao
+import de.enduni.monsterlair.common.persistence.buildQuery
+import de.enduni.monsterlair.common.sources.SourceManager
 import de.enduni.monsterlair.treasure.domain.Treasure
 import de.enduni.monsterlair.treasure.domain.TreasureFilter
 import timber.log.Timber
 
 class TreasureRepository(
     private val dao: TreasureDao,
-    private val mapper: TreasureEntityMapper
+    private val mapper: TreasureEntityMapper,
+    private val sourceManager: SourceManager
 ) {
 
     suspend fun getTreasures(filter: TreasureFilter): List<Treasure> {
@@ -68,24 +71,9 @@ class TreasureRepository(
         sortBy: String
     ): String {
         val filterString = if (filter.isNullOrEmpty()) "\"%\"" else "\"%${filter}%\""
-        val typeFilterString = if (categories.isEmpty()) {
-            ""
-        } else {
-            "AND CATEGORY IN ${categories.joinToString(
-                prefix = "(\"",
-                postfix = "\")",
-                separator = "\", \""
-            )} "
-        }
-        val rarityFilterString = if (rarities.isEmpty()) {
-            ""
-        } else {
-            "AND RARITY IN ${rarities.joinToString(
-                prefix = "(\"",
-                postfix = "\")",
-                separator = "\", \""
-            )} "
-        }
+        val typeFilterString = categories.buildQuery("category")
+        val rarityFilterString = rarities.buildQuery("rarity")
+        val sourceFilterString = sourceManager.sources.buildQuery("sourceType")
         val goldFilterString = when {
             upperGoldCost == null && lowerGoldCost != null -> "AND priceInGp BETWEEN $lowerGoldCost AND ${90000.0} "
             upperGoldCost != null && lowerGoldCost == null -> "AND priceInGp BETWEEN ${0.0} AND $upperGoldCost "
@@ -98,6 +86,7 @@ class TreasureRepository(
                 goldFilterString +
                 typeFilterString +
                 rarityFilterString +
+                sourceFilterString +
                 "ORDER BY $sortBy ASC"
         Timber.d("Using $query")
         return query

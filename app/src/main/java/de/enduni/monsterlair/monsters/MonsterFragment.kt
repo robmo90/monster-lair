@@ -33,7 +33,11 @@ class MonsterFragment : Fragment(R.layout.fragment_monster) {
         listAdapter = MonsterListAdapter(requireActivity().layoutInflater, viewModel)
         binding.monsterRecyclerView.adapter = listAdapter
 
-        viewModel.monsters.observe(viewLifecycleOwner, Observer { listAdapter.submitList(it) })
+        viewModel.monsters.observe(viewLifecycleOwner, Observer {
+            binding.emptyLayout.visibility = if (it.isEmpty()) View.VISIBLE else View.GONE
+            binding.monsterRecyclerView.visibility = if (it.isEmpty()) View.GONE else View.VISIBLE
+            listAdapter.submitList(it)
+        })
         viewModel.filter.observe(viewLifecycleOwner, Observer { update(it) })
         bindUi()
     }

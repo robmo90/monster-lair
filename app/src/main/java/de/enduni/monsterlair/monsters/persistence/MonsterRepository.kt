@@ -5,13 +5,15 @@ import de.enduni.monsterlair.common.domain.*
 import de.enduni.monsterlair.common.persistence.MonsterDao
 import de.enduni.monsterlair.common.persistence.MonsterWithTraits
 import de.enduni.monsterlair.common.persistence.buildQuery
+import de.enduni.monsterlair.common.sources.SourceManager
 import de.enduni.monsterlair.monsters.domain.Monster
 import timber.log.Timber
 
 
 class MonsterRepository(
     private val monsterDao: MonsterDao,
-    private val monsterEntityMapper: MonsterEntityMapper
+    private val monsterEntityMapper: MonsterEntityMapper,
+    private val sourceManager: SourceManager
 ) {
 
     suspend fun getMonster(id: String) =
@@ -73,6 +75,7 @@ class MonsterRepository(
         val sizeFilterString = sizes.buildQuery("size")
         val alignmentFilterString = alignments.buildQuery("alignment")
         val rarityFilterString = rarities.buildQuery("rarity")
+        val sourceFilterString = sourceManager.sources.buildQuery("sourceType")
         val query = "SELECT * FROM monsters WHERE " +
                 "(name LIKE $filterString OR family LIKE $filterString) " +
                 "AND level BETWEEN $lowerLevel AND $higherLevel " +
@@ -80,6 +83,7 @@ class MonsterRepository(
                 sizeFilterString +
                 alignmentFilterString +
                 rarityFilterString +
+                sourceFilterString +
                 "ORDER BY $sortBy ASC"
         Timber.v("Using $query")
         return query

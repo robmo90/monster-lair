@@ -26,6 +26,7 @@
     <TextView
         android:id="@+id/update_text"
         style="@style/Headline"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
@@ -35,6 +36,7 @@
         app:layout_constraintTop_toBottomOf="@id/logo" />
 
     <com.google.android.material.progressindicator.ProgressIndicator
+        android:visibility="gone"
         android:id="@+id/update_indicator"
         android:layout_width="64dp"
         android:layout_height="64dp"
@@ -43,12 +45,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/update_text" />
-
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/update_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

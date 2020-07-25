@@ -264,4 +264,24 @@
 
     <string name="variant_rules_without_proficiency">Use \"Proficiency without Level\" variant rules</string>
 
+
+    <string name="sources">Sources</string>
+    <string name="sources_dialog">Select Sources</string>
+    <string name="sources_all_sources">All sources</string>
+
+    <string name="source_core_rulebook">Core Rulebook</string>
+    <string name="source_bestiary_1">Bestiary 1</string>
+    <string name="source_bestiary_2">Bestiary 2</string>
+    <string name="source_adventure_path">Adventure Path</string>
+    <string name="source_pathfinder_society">Pathfinder Society</string>
+    <string name="source_gamemastery_guide">Gamemastery Guide</string>
+    <string name="source_misc">Other Sources (Modules, etc.)</string>
+    <string name="source_custom">Custom</string>
+
+
+    <string name="empty_encounter_text">Looks like you do not have any encounters, let\'s get started!</string>
+    <string name="empty_monster_text">There are no monsters that fit your filters.\nTry to define looser criteria.</string>
+    <string name="empty_hazard_text">There are no hazards that fit your filters.\nTry to define looser criteria.</string>
+    <string name="empty_treasure_text">There are is no treasure that fits your filter settings.\nTry to define looser criteria.</string>
+
 </resources>

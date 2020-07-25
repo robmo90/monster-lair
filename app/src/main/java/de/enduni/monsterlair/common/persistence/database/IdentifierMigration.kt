@@ -22,6 +22,7 @@ class IdentifierMigration(private val context: Context) : Migration(1, 2) {
         migrateHazardData(database, aonMapping)
         moveNewMonsterTable(database)
         moveNewHazardTable(database)
+        createNewTreasureTables(database)
     }
 
     private fun createNewMonsterTables(database: SupportSQLiteDatabase) {
@@ -42,7 +43,8 @@ class IdentifierMigration(private val context: Context) : Migration(1, 2) {
                 PRIMARY KEY(`id`))""".trimIndent()
         )
         database.execSQL("CREATE TABLE IF NOT EXISTS `monsterTraits` (`name` TEXT NOT NULL, PRIMARY KEY(`name`))")
-        database.execSQL("CREATE TABLE IF NOT EXISTS `MonsterAndTraitsCrossRef` (`monsterId` INTEGER NOT NULL, `traitName` TEXT NOT NULL, PRIMARY KEY(`monsterId`, `traitName`))")
+        database.execSQL("CREATE TABLE IF NOT EXISTS `MonsterAndTraitsCrossRef` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, PRIMARY KEY(`id`, `name`))")
+        database.execSQL("CREATE INDEX IF NOT EXISTS `monster_cross_ref_index` ON `MonsterAndTraitsCrossRef` (`name`)")
     }
 
     private fun migrateCustomMonster(database: SupportSQLiteDatabase): List<Pair<Long, String>> {
@@ -80,6 +82,7 @@ class IdentifierMigration(private val context: Context) : Migration(1, 2) {
         database.execSQL("ALTER TABLE new_monsters RENAME TO monsters")
         database.execSQL("ALTER TABLE new_monsters_for_encounters RENAME TO monsters_for_encounters")
         database.execSQL("CREATE INDEX IF NOT EXISTS monster_for_encounter_index ON monsters_for_encounters (encounter_id)")
+
     }
 
     private fun moveNewHazardTable(database: SupportSQLiteDatabase) {
@@ -93,12 +96,13 @@ class IdentifierMigration(private val context: Context) : Migration(1, 2) {
     private fun createNewHazardTable(database: SupportSQLiteDatabase) {
         database.execSQL("CREATE TABLE IF NOT EXISTS `new_hazards` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `url` TEXT NOT NULL, `level` INTEGER NOT NULL, `complexity` TEXT NOT NULL, `rarity` TEXT NOT NULL, `source` TEXT NOT NULL, `sourceType` TEXT NOT NULL, PRIMARY KEY(`id`))")
         database.execSQL("CREATE TABLE IF NOT EXISTS `hazardTraits` (`name` TEXT NOT NULL, PRIMARY KEY(`name`))")
-        database.execSQL("CREATE TABLE IF NOT EXISTS `HazardsAndTraitsCrossRef` (`hazardId` INTEGER NOT NULL, `traitName` TEXT NOT NULL, PRIMARY KEY(`hazardId`, `traitName`))")
+        database.execSQL("CREATE TABLE IF NOT EXISTS `HazardsAndTraitsCrossRef` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, PRIMARY KEY(`id`, `name`))")
+        database.execSQL("CREATE INDEX IF NOT EXISTS `hazard_cross_ref_index` ON `HazardsAndTraitsCrossRef` (`name`)")
     }
 
     private fun createNewEncounterMappingTables(database: SupportSQLiteDatabase) {
         database.execSQL("ALTER TABLE encounters ADD COLUMN notes TEXT NOT NULL DEFAULT ''")
-        database.execSQL("ALTER TABLE encounters ADD COLUMN withoutProficiency INTEGER NOT NULL DEFAULT 0")
+        database.execSQL("ALTER TABLE encounters ADD COLUMN useProficiencyWithoutLevel INTEGER NOT NULL DEFAULT 0")
         database.execSQL("CREATE TABLE IF NOT EXISTS new_monsters_for_encounters (`id` INTEGER, `monsterId` TEXT NOT NULL, `strength` TEXT NOT NULL, `count` INTEGER NOT NULL, `encounter_id` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`encounter_id`) REFERENCES `encounters`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )")
         database.execSQL("CREATE TABLE IF NOT EXISTS new_hazards_for_encounters (`id` INTEGER, `hazardId` TEXT NOT NULL, `count` INTEGER NOT NULL, `encounter_id` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`encounter_id`) REFERENCES `encounters`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )")
     }
@@ -165,6 +169,13 @@ class IdentifierMigration(private val context: Context) : Migration(1, 2) {
             database.execSQL(statement)
         } while (hazardCursor.moveToNext())
         hazardCursor.close()
+    }
+
+    private fun createNewTreasureTables(database: SupportSQLiteDatabase) {
+        database.execSQL("CREATE TABLE IF NOT EXISTS `treasures` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `url` TEXT NOT NULL, `level` INTEGER NOT NULL, `category` TEXT NOT NULL, `price` TEXT NOT NULL, `priceInGp` REAL NOT NULL, `source` TEXT NOT NULL, `sourceType` TEXT NOT NULL, `rarity` TEXT NOT NULL, PRIMARY KEY(`id`))")
+        database.execSQL("CREATE TABLE IF NOT EXISTS `treasureTraits` (`name` TEXT NOT NULL, PRIMARY KEY(`name`))")
+        database.execSQL("CREATE TABLE IF NOT EXISTS `TreasureAndTraitsCrossRef` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, PRIMARY KEY(`id`, `name`))")
+        database.execSQL("CREATE INDEX IF NOT EXISTS `treasure_cross_ref_index` ON `TreasureAndTraitsCrossRef` (`name`)")
     }
 
 

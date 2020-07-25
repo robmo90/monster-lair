@@ -306,3 +306,18 @@ fun Size.getStringRes(): Int {
         Size.GARGANTUAN -> R.string.size_gargantuan
     }
 }
+
+
+@StringRes
+fun Source.getStringRes(): Int {
+    return when (this) {
+        Source.CORE_RULEBOOK -> R.string.source_core_rulebook
+        Source.BESTIARY_1 -> R.string.source_bestiary_1
+        Source.BESTIARY_2 -> R.string.source_bestiary_2
+        Source.ADVENTURE_PATH -> R.string.source_adventure_path
+        Source.PATHFINDER_SOCIETY -> R.string.source_pathfinder_society
+        Source.GAMEMASTERY_GUIDE -> R.string.source_gamemastery_guide
+        Source.MISC -> R.string.source_misc
+        Source.CUSTOM -> R.string.source_custom
+    }
+}

@@ -31,7 +31,11 @@ class TreasureFragment : Fragment(R.layout.fragment_treasure) {
         listAdapter = TreasureListAdapter(requireActivity().layoutInflater, viewModel)
 
         binding.treasureRecyclerView.adapter = listAdapter
-        viewModel.treasures.observe(viewLifecycleOwner, Observer { listAdapter.submitList(it) })
+        viewModel.treasures.observe(viewLifecycleOwner, Observer {
+            binding.emptyLayout.visibility = if (it.isEmpty()) View.VISIBLE else View.GONE
+            binding.treasureRecyclerView.visibility = if (it.isEmpty()) View.GONE else View.VISIBLE
+            listAdapter.submitList(it)
+        })
         viewModel.filter.observe(viewLifecycleOwner, Observer { updateUi(it) })
 
         bindUi()

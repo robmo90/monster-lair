@@ -44,7 +44,11 @@ class HazardFragment : Fragment() {
         listAdapter = HazardListAdapter(requireActivity().layoutInflater, viewModel)
 
         binding.hazardRecyclerView.adapter = listAdapter
-        viewModel.hazards.observe(viewLifecycleOwner, Observer { listAdapter.submitList(it) })
+        viewModel.hazards.observe(viewLifecycleOwner, Observer {
+            binding.emptyLayout.visibility = if (it.isEmpty()) View.VISIBLE else View.GONE
+            binding.hazardRecyclerView.visibility = if (it.isEmpty()) View.GONE else View.VISIBLE
+            listAdapter.submitList(it)
+        })
         viewModel.filter.observe(viewLifecycleOwner, Observer { updateUi(it) })
         bindUi()
     }

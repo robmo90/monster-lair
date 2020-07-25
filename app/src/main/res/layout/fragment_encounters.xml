@@ -37,7 +37,7 @@
             android:gravity="center"
             android:layout_marginEnd="32dp"
             android:layout_marginStart="32dp"
-            android:text="Looks like you do not have any encounters, let's get started!"
+            android:text="@string/empty_encounter_text"
             app:layout_constraintTop_toTopOf="@id/central_guideline"
             app:layout_constraintBottom_toBottomOf="@id/central_guideline" />
 

@@ -39,7 +39,7 @@ class EncounterSettingDialog(
                 binding.notesEditText.setTextIfNotFocused(notes)
             }
 
-            val dialog = MaterialAlertDialogBuilder(activity)
+            val dialog = MaterialAlertDialogBuilder(activity, R.style.AlertDialogStyle)
                 .setView(binding.root)
                 .setTitle(
                     if (purpose == Purpose.CREATE) {

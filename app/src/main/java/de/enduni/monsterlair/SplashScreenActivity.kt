@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
+import androidx.core.view.postDelayed
+import androidx.lifecycle.Observer
+import androidx.lifecycle.asLiveData
 import de.enduni.monsterlair.common.persistence.database.DatabaseInitializer
 import de.enduni.monsterlair.databinding.ActivitySplashscreenBinding
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -22,22 +22,25 @@ class SplashScreenActivity : AppCompatActivity() {
         binding = ActivitySplashscreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        MainScope().launch {
-            databaseInitializer.migrationRunning
-                .collect { migrationRunning ->
-                    if (migrationRunning) {
-                        binding.updateGroup.visibility = View.VISIBLE
-                    } else {
-                        startActivity(
-                            MainActivity.intent(this@SplashScreenActivity),
-                            ActivityOptionsCompat.makeCustomAnimation(
-                                this@SplashScreenActivity,
-                                android.R.anim.fade_in,
-                                android.R.anim.fade_out
-                            ).toBundle()
-                        )
+        databaseInitializer.migrationRunning
+            .asLiveData()
+            .observe(this, Observer { migrationRunning ->
+                if (migrationRunning) {
+                    binding.updateIndicator.postDelayed(1000) {
+                        binding.updateIndicator.visibility = View.VISIBLE
+                        binding.updateText.visibility = View.VISIBLE
                     }
+                } else {
+                    startActivity(
+                        MainActivity.intent(this@SplashScreenActivity),
+                        ActivityOptionsCompat.makeCustomAnimation(
+                            this@SplashScreenActivity,
+                            android.R.anim.fade_in,
+                            android.R.anim.fade_out
+                        ).toBundle()
+                    )
                 }
-        }
+            })
     }
+
 }

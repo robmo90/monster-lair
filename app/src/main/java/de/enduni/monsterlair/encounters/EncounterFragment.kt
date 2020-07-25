@@ -6,13 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.view.EncounterSettingDialog
 import de.enduni.monsterlair.creator.EncounterCreatorActivity
 import de.enduni.monsterlair.databinding.BottomsheetEncounterBinding
 import de.enduni.monsterlair.databinding.FragmentEncountersBinding
+import de.enduni.monsterlair.encounters.export.EncounterExportActivity
 import de.enduni.monsterlair.encounters.view.EncounterAction
 import de.enduni.monsterlair.encounters.view.EncounterState
 import de.enduni.monsterlair.encounters.view.EncounterViewModel
@@ -67,12 +67,13 @@ class EncounterFragment : Fragment() {
                 requireActivity().startActivity(intent)
             }
             is EncounterAction.ExportEncounterToPdfAction -> {
-                val directions =
-                    EncounterFragmentDirections.exportEncounterAction(
-                        action.encounterName,
-                        action.template
-                    )
-                findNavController().navigate(directions)
+                EncounterExportActivity.intent(
+                    requireContext(),
+                    action.encounterName,
+                    action.template
+                ).apply {
+                    startActivity(this)
+                }
             }
             is EncounterAction.EncounterDetailsOpenedAction -> showBottomSheet(
                 action.encounterName,

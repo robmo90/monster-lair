@@ -19,6 +19,43 @@
         tools:itemCount="20"
         tools:listitem="@layout/viewholder_treasure" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/empty_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:src="@drawable/ic_chest_adaptive"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_marginBottom="16dp"
+            android:alpha="0.7"
+            app:layout_constraintBottom_toTopOf="@id/empty_encounters_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/central_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.5"
+            android:orientation="horizontal" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/empty_encounters_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:text="@string/empty_treasure_text"
+            app:layout_constraintTop_toTopOf="@id/central_guideline"
+            app:layout_constraintBottom_toBottomOf="@id/central_guideline" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/filter_fab"
         style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
@@ -31,77 +68,85 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/filter_bottom_sheet"
-        style="@style/FilterControl"
+        style="@style/Widget.MaterialComponents.CardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="4dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/option_chips"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            app:chipSpacingVertical="@dimen/verticalChipSpacing"
-            app:layout_constraintEnd_toStartOf="@id/more_options"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <de.enduni.monsterlair.common.view.filterchips.SearchChip
-                android:id="@+id/search_button"
-                style="@style/Widget.MaterialComponents.Chip.Action"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <de.enduni.monsterlair.common.view.filterchips.LevelRangeChip
-                android:id="@+id/level_button"
-                style="@style/Widget.MaterialComponents.Chip.Action"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <de.enduni.monsterlair.common.view.filterchips.SortByChip
-                android:id="@+id/sort_button"
-                style="@style/Widget.MaterialComponents.Chip.Action"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </com.google.android.material.chip.ChipGroup>
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/more_options"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="?selectableItemBackgroundBorderless"
-            android:padding="8dp"
-            android:src="@drawable/ic_more_vert"
-            app:layout_constraintBottom_toBottomOf="@id/option_chips"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/option_chips" />
-
-        <HorizontalScrollView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="none"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            app:layout_constraintTop_toBottomOf="@id/option_chips">
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <com.google.android.material.chip.ChipGroup
-                android:id="@+id/additional_filter_chips"
-                android:layout_width="wrap_content"
+                android:id="@+id/option_chips"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                app:singleLine="true" />
+                app:chipSpacingVertical="@dimen/verticalChipSpacing"
+                app:layout_constraintEnd_toStartOf="@id/more_options"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        </HorizontalScrollView>
+                <de.enduni.monsterlair.common.view.filterchips.SearchChip
+                    android:id="@+id/search_button"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <de.enduni.monsterlair.common.view.filterchips.LevelRangeChip
+                    android:id="@+id/level_button"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <de.enduni.monsterlair.common.view.filterchips.SortByChip
+                    android:id="@+id/sort_button"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/more_options"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="?selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:src="@drawable/ic_more_vert"
+                app:layout_constraintBottom_toBottomOf="@id/option_chips"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/option_chips" />
+
+            <HorizontalScrollView
+                android:id="@+id/additional_filter_scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:paddingTop="4dp"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/option_chips">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/additional_filter_chips"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_height="wrap_content"
+                    app:singleLine="true" />
+
+            </HorizontalScrollView>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,14 +7,17 @@ import de.enduni.monsterlair.common.domain.Rarity
 import de.enduni.monsterlair.common.domain.Trait
 import de.enduni.monsterlair.common.persistence.HazardDao
 import de.enduni.monsterlair.common.persistence.HazardWithTraits
+import de.enduni.monsterlair.common.persistence.buildQuery
 import de.enduni.monsterlair.common.persistence.database.HazardEntityMapper
+import de.enduni.monsterlair.common.sources.SourceManager
 import de.enduni.monsterlair.hazards.domain.Hazard
 import timber.log.Timber
 
 
 class HazardRepository(
     private val hazardDao: HazardDao,
-    private val hazardEntityMapper: HazardEntityMapper
+    private val hazardEntityMapper: HazardEntityMapper,
+    private val sourceManager: SourceManager
 ) {
 
     suspend fun getHazard(id: String) =
@@ -57,26 +60,11 @@ class HazardRepository(
         sortBy: String
     ): String {
         val filterString = if (filter.isBlank()) "\"%\"" else "\"%${filter}%\""
-        val typeFilterString = if (complexities.isEmpty()) {
-            ""
-        } else {
-            "AND complexity IN ${complexities.joinToString(
-                prefix = "(\"",
-                postfix = "\")",
-                separator = "\", \""
-            )}"
-        }
-        val rarityFilterString = if (rarities.isEmpty()) {
-            ""
-        } else {
-            "AND rarity IN ${rarities.joinToString(
-                prefix = "(\"",
-                postfix = "\")",
-                separator = "\", \""
-            )}"
-        }
+        val typeFilterString = complexities.buildQuery("complexity")
+        val rarityFilterString = rarities.buildQuery("rarity")
+        val sourceFilterString = sourceManager.sources.buildQuery("sourceType")
         val query =
-            "SELECT * FROM hazards WHERE name LIKE $filterString AND level BETWEEN $lowerLevel AND $higherLevel $typeFilterString $rarityFilterString ORDER BY $sortBy ASC"
+            "SELECT * FROM hazards WHERE name LIKE $filterString AND level BETWEEN $lowerLevel AND $higherLevel $typeFilterString $rarityFilterString $sourceFilterString ORDER BY $sortBy ASC"
         Timber.v("Using $query")
         return query
     }

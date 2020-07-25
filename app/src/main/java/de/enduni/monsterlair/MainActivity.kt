@@ -11,6 +11,7 @@ import de.enduni.monsterlair.databinding.ActivityMainBinding
 import de.enduni.monsterlair.encounters.EncounterFragment
 import de.enduni.monsterlair.hazards.HazardFragment
 import de.enduni.monsterlair.monsters.MonsterFragment
+import de.enduni.monsterlair.settings.SettingsFragment
 import de.enduni.monsterlair.treasure.TreasureFragment
 import de.enduni.monsterlair.update.UpdateManager
 import org.koin.android.ext.android.inject

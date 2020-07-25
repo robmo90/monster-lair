@@ -128,4 +128,15 @@
         <item>@string/strength_elite</item>
     </string-array>
 
+    <string-array name="sources">
+        <item>@string/source_core_rulebook</item>
+        <item>@string/source_bestiary_1</item>
+        <item>@string/source_bestiary_2</item>
+        <item>@string/source_adventure_path</item>
+        <item>@string/source_pathfinder_society</item>
+        <item>@string/source_gamemastery_guide</item>
+        <item>@string/source_misc</item>
+        <item>@string/source_custom</item>
+    </string-array>
+
 </resources>

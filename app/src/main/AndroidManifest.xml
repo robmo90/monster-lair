@@ -27,6 +27,8 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".LicenseActivity" />
+        <activity android:name=".encounters.export.EncounterExportActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -1,19 +1,14 @@
 package de.enduni.monsterlair.update
 
 import android.app.Activity
-import android.content.Context
+import android.content.SharedPreferences
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import de.enduni.monsterlair.BuildConfig
 import de.enduni.monsterlair.R
 
 class UpdateManager(
-    context: Context
+    private val sharedPreferences: SharedPreferences
 ) {
-
-    private val sharedPreferences = context.getSharedPreferences(
-        "MonsterLair",
-        Context.MODE_PRIVATE
-    )
 
     val savedVersion: Int
         get() = sharedPreferences.getInt(KEY_BUILD_NUMBER, -1)
@@ -25,6 +20,9 @@ class UpdateManager(
             showUpdateDialog(activity, currentVersion, R.string.whats_new_8)
         }
         if (savedVersion < 10 && currentVersion >= 10) {
+            showUpdateDialog(activity, currentVersion, R.string.whats_new_10)
+        }
+        if (savedVersion < 11 && currentVersion >= 11) {
             showUpdateDialog(activity, currentVersion, R.string.whats_new_10)
         }
     }
