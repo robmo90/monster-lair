@@ -39,8 +39,7 @@ class EncounterCreatorViewModel(
     private val retrieveMonsterUseCase: RetrieveMonsterUseCase,
     private val mapper: EncounterCreatorDisplayModelMapper,
     private val storeEncounterUseCase: StoreEncounterUseCase,
-    private val createTreasureRecommendationUseCase: CreateTreasureRecommendationTextUseCase,
-    private val showUserHintUseCase: ShowUserHintUseCase
+    private val createTreasureRecommendationUseCase: CreateTreasureRecommendationTextUseCase
 ) : ViewModel(),
     EncounterDetailViewHolder.ClickListener,
     DangerViewHolder.DangerSelectedListener,
@@ -114,12 +113,6 @@ class EncounterCreatorViewModel(
                 filterStore.setUpperLevel(levelOfEncounter + encounterStore.value.targetDifficulty.getDefaultMaxLevel())
             }
         }
-        viewModelScope.launch(handler) {
-            if (showUserHintUseCase.showUserHint()) {
-                _actions.sendAction(EncounterCreatorAction.ShowCreatorHint)
-            }
-        }
-
     }
 
 
@@ -311,12 +304,6 @@ class EncounterCreatorViewModel(
                     )
                 )
             }
-        }
-    }
-
-    fun markUserHintAsShown() {
-        viewModelScope.launch(handler) {
-            showUserHintUseCase.markAsShown()
         }
     }
 

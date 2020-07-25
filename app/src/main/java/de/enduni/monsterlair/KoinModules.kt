@@ -156,7 +156,6 @@ val encounterModule = module {
     // domain
     single { EncounterCreatorFilterStore() }
     single { EncounterStore() }
-    single { ShowUserHintUseCase(androidApplication()) }
     single { CreateRandomEncounterUseCase() }
     single { RetrieveMonstersWithRoleUseCase(get(), get()) }
     single { RetrieveHazardsWithRoleUseCase(get(), get()) }
@@ -173,7 +172,6 @@ val encounterModule = module {
     single { EncounterDisplayModelMapper(androidApplication()) }
     viewModel {
         EncounterCreatorViewModel(
-            get(),
             get(),
             get(),
             get(),

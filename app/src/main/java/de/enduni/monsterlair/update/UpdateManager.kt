@@ -23,7 +23,7 @@ class UpdateManager(
             showUpdateDialog(activity, currentVersion, R.string.whats_new_10)
         }
         if (savedVersion < 11 && currentVersion >= 11) {
-            showUpdateDialog(activity, currentVersion, R.string.whats_new_10)
+            showUpdateDialog(activity, currentVersion, R.string.whats_new_11)
         }
     }
 

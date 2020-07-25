@@ -213,13 +213,6 @@ class EncounterCreatorActivity : AppCompatActivity() {
                     .setPositiveButton(android.R.string.ok) { _, _ -> }
                     .show()
             }
-            is EncounterCreatorAction.ShowCreatorHint -> {
-                MaterialAlertDialogBuilder(this, R.style.AlertDialogStyle)
-                    .setTitle(R.string.encounter_creator_introduction_title)
-                    .setMessage(R.string.encounter_creator_introduction)
-                    .setPositiveButton(android.R.string.ok) { _, _ -> viewModel.markUserHintAsShown() }
-                    .show()
-            }
             is EncounterCreatorAction.RandomEncounterError -> {
                 Toast.makeText(
                     this,
