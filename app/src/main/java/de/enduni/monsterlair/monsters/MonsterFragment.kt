@@ -6,9 +6,11 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.openCustomTab
 import de.enduni.monsterlair.common.view.*
+import de.enduni.monsterlair.databinding.BottomsheetMonstersBinding
 import de.enduni.monsterlair.databinding.FragmentMonsterBinding
 import de.enduni.monsterlair.monsters.domain.MonsterFilter
 import de.enduni.monsterlair.monsters.view.MonsterOverviewAction
@@ -75,9 +77,11 @@ class MonsterFragment : Fragment(R.layout.fragment_monster) {
         binding.searchButton.setup(requireActivity(), viewModel.filterStore)
         binding.levelButton.setup(requireActivity(), viewModel.filterStore)
         binding.sortButton.setup(requireActivity(), viewModel.filterStore)
+        binding.moreOptions.setOnClickListener { showBottomSheet() }
         binding.filterFab.setOnClickListener {
             MonsterFilterBottomSheet.newInstance().show(parentFragmentManager, "tag")
         }
+
     }
 
     private fun handleAction(action: MonsterOverviewAction?) {
@@ -105,6 +109,19 @@ class MonsterFragment : Fragment(R.layout.fragment_monster) {
 
     private fun showCustomMonsterHint() {
         Toast.makeText(requireContext(), R.string.custom_monster_hint, Toast.LENGTH_SHORT).show()
+    }
+
+
+    private fun showBottomSheet() {
+        val binding =
+            BottomsheetMonstersBinding.inflate(requireActivity().layoutInflater, null, false)
+        binding.addMonster.setOnClickListener {
+            CreateMonsterDialog(requireActivity(), viewModel).show()
+        }
+        BottomSheetDialog(requireContext()).apply {
+            setContentView(binding.root)
+            show()
+        }
     }
 
 

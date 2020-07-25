@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/main_menu_content_licenses"
-        android:title="@string/main_menu_licenses" />
-    <item
-        android:id="@+id/main_menu_libraries"
-        android:title="@string/main_menu_libraries" />
-</menu>

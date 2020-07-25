@@ -1,6 +1,5 @@
 package de.enduni.monsterlair.creator.domain
 
-import de.enduni.monsterlair.common.domain.Strength
 import de.enduni.monsterlair.creator.view.DangerType
 import de.enduni.monsterlair.encounters.domain.model.Encounter
 import de.enduni.monsterlair.encounters.domain.model.MonsterWithRole
@@ -36,8 +35,7 @@ class RetrieveMonstersWithRoleUseCase(
                 monsterWithRoleMapper.mapToMonsterWithRole(
                     it,
                     encounter.level,
-                    encounter.useProficiencyWithoutLevel,
-                    Strength.STANDARD
+                    encounter.useProficiencyWithoutLevel
                 )
             }
             .filterMonstersWithinBudget(filter = filter.withinBudget, encounter = encounter)
@@ -52,8 +50,7 @@ class RetrieveMonstersWithRoleUseCase(
                 monsterWithRoleMapper.mapToMonsterWithRole(
                     it,
                     encounter.level,
-                    encounter.useProficiencyWithoutLevel,
-                    Strength.STANDARD
+                    encounter.useProficiencyWithoutLevel
                 )
             }
     }

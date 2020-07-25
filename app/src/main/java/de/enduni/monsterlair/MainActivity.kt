@@ -32,73 +32,8 @@ class MainActivity : AppCompatActivity() {
         binding.pager.currentItem = 1
         binding.tabLayout.setupWithViewPager(binding.pager)
 
-//        val navController = findNavController(R.id.nav_host_fragment)
-//        binding.bottomNavigation.setupWithNavController(navController)
-//        binding.toolbar.setupWithNavController(
-//            navController, AppBarConfiguration(
-//                topLevelDestinationIds = setOf(
-//                    R.id.monster_overview_fragment,
-//                    R.id.hazard_fragment,
-//                    R.id.encounters_fragment
-//                )
-//            )
-//        )
-//
-//        setupFabForDestinations(navController)
-
-//        binding.toolbar.inflateMenu(R.menu.main_menu)
-//        binding.toolbar.setOnMenuItemClickListener { item ->
-//            when (item.itemId) {
-//                R.id.main_menu_libraries -> {
-//                    val page = String(applicationContext.assets.open("licenses.html").readBytes())
-//                    navController.navigate(LicenseFragmentDirections.openLicensesAction(page))
-//                    return@setOnMenuItemClickListener true
-//                }
-//                R.id.main_menu_content_licenses -> {
-//                    val page =
-//                        String(applicationContext.assets.open("other-licenses.html").readBytes())
-//                    navController.navigate(LicenseFragmentDirections.openLicensesAction(page))
-//                    return@setOnMenuItemClickListener true
-//                }
-//                else -> Timber.d("Menu item clicked but not handled $item")
-//            }
-//            false
-//        }
-//
         updateManager.showUpdateInformationDialog(this)
     }
-
-//    private fun setupFabForDestinations(navController: NavController) {
-//        navController.addOnDestinationChangedListener { controller, destination, arguments ->
-//            when (destination.id) {
-//                R.id.encounters_fragment -> binding.floatingActionButton.apply {
-//                    setImageDrawable(getDrawable(R.drawable.ic_add))
-//                    setOnClickListener {
-//                        EncounterSettingDialog(
-//                            EncounterSettingDialog.Purpose.CREATE,
-//                            activity = this@MainActivity
-//                        )
-//                            .show { result ->
-//                                EncounterCreatorActivity.intent(
-//                                    this@MainActivity,
-//                                    result.encounterName,
-//                                    result.numberOfPlayers,
-//                                    result.encounterLevel,
-//                                    result.encounterDifficulty
-//                                ).let { startActivity(it) }
-//                            }
-//                    }
-//                    show()
-//                }
-//                R.id.encounterExportFragment -> binding.floatingActionButton.apply {
-//                    setImageDrawable(getDrawable(R.drawable.ic_print))
-//                    show()
-//                }
-//                else -> binding.floatingActionButton.hide()
-//            }
-//
-//        }
-//    }
 
     private class MainActivityAdapter(
         private val context: Context,

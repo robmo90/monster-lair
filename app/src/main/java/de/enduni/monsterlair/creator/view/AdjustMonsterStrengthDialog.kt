@@ -13,7 +13,7 @@ class AdjustMonsterStrengthDialog {
         currentStrength: Strength,
         listener: Listener
     ) {
-        MaterialAlertDialogBuilder(context)
+        MaterialAlertDialogBuilder(context, R.style.AlertDialogStyle)
             .setTitle(R.string.adjust_monster_strength)
             .setItems(R.array.strengths) { dialog, which ->
                 listener.onStrengthChosen(monsterId, currentStrength, Strength.values()[which])

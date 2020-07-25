@@ -26,8 +26,12 @@ class EncounterRepository(
         encounterDao.insertHazardsForEncounter(hazards)
     }
 
-    fun getEncounters(): Flow<List<Encounter>> {
-        return encounterDao.getAllEncountersFlow().map { entities ->
+    suspend fun getAllEncounters(): List<Encounter> {
+        return encounterDao.getEncounters().map { toDomainModel(it) }
+    }
+
+    fun getEncounterFlow(): Flow<List<Encounter>> {
+        return encounterDao.getEncounterFlow().map { entities ->
             entities.map { toDomainModel(it) }
         }
     }
@@ -60,8 +64,7 @@ class EncounterRepository(
                 monsterWithRoleMapper.mapToMonsterWithRole(
                     entity.monster,
                     level,
-                    withoutProficiency,
-                    monsterForEncounterEntity.strength
+                    withoutProficiency
                 )
             EncounterMonster(
                 entity.monster.id,

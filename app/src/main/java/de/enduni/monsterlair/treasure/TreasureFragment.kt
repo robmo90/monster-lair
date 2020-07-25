@@ -2,15 +2,17 @@ package de.enduni.monsterlair.treasure
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.common.view.addGoldCostChips
-import de.enduni.monsterlair.common.view.addRarityChips
-import de.enduni.monsterlair.common.view.addTraitChips
-import de.enduni.monsterlair.common.view.addTreasureCategoryChips
+import de.enduni.monsterlair.common.view.*
+import de.enduni.monsterlair.databinding.BottomsheetTreasureBinding
 import de.enduni.monsterlair.databinding.FragmentTreasureBinding
+import de.enduni.monsterlair.encounters.export.EncounterExportActivity
 import de.enduni.monsterlair.treasure.domain.TreasureFilter
+import de.enduni.monsterlair.treasure.view.TreasureAction
 import de.enduni.monsterlair.treasure.view.TreasureViewModel
 import de.enduni.monsterlair.treasure.view.adapter.TreasureListAdapter
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -39,6 +41,33 @@ class TreasureFragment : Fragment(R.layout.fragment_treasure) {
         viewModel.filter.observe(viewLifecycleOwner, Observer { updateUi(it) })
 
         bindUi()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.actions.observe(viewLifecycleOwner, Observer { action ->
+            when (action) {
+                is TreasureAction.GeneratedTreasure -> {
+                    EncounterExportActivity.intent(
+                        requireContext(),
+                        getString(R.string.random_treasure),
+                        action.html
+                    ).apply { startActivity(this) }
+                }
+                is TreasureAction.NotEnoughTreasure -> {
+                    Toast.makeText(
+                        requireContext(),
+                        R.string.create_random_treasure_error,
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+        })
+    }
+
+    override fun onPause() {
+        super.onPause()
+        viewModel.actions.removeObservers(viewLifecycleOwner)
     }
 
     private fun updateUi(filter: TreasureFilter) {
@@ -72,7 +101,21 @@ class TreasureFragment : Fragment(R.layout.fragment_treasure) {
         binding.filterFab.setOnClickListener {
             TreasureFilterBottomSheet.newInstance().show(parentFragmentManager, "tag")
         }
+        binding.moreOptions.setOnClickListener {
+            showBottomSheet()
+        }
     }
 
+    private fun showBottomSheet() {
+        val binding =
+            BottomsheetTreasureBinding.inflate(requireActivity().layoutInflater, null, false)
+        binding.randomTreasure.setOnClickListener {
+            CreateRandomTreasureDialog(requireActivity(), viewModel).show()
+        }
+        BottomSheetDialog(requireContext()).apply {
+            setContentView(binding.root)
+            show()
+        }
+    }
 
 }

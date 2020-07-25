@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/random_treasure"
+        style="@style/Caption"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:drawableStart="@drawable/ic_random_adaptive"
+        android:drawablePadding="24dp"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/create_random_treasure"
+        android:textColor="?colorOnSurface" />
+
+</LinearLayout>

@@ -25,9 +25,6 @@ class MonsterViewModel(
     CreateMonsterDialog.OnSaveClickedListener,
     EditMonsterDialog.OnEditMonsterClickListener {
 
-    private val _viewState = MutableLiveData<MonsterOverviewViewState>()
-    val viewState: LiveData<MonsterOverviewViewState> get() = _viewState
-
     private val _actions = ActionLiveData<MonsterOverviewAction>()
     val actions: LiveData<MonsterOverviewAction> get() = _actions
 
@@ -49,10 +46,12 @@ class MonsterViewModel(
 
     override fun onSelect(monsterId: String) {
         viewModelScope.launch(handler) {
-            val monster = retrieveMonsterUseCase.execute(monsterId)
-            monster.url?.let { _actions.sendAction(MonsterOverviewAction.OnMonsterLinkClicked(it)) }
-                ?: _actions.sendAction(MonsterOverviewAction.OnCustomMonsterClicked)
-
+            val url = retrieveMonsterUseCase.execute(monsterId).url
+            if (url.isBlank()) {
+                _actions.sendAction(MonsterOverviewAction.OnCustomMonsterClicked)
+            } else {
+                _actions.sendAction(MonsterOverviewAction.OnMonsterLinkClicked(url))
+            }
         }
     }
 

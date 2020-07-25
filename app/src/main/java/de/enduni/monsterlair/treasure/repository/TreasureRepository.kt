@@ -7,8 +7,9 @@ import de.enduni.monsterlair.common.domain.TreasureCategory
 import de.enduni.monsterlair.common.persistence.TreasureDao
 import de.enduni.monsterlair.common.persistence.buildQuery
 import de.enduni.monsterlair.common.sources.SourceManager
-import de.enduni.monsterlair.treasure.domain.Treasure
 import de.enduni.monsterlair.treasure.domain.TreasureFilter
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import timber.log.Timber
 
 class TreasureRepository(
@@ -17,7 +18,7 @@ class TreasureRepository(
     private val sourceManager: SourceManager
 ) {
 
-    suspend fun getTreasures(filter: TreasureFilter): List<Treasure> {
+    suspend fun getTreasures(filter: TreasureFilter) = withContext(Dispatchers.IO) {
         val query = buildQuery(
             filter.searchTerm,
             filter.categories,
@@ -28,7 +29,7 @@ class TreasureRepository(
             filter.rarities,
             getSortByString(filter.sortBy)
         )
-        return dao.getTreasure(SimpleSQLiteQuery(query))
+        dao.getTreasure(SimpleSQLiteQuery(query))
             .asSequence()
             .filter { treasureWithTraits ->
                 if (filter.searchTerm.isBlank()) {

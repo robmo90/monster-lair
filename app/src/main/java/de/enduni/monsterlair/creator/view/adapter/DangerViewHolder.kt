@@ -48,7 +48,7 @@ class DangerViewHolder(
     }
 
     interface DangerSelectedListener {
-        fun onDangerSelected(url: String?)
+        fun onDangerSelected(url: String)
         fun onAddClicked(type: DangerType, id: String)
         fun onCustomMonsterLongPressed(id: String, name: String)
     }

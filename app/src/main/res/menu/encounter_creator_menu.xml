@@ -16,8 +16,13 @@
 
     <item
         android:id="@+id/creator_menu_edit"
-        android:icon="@drawable/ic_create"
         app:showAsAction="never"
         android:title="@string/edit_encounter" />
+
+    <item
+        android:id="@+id/creator_menu_custom_monster"
+        app:showAsAction="never"
+        android:title="@string/custom_monster_create_title" />
+
 
 </menu>

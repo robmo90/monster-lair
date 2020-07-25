@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AlertDialogStyle" parent="Theme.MaterialComponents.DayNight.Dialog.Alert">
+        <item name="buttonBarNegativeButtonStyle">@style/ButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/ButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/ButtonStyle</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">?colorOnSurface</item>
+    </style>
+
+
+    <style name="OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">?colorOnSurface</item>
+    </style>
+
+
+</resources>

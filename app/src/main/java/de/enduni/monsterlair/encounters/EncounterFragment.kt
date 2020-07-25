@@ -54,14 +54,14 @@ class EncounterFragment : Fragment() {
         when (action) {
             is EncounterAction.EncounterSelectedAction -> {
                 val intent = EncounterCreatorActivity.intent(
-                    requireContext(),
-                    action.encounterName,
-                    action.encounterLevel,
-                    action.numberOfPlayers,
-                    action.difficulty,
-                    action.useProficiencyWithoutLevel,
-                    action.notes,
-                    action.encounterId
+                    context = requireContext(),
+                    encounterName = action.encounterName,
+                    encounterLevel = action.encounterLevel,
+                    numberOfPlayers = action.numberOfPlayers,
+                    difficulty = action.difficulty,
+                    useProficiencyWithoutLevel = action.useProficiencyWithoutLevel,
+                    notes = action.notes,
+                    encounterId = action.encounterId
 
                 )
                 requireActivity().startActivity(intent)
@@ -106,13 +106,13 @@ class EncounterFragment : Fragment() {
         )
             .show { result ->
                 EncounterCreatorActivity.intent(
-                    requireActivity(),
-                    result.encounterName,
-                    result.numberOfPlayers,
-                    result.encounterLevel,
-                    result.encounterDifficulty,
-                    result.useProficiencyWithoutLevel,
-                    result.notes
+                    context = requireActivity(),
+                    encounterName = result.encounterName,
+                    numberOfPlayers = result.numberOfPlayers,
+                    encounterLevel = result.encounterLevel,
+                    difficulty = result.encounterDifficulty,
+                    useProficiencyWithoutLevel = result.useProficiencyWithoutLevel,
+                    notes = result.notes
                 ).let { startActivity(it) }
             }
     }

@@ -39,7 +39,7 @@ class CreateMonsterDialog(
                 binding.monsterTypeSelect.setText(monster.type.getStringRes())
             }
 
-            val dialog = MaterialAlertDialogBuilder(activity)
+            val dialog = MaterialAlertDialogBuilder(activity, R.style.AlertDialogStyle)
                 .setTitle(if (!edit) R.string.custom_monster_create_title else R.string.custom_monster_edit_title)
                 .setView(binding.root)
                 .setPositiveButton(
@@ -70,11 +70,11 @@ class CreateMonsterDialog(
                                 level = binding.monsterLevelEditText.text.toString().toInt(),
                                 type = type,
                                 source = CustomMonster.SOURCE,
-                                id = UUID.randomUUID().toString(),
+                                id = monster?.id ?: UUID.randomUUID().toString(),
                                 alignment = Alignment.NEUTRAL,
                                 size = Size.MEDIUM,
                                 sourceType = Source.CUSTOM,
-                                url = null,
+                                url = "",
                                 traits = emptyList(),
                                 rarity = Rarity.COMMON
                             )

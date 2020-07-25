@@ -10,4 +10,5 @@
     <dimen name="bottom_nav_height">56dp</dimen>
     <dimen name="bottom_sheet_bottom_padding">16dp</dimen>
     <dimen name="bottom_sheet_adjustment">128dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

@@ -16,7 +16,7 @@ sealed class EncounterCreatorDisplayModel {
         val label: String,
         @StringRes val labelRes: Int? = null,
         val xp: Int,
-        val url: String?,
+        val url: String,
         val originalType: String,
         val customMonster: Boolean
     ) : EncounterCreatorDisplayModel()
@@ -41,7 +41,7 @@ sealed class EncounterCreatorDisplayModel {
         @StringRes val labelRes: Int? = null,
         @StringRes val role: Int,
         val xp: Int,
-        val url: String?,
+        val url: String,
         val customMonster: Boolean
     ) : EncounterCreatorDisplayModel()
 

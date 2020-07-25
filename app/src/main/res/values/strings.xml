@@ -161,7 +161,7 @@
     <string name="custom_monster_create_button">Save</string>
     <string name="custom_monster_edit_button">Save</string>
     <string name="custom_monster_edit_button_option">Edit</string>
-    <string name="custom_monster_delete_button">Delete</string>
+    <string name="custom_monster_delete_button">Delete \u2014 Will delete all encounters that include this monster.</string>
     <string name="custom_monster_create_wrong_level">Please enter a valid level between -1 and 25.</string>
     <string name="custom_monster_create_empty_name">Please enter a valid name.</string>
     <string name="custom_monster_create_empty_type">Please enter a valid type.</string>
@@ -170,6 +170,7 @@
     <string name="whats_new">What\'s new (%s)</string>
     <string name="whats_new_8">- Random Encounters now include templates from the GMG.\n- Custom monsters can now be added.\n- Added a dialog to display the treasure by level values from the Core Rulebook, adjusted for players.\n- Player number and level of encounters can now be adjusted\n- Revamp of the encounter and creator pages.</string>
     <string name="whats_new_10">- Added monsters from the Bestiary 2 and NPCs from the GMG (both under monsters). Hazards are updated as well. \n- Reversed encounter order, newest first.\n- Added small intro to the encounter creator</string>
+    <string name="whats_new_11">- Added monsters from the Bestiary 2 and NPCs from the GMG (both under monsters). Hazards are updated as well. \n- Reversed encounter order, newest first.\n- Added small intro to the encounter creator</string>
     <string name="encounter_creator_introduction_title">Small Intro</string>
     <string name="encounter_creator_introduction">Here\'s a small introduction to the encounter creator since the UI is still pretty sloppy:\n\n- Pull up the Search bar to access filters for monsters &amp; hazards (type, level, etc.)\n- Add your own monsters using +\n- Create random encounters by clicking the dice\n- Get treasure recommendations for your group by clicking the chest</string>
     <string name="updating_data">Updating Data ...</string>
@@ -283,5 +284,9 @@
     <string name="empty_monster_text">There are no monsters that fit your filters.\nTry to define looser criteria.</string>
     <string name="empty_hazard_text">There are no hazards that fit your filters.\nTry to define looser criteria.</string>
     <string name="empty_treasure_text">There are is no treasure that fits your filter settings.\nTry to define looser criteria.</string>
+    <string name="additional_filters">Additional Filters</string>
+    <string name="create_random_treasure">Create Random Treasure for Level</string>
+    <string name="random_treasure">Random Treasure</string>
+    <string name="create_random_treasure_error">Could not create random treasure - maybe you are limiting the sources too much.</string>
 
 </resources>

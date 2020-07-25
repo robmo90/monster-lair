@@ -39,7 +39,7 @@ class EncounterCreatorViewModel(
     private val retrieveMonsterUseCase: RetrieveMonsterUseCase,
     private val mapper: EncounterCreatorDisplayModelMapper,
     private val storeEncounterUseCase: StoreEncounterUseCase,
-    private val createTreasureRecommendationUseCase: CreateTreasureRecommendationUseCase,
+    private val createTreasureRecommendationUseCase: CreateTreasureRecommendationTextUseCase,
     private val showUserHintUseCase: ShowUserHintUseCase
 ) : ViewModel(),
     EncounterDetailViewHolder.ClickListener,
@@ -159,12 +159,20 @@ class EncounterCreatorViewModel(
         encounterStore.increment(type, id, strength)
     }
 
-    override fun onDangerForEncounterSelected(url: String?) {
-        url?.let { linkClicked(it) } ?: customMonsterClicked()
+    override fun onDangerForEncounterSelected(url: String) {
+        if (url.isBlank()) {
+            customMonsterClicked()
+        } else {
+            linkClicked(url)
+        }
     }
 
-    override fun onDangerSelected(url: String?) {
-        url?.let { linkClicked(it) } ?: customMonsterClicked()
+    override fun onDangerSelected(url: String) {
+        if (url.isBlank()) {
+            customMonsterClicked()
+        } else {
+            linkClicked(url)
+        }
     }
 
     private fun customMonsterClicked() {

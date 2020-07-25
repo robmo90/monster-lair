@@ -5,7 +5,7 @@ import de.enduni.monsterlair.common.domain.*
 data class Monster(
     val id: String,
     val name: String,
-    val url: String?,
+    val url: String,
     val family: String,
     val level: Int,
     val alignment: Alignment,

@@ -11,8 +11,7 @@ class MonsterWithRoleMapper {
     fun mapToMonsterWithRole(
         monster: MonsterEntity,
         encounterLevel: Int,
-        withoutProficiency: Boolean,
-        strength: Strength
+        withoutProficiency: Boolean
     ): MonsterWithRole {
         return monster.let {
             MonsterWithRole(
@@ -21,9 +20,9 @@ class MonsterWithRoleMapper {
                 url = it.url,
                 family = it.family,
                 level = it.level,
-                alignment = it.alignment.toString(),
+                alignment = it.alignment,
                 type = it.type,
-                size = it.size.toString(),
+                size = it.size,
                 source = it.source,
                 role = MonsterRole.determineRole(
                     it.level,
@@ -38,8 +37,7 @@ class MonsterWithRoleMapper {
     fun mapToMonsterWithRole(
         monster: Monster,
         encounterLevel: Int,
-        withoutProficiency: Boolean,
-        strength: Strength
+        withoutProficiency: Boolean
     ): MonsterWithRole {
         return monster.let {
             MonsterWithRole(
@@ -48,9 +46,9 @@ class MonsterWithRoleMapper {
                 url = it.url,
                 family = it.family,
                 level = it.level,
-                alignment = it.alignment.toString(),
+                alignment = it.alignment,
                 type = it.type,
-                size = it.size.toString(),
+                size = it.size,
                 source = it.source,
                 role = MonsterRole.determineRole(
                     it.level,

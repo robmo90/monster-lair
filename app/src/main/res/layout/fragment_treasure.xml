@@ -61,8 +61,8 @@
         style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/fab_margin"
         android:src="@drawable/ic_filter_alt"
         app:layout_constraintBottom_toTopOf="@+id/filter_bottom_sheet"
         app:layout_constraintEnd_toEndOf="parent" />

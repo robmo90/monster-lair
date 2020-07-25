@@ -6,12 +6,21 @@
     android:layout_height="match_parent"
     android:paddingBottom="16dp">
 
-    <View
+    <TextView
+        android:id="@+id/headline"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="parent"
-        android:id="@+id/dropdown_anchor"
+        style="@style/ListItem"
         android:layout_width="match_parent"
-        android:layout_height="0dp" />
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:text="@string/additional_filters"
+        android:textColor="?colorOnSurface" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/monster_type_input_layout"
@@ -24,7 +33,7 @@
         android:layout_marginBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/headline">
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/monster_type_chips"

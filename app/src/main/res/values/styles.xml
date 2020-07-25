@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
@@ -17,16 +17,6 @@
     </style>
 
     <style name="AlertDialogStyle" parent="Theme.MaterialComponents.DayNight.Dialog.Alert">
-        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
-        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
-    </style>
-
-    <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-        <item name="android:textColor">?colorOnSurface</item>
-    </style>
-
-    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-        <item name="android:textColor">?colorOnSurface</item>
     </style>
 
     <style name="Caption" parent="TextAppearance.MaterialComponents.Caption">
@@ -55,15 +45,6 @@
         <item name="fontFamily">@font/amaranth_bold</item>
     </style>
 
-    <style name="BottomSheet">
-        <item name="android:background">@drawable/ic_rounded_bottomsheet</item>
-        <item name="android:elevation">16dp</item>
-        <item name="android:focusable">true</item>
-        <item name="android:clickable">true</item>
-        <item name="android:paddingBottom">24dp</item>
-        <item name="android:outlineProvider">paddedBounds</item>
-    </style>
-
     <style name="FilterControl">
         <item name="elevation">8dp</item>
         <item name="android:focusable">true</item>
@@ -75,6 +56,7 @@
 
     <style name="DropDown" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"></style>
 
+    <style name="OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton"></style>
 
     <style name="Dialog" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
         <item name="colorPrimary">?colorOnBackground</item>

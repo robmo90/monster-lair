@@ -23,6 +23,7 @@ class EncounterExportActivity : AppCompatActivity() {
         binding = ActivityEncounterExportBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.toolbar.title = intent.getStringExtra(EXTRA_ENCOUNTER_NAME)
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 

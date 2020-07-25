@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.SimpleItemAnimator
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.openCustomTab
@@ -22,6 +23,7 @@ import de.enduni.monsterlair.creator.view.EncounterCreatorViewModel
 import de.enduni.monsterlair.creator.view.RandomEncounterDialog
 import de.enduni.monsterlair.creator.view.adapter.EncounterCreatorListAdapter
 import de.enduni.monsterlair.databinding.ActivityEncounterCreatorBinding
+import de.enduni.monsterlair.databinding.BottomsheetMonstersBinding
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
@@ -131,6 +133,10 @@ class EncounterCreatorActivity : AppCompatActivity() {
                 }
                 true
             }
+            R.id.creator_menu_custom_monster -> {
+                CreateMonsterDialog(this, viewModel).show()
+                true
+            }
             android.R.id.home -> {
                 finish()
                 true
@@ -201,14 +207,14 @@ class EncounterCreatorActivity : AppCompatActivity() {
                 CreateMonsterDialog(this, viewModel, action.monster).show()
             }
             is EncounterCreatorAction.OnGiveTreasureRecommendationClicked -> {
-                MaterialAlertDialogBuilder(this)
+                MaterialAlertDialogBuilder(this, R.style.AlertDialogStyle)
                     .setTitle(R.string.treasure_recommendation)
                     .setMessage(Html.fromHtml(action.htmlTemplate, Html.FROM_HTML_MODE_COMPACT))
                     .setPositiveButton(android.R.string.ok) { _, _ -> }
                     .show()
             }
             is EncounterCreatorAction.ShowCreatorHint -> {
-                MaterialAlertDialogBuilder(this)
+                MaterialAlertDialogBuilder(this, R.style.AlertDialogStyle)
                     .setTitle(R.string.encounter_creator_introduction_title)
                     .setMessage(R.string.encounter_creator_introduction)
                     .setPositiveButton(android.R.string.ok) { _, _ -> viewModel.markUserHintAsShown() }
@@ -222,6 +228,17 @@ class EncounterCreatorActivity : AppCompatActivity() {
                 ).show()
             }
             else -> return
+        }
+    }
+
+    private fun showBottomSheet() {
+        val binding = BottomsheetMonstersBinding.inflate(this.layoutInflater, null, false)
+        binding.addMonster.setOnClickListener {
+            CreateMonsterDialog(this, viewModel).show()
+        }
+        BottomSheetDialog(this).apply {
+            setContentView(binding.root)
+            show()
         }
     }
 

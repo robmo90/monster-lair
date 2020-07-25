@@ -16,7 +16,7 @@ class EditMonsterDialog(
 
     fun show() {
         activityRef.get()?.let { activity ->
-            MaterialAlertDialogBuilder(activity)
+            MaterialAlertDialogBuilder(activity, R.style.AlertDialogStyle)
                 .setTitle(name)
                 .setItems(R.array.custom_monster_actions) { dialog, which ->
                     when (which) {

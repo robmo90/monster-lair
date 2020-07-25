@@ -19,7 +19,10 @@ interface EncounterDao {
     suspend fun insertHazardsForEncounter(hazardsForEncounter: List<HazardForEncounterEntity>)
 
     @Query("SELECT * FROM encounters ORDER BY id DESC")
-    fun getAllEncountersFlow(): Flow<List<EncounterEntity>>
+    fun getEncounterFlow(): Flow<List<EncounterEntity>>
+
+    @Query("SELECT * FROM encounters ORDER BY id DESC")
+    fun getEncounters(): List<EncounterEntity>
 
     @Query("SELECT * FROM encounters WHERE id is :id LIMIT 1")
     suspend fun getEncounter(id: Long): EncounterEntity

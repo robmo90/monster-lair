@@ -32,7 +32,7 @@ class UpdateManager(
         currentVersion: Int,
         whatsNewText: Int
     ) {
-        MaterialAlertDialogBuilder(activity)
+        MaterialAlertDialogBuilder(activity, R.style.AlertDialogStyle)
             .setTitle(activity.getString(R.string.whats_new, BuildConfig.VERSION_NAME))
             .setMessage(whatsNewText)
             .setPositiveButton(android.R.string.ok) { _, _ -> }

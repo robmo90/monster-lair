@@ -38,6 +38,9 @@ import de.enduni.monsterlair.monsters.view.MonsterFilterViewModel
 import de.enduni.monsterlair.monsters.view.MonsterListDisplayModelMapper
 import de.enduni.monsterlair.monsters.view.MonsterViewModel
 import de.enduni.monsterlair.settings.SettingsViewModel
+import de.enduni.monsterlair.treasure.domain.CreateRandomTreasureTextUseCase
+import de.enduni.monsterlair.treasure.domain.CreateRandomTreasureUseCase
+import de.enduni.monsterlair.treasure.domain.CreateTreasureRecommendationUseCase
 import de.enduni.monsterlair.treasure.repository.TreasureEntityMapper
 import de.enduni.monsterlair.treasure.repository.TreasureRepository
 import de.enduni.monsterlair.treasure.view.TreasureDisplayModelMapper
@@ -128,7 +131,7 @@ val monsterModule = module {
     single { RetrieveMonstersUseCase(get()) }
     single { RetrieveMonsterUseCase(get()) }
     single { SaveMonsterUseCase(get()) }
-    single { DeleteMonsterUseCase(get()) }
+    single { DeleteMonsterUseCase(get(), get()) }
 
 
     // persistence
@@ -163,7 +166,8 @@ val encounterModule = module {
     single { RetrieveEncounterUseCase(get()) }
     single { CreateEncounterTemplateUseCase(androidApplication()) }
     single { StoreEncounterUseCase(get()) }
-    single { CreateTreasureRecommendationUseCase(androidApplication()) }
+
+    single { CreateTreasureRecommendationTextUseCase(androidApplication(), get()) }
 
     // view
     single { EncounterDisplayModelMapper(androidApplication()) }
@@ -190,12 +194,15 @@ val encounterModule = module {
 
 val treasureModule = module {
 
+    single { CreateTreasureRecommendationUseCase() }
+    single { CreateRandomTreasureUseCase(get(), get()) }
+    single { CreateRandomTreasureTextUseCase(androidApplication(), get()) }
     single { TreasureEntityMapper() }
     single { TreasureDisplayModelMapper() }
     single { TreasureRepository(get(), get(), get()) }
     single { TreasureFilterStore() }
 
-    viewModel { TreasureViewModel(get(), get(), get()) }
+    viewModel { TreasureViewModel(get(), get(), get(), get()) }
     viewModel { TreasureFilterViewModel(get(), get()) }
 
 
