@@ -31,18 +31,6 @@ class TreasureRepository(
         )
         dao.getTreasure(SimpleSQLiteQuery(query))
             .asSequence()
-            .filter { treasureWithTraits ->
-                if (filter.searchTerm.isBlank()) {
-                    true
-                } else {
-                    treasureWithTraits.traits.any {
-                        it.name.contains(
-                            filter.searchTerm,
-                            ignoreCase = true
-                        )
-                    }
-                }
-            }
             .map { mapper.fromEntityToDomain(it) }
             .filter { treasure ->
                 if (filter.traits.isEmpty()) {

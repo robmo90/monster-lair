@@ -5,7 +5,7 @@ import de.enduni.monsterlair.common.domain.*
 data class TreasureFilter(
     val searchTerm: String = "",
     val lowerLevel: Level = 0,
-    val upperLevel: Level = 25,
+    val upperLevel: Level = 28,
     val lowerGoldCost: Cost = null,
     val upperGoldCost: Cost = null,
     val categories: List<TreasureCategory> = emptyList(),

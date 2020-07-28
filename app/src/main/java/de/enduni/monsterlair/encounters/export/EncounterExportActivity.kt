@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.print.PrintAttributes
 import android.print.PrintManager
 import android.util.Base64
+import android.view.MenuItem
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -45,6 +46,16 @@ class EncounterExportActivity : AppCompatActivity() {
         binding.exportFab.setOnClickListener { createWebPrintJob(binding.webView) }
     }
 
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+            else -> false
+        }
+    }
 
     companion object {
 

@@ -75,7 +75,12 @@ class MonsterFragment : Fragment(R.layout.fragment_monster) {
 
     private fun bindUi() {
         binding.searchButton.setup(requireActivity(), viewModel.filterStore)
-        binding.levelButton.setup(requireActivity(), viewModel.filterStore)
+        binding.levelButton.setup(
+            requireActivity(),
+            viewModel.filterStore,
+            lowerLevel = -1,
+            upperLevel = 25
+        )
         binding.sortButton.setup(requireActivity(), viewModel.filterStore)
         binding.moreOptions.setOnClickListener { showBottomSheet() }
         binding.filterFab.setOnClickListener {

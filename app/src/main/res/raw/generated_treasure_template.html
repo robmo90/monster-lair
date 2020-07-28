@@ -30,16 +30,21 @@
         <ul>
             <li>Level: {{level}}</li>
             <li>Number of Characters: {{numberOfPlayers}}</li>
+            <li><strong>Recommended Total Value</strong>:
+                <ul>
+                    <li>Adjusted For Players: {{recommendedGold}} gp</li>
+                    <li>Unadjusted: {{recommendedGoldUnadjusted}} gp</li>
+                </ul>
+            <li><strong>Recommended Currency</strong>: {{currency}} gp
+            </li>
+            <li><strong>Actual Value of all Items</strong>: {{actualItemValue}} gp
+            </li>
+            <li><strong>Adjusted Recommended Total Value minus actual value of picked
+                treasures</strong>: {{leftoverSum}} gp
+            </li>
         </ul>
 
         <h2>Permanent Items</h2>
-
-        <ul>
-            <li><strong>Total Value</strong>: {{itemValue}} gp
-            </li>
-            <li><strong>Currency</strong>: {{currency}} gp
-            </li>
-        </ul>
 
         <ul>
             {{#permanentItems}}

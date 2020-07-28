@@ -80,7 +80,12 @@ class HazardFragment : Fragment() {
 
     private fun bindUi() {
         binding.searchButton.setup(requireActivity(), viewModel.filterStore)
-        binding.levelButton.setup(requireActivity(), viewModel.filterStore)
+        binding.levelButton.setup(
+            requireActivity(),
+            viewModel.filterStore,
+            lowerLevel = -1,
+            upperLevel = 23
+        )
         binding.sortButton.setup(requireActivity(), viewModel.filterStore)
         binding.filterFab.setOnClickListener {
             HazardFilterBottomSheet.newInstance().show(parentFragmentManager, "tag")

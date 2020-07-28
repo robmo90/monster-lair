@@ -152,7 +152,7 @@ class EncounterCreatorActivity : AppCompatActivity() {
 
     private fun bindUi() {
         binding.searchButton.setup(this, viewModel.filterStore)
-        binding.levelButton.setup(this, viewModel.filterStore)
+        binding.levelButton.setup(this, viewModel.filterStore, lowerLevel = -1, upperLevel = 25)
         binding.sortButton.setup(this, viewModel.filterStore)
         binding.filterFab.setOnClickListener {
             EncounterCreatorFilterDialog.newInstance().show(supportFragmentManager, "tag")

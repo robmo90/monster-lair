@@ -28,6 +28,7 @@ class CreateRandomTreasureUseCase(
                     TreasureFilter(
                         upperLevel = item.level,
                         lowerLevel = item.level,
+                        lowerGoldCost = 1.0,
                         categories = TreasureCategory.values().filter { it.permanentItem }
                     )
                 ).random()
@@ -45,6 +46,7 @@ class CreateRandomTreasureUseCase(
             IntRange(0, item.count - 1).map {
                 treasureRepository.getTreasures(
                     TreasureFilter(
+                        lowerGoldCost = 1.0,
                         upperLevel = item.level,
                         lowerLevel = item.level,
                         categories = TreasureCategory.values().filter { !it.permanentItem }

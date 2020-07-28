@@ -15,7 +15,7 @@ data class HazardFilter(
     companion object {
 
         const val DEFAULT_LEVEL_LOWER = -1
-        const val DEFAULT_LEVEL_UPPER = 25
+        const val DEFAULT_LEVEL_UPPER = 23
 
     }
 }

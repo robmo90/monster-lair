@@ -96,7 +96,12 @@ class TreasureFragment : Fragment(R.layout.fragment_treasure) {
 
     private fun bindUi() {
         binding.searchButton.setup(requireActivity(), viewModel.filterStore)
-        binding.levelButton.setup(requireActivity(), viewModel.filterStore)
+        binding.levelButton.setup(
+            requireActivity(),
+            viewModel.filterStore,
+            lowerLevel = 0,
+            upperLevel = 28
+        )
         binding.sortButton.setup(requireActivity(), viewModel.filterStore)
         binding.filterFab.setOnClickListener {
             TreasureFilterBottomSheet.newInstance().show(parentFragmentManager, "tag")

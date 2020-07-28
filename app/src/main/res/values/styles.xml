@@ -32,6 +32,11 @@
         <item name="android:ellipsize">end</item>
     </style>
 
+    <style name="Description" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">?colorOnSurface</item>
+        <item name="fontFamily">@font/amaranth</item>
+    </style>
+
     <style name="ListItem" parent="TextAppearance.MaterialComponents.Subtitle1">
         <item name="fontFamily">@font/amaranth_bold</item>
         <item name="android:lines">1</item>

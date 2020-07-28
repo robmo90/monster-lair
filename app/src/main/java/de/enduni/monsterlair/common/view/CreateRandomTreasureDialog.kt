@@ -1,12 +1,14 @@
 package de.enduni.monsterlair.common.view
 
 import android.app.Activity
+import android.net.Uri
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputEditText
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.domain.Level
+import de.enduni.monsterlair.common.openCustomTab
 import de.enduni.monsterlair.databinding.DialogRandomTreasureBinding
 import timber.log.Timber
 import java.lang.ref.WeakReference
@@ -30,10 +32,15 @@ class CreateRandomTreasureDialog(
                     android.R.string.ok,
                     null
                 )
+                .setNeutralButton(R.string.random_encounter_information, null)
                 .setNegativeButton(android.R.string.cancel) { _, _ -> }
                 .create()
 
             dialog.setOnShowListener {
+                dialog.getButton(AlertDialog.BUTTON_NEUTRAL).setOnClickListener {
+                    Uri.parse("https://2e.aonprd.com/Rules.aspx?ID=581")
+                        .openCustomTab(dialog.context)
+                }
                 dialog.getButton(AlertDialog.BUTTON_POSITIVE)?.setOnClickListener {
                     try {
                         validateInput(binding)
