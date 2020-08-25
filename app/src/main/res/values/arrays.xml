@@ -135,6 +135,7 @@
         <item>@string/source_adventure_path</item>
         <item>@string/source_pathfinder_society</item>
         <item>@string/source_gamemastery_guide</item>
+        <item>@string/source_advanced_players_guide</item>
         <item>@string/source_misc</item>
         <item>@string/source_custom</item>
     </string-array>

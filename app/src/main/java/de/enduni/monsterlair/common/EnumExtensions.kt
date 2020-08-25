@@ -317,6 +317,7 @@ fun Source.getStringRes(): Int {
         Source.ADVENTURE_PATH -> R.string.source_adventure_path
         Source.PATHFINDER_SOCIETY -> R.string.source_pathfinder_society
         Source.GAMEMASTERY_GUIDE -> R.string.source_gamemastery_guide
+        Source.ADVANCED_PLAYERS_GUIDE -> R.string.source_gamemastery_guide
         Source.MISC -> R.string.source_misc
         Source.CUSTOM -> R.string.source_custom
     }

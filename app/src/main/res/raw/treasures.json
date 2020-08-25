@@ -4,7 +4,7 @@
     "id": "6242af29-b4a0-4ae4-be00-3df88524c822",
     "name": "Holly and Mistletoe",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=26",
-    "level": "0",
+    "level": 0,
     "price": "\u2014",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
@@ -16,7 +16,7 @@
     "id": "fa9dbe0b-4b74-4b4c-b95e-35100a107749",
     "name": "Candle",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=10",
-    "level": "0",
+    "level": 0,
     "price": "1 cp",
     "source": "Core Rulebook pg. 289",
     "sourceType": "CORE_RULEBOOK",
@@ -28,7 +28,7 @@
     "id": "1159fb08-fcf0-4bb4-b2cd-b811deecc439",
     "name": "Chalk",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=12",
-    "level": "0",
+    "level": 0,
     "price": "1 cp",
     "source": "Core Rulebook pg. 288",
     "sourceType": "CORE_RULEBOOK",
@@ -40,7 +40,7 @@
     "id": "a429b601-5f9f-4f92-9530-1e499a167408",
     "name": "Mug",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=36",
-    "level": "0",
+    "level": 0,
     "price": "1 cp",
     "source": "Core Rulebook pg. 288",
     "sourceType": "CORE_RULEBOOK",
@@ -52,7 +52,7 @@
     "id": "bc61fad9-5f34-47ba-8c09-65e2a44331a2",
     "name": "Oil",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=38",
-    "level": "0",
+    "level": 0,
     "price": "1 cp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -64,7 +64,7 @@
     "id": "401861f6-3894-4fff-b024-8fe141dd79ad",
     "name": "Piton",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=39",
-    "level": "0",
+    "level": 0,
     "price": "1 cp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -76,7 +76,7 @@
     "id": "d96874d2-61da-447a-9f85-b3a4889439c1",
     "name": "Sack",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=45",
-    "level": "0",
+    "level": 0,
     "price": "1 cp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -88,7 +88,7 @@
     "id": "854c1368-8222-4159-869e-df7584bbde62",
     "name": "Sheath",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=49",
-    "level": "0",
+    "level": 0,
     "price": "1 cp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -100,7 +100,7 @@
     "id": "9ae73084-4b43-4c72-90fd-59eaf31f6eaa",
     "name": "Ten-Foot Pole",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=56",
-    "level": "0",
+    "level": 0,
     "price": "1 cp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -112,7 +112,7 @@
     "id": "6a9d329c-e732-44f8-b5aa-06eba512ed73",
     "name": "Torch",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=60",
-    "level": "0",
+    "level": 0,
     "price": "1 cp",
     "source": "Core Rulebook pg. 292",
     "sourceType": "CORE_RULEBOOK",
@@ -124,7 +124,7 @@
     "id": "5f31ce38-9cd9-4ddd-bf00-541853a97a6b",
     "name": "Bedroll",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=7",
-    "level": "0",
+    "level": 0,
     "price": "1 cp",
     "source": "Core Rulebook pg. 288",
     "sourceType": "CORE_RULEBOOK",
@@ -136,7 +136,7 @@
     "id": "9f1acfc3-17c1-4e1f-b911-4a46e4ac61f4",
     "name": "Soap",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=52",
-    "level": "0",
+    "level": 0,
     "price": "2 cp",
     "source": "Core Rulebook pg. 288",
     "sourceType": "CORE_RULEBOOK",
@@ -148,7 +148,7 @@
     "id": "2b12d525-85ef-4fc8-bea5-e62d8a3b1697",
     "name": "Ladder",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=28",
-    "level": "0",
+    "level": 0,
     "price": "3 cp",
     "source": "Core Rulebook pg. 288",
     "sourceType": "CORE_RULEBOOK",
@@ -160,7 +160,7 @@
     "id": "66ef6538-2a31-4f4e-8dc1-bf7f7ffd1ed3",
     "name": "Belt Pouch",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=8",
-    "level": "0",
+    "level": 0,
     "price": "4 cp",
     "source": "Core Rulebook pg. 289",
     "sourceType": "CORE_RULEBOOK",
@@ -172,7 +172,7 @@
     "id": "eb277459-2b3b-4cba-beca-f561f90b7f71",
     "name": "Flint and Steel",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=21",
-    "level": "0",
+    "level": 0,
     "price": "5 cp",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
@@ -184,7 +184,7 @@
     "id": "879f4673-a2aa-43c6-811a-e014446d6403",
     "name": "Vial",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=61",
-    "level": "0",
+    "level": 0,
     "price": "5 cp",
     "source": "Core Rulebook pg. 292",
     "sourceType": "CORE_RULEBOOK",
@@ -196,7 +196,7 @@
     "id": "67311203-57d0-42c3-952f-d5c6fa8d7e37",
     "name": "Waterskin",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=62",
-    "level": "0",
+    "level": 0,
     "price": "5 cp",
     "source": "Core Rulebook pg. 292",
     "sourceType": "CORE_RULEBOOK",
@@ -208,7 +208,7 @@
     "id": "00533214-fa21-45bf-874f-72af8286a922",
     "name": "Signal Whistle",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=50",
-    "level": "0",
+    "level": 0,
     "price": "8 cp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -220,7 +220,7 @@
     "id": "9e2941aa-d588-40fe-88dc-4bf9a1c1496d",
     "name": "Clothing (Explorer's)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=15",
-    "level": "0",
+    "level": 0,
     "price": "1 sp",
     "source": "Core Rulebook pg. 289",
     "sourceType": "CORE_RULEBOOK",
@@ -232,7 +232,7 @@
     "id": "d270d9f2-be8c-448e-b250-0024273c8fa9",
     "name": "Clothing (Ordinary)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=15",
-    "level": "0",
+    "level": 0,
     "price": "1 sp",
     "source": "Core Rulebook pg. 289",
     "sourceType": "CORE_RULEBOOK",
@@ -244,7 +244,7 @@
     "id": "8194499c-8df7-46f8-8ca9-4d1342e6262e",
     "name": "Disguise Kit (Replacement Cosmetics)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=19",
-    "level": "0",
+    "level": 0,
     "price": "1 sp",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
@@ -256,7 +256,7 @@
     "id": "4a7d7519-0ec1-4758-893e-ff3a85b48523",
     "name": "Grappling Hook",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=23",
-    "level": "0",
+    "level": 0,
     "price": "1 sp",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
@@ -268,7 +268,7 @@
     "id": "913cf5e4-2ba3-4a5b-83c3-d529a8f94561",
     "name": "Hammer",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=24",
-    "level": "0",
+    "level": 0,
     "price": "1 sp",
     "source": "Core Rulebook pg. 288",
     "sourceType": "CORE_RULEBOOK",
@@ -280,7 +280,7 @@
     "id": "5b5eb368-ec5f-4003-94fe-ef89c88519f9",
     "name": "Backpack",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=4",
-    "level": "0",
+    "level": 0,
     "price": "1 sp",
     "source": "Core Rulebook pg. 289",
     "sourceType": "CORE_RULEBOOK",
@@ -292,7 +292,7 @@
     "id": "ea42cfc3-9c2d-4de3-aca1-c3a07d588387",
     "name": "Religious Symbol (Wooden)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=41",
-    "level": "0",
+    "level": 0,
     "price": "1 sp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -304,7 +304,7 @@
     "id": "ef159c11-b01c-4840-aa51-012ae8af4b33",
     "name": "Satchel",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=47",
-    "level": "0",
+    "level": 0,
     "price": "1 sp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -316,7 +316,7 @@
     "id": "19b73354-5546-45d5-be2b-369dd0e719aa",
     "name": "Scroll Case",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=48",
-    "level": "0",
+    "level": 0,
     "price": "1 sp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -328,7 +328,7 @@
     "id": "392dcea7-7afb-4a94-9d94-7bbaa6a5d5cc",
     "name": "Bandolier",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=5",
-    "level": "0",
+    "level": 0,
     "price": "1 sp",
     "source": "Core Rulebook pg. 289",
     "sourceType": "CORE_RULEBOOK",
@@ -340,7 +340,7 @@
     "id": "b1ae1114-eeda-48ba-815d-9d5735c1ed99",
     "name": "Basic Crafter's Book",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=6",
-    "level": "0",
+    "level": 0,
     "price": "1 sp",
     "source": "Core Rulebook pg. 289",
     "sourceType": "CORE_RULEBOOK",
@@ -352,7 +352,7 @@
     "id": "ad4e1db8-ff69-461c-8bd9-db9f1ba195c0",
     "name": "Writing Set (Extra Ink and Paper)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=63",
-    "level": "0",
+    "level": 0,
     "price": "1 sp",
     "source": "Core Rulebook pg. 292",
     "sourceType": "CORE_RULEBOOK",
@@ -364,7 +364,7 @@
     "id": "74435b79-9ad9-47fb-a809-5287e86bc70a",
     "name": "Lock (Poor)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=30",
-    "level": "0",
+    "level": 0,
     "price": "2 sp",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
@@ -376,7 +376,7 @@
     "id": "e4cea4b5-e2e4-4e93-bb17-903d92b0195f",
     "name": "Merchant's Scale",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=34",
-    "level": "0",
+    "level": 0,
     "price": "2 sp",
     "source": "Core Rulebook pg. 288",
     "sourceType": "CORE_RULEBOOK",
@@ -388,7 +388,7 @@
     "id": "b6bbbe4b-cfb6-4331-b60f-80cb0ce1dacf",
     "name": "Saddlebags",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=46",
-    "level": "0",
+    "level": 0,
     "price": "2 sp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -400,7 +400,7 @@
     "id": "39563002-1490-4858-9d2e-75843449cef9",
     "name": "Manacles (Poor)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=32",
-    "level": "0",
+    "level": 0,
     "price": "3 sp",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
@@ -412,7 +412,7 @@
     "id": "35545b47-7110-4243-bccd-4ca5f0ba28a5",
     "name": "Thieves' Tools (Replacement Picks)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=58",
-    "level": "0",
+    "level": 0,
     "price": "3 sp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -424,7 +424,7 @@
     "id": "9ce29de3-1dd1-4e1f-95bf-6d572373b6d7",
     "name": "Caltrops",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=9",
-    "level": "0",
+    "level": 0,
     "price": "3 sp",
     "source": "Core Rulebook pg. 289",
     "sourceType": "CORE_RULEBOOK",
@@ -436,7 +436,7 @@
     "id": "cb420fbd-ba74-40da-803d-64c4bd1a2d2e",
     "name": "Clothing (Winter)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=15",
-    "level": "0",
+    "level": 0,
     "price": "4 sp",
     "source": "Core Rulebook pg. 289",
     "sourceType": "CORE_RULEBOOK",
@@ -448,7 +448,7 @@
     "id": "6df8592b-0589-47af-a1a3-4867843d6b98",
     "name": "Rations",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=40",
-    "level": "0",
+    "level": 0,
     "price": "4 sp (1 week)",
     "source": "Core Rulebook pg. 288",
     "sourceType": "CORE_RULEBOOK",
@@ -460,7 +460,7 @@
     "id": "d43ecd50-aced-41f5-8bd1-dc2149874d01",
     "name": "Tool (Short)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=59",
-    "level": "0",
+    "level": 0,
     "price": "4 sp",
     "source": "Core Rulebook pg. 292",
     "sourceType": "CORE_RULEBOOK",
@@ -472,7 +472,7 @@
     "id": "88dade4d-401b-49f4-a77c-1cf590e3c5ef",
     "name": "Climbing Kit",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=14",
-    "level": "0",
+    "level": 0,
     "price": "5 sp",
     "source": "Core Rulebook pg. 289",
     "sourceType": "CORE_RULEBOOK",
@@ -484,7 +484,7 @@
     "id": "06c44092-eff7-4172-b570-6fb301646a02",
     "name": "Crowbar",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=18",
-    "level": "0",
+    "level": 0,
     "price": "5 sp",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
@@ -496,7 +496,7 @@
     "id": "bbb4c9df-0e32-4c5d-babe-e3db1e911544",
     "name": "Material Component Pouch",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=33",
-    "level": "0",
+    "level": 0,
     "price": "5 sp",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
@@ -508,7 +508,7 @@
     "id": "0866caa1-edb0-46b2-a871-29a38ff673c3",
     "name": "Rope",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=44",
-    "level": "0",
+    "level": 0,
     "price": "5 sp",
     "source": "Core Rulebook pg. 288",
     "sourceType": "CORE_RULEBOOK",
@@ -517,10 +517,34 @@
   },
   {
     "category": "ADVENTURING_GEAR",
+    "id": "e1e8cfaa-6ab0-4c53-9762-9ff3e068a13d",
+    "name": "Dueling Cape",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=680",
+    "level": 0,
+    "price": "5 sp",
+    "source": "Advanced Player's Guide pg. 249",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": []
+  },
+  {
+    "category": "ADVENTURING_GEAR",
+    "id": "c6d1c133-01f6-41b0-8437-13b8af24affa",
+    "name": "Parrying Scabbard",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=682",
+    "level": 0,
+    "price": "5 sp",
+    "source": "Advanced Player's Guide pg. 249",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": []
+  },
+  {
+    "category": "ADVENTURING_GEAR",
     "id": "c7202175-5ace-4132-9eba-6323c72d8c44",
     "name": "Chest",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=13",
-    "level": "0",
+    "level": 0,
     "price": "6 sp",
     "source": "Core Rulebook pg. 289",
     "sourceType": "CORE_RULEBOOK",
@@ -532,7 +556,7 @@
     "id": "894478be-143b-46bb-a141-b132b6a4c84d",
     "name": "Adventurer's Pack",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=1",
-    "level": "0",
+    "level": 0,
     "price": "7 sp",
     "source": "Core Rulebook pg. 289",
     "sourceType": "CORE_RULEBOOK",
@@ -544,7 +568,7 @@
     "id": "ca1e706a-9128-4033-9a9c-39833cc895fb",
     "name": "Lantern (Hooded)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=29",
-    "level": "0",
+    "level": 0,
     "price": "7 sp",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
@@ -556,7 +580,7 @@
     "id": "7b47143f-f2b0-47c5-9ed4-053385570bc0",
     "name": "Fishing Tackle",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=20",
-    "level": "0",
+    "level": 0,
     "price": "8 sp",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
@@ -568,7 +592,7 @@
     "id": "5a8c5bb6-6cd6-4f0d-97cb-2e7789e7f98a",
     "name": "Musical Instrument (Handheld)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=37",
-    "level": "0",
+    "level": 0,
     "price": "8 sp",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
@@ -580,7 +604,7 @@
     "id": "8088eab8-724b-4cd5-9388-62f55990984b",
     "name": "Tent (Pup)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=57",
-    "level": "0",
+    "level": 0,
     "price": "8 sp",
     "source": "Core Rulebook pg. 288",
     "sourceType": "CORE_RULEBOOK",
@@ -592,7 +616,7 @@
     "id": "b9ee1500-735f-459b-9eb1-e45c5432372d",
     "name": "Compass",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=16",
-    "level": "0",
+    "level": 0,
     "price": "1 gp",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
@@ -604,7 +628,7 @@
     "id": "01e8100c-9941-4cbf-9285-01a322e7eee5",
     "name": "Cookware",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=17",
-    "level": "0",
+    "level": 0,
     "price": "1 gp",
     "source": "Core Rulebook pg. 288",
     "sourceType": "CORE_RULEBOOK",
@@ -616,7 +640,7 @@
     "id": "f0c10729-b87e-4636-864b-f81bfa369044",
     "name": "Formula Book (Blank)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=22",
-    "level": "0",
+    "level": 0,
     "price": "1 gp",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
@@ -628,7 +652,7 @@
     "id": "ba37ec8b-53c1-41db-9ee0-83c37fcf24a8",
     "name": "Lantern (Bull's-Eye)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=29",
-    "level": "0",
+    "level": 0,
     "price": "1 gp",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
@@ -640,7 +664,7 @@
     "id": "083ec47c-cb12-4928-859c-5f379828d023",
     "name": "Mirror",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=35",
-    "level": "0",
+    "level": 0,
     "price": "1 gp",
     "source": "Core Rulebook pg. 288",
     "sourceType": "CORE_RULEBOOK",
@@ -652,7 +676,7 @@
     "id": "7d4441d4-92d6-4577-8f5b-efc850b4a36a",
     "name": "Religious Text",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=42",
-    "level": "0",
+    "level": 0,
     "price": "1 gp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -664,7 +688,7 @@
     "id": "3f83c498-234e-4358-a011-b63215a6646f",
     "name": "Spellbook (Blank)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=53",
-    "level": "0",
+    "level": 0,
     "price": "1 gp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -676,7 +700,7 @@
     "id": "b90af9be-b592-47c7-a005-8ac3f40f771e",
     "name": "Tool (Long)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=59",
-    "level": "0",
+    "level": 0,
     "price": "1 gp",
     "source": "Core Rulebook pg. 292",
     "sourceType": "CORE_RULEBOOK",
@@ -688,7 +712,7 @@
     "id": "b7567bcf-07bd-4bb5-bf8a-71df92d83d2f",
     "name": "Writing Set",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=63",
-    "level": "0",
+    "level": 0,
     "price": "1 gp",
     "source": "Core Rulebook pg. 292",
     "sourceType": "CORE_RULEBOOK",
@@ -697,10 +721,34 @@
   },
   {
     "category": "ADVENTURING_GEAR",
+    "id": "a32e5d49-1bf2-4a7d-98be-d431631b3531",
+    "name": "Brass Ear",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=677",
+    "level": 0,
+    "price": "1 gp",
+    "source": "Advanced Player's Guide pg. 249",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": []
+  },
+  {
+    "category": "ADVENTURING_GEAR",
+    "id": "b95dac76-664e-48df-b713-e3ca74035147",
+    "name": "Net",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=681",
+    "level": 0,
+    "price": "1 gp",
+    "source": "Advanced Player's Guide pg. 249",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": []
+  },
+  {
+    "category": "ADVENTURING_GEAR",
     "id": "8ca980d3-1bf6-4b1c-99fb-93469b0f9d22",
     "name": "Clothing (Fine)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=15",
-    "level": "0",
+    "level": 0,
     "price": "2 gp",
     "source": "Core Rulebook pg. 289",
     "sourceType": "CORE_RULEBOOK",
@@ -712,7 +760,7 @@
     "id": "06a804d4-6251-4813-9960-7f20cb79bdbc",
     "name": "Disguise Kit",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=19",
-    "level": "0",
+    "level": 0,
     "price": "2 gp",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
@@ -724,7 +772,7 @@
     "id": "8392bc3a-0c7b-45a5-9486-fba4a0133da5",
     "name": "Musical Instrument (Heavy)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=37",
-    "level": "0",
+    "level": 0,
     "price": "2 gp",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
@@ -736,7 +784,7 @@
     "id": "6c26c850-00d9-4a5e-9d63-653276092c5d",
     "name": "Religious Symbol (Silver)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=41",
-    "level": "0",
+    "level": 0,
     "price": "2 gp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -748,7 +796,7 @@
     "id": "8afed1fc-802c-4bed-a0fb-5e7cde19761d",
     "name": "Repair Kit",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=43",
-    "level": "0",
+    "level": 0,
     "price": "2 gp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -760,7 +808,7 @@
     "id": "9df41ab8-2a71-4b72-be53-fcb73c75f64a",
     "name": "Jellyfish Lamp",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=495",
-    "level": "0",
+    "level": 0,
     "price": "2 gp",
     "source": "World Guide pg. 68",
     "sourceType": "MISC",
@@ -772,7 +820,7 @@
     "id": "467eac81-0c05-45ee-81c9-60ec61a51b56",
     "name": "Armored Skirt",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=514",
-    "level": "0",
+    "level": 0,
     "price": "2 gp",
     "source": "Character Guide pg. 91",
     "sourceType": "MISC",
@@ -784,7 +832,7 @@
     "id": "e9383cc5-8aeb-4da6-b02c-0a930032f7b3",
     "name": "Alchemist's Tools",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=2",
-    "level": "0",
+    "level": 0,
     "price": "3 gp",
     "source": "Core Rulebook pg. 289",
     "sourceType": "CORE_RULEBOOK",
@@ -796,7 +844,7 @@
     "id": "458cb549-38fe-4207-b398-fed3629cedbf",
     "name": "Hourglass",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=27",
-    "level": "0",
+    "level": 0,
     "price": "3 gp",
     "source": "Core Rulebook pg. 288",
     "sourceType": "CORE_RULEBOOK",
@@ -808,7 +856,7 @@
     "id": "d1094138-9da0-4ef9-ab66-dbc03873fafc",
     "name": "Thieves' Tools",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=58",
-    "level": "0",
+    "level": 0,
     "price": "3 gp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -820,7 +868,7 @@
     "id": "cc76174d-0ae3-4504-a5e3-0b0cf2299721",
     "name": "Chain",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=11",
-    "level": "0",
+    "level": 0,
     "price": "4 gp",
     "source": "Core Rulebook pg. 288",
     "sourceType": "CORE_RULEBOOK",
@@ -832,7 +880,7 @@
     "id": "038aa474-07a7-4d16-a334-43407624c7df",
     "name": "Artisan's Tools",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=3",
-    "level": "0",
+    "level": 0,
     "price": "4 gp",
     "source": "Core Rulebook pg. 289",
     "sourceType": "CORE_RULEBOOK",
@@ -844,7 +892,7 @@
     "id": "582f9bcc-363b-4402-9b0f-8d15756504d4",
     "name": "Tack",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=55",
-    "level": "0",
+    "level": 0,
     "price": "4 gp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -856,7 +904,7 @@
     "id": "ab56502c-6b40-49d4-b7f8-36bab9307d8b",
     "name": "Healer's Tools",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=25",
-    "level": "0",
+    "level": 0,
     "price": "5 gp",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
@@ -868,7 +916,7 @@
     "id": "9e8f1420-e699-4994-b77c-5e96133ceebf",
     "name": "Swim Fins",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=496",
-    "level": "0",
+    "level": 0,
     "price": "5 gp",
     "source": "World Guide pg. 69",
     "sourceType": "MISC",
@@ -880,7 +928,7 @@
     "id": "4bce84c0-881d-44b9-92a4-39e99c41b195",
     "name": "Snare Kit",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=51",
-    "level": "0",
+    "level": 0,
     "price": "5 gp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -892,7 +940,7 @@
     "id": "0821f7d5-3b24-4f43-b35a-40a7285799ee",
     "name": "Alchemist's Lab",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=543",
-    "level": "0",
+    "level": 0,
     "price": "5 gp",
     "source": "Core Rulebook pg. 287",
     "sourceType": "CORE_RULEBOOK",
@@ -904,7 +952,7 @@
     "id": "e81b00f0-19ca-4f96-8ee5-ae6c5bc752a7",
     "name": "Tent (Four-Person)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=57",
-    "level": "0",
+    "level": 0,
     "price": "5 gp",
     "source": "Core Rulebook pg. 288",
     "sourceType": "CORE_RULEBOOK",
@@ -916,7 +964,7 @@
     "id": "cb62b075-25b8-4882-ae32-9ff28510d666",
     "name": "Spyglass",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=54",
-    "level": "0",
+    "level": 0,
     "price": "20 gp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
@@ -928,7 +976,7 @@
     "id": "2c83427a-60cc-4c88-96bc-d19bbd55e048",
     "name": "Magnifying Glass",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=31",
-    "level": "0",
+    "level": 0,
     "price": "40 gp",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
@@ -956,6 +1004,49 @@
     "price": "3 gp",
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
+    "rarity": "COMMON",
+    "traits": []
+  },
+  {
+    "category": "ADVENTURING_GEAR",
+    "id": "a8a761d0-670b-4d6d-9ed9-d883cfee07d4",
+    "name": "Walking Cauldron",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=753",
+    "level": "1",
+    "price": "12 gp",
+    "source": "Advanced Player's Guide pg. 264",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Invested",
+      "Magical",
+      "Transmutation"
+    ]
+  },
+  {
+    "category": "ADVENTURING_GEAR",
+    "id": "368a0d1b-e68f-4ff5-8d12-cf9d467792db",
+    "name": "Lovers' Ink",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=765",
+    "level": "2",
+    "price": "5 gp",
+    "source": "Legends pg. 24",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Alchemical",
+      "Consumable"
+    ]
+  },
+  {
+    "category": "ADVENTURING_GEAR",
+    "id": "f9a6b995-2598-47fa-9eeb-9ea25e2d9a25",
+    "name": "Periscope",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=683",
+    "level": "2",
+    "price": "25 gp",
+    "source": "Advanced Player's Guide pg. 249",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
     "rarity": "COMMON",
     "traits": []
   },
@@ -1105,6 +1196,30 @@
   },
   {
     "category": "ADVENTURING_GEAR",
+    "id": "79280cc5-0caa-4d43-94b2-63ba046cabea",
+    "name": "Concealed Sheath",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=678",
+    "level": "3",
+    "price": "25 gp",
+    "source": "Advanced Player's Guide pg. 249",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": []
+  },
+  {
+    "category": "ADVENTURING_GEAR",
+    "id": "b3a41c56-9e44-41d2-b54c-23dacea76df0",
+    "name": "Detective's Kit",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=679",
+    "level": "3",
+    "price": "25 gp",
+    "source": "Advanced Player's Guide pg. 249",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": []
+  },
+  {
+    "category": "ADVENTURING_GEAR",
     "id": "cbe29c66-8a17-4f4b-9892-1e9c1b27bb8a",
     "name": "Scholarly Journal (Compendium)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=64",
@@ -1112,6 +1227,30 @@
     "price": "30 gp",
     "source": "Core Rulebook pg. 291",
     "sourceType": "CORE_RULEBOOK",
+    "rarity": "UNCOMMON",
+    "traits": []
+  },
+  {
+    "category": "ADVENTURING_GEAR",
+    "id": "88243ba9-5e65-4e9a-bcbe-f995cb21be21",
+    "name": "Fingerprinting Kit",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=797",
+    "level": "3",
+    "price": "30 gp",
+    "source": "Pathfinder #157: Devil at the Dreaming Palace pg. 77",
+    "sourceType": "ADVENTURE_PATH",
+    "rarity": "UNCOMMON",
+    "traits": []
+  },
+  {
+    "category": "ADVENTURING_GEAR",
+    "id": "72c60982-51b4-444d-82a3-42d07abb2231",
+    "name": "Handcuffs (Average)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=798",
+    "level": "3",
+    "price": "30 gp",
+    "source": "Pathfinder #157: Devil at the Dreaming Palace pg. 77",
+    "sourceType": "ADVENTURE_PATH",
     "rarity": "UNCOMMON",
     "traits": []
   },
@@ -1237,6 +1376,18 @@
   },
   {
     "category": "ADVENTURING_GEAR",
+    "id": "d3d2b6ca-9fe9-4d33-99a7-94d89d374b03",
+    "name": "Palm Crossbow",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=766",
+    "level": "3",
+    "price": "60 gp",
+    "source": "Legends pg. 25",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": []
+  },
+  {
+    "category": "ADVENTURING_GEAR",
     "id": "d4054ca9-4839-41a7-bd1d-b8337359dea3",
     "name": "Musical Instrument (Virtuoso Heavy)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=37",
@@ -1261,6 +1412,18 @@
   },
   {
     "category": "ADVENTURING_GEAR",
+    "id": "534ae4de-680c-456f-9a80-d04f948051ea",
+    "name": "Clockwork Recorder",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=764",
+    "level": "6",
+    "price": "250 gp",
+    "source": "Legends pg. 24",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": []
+  },
+  {
+    "category": "ADVENTURING_GEAR",
     "id": "b6085805-6cec-4132-9363-7f00272b4747",
     "name": "Lock (Good)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=30",
@@ -1281,6 +1444,18 @@
     "source": "Core Rulebook pg. 290",
     "sourceType": "CORE_RULEBOOK",
     "rarity": "COMMON",
+    "traits": []
+  },
+  {
+    "category": "ADVENTURING_GEAR",
+    "id": "b5ec10f3-dac4-406b-b9ec-e087264fe366",
+    "name": "Handcuffs (Good)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=798",
+    "level": "9",
+    "price": "350 gp",
+    "source": "Pathfinder #157: Devil at the Dreaming Palace pg. 77",
+    "sourceType": "ADVENTURE_PATH",
+    "rarity": "UNCOMMON",
     "traits": []
   },
   {
@@ -1321,6 +1496,75 @@
     "sourceType": "CORE_RULEBOOK",
     "rarity": "COMMON",
     "traits": []
+  },
+  {
+    "category": "ADVENTURING_GEAR",
+    "id": "27c3e9a7-3b79-4828-a575-be771805408e",
+    "name": "Handcuffs (Superior)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=798",
+    "level": "17",
+    "price": "6,000 gp",
+    "source": "Pathfinder #157: Devil at the Dreaming Palace pg. 77",
+    "sourceType": "ADVENTURE_PATH",
+    "rarity": "UNCOMMON",
+    "traits": []
+  },
+  {
+    "category": "ALCHEMICAL_BOMBS",
+    "id": "91806b7e-a90a-4620-83e2-ff455e9c3755",
+    "name": "Blight Bomb (Lesser)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=684",
+    "level": "1",
+    "price": "3 gp",
+    "source": "Advanced Player's Guide pg. 252",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Bomb",
+      "Consumable",
+      "Poison",
+      "Splash"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_BOMBS",
+    "id": "77c167cb-590a-4a38-9714-870dbc9d43bc",
+    "name": "Dread Ampoule (Lesser)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=686",
+    "level": "1",
+    "price": "3 gp",
+    "source": "Advanced Player's Guide pg. 253",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Bomb",
+      "Consumable",
+      "Emotion",
+      "Fear",
+      "Mental",
+      "Poison",
+      "Splash"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_BOMBS",
+    "id": "d5bb0c33-3338-440e-b24e-37adcb240ed2",
+    "name": "Ghost Charge (Lesser)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=687",
+    "level": "1",
+    "price": "3 gp",
+    "source": "Advanced Player's Guide pg. 253",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Bomb",
+      "Consumable",
+      "Positive",
+      "Splash"
+    ]
   },
   {
     "category": "ALCHEMICAL_BOMBS",
@@ -1460,6 +1704,63 @@
       "Bomb",
       "Consumable",
       "Fire",
+      "Splash"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_BOMBS",
+    "id": "44550ddc-ba7e-4040-83ca-e8ba65e88409",
+    "name": "Blight Bomb (Moderate)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=684",
+    "level": "3",
+    "price": "10 gp",
+    "source": "Advanced Player's Guide pg. 252",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Bomb",
+      "Consumable",
+      "Poison",
+      "Splash"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_BOMBS",
+    "id": "2232c148-152d-4115-a56c-72b8c64265c1",
+    "name": "Dread Ampoule (Moderate)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=686",
+    "level": "3",
+    "price": "10 gp",
+    "source": "Advanced Player's Guide pg. 253",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Bomb",
+      "Consumable",
+      "Emotion",
+      "Fear",
+      "Mental",
+      "Poison",
+      "Splash"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_BOMBS",
+    "id": "374b7ec0-ea5a-497f-96f3-4964b6ec47d4",
+    "name": "Ghost Charge (Moderate)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=687",
+    "level": "3",
+    "price": "10 gp",
+    "source": "Advanced Player's Guide pg. 253",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Bomb",
+      "Consumable",
+      "Positive",
       "Splash"
     ]
   },
@@ -1606,6 +1907,77 @@
   },
   {
     "category": "ALCHEMICAL_BOMBS",
+    "id": "177269b6-6d63-4d46-94c3-51928aaacc75",
+    "name": "Crystal Shards (Moderate)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=685",
+    "level": "4",
+    "price": "16 gp",
+    "source": "Advanced Player's Guide pg. 252",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Bomb",
+      "Consumable",
+      "Earth",
+      "Splash"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_BOMBS",
+    "id": "57c8f9af-bdfa-44c2-bec1-fc43e027302d",
+    "name": "Blindpepper Bomb",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=799",
+    "level": "5",
+    "price": "40 gp",
+    "source": "Pathfinder #157: Devil at the Dreaming Palace pg. 78",
+    "sourceType": "ADVENTURE_PATH",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Alchemical",
+      "Bomb",
+      "Consumable",
+      "Visual"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_BOMBS",
+    "id": "b5d4f129-a00e-45ab-8e07-50a0e17d90aa",
+    "name": "Blight Bomb (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=684",
+    "level": "11",
+    "price": "250 gp",
+    "source": "Advanced Player's Guide pg. 252",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Bomb",
+      "Consumable",
+      "Poison",
+      "Splash"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_BOMBS",
+    "id": "43ddf48c-8b40-452b-abb3-e1c70e2ebfc8",
+    "name": "Ghost Charge (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=687",
+    "level": "11",
+    "price": "250 gp",
+    "source": "Advanced Player's Guide pg. 253",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Bomb",
+      "Consumable",
+      "Positive",
+      "Splash"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_BOMBS",
     "id": "4328235c-7a98-449d-ae04-f07a9b456702",
     "name": "Acid Flask (Greater)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=74",
@@ -1724,6 +2096,81 @@
       "Alchemical",
       "Bomb",
       "Consumable",
+      "Splash"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_BOMBS",
+    "id": "9c4b908e-b210-4b2f-ad01-7ea9912d11ef",
+    "name": "Dread Ampoule (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=686",
+    "level": "11",
+    "price": "300 gp",
+    "source": "Advanced Player's Guide pg. 253",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Bomb",
+      "Consumable",
+      "Emotion",
+      "Fear",
+      "Mental",
+      "Poison",
+      "Splash"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_BOMBS",
+    "id": "4a1a4bad-e681-45f8-bbf1-e0672b497d74",
+    "name": "Crystal Shards (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=685",
+    "level": "12",
+    "price": "350 gp",
+    "source": "Advanced Player's Guide pg. 252",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Bomb",
+      "Consumable",
+      "Earth",
+      "Splash"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_BOMBS",
+    "id": "28a80897-276f-4f36-a41e-f5a59d41d6f0",
+    "name": "Blight Bomb (Major)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=684",
+    "level": "17",
+    "price": "2,500 gp",
+    "source": "Advanced Player's Guide pg. 252",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Bomb",
+      "Consumable",
+      "Poison",
+      "Splash"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_BOMBS",
+    "id": "db2749c7-44d5-4a44-b860-4809747224bf",
+    "name": "Ghost Charge (Major)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=687",
+    "level": "17",
+    "price": "2,500 gp",
+    "source": "Advanced Player's Guide pg. 253",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Bomb",
+      "Consumable",
+      "Positive",
       "Splash"
     ]
   },
@@ -1848,6 +2295,61 @@
       "Bomb",
       "Consumable",
       "Splash"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_BOMBS",
+    "id": "15183fbb-27f4-4b0a-adba-ea0ed38b68ec",
+    "name": "Dread Ampoule (Major)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=686",
+    "level": "17",
+    "price": "3,000 gp",
+    "source": "Advanced Player's Guide pg. 253",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Bomb",
+      "Consumable",
+      "Emotion",
+      "Fear",
+      "Mental",
+      "Poison",
+      "Splash"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_BOMBS",
+    "id": "2525d9cb-fb54-4b2e-8c45-756033e46ddd",
+    "name": "Crystal Shards (Major)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=685",
+    "level": "18",
+    "price": "4,000 gp",
+    "source": "Advanced Player's Guide pg. 252",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Bomb",
+      "Consumable",
+      "Earth",
+      "Splash"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
+    "id": "e3ddf2ac-5600-4109-a948-162da0500dca",
+    "name": "Addiction Suppressant (Lesser)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=774",
+    "level": "1",
+    "price": "2 gp",
+    "source": "Legends pg. 72",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir"
     ]
   },
   {
@@ -1985,6 +2487,24 @@
   },
   {
     "category": "ALCHEMICAL_ELIXIRS",
+    "id": "7817620c-e7e8-4bf4-884c-e8c62be506ff",
+    "name": "Drakeheart Mutagen (Lesser)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=688",
+    "level": "1",
+    "price": "4 gp",
+    "source": "Advanced Player's Guide pg. 253",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir",
+      "Mutagen",
+      "Polymorph"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
     "id": "8cb184b7-931d-4705-b15f-b77e4ac2d489",
     "name": "Bestial Mutagen (Lesser)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=82",
@@ -2091,6 +2611,56 @@
   },
   {
     "category": "ALCHEMICAL_ELIXIRS",
+    "id": "879d5fac-46e0-4545-a57b-0164b8a29aa5",
+    "name": "Vaccine (Minor)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=773",
+    "level": "1",
+    "price": "4 gp",
+    "source": "Legends pg. 71",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
+    "id": "c27dea0b-08c4-444f-a424-3e4af183301f",
+    "name": "Focus Cathartic (Lesser)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=689",
+    "level": "2",
+    "price": "5 gp",
+    "source": "Advanced Player's Guide pg. 253",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir",
+      "Healing"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
+    "id": "651de880-73c7-4786-8a9a-343ce2a071b8",
+    "name": "Sinew-Shock Serum (Lesser)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=691",
+    "level": "2",
+    "price": "5 gp",
+    "source": "Advanced Player's Guide pg. 254",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir",
+      "Healing"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
     "id": "c1edd99f-f3b9-4f64-a43e-94a64dc60aa3",
     "name": "Darkvision Elixir (Lesser)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=89",
@@ -2174,6 +2744,22 @@
   },
   {
     "category": "ALCHEMICAL_ELIXIRS",
+    "id": "50aef814-d665-4fe0-bc08-580a68dd6114",
+    "name": "Olefactory Obfuscator",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=690",
+    "level": "3",
+    "price": "9 gp",
+    "source": "Advanced Player's Guide pg. 254",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
     "id": "816cc2fa-18ff-465f-bbf6-a4298ec920af",
     "name": "Serene Mutagen (Moderate)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=100",
@@ -2199,6 +2785,24 @@
     "price": "12 gp",
     "source": "Core Rulebook pg. 550",
     "sourceType": "CORE_RULEBOOK",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir",
+      "Mutagen",
+      "Polymorph"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
+    "id": "fe410cb7-13fc-473a-9687-6844538930d2",
+    "name": "Drakeheart Mutagen (Moderate)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=688",
+    "level": "3",
+    "price": "12 gp",
+    "source": "Advanced Player's Guide pg. 253",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
     "rarity": "COMMON",
     "traits": [
       "Alchemical",
@@ -2300,6 +2904,22 @@
   },
   {
     "category": "ALCHEMICAL_ELIXIRS",
+    "id": "916355e1-1527-4696-88a8-1edcd268643f",
+    "name": "Vaccine (Lesser)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=773",
+    "level": "3",
+    "price": "12 gp",
+    "source": "Legends pg. 71",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
     "id": "0171d1e5-74df-49eb-9e3a-7d33edaf331b",
     "name": "Darkvision Elixir (Moderate)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=89",
@@ -2365,6 +2985,40 @@
   },
   {
     "category": "ALCHEMICAL_ELIXIRS",
+    "id": "6337936f-dc73-482a-b639-2243b848307e",
+    "name": "Focus Cathartic (Moderate)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=689",
+    "level": "4",
+    "price": "15 gp",
+    "source": "Advanced Player's Guide pg. 253",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir",
+      "Healing"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
+    "id": "610f48a2-5023-43b0-a5e1-c3f287acf201",
+    "name": "Sinew-Shock Serum (Moderate)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=691",
+    "level": "4",
+    "price": "15 gp",
+    "source": "Advanced Player's Guide pg. 254",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir",
+      "Healing"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
     "id": "423222ab-7c88-4adb-9ba8-c997f52963be",
     "name": "Salamander Elixir (Lesser)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=98",
@@ -2395,6 +3049,24 @@
       "Elixir",
       "Illusion",
       "Visual"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
+    "id": "0cd5fb80-712a-444e-bbf6-2ccc48ec8c1c",
+    "name": "Applereed Mutagen (Lesser)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=783",
+    "level": "4",
+    "price": "20 gp",
+    "source": "Legends pg. 86",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir",
+      "Mutagen",
+      "Polymorph"
     ]
   },
   {
@@ -2450,6 +3122,23 @@
   },
   {
     "category": "ALCHEMICAL_ELIXIRS",
+    "id": "0983b0dd-9a78-42ce-a8bd-3965c00462c0",
+    "name": "Sixfingers Elixir (Lesser)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=791",
+    "level": "5",
+    "price": "25 gp",
+    "source": "The Slithering pg. 61",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir",
+      "Polymorph"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
     "id": "bf79fda8-11be-4d4d-94cf-9339dedc6a28",
     "name": "Eagle Eye Elixir (Moderate)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=90",
@@ -2483,6 +3172,22 @@
   },
   {
     "category": "ALCHEMICAL_ELIXIRS",
+    "id": "7aba2122-d474-4e75-b466-2dbcbd14e000",
+    "name": "Addiction Suppressant (Moderate)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=774",
+    "level": "6",
+    "price": "30 gp",
+    "source": "Legends pg. 72",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
     "id": "9bf3cac9-f364-4570-b498-3d172c17f7b0",
     "name": "Antidote (Moderate)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=80",
@@ -2507,6 +3212,22 @@
     "source": "Core Rulebook pg. 546",
     "sourceType": "CORE_RULEBOOK",
     "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
+    "id": "f5cd9038-4bfd-4bdb-8921-c736cf536cb3",
+    "name": "Vaccine (Moderate)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=773",
+    "level": "6",
+    "price": "50 gp",
+    "source": "Legends pg. 71",
+    "sourceType": "MISC",
+    "rarity": "RARE",
     "traits": [
       "Alchemical",
       "Consumable",
@@ -2615,6 +3336,22 @@
   },
   {
     "category": "ALCHEMICAL_ELIXIRS",
+    "id": "d189e12a-dd19-4f27-9571-5a01b451968e",
+    "name": "Addiction Suppressant (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=774",
+    "level": "10",
+    "price": "140 gp",
+    "source": "Legends pg. 72",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
     "id": "2aff10cf-7e32-4ea5-a396-8223a0910700",
     "name": "Bravo's Brew (Moderate)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=84",
@@ -2698,6 +3435,39 @@
   },
   {
     "category": "ALCHEMICAL_ELIXIRS",
+    "id": "b17cb435-2106-465a-80d2-5a529ed2ce01",
+    "name": "Olefactory Obfuscator (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=690",
+    "level": "10",
+    "price": "225 gp",
+    "source": "Advanced Player's Guide pg. 254",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
+    "id": "4801744d-aaad-4dbe-ac69-b571e3a38017",
+    "name": "Sixfingers Elixir (Moderate)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=791",
+    "level": "11",
+    "price": "250 gp",
+    "source": "The Slithering pg. 61",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir",
+      "Polymorph"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
     "id": "82a67c18-57c0-4b2b-b85a-055e00405d61",
     "name": "Serene Mutagen (Greater)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=100",
@@ -2723,6 +3493,24 @@
     "price": "300 gp",
     "source": "Core Rulebook pg. 550",
     "sourceType": "CORE_RULEBOOK",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir",
+      "Mutagen",
+      "Polymorph"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
+    "id": "d01d63aa-8f90-4119-9e39-aba821c09c2d",
+    "name": "Drakeheart Mutagen (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=688",
+    "level": "11",
+    "price": "300 gp",
+    "source": "Advanced Player's Guide pg. 253",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
     "rarity": "COMMON",
     "traits": [
       "Alchemical",
@@ -2891,6 +3679,74 @@
   },
   {
     "category": "ALCHEMICAL_ELIXIRS",
+    "id": "99b71499-8756-494b-8194-1d65f692d976",
+    "name": "Focus Cathartic (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=689",
+    "level": "12",
+    "price": "325 gp",
+    "source": "Advanced Player's Guide pg. 253",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir",
+      "Healing"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
+    "id": "561ee83f-a3c0-4e8e-8eae-6d2637bd38b2",
+    "name": "Sinew-Shock Serum (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=691",
+    "level": "12",
+    "price": "325 gp",
+    "source": "Advanced Player's Guide pg. 254",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir",
+      "Healing"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
+    "id": "8384fdc1-4e84-4cd3-899d-b28a4270772f",
+    "name": "Vaccine (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=773",
+    "level": "12",
+    "price": "400 gp",
+    "source": "Legends pg. 71",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
+    "id": "03855afd-3cfc-4441-bf1a-957096cc3d5d",
+    "name": "Applereed Mutagen (Moderate)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=783",
+    "level": "12",
+    "price": "400 gp",
+    "source": "Legends pg. 86",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir",
+      "Mutagen",
+      "Polymorph"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
     "id": "5864f72d-21d1-452a-b1f3-099f0ce6b314",
     "name": "Elixir of Life (Greater)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=91",
@@ -2904,6 +3760,22 @@
       "Consumable",
       "Elixir",
       "Healing"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
+    "id": "782c2908-931d-40b5-ad84-79699fe4cb66",
+    "name": "Addiction Suppressant (Major)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=774",
+    "level": "14",
+    "price": "500 gp",
+    "source": "Legends pg. 72",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir"
     ]
   },
   {
@@ -3073,6 +3945,23 @@
   },
   {
     "category": "ALCHEMICAL_ELIXIRS",
+    "id": "5ad81544-9495-4d87-80ef-3f44975ff1ab",
+    "name": "Sixfingers Elixir (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=791",
+    "level": "17",
+    "price": "2,500 gp",
+    "source": "The Slithering pg. 61",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir",
+      "Polymorph"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
     "id": "23157ab2-2f48-4182-b011-b5fadfc2a33d",
     "name": "Serene Mutagen (Major)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=100",
@@ -3098,6 +3987,24 @@
     "price": "3,000 gp",
     "source": "Core Rulebook pg. 550",
     "sourceType": "CORE_RULEBOOK",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir",
+      "Mutagen",
+      "Polymorph"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
+    "id": "b138536f-661e-40a2-873f-9b9db8e89bbf",
+    "name": "Drakeheart Mutagen (Major)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=688",
+    "level": "17",
+    "price": "3,000 gp",
+    "source": "Advanced Player's Guide pg. 253",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
     "rarity": "COMMON",
     "traits": [
       "Alchemical",
@@ -3189,6 +4096,74 @@
     "source": "The Fall of Plaguestone pg. 56",
     "sourceType": "MISC",
     "rarity": "UNCOMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir",
+      "Mutagen",
+      "Polymorph"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
+    "id": "dd62c07d-0f23-4bd6-8945-b716c3240c4f",
+    "name": "Focus Cathartic (Major)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=689",
+    "level": "18",
+    "price": "3,250 gp",
+    "source": "Advanced Player's Guide pg. 253",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir",
+      "Healing"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
+    "id": "c125b711-6f59-46af-993b-e7f71dd358e7",
+    "name": "Sinew-Shock Serum (Major)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=691",
+    "level": "18",
+    "price": "3,250 gp",
+    "source": "Advanced Player's Guide pg. 254",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir",
+      "Healing"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
+    "id": "74b2501e-f09e-42c9-8ebd-2e60c3882544",
+    "name": "Vaccine (Major)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=773",
+    "level": "18",
+    "price": "5,000 gp",
+    "source": "Legends pg. 71",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Elixir"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_ELIXIRS",
+    "id": "87f2cb77-e3ec-40cd-9614-498b5062b5af",
+    "name": "Applereed Mutagen (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=783",
+    "level": "18",
+    "price": "5,000 gp",
+    "source": "Legends pg. 86",
+    "sourceType": "MISC",
+    "rarity": "RARE",
     "traits": [
       "Alchemical",
       "Consumable",
@@ -3385,6 +4360,18 @@
   },
   {
     "category": "ALCHEMICAL_POISONS",
+    "id": "2a5f5031-cf54-4b1c-81a1-fea02e831a0a",
+    "name": "Looter's Lethargy",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=809",
+    "level": "2",
+    "price": "6 gp",
+    "source": "Pathfinder #157: Devil at the Dreaming Palace pg. 81",
+    "sourceType": "ADVENTURE_PATH",
+    "rarity": "COMMON",
+    "traits": []
+  },
+  {
+    "category": "ALCHEMICAL_POISONS",
     "id": "42cd40af-6a1e-40ac-9698-d25ccf5b02ea",
     "name": "Lethargy Poison",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=120",
@@ -3485,6 +4472,23 @@
       "Alchemical",
       "Consumable",
       "Contact",
+      "Poison"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_POISONS",
+    "id": "5329fca3-c98a-43c0-8ffa-9684bfd8ecdb",
+    "name": "Leadenleg",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=693",
+    "level": "4",
+    "price": "15 gp",
+    "source": "Advanced Player's Guide pg. 254",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Injury",
       "Poison"
     ]
   },
@@ -3609,6 +4613,23 @@
   },
   {
     "category": "ALCHEMICAL_POISONS",
+    "id": "6c94c070-bf79-47f4-b294-e512be4753b1",
+    "name": "Knockout Dram",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=808",
+    "level": "7",
+    "price": "70 gp",
+    "source": "Pathfinder #157: Devil at the Dreaming Palace pg. 81",
+    "sourceType": "ADVENTURE_PATH",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Ingested",
+      "Poison"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_POISONS",
     "id": "be0b92a8-57e8-4259-a666-1cb8be3daf84",
     "name": "Nettleweed Residue",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=124",
@@ -3707,6 +4728,23 @@
       "Consumable",
       "Injury",
       "Negative",
+      "Poison"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_POISONS",
+    "id": "97c6c4d3-4d91-454c-9511-9a66472fe6f6",
+    "name": "Honeyscent",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=784",
+    "level": "10",
+    "price": "180 gp",
+    "source": "Legends pg. 86",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Inhaled",
       "Poison"
     ]
   },
@@ -3874,6 +4912,23 @@
     "source": "Pathfinder #149: Against the Scarlet Triad pg. 79",
     "sourceType": "ADVENTURE_PATH",
     "rarity": "UNCOMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Injury",
+      "Poison"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_POISONS",
+    "id": "e570d2e8-69c5-459f-8f2d-6b00817b61d8",
+    "name": "Cerulean Scourge",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=692",
+    "level": "16",
+    "price": "1,450 gp",
+    "source": "Advanced Player's Guide pg. 254",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
     "traits": [
       "Alchemical",
       "Consumable",
@@ -4085,6 +5140,52 @@
   },
   {
     "category": "ALCHEMICAL_TOOLS",
+    "id": "ed717446-8c21-4c11-8164-0b91b1989d2d",
+    "name": "Forensic Dye",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=695",
+    "level": "1",
+    "price": "3 gp",
+    "source": "Advanced Player's Guide pg. 254",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_TOOLS",
+    "id": "abd95343-2e72-4339-b590-e9ffd2cf6460",
+    "name": "Ghost Ink",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=696",
+    "level": "1",
+    "price": "3 gp",
+    "source": "Advanced Player's Guide pg. 255",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_TOOLS",
+    "id": "ad4f52ad-631d-4180-85e2-6f8fefc46841",
+    "name": "Blindpepper Tube",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=800",
+    "level": "1",
+    "price": "3 gp",
+    "source": "Pathfinder #157: Devil at the Dreaming Palace pg. 78",
+    "sourceType": "ADVENTURE_PATH",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Visual"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_TOOLS",
     "id": "8bfffd5d-973c-4ed5-a046-71a75eb8cb48",
     "name": "Silversheen",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=134",
@@ -4100,6 +5201,125 @@
   },
   {
     "category": "ALCHEMICAL_TOOLS",
+    "id": "e077e617-18d8-48bb-ba1d-0a192abe545b",
+    "name": "Bloodhound Mask (Lesser)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=694",
+    "level": "2",
+    "price": "6 gp",
+    "source": "Advanced Player's Guide pg. 254",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_TOOLS",
+    "id": "1e0e18b5-8ba4-4ef4-8a42-c5b519fc19c5",
+    "name": "Orgin Unguent",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=697",
+    "level": "2",
+    "price": "6 gp",
+    "source": "Advanced Player's Guide pg. 255",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_TOOLS",
+    "id": "6c2430b7-1efd-4d41-b029-d40026de2463",
+    "name": "Swamp Lily Quilt",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=786",
+    "level": "3",
+    "price": "12 gp",
+    "source": "Legends pg. 86",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Alchemical",
+      "Consumable"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_TOOLS",
+    "id": "a4b95695-5e01-4738-826f-979d51d6f92a",
+    "name": "Aurifying Salts",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=805",
+    "level": "3",
+    "price": "12 gp",
+    "source": "Pathfinder #157: Devil at the Dreaming Palace pg. 80",
+    "sourceType": "ADVENTURE_PATH",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_TOOLS",
+    "id": "519499db-4d81-4caa-bb55-cdbfc060c01f",
+    "name": "Vestige Lenses",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=767",
+    "level": "3",
+    "price": "40 gp",
+    "source": "Legends pg. 25",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Alchemical"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_TOOLS",
+    "id": "4f9bf5a6-adfc-44b0-9efa-ec27aad2fe50",
+    "name": "Timeless Salts",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=700",
+    "level": "4",
+    "price": "14 gp",
+    "source": "Advanced Player's Guide pg. 255",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_TOOLS",
+    "id": "ac9b8656-debf-4dba-96dd-7b455dbd9cf0",
+    "name": "Universal Solvent (Moderate)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=701",
+    "level": "5",
+    "price": "21 gp",
+    "source": "Advanced Player's Guide pg. 255",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_TOOLS",
+    "id": "f177f4a3-4ee5-4c06-8e3c-e536bb001e8d",
+    "name": "Bloodhound Mask (Moderate)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=694",
+    "level": "6",
+    "price": "40 gp",
+    "source": "Advanced Player's Guide pg. 254",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_TOOLS",
     "id": "f0a7b56b-cad7-4eb8-aa6f-a58ff206b5aa",
     "name": "Smokestick (Greater)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=135",
@@ -4107,6 +5327,81 @@
     "price": "53 gp",
     "source": "Core Rulebook pg. 554",
     "sourceType": "CORE_RULEBOOK",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_TOOLS",
+    "id": "6f9ced3f-218c-4ffa-a24f-ba5c0dd0ce1d",
+    "name": "Skinitch Salve",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=698",
+    "level": "7",
+    "price": "55 gp",
+    "source": "Advanced Player's Guide pg. 255",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Healing"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_TOOLS",
+    "id": "a7261743-e6bd-4ac3-a505-9b8f4d84c122",
+    "name": "Soverign Glue",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=699",
+    "level": "7",
+    "price": "55 gp",
+    "source": "Advanced Player's Guide pg. 255",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_TOOLS",
+    "id": "4fde0971-7403-4f20-8408-0169ce5dca2b",
+    "name": "Alchemical Atomizer",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=779",
+    "level": "10",
+    "price": "175 gp",
+    "source": "Legends pg. 80",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Alchemical"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_TOOLS",
+    "id": "83f4a2bc-f68d-450e-bc13-f331fb9a1c63",
+    "name": "Bloodhound Mask (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=694",
+    "level": "11",
+    "price": "250 gp",
+    "source": "Advanced Player's Guide pg. 254",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_TOOLS",
+    "id": "e6586976-2c10-4b11-b496-78a3003eac61",
+    "name": "Universal Solvent (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=701",
+    "level": "12",
+    "price": "325 gp",
+    "source": "Advanced Player's Guide pg. 255",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
     "rarity": "COMMON",
     "traits": [
       "Alchemical",
@@ -4161,6 +5456,21 @@
   },
   {
     "category": "ALCHEMICAL_TOOLS",
+    "id": "ec788c2c-3d76-410d-b587-1601e7b06a13",
+    "name": "Universal Solvent (Major)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=701",
+    "level": "18",
+    "price": "3,250 gp",
+    "source": "Advanced Player's Guide pg. 255",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_TOOLS",
     "id": "8721366d-5cec-493e-bfc7-db95debbe874",
     "name": "Crimson Worm Repellent",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=655",
@@ -4169,6 +5479,21 @@
     "source": "Pathfinder #155: Lord of the Black Sands pg. 75",
     "sourceType": "ADVENTURE_PATH",
     "rarity": "UNCOMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable"
+    ]
+  },
+  {
+    "category": "ALCHEMICAL_TOOLS",
+    "id": "6eda8e7b-075c-4f0a-bd31-fe27855dead8",
+    "name": "Sun Orchid Poultice",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=763",
+    "level": "18",
+    "price": "5,000 gp",
+    "source": "Legends pg. 20",
+    "sourceType": "MISC",
+    "rarity": "RARE",
     "traits": [
       "Alchemical",
       "Consumable"
@@ -4194,7 +5519,7 @@
     "id": "95dfa5b7-9e64-4b26-9541-6b3a2aea341c",
     "name": "Alcohol",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=622",
-    "level": "0",
+    "level": 0,
     "price": "1 cp (or more)",
     "source": "Gamemastery Guide pg. 120",
     "sourceType": "GAMEMASTERY_GUIDE",
@@ -4212,7 +5537,7 @@
     "id": "1a3f140c-7e72-48a5-bacd-40ea5102caa9",
     "name": "Bloodeye Coffee",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=623",
-    "level": "0",
+    "level": 0,
     "price": "5 sp",
     "source": "Gamemastery Guide pg. 120",
     "sourceType": "GAMEMASTERY_GUIDE",
@@ -4230,7 +5555,7 @@
     "id": "25ced527-ee0e-4043-9611-9111258dcdd6",
     "name": "Flayleaf",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=624",
-    "level": "0",
+    "level": 0,
     "price": "1 gp",
     "source": "Gamemastery Guide pg. 120",
     "sourceType": "GAMEMASTERY_GUIDE",
@@ -4260,6 +5585,24 @@
       "Drug",
       "Ingested",
       "Inhaled",
+      "Poison"
+    ]
+  },
+  {
+    "category": "DRUGS",
+    "id": "81875a16-0f11-4492-a008-33a2897c1afd",
+    "name": "Grolna",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=807",
+    "level": "1",
+    "price": "3 gp",
+    "source": "Pathfinder #157: Devil at the Dreaming Palace pg. 81",
+    "sourceType": "ADVENTURE_PATH",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Drug",
+      "Ingested",
       "Poison"
     ]
   },
@@ -4337,6 +5680,24 @@
   },
   {
     "category": "DRUGS",
+    "id": "84d16f3d-9056-4fb1-b8a5-85279702efc1",
+    "name": "Diluted Hype",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=780",
+    "level": "5",
+    "price": "20 gp",
+    "source": "Legends pg. 81",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Drug",
+      "Ingested",
+      "Poison"
+    ]
+  },
+  {
+    "category": "DRUGS",
     "id": "d85e248e-6699-4b48-b50c-38a4bd9a388c",
     "name": "Elven Absinthe",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=631",
@@ -4387,6 +5748,42 @@
       "Drug",
       "Ingested",
       "Inhaled",
+      "Poison"
+    ]
+  },
+  {
+    "category": "DRUGS",
+    "id": "25db9125-18d5-4fea-ae76-07b906604f3e",
+    "name": "Hype",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=781",
+    "level": "8",
+    "price": "100 gp",
+    "source": "Legends pg. 81",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Drug",
+      "Ingested"
+    ]
+  },
+  {
+    "category": "DRUGS",
+    "id": "54d8b4d6-9f2a-4e99-8b8d-7a1225069cd3",
+    "name": "Plasma Hype",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=782",
+    "level": "12",
+    "price": "400 gp",
+    "source": "Legends pg. 81",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Alchemical",
+      "Consumable",
+      "Drug",
+      "Ingested",
+      "Poison",
       "Poison"
     ]
   },
@@ -4584,6 +5981,18 @@
   },
   {
     "category": "ARMOR_PRECIOUS",
+    "id": "8ad280e6-a310-41d2-9d96-eca8d6cc409e",
+    "name": "Standard-Grade Soverign Steel Armor",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=777",
+    "level": "13",
+    "price": "2,400 gp (+240 gp per Buk)",
+    "source": "Legends pg. 77",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": []
+  },
+  {
+    "category": "ARMOR_PRECIOUS",
     "id": "9361fef4-ffbd-4f55-b1aa-d5b41fcf737a",
     "name": "Elven Chain (Standard-Grade)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=143",
@@ -4668,6 +6077,18 @@
   },
   {
     "category": "ARMOR_PRECIOUS",
+    "id": "76a94228-516c-40a5-a0d1-f66b5dc2f775",
+    "name": "High-Grade Soverign Steel Armor",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=777",
+    "level": "20",
+    "price": "50,000 gp (+5,000 gp per Buk)",
+    "source": "Legends pg. 77",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": []
+  },
+  {
+    "category": "ARMOR_PRECIOUS",
     "id": "57e17280-e917-4a74-94c2-29e664f3a63d",
     "name": "Elven Chain (High-Grade)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=143",
@@ -4724,6 +6145,22 @@
   },
   {
     "category": "ARMOR_SPECIFIC",
+    "id": "a07bf1dd-04ca-4177-9653-0cb19c27719b",
+    "name": "Victory Plate",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=752",
+    "level": "9",
+    "price": "675 gp",
+    "source": "Advanced Player's Guide pg. 264",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Abjuration",
+      "Invested",
+      "Magical"
+    ]
+  },
+  {
+    "category": "ARMOR_SPECIFIC",
     "id": "d2787a84-d3aa-4bc0-94b4-b3df61bc15f8",
     "name": "Rhino Hide",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=158",
@@ -4753,6 +6190,18 @@
       "Invested",
       "Magical"
     ]
+  },
+  {
+    "category": "ARMOR_SPECIFIC",
+    "id": "2734cec5-bb10-407e-a5f4-3da212374887",
+    "name": "Numerian Steel Breastplate",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=811",
+    "level": "10",
+    "price": "900 gp",
+    "source": "Pathfinder Society Scenario #1-24: Lightning Strikes, Stars Fall pg. 32",
+    "sourceType": "PATHFINDER_SOCIETY",
+    "rarity": "COMMON",
+    "traits": []
   },
   {
     "category": "ARMOR_SPECIFIC",
@@ -4865,6 +6314,22 @@
       "Evocation",
       "Good",
       "Light",
+      "Magical"
+    ]
+  },
+  {
+    "category": "ARMOR_SPECIFIC",
+    "id": "4c20cd80-5bfc-4f0f-a564-1668d9dc63ba",
+    "name": "Victory Plate (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=752",
+    "level": "15",
+    "price": "5,500 gp",
+    "source": "Advanced Player's Guide pg. 264",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Abjuration",
+      "Invested",
       "Magical"
     ]
   },
@@ -5344,6 +6809,22 @@
   },
   {
     "category": "AMMUNITION",
+    "id": "6f7b6b27-605d-4f23-b83b-64a1a6d90e45",
+    "name": "Antler Arrow",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=706",
+    "level": "2",
+    "price": "7 gp",
+    "source": "Advanced Player's Guide pg. 256",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Conjuration",
+      "Consumable",
+      "Magical"
+    ]
+  },
+  {
+    "category": "AMMUNITION",
     "id": "6bd8e97d-2ac2-4f5d-a4d5-9d778f7a39c4",
     "name": "Beacon Shot",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=159",
@@ -5442,6 +6923,23 @@
   },
   {
     "category": "AMMUNITION",
+    "id": "99b7d00d-b51f-411a-bd3f-e5b6a6feeb87",
+    "name": "Freezing Ammunition",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=713",
+    "level": "5",
+    "price": "25 gp",
+    "source": "Advanced Player's Guide pg. 257",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Cold",
+      "Consumable",
+      "Evocation",
+      "Magical"
+    ]
+  },
+  {
+    "category": "AMMUNITION",
     "id": "8c13bffb-323d-43df-8ade-c03f6b3a4b31",
     "name": "Spellstrike Ammunition (Type II)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=167",
@@ -5458,6 +6956,41 @@
   },
   {
     "category": "AMMUNITION",
+    "id": "4e3a7799-0587-4d4e-8c55-0c822727846a",
+    "name": "Terrifying Ammunition",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=725",
+    "level": "6",
+    "price": "50 gp",
+    "source": "Advanced Player's Guide pg. 259",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Emotion",
+      "Enchantment",
+      "Fear",
+      "Magical",
+      "Mental"
+    ]
+  },
+  {
+    "category": "AMMUNITION",
+    "id": "d87c41eb-26f4-42ca-ab54-b5c4dd067c2d",
+    "name": "Starshot Arrow (Lesser)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=772",
+    "level": "7",
+    "price": "55 gp",
+    "source": "Legends pg. 48",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Conjuration",
+      "Consumable",
+      "Magical"
+    ]
+  },
+  {
+    "category": "AMMUNITION",
     "id": "0e54e97e-9cd1-46ab-912e-44c7bde82944",
     "name": "Spellstrike Ammunition (Type III)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=167",
@@ -5470,6 +7003,22 @@
       "Consumable",
       "Magical",
       "Transmutation"
+    ]
+  },
+  {
+    "category": "AMMUNITION",
+    "id": "c1567fa6-e802-4d33-a652-aa3baa7418d2",
+    "name": "Corrosive Ammunition",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=711",
+    "level": "7",
+    "price": "70 gp",
+    "source": "Advanced Player's Guide pg. 257",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Evocation",
+      "Magical"
     ]
   },
   {
@@ -5590,6 +7139,22 @@
   },
   {
     "category": "AMMUNITION",
+    "id": "620e06d0-6d4a-420d-ae09-0949603c644c",
+    "name": "Starshot Arrow (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=772",
+    "level": "14",
+    "price": "800 gp",
+    "source": "Legends pg. 48",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Conjuration",
+      "Consumable",
+      "Magical"
+    ]
+  },
+  {
+    "category": "AMMUNITION",
     "id": "8f2415c6-4a81-4346-be1a-fbe3ba8a8f12",
     "name": "Ghost Ammunition",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=163",
@@ -5702,6 +7267,41 @@
   },
   {
     "category": "OILS",
+    "id": "af43023e-1d8b-4439-9b9c-a92458b48bb3",
+    "name": "Oil of Unlife (Minor)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=718",
+    "level": "1",
+    "price": "4 gp",
+    "source": "Advanced Player's Guide pg. 258",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Magical",
+      "Necromancy",
+      "Negative",
+      "Oil"
+    ]
+  },
+  {
+    "category": "OILS",
+    "id": "b9b25aa8-3c50-40d6-9c79-a7b39cf421cd",
+    "name": "Shielding Salve",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=724",
+    "level": "1",
+    "price": "4 gp",
+    "source": "Advanced Player's Guide pg. 259",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Abjuration",
+      "Consumable",
+      "Magical",
+      "Oil"
+    ]
+  },
+  {
+    "category": "OILS",
     "id": "9972593a-6d01-41a9-9e93-a68b54050844",
     "name": "Oil of Weightlessness",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=181",
@@ -5753,6 +7353,24 @@
   },
   {
     "category": "OILS",
+    "id": "188b10af-1676-4c31-b010-0a06ff92f43b",
+    "name": "Oil of Unlife (Lesser)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=718",
+    "level": "3",
+    "price": "12 gp",
+    "source": "Advanced Player's Guide pg. 258",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Magical",
+      "Necromancy",
+      "Negative",
+      "Oil"
+    ]
+  },
+  {
+    "category": "OILS",
     "id": "a8ffb901-9eaa-475b-8cc1-f70d805fe568",
     "name": "Salve of Slipperiness",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=183",
@@ -5766,6 +7384,23 @@
       "Magical",
       "Oil",
       "Transmutation"
+    ]
+  },
+  {
+    "category": "OILS",
+    "id": "508523eb-bd98-496b-932c-2be038b67796",
+    "name": "Oil of Revelation",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=717",
+    "level": "5",
+    "price": "25 gp",
+    "source": "Advanced Player's Guide pg. 258",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Evocation",
+      "Magical",
+      "Oil"
     ]
   },
   {
@@ -5805,6 +7440,24 @@
   },
   {
     "category": "OILS",
+    "id": "14e87e46-941d-429a-94bd-7ad167c849a0",
+    "name": "Oil of Unlife (Moderate)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=718",
+    "level": "6",
+    "price": "50 gp",
+    "source": "Advanced Player's Guide pg. 258",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Magical",
+      "Necromancy",
+      "Negative",
+      "Oil"
+    ]
+  },
+  {
+    "category": "OILS",
     "id": "2a4be36a-d96c-475b-b972-1ffaafd1c1a5",
     "name": "Saints' Balm",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=590",
@@ -5819,6 +7472,23 @@
       "Magical",
       "Necromancy",
       "Oil"
+    ]
+  },
+  {
+    "category": "OILS",
+    "id": "1e9db26c-1a85-41ca-97c1-5977802a06a1",
+    "name": "Oil of Object Animation",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=716",
+    "level": "8",
+    "price": "85 gp",
+    "source": "Advanced Player's Guide pg. 258",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Consumable",
+      "Magical",
+      "Oil",
+      "Transmutation"
     ]
   },
   {
@@ -5909,6 +7579,24 @@
   },
   {
     "category": "OILS",
+    "id": "605355ce-0815-4163-9fe8-531092553158",
+    "name": "Oil of Unlife (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=718",
+    "level": "12",
+    "price": "400 gp",
+    "source": "Advanced Player's Guide pg. 258",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Magical",
+      "Necromancy",
+      "Negative",
+      "Oil"
+    ]
+  },
+  {
+    "category": "OILS",
     "id": "8b47742f-5fcc-4b0f-9813-5e8ccea6d95e",
     "name": "Obfuscation Oil",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=175",
@@ -5921,6 +7609,41 @@
       "Consumable",
       "Illusion",
       "Magical",
+      "Oil"
+    ]
+  },
+  {
+    "category": "OILS",
+    "id": "258b7e7a-a8a9-4fa3-acb4-f9b9077d6f2c",
+    "name": "Oil of Object Animation (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=716",
+    "level": "16",
+    "price": "1,400 gp",
+    "source": "Advanced Player's Guide pg. 258",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Consumable",
+      "Magical",
+      "Oil",
+      "Transmutation"
+    ]
+  },
+  {
+    "category": "OILS",
+    "id": "70c8ba02-735b-4c40-b26f-9b966572ec93",
+    "name": "Oil of Unlife (Major)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=718",
+    "level": "18",
+    "price": "5,000 gp",
+    "source": "Advanced Player's Guide pg. 258",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Magical",
+      "Necromancy",
+      "Negative",
       "Oil"
     ]
   },
@@ -6055,6 +7778,23 @@
   },
   {
     "category": "OTHER_CONSUMABLES",
+    "id": "67983a38-5eda-4770-bc8b-65ba2846cc7a",
+    "name": "Recording Rod (Basic)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=803",
+    "level": "3",
+    "price": "20 gp",
+    "source": "Pathfinder #157: Devil at the Dreaming Palace pg. 80",
+    "sourceType": "ADVENTURE_PATH",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Consumable",
+      "Divination",
+      "Magical",
+      "Scrying"
+    ]
+  },
+  {
+    "category": "OTHER_CONSUMABLES",
     "id": "5508bcfe-1173-418d-8837-8c4956112a49",
     "name": "Feather Token (Fan)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=244",
@@ -6183,6 +7923,22 @@
   },
   {
     "category": "OTHER_CONSUMABLES",
+    "id": "3c7f0275-734f-4f6d-a70a-1770215a3f73",
+    "name": "Candle of Revealing",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=710",
+    "level": "7",
+    "price": "60 gp",
+    "source": "Advanced Player's Guide pg. 257",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Divination",
+      "Magical"
+    ]
+  },
+  {
+    "category": "OTHER_CONSUMABLES",
     "id": "c9679aaf-e70c-4cb0-8ccb-76c482c37523",
     "name": "Candle of Truth",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=240",
@@ -6212,6 +7968,22 @@
       "Conjuration",
       "Consumable",
       "Magical"
+    ]
+  },
+  {
+    "category": "OTHER_CONSUMABLES",
+    "id": "fd756795-9e54-4d81-bad3-acc1a31b0b60",
+    "name": "Dust of Corpse Animation",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=712",
+    "level": "8",
+    "price": "100 gp",
+    "source": "Advanced Player's Guide pg. 257",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Consumable",
+      "Magical",
+      "Necromancy"
     ]
   },
   {
@@ -6297,6 +8069,89 @@
   },
   {
     "category": "OTHER_CONSUMABLES",
+    "id": "a1c82ce7-443e-4cb6-9038-f045aa2065b1",
+    "name": "Incense of Distilled Death",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=715",
+    "level": "12",
+    "price": "350 gp",
+    "source": "Advanced Player's Guide pg. 257",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Magical",
+      "Necromancy",
+      "Negative"
+    ]
+  },
+  {
+    "category": "OTHER_CONSUMABLES",
+    "id": "21d197c5-043d-4170-b629-76826eefa27c",
+    "name": "Ruby String",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=771",
+    "level": "14",
+    "price": "900 gp",
+    "source": "Legends pg. 48",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Conjuration",
+      "Consumable"
+    ]
+  },
+  {
+    "category": "OTHER_CONSUMABLES",
+    "id": "b4619304-986a-4bb3-b2dc-f7818ec8a99b",
+    "name": "Dust of Corpse Animation (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=712",
+    "level": "16",
+    "price": "1,500 gp",
+    "source": "Advanced Player's Guide pg. 257",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Consumable",
+      "Magical",
+      "Necromancy"
+    ]
+  },
+  {
+    "category": "OTHER_CONSUMABLES",
+    "id": "0304f44a-9593-4443-9f97-0c773c28ac3d",
+    "name": "Candle of Invocation",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=709",
+    "level": "16",
+    "price": "2,000 gp",
+    "source": "Advanced Player's Guide pg. 256",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Conjuration",
+      "Consumable",
+      "Divine"
+    ]
+  },
+  {
+    "category": "OTHER_CONSUMABLES",
+    "id": "af74395b-509b-497f-8989-72c77ff12bb9",
+    "name": "Celestial Peach (Rejuventation)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=769",
+    "level": "17",
+    "price": "3,000 gp",
+    "source": "Legends pg. 48",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Consumable",
+      "Divine",
+      "Healing",
+      "Magical",
+      "Necromancy",
+      "Positive"
+    ]
+  },
+  {
+    "category": "OTHER_CONSUMABLES",
     "id": "ac0b332d-e33e-437f-a974-5ff0cc115b9f",
     "name": "Panacea Fruit",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=665",
@@ -6310,6 +8165,76 @@
       "Healing",
       "Necromancy",
       "Primal"
+    ]
+  },
+  {
+    "category": "OTHER_CONSUMABLES",
+    "id": "f1d46341-e1ce-4952-9b66-46baca774d64",
+    "name": "Celestial Peach (Life)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=769",
+    "level": "20",
+    "price": "73,000 gp",
+    "source": "Legends pg. 48",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Consumable",
+      "Divine",
+      "Healing",
+      "Magical",
+      "Necromancy",
+      "Positive"
+    ]
+  },
+  {
+    "category": "POTIONS",
+    "id": "38ccbb20-53cc-4f8b-a481-fcad151f1a3a",
+    "name": "Gecko Potion",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=714",
+    "level": "1",
+    "price": "3 gp",
+    "source": "Advanced Player's Guide pg. 257",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Magical",
+      "Potion",
+      "Transmutation"
+    ]
+  },
+  {
+    "category": "POTIONS",
+    "id": "2372b80d-dc7f-4ce3-a7c5-25a8e110fb63",
+    "name": "Potion of Expeditious Retreat",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=720",
+    "level": "1",
+    "price": "3 gp",
+    "source": "Advanced Player's Guide pg. 258",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Magical",
+      "Potion",
+      "Transmutation"
+    ]
+  },
+  {
+    "category": "POTIONS",
+    "id": "d2da21d5-b890-4348-81fb-63cbf0094c94",
+    "name": "Ration Tonic",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=723",
+    "level": "1",
+    "price": "3 gp",
+    "source": "Advanced Player's Guide pg. 259",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Conjuration",
+      "Consumable",
+      "Magical",
+      "Potion"
     ]
   },
   {
@@ -6327,6 +8252,23 @@
       "Healing",
       "Magical",
       "Necromancy",
+      "Potion"
+    ]
+  },
+  {
+    "category": "POTIONS",
+    "id": "45f6d708-173e-4ffc-a22a-67b345890cac",
+    "name": "Potion of Retaliation (Minor)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=721",
+    "level": "1",
+    "price": "4 gp",
+    "source": "Advanced Player's Guide pg. 259",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Evocation",
+      "Magical",
       "Potion"
     ]
   },
@@ -6435,6 +8377,24 @@
   },
   {
     "category": "POTIONS",
+    "id": "000aa6b5-2ab6-47cd-98c1-4df312c11265",
+    "name": "Potion of Disguise (Lesser)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=719",
+    "level": "5",
+    "price": "30 gp",
+    "source": "Advanced Player's Guide pg. 258",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Consumable",
+      "Magical",
+      "Polymorph",
+      "Potion",
+      "Transmutation"
+    ]
+  },
+  {
+    "category": "POTIONS",
     "id": "bd625f68-6fb8-4a3d-9195-4372c4652eee",
     "name": "Potion of Resistance (Lesser)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=192",
@@ -6501,6 +8461,23 @@
       "Magical",
       "Potion",
       "Transmutation"
+    ]
+  },
+  {
+    "category": "POTIONS",
+    "id": "efd7d3b1-25c0-4795-bf99-0a30c6d2fd2d",
+    "name": "Ration Tonic (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=723",
+    "level": "7",
+    "price": "55 gp",
+    "source": "Advanced Player's Guide pg. 259",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Conjuration",
+      "Consumable",
+      "Magical",
+      "Potion"
     ]
   },
   {
@@ -6590,6 +8567,24 @@
   },
   {
     "category": "POTIONS",
+    "id": "0ad1870b-b7a8-4657-8316-badaf0723df8",
+    "name": "Potion of Disguise (Moderate)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=719",
+    "level": "8",
+    "price": "100 gp",
+    "source": "Advanced Player's Guide pg. 258",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Consumable",
+      "Magical",
+      "Polymorph",
+      "Potion",
+      "Transmutation"
+    ]
+  },
+  {
+    "category": "POTIONS",
     "id": "59bb1bbc-5c2d-4774-bb9f-f19cc5b614db",
     "name": "Potion of Resistance (Moderate)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=192",
@@ -6618,6 +8613,24 @@
     "traits": [
       "Consumable",
       "Magical",
+      "Potion",
+      "Transmutation"
+    ]
+  },
+  {
+    "category": "POTIONS",
+    "id": "a3397dca-1dbb-476a-83fe-fe9ef2240dc7",
+    "name": "Potion of Disguise (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=719",
+    "level": "11",
+    "price": "300 gp",
+    "source": "Advanced Player's Guide pg. 258",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Consumable",
+      "Magical",
+      "Polymorph",
       "Potion",
       "Transmutation"
     ]
@@ -6690,6 +8703,23 @@
       "Magical",
       "Necromancy",
       "Potion"
+    ]
+  },
+  {
+    "category": "POTIONS",
+    "id": "0fa8c890-912c-462c-8291-14c974152f33",
+    "name": "Time Shield Potion",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=726",
+    "level": "13",
+    "price": "600 gp",
+    "source": "Advanced Player's Guide pg. 259",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Magical",
+      "Potion",
+      "Transmutation"
     ]
   },
   {
@@ -7004,6 +9034,23 @@
       "Evocation",
       "Magical",
       "Talisman"
+    ]
+  },
+  {
+    "category": "TALISMANS",
+    "id": "c53c6a40-4f1c-4c99-a90b-2c9dcacca138",
+    "name": "Slippery Ribbon",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=793",
+    "level": "1",
+    "price": "12 gp",
+    "source": "The Slithering pg. 61",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Consumable",
+      "Magical",
+      "Talisman",
+      "Transmutation"
     ]
   },
   {
@@ -7352,6 +9399,23 @@
   },
   {
     "category": "TALISMANS",
+    "id": "1c77bdbc-8f9f-426b-a455-60b28b7d836d",
+    "name": "Oily Button",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=789",
+    "level": "5",
+    "price": "30 gp",
+    "source": "The Slithering pg. 60",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Conjuration",
+      "Consumable",
+      "Magical",
+      "Talisman"
+    ]
+  },
+  {
+    "category": "TALISMANS",
     "id": "45b9ed35-3917-4548-a6d5-efb2d35340dc",
     "name": "Iron Cube",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=218",
@@ -7380,6 +9444,23 @@
     "traits": [
       "Consumable",
       "Enchantment",
+      "Magical",
+      "Talisman"
+    ]
+  },
+  {
+    "category": "TALISMANS",
+    "id": "a4d6e708-e076-4e30-b866-c72f430b0c2e",
+    "name": "Putrescent Glob",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=790",
+    "level": "7",
+    "price": "65 gp",
+    "source": "The Slithering pg. 61",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Conjuration",
+      "Consumable",
       "Magical",
       "Talisman"
     ]
@@ -7451,6 +9532,24 @@
       "Magical",
       "Mental",
       "Talisman"
+    ]
+  },
+  {
+    "category": "TALISMANS",
+    "id": "216b8bf8-74cd-4a5f-8fd6-7ee016ce9816",
+    "name": "Basilisk Eye",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=708",
+    "level": "9",
+    "price": "150 gp",
+    "source": "Advanced Player's Guide pg. 256",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Magical",
+      "Talisman",
+      "Transmutation",
+      "Visual"
     ]
   },
   {
@@ -7568,6 +9667,24 @@
     "rarity": "COMMON",
     "traits": [
       "Consumable",
+      "Evocation",
+      "Magical",
+      "Talisman"
+    ]
+  },
+  {
+    "category": "TALISMANS",
+    "id": "0ebe9808-1f0f-47aa-8886-c1818c9e86d0",
+    "name": "Balisse Feather",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=707",
+    "level": "12",
+    "price": "400 gp",
+    "source": "Advanced Player's Guide pg. 256",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Divine",
       "Evocation",
       "Magical",
       "Talisman"
@@ -8017,6 +10134,21 @@
   },
   {
     "category": "HELD_ITEMS",
+    "id": "3d677915-a06e-4b80-9fb1-e739c391a028",
+    "name": "Predictable Silver Piece",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=740",
+    "level": "1",
+    "price": "3 gp",
+    "source": "Advanced Player's Guide pg. 262",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Divination",
+      "Magical"
+    ]
+  },
+  {
+    "category": "HELD_ITEMS",
     "id": "4602aa84-d211-4fc0-8f79-d657c811897f",
     "name": "Everburning Torch",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=255",
@@ -8074,6 +10206,21 @@
     "traits": [
       "Conjuration",
       "Magical"
+    ]
+  },
+  {
+    "category": "HELD_ITEMS",
+    "id": "fc0af093-4206-4c70-a70f-31234daac0e4",
+    "name": "Rope of Climbing (Lesser)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=743",
+    "level": "3",
+    "price": "45 gp",
+    "source": "Advanced Player's Guide pg. 262",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Magical",
+      "Transmutation"
     ]
   },
   {
@@ -8169,6 +10316,23 @@
   },
   {
     "category": "HELD_ITEMS",
+    "id": "a0bd5b2f-295c-4614-99e0-cb965d17cedd",
+    "name": "Recording Rod (Reusable)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=803",
+    "level": "5",
+    "price": "60 gp",
+    "source": "Pathfinder #157: Devil at the Dreaming Palace pg. 80",
+    "sourceType": "ADVENTURE_PATH",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Consumable",
+      "Divination",
+      "Magical",
+      "Scrying"
+    ]
+  },
+  {
+    "category": "HELD_ITEMS",
     "id": "db35d911-aa0a-4719-9db0-f835597718cc",
     "name": "Skeleton Key",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=266",
@@ -8176,6 +10340,21 @@
     "price": "125 gp",
     "source": "Core Rulebook pg. 575",
     "sourceType": "CORE_RULEBOOK",
+    "rarity": "COMMON",
+    "traits": [
+      "Magical",
+      "Transmutation"
+    ]
+  },
+  {
+    "category": "HELD_ITEMS",
+    "id": "b5a4fb70-c915-4b2f-bff5-9a4b82224a42",
+    "name": "Rope of Climbing (Moderate)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=743",
+    "level": "5",
+    "price": "125 gp",
+    "source": "Advanced Player's Guide pg. 262",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
     "rarity": "COMMON",
     "traits": [
       "Magical",
@@ -8308,6 +10487,21 @@
   },
   {
     "category": "HELD_ITEMS",
+    "id": "2c473329-1b2d-4c42-bd74-75c092df6808",
+    "name": "Rope of Climbing (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=743",
+    "level": "7",
+    "price": "300 gp",
+    "source": "Advanced Player's Guide pg. 262",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Magical",
+      "Transmutation"
+    ]
+  },
+  {
+    "category": "HELD_ITEMS",
     "id": "f19fc2fa-0c4e-41c1-9016-80e1f0f82281",
     "name": "Bottled Air",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=250",
@@ -8416,6 +10610,22 @@
   },
   {
     "category": "HELD_ITEMS",
+    "id": "ce98ed58-4458-424b-800a-191fa6592060",
+    "name": "Earthsight Box",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=728",
+    "level": "9",
+    "price": "575 gp",
+    "source": "Advanced Player's Guide pg. 260",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Divination",
+      "Magical",
+      "Scrying"
+    ]
+  },
+  {
+    "category": "HELD_ITEMS",
     "id": "415527e6-5773-45f5-8e72-233691529f28",
     "name": "Immovable Rod",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=259",
@@ -8503,6 +10713,22 @@
     "traits": [
       "Evocation",
       "Sonic"
+    ]
+  },
+  {
+    "category": "HELD_ITEMS",
+    "id": "d53c07ef-c801-4eee-9c83-50a6b039c1a5",
+    "name": "Urn of Ashes",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=751",
+    "level": "9",
+    "price": "700 gp",
+    "source": "Advanced Player's Guide pg. 264",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Magical",
+      "Necromancy",
+      "Negative"
     ]
   },
   {
@@ -8749,6 +10975,21 @@
     "traits": [
       "Conjuration",
       "Extradimensional",
+      "Magical"
+    ]
+  },
+  {
+    "category": "HELD_ITEMS",
+    "id": "c430e365-c671-4342-9967-867926b46a25",
+    "name": "Slates of Distant Letters",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=744",
+    "level": "13",
+    "price": "2,450 gp",
+    "source": "Advanced Player's Guide pg. 262",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Divination",
       "Magical"
     ]
   },
@@ -9013,6 +11254,21 @@
     ]
   },
   {
+    "category": "HELD_ITEMS",
+    "id": "7d23b490-066c-4bb4-994f-a6c3b45a42b4",
+    "name": "Rod of Cancellation",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=742",
+    "level": "20",
+    "price": "75,000 gp",
+    "source": "Advanced Player's Guide pg. 262",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "RARE",
+    "traits": [
+      "Abjuration",
+      "Magical"
+    ]
+  },
+  {
     "category": "INTELLIGENT_ITEMS",
     "id": "4efc21ed-03db-4c24-9a7c-2b3b4607032b",
     "name": "Singing Sword",
@@ -9099,7 +11355,7 @@
     "id": "9ffd2670-2526-4315-942e-5ae6b6ed35cf",
     "name": "Cold Iron Chunk",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=272",
-    "level": "0",
+    "level": 0,
     "price": "10 gp",
     "source": "Core Rulebook pg. 578",
     "sourceType": "CORE_RULEBOOK",
@@ -9113,7 +11369,7 @@
     "id": "6ed62a5e-2b55-4cc7-bede-daeabb90e4a0",
     "name": "Silver Chunk",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=277",
-    "level": "0",
+    "level": 0,
     "price": "10 gp",
     "source": "Core Rulebook pg. 579",
     "sourceType": "CORE_RULEBOOK",
@@ -9127,7 +11383,7 @@
     "id": "ad52ba18-3882-44bf-81ef-d6a2127f2629",
     "name": "Cold Iron Ingot",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=272",
-    "level": "0",
+    "level": 0,
     "price": "100 gp",
     "source": "Core Rulebook pg. 578",
     "sourceType": "CORE_RULEBOOK",
@@ -9141,7 +11397,7 @@
     "id": "27f3d261-6030-4cbf-9d23-d342a4730212",
     "name": "Silver Ingot",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=277",
-    "level": "0",
+    "level": 0,
     "price": "100 gp",
     "source": "Core Rulebook pg. 579",
     "sourceType": "CORE_RULEBOOK",
@@ -9155,7 +11411,7 @@
     "id": "93d22c87-823c-4430-9458-be5d67ead217",
     "name": "Adamantine Chunk",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=271",
-    "level": "0",
+    "level": 0,
     "price": "500 gp",
     "source": "Core Rulebook pg. 578",
     "sourceType": "CORE_RULEBOOK",
@@ -9169,7 +11425,7 @@
     "id": "f70e1dff-df3b-45e5-bf1b-f382cdf2e54c",
     "name": "Darkwood Branch",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=273",
-    "level": "0",
+    "level": 0,
     "price": "500 gp",
     "source": "Core Rulebook pg. 578",
     "sourceType": "CORE_RULEBOOK",
@@ -9183,7 +11439,7 @@
     "id": "15bf68f3-d497-4253-a4af-608ade911095",
     "name": "Mithral Chunk",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=275",
-    "level": "0",
+    "level": 0,
     "price": "500 gp",
     "source": "Core Rulebook pg. 579",
     "sourceType": "CORE_RULEBOOK",
@@ -9194,10 +11450,24 @@
   },
   {
     "category": "MATERIALS",
+    "id": "13406d80-df47-4027-9a6f-69e6e17a37f5",
+    "name": "Soverign Steel Chunk",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=776",
+    "level": 0,
+    "price": "700 gp",
+    "source": "Legends pg. 77",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Precious"
+    ]
+  },
+  {
+    "category": "MATERIALS",
     "id": "c2fd2e70-39b8-42b7-aac9-ef26b82e89f9",
     "name": "Orichalcum Chunk",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=276",
-    "level": "0",
+    "level": 0,
     "price": "1,000 gp",
     "source": "Core Rulebook pg. 579",
     "sourceType": "CORE_RULEBOOK",
@@ -9211,7 +11481,7 @@
     "id": "d3482296-e524-42d4-ba84-ea2c31a63047",
     "name": "Adamantine Ingot",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=271",
-    "level": "0",
+    "level": 0,
     "price": "5,000 gp",
     "source": "Core Rulebook pg. 578",
     "sourceType": "CORE_RULEBOOK",
@@ -9225,7 +11495,7 @@
     "id": "e81e3f40-c939-413d-a418-d7e75811b6b4",
     "name": "Darkwood Lumber",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=273",
-    "level": "0",
+    "level": 0,
     "price": "5,000 gp",
     "source": "Core Rulebook pg. 578",
     "sourceType": "CORE_RULEBOOK",
@@ -9239,7 +11509,7 @@
     "id": "98bb9bfa-e734-4d0f-9aa9-3dc14a56c330",
     "name": "Mithral Ingot",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=275",
-    "level": "0",
+    "level": 0,
     "price": "5,000 gp",
     "source": "Core Rulebook pg. 579",
     "sourceType": "CORE_RULEBOOK",
@@ -9250,10 +11520,24 @@
   },
   {
     "category": "MATERIALS",
+    "id": "7be3c746-d90b-4cff-97b7-b7d323e408dd",
+    "name": "Soverign Steel Ingot",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=776",
+    "level": 0,
+    "price": "7,000 gp",
+    "source": "Legends pg. 77",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Precious"
+    ]
+  },
+  {
+    "category": "MATERIALS",
     "id": "51eddcdf-c741-49c6-aefe-7166a1b4d9d5",
     "name": "Orichalcum Ingot",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=276",
-    "level": "0",
+    "level": 0,
     "price": "10,000 gp",
     "source": "Core Rulebook pg. 579",
     "sourceType": "CORE_RULEBOOK",
@@ -9376,6 +11660,20 @@
   },
   {
     "category": "MATERIALS",
+    "id": "25d864d0-da06-4bad-b3c9-c269a7d586d6",
+    "name": "Standard-Grade Soverign Steel Object",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=776",
+    "level": "9",
+    "price": "500 gp (per Bulk)",
+    "source": "Legends pg. 77",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Precious"
+    ]
+  },
+  {
+    "category": "MATERIALS",
     "id": "f4e45061-b1c2-4a0b-916d-522937d96405",
     "name": "Cold Iron Object (High-Grade)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=272",
@@ -9460,6 +11758,20 @@
   },
   {
     "category": "MATERIALS",
+    "id": "d78a86bd-3e6e-4a54-8dce-6e06e0381ad3",
+    "name": "High-Grade Soverign Steel Object",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=776",
+    "level": "17",
+    "price": "8,000 gp (per Bulk)",
+    "source": "Legends pg. 77",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Precious"
+    ]
+  },
+  {
+    "category": "MATERIALS",
     "id": "d44d9afc-7822-47bb-8142-6e6034c337fb",
     "name": "Orichalcum Object (High-Grade)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=276",
@@ -9470,6 +11782,21 @@
     "rarity": "RARE",
     "traits": [
       "Precious"
+    ]
+  },
+  {
+    "category": "RUNES_ARMOR_PROPERTY",
+    "id": "81ced2b5-b63b-4e86-8b14-39948e439cd2",
+    "name": "Ready",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=741",
+    "level": 0,
+    "price": "\u2014",
+    "source": "Advanced Player's Guide pg. 262",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Evocation",
+      "Magical"
     ]
   },
   {
@@ -9640,6 +11967,21 @@
   },
   {
     "category": "RUNES_ARMOR_PROPERTY",
+    "id": "6c9c6c56-eb2f-41d0-a4df-1f888a3ce08b",
+    "name": "Winged",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=759",
+    "level": "13",
+    "price": "2,500 gp",
+    "source": "Advanced Player's Guide pg. 265",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Magical",
+      "Transmutation"
+    ]
+  },
+  {
+    "category": "RUNES_ARMOR_PROPERTY",
     "id": "763410a3-c97a-43b6-bbe8-86b3f1e952af",
     "name": "Rock-Braced",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=527",
@@ -9731,6 +12073,21 @@
     ]
   },
   {
+    "category": "RUNES_ARMOR_PROPERTY",
+    "id": "6c3c8544-e959-4e83-9526-c208c94d9385",
+    "name": "Winged (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=759",
+    "level": "19",
+    "price": "35,000 gp",
+    "source": "Advanced Player's Guide pg. 265",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Magical",
+      "Transmutation"
+    ]
+  },
+  {
     "category": "RUNES_ARMOR_FUNDAMENTAL",
     "id": "233b85cd-870a-4c9c-8cc9-572800bbd140",
     "name": "Armor Potency (+1)",
@@ -9742,6 +12099,21 @@
     "rarity": "COMMON",
     "traits": [
       "Abjuration",
+      "Magical"
+    ]
+  },
+  {
+    "category": "RUNES_ARMOR_FUNDAMENTAL",
+    "id": "81ced2b5-b63b-4e86-8b14-39948e439cd2",
+    "name": "Ready",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=741",
+    "level": "6",
+    "price": "200 gp",
+    "source": "Advanced Player's Guide pg. 262",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Evocation",
       "Magical"
     ]
   },
@@ -9772,6 +12144,21 @@
     "rarity": "COMMON",
     "traits": [
       "Abjuration",
+      "Magical"
+    ]
+  },
+  {
+    "category": "RUNES_ARMOR_FUNDAMENTAL",
+    "id": "af2b1ae2-2bbc-4911-93df-0ca0f0797e8e",
+    "name": "Ready (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=741",
+    "level": "11",
+    "price": "1,200 gp",
+    "source": "Advanced Player's Guide pg. 262",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Evocation",
       "Magical"
     ]
   },
@@ -9969,6 +12356,39 @@
     "traits": [
       "Magical",
       "Necromancy"
+    ]
+  },
+  {
+    "category": "RUNES_WEAPON_PROPERTY",
+    "id": "e69d8252-5180-4b41-b7cd-592dcb43b763",
+    "name": "Pacifying",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=801",
+    "level": "5",
+    "price": "150 gp",
+    "source": "Pathfinder #157: Devil at the Dreaming Palace pg. 78",
+    "sourceType": "ADVENTURE_PATH",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Enchantment",
+      "Magical"
+    ]
+  },
+  {
+    "category": "RUNES_WEAPON_PROPERTY",
+    "id": "6e8e84b0-3ba9-43d3-984b-e67a67059906",
+    "name": "Fearsome",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=731",
+    "level": "5",
+    "price": "160 gp",
+    "source": "Advanced Player's Guide pg. 260",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Emotion",
+      "Enchantment",
+      "Fear",
+      "Magical",
+      "Mental"
     ]
   },
   {
@@ -10193,6 +12613,24 @@
   },
   {
     "category": "RUNES_WEAPON_PROPERTY",
+    "id": "65cc7618-81f1-4415-8f33-eb680bbaf2a3",
+    "name": "Fearsome (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=731",
+    "level": "12",
+    "price": "2,000 gp",
+    "source": "Advanced Player's Guide pg. 260",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Emotion",
+      "Enchantment",
+      "Fear",
+      "Magical",
+      "Mental"
+    ]
+  },
+  {
+    "category": "RUNES_WEAPON_PROPERTY",
     "id": "74a1d80b-b322-477f-afaf-4fdfb69178fa",
     "name": "Dancing",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=293",
@@ -10399,7 +12837,7 @@
     "id": "79b29fa6-dd9a-43f8-a5dd-3228b756ae9f",
     "name": "Beverages (Mug of Ale)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=66",
-    "level": "0",
+    "level": 0,
     "price": "1 cp",
     "source": "Core Rulebook pg. 294",
     "sourceType": "CORE_RULEBOOK",
@@ -10411,7 +12849,7 @@
     "id": "b7b75b03-fa16-40cf-89f9-23ebc5ab90b3",
     "name": "Meal (Poor)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=69",
-    "level": "0",
+    "level": 0,
     "price": "1 cp",
     "source": "Core Rulebook pg. 294",
     "sourceType": "CORE_RULEBOOK",
@@ -10423,7 +12861,7 @@
     "id": "1d525ac1-9398-48ac-a428-c325dfedb916",
     "name": "Toll",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=71",
-    "level": "0",
+    "level": 0,
     "price": "1 cp",
     "source": "Core Rulebook pg. 294",
     "sourceType": "CORE_RULEBOOK",
@@ -10435,7 +12873,7 @@
     "id": "9be614d8-3e8a-4d9f-9602-52255d097d00",
     "name": "Beverages (Pot of Coffee or Tea)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=66",
-    "level": "0",
+    "level": 0,
     "price": "2 cp",
     "source": "Core Rulebook pg. 294",
     "sourceType": "CORE_RULEBOOK",
@@ -10447,7 +12885,7 @@
     "id": "97074058-7244-4ad7-80d5-2f3fd013fdec",
     "name": "Stabling",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=70",
-    "level": "0",
+    "level": 0,
     "price": "2 cp (per day)",
     "source": "Core Rulebook pg. 294",
     "sourceType": "CORE_RULEBOOK",
@@ -10459,7 +12897,7 @@
     "id": "412fd7d3-697d-40ad-bbc2-19f735530acd",
     "name": "Lodging (Floor Space)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=68",
-    "level": "0",
+    "level": 0,
     "price": "3 cp (per day)",
     "source": "Core Rulebook pg. 294",
     "sourceType": "CORE_RULEBOOK",
@@ -10471,7 +12909,7 @@
     "id": "f022e0bf-a978-49ba-a171-53be362b5cb2",
     "name": "Meal (Square)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=69",
-    "level": "0",
+    "level": 0,
     "price": "3 cp",
     "source": "Core Rulebook pg. 294",
     "sourceType": "CORE_RULEBOOK",
@@ -10483,7 +12921,7 @@
     "id": "b7ecc34e-af22-4577-9fd7-c655d51267ce",
     "name": "Beverages (Bottle of Wine)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=66",
-    "level": "0",
+    "level": 0,
     "price": "1 sp",
     "source": "Core Rulebook pg. 294",
     "sourceType": "CORE_RULEBOOK",
@@ -10495,7 +12933,7 @@
     "id": "db2f0ca9-d6ac-493f-a9eb-79ce45b7e1b4",
     "name": "Lodging (Bed)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=68",
-    "level": "0",
+    "level": 0,
     "price": "1 sp (per day)",
     "source": "Core Rulebook pg. 294",
     "sourceType": "CORE_RULEBOOK",
@@ -10507,7 +12945,7 @@
     "id": "e45e2b2e-99a7-428b-91ed-aba188a01c4a",
     "name": "Beverages (Keg of Ale)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=66",
-    "level": "0",
+    "level": 0,
     "price": "2 sp",
     "source": "Core Rulebook pg. 294",
     "sourceType": "CORE_RULEBOOK",
@@ -10519,7 +12957,7 @@
     "id": "62eb7eaf-fb8c-4a42-a6de-d981a456bde7",
     "name": "Lodging (Private Room)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=68",
-    "level": "0",
+    "level": 0,
     "price": "8 sp (per day)",
     "source": "Core Rulebook pg. 294",
     "sourceType": "CORE_RULEBOOK",
@@ -10531,7 +12969,7 @@
     "id": "0dad4e35-0642-48ba-9278-426246aeae16",
     "name": "Beverages (Bottle of Fine Wine)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=66",
-    "level": "0",
+    "level": 0,
     "price": "1 gp",
     "source": "Core Rulebook pg. 294",
     "sourceType": "CORE_RULEBOOK",
@@ -10543,7 +12981,7 @@
     "id": "f7913130-d007-454c-9b7f-14d61a4d362b",
     "name": "Meal (Fine Dining)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=69",
-    "level": "0",
+    "level": 0,
     "price": "1 gp",
     "source": "Core Rulebook pg. 294",
     "sourceType": "CORE_RULEBOOK",
@@ -10555,7 +12993,7 @@
     "id": "e2d0279b-d40a-49ff-96ff-b937a5b606d3",
     "name": "Lodging (Extravagant Suite)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=68",
-    "level": "0",
+    "level": 0,
     "price": "10 gp (per day)",
     "source": "Core Rulebook pg. 294",
     "sourceType": "CORE_RULEBOOK",
@@ -10948,6 +13386,21 @@
   },
   {
     "category": "SHIELDS_SPECIFIC",
+    "id": "ad3e29d6-1c87-4dbb-bb33-071104a8cb48",
+    "name": "Glamorous Buckler",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=734",
+    "level": "2",
+    "price": "35 gp",
+    "source": "Advanced Player's Guide pg. 261",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Illusion",
+      "Magical"
+    ]
+  },
+  {
+    "category": "SHIELDS_SPECIFIC",
     "id": "b16c508f-794c-4a26-992b-aeb508692f08",
     "name": "Sturdy Shield (Minor)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=327",
@@ -10958,6 +13411,21 @@
     "rarity": "COMMON",
     "traits": [
       "Abjuration",
+      "Magical"
+    ]
+  },
+  {
+    "category": "SHIELDS_SPECIFIC",
+    "id": "24b12961-ec38-4911-8e29-8e41a2c8b183",
+    "name": "Exploding Shield",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=730",
+    "level": "5",
+    "price": "25 gp",
+    "source": "Advanced Player's Guide pg. 260",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Evocation",
       "Magical"
     ]
   },
@@ -11143,6 +13611,21 @@
   },
   {
     "category": "SHIELDS_SPECIFIC",
+    "id": "589adacc-dde4-4a67-9e12-17e1bcc4e8fc",
+    "name": "Medusa's Scream",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=739",
+    "level": "13",
+    "price": "3,000 gp",
+    "source": "Advanced Player's Guide pg. 261",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Magical",
+      "Transmutation"
+    ]
+  },
+  {
+    "category": "SHIELDS_SPECIFIC",
     "id": "93b68f27-adb0-487b-878d-b8014b79e7ef",
     "name": "Reforging Shield",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=542",
@@ -11184,6 +13667,21 @@
     "rarity": "UNCOMMON",
     "traits": [
       "Magical"
+    ]
+  },
+  {
+    "category": "SHIELDS_SPECIFIC",
+    "id": "8fc2893e-b261-4a41-81b7-39c95ebee3e9",
+    "name": "Medusa's Scream (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=739",
+    "level": "16",
+    "price": "9,000 gp",
+    "source": "Advanced Player's Guide pg. 261",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Magical",
+      "Transmutation"
     ]
   },
   {
@@ -11383,6 +13881,24 @@
   },
   {
     "category": "SNARES",
+    "id": "94eafa56-5893-430c-add8-2f63d83afc9c",
+    "name": "Flare Snare",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=703",
+    "level": "2",
+    "price": "5 gp",
+    "source": "Advanced Player's Guide pg. 256",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Mechanical",
+      "Snare",
+      "Trap",
+      "Visual"
+    ]
+  },
+  {
+    "category": "SNARES",
     "id": "07fa6be2-dc01-40dd-b4f1-6e53580720f5",
     "name": "Thunder Snare",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=577",
@@ -11538,6 +14054,24 @@
   },
   {
     "category": "SNARES",
+    "id": "d7b8dafe-bf5e-4c59-9a9e-07774317f3b7",
+    "name": "Nauseating Snare",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=704",
+    "level": "6",
+    "price": "40 gp",
+    "source": "Advanced Player's Guide pg. 256",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Mechanical",
+      "Poison",
+      "Snare",
+      "Trap"
+    ]
+  },
+  {
+    "category": "SNARES",
     "id": "7ebc9998-2c41-44fd-abb2-4f50635d81c7",
     "name": "Bomb Snare",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=331",
@@ -11589,6 +14123,23 @@
   },
   {
     "category": "SNARES",
+    "id": "f5d21331-c251-4600-ae17-27b6bb92d42c",
+    "name": "Snagging Hook Snar",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=705",
+    "level": "10",
+    "price": "180 gp",
+    "source": "Advanced Player's Guide pg. 256",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Mechanical",
+      "Snare",
+      "Trap"
+    ]
+  },
+  {
+    "category": "SNARES",
     "id": "80f9a9f0-948d-42a6-9258-1cab98b31b4f",
     "name": "Bleeding Spines Snare",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=330",
@@ -11630,6 +14181,23 @@
     "price": "320 gp",
     "source": "Core Rulebook pg. 591",
     "sourceType": "CORE_RULEBOOK",
+    "rarity": "COMMON",
+    "traits": [
+      "Consumable",
+      "Mechanical",
+      "Snare",
+      "Trap"
+    ]
+  },
+  {
+    "category": "SNARES",
+    "id": "2e4fb7b7-8fd1-4b37-a18e-a6ab128ef41b",
+    "name": "Engulfing Snare",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=702",
+    "level": "14",
+    "price": "900 gp",
+    "source": "Advanced Player's Guide pg. 256",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
     "rarity": "COMMON",
     "traits": [
       "Consumable",
@@ -11916,6 +14484,38 @@
   },
   {
     "category": "STAVES",
+    "id": "ad6889df-d9d0-4a4d-b5e2-b458900d3276",
+    "name": "Staff of Impossible Visions",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=748",
+    "level": "6",
+    "price": "230 gp",
+    "source": "Advanced Player's Guide pg. 263",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Illusion",
+      "Magical",
+      "Staff"
+    ]
+  },
+  {
+    "category": "STAVES",
+    "id": "f31b77d8-fefb-470e-a33f-c8877c03150f",
+    "name": "Staff of Providence",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=750",
+    "level": "6",
+    "price": "230 gp",
+    "source": "Advanced Player's Guide pg. 264",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Divination",
+      "Magical",
+      "Staff"
+    ]
+  },
+  {
+    "category": "STAVES",
     "id": "feee3a48-036e-4a88-acd7-c465354c734a",
     "name": "Ringmaster's Staff\n",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=589",
@@ -12140,6 +14740,38 @@
   },
   {
     "category": "STAVES",
+    "id": "c832c75f-3129-4e6d-8efb-fd25e4322b74",
+    "name": "Staff of Nature's Vengeance",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=749",
+    "level": "10",
+    "price": "900 gp",
+    "source": "Advanced Player's Guide pg. 263",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Evocation",
+      "Magical",
+      "Staff"
+    ]
+  },
+  {
+    "category": "STAVES",
+    "id": "7320bbc0-a620-45ca-af88-7f5ee9642776",
+    "name": "Staff of Providence (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=750",
+    "level": "10",
+    "price": "900 gp",
+    "source": "Advanced Player's Guide pg. 264",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Divination",
+      "Magical",
+      "Staff"
+    ]
+  },
+  {
+    "category": "STAVES",
     "id": "7f35fe98-ee7b-44c6-8a21-54eae2fe0900",
     "name": "Verdant Staff (Greater)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=364",
@@ -12199,6 +14831,22 @@
     "traits": [
       "Magical",
       "Necromancy",
+      "Staff"
+    ]
+  },
+  {
+    "category": "STAVES",
+    "id": "1c0fdd0f-e0bc-497b-a66a-8847ff887b89",
+    "name": "Staff of Impossible Visions (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=748",
+    "level": "12",
+    "price": "1,800 gp",
+    "source": "Advanced Player's Guide pg. 263",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Illusion",
+      "Magical",
       "Staff"
     ]
   },
@@ -12380,6 +15028,38 @@
   },
   {
     "category": "STAVES",
+    "id": "b652d0ba-6fef-4360-a5d0-84a29d2f9d45",
+    "name": "Staff of Nature's Vengeance (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=749",
+    "level": "14",
+    "price": "4,000 gp",
+    "source": "Advanced Player's Guide pg. 263",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Evocation",
+      "Magical",
+      "Staff"
+    ]
+  },
+  {
+    "category": "STAVES",
+    "id": "f8f658cf-3b6c-49b9-a2ae-4e95d94c1f84",
+    "name": "Staff of Providence (Major)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=750",
+    "level": "14",
+    "price": "4,100 gp",
+    "source": "Advanced Player's Guide pg. 264",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Divination",
+      "Magical",
+      "Staff"
+    ]
+  },
+  {
+    "category": "STAVES",
     "id": "57f2c063-f7c3-4019-80bb-46460fa17017",
     "name": "Staff of Healing (True)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=357",
@@ -12428,6 +15108,54 @@
   },
   {
     "category": "STAVES",
+    "id": "15938f1b-48f7-4641-b3d1-5ef87e46214e",
+    "name": "Staff of Impossible Visions (Major)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=748",
+    "level": "16",
+    "price": "10,000 gp",
+    "source": "Advanced Player's Guide pg. 263",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Illusion",
+      "Magical",
+      "Staff"
+    ]
+  },
+  {
+    "category": "STAVES",
+    "id": "f16cca51-a140-42e9-820a-14399f58094e",
+    "name": "Staff of Nature's Vengeance (Major)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=749",
+    "level": "18",
+    "price": "24,000 gp",
+    "source": "Advanced Player's Guide pg. 263",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Evocation",
+      "Magical",
+      "Staff"
+    ]
+  },
+  {
+    "category": "STAVES",
+    "id": "29d5a222-ad9b-4230-9678-7c82aa84e05f",
+    "name": "Staff of Providence (True)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=750",
+    "level": "20",
+    "price": "64,000 gp",
+    "source": "Advanced Player's Guide pg. 264",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Divination",
+      "Magical",
+      "Staff"
+    ]
+  },
+  {
+    "category": "STAVES",
     "id": "146495cf-6bea-4a5a-bb18-c632939a267b",
     "name": "Staff of Sieges",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=672",
@@ -12438,6 +15166,22 @@
     "rarity": "UNCOMMON",
     "traits": [
       "Evocation",
+      "Magical",
+      "Staff"
+    ]
+  },
+  {
+    "category": "STAVES",
+    "id": "cb5c6ffd-cd2a-4c6b-adf8-3724f39643de",
+    "name": "Staff of Impossible Visions (True)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=748",
+    "level": "20",
+    "price": "70,000 gp",
+    "source": "Advanced Player's Guide pg. 263",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Illusion",
       "Magical",
       "Staff"
     ]
@@ -12533,6 +15277,22 @@
     "source": "Core Rulebook pg. 596",
     "sourceType": "CORE_RULEBOOK",
     "rarity": "UNCOMMON",
+    "traits": [
+      "Conjuration",
+      "Magical",
+      "Structure"
+    ]
+  },
+  {
+    "category": "STRUCTURES",
+    "id": "3393168a-3cd4-42c9-a4c4-d338e3b89966",
+    "name": "Mountain to the Sky",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=770",
+    "level": "16",
+    "price": "10,000 gp",
+    "source": "Legends pg. 48",
+    "sourceType": "MISC",
+    "rarity": "UNIQUE",
     "traits": [
       "Conjuration",
       "Magical",
@@ -12755,6 +15515,56 @@
   },
   {
     "category": "WANDS_SPECIALTY",
+    "id": "2f283751-2e85-48ba-b384-1952cd50274b",
+    "name": "Wand of Hopeless Night (2nd-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=755",
+    "level": "6",
+    "price": "250 gp",
+    "source": "Advanced Player's Guide pg. 265",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Darkness",
+      "Evocation",
+      "Magical",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "92a2c330-442f-4afe-9343-2682a9bedc13",
+    "name": "Wand of Noisome Acid (2nd-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=794",
+    "level": "6",
+    "price": "250 gp",
+    "source": "The Slithering pg. 61",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Acid",
+      "Evocation",
+      "Magical",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "e69f7fd4-ad9c-4e47-903f-6d7595a3ad27",
+    "name": "Wand of Teeming Ghosts (2nd-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=795",
+    "level": "6",
+    "price": "250 gp",
+    "source": "The Slithering pg. 61",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Magical",
+      "Necromancy",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
     "id": "b56f465b-f937-413d-9835-bf0d976f5202",
     "name": "Wand of Continuation (2nd-Level Spell)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=369",
@@ -12765,6 +15575,23 @@
     "rarity": "COMMON",
     "traits": [
       "Magical",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "39f24904-a884-4f3d-9eed-07845b8f4796",
+    "name": "Wand of the Spider (2nd-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=758",
+    "level": "7",
+    "price": "360 gp",
+    "source": "Advanced Player's Guide pg. 265",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Conjuration",
+      "Magical",
+      "Poison",
       "Wand"
     ]
   },
@@ -12802,6 +15629,39 @@
   },
   {
     "category": "WANDS_SPECIALTY",
+    "id": "e8513430-f932-4e54-a2cc-d8af7319a052",
+    "name": "Wand of Crackling Lightning (3rd-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=754",
+    "level": "8",
+    "price": "500 gp",
+    "source": "Advanced Player's Guide pg. 265",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Electricity",
+      "Evocation",
+      "Magical",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "2f193814-1af1-43f3-860e-4aac53a57c24",
+    "name": "Wand of Teeming Ghosts (3rd-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=795",
+    "level": "8",
+    "price": "500 gp",
+    "source": "The Slithering pg. 61",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Magical",
+      "Necromancy",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
     "id": "ad4c17cf-ae75-4108-a781-a38693d13a39",
     "name": "Wand of Continuation (3rd-Level Spell)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=369",
@@ -12834,6 +15694,24 @@
   },
   {
     "category": "WANDS_SPECIALTY",
+    "id": "e173d543-a598-4ffd-b3ff-baf4f2c4b500",
+    "name": "Wand of Overflowing Life (3rd-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=756",
+    "level": "9",
+    "price": "700 gp",
+    "source": "Advanced Player's Guide pg. 265",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Healing",
+      "Magical",
+      "Necromancy",
+      "Positive",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
     "id": "2619a820-2be8-478a-ab43-a207ae431e7b",
     "name": "Wand of Widening (4th-Level Spell)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=373",
@@ -12844,6 +15722,108 @@
     "rarity": "COMMON",
     "traits": [
       "Magical",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "c729398a-15a1-40de-ad60-a46205f22d7f",
+    "name": "Wand of Crackling Lightning (4th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=754",
+    "level": "10",
+    "price": "1,000 gp",
+    "source": "Advanced Player's Guide pg. 265",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Electricity",
+      "Evocation",
+      "Magical",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "de8fcd8f-589d-4fea-8c35-761aeacbc7ac",
+    "name": "Wand of Hopeless Night (4th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=755",
+    "level": "10",
+    "price": "1,000 gp",
+    "source": "Advanced Player's Guide pg. 265",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Darkness",
+      "Evocation",
+      "Magical",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "07487216-316c-41f6-a216-52b96f694968",
+    "name": "Wand of Noisome Acid (4th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=794",
+    "level": "10",
+    "price": "1,000 gp",
+    "source": "The Slithering pg. 61",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Acid",
+      "Evocation",
+      "Magical",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "e28136f7-3c0a-432c-b206-43d6548ff4d7",
+    "name": "Wand of Teeming Ghosts (4th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=795",
+    "level": "10",
+    "price": "1,000 gp",
+    "source": "The Slithering pg. 61",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Magical",
+      "Necromancy",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "7d655b34-6403-49f6-8e12-e9a6a36ada56",
+    "name": "Wand of Overflowing Life (4th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=756",
+    "level": "11",
+    "price": "1,400 gp",
+    "source": "Advanced Player's Guide pg. 265",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Healing",
+      "Magical",
+      "Necromancy",
+      "Positive",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "40a7d5a8-493f-475f-b144-035666deda00",
+    "name": "Wand of the Spider (4th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=758",
+    "level": "11",
+    "price": "1,400 gp",
+    "source": "Advanced Player's Guide pg. 265",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Conjuration",
+      "Magical",
+      "Poison",
       "Wand"
     ]
   },
@@ -12896,6 +15876,22 @@
   },
   {
     "category": "WANDS_SPECIALTY",
+    "id": "cb123e3d-ab12-4e39-8c38-27feced7355a",
+    "name": "Wand of Teeming Ghosts (5th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=795",
+    "level": "12",
+    "price": "2,000 gp",
+    "source": "The Slithering pg. 61",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Magical",
+      "Necromancy",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
     "id": "9cd35697-2d37-42dc-8d1a-2357ffe1c1ad",
     "name": "Wand of Continuation (5th-Level Spell)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=369",
@@ -12928,6 +15924,24 @@
   },
   {
     "category": "WANDS_SPECIALTY",
+    "id": "1fea89ea-711b-43c5-ba72-78d1862c7ec5",
+    "name": "Wand of Overflowing Life (5th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=756",
+    "level": "13",
+    "price": "3,000 gp",
+    "source": "Advanced Player's Guide pg. 265",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Healing",
+      "Magical",
+      "Necromancy",
+      "Positive",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
     "id": "db4083b9-7980-4874-96d5-1b54d4414e30",
     "name": "Wand of Widening (6th-Level Spell)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=373",
@@ -12943,6 +15957,73 @@
   },
   {
     "category": "WANDS_SPECIALTY",
+    "id": "7e6eab6a-b541-4180-9b8a-83b98660d8b8",
+    "name": "Wand of Crackling Lightning (6th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=754",
+    "level": "14",
+    "price": "4,500 gp",
+    "source": "Advanced Player's Guide pg. 265",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Electricity",
+      "Evocation",
+      "Magical",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "15e47081-c73e-4ffc-b84f-5b4765a685c1",
+    "name": "Wand of the Snowfields (5th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=757",
+    "level": "14",
+    "price": "4,500 gp",
+    "source": "Advanced Player's Guide pg. 265",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Cold",
+      "Evocation",
+      "Magical",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "d4514659-ea62-49a3-886c-82b6323a8183",
+    "name": "Wand of Noisome Acid (6th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=794",
+    "level": "14",
+    "price": "4,500 gp",
+    "source": "The Slithering pg. 61",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Acid",
+      "Evocation",
+      "Magical",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "6194eab2-f878-4ceb-a8a2-ebbded6050a7",
+    "name": "Wand of Teeming Ghosts (6th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=795",
+    "level": "14",
+    "price": "4,500 gp",
+    "source": "The Slithering pg. 61",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Magical",
+      "Necromancy",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
     "id": "48a7609f-0cdc-424b-9b86-9b0b4966f4e6",
     "name": "Wand of Continuation (6th-Level Spell)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=369",
@@ -12953,6 +16034,24 @@
     "rarity": "COMMON",
     "traits": [
       "Magical",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "8a819ff0-1a65-415e-b44d-4dc764e52a23",
+    "name": "Wand of Overflowing Life (6th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=756",
+    "level": "15",
+    "price": "6,500 gp",
+    "source": "Advanced Player's Guide pg. 265",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Healing",
+      "Magical",
+      "Necromancy",
+      "Positive",
       "Wand"
     ]
   },
@@ -13006,6 +16105,22 @@
   },
   {
     "category": "WANDS_SPECIALTY",
+    "id": "249afe82-6c0e-42a8-b2ce-1b06edb1f718",
+    "name": "Wand of Teeming Ghosts (7th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=795",
+    "level": "16",
+    "price": "10,000 gp",
+    "source": "The Slithering pg. 61",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Magical",
+      "Necromancy",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
     "id": "36fe84fb-c8b2-43c5-a66e-9d47627aecf2",
     "name": "Wand of Continuation (7th-Level Spell)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=369",
@@ -13033,6 +16148,24 @@
       "Evocation",
       "Force",
       "Magical",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "a5d39897-9a73-449c-95b3-3f8494acac79",
+    "name": "Wand of Overflowing Life (7th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=756",
+    "level": "17",
+    "price": "15,000 gp",
+    "source": "Advanced Player's Guide pg. 265",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Healing",
+      "Magical",
+      "Necromancy",
+      "Positive",
       "Wand"
     ]
   },
@@ -13069,6 +16202,73 @@
   },
   {
     "category": "WANDS_SPECIALTY",
+    "id": "75fe8425-9ef6-4986-bd5e-09722906649f",
+    "name": "Wand of Crackling Lightning (8th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=754",
+    "level": "18",
+    "price": "24,000 gp",
+    "source": "Advanced Player's Guide pg. 265",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Electricity",
+      "Evocation",
+      "Magical",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "fa51207f-db76-487d-9982-7e9a6c5a5daf",
+    "name": "Wand of the Snowfields (7th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=757",
+    "level": "18",
+    "price": "24,000 gp",
+    "source": "Advanced Player's Guide pg. 265",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Cold",
+      "Evocation",
+      "Magical",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "57bd047d-12dc-43cb-a6bd-f2a10d82a6b5",
+    "name": "Wand of Noisome Acid (8th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=794",
+    "level": "18",
+    "price": "24,000 gp",
+    "source": "The Slithering pg. 61",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Acid",
+      "Evocation",
+      "Magical",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "089259d4-ee56-45c6-96ec-fbffeaf846ac",
+    "name": "Wand of Teeming Ghosts (8th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=795",
+    "level": "18",
+    "price": "24,000 gp",
+    "source": "The Slithering pg. 61",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Magical",
+      "Necromancy",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
     "id": "74f3a997-6e94-4f63-960c-59080fb6ed0c",
     "name": "Wand of Continuation (8th-Level Spell)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=369",
@@ -13079,6 +16279,24 @@
     "rarity": "COMMON",
     "traits": [
       "Magical",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "48d8ea4d-26c7-4656-ad1f-5f3786063cf2",
+    "name": "Wand of Overflowing Life (8th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=756",
+    "level": "19",
+    "price": "40,000 gp",
+    "source": "Advanced Player's Guide pg. 265",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Healing",
+      "Magical",
+      "Necromancy",
+      "Positive",
       "Wand"
     ]
   },
@@ -13127,6 +16345,22 @@
     "rarity": "COMMON",
     "traits": [
       "Magical",
+      "Wand"
+    ]
+  },
+  {
+    "category": "WANDS_SPECIALTY",
+    "id": "5cdcd6d3-24a8-45e9-8fed-379b61854ab4",
+    "name": "Wand of Teeming Ghosts (9th-Level Spell)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=795",
+    "level": "20",
+    "price": "70,000 gp",
+    "source": "The Slithering pg. 61",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Magical",
+      "Necromancy",
       "Wand"
     ]
   },
@@ -13306,6 +16540,18 @@
   },
   {
     "category": "WEAPONS_PRECIOUS",
+    "id": "d853fdc4-697a-40d2-b96b-64a7e2f19bf6",
+    "name": "Standard-Grade Soverign Steel Weapon",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=778",
+    "level": "12",
+    "price": "1,600 gp (+160 gp per Buk)",
+    "source": "Legends pg. 77",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": []
+  },
+  {
+    "category": "WEAPONS_PRECIOUS",
     "id": "33ebee13-6acb-4772-ba2f-e4c8b69d6068",
     "name": "Cold Iron Weapon (High-Grade)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=375",
@@ -13377,6 +16623,18 @@
     "traits": []
   },
   {
+    "category": "WEAPONS_PRECIOUS",
+    "id": "a1ea7594-18f7-4059-afd1-aad3efd1a02e",
+    "name": "High-Grade Soverign Steel Weapon",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=778",
+    "level": "19",
+    "price": "32,000 gp (+3,200 gp per Buk)",
+    "source": "Legends pg. 77",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": []
+  },
+  {
     "category": "WEAPONS_SPECIFIC",
     "id": "7840784e-4740-4176-b590-6dd70e41ea01",
     "name": "Scrollstaff",
@@ -13439,6 +16697,21 @@
   },
   {
     "category": "WEAPONS_SPECIFIC",
+    "id": "63cd415c-3d6f-4d8b-b2d6-fafe1d9cd710",
+    "name": "Infiltrator's Accessory",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=736",
+    "level": "5",
+    "price": "150 gp",
+    "source": "Advanced Player's Guide pg. 261",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Illusion",
+      "Magical"
+    ]
+  },
+  {
+    "category": "WEAPONS_SPECIFIC",
     "id": "dd88bc7f-4e48-4162-8dd0-4bc925ea2aa2",
     "name": "Cinderclaw Gauntlet",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=482",
@@ -13466,6 +16739,18 @@
       "Evocation",
       "Magical"
     ]
+  },
+  {
+    "category": "WEAPONS_SPECIFIC",
+    "id": "5d69d48d-fad8-44d9-b162-333a819966ae",
+    "name": "Reaper's Lancet",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=810",
+    "level": "5",
+    "price": "200 gp",
+    "source": "Pathfinder #157: Devil at the Dreaming Palace pg. 81",
+    "sourceType": "ADVENTURE_PATH",
+    "rarity": "COMMON",
+    "traits": []
   },
   {
     "category": "WEAPONS_SPECIFIC",
@@ -13515,6 +16800,67 @@
   },
   {
     "category": "WEAPONS_SPECIFIC",
+    "id": "14d42720-7d2d-43a2-bca3-7693a6de8d94",
+    "name": "Gluttonous Spear",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=788",
+    "level": "6",
+    "price": "250 gp",
+    "source": "The Slithering pg. 60",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Magical",
+      "Necromancy"
+    ]
+  },
+  {
+    "category": "WEAPONS_SPECIFIC",
+    "id": "4d5a3e94-da0d-4354-8943-ee0f0eb12aac",
+    "name": "Spellguard Blade",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=746",
+    "level": "7",
+    "price": "320 gp",
+    "source": "Advanced Player's Guide pg. 263",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Abjuration",
+      "Magical"
+    ]
+  },
+  {
+    "category": "WEAPONS_SPECIFIC",
+    "id": "fc11beae-837e-4882-85b5-2565ad1ff947",
+    "name": "Slime Whip",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=792",
+    "level": "7",
+    "price": "360 gp",
+    "source": "The Slithering pg. 61",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Magical",
+      "Transmutation"
+    ]
+  },
+  {
+    "category": "WEAPONS_SPECIFIC",
+    "id": "23f82e32-041c-4f22-bd13-d2353c2fa713",
+    "name": "Spiritsight Crossbow",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=747",
+    "level": "8",
+    "price": "450 gp",
+    "source": "Advanced Player's Guide pg. 263",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Conjuration",
+      "Magical",
+      "Teleportation"
+    ]
+  },
+  {
+    "category": "WEAPONS_SPECIFIC",
     "id": "7a7ccac8-4528-4162-9cc2-2ceadb624ebb",
     "name": "Eclipse",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=503",
@@ -13527,6 +16873,21 @@
       "Evocation",
       "Light",
       "Magical"
+    ]
+  },
+  {
+    "category": "WEAPONS_SPECIFIC",
+    "id": "6d70979c-478a-474e-b391-63734f801a7a",
+    "name": "Flaying Knife",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=787",
+    "level": "8",
+    "price": "480 gp",
+    "source": "The Slithering pg. 60",
+    "sourceType": "MISC",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Magical",
+      "Necromancy"
     ]
   },
   {
@@ -13638,6 +16999,24 @@
   },
   {
     "category": "WEAPONS_SPECIFIC",
+    "id": "17b15226-cc94-4d1b-ac38-31ecdaee17fd",
+    "name": "Four-Ways Dogslicer",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=733",
+    "level": "12",
+    "price": "1,700 gp",
+    "source": "Advanced Player's Guide pg. 261",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Cold",
+      "Electricity",
+      "Evocation",
+      "Fire",
+      "Magical"
+    ]
+  },
+  {
+    "category": "WEAPONS_SPECIFIC",
     "id": "9389da99-76bf-4506-be57-d5f48f8ecba3",
     "name": "Dwarven Thrower",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=384",
@@ -13730,6 +17109,22 @@
   },
   {
     "category": "WEAPONS_SPECIFIC",
+    "id": "f56c05d8-4ee4-426c-acdd-640a0efa0a27",
+    "name": "Deepdread Claw",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=768",
+    "level": "14",
+    "price": "4,000 gp",
+    "source": "Legends pg. 28",
+    "sourceType": "MISC",
+    "rarity": "RARE",
+    "traits": [
+      "Evocation",
+      "Invested",
+      "Magical"
+    ]
+  },
+  {
+    "category": "WEAPONS_SPECIFIC",
     "id": "0da1db95-350a-4b19-8674-091722891a5f",
     "name": "Holy Avenger",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=389",
@@ -13761,6 +17156,22 @@
       "Fire",
       "Good",
       "Light"
+    ]
+  },
+  {
+    "category": "WEAPONS_SPECIFIC",
+    "id": "7f56453a-df62-448f-9083-8e99f4898aa9",
+    "name": "Blade of the Black Soverign",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=775",
+    "level": "15",
+    "price": "6,500 gp",
+    "source": "Legends pg. 76",
+    "sourceType": "MISC",
+    "rarity": "UNIQUE",
+    "traits": [
+      "Electricity",
+      "Evocation",
+      "Magical"
     ]
   },
   {
@@ -14119,6 +17530,23 @@
       "Invested",
       "Magical",
       "Transmutation"
+    ]
+  },
+  {
+    "category": "WORN_OTHER",
+    "id": "8713c2b1-b6d2-41e9-8881-0c503c5a3201",
+    "name": "Ring of Discretion",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=804",
+    "level": "1",
+    "price": "15 gp",
+    "source": "Pathfinder #157: Devil at the Dreaming Palace pg. 80",
+    "sourceType": "ADVENTURE_PATH",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Illusion",
+      "Invested",
+      "Magical",
+      "Visual"
     ]
   },
   {
@@ -14741,6 +18169,23 @@
   },
   {
     "category": "WORN_OTHER",
+    "id": "fb1bc3a3-6f91-40b7-9785-bf6117a4d50a",
+    "name": "Sleeves of Storage",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=745",
+    "level": "4",
+    "price": "100 gp",
+    "source": "Advanced Player's Guide pg. 263",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Conjuration",
+      "Extradimensional",
+      "Invested",
+      "Magical"
+    ]
+  },
+  {
+    "category": "WORN_OTHER",
     "id": "3b10b696-2fea-435c-8684-72435c36b187",
     "name": "Necklace of Fireballs I",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=449",
@@ -14833,6 +18278,22 @@
       "Magical",
       "Evocation",
       "Illusion",
+      "Invested",
+      "Magical"
+    ]
+  },
+  {
+    "category": "WORN_OTHER",
+    "id": "31c7911c-c2a1-443e-858e-fb6a4a1c5838",
+    "name": "Corpseward Pendant",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=806",
+    "level": "5",
+    "price": "150 gp",
+    "source": "Pathfinder #157: Devil at the Dreaming Palace pg. 80",
+    "sourceType": "ADVENTURE_PATH",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Abjuration",
       "Invested",
       "Magical"
     ]
@@ -15287,6 +18748,24 @@
   },
   {
     "category": "WORN_OTHER",
+    "id": "dbc7bf36-9fea-43df-a4a1-ca60b3fcf7f2",
+    "name": "Lover's Gloves",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=737",
+    "level": "8",
+    "price": "500 gp",
+    "source": "Advanced Player's Guide pg. 261",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Emotion",
+      "Enchantment",
+      "Invested",
+      "Magical",
+      "Mental"
+    ]
+  },
+  {
+    "category": "WORN_OTHER",
     "id": "b9e68a6a-6559-448f-af57-fdc60348659a",
     "name": "Necklace of Fireballs III",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=449",
@@ -15315,6 +18794,23 @@
       "Abjuration",
       "Invested",
       "Occult"
+    ]
+  },
+  {
+    "category": "WORN_OTHER",
+    "id": "1c402afe-3793-4c56-bca3-1f253d1b658e",
+    "name": "Sleeves of Storage (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=745",
+    "level": "9",
+    "price": "600 gp",
+    "source": "Advanced Player's Guide pg. 263",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Conjuration",
+      "Extradimensional",
+      "Invested",
+      "Magical"
     ]
   },
   {
@@ -15579,6 +19075,24 @@
   },
   {
     "category": "WORN_OTHER",
+    "id": "07e50f73-c92d-40f2-a1a7-a60939268b0d",
+    "name": "Mask of the Banshee",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=738",
+    "level": "9",
+    "price": "700 gp",
+    "source": "Advanced Player's Guide pg. 261",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Auditory",
+      "Invested",
+      "Magical",
+      "Necromancy",
+      "Negative"
+    ]
+  },
+  {
+    "category": "WORN_OTHER",
     "id": "af17c2dc-bfbe-4601-8744-098efe19188e",
     "name": "Cloak of Repute (Greater)",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=510",
@@ -15755,6 +19269,24 @@
   },
   {
     "category": "WORN_OTHER",
+    "id": "41430556-0993-4486-9d1f-9851714a38f4",
+    "name": "Fire-Jump Ring",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=732",
+    "level": "10",
+    "price": "940 gp",
+    "source": "Advanced Player's Guide pg. 260",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "UNCOMMON",
+    "traits": [
+      "Conjuration",
+      "Fire",
+      "Invested",
+      "Magical",
+      "Teleportation"
+    ]
+  },
+  {
+    "category": "WORN_OTHER",
     "id": "3c5190da-01c3-419e-b3d5-154b530a0d46",
     "name": "Cloak of the Bat",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=425",
@@ -15913,6 +19445,23 @@
       "Invested",
       "Magical",
       "Transmutation"
+    ]
+  },
+  {
+    "category": "WORN_OTHER",
+    "id": "ef2c089b-baca-4d89-91f9-3cef96952955",
+    "name": "Envisioning Mask",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=729",
+    "level": "11",
+    "price": "1,200 gp",
+    "source": "Advanced Player's Guide pg. 260",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Divination",
+      "Invested",
+      "Magical",
+      "Mental"
     ]
   },
   {
@@ -16258,6 +19807,23 @@
   },
   {
     "category": "WORN_OTHER",
+    "id": "9d18649e-c17b-4002-bd4d-9acae9401b34",
+    "name": "Hellfire Boots",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=735",
+    "level": "13",
+    "price": "3,000 gp",
+    "source": "Advanced Player's Guide pg. 261",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Evocation",
+      "Fire",
+      "Invested",
+      "Magical"
+    ]
+  },
+  {
+    "category": "WORN_OTHER",
     "id": "54ccd50a-a169-46d8-890a-ca6b1873f0cb",
     "name": "Bracers of Armor II",
     "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=416",
@@ -16397,6 +19963,23 @@
       "Abjuration",
       "Arcane",
       "Invested"
+    ]
+  },
+  {
+    "category": "WORN_OTHER",
+    "id": "a00f0eb0-92fe-498a-a08d-735a21de5ae1",
+    "name": "Earthglide Cloak",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=727",
+    "level": "15",
+    "price": "6,500 gp",
+    "source": "Advanced Player's Guide pg. 260",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Earth",
+      "Invested",
+      "Magical",
+      "Transmutation"
     ]
   },
   {
@@ -16704,6 +20287,24 @@
       "Abjuration",
       "Arcane",
       "Invested"
+    ]
+  },
+  {
+    "category": "WORN_OTHER",
+    "id": "d3235dbd-31ca-4eac-b689-8414f770f88b",
+    "name": "Mask of the Banshee (Greater)",
+    "aonUrl": "https://2e.aonprd.com/Equipment.aspx?ID=738",
+    "level": "19",
+    "price": "35,000 gp",
+    "source": "Advanced Player's Guide pg. 261",
+    "sourceType": "ADVANCED_PLAYERS_GUIDE",
+    "rarity": "COMMON",
+    "traits": [
+      "Auditory",
+      "Invested",
+      "Magical",
+      "Necromancy",
+      "Negative"
     ]
   },
   {

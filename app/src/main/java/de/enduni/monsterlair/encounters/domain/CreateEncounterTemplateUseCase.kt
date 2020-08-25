@@ -4,10 +4,12 @@ import android.content.Context
 import com.samskivert.mustache.Mustache
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.domain.CustomMonster
+import de.enduni.monsterlair.common.domain.Strength
 import de.enduni.monsterlair.common.getStringRes
 import de.enduni.monsterlair.common.getXp
 import de.enduni.monsterlair.encounters.domain.model.Encounter
 import de.enduni.monsterlair.encounters.domain.model.EncounterMonster
+import de.enduni.monsterlair.encounters.domain.model.MonsterRole
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -32,14 +34,30 @@ class CreateEncounterTemplateUseCase(
                 printMonsters = encounter.monsters.isNotEmpty(),
                 printHazards = encounter.hazards.isNotEmpty(),
                 monsters = encounter.monsters.map {
+                    val name = when (it.strength) {
+                        Strength.STANDARD -> it.monster.name
+                        Strength.ELITE -> context.getString(
+                            R.string.elite_name_template,
+                            it.monster.name
+                        )
+                        Strength.WEAK -> context.getString(
+                            R.string.weak_name_template,
+                            it.monster.name
+                        )
+                    }
                     EncounterTemplateMonster(
                         count = it.count,
-                        name = it.monster.name,
+                        name = name,
                         family = it.monster.family,
-                        level = it.monster.level,
+                        level = it.monster.level + it.strength.levelAdjustment,
                         role = context.getString(it.monster.role.getStringRes()),
                         source = getSource(it),
-                        xp = it.monster.role.xp
+                        xp = MonsterRole.determineRole(
+                            monsterLevel = it.monster.level,
+                            encounterLevel = encounter.level,
+                            strength = it.strength,
+                            withoutProficiency = encounter.useProficiencyWithoutLevel
+                        ).xp
                     )
                 },
                 hazards = encounter.hazards.map {
@@ -51,7 +69,9 @@ class CreateEncounterTemplateUseCase(
                         source = it.hazard.source,
                         xp = it.hazard.role.getXp(it.hazard.complexity)
                     )
-                }
+                },
+                hasNotes = encounter.notes.isNotBlank(),
+                notes = encounter.notes
             )
             return@withContext template.execute(templateData)
         }
@@ -69,7 +89,9 @@ class CreateEncounterTemplateUseCase(
         val printMonsters: Boolean,
         val monsters: List<EncounterTemplateMonster>,
         val printHazards: Boolean,
-        val hazards: List<EncounterTemplateHazard>
+        val hazards: List<EncounterTemplateHazard>,
+        val hasNotes: Boolean,
+        val notes: String
     )
 
     data class EncounterTemplateMonster(

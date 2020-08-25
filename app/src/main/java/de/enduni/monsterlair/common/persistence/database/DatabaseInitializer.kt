@@ -38,6 +38,10 @@ class DatabaseInitializer(
             hazardDataSource.getHazards().saveHazards()
             treasureDataSource.getTreasures().saveTreasures()
         }
+        if (savedVersion in 11..12) {
+            treasureDataSource.getTreasures().saveTreasures()
+        }
+
         _migrationRunning.value = false
     }
 
