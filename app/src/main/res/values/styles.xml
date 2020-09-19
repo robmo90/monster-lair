@@ -43,6 +43,20 @@
         <item name="android:ellipsize">end</item>
     </style>
 
+    <style name="ListItem.Level" parent="ListItem">
+        <item name="fontFamily">@font/amaranth</item>
+        <item name="android:ellipsize">none</item>
+    </style>
+
+    <style name="Caption.Trait" parent="Caption">
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingEnd">4dp</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+
     <style name="Button.Icon" parent="Widget.MaterialComponents.Button.Icon">
         <item name="fontFamily">@font/amaranth_bold</item>
     </style>

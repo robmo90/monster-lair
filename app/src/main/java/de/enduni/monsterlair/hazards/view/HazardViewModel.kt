@@ -39,7 +39,6 @@ class HazardViewModel(
                     hazardFilter.sortBy.getStringForHazard(),
                     hazardFilter.traits
                 )
-                    .toDisplayModel()
                     .let { emit(it) }
                 filter.postValue(hazardFilter)
             }

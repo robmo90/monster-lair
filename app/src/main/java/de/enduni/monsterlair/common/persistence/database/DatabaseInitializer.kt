@@ -41,6 +41,10 @@ class DatabaseInitializer(
         if (savedVersion in 11..12) {
             treasureDataSource.getTreasures().saveTreasures()
         }
+        if (savedVersion < 16) {
+            monsterDataSource.getMonsters().insertMonsters()
+            hazardDataSource.getHazards().saveHazards()
+        }
 
         _migrationRunning.value = false
     }

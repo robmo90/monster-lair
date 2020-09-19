@@ -16,7 +16,8 @@ data class HazardEntity(
     val complexity: Complexity,
     val rarity: Rarity,
     val source: String,
-    val sourceType: Source
+    val sourceType: Source,
+    val description: String
 )
 
 @Entity(tableName = "hazardTraits")

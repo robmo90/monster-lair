@@ -8,4 +8,12 @@
     <color name="secondaryDarkColor">#000039</color>
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#ffffff</color>
+
+    <color name="trait_uncommon">#c45500</color>
+    <color name="trait_rare">#0c1466</color>
+    <color name="trait_unique">#0c1466</color>
+    <color name="trait_alignment">#4287f5</color>
+    <color name="trait_size">#478c42</color>
+    <color name="trait_general">#522e2c</color>
+
 </resources>

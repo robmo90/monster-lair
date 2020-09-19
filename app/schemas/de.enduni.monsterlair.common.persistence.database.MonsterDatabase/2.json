@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "7903b7ef9fb1d0536e910796e1cbdaed",
+    "identityHash": "4e06cf3d9b6d3e455847fef85569fdb9",
     "entities": [
       {
         "tableName": "hazards",
@@ -68,7 +68,7 @@
       },
       {
         "tableName": "monsters",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `url` TEXT NOT NULL, `family` TEXT NOT NULL, `level` INTEGER NOT NULL, `alignment` TEXT NOT NULL, `type` TEXT NOT NULL, `rarity` TEXT NOT NULL, `size` TEXT NOT NULL, `source` TEXT NOT NULL, `sourceType` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `url` TEXT NOT NULL, `family` TEXT NOT NULL, `level` INTEGER NOT NULL, `alignment` TEXT NOT NULL, `type` TEXT NOT NULL, `rarity` TEXT NOT NULL, `size` TEXT NOT NULL, `source` TEXT NOT NULL, `sourceType` TEXT NOT NULL, `description` TEXT NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -133,6 +133,12 @@
           {
             "fieldPath": "sourceType",
             "columnName": "sourceType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
             "affinity": "TEXT",
             "notNull": true
           }
@@ -572,7 +578,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7903b7ef9fb1d0536e910796e1cbdaed')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4e06cf3d9b6d3e455847fef85569fdb9')"
     ]
   }
 }

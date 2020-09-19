@@ -17,7 +17,8 @@ data class MonsterEntity(
     val rarity: Rarity,
     val size: Size,
     val source: String,
-    val sourceType: Source
+    val sourceType: Source,
+    val description: String
 )
 
 @Entity(tableName = "monsterTraits")

@@ -76,7 +76,8 @@ class CreateMonsterDialog(
                                 sourceType = Source.CUSTOM,
                                 url = "",
                                 traits = emptyList(),
-                                rarity = Rarity.COMMON
+                                rarity = Rarity.COMMON,
+                                description = ""
                             )
                         )
                         Toast.makeText(

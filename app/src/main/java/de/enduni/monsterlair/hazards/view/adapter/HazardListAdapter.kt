@@ -5,12 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.hazards.view.HazardDisplayModel
+import de.enduni.monsterlair.hazards.domain.Hazard
 
 class HazardListAdapter(
     private val layoutInflater: LayoutInflater,
     private val hazardSelectedListener: HazardViewHolder.HazardSelectedListener
-) : ListAdapter<HazardDisplayModel, HazardViewHolder>(HazardDiffItemCallback()) {
+) : ListAdapter<Hazard, HazardViewHolder>(HazardDiffItemCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HazardViewHolder {
         val view = layoutInflater.inflate(R.layout.viewholder_hazard, parent, false)
@@ -23,18 +23,18 @@ class HazardListAdapter(
 
 }
 
-class HazardDiffItemCallback : DiffUtil.ItemCallback<HazardDisplayModel>() {
+class HazardDiffItemCallback : DiffUtil.ItemCallback<Hazard>() {
 
     override fun areItemsTheSame(
-        oldItem: HazardDisplayModel,
-        newItem: HazardDisplayModel
+        oldItem: Hazard,
+        newItem: Hazard
     ): Boolean {
         return oldItem.id == newItem.id
     }
 
     override fun areContentsTheSame(
-        oldItem: HazardDisplayModel,
-        newItem: HazardDisplayModel
+        oldItem: Hazard,
+        newItem: Hazard
     ): Boolean {
         return true
     }

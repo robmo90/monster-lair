@@ -16,5 +16,6 @@ data class HazardDto(
     @Json(name = "rarity") val rarity: Rarity,
     @Json(name = "source") val source: String,
     @Json(name = "sourceType") val sourceType: Source,
-    @Json(name = "traits") val traits: List<String>
+    @Json(name = "traits") val traits: List<String>,
+    @Json(name = "description") val description: String
 )

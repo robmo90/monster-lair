@@ -11,7 +11,12 @@ class MonsterListDisplayModelMapper {
         level = monster.level,
         type = monster.type,
         family = monster.family,
-        custom = CustomMonster.SOURCE == monster.source
+        custom = CustomMonster.SOURCE == monster.source,
+        alignment = monster.alignment,
+        size = monster.size,
+        rarity = monster.rarity,
+        traits = monster.traits,
+        description = monster.description
     )
 
 }

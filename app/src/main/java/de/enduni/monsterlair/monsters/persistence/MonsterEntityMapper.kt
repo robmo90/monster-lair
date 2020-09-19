@@ -20,7 +20,8 @@ class MonsterEntityMapper {
             rarity = dto.rarity,
             size = dto.size,
             source = dto.source,
-            sourceType = dto.sourceType
+            sourceType = dto.sourceType,
+            description = dto.description
         ),
         dto.traits.map { MonsterTrait(it) }
     )
@@ -37,6 +38,7 @@ class MonsterEntityMapper {
         size = entity.monster.size,
         source = entity.monster.source,
         sourceType = entity.monster.sourceType,
+        description = entity.monster.description,
         traits = entity.traits.map { it.name }
     )
 
@@ -51,7 +53,8 @@ class MonsterEntityMapper {
         size = dto.size,
         rarity = dto.rarity,
         source = dto.source,
-        sourceType = dto.sourceType
+        sourceType = dto.sourceType,
+        description = dto.description
     )
 
 }

@@ -11,7 +11,8 @@
     "traits": [
       "Environmental",
       "Fungus"
-    ]
+    ],
+    "description": "This human-sized purple mushroom emits a piercing shriek when disturbed."
   },
   {
     "id": "b8f4f707-6649-4998-93db-5bd9d76b42c2",
@@ -25,7 +26,8 @@
     "traits": [
       "Mechanical",
       "Trap"
-    ]
+    ],
+    "description": "A wooden trapdoor covers a pit that’s 10 feet square and 20 feet deep."
   },
   {
     "id": "42b63f18-524c-4882-bd46-992caf0a6174",
@@ -38,7 +40,8 @@
     "rarity": "COMMON",
     "traits": [
       "Environmental"
-    ]
+    ],
+    "description": "Loose snow and ice have built up on a high surface, such as a tree branch or a rooftop. Its grip on the surface is tenuous, and it is likely to fall if the surface moves."
   },
   {
     "id": "63be0f24-0edb-4081-a03b-a36e5896fe0f",
@@ -51,7 +54,8 @@
     "rarity": "COMMON",
     "traits": [
       "Environmental"
-    ]
+    ],
+    "description": "Semitransparent sheets of webbing span the entryway, ready to capture small insects or hamper larger creatures that pass through."
   },
   {
     "id": "07991394-9c9b-4394-a2b3-e7da2eff90fa",
@@ -65,7 +69,8 @@
     "traits": [
       "Mechanical",
       "Trap"
-    ]
+    ],
+    "description": "A spring-loaded, poisoned spine is hidden near the keyhole of a lock. Disabling or breaking the trap does not disable or break the lock."
   },
   {
     "id": "882b8a85-f5de-454f-a538-a1b1f6e56f2a",
@@ -79,7 +84,8 @@
     "traits": [
       "Mechanical",
       "Trap"
-    ]
+    ],
+    "description": "Pressure-sensitive panels in the floor connect to a stone slab hidden in a hallway’s ceiling."
   },
   {
     "id": "b4beca4d-a62a-4eb8-a68b-67d23b7d17a3",
@@ -93,7 +99,8 @@
     "traits": [
       "Environmental",
       "Fungus"
-    ]
+    ],
+    "description": "This unassuming fungus leeches heat out of the air."
   },
   {
     "id": "8f44b288-73b3-4f7f-adf5-5e47af6e4594",
@@ -107,7 +114,8 @@
     "traits": [
       "Mechanical",
       "Trap"
-    ]
+    ],
+    "description": "A wall socket loaded with a spear connects to a floor tile in one 5-foot square."
   },
   {
     "id": "d096e1f5-084e-45a7-bf3d-8f99c2b13e69",
@@ -121,7 +129,8 @@
     "traits": [
       "Mechanical",
       "Trap"
-    ]
+    ],
+    "description": "Discreet webbing at throat level snags a creature that walks into it."
   },
   {
     "id": "d74eabdc-0723-4a91-a750-3f4ed3347e8e",
@@ -137,7 +146,8 @@
       "Evocation",
       "Magical",
       "Trap"
-    ]
+    ],
+    "description": "An invisible rune imprinted on a door latch releases a powerful electric discharge."
   },
   {
     "id": "d6dc814f-cd77-4030-b805-68cf635bb75d",
@@ -150,7 +160,8 @@
     "rarity": "COMMON",
     "traits": [
       "Environmental"
-    ]
+    ],
+    "description": "The footing on this sloped ground appears to be stable at first glance, but the tiny rocks that cover it are loosely packed and prone to slipping."
   },
   {
     "id": "520b210f-73c9-4417-9a9a-e27f372ff17d",
@@ -164,7 +175,8 @@
     "traits": [
       "Mechanical",
       "Trap"
-    ]
+    ],
+    "description": "A web tripwire lets loose a bundle of boulders that fall on all targets within a 10-foot square."
   },
   {
     "id": "761334d5-9fa1-4bfb-a596-1b6ef984ceec",
@@ -178,7 +190,8 @@
     "traits": [
       "Mechanical",
       "Trap"
-    ]
+    ],
+    "description": "Two blades, each hidden in a 15-foot-long ceiling groove, are both connected to a trip wire."
   },
   {
     "id": "71992e5e-7ac6-4485-a7a4-54fa4a419ec7",
@@ -191,7 +204,8 @@
     "rarity": "COMMON",
     "traits": [
       "Environmental"
-    ]
+    ],
+    "description": "On the surface, a titanic flytrap appears to be a patch of the more common flytrap plant, but beneath murky waters it hides a far larger set of jaws, reaching 10 feet across and reinforced with woody branches and lined with paralytic hairs."
   },
   {
     "id": "28abd500-cdce-4179-819f-0af91e84504b",
@@ -207,7 +221,8 @@
       "Fire",
       "Magical",
       "Trap"
-    ]
+    ],
+    "description": "An invisible rune creates an invisible, spherical magical sensor with a 20-foot radius."
   },
   {
     "id": "04ea06e2-2972-42bf-9f50-c9963489d946",
@@ -220,7 +235,8 @@
     "rarity": "COMMON",
     "traits": [
       "Haunt"
-    ]
+    ],
+    "description": "The reflection in the mirror subtly twists and distorts, its expression taking on an unnerving sneer of malice."
   },
   {
     "id": "363b1bf0-a389-452e-b263-c4e3293687e6",
@@ -233,7 +249,8 @@
     "rarity": "COMMON",
     "traits": [
       "Haunt"
-    ]
+    ],
+    "description": "A choir of lost souls rises out of the floor, singing an eerie chant that terrifies its listeners and buffets their bodies with walls of sound."
   },
   {
     "id": "36a9f5f8-1fdc-4d9e-a25e-3fb44fc2316c",
@@ -247,7 +264,8 @@
     "traits": [
       "Mechanical",
       "Trap"
-    ]
+    ],
+    "description": "A tube of hallucinogenic powder armed with a miniature explosive is connected to a doorknob or similar latch."
   },
   {
     "id": "eb71ad95-0157-48e3-bdfb-59e37e5f7d58",
@@ -261,7 +279,8 @@
     "traits": [
       "Magical",
       "Trap"
-    ]
+    ],
+    "description": "A curse is imbued on an entryway’s threshold.A curse is imbued on an entryway’s threshold."
   },
   {
     "id": "ac21874c-5f57-43ce-9f68-cbfa880061a2",
@@ -275,7 +294,8 @@
     "traits": [
       "Animal",
       "Environmental"
-    ]
+    ],
+    "description": "A sportlebore hides amid the victuals on a plate of food or within a pack of trail rations."
   },
   {
     "id": "d6800e85-42cb-4d1f-8653-3b3c680bc788",
@@ -289,7 +309,8 @@
     "traits": [
       "Environmental",
       "Fungus"
-    ]
+    ],
+    "description": "Poisonous mold spores assault nearby creatures."
   },
   {
     "id": "9af81e1e-634a-451e-a0be-815ae325e793",
@@ -304,7 +325,8 @@
       "Magical",
       "Mechanical",
       "Trap"
-    ]
+    ],
+    "description": "An iron trapdoor covers an infinitely deep 10-foot-square pit."
   },
   {
     "id": "7a5732d2-f2c4-4b06-906c-16d7d84ce83a",
@@ -317,7 +339,8 @@
     "rarity": "COMMON",
     "traits": [
       "Environmental"
-    ]
+    ],
+    "description": "A caustic green film clings to the ceiling above, watching for prey to pass beneath it."
   },
   {
     "id": "6814376e-1b16-44ae-85f3-0f1e7a4bda88",
@@ -330,7 +353,8 @@
     "rarity": "COMMON",
     "traits": [
       "Haunt"
-    ]
+    ],
+    "description": "An object haunted by the echoes of a vicious mind attempts to kill someone who comes near."
   },
   {
     "id": "c752c546-35a6-4bdb-9095-14b40d466dfa",
@@ -345,7 +369,8 @@
       "Magical",
       "Mechanical",
       "Trap"
-    ]
+    ],
+    "description": "An enormous hammer at an edifice’s entrance swings down in an attempt to damage a creature entering an area, push it back, and prevent it from going any further."
   },
   {
     "id": "000383ec-d650-4718-9e3f-be105ada3715",
@@ -358,7 +383,8 @@
     "rarity": "COMMON",
     "traits": [
       "Haunt"
-    ]
+    ],
+    "description": "A robe-clad spirit rises out of the floor, pointing an accusing finger."
   },
   {
     "id": "5f59e914-20b3-44cb-b032-d8d53f632571",
@@ -372,7 +398,8 @@
     "traits": [
       "Magical",
       "Trap"
-    ]
+    ],
+    "description": "A Druidic glyph tries to transforms a trespasser into an animal."
   },
   {
     "id": "4c29e24b-e0d6-4e36-8fd3-13aeeaab2322",
@@ -386,7 +413,8 @@
     "traits": [
       "Magical",
       "Trap"
-    ]
+    ],
+    "description": "A rift attempts to draw creatures into another plane (the GM chooses the specific plane)."
   },
   {
     "id": "eff89cb4-ea2b-4d0f-b88d-e545c4c5b3b4",
@@ -399,7 +427,8 @@
     "rarity": "COMMON",
     "traits": [
       "Haunt"
-    ]
+    ],
+    "description": "Four vengeful spirits grab interlopers and toss them off the edge of a nearby 120-foot-tall cliff."
   },
   {
     "id": "92cabf41-ae09-466d-a353-607e07b27f2f",
@@ -413,7 +442,8 @@
     "traits": [
       "Magical",
       "Trap"
-    ]
+    ],
+    "description": "Warding magic attempts to trap intruders or would-be thieves in a disrupted time flow."
   },
   {
     "id": "a91e53b1-dd89-4c99-98e4-3ff752e3eb39",
@@ -426,7 +456,8 @@
     "rarity": "COMMON",
     "traits": [
       "Haunt"
-    ]
+    ],
+    "description": "These desperate spirits are the echoes of people who committed great atrocities in the name of an evil god. Now, they are left with only the knowledge that their souls have been damned, and the unwavering belief that they can better their fate by providing powerful sacrifices for their fiendish masters."
   },
   {
     "id": "aa190392-b036-429b-bf03-a2ffee17d30a",
@@ -440,7 +471,8 @@
     "traits": [
       "Mechanical",
       "Trap"
-    ]
+    ],
+    "description": "A wickedly sharp saw blade descends and travels along grooves in a complex path throughout the room, attempting to decapitate everyone within."
   },
   {
     "id": "6c046c47-3aa0-4022-9844-90b2295521bd",
@@ -454,7 +486,8 @@
     "traits": [
       "Magical",
       "Trap"
-    ]
+    ],
+    "description": "Powerful warding magic tied to an object or location tries to regress the ages of a creature and its allies."
   },
   {
     "id": "acb46409-51bd-4723-8263-65df9edc3839",
@@ -468,7 +501,8 @@
     "traits": [
       "Magical",
       "Trap"
-    ]
+    ],
+    "description": "A roiling red orb, forged from a drop of the god Rovagug’s blood, rains fire from the sky when a specified condition is met."
   },
   {
     "id": "35e1f70a-e9eb-4ea5-9930-8052e5405f29",
@@ -483,7 +517,8 @@
       "Complex",
       "Magical",
       "Trap"
-    ]
+    ],
+    "description": "A cloud of invisible magical sensors in a 10-foot radius surrounds an invisible wall or floor rune the size of the creature to be summoned."
   },
   {
     "id": "f1bdb410-51a1-421e-a9c5-7800bd05fa5c",
@@ -498,7 +533,8 @@
       "Complex",
       "Mechanical",
       "Trap"
-    ]
+    ],
+    "description": "A trapdoor covers a 10-foot-square pit that’s 30 feet deep and has 5 feet of water at the bottom. Four water spouts in the walls connect to hidden water tanks. Each water spout extends out of a different wall, 6 inches from the top of the pit."
   },
   {
     "id": "0d39f160-3b29-4845-9a59-30ab1dbdebaf",
@@ -512,7 +548,8 @@
     "traits": [
       "Complex",
       "Environmental"
-    ]
+    ],
+    "description": "A 15-foot-wide patch of water and sand attempts to submerge creatures that step onto it."
   },
   {
     "id": "c3dd6b56-6b71-4f6d-96f4-2b0f12d47550",
@@ -527,7 +564,8 @@
       "Complex",
       "Mechanical",
       "Trap"
-    ]
+    ],
+    "description": "A metal pole with three razor-sharp spinning blades is hidden in the floor, connected to trigger plates in up to eight floor tiles and a hidden control panel within 30 feet."
   },
   {
     "id": "85c4bc85-cb55-4f4c-8280-a15376c5681b",
@@ -543,7 +581,8 @@
       "Magical",
       "Mechanical",
       "Trap"
-    ]
+    ],
+    "description": "An ornate wheel set into a wall—divided into six segments with colored runes on each—is controlled by a magical sensor that detects any creature within 100 feet in front of it."
   },
   {
     "id": "7b14f2c4-eb61-492c-b20e-cac3a742f275",
@@ -557,7 +596,8 @@
     "traits": [
       "Complex",
       "Haunt"
-    ]
+    ],
+    "description": "A raging spectral inferno arises out of thin air, strengthening all undead creatures within its area. This haunt most often arises from the charred remains of a group of three people who burned to death, whether in a terrible accident or a deliberate execution, and their unavenged souls burn with rage."
   },
   {
     "id": "cf8d97cf-809a-4d0d-8a66-b5fe36ed496e",
@@ -571,7 +611,8 @@
     "traits": [
       "Complex",
       "Haunt"
-    ]
+    ],
+    "description": "Allies appear to shed their disguises and reveal themselves to be malevolent monsters."
   },
   {
     "id": "7256ac33-2ce2-4be9-b2cf-6a402efa7e02",
@@ -586,7 +627,8 @@
       "Complex",
       "Mechanical",
       "Trap"
-    ]
+    ],
+    "description": "Countless holes to launch poison darts from line a long hallway with a hidden control panel on the far end."
   },
   {
     "id": "70d4ab00-e8ca-4cc5-a23f-10ce69bb34bd",
@@ -601,7 +643,8 @@
       "Complex",
       "Mechanical",
       "Trap"
-    ]
+    ],
+    "description": "Four gated channels carved into stone allow lava to flow into a 15-foot-tall room; the floor can withdraw to allow the hardened lava to fall into a chamber beneath."
   },
   {
     "id": "288e343d-bd12-411e-ae01-ca064877b01e",
@@ -615,7 +658,8 @@
     "traits": [
       "Complex",
       "Environmental"
-    ]
+    ],
+    "description": "Whether made up of water rushing through the streets that sweeps up dangerous debris along the way or a less natural substance bursting free of its container, this relentless flood batters everything in its path."
   },
   {
     "id": "b6837f5d-9bbd-4d11-8ccf-01102a390370",
@@ -629,7 +673,8 @@
     "traits": [
       "Complex",
       "Haunt"
-    ]
+    ],
+    "description": "A whirling tornado of spectrally propelled glass and steel slices whatever it touches to ribbons."
   },
   {
     "id": "7d268cd6-0c8b-48e4-81a6-5ee7ffa2ec35",
@@ -645,7 +690,8 @@
       "Magical",
       "Mechanical",
       "Trap"
-    ]
+    ],
+    "description": "Three innocuous decorations instilled with telekinetic magic pull objects and pieces of the room itself into spinning clouds of debris that attack all creatures in the room."
   },
   {
     "id": "540de98b-0b03-4022-8f30-3ae36e1a7970",
@@ -661,7 +707,8 @@
       "Magical",
       "Mechanical",
       "Trap"
-    ]
+    ],
+    "description": "A magic mirror replaces characters with evil mirror duplicates from another dimension."
   },
   {
     "id": "5c670aeb-32c7-4d00-ad50-97db9fb9bb4b",
@@ -675,7 +722,8 @@
     "traits": [
       "Complex",
       "Haunt"
-    ]
+    ],
+    "description": "An eerie orchestra compels all who hear it to dance until they collapse from exhaustion."
   },
   {
     "id": "78d1806f-5d8c-4a96-8af9-972245956f39",
@@ -690,6 +738,7 @@
       "Complex",
       "Magical",
       "Trap"
-    ]
+    ],
+    "description": "A magically contagious wail of the banshee spell is trapped in the larynx of an invisible, mummified elf."
   }
 ]

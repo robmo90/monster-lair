@@ -21,7 +21,7 @@ android {
         applicationId "de.enduni.monsterlair"
         minSdkVersion 24
         targetSdkVersion 29
-        versionCode 14
+        versionCode 15
         versionName "2.1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 

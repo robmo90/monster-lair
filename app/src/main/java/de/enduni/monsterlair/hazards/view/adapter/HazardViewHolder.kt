@@ -7,7 +7,7 @@ import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.getIcon
 import de.enduni.monsterlair.common.getStringRes
 import de.enduni.monsterlair.databinding.ViewholderHazardBinding
-import de.enduni.monsterlair.hazards.view.HazardDisplayModel
+import de.enduni.monsterlair.hazards.domain.Hazard
 
 
 class HazardViewHolder(
@@ -17,7 +17,7 @@ class HazardViewHolder(
 
     private lateinit var binding: ViewholderHazardBinding
 
-    fun bind(hazard: HazardDisplayModel) {
+    fun bind(hazard: Hazard) {
         binding = ViewholderHazardBinding.bind(itemView)
         binding.listItemIcon.load(
             itemView.resources.getDrawable(

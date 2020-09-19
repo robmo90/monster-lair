@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="bottom_sheet_peek">64dp</dimen>
+    <dimen name="one_line_list_item_height">48dp</dimen>
     <dimen name="two_line_list_item_height">72dp</dimen>
     <dimen name="three_line_list_item_height">88dp</dimen>
     <dimen name="list_item_icon_size">40dp</dimen>
     <dimen name="list_item_margin">16dp</dimen>
     <dimen name="list_item_caption_gap">4dp</dimen>
+    <dimen name="trait_gap">2dp</dimen>
     <dimen name="verticalChipSpacing">4dp</dimen>
     <dimen name="bottom_nav_height">56dp</dimen>
     <dimen name="bottom_sheet_bottom_padding">16dp</dimen>

@@ -13,5 +13,6 @@ data class Hazard(
     val rarity: Rarity,
     val source: String,
     val sourceType: Source,
-    val traits: List<String>
+    val traits: List<String>,
+    val description: String
 )

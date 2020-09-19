@@ -17,7 +17,8 @@ class HazardEntityMapper {
             complexity = dto.complexity,
             rarity = dto.rarity,
             source = dto.source,
-            sourceType = dto.sourceType
+            sourceType = dto.sourceType,
+            description = dto.description
         ),
         dto.traits.map { HazardTrait(it) }
     )
@@ -31,7 +32,8 @@ class HazardEntityMapper {
         complexity = entity.hazard.complexity,
         source = entity.hazard.source,
         sourceType = entity.hazard.sourceType,
-        traits = entity.traits.map { it.name }
+        traits = entity.traits.map { it.name },
+        description = entity.hazard.description
     )
 
 }

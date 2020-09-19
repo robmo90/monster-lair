@@ -296,6 +296,21 @@ fun Alignment.getStringRes(): Int {
 }
 
 @StringRes
+fun Alignment.getStringResShort(): Int {
+    return when (this) {
+        Alignment.LAWFUL_GOOD -> R.string.alignment_lawful_good_short
+        Alignment.LAWFUL_NEUTRAL -> R.string.alignment_lawful_neutral_short
+        Alignment.LAWFUL_EVIL -> R.string.alignment_lawful_evil_short
+        Alignment.NEUTRAL_GOOD -> R.string.alignment_neutral_good_short
+        Alignment.NEUTRAL -> R.string.alignment_true_neutral_short
+        Alignment.NEUTRAL_EVIL -> R.string.alignment_neutral_evil_short
+        Alignment.CHAOTIC_GOOD -> R.string.alignment_chaotic_good_short
+        Alignment.CHAOTIC_NEUTRAL -> R.string.alignment_chaotic_neutral_short
+        Alignment.CHAOTIC_EVIL -> R.string.alignment_chaotic_evil_short
+    }
+}
+
+@StringRes
 fun Size.getStringRes(): Int {
     return when (this) {
         Size.TINY -> R.string.size_tiny
