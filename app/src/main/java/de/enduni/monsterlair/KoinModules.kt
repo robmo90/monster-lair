@@ -12,6 +12,7 @@ import de.enduni.monsterlair.common.persistence.database.HazardEntityMapper
 import de.enduni.monsterlair.common.persistence.database.MonsterDatabase
 import de.enduni.monsterlair.common.sources.SourceManager
 import de.enduni.monsterlair.common.view.CreateMonsterViewModel
+import de.enduni.monsterlair.common.view.DarkModeManager
 import de.enduni.monsterlair.creator.domain.*
 import de.enduni.monsterlair.creator.view.*
 import de.enduni.monsterlair.encounters.domain.CreateEncounterTemplateUseCase
@@ -102,8 +103,9 @@ val appModule = module {
 
     single { UpdateManager(get()) }
     single { SourceManager(get()) }
+    single { DarkModeManager(get()) }
 
-    viewModel { SettingsViewModel(get()) }
+    viewModel { SettingsViewModel(get(), get()) }
 
 }
 

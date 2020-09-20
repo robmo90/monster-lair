@@ -309,5 +309,6 @@
     <string name="create_random_treasure_error">Could not create random treasure - maybe you are limiting the sources too much.</string>
     <string name="random_treasure_description">This generates the treasure rewards for a whole party level as recommended by the Core Rulebook. Split up the treasure for your encounters as you see fit!</string>
     <string name="archives_of_nethys_link">Archives</string>
+    <string name="enforce_dark_mode">Enforce Dark Mode</string>
 
 </resources>

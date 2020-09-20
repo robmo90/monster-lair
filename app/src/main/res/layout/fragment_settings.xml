@@ -52,6 +52,20 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/dark_mode_checkbox"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/one_line_list_item_height"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/enforce_dark_mode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/source_entry">
+
+    </com.google.android.material.switchmaterial.SwitchMaterial>
+
 
     <TextView
         android:id="@+id/licenses_heading"
@@ -64,7 +78,7 @@
         android:text="@string/fragment_licenses"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/source_entry" />
+        app:layout_constraintTop_toBottomOf="@id/dark_mode_checkbox" />
 
     <TextView
         android:id="@+id/content_licenses"

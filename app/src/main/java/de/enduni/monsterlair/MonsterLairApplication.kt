@@ -1,7 +1,9 @@
 package de.enduni.monsterlair
 
 import android.app.Application
+import androidx.appcompat.app.AppCompatDelegate
 import de.enduni.monsterlair.common.persistence.database.DatabaseInitializer
+import de.enduni.monsterlair.common.view.DarkModeManager
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.MainScope
@@ -15,6 +17,8 @@ import timber.log.Timber
 class MonsterLairApplication : Application() {
 
     private val databaseInitializer: DatabaseInitializer by inject()
+
+    private val darkModeManager: DarkModeManager by inject()
 
     private val handler = CoroutineExceptionHandler { _, exception ->
         Timber.e(exception, "Caught exception")
@@ -42,6 +46,11 @@ class MonsterLairApplication : Application() {
         }
         Timber.d("Initialized Koin")
 
+        if (darkModeManager.isDarkModeEnabled()) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
         MainScope().launch(handler) {
             databaseInitializer.initialize()
             Timber.d("Initialized Database")

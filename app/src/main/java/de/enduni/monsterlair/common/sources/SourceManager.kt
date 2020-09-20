@@ -9,7 +9,6 @@ class SourceManager(
 ) {
 
     companion object {
-
         const val SOURCES = "sources"
     }
 
