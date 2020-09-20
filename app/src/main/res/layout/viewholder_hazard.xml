@@ -3,18 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/two_line_list_item_height"
-    android:background="?attr/selectableItemBackground"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground"
     android:clickable="true"
     android:focusable="true">
 
+    <View
+        android:id="@+id/list_item_background"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <ImageView
         android:id="@+id/list_item_icon"
-        android:layout_width="@dimen/list_item_icon_size"
-        android:layout_height="@dimen/list_item_icon_size"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_marginStart="@dimen/list_item_margin"
-        android:layout_marginTop="@dimen/list_item_margin"
         android:src="@drawable/ic_monster_celestial"
+        app:layout_constraintBottom_toBottomOf="@id/list_item_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,23 +33,156 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/list_item_margin"
-        android:layout_marginTop="@dimen/list_item_margin"
         android:layout_marginEnd="@dimen/list_item_margin"
+        app:layout_constraintBottom_toBottomOf="@id/list_item_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/list_item_icon"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Aasimar" />
 
+    <View
+        android:id="@+id/level_background"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="@dimen/list_item_margin"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@id/list_item_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/list_item_caption"
-        style="@style/Caption"
-        android:layout_width="0dp"
+        style="@style/ListItem.Level"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/list_item_caption_gap"
-        android:layout_marginEnd="@dimen/list_item_margin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/list_item_title"
-        app:layout_constraintTop_toBottomOf="@id/list_item_title"
-        tools:text="Aasimar" />
+        android:ellipsize="none"
+        android:padding="4dp"
+        android:textAlignment="center"
+        android:textColor="?colorOnSurface"
+        app:layout_constraintBaseline_toBaselineOf="@id/list_item_title"
+        app:layout_constraintEnd_toEndOf="@id/level_background"
+        app:layout_constraintStart_toStartOf="@id/level_background"
+        tools:text="20" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/detail_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/list_item_background"
+        tools:layout_height="wrap_content"
+        tools:visibility="visible">
+
+
+        <LinearLayout
+            android:id="@+id/traits"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/list_item_margin"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="@dimen/list_item_margin"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/Caption.Trait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/trait_rare"
+                android:text="Rare" />
+
+            <TextView
+                style="@style/Caption.Trait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/trait_alignment"
+                android:text="N" />
+
+            <TextView
+                style="@style/Caption.Trait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/trait_size"
+                android:text="Huge" />
+
+            <TextView
+                style="@style/Caption.Trait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/trait_general"
+                android:text="Construct" />
+
+            <TextView
+                style="@style/Caption.Trait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/trait_general"
+                android:text="Golem" />
+
+            <TextView
+                style="@style/Caption.Trait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/trait_general"
+                android:text="Mindless" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/description"
+            style="@style/Description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/list_item_margin"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="@dimen/list_item_margin"
+            android:text="Golem - Crafted from a nigh-indestructible metal of great rarity, adamantine golems can’t be destroyed except by the most powerful foes."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/traits" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/edit_button"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/list_item_margin"
+            android:text="@string/custom_monster_edit_button_option"
+            android:visibility="gone"
+            app:icon="@drawable/ic_create"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/delete_button"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/list_item_margin"
+            android:text="@string/encounter_delete"
+            android:visibility="gone"
+            app:icon="@drawable/ic_delete"
+            app:layout_constraintEnd_toStartOf="@id/edit_button"
+            app:layout_constraintTop_toBottomOf="@id/description" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/archives_button"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/list_item_margin"
+            android:text="@string/archives_of_nethys_link"
+            app:icon="@drawable/ic_link"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

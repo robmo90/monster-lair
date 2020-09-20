@@ -2,8 +2,6 @@ package de.enduni.monsterlair.monsters.view
 
 import androidx.lifecycle.*
 import de.enduni.monsterlair.common.view.ActionLiveData
-import de.enduni.monsterlair.common.view.CreateMonsterDialog
-import de.enduni.monsterlair.common.view.EditMonsterDialog
 import de.enduni.monsterlair.monsters.domain.*
 import de.enduni.monsterlair.monsters.view.adapter.MonsterViewHolder
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -21,9 +19,7 @@ class MonsterViewModel(
     private val deleteMonsterUseCase: DeleteMonsterUseCase,
     private val saveMonsterUseCase: SaveMonsterUseCase,
     private val mapper: MonsterListDisplayModelMapper
-) : ViewModel(), MonsterViewHolder.MonsterViewHolderListener,
-    CreateMonsterDialog.OnSaveClickedListener,
-    EditMonsterDialog.OnEditMonsterClickListener {
+) : ViewModel(), MonsterViewHolder.MonsterViewHolderListener {
 
     private val _actions = ActionLiveData<MonsterOverviewAction>()
     val actions: LiveData<MonsterOverviewAction> get() = _actions
@@ -44,14 +40,10 @@ class MonsterViewModel(
     val filter = filterStore.filter.asLiveData()
 
 
-    override fun onSelect(monsterId: String) {
+    override fun onOpenArchive(monsterId: String) {
         viewModelScope.launch(handler) {
             val url = retrieveMonsterUseCase.execute(monsterId).url
-            if (url.isBlank()) {
-                _actions.sendAction(MonsterOverviewAction.OnCustomMonsterClicked)
-            } else {
-                _actions.sendAction(MonsterOverviewAction.OnMonsterLinkClicked(url))
-            }
+            _actions.sendAction(MonsterOverviewAction.OnMonsterLinkClicked(url))
         }
     }
 
@@ -60,36 +52,27 @@ class MonsterViewModel(
         return this.map { mapper.toMonsterDisplayModel(it) }
     }
 
-    override fun onSaveClicked(monster: Monster) {
-        viewModelScope.launch(handler + Dispatchers.Default) {
-            saveMonsterUseCase.execute(monster)
-            filterStore.refresh()
-        }
-    }
-
-    override fun onEditClicked(id: String) {
+    override fun onEditClicked(monsterId: String) {
         viewModelScope.launch(handler) {
-            val monster = retrieveMonsterUseCase.execute(id)
+            val monster = retrieveMonsterUseCase.execute(monsterId)
             _actions.sendAction(MonsterOverviewAction.OnEditCustomMonsterClicked(monster))
         }
     }
 
-    override fun onDeleteClicked(id: String) {
+    override fun onDeleteClicked(monsterId: String) {
+        viewModelScope.launch(handler) {
+            val monster = retrieveMonsterUseCase.execute(monsterId)
+            _actions.sendAction(
+                MonsterOverviewAction.OnDeleteCustomMonsterClicked(monster)
+            )
+        }
+    }
+
+    fun onDeleteConfirmed(monsterId: String) {
         viewModelScope.launch(handler + Dispatchers.Default) {
-            deleteMonsterUseCase.execute(id)
+            deleteMonsterUseCase.execute(monsterId)
             filterStore.refresh()
         }
     }
 
-    override fun onLongPress(monsterId: String) {
-        viewModelScope.launch(handler) {
-            val monster = retrieveMonsterUseCase.execute(monsterId)
-            _actions.sendAction(
-                MonsterOverviewAction.OnCustomMonsterPressed(
-                    monsterId,
-                    monster.name
-                )
-            )
-        }
-    }
 }

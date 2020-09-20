@@ -2,9 +2,7 @@ package de.enduni.monsterlair.monsters.persistence
 
 import androidx.sqlite.db.SimpleSQLiteQuery
 import de.enduni.monsterlair.common.domain.*
-import de.enduni.monsterlair.common.persistence.MonsterDao
-import de.enduni.monsterlair.common.persistence.MonsterWithTraits
-import de.enduni.monsterlair.common.persistence.buildQuery
+import de.enduni.monsterlair.common.persistence.*
 import de.enduni.monsterlair.common.sources.SourceManager
 import de.enduni.monsterlair.monsters.domain.Monster
 import timber.log.Timber
@@ -54,6 +52,13 @@ class MonsterRepository(
     suspend fun saveMonster(monster: Monster) {
         val entity = monsterEntityMapper.toEntity(monster)
         monsterDao.insertMonster(entity)
+        monsterDao.insertTraits(monster.traits.map { MonsterTrait(it) })
+        monsterDao.insertCrossRef(monster.traits.map {
+            MonsterAndTraitsCrossRef(
+                entity.id,
+                it
+            )
+        })
     }
 
     suspend fun deleteMonster(id: String) {

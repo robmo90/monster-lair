@@ -64,75 +64,33 @@ class MonsterViewHolder(
             }
         }
 
-        binding.archivesButton.setOnClickListener {
-            monsterSelectedListener.onSelect(monsterId = monster.id)
-        }
         if (monster.custom) {
-            binding.root.setOnLongClickListener {
-                monsterSelectedListener.onLongPress(monster.id)
-                true
+            binding.archivesButton.visibility = View.GONE
+            binding.editButton.visibility = View.VISIBLE
+            binding.deleteButton.visibility = View.VISIBLE
+            binding.deleteButton.setOnClickListener {
+                monsterSelectedListener.onDeleteClicked(monsterId = monster.id)
+            }
+            binding.editButton.setOnClickListener {
+                monsterSelectedListener.onEditClicked(monsterId = monster.id)
+            }
+        } else {
+            binding.archivesButton.visibility = View.VISIBLE
+            binding.editButton.visibility = View.GONE
+            binding.deleteButton.visibility = View.GONE
+            binding.archivesButton.setOnClickListener {
+                monsterSelectedListener.onOpenArchive(monsterId = monster.id)
             }
         }
     }
 
-    private fun addTraits(monster: MonsterListDisplayModel) {
-        if (monster.rarity != Rarity.COMMON) {
-            val rarity = context.getString(monster.rarity.getStringRes()).createTraitView()
-            rarity.setBackgroundColor(
-                if (monster.rarity == Rarity.UNCOMMON) {
-                    context.getColor(R.color.trait_uncommon)
-                } else {
-                    context.getColor(R.color.trait_rare)
-                }
-            )
-            binding.traits.addView(rarity)
-            rarity.addMargin()
-        }
-
-
-        val alignment = context.getString(monster.alignment.getStringResShort()).createTraitView()
-        alignment.setBackgroundColor(context.getColor(R.color.trait_alignment))
-        binding.traits.addView(alignment)
-        alignment.addMargin()
-
-
-        val size = context.getString(monster.size.getStringRes()).createTraitView()
-        size.setBackgroundColor(context.getColor(R.color.trait_size))
-        binding.traits.addView(size)
-        size.addMargin()
-
-        monster.traits.forEach { trait ->
-            val traitView = trait.createTraitView()
-            traitView.setBackgroundColor(context.getColor(R.color.trait_general))
-            binding.traits.addView(traitView)
-            traitView.addMargin()
-        }
-
-    }
-
-    fun String.createTraitView(): TextView {
-        val textView = LayoutInflater.from(context).inflate(R.layout.trait, null) as TextView
-        textView.text = this
-        return textView
-    }
-
-    fun TextView.addMargin() {
-        val params = layoutParams as LinearLayout.LayoutParams
-        params.setMargins(
-            0,
-            0,
-            context.resources.getDimensionPixelSize(R.dimen.trait_gap),
-            0
-        )
-        layoutParams = params
-    }
-
-    val context
+    private val context
         get() = binding.root.context
 
     interface MonsterViewHolderListener {
-        fun onSelect(monsterId: String)
-        fun onLongPress(monsterId: String)
+        fun onOpenArchive(monsterId: String)
+        fun onEditClicked(monsterId: String)
+        fun onDeleteClicked(monsterId: String)
     }
 
 }

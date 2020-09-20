@@ -89,6 +89,24 @@ fun AutoCompleteTextView.setupSimpleSelect(
     }
 }
 
+fun AutoCompleteTextView.setupDropdown(
+    list: Array<String>,
+    onClickListener: (index: Int) -> Unit
+) {
+    val adapter = MaterialSpinnerAdapter(
+        context,
+        R.layout.view_spinner_item,
+        list
+    )
+    setAdapter(adapter)
+    onItemClickListener = AdapterView.OnItemClickListener { _, view, _, _ ->
+        onClickListener.invoke(list.indexOf((view as TextView).text))
+
+        val imm = context.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0)
+    }
+}
+
 fun AutoCompleteTextView.setupDropdownSelect(
     list: Array<String>,
     onClickListener: (index: Int) -> Unit

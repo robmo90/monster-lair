@@ -1,159 +1,158 @@
 package de.enduni.monsterlair.common.view
 
-import android.app.Activity
-import android.content.Context
-import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.textfield.TextInputEditText
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.core.widget.doAfterTextChanged
+import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.Observer
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.common.domain.*
+import de.enduni.monsterlair.common.domain.Alignment
+import de.enduni.monsterlair.common.domain.MonsterType
+import de.enduni.monsterlair.common.domain.Rarity
+import de.enduni.monsterlair.common.domain.Size
 import de.enduni.monsterlair.common.getStringRes
 import de.enduni.monsterlair.common.setTextIfNotFocused
+import de.enduni.monsterlair.common.view.filterchips.RemovableFilterChip
 import de.enduni.monsterlair.databinding.DialogCreateMonsterBinding
-import de.enduni.monsterlair.monsters.domain.Monster
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
-import java.lang.ref.WeakReference
-import java.util.*
 
-class CreateMonsterDialog(
-    activity: Activity,
-    private val onSaveClickedListener: OnSaveClickedListener,
-    private val monster: Monster? = null
-) {
+@ExperimentalCoroutinesApi
+class CreateMonsterDialog() : DialogFragment() {
 
-    private val activityRef: WeakReference<Activity> = WeakReference(activity)
+    private lateinit var binding: DialogCreateMonsterBinding
+
+    private val viewModel: CreateMonsterViewModel by viewModel()
 
 
-    fun show() {
-        activityRef.get()?.let { activity ->
-            val binding = DialogCreateMonsterBinding.inflate(activity.layoutInflater)
-            setupMonsterTypeSelect(activity, binding)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(STYLE_NO_FRAME, R.style.AppTheme);
+    }
 
-            val edit = monster != null
-            monster?.let {
-                binding.monsterNameEditText.setTextIfNotFocused(monster.name)
-                binding.monsterLevelEditText.setTextIfNotFocused(monster.level)
-                binding.monsterFamilyEditText.setTextIfNotFocused(monster.family)
-                binding.monsterTypeSelect.setText(monster.type.getStringRes())
-            }
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.dialog_create_monster, container, true)
+    }
 
-            val dialog = MaterialAlertDialogBuilder(activity, R.style.AlertDialogStyle)
-                .setTitle(if (!edit) R.string.custom_monster_create_title else R.string.custom_monster_edit_title)
-                .setView(binding.root)
-                .setPositiveButton(
-                    (if (!edit) R.string.custom_monster_create_button else R.string.custom_monster_edit_button),
-                    null
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = DialogCreateMonsterBinding.bind(view)
+
+        val monsterId = arguments?.getString(EXTRA_MONSTER_ID)
+        binding.toolbar.setNavigationIcon(R.drawable.ic_close)
+        binding.toolbar.setNavigationOnClickListener { dismiss() }
+        Timber.d("Monster  ID: $monsterId")
+        if (monsterId != null) {
+            viewModel.loadMonster(monsterId)
+            binding.toolbar.title =
+                requireContext().resources.getString(R.string.custom_monster_edit_title)
+        }
+
+
+        val types = requireContext().resources.getStringArray(R.array.type_choices)
+        binding.monsterTypeSelect.setupDropdown(types) { index -> viewModel.changeType(MonsterType.values()[index]) }
+
+        val alignments = requireContext().resources.getStringArray(R.array.alignments)
+        binding.monsterAlignmentSelect.setupDropdown(alignments) { index ->
+            viewModel.changeAlignment(
+                Alignment.values()[index]
+            )
+        }
+
+        val sizes = requireContext().resources.getStringArray(R.array.sizes)
+        binding.monsterSizeSelect.setupDropdown(sizes) { index -> viewModel.changeSize(Size.values()[index]) }
+
+        val rarities = requireContext().resources.getStringArray(R.array.rarities)
+        binding.monsterRaritySelect.setupDropdown(rarities) { index -> viewModel.changeRarity(Rarity.values()[index]) }
+
+        viewModel.traits.observe(viewLifecycleOwner, Observer { traits ->
+            binding.traitsSelect.setupDropdown(traits.toTypedArray()) { index ->
+                viewModel.addTrait(
+                    traits[index]
                 )
-                .setNegativeButton(android.R.string.cancel) { _, _ -> }
-                .create()
+            }
+        })
 
-            dialog.setOnShowListener {
-                dialog.getButton(AlertDialog.BUTTON_POSITIVE)?.setOnClickListener {
-                    try {
-                        val levelOk = binding.monsterLevelEditText.checkLevel()
-                        val nameOk = binding.monsterNameEditText.checkName()
-                        val type = getMonsterType(activity, binding)
-                        if (!levelOk || !nameOk || type == null) {
-                            return@setOnClickListener
-                        }
-                        val name = binding.monsterNameEditText.text.toString().capitalize()
-                        var family = binding.monsterFamilyEditText.text.toString()
-                        if (family.isBlank()) {
-                            family = "—"
-                        }
-                        onSaveClickedListener.onSaveClicked(
-                            Monster(
-                                name = name,
-                                family = family,
-                                level = binding.monsterLevelEditText.text.toString().toInt(),
-                                type = type,
-                                source = CustomMonster.SOURCE,
-                                id = monster?.id ?: UUID.randomUUID().toString(),
-                                alignment = Alignment.NEUTRAL,
-                                size = Size.MEDIUM,
-                                sourceType = Source.CUSTOM,
-                                url = "",
-                                traits = emptyList(),
-                                rarity = Rarity.COMMON,
-                                description = ""
-                            )
-                        )
-                        Toast.makeText(
-                            activity,
-                            activity.getString(R.string.custom_monster_save_confirmation, name),
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        dialog.dismiss()
-                    } catch (ex: IllegalStateException) {
-                        Timber.d("Not done yet")
-                    }
+        binding.monsterNameEditText.doAfterTextChanged { viewModel.changeName(it.toString()) }
+        binding.monsterLevelEditText.doAfterTextChanged {
+            it.toString().toIntOrNull()?.let { level -> viewModel.changeLevel(level) }
+        }
+        binding.monsterFamilyEditText.doAfterTextChanged { viewModel.changeFamily(it.toString()) }
+        binding.notesEditText.doAfterTextChanged { viewModel.changeDescription(it.toString()) }
+        binding.customTraitsEditText.doAfterTextChanged { viewModel.changeCustomTraits(it.toString()) }
 
+        viewModel.monster.observe(viewLifecycleOwner, Observer { monster ->
+            Timber.d("$monster")
+            binding.monsterNameEditText.setTextIfNotFocused(monster.name)
+            binding.monsterLevelEditText.setTextIfNotFocused(monster.level)
+            binding.monsterFamilyEditText.setTextIfNotFocused(monster.family)
+            binding.notesEditText.setTextIfNotFocused(monster.description)
+            binding.monsterTypeSelect.setText(monster.type.getStringRes())
+            binding.monsterAlignmentSelect.setText(monster.alignment.getStringRes())
+            binding.monsterSizeSelect.setText(monster.size.getStringRes())
+            binding.monsterRaritySelect.setText(monster.rarity.getStringRes())
+
+            binding.traitsChips.removeAllViews()
+            monster.traits.forEach { trait ->
+                val chip = RemovableFilterChip(
+                    requireContext(),
+                    trait
+                ) { viewModel.removeTrait(trait) }
+                binding.traitsChips.addView(chip)
+            }
+        })
+
+        binding.closeButton.setOnClickListener {
+            viewModel.saveMonster()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Timber.d("Resuming")
+        viewModel.actions.observe(this, Observer { handleAction(it) })
+    }
+
+    private fun handleAction(event: CreateMonsterEvent) {
+        binding.monsterLevelEditTextLayout.error = ""
+        binding.monsterNameTextLayout.error = ""
+        when (event) {
+            is CreateMonsterEvent.SavedSuccessfully -> dismiss()
+            is CreateMonsterEvent.Error -> {
+                if (event.errors.contains(ValidationError.LEVEL)) {
+                    binding.monsterLevelEditTextLayout.error =
+                        requireContext().getString(R.string.enter_valid_level)
+                }
+                if (event.errors.contains(ValidationError.NAME)) {
+                    binding.monsterNameTextLayout.error =
+                        requireContext().getString(R.string.custom_monster_create_empty_name)
                 }
             }
 
-            dialog.show()
         }
-
     }
 
-    private fun setupMonsterTypeSelect(context: Context, binding: DialogCreateMonsterBinding) {
-        val choices = context.resources.getStringArray(R.array.type_choices)
-        MaterialSpinnerAdapter(
-            context,
-            R.layout.view_spinner_item,
-            choices
-        ).also { adapter ->
-            binding.monsterTypeSelect.setAdapter(adapter)
-        }
-        binding.monsterTypeSelect.setOnFocusChangeListener { v, hasFocus ->
-            if (hasFocus) {
-                context.getSystemService(InputMethodManager::class.java)?.apply {
-                    hideSoftInputFromWindow(v.windowToken, 0)
-                }
+    override fun onPause() {
+        super.onPause()
+        viewModel.actions.removeObservers(this)
+    }
+
+    companion object {
+
+        private const val EXTRA_MONSTER_ID = "monsterId"
+
+        fun newInstance(monsterId: String?) = CreateMonsterDialog().apply {
+            arguments = Bundle().apply {
+                putString(EXTRA_MONSTER_ID, monsterId)
             }
         }
-    }
-
-    private fun getMonsterType(
-        context: Context,
-        binding: DialogCreateMonsterBinding
-    ): MonsterType? {
-        val choices = context.resources.getStringArray(R.array.type_choices)
-        val index = choices.indexOf(binding.monsterTypeSelect.text.toString())
-        val type = MonsterType.values().getOrNull(index)
-        if (type == null) {
-            binding.monsterTypeSelect.error =
-                activityRef.get()?.getString(R.string.custom_monster_create_wrong_level)
-        }
-        return type
-
-    }
-
-    private fun TextInputEditText.checkLevel(): Boolean {
-        val text = this.text.toString()
-        return if (text.isBlank() || !IntRange(-1, 25).contains(text.toIntOrNull())) {
-            this.error = activityRef.get()?.getString(R.string.custom_monster_create_wrong_level)
-            false
-        } else {
-            true
-        }
-    }
-
-    private fun TextInputEditText.checkName(): Boolean {
-        val text = this.text.toString()
-        return if (text.isBlank()) {
-            this.error = activityRef.get()?.getString(R.string.custom_monster_create_empty_name)
-            false
-        } else {
-            true
-        }
-    }
-
-    interface OnSaveClickedListener {
-
-        fun onSaveClicked(monster: Monster)
 
     }
 

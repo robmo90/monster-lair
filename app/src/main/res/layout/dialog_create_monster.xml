@@ -4,89 +4,272 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/monster_name_text_layout"
-        style="@style/EditText"
-        android:layout_width="0dp"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        style="@style/Widget.MaterialComponents.AppBarLayout.Primary"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:fitsSystemWindows="true"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/monster_name_edit_text"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/custom_monster_create_name"
-            android:importantForAutofill="no" />
+            app:title="@string/custom_monster_create_title"
+            app:titleTextColor="@color/primaryTextColor" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/monster_level_edit_text_layout"
-        style="@style/EditText"
-        android:layout_width="0dp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="16dp"
+        app:layout_constraintBottom_toTopOf="@id/close_button"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_layout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/monster_name_text_layout"
+                style="@style/EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/monster_name_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/custom_monster_create_name"
+                    android:importantForAutofill="no" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/monster_level_edit_text_layout"
+                style="@style/EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@id/monster_family_edit_text_layout"
+                app:layout_constraintStart_toStartOf="@id/monster_name_text_layout"
+                app:layout_constraintTop_toBottomOf="@id/monster_name_text_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/monster_level_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/custom_monster_create_level"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/monster_family_edit_text_layout"
+                style="@style/EditText"
+                android:layout_width="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/monster_name_text_layout"
+                app:layout_constraintStart_toEndOf="@id/monster_level_edit_text_layout"
+                app:layout_constraintTop_toBottomOf="@id/monster_name_text_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/monster_family_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/custom_monster_create_family" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/monster_type_select_layout"
+                style="@style/DropDown"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/monster_family_edit_text_layout">
+
+                <AutoCompleteTextView
+                    android:id="@+id/monster_type_select"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:focusable="true"
+                    android:dropDownHeight="200dp"
+                    android:hint="@string/custom_monster_create_type" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/monster_rarity_select_layout"
+                style="@style/DropDown"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/monster_size_select_layout">
+
+                <AutoCompleteTextView
+                    android:id="@+id/monster_rarity_select"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:focusable="true"
+                    android:dropDownHeight="200dp"
+                    android:hint="@string/rarity_label_singular" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/monster_size_select_layout"
+                style="@style/DropDown"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/monster_alignment_select_layout">
+
+                <AutoCompleteTextView
+                    android:id="@+id/monster_size_select"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:focusable="true"
+                    android:dropDownHeight="200dp"
+                    android:hint="@string/sizes_select_hint_singular" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/monster_alignment_select_layout"
+                style="@style/DropDown"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/monster_type_select_layout">
+
+                <AutoCompleteTextView
+                    android:id="@+id/monster_alignment_select"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:focusable="true"
+                    android:dropDownHeight="200dp"
+                    android:hint="@string/alignments_select_hint_singular" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/traits_input_layout"
+                style="@style/DropDown"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/monster_rarity_select_layout">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/traits_chips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/traits_select"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:dropDownAnchor="@+id/traits_input_layout"
+                    android:dropDownHeight="300dp"
+                    android:focusable="true"
+                    android:hint="@string/traits_select_label" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/custom_traits_input_layout"
+                style="@style/EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/traits_input_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/custom_traits_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/custom_monster_custom_traits"
+                    android:importantForAutofill="no" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/notes_edit_text_layout"
+                style="@style/EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/custom_traits_input_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/notes_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|start"
+                    android:hint="@string/notes"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:maxLines="10" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/close_button"
+        style="@style/OutlinedButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@id/monster_family_edit_text_layout"
-        app:layout_constraintStart_toStartOf="@id/monster_name_text_layout"
-        app:layout_constraintTop_toBottomOf="@id/monster_name_text_layout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/monster_level_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/custom_monster_create_level"
-            android:inputType="number" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/monster_family_edit_text_layout"
-        style="@style/EditText"
-        android:layout_width="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@id/monster_name_text_layout"
-        app:layout_constraintStart_toEndOf="@id/monster_level_edit_text_layout"
-        app:layout_constraintTop_toBottomOf="@id/monster_name_text_layout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/monster_family_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/custom_monster_create_family" />
-
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/monster_type_select_layout"
-        style="@style/DropDown"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/monster_family_edit_text_layout">
-
-        <AutoCompleteTextView
-            android:id="@+id/monster_type_select"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:editable="false"
-            android:focusable="true"
-            android:dropDownHeight="200dp"
-            android:hint="@string/custom_monster_create_type" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        android:text="@string/done"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

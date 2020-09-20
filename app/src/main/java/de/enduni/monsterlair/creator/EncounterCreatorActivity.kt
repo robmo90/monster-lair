@@ -12,7 +12,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.SimpleItemAnimator
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.openCustomTab
@@ -23,7 +22,6 @@ import de.enduni.monsterlair.creator.view.EncounterCreatorViewModel
 import de.enduni.monsterlair.creator.view.RandomEncounterDialog
 import de.enduni.monsterlair.creator.view.adapter.EncounterCreatorListAdapter
 import de.enduni.monsterlair.databinding.ActivityEncounterCreatorBinding
-import de.enduni.monsterlair.databinding.BottomsheetMonstersBinding
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
@@ -134,7 +132,7 @@ class EncounterCreatorActivity : AppCompatActivity() {
                 true
             }
             R.id.creator_menu_custom_monster -> {
-                CreateMonsterDialog(this, viewModel).show()
+                CreateMonsterDialog.newInstance(null).show(supportFragmentManager, "tag")
                 true
             }
             android.R.id.home -> {
@@ -147,6 +145,7 @@ class EncounterCreatorActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        Timber.d("Resuming")
         viewModel.actions.observe(this, Observer { handleAction(it) })
     }
 
@@ -204,7 +203,8 @@ class EncounterCreatorActivity : AppCompatActivity() {
                 EditMonsterDialog(this, action.id, action.monsterName, viewModel).show()
             }
             is EncounterCreatorAction.OnEditCustomMonsterClicked -> {
-                CreateMonsterDialog(this, viewModel, action.monster).show()
+                CreateMonsterDialog.newInstance(action.monster.id)
+                    .show(supportFragmentManager, "tag")
             }
             is EncounterCreatorAction.OnGiveTreasureRecommendationClicked -> {
                 MaterialAlertDialogBuilder(this, R.style.AlertDialogStyle)
@@ -221,17 +221,6 @@ class EncounterCreatorActivity : AppCompatActivity() {
                 ).show()
             }
             else -> return
-        }
-    }
-
-    private fun showBottomSheet() {
-        val binding = BottomsheetMonstersBinding.inflate(this.layoutInflater, null, false)
-        binding.addMonster.setOnClickListener {
-            CreateMonsterDialog(this, viewModel).show()
-        }
-        BottomSheetDialog(this).apply {
-            setContentView(binding.root)
-            show()
         }
     }
 

@@ -6,7 +6,6 @@ import de.enduni.monsterlair.common.domain.SortBy
 import de.enduni.monsterlair.common.domain.Strength
 import de.enduni.monsterlair.common.getDefaultMaxLevel
 import de.enduni.monsterlair.common.view.ActionLiveData
-import de.enduni.monsterlair.common.view.CreateMonsterDialog
 import de.enduni.monsterlair.common.view.EditMonsterDialog
 import de.enduni.monsterlair.creator.domain.*
 import de.enduni.monsterlair.creator.view.adapter.DangerForEncounterViewHolder
@@ -14,7 +13,6 @@ import de.enduni.monsterlair.creator.view.adapter.DangerViewHolder
 import de.enduni.monsterlair.creator.view.adapter.EncounterDetailViewHolder
 import de.enduni.monsterlair.encounters.domain.model.*
 import de.enduni.monsterlair.monsters.domain.DeleteMonsterUseCase
-import de.enduni.monsterlair.monsters.domain.Monster
 import de.enduni.monsterlair.monsters.domain.RetrieveMonsterUseCase
 import de.enduni.monsterlair.monsters.domain.SaveMonsterUseCase
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -44,7 +42,6 @@ class EncounterCreatorViewModel(
     EncounterDetailViewHolder.ClickListener,
     DangerViewHolder.DangerSelectedListener,
     DangerForEncounterViewHolder.DangerForEncounterListener,
-    CreateMonsterDialog.OnSaveClickedListener,
     EditMonsterDialog.OnEditMonsterClickListener,
     AdjustMonsterStrengthDialog.Listener {
 
@@ -261,13 +258,6 @@ class EncounterCreatorViewModel(
     fun onEditClicked() {
         viewModelScope.launch(handler) {
             _actions.postValue(EncounterCreatorAction.EditEncounterClicked(encounterStore.value))
-        }
-    }
-
-    override fun onSaveClicked(monster: Monster) {
-        viewModelScope.launch(handler + Dispatchers.Default) {
-            saveMonsterUseCase.execute(monster)
-            filterStore.refresh()
         }
     }
 

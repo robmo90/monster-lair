@@ -148,12 +148,37 @@
 
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/edit_button"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/list_item_margin"
+            android:text="@string/custom_monster_edit_button_option"
+            android:visibility="gone"
+            app:icon="@drawable/ic_create"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/delete_button"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/list_item_margin"
+            android:text="@string/encounter_delete"
+            android:visibility="gone"
+            app:icon="@drawable/ic_delete"
+            app:layout_constraintEnd_toStartOf="@id/edit_button"
+            app:layout_constraintTop_toBottomOf="@id/description" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/archives_button"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/list_item_margin"
-            android:text="Archives"
+            android:text="@string/archives_of_nethys_link"
+            app:icon="@drawable/ic_link"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/description" />
 

@@ -14,7 +14,7 @@ class TreasureListAdapter(
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TreasureViewHolder {
-        val view = layoutInflater.inflate(R.layout.viewholder_monster, parent, false)
+        val view = layoutInflater.inflate(R.layout.viewholder_treasure, parent, false)
         return TreasureViewHolder(view, monsterViewHolderListener)
     }
 

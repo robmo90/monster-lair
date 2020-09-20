@@ -3,7 +3,6 @@ package de.enduni.monsterlair.monsters
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -70,6 +69,7 @@ class MonsterFragment : Fragment(R.layout.fragment_monster) {
 
     override fun onResume() {
         super.onResume()
+        Timber.d("Resuming")
         viewModel.actions.observe(this, Observer { handleAction(it) })
     }
 
@@ -94,34 +94,24 @@ class MonsterFragment : Fragment(R.layout.fragment_monster) {
             is MonsterOverviewAction.OnMonsterLinkClicked -> {
                 navigateToUrl(action.url)
             }
-            is MonsterOverviewAction.OnCustomMonsterClicked -> {
-                showCustomMonsterHint()
-            }
-            is MonsterOverviewAction.OnCustomMonsterPressed -> {
-                EditMonsterDialog(
-                    requireActivity(),
-                    action.id,
-                    action.monsterName,
-                    viewModel
-                ).show()
-            }
             is MonsterOverviewAction.OnEditCustomMonsterClicked -> {
-                CreateMonsterDialog(requireActivity(), viewModel, action.monster).show()
+                CreateMonsterDialog.newInstance(action.monster.id)
+                    .show(parentFragmentManager, "tag")
+            }
+            is MonsterOverviewAction.OnDeleteCustomMonsterClicked -> {
+                DeleteDialog(requireActivity(), action.monster.id, action.monster.name) {
+                    viewModel.onDeleteConfirmed(monsterId = action.monster.id)
+                }.show()
             }
             else -> Timber.d("Processed $action")
         }
     }
 
-    private fun showCustomMonsterHint() {
-        Toast.makeText(requireContext(), R.string.custom_monster_hint, Toast.LENGTH_SHORT).show()
-    }
-
-
     private fun showBottomSheet() {
         val binding =
             BottomsheetMonstersBinding.inflate(requireActivity().layoutInflater, null, false)
         binding.addMonster.setOnClickListener {
-            CreateMonsterDialog(requireActivity(), viewModel).show()
+            CreateMonsterDialog.newInstance(null).show(parentFragmentManager, "tag")
         }
         BottomSheetDialog(requireContext()).apply {
             setContentView(binding.root)

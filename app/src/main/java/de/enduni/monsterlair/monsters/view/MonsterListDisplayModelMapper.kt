@@ -1,6 +1,6 @@
 package de.enduni.monsterlair.monsters.view
 
-import de.enduni.monsterlair.common.domain.CustomMonster
+import de.enduni.monsterlair.common.domain.Source
 import de.enduni.monsterlair.monsters.domain.Monster
 
 class MonsterListDisplayModelMapper {
@@ -11,7 +11,7 @@ class MonsterListDisplayModelMapper {
         level = monster.level,
         type = monster.type,
         family = monster.family,
-        custom = CustomMonster.SOURCE == monster.source,
+        custom = monster.sourceType == Source.CUSTOM,
         alignment = monster.alignment,
         size = monster.size,
         rarity = monster.rarity,

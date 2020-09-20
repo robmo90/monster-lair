@@ -162,10 +162,13 @@
     <string name="custom_monster_create_button">Save</string>
     <string name="custom_monster_edit_button">Save</string>
     <string name="custom_monster_edit_button_option">Edit</string>
-    <string name="custom_monster_delete_button">Delete \u2014 Will delete all encounters that include this monster.</string>
+    <string name="custom_monster_delete_button">Delete</string>
+    <string name="custom_monster_delete_title">Delete %s?</string>
+    <string name="custom_monster_delete_message">Warning! \u2014 When you delete %s it will delete all encounters that include it.</string>
     <string name="custom_monster_create_wrong_level">Please enter a valid level between -1 and 25.</string>
     <string name="custom_monster_create_empty_name">Please enter a valid name.</string>
     <string name="custom_monster_create_empty_type">Please enter a valid type.</string>
+    <string name="custom_monster_custom_traits">Enter custom traits, divide with space</string>
     <string name="custom_monster_save_confirmation">%s saved.</string>
 
     <string name="whats_new">What\'s new (%s)</string>
@@ -228,12 +231,15 @@
     <string name="upper_price_range_in_gp_chip">max %.1f gp</string>
 
     <string name="rarity_label">Rarities</string>
+    <string name="rarity_label_singular">Rarity</string>
     <string name="rarity_common">Common</string>
     <string name="rarity_uncommon">Uncommon</string>
     <string name="rarity_rare">Rare</string>
     <string name="rarity_unique">Unique</string>
     <string name="alignments_select_hint">Alignments</string>
+    <string name="alignments_select_hint_singular">Alignment</string>
     <string name="sizes_select_hint">Sizes</string>
+    <string name="sizes_select_hint_singular">Size</string>
     <string name="monster_type_select_hint">Monster Type</string>
 
     <string name="size_tiny">Tiny</string>
@@ -302,5 +308,6 @@
     <string name="random_treasure">Random Treasure</string>
     <string name="create_random_treasure_error">Could not create random treasure - maybe you are limiting the sources too much.</string>
     <string name="random_treasure_description">This generates the treasure rewards for a whole party level as recommended by the Core Rulebook. Split up the treasure for your encounters as you see fit!</string>
+    <string name="archives_of_nethys_link">Archives</string>
 
 </resources>

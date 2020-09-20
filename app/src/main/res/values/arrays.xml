@@ -110,6 +110,13 @@
         <item>@string/size_gargantuan</item>
     </string-array>
 
+    <string-array name="rarities">
+        <item>@string/rarity_common</item>
+        <item>@string/rarity_uncommon</item>
+        <item>@string/rarity_rare</item>
+        <item>@string/rarity_unique</item>
+    </string-array>
+
     <string-array name="alignments">
         <item>@string/alignment_lawful_good</item>
         <item>@string/alignment_lawful_neutral</item>
