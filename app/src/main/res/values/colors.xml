@@ -9,6 +9,10 @@
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#ffffff</color>
 
+    <color name="textColor">#000</color>
+    <color name="trait_text_uncommon">#c45500</color>
+    <color name="trait_text_rare">#3F51B5</color>
+
     <color name="trait_uncommon">#c45500</color>
     <color name="trait_rare">#0c1466</color>
     <color name="trait_unique">#0c1466</color>

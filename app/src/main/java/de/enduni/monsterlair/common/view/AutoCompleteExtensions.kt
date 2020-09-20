@@ -101,9 +101,13 @@ fun AutoCompleteTextView.setupDropdown(
     setAdapter(adapter)
     onItemClickListener = AdapterView.OnItemClickListener { _, view, _, _ ->
         onClickListener.invoke(list.indexOf((view as TextView).text))
-
-        val imm = context.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0)
+    }
+    setOnFocusChangeListener { v, hasFocus ->
+        if (hasFocus) {
+            context.getSystemService(InputMethodManager::class.java)?.apply {
+                hideSoftInputFromWindow(v.windowToken, 0)
+            }
+        }
     }
 }
 

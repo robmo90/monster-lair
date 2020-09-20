@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="secondaryColor">#3F51B5</color>
+
+    <color name="textColor">#FFF</color>
+    <color name="trait_text_uncommon">#F6A567</color>
+    <color name="trait_text_rare">#95A2EC</color>
+
 </resources>

@@ -38,6 +38,14 @@ class MonsterViewHolder(
             )
         )
         binding.listItemTitle.text = monster.name
+
+        when (monster.rarity) {
+            Rarity.UNCOMMON -> binding.listItemTitle.setTextColor(context.getColor(R.color.trait_text_uncommon))
+            Rarity.RARE,
+            Rarity.UNIQUE -> binding.listItemTitle.setTextColor(context.getColor(R.color.trait_text_rare))
+            else -> binding.listItemTitle.setTextColor(context.getColor(R.color.textColor))
+        }
+
         binding.listItemCaption.text = monster.level.toString()
 
         if (binding.traits.childCount > 0) {

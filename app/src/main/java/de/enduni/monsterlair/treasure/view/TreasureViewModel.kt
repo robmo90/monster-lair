@@ -42,7 +42,6 @@ class TreasureViewModel(
         filterStore.filter
             .collect { treasureFilter ->
                 treasureRepository.getTreasures(treasureFilter)
-                    .toDisplayModel()
                     .let { emit(it) }
                 filter.postValue(treasureFilter)
             }

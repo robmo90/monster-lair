@@ -35,7 +35,7 @@
         android:layout_marginStart="@dimen/list_item_margin"
         android:layout_marginEnd="@dimen/list_item_margin"
         app:layout_constraintBottom_toBottomOf="@id/list_item_background"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/level_background"
         app:layout_constraintStart_toEndOf="@id/list_item_icon"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Aasimar" />

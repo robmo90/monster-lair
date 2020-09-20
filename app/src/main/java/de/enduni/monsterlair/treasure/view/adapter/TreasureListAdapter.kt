@@ -5,12 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import de.enduni.monsterlair.R
-import de.enduni.monsterlair.treasure.view.TreasureDisplayModel
+import de.enduni.monsterlair.treasure.domain.Treasure
 
 class TreasureListAdapter(
     private val layoutInflater: LayoutInflater,
     private val monsterViewHolderListener: TreasureViewHolder.TreasureViewHolderListener
-) : ListAdapter<TreasureDisplayModel, TreasureViewHolder>(TreasureDiffItemCallback()) {
+) : ListAdapter<Treasure, TreasureViewHolder>(TreasureDiffItemCallback()) {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TreasureViewHolder {
@@ -24,18 +24,18 @@ class TreasureListAdapter(
 
 }
 
-class TreasureDiffItemCallback : DiffUtil.ItemCallback<TreasureDisplayModel>() {
+class TreasureDiffItemCallback : DiffUtil.ItemCallback<Treasure>() {
 
     override fun areItemsTheSame(
-        oldItem: TreasureDisplayModel,
-        newItem: TreasureDisplayModel
+        oldItem: Treasure,
+        newItem: Treasure
     ): Boolean {
-        return oldItem == newItem
+        return oldItem.id == newItem.id
     }
 
     override fun areContentsTheSame(
-        oldItem: TreasureDisplayModel,
-        newItem: TreasureDisplayModel
+        oldItem: Treasure,
+        newItem: Treasure
     ): Boolean {
         return true
     }
