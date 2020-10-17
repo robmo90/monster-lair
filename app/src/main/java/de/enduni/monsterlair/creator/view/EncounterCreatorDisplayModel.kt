@@ -2,7 +2,7 @@ package de.enduni.monsterlair.creator.view
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import de.enduni.monsterlair.common.domain.Strength
+import de.enduni.monsterlair.common.domain.*
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
 
 sealed class EncounterCreatorDisplayModel {
@@ -15,10 +15,16 @@ sealed class EncounterCreatorDisplayModel {
         val level: Int,
         val label: String,
         @StringRes val labelRes: Int? = null,
+        @StringRes val roleDescription: Int,
         val xp: Int,
         val url: String,
         val originalType: String,
-        val customMonster: Boolean
+        val source: Source,
+        val alignment: Alignment?,
+        val rarity: Rarity,
+        val size: Size?,
+        val traits: List<String>,
+        val description: String
     ) : EncounterCreatorDisplayModel()
 
     data class EncounterDetails(
@@ -42,7 +48,12 @@ sealed class EncounterCreatorDisplayModel {
         @StringRes val role: Int,
         val xp: Int,
         val url: String,
-        val customMonster: Boolean
+        val source: Source,
+        val alignment: Alignment?,
+        val rarity: Rarity,
+        val size: Size?,
+        val traits: List<String>,
+        val description: String
     ) : EncounterCreatorDisplayModel()
 
 }

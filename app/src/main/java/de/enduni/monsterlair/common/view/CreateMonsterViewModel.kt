@@ -140,7 +140,6 @@ class CreateMonsterViewModel(
                 saveMonsterUseCase.execute(monster)
             }
             _actions.sendAction(CreateMonsterEvent.SavedSuccessfully)
-            monsterFilterStore.refresh()
         }
     }
 

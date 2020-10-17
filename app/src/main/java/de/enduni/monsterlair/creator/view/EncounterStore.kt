@@ -22,6 +22,10 @@ class EncounterStore {
         _encounterFlow.value = encounter
     }
 
+    fun setName(name: String) {
+        value = value.copy(name = name)
+    }
+
     fun setDetails(
         name: String,
         numberOfPlayers: Int,

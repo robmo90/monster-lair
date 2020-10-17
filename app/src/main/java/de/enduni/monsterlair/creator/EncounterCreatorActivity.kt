@@ -23,11 +23,13 @@ import de.enduni.monsterlair.creator.view.RandomEncounterDialog
 import de.enduni.monsterlair.creator.view.adapter.EncounterCreatorListAdapter
 import de.enduni.monsterlair.databinding.ActivityEncounterCreatorBinding
 import de.enduni.monsterlair.encounters.domain.model.EncounterDifficulty
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
 
 
-class EncounterCreatorActivity : AppCompatActivity() {
+@ExperimentalCoroutinesApi
+class EncounterCreatorActivity : AppCompatActivity(), CreateMonsterDialog.Listener {
 
     private lateinit var binding: ActivityEncounterCreatorBinding
 
@@ -196,15 +198,14 @@ class EncounterCreatorActivity : AppCompatActivity() {
             is EncounterCreatorAction.ScrollUp -> {
                 binding.encounterRecyclerView.layoutManager?.scrollToPosition(0)
             }
-            is EncounterCreatorAction.CustomMonsterClicked -> {
-                Toast.makeText(this, R.string.custom_monster_hint, Toast.LENGTH_SHORT).show()
-            }
-            is EncounterCreatorAction.OnCustomMonsterPressed -> {
-                EditMonsterDialog(this, action.id, action.monsterName, viewModel).show()
-            }
-            is EncounterCreatorAction.OnEditCustomMonsterClicked -> {
-                CreateMonsterDialog.newInstance(action.monster.id)
+            is EncounterCreatorAction.CustomMonsterEdit -> {
+                CreateMonsterDialog.newInstance(action.id)
                     .show(supportFragmentManager, "tag")
+            }
+            is EncounterCreatorAction.CustomMonsterDelete -> {
+                DeleteDialog(this, action.id, action.name) {
+                    viewModel.onDeleteClicked(action.id)
+                }.show()
             }
             is EncounterCreatorAction.OnGiveTreasureRecommendationClicked -> {
                 MaterialAlertDialogBuilder(this, R.style.AlertDialogStyle)
@@ -222,6 +223,10 @@ class EncounterCreatorActivity : AppCompatActivity() {
             }
             else -> return
         }
+    }
+
+    override fun saved() {
+        viewModel.filterStore.refresh()
     }
 
     override fun onPause() {

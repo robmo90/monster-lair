@@ -63,6 +63,7 @@ class EncounterRepository(
             val monsterWithRole =
                 monsterWithRoleMapper.mapToMonsterWithRole(
                     entity.monster,
+                    entity.traits,
                     level,
                     withoutProficiency
                 )

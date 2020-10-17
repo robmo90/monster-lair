@@ -1,8 +1,6 @@
 package de.enduni.monsterlair.encounters.domain.model
 
-import de.enduni.monsterlair.common.domain.Alignment
-import de.enduni.monsterlair.common.domain.MonsterType
-import de.enduni.monsterlair.common.domain.Size
+import de.enduni.monsterlair.common.domain.*
 
 data class MonsterWithRole(
     val id: String,
@@ -13,6 +11,10 @@ data class MonsterWithRole(
     val alignment: Alignment,
     val type: MonsterType,
     val size: Size,
+    val rarity: Rarity,
+    val traits: List<Trait>,
+    val description: String,
     val role: MonsterRole,
-    val source: String
+    val source: String,
+    val sourceType: Source
 )

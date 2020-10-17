@@ -16,7 +16,11 @@ class HazardWithRoleMapper {
                 level = it.hazard.level,
                 complexity = it.hazard.complexity,
                 source = it.hazard.source,
-                role = it.hazard.level.determineRole(encounterLevel)
+                sourceType = it.hazard.sourceType,
+                role = it.hazard.level.determineRole(encounterLevel),
+                rarity = it.hazard.rarity,
+                traits = hazard.traits.map { it.name },
+                description = it.hazard.description
             )
         }
     }
@@ -30,7 +34,11 @@ class HazardWithRoleMapper {
                 level = it.level,
                 complexity = it.complexity,
                 source = it.source,
-                role = it.level.determineRole(encounterLevel)
+                sourceType = it.sourceType,
+                role = it.level.determineRole(encounterLevel),
+                rarity = it.rarity,
+                traits = hazard.traits,
+                description = hazard.description
             )
         }
     }

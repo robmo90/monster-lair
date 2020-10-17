@@ -2,7 +2,6 @@ package de.enduni.monsterlair.common.view
 
 import android.app.Activity
 import android.content.Context
-import android.text.SpannableStringBuilder
 import android.view.inputmethod.InputMethodManager
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
@@ -27,8 +26,6 @@ class EncounterSettingDialog(
         activityRef.get()?.let { activity ->
             val binding = DialogCreateEncounterBinding.inflate(activity.layoutInflater)
             setupDifficultySelect(activity, binding)
-            binding.encounterNameEditText.text =
-                SpannableStringBuilder.valueOf(activity.getString(R.string.encounter_name_placeholder))
 
             settings?.run {
                 binding.encounterNameEditText.setTextIfNotFocused(encounterName)

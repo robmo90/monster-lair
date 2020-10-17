@@ -72,7 +72,8 @@
 
     <string name="monster_with_xp_item_caption">%s \u2014 Level: %d \u2014 XP: %d</string>
     <string name="hazard_with_xp_item_caption">%s hazard \u2014 Level: %d \u2014 XP: %d</string>
-    <string name="encounter_monster_item_caption">Level: %d \u2014 XP: %d</string>
+    <string name="encounter_monster_item_caption">XP: %d \u2014 %s</string>
+    <string name="encounter_danger_caption">XP: %d \u2014 %s</string>
 
     <string name="no_dangers_encounter">Currently no monsters or hazards</string>
     <string name="export">Print</string>
@@ -276,6 +277,7 @@
     <string name="elite_name_template">Elite %s</string>
     <string name="weak_name_template">Weak %s</string>
 
+    <string name="adjust_monster_strength_button">Adjust</string>
     <string name="adjust_monster_strength">Adjust Strength</string>
     <string name="strength_weak">Weak</string>
     <string name="strength_standard">Standard</string>

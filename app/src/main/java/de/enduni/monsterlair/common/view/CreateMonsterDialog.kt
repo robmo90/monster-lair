@@ -124,7 +124,13 @@ class CreateMonsterDialog() : DialogFragment() {
         binding.monsterLevelEditTextLayout.error = ""
         binding.monsterNameTextLayout.error = ""
         when (event) {
-            is CreateMonsterEvent.SavedSuccessfully -> dismiss()
+            is CreateMonsterEvent.SavedSuccessfully -> {
+                val activity = requireActivity()
+                if (activity is Listener) {
+                    activity.saved()
+                }
+                dismiss()
+            }
             is CreateMonsterEvent.Error -> {
                 if (event.errors.contains(ValidationError.LEVEL)) {
                     binding.monsterLevelEditTextLayout.error =
@@ -142,6 +148,12 @@ class CreateMonsterDialog() : DialogFragment() {
     override fun onPause() {
         super.onPause()
         viewModel.actions.removeObservers(this)
+    }
+
+    interface Listener {
+
+        fun saved()
+
     }
 
     companion object {

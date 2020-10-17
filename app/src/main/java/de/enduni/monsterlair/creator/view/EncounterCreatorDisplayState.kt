@@ -1,7 +1,6 @@
 package de.enduni.monsterlair.creator.view
 
 import de.enduni.monsterlair.encounters.domain.model.Encounter
-import de.enduni.monsterlair.monsters.domain.Monster
 
 
 data class EncounterCreatorDisplayState(
@@ -13,12 +12,11 @@ sealed class EncounterCreatorAction {
 
     class EditEncounterClicked(val encounter: Encounter) : EncounterCreatorAction()
     class DangerLinkClicked(val url: String) : EncounterCreatorAction()
-    object CustomMonsterClicked : EncounterCreatorAction()
+    data class CustomMonsterDelete(val id: String, val name: String) : EncounterCreatorAction()
+    data class CustomMonsterEdit(val id: String) : EncounterCreatorAction()
     class DangerAdded(val name: String) : EncounterCreatorAction()
     object EncounterSaved : EncounterCreatorAction()
     object ScrollUp : EncounterCreatorAction()
-    class OnCustomMonsterPressed(val id: String, val monsterName: String) : EncounterCreatorAction()
-    class OnEditCustomMonsterClicked(val monster: Monster) : EncounterCreatorAction()
     class OnGiveTreasureRecommendationClicked(val htmlTemplate: String) : EncounterCreatorAction()
     object RandomEncounterError : EncounterCreatorAction()
 

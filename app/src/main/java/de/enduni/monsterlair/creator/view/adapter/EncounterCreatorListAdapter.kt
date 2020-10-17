@@ -10,7 +10,7 @@ import de.enduni.monsterlair.creator.view.EncounterCreatorDisplayModel
 
 class EncounterCreatorListAdapter(
     private val layoutInflater: LayoutInflater,
-    private val dangerSelectedListener: DangerViewHolder.DangerSelectedListener,
+    private val dangerSelectedListener: DangerViewHolder.DangerListener,
     private val dangerForEncounterListener: DangerForEncounterViewHolder.DangerForEncounterListener,
     private val onSaveClickedListener: EncounterDetailViewHolder.ClickListener,
     private val adjustMonsterStrengthListener: AdjustMonsterStrengthDialog.Listener
@@ -89,7 +89,7 @@ class EncounterCreatorDiffCallback : DiffUtil.ItemCallback<EncounterCreatorDispl
             return oldItem == newItem
         }
         if (oldItem is EncounterCreatorDisplayModel.Danger && newItem is EncounterCreatorDisplayModel.Danger) {
-            return true
+            return oldItem == newItem
         }
         if (oldItem is EncounterCreatorDisplayModel.DangerForEncounter && newItem is EncounterCreatorDisplayModel.DangerForEncounter) {
             return oldItem == newItem

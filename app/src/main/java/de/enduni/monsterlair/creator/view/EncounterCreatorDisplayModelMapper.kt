@@ -18,7 +18,13 @@ class EncounterCreatorDisplayModelMapper {
         xp = monsterWithRole.role.xp,
         url = monsterWithRole.url,
         originalType = monsterWithRole.type.toString(),
-        customMonster = monsterWithRole.url == null
+        source = monsterWithRole.sourceType,
+        alignment = monsterWithRole.alignment,
+        rarity = monsterWithRole.rarity,
+        traits = monsterWithRole.traits,
+        size = monsterWithRole.size,
+        description = "${monsterWithRole.family} \u2014 ${monsterWithRole.description}",
+        roleDescription = monsterWithRole.role.getStringRes()
     )
 
     fun toDanger(hazardWithRole: HazardWithRole) = EncounterCreatorDisplayModel.Danger(
@@ -29,10 +35,16 @@ class EncounterCreatorDisplayModelMapper {
         icon = hazardWithRole.complexity.getIcon(),
         label = "",
         labelRes = hazardWithRole.complexity.getStringRes(),
+        roleDescription = hazardWithRole.role.getStringRes(),
         xp = hazardWithRole.role.getXp(hazardWithRole.complexity),
         url = hazardWithRole.url,
         originalType = hazardWithRole.complexity.toString(),
-        customMonster = false
+        source = hazardWithRole.sourceType,
+        alignment = null,
+        rarity = hazardWithRole.rarity,
+        traits = hazardWithRole.traits,
+        size = null,
+        description = hazardWithRole.description
     )
 
     fun toBudget(encounterData: Encounter) = EncounterCreatorDisplayModel.EncounterDetails(
@@ -65,7 +77,12 @@ class EncounterCreatorDisplayModelMapper {
             role = role.getStringRes(),
             count = encounterMonster.count,
             url = encounterMonster.monster.url,
-            customMonster = encounterMonster.monster.url == null
+            source = encounterMonster.monster.sourceType,
+            alignment = encounterMonster.monster.alignment,
+            rarity = encounterMonster.monster.rarity,
+            traits = encounterMonster.monster.traits,
+            size = encounterMonster.monster.size,
+            description = "${encounterMonster.monster.family} \u2014 ${encounterMonster.monster.description}"
         )
     }
 
@@ -83,7 +100,12 @@ class EncounterCreatorDisplayModelMapper {
             count = encounterHazard.count,
             role = encounterHazard.hazard.complexity.getStringRes(),
             url = encounterHazard.hazard.url,
-            customMonster = false
+            source = encounterHazard.hazard.sourceType,
+            alignment = null,
+            rarity = encounterHazard.hazard.rarity,
+            traits = encounterHazard.hazard.traits,
+            size = null,
+            description = encounterHazard.hazard.description
         )
 
 }
