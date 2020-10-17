@@ -20,6 +20,7 @@
 
     <style name="OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:textColor">?colorOnSurface</item>
+        <item name="iconTint">?colorOnSurface</item>
     </style>
 
 

@@ -187,7 +187,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/adjust_button"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            style="@style/OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/list_item_margin"
@@ -198,7 +198,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/edit_button"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            style="@style/OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/list_item_margin"
@@ -210,7 +210,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/delete_button"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            style="@style/OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/list_item_margin"
@@ -222,7 +222,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/archives_button"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            style="@style/OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/list_item_margin"

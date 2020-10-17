@@ -46,10 +46,12 @@ class MonsterLairApplication : Application() {
         }
         Timber.d("Initialized Koin")
 
-        if (darkModeManager.isDarkModeEnabled()) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        if (android.os.Build.VERSION.SDK_INT < 29) {
+            if (darkModeManager.isDarkModeEnabled()) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
         }
         MainScope().launch(handler) {
             databaseInitializer.initialize()
