@@ -101,7 +101,7 @@ val appModule = module {
         )
     }
 
-    single { UpdateManager(get()) }
+    single { UpdateManager(get(), get()) }
     single { SourceManager(get()) }
     single { DarkModeManager(get()) }
 

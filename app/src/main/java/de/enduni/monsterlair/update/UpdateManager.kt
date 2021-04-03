@@ -5,9 +5,12 @@ import android.content.SharedPreferences
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import de.enduni.monsterlair.BuildConfig
 import de.enduni.monsterlair.R
+import de.enduni.monsterlair.common.domain.Source
+import de.enduni.monsterlair.common.sources.SourceManager
 
 class UpdateManager(
-    private val sharedPreferences: SharedPreferences
+    private val sharedPreferences: SharedPreferences,
+    private val sourceManager: SourceManager
 ) {
 
     val savedVersion: Int
@@ -21,6 +24,11 @@ class UpdateManager(
         } else {
             sharedPreferences.edit().putInt(KEY_BUILD_NUMBER, currentVersion)
                 .apply()
+        }
+        if (savedVersion <= 16) {
+            if (sourceManager.sources.size == Source.values().size - 1) {
+                sourceManager.sources = Source.values().asList()
+            }
         }
     }
 
