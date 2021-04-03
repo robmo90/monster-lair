@@ -139,6 +139,7 @@
         <item>@string/source_core_rulebook</item>
         <item>@string/source_bestiary_1</item>
         <item>@string/source_bestiary_2</item>
+        <item>@string/source_bestiary_3</item>
         <item>@string/source_adventure_path</item>
         <item>@string/source_pathfinder_society</item>
         <item>@string/source_gamemastery_guide</item>

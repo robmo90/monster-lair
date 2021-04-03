@@ -552,6 +552,22 @@
     "description": "A 15-foot-wide patch of water and sand attempts to submerge creatures that step onto it."
   },
   {
+    "id": "58d1c1c1-4600-4781-b438-c60fc4247a78",
+    "name": "Gravehall Trap",
+    "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=50",
+    "level": "4",
+    "complexity": "COMPLEX",
+    "source": "GM's Toolbox: Gravehall pg. 1",
+    "sourceType": "MISC",
+    "rarity": "COMMON",
+    "traits": [
+      "Complex",
+      "Magical",
+      "Trap"
+    ],
+    "description": "When a living creature crosses the midpoint of the trapped tunnel, necromantic magic partially animates the corpses buried in the walls and ceiling."
+  },
+  {
     "id": "c3dd6b56-6b71-4f6d-96f4-2b0f12d47550",
     "name": "Spinning Blade Pillar",
     "aonUrl": "https://2e.aonprd.com/Hazards.aspx?ID=23",

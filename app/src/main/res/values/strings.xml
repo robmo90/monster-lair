@@ -178,6 +178,7 @@
     <string name="whats_new_11">- Redesigned the app a bit. Filters should be easier to access and are more powerful.\n- Added Proficiency Without Level variant rules, Weak and Elite templates and notes to the encounter creator. \n- Added the option to filter sources. \n- Added treasures, including items from the APG, and a small random treasure generator.\n\n I also reworked the way everything is stored. Let me know, if there is something wrong with your data.</string>
     <string name="whats_new_13">- Added all items from the Advanced Player\'s Guide</string>
     <string name="whats_new_15">- Redesigned all lists to be more compact and expandable with more information\n- Added a dark mode option for devices without native dark mode</string>
+    <string name="whats_new_16">- Updated the contents to include Bestiary 3 and all other published content on Archive of Nethys</string>
     <string name="encounter_creator_introduction_title">Small Intro</string>
     <string name="encounter_creator_introduction">Here\'s a small introduction to the encounter creator since the UI is still pretty sloppy:\n\n- Pull up the Search bar to access filters for monsters &amp; hazards (type, level, etc.)\n- Add your own monsters using +\n- Create random encounters by clicking the dice\n- Get treasure recommendations for your group by clicking the chest</string>
     <string name="updating_data">Updating Data ...</string>
@@ -294,6 +295,7 @@
     <string name="source_core_rulebook">Core Rulebook</string>
     <string name="source_bestiary_1">Bestiary 1</string>
     <string name="source_bestiary_2">Bestiary 2</string>
+    <string name="source_bestiary_3">Bestiary 3</string>
     <string name="source_adventure_path">Adventure Path</string>
     <string name="source_pathfinder_society">Pathfinder Society</string>
     <string name="source_gamemastery_guide">Gamemastery Guide</string>

@@ -329,6 +329,7 @@ fun Source.getStringRes(): Int {
         Source.CORE_RULEBOOK -> R.string.source_core_rulebook
         Source.BESTIARY_1 -> R.string.source_bestiary_1
         Source.BESTIARY_2 -> R.string.source_bestiary_2
+        Source.BESTIARY_3 -> R.string.source_bestiary_3
         Source.ADVENTURE_PATH -> R.string.source_adventure_path
         Source.PATHFINDER_SOCIETY -> R.string.source_pathfinder_society
         Source.GAMEMASTERY_GUIDE -> R.string.source_gamemastery_guide

@@ -33,12 +33,10 @@ class DatabaseInitializer(
 
     suspend fun initialize() = withContext(Dispatchers.IO) {
         val savedVersion = updateManager.savedVersion
-        if (savedVersion < 11) {
-            treasureDataSource.getTreasures().saveTreasures()
-        }
-        if (savedVersion < 15) {
+        if (savedVersion < 16) {
             monsterDataSource.getMonsters().insertMonsters()
             hazardDataSource.getHazards().saveHazards()
+            treasureDataSource.getTreasures().saveTreasures()
         }
 
         _migrationRunning.value = false

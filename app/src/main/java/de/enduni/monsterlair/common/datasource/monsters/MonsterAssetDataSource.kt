@@ -26,20 +26,4 @@ class MonsterAssetDataSource(private val context: Context) :
         return monsters?.let { it } ?: throw RuntimeException("Error loading monsters")
     }
 
-    override suspend fun getMonsterUpdate(version: Long): List<MonsterDto> {
-        val raw = context.resources.openRawResource(VERSIONS.getValue(version))
-        val json = String(raw.readBytes())
-        val monsters = jsonAdapter.fromJson(json)
-        return monsters?.let { it } ?: throw RuntimeException("Error loading monsters")
-    }
-
-    companion object {
-
-        private val VERSIONS = mapOf(
-            Pair(1L, R.raw.monsters_1),
-            Pair(2L, R.raw.monsters_2),
-            Pair(3L, R.raw.monsters_3)
-        )
-
-    }
 }

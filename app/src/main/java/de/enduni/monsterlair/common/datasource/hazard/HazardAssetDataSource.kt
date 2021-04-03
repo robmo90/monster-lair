@@ -26,18 +26,4 @@ class HazardAssetDataSource(
         return hazards?.let { it } ?: throw RuntimeException("Error loading hazards")
     }
 
-    override suspend fun getHazardUpdate(version: Long): List<HazardDto> {
-        val raw = context.resources.openRawResource(VERSIONS.getValue(version))
-        val json = String(raw.readBytes())
-        val monsters = jsonAdapter.fromJson(json)
-        return monsters?.let { it } ?: throw RuntimeException("Error loading hazards")
-    }
-
-    companion object {
-
-        private val VERSIONS = mapOf(
-            Pair(1L, R.raw.hazards_1)
-        )
-
-    }
 }
