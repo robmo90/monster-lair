@@ -13,16 +13,16 @@ apply plugin: 'com.cookpad.android.licensetools'
 
 android {
 
-    compileSdkVersion 29
+    compileSdkVersion 31
 
-    buildToolsVersion "29.0.2"
+    buildToolsVersion "31.0.0"
 
     defaultConfig {
         applicationId "de.enduni.monsterlair"
         minSdkVersion 24
-        targetSdkVersion 29
-        versionCode 17
-        versionName "2.61"
+        targetSdkVersion 31
+        versionCode 18
+        versionName "2.7"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         javaCompileOptions {

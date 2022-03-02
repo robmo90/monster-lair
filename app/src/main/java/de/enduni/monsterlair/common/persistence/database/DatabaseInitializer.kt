@@ -38,6 +38,9 @@ class DatabaseInitializer(
             hazardDataSource.getHazards().saveHazards()
             treasureDataSource.getTreasures().saveTreasures()
         }
+        if (savedVersion < 18) {
+            monsterDataSource.getMonsters().insertMonsters()
+        }
 
         _migrationRunning.value = false
     }

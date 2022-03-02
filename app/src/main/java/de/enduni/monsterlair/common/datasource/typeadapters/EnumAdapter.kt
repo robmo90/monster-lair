@@ -37,7 +37,7 @@ class EnumAdapter {
             "Lawful Evil" -> Alignment.LAWFUL_EVIL
             "Lawful Good" -> Alignment.LAWFUL_GOOD
             "Chaotic Good" -> Alignment.CHAOTIC_GOOD
-            "Chaotic Evil" -> Alignment.CHAOTIC_GOOD
+            "Chaotic Evil" -> Alignment.CHAOTIC_EVIL
             "Lawful Neutral" -> Alignment.LAWFUL_NEUTRAL
             "Chaotic Neutral" -> Alignment.CHAOTIC_NEUTRAL
             else -> Alignment.NEUTRAL

@@ -19,6 +19,7 @@
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".SplashScreenActivity"
+            android:exported="true"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
